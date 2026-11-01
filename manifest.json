@@ -198,7 +198,7 @@
     "research/real_decoders_20261024/src_scale_20261101/gen_scale.cpp": "377624b1f2c68f7bba0edd566b546e94be9a3397d5274c9e0ee7877214bc6192",
     "research/real_decoders_20261024/src_scale_20261101/make_dense_fixture.py": "515952c0f77a905a052f787b3862114c5f802ad0d005690fcf5c093c8f03d232",
     "research/real_decoders_20261024/src_scale_20261101/make_parquet.py": "a412dafeb0845add4308b481280f1b68fc5920b3e3e3fa9ee5bf25f7059b6c99",
-    "research/real_decoders_20261024/src_scale_20261101/run_scale.py": "98bb75b962505e6793f7224a6d5a9373c774e52cd70bcbae85259be72304dd64",
+    "research/real_decoders_20261024/src_scale_20261101/run_scale.py": "84bf6fdb5a098366b56138a82602cd4218108c4a4540a4c53b414dda3a9fdf8e",
     "research/real_decoders_20261024/src_specs_20261101/bsstr.py": "af9ca510716adfd829f5be8b883bae6b93af1873b45c3840c9081b18b200eecf",
     "research/real_decoders_20261024/src_specs_20261101/bug_witnesses.py": "b7e0efd6ebb5a8c72a0050f56bd3e14e8b39362ee8330771c115b26c6c007e1b",
     "research/real_decoders_20261024/src_specs_20261101/build_cubes.py": "b53d1cb784c614e9ebd0c49a332b096738ac27fbee1fb0781829166d0042a719",
@@ -1433,8 +1433,8 @@
     "scripts/plots.py": "e9ac74dd6961c993e4baebd12eef22b9a60ccfc5a4484e727c74628be3fff938",
     "scripts/plots_encoded.py": "870a40841988f89d6713ecabb42700bd7f649a694ace23c88f522f4d55f2ffe9",
     "scripts/prepare.py": "6670ba4ccd282fedb0f2beae6b6460e602533212e820c253debf5ff3f60ffaed",
-    "scripts/run.py": "2be7fa25806738725529468c53a4dd6b65942bc0574a44677c4a0e0a0daeed4b",
+    "scripts/run.py": "505a8ef2a9e4389e620aff257dbcbab2bb7a18c9bc766d08d618c39be696483e",
     "scripts/verify.py": "13153aee9f57617b428c1119c4903f678a6a162673d4cbfc099ab603b593fd2d",
-    "source_manifest.json": "4f956b57308f2ecdba17eb63ab06c23d34e010f62de2853a74c380b960a2230d"
+    "source_manifest.json": "9950db3b788f7396c8669c859e4703aa8757a51178b867195f21e8494f55a586"
   }
 }

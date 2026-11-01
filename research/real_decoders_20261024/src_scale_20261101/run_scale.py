@@ -813,7 +813,7 @@ def stage_ecube3mt():
             r = _timed_build([E3, "build_enc_mt", case["enc"], case["prep"], str(case["gid"]),
                               str(case["vid"]), out, str(T), "24"], T, (case["enc"],))
             r["sha256"] = sha256(out)
-            r["byte_identical"] = (r["sha256"] == case["frozen_sha"])
+            r["byte_identical"] = (r["sha256"] == d["reference_1t"]["sha256"])
             d["mt"]["T%d" % T] = r
             print("E3 %s T=%02d wall=%.3fs build_ms=%.1f sha=%s identical=%s"
                   % (case["name"], T, r["wall_s_median"], r["build_ms_median"],
@@ -832,7 +832,7 @@ def stage_ecube3mt():
                           TIERS + "/nyc_null_valid.bits", "24"], T,
                          (TIERS + "/gid_nyc_g10.i32", TIERS + "/val_nyc100.i32"))
         r["sha256"] = sha256(out)
-        r["byte_identical"] = (r["sha256"] == E3_NULL_SHA)
+        r["byte_identical"] = (r["sha256"] == nm["reference_1t"]["sha256"])
         nm["builds"]["T%d" % T] = r
         print("E3 null-measure T=%02d wall=%.3fs sha=%s identical=%s"
               % (T, r["wall_s_median"], r["sha256"][:16], r["byte_identical"]), flush=True)
@@ -871,7 +871,8 @@ def stage_ecube3mt():
                        str(E3_TPCH["gid"]), str(E3_TPCH["vid"]), th_out, "16", "24"], 16,
                       (E3_TPCH["enc"],), reps=1)
     th["sha256"] = sha256(th_out)
-    th["byte_identical"] = (th["sha256"] == E3_TPCH["frozen_sha"])
+    th["reference_sha256"] = sha256(E3_TPCH["frozen_cube"])
+    th["byte_identical"] = (th["sha256"] == th["reference_sha256"])
     rec["tpch_sf2_encoded_16t"] = th
     print("E3 tpch t16 sha=%s identical=%s" % (th["sha256"][:16], th["byte_identical"]), flush=True)
     # ---- ECUBE03 query latency (frozen engine, frozen cube, 30 reps) ----

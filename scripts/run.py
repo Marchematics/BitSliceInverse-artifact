@@ -57,7 +57,7 @@ def main():
     env['CE_REPO'] = str(SRC)
     env['CE_WORK'] = str(ROOT/'work/crossengine')
     env['CE_OUT'] = str(ROOT/'work/crossengine/runs')
-    env['CE_CUBE'] = str(ROOT/'work/crossengine/data/fmt_encoded_v3.ecube')
+    env['CE_CUBE'] = str(ROOT/'work/crossengine/data/fmt_encoded.ecube')
     env['CUBE'] = str(ROOT/'build/enc_cube3')
     for rel in ['specs/out','bench_baselines/data','crossengine/runs','crossengine/data','scale']:
         (ROOT/'work'/rel).mkdir(parents=True,exist_ok=True)
