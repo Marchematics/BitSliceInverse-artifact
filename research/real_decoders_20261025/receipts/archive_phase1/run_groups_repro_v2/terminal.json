@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "error": null,
+  "start_utc": "2026-10-24T17:34:03.275090+00:00",
+  "end_utc": "2026-10-24T17:36:12.674232+00:00",
+  "wall_s": 129.39914477407,
+  "commands": 261,
+  "complete_typed_outputs": 147,
+  "native_full_value_verifications": 42,
+  "actual_DuckDB_fullschema_roundtrips": 21,
+  "partial_evidence_retained": true,
+  "no_retry": true
+}

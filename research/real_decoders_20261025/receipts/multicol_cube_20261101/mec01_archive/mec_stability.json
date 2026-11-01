@@ -1,0 +1,213 @@
+{
+ "runs": 5,
+ "reps_per_run": 200,
+ "cmds": [
+  "../../research/real_decoders_20261024/src_eai_multi_20261101/mec bench ../../research/real_decoders_20261024/results/eai_multi_20261101/mec_lineitem_sf2.mec 200 ../../research/real_decoders_20261024/src_eai_multi_20261101/cases.txt",
+  "../../research/real_decoders_20261024/src_eai_multi_20261101/mec bench ../../research/real_decoders_20261024/results/eai_multi_20261101/mec_lineitem_sf2.mec 200 ../../research/real_decoders_20261024/src_eai_multi_20261101/cases.txt",
+  "../../research/real_decoders_20261024/src_eai_multi_20261101/mec bench ../../research/real_decoders_20261024/results/eai_multi_20261101/mec_lineitem_sf2.mec 200 ../../research/real_decoders_20261024/src_eai_multi_20261101/cases.txt",
+  "../../research/real_decoders_20261024/src_eai_multi_20261101/mec bench ../../research/real_decoders_20261024/results/eai_multi_20261101/mec_lineitem_sf2.mec 200 ../../research/real_decoders_20261024/src_eai_multi_20261101/cases.txt",
+  "../../research/real_decoders_20261024/src_eai_multi_20261101/mec bench ../../research/real_decoders_20261024/results/eai_multi_20261101/mec_lineitem_sf2.mec 200 ../../research/real_decoders_20261024/src_eai_multi_20261101/cases.txt"
+ ],
+ "cases": {
+  "broad": {
+   "sc_medians_us": [
+    11.006,
+    11.727,
+    11.857,
+    11.016,
+    11.005
+   ],
+   "sc_median_us": 11.016,
+   "sc_spread_pct": 7.73420479302831,
+   "full_medians_us": [
+    31.014,
+    30.994,
+    31.014,
+    30.834,
+    30.864
+   ],
+   "full_median_us": 30.994,
+   "full_spread_pct": 0.5807575659805114
+  },
+  "selective": {
+   "sc_medians_us": [
+    10.805,
+    10.785,
+    10.775,
+    10.835,
+    10.785
+   ],
+   "sc_median_us": 10.785,
+   "sc_spread_pct": 0.5563282336578627,
+   "full_medians_us": [
+    18.737,
+    18.737,
+    18.736,
+    18.697,
+    18.727
+   ],
+   "full_median_us": 18.736,
+   "full_spread_pct": 0.21349274124679304
+  },
+  "empty": {
+   "sc_medians_us": [
+    0.191,
+    0.19,
+    0.19,
+    0.19,
+    0.19
+   ],
+   "sc_median_us": 0.19,
+   "sc_spread_pct": 0.5263157894736846,
+   "full_medians_us": [
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26
+   ],
+   "full_median_us": 0.26,
+   "full_spread_pct": 0.0
+  },
+  "all_full": {
+   "sc_medians_us": [
+    2.443,
+    2.453,
+    2.444,
+    2.454,
+    2.444
+   ],
+   "sc_median_us": 2.444,
+   "sc_spread_pct": 0.45008183306056143,
+   "full_medians_us": [
+    105.02,
+    104.59,
+    104.109,
+    103.869,
+    104.299
+   ],
+   "full_median_us": 104.299,
+   "full_spread_pct": 1.1035580398661504
+  },
+  "price_top_decile": {
+   "sc_medians_us": [
+    4.276,
+    4.797,
+    4.267,
+    4.877,
+    4.286
+   ],
+   "sc_median_us": 4.286,
+   "sc_spread_pct": 14.232384507699475,
+   "full_medians_us": [
+    10.575,
+    10.655,
+    10.645,
+    10.685,
+    10.666
+   ],
+   "full_median_us": 10.655,
+   "full_spread_pct": 1.0323791647114147
+  },
+  "quant_narrow": {
+   "sc_medians_us": [
+    0.831,
+    0.822,
+    0.831,
+    0.841,
+    0.821
+   ],
+   "sc_median_us": 0.831,
+   "sc_spread_pct": 2.406738868832734,
+   "full_medians_us": [
+    20.879,
+    20.88,
+    20.87,
+    20.85,
+    20.87
+   ],
+   "full_median_us": 20.87,
+   "full_spread_pct": 0.14374700527071194
+  },
+  "needle": {
+   "sc_medians_us": [
+    6.65,
+    6.61,
+    6.5,
+    6.69,
+    6.57
+   ],
+   "sc_median_us": 6.61,
+   "sc_spread_pct": 2.874432677760974,
+   "full_medians_us": [
+    10.285,
+    10.194,
+    10.195,
+    10.244,
+    10.305
+   ],
+   "full_median_us": 10.244,
+   "full_spread_pct": 1.0835611089418087
+  },
+  "mid_band": {
+   "sc_medians_us": [
+    11.527,
+    11.146,
+    11.116,
+    11.576,
+    11.106
+   ],
+   "sc_median_us": 11.146,
+   "sc_spread_pct": 4.216759375560745,
+   "full_medians_us": [
+    27.639,
+    27.55,
+    27.519,
+    27.649,
+    27.77
+   ],
+   "full_median_us": 27.639,
+   "full_spread_pct": 0.9081370527153705
+  },
+  "disc_single": {
+   "sc_medians_us": [
+    0.26,
+    0.26,
+    0.26,
+    0.261,
+    0.26
+   ],
+   "sc_median_us": 0.26,
+   "sc_spread_pct": 0.3846153846153849,
+   "full_medians_us": [
+    8.171,
+    8.132,
+    8.121,
+    8.142,
+    8.122
+   ],
+   "full_median_us": 8.132,
+   "full_spread_pct": 0.6148548942449451
+  },
+  "disc_quant_tight": {
+   "sc_medians_us": [
+    0.4,
+    0.391,
+    0.381,
+    0.451,
+    0.39
+   ],
+   "sc_median_us": 0.391,
+   "sc_spread_pct": 17.902813299232736,
+   "full_medians_us": [
+    0.711,
+    0.711,
+    0.701,
+    0.711,
+    0.701
+   ],
+   "full_median_us": 0.711,
+   "full_spread_pct": 1.406469760900142
+  }
+ }
+}

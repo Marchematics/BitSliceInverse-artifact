@@ -1,0 +1,1 @@
+{"codec":"fastlanes","kind":"kernel","column":"int32","values":65536,"reps":5,"fls_bytes":23593,"bytes_per_value":0.360001,"encode_median_ms":3.47117,"decode_median_ms":0.202069,"encode_ns_per_value":52.9658,"decode_ns_per_value":3.08333,"decoded_exact":true}

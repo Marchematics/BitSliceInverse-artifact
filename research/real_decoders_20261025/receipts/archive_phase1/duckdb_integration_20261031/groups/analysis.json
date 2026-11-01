@@ -1,0 +1,11 @@
+{
+  "duckdb_version": "1.5 C API",
+  "function": "bsi_groups(group_summary_csv)",
+  "sql": "SELECT name,sum,count,min,max FROM bsi_groups(...) WHERE sum>=1e10 ORDER BY name",
+  "rows": 2,
+  "query_median_ms": 1.986,
+  "runs": 5,
+  "exact": true,
+  "group_csv_bytes": 355,
+  "note": "Two-level summary: 50MB block summary reduced to a small group CSV; DuckDB table function emits rows, SQL filters/orders. Not ordinary scan; no planner pushdown."
+}

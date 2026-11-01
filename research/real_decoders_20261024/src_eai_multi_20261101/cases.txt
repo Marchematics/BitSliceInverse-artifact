@@ -1,0 +1,20 @@
+# MEC01 case set — TPC-H SF2 lineitem, 11,997,996 rows.
+# Column units of the prepared columns (results/multibits_tpch/*.i64):
+#   v  = price     = CAST(ROUND(l_extendedprice*100,0) AS BIGINT), domain 90099..10489950
+#   c1 = discount  = l_discount*100,                              domain 0..10
+#   c2 = quantity  = l_quantity,                                  domain 1..50
+#   g  = l_returnflag mapped A->0, N->1, R->2
+# Fields: name v_lo v_hi c1_lo c1_hi c2_lo c2_hi   (all predicates inclusive)
+#
+# the three cases carried over verbatim from MULTI_PREDICATE_20261101.md
+broad                 0          2000000    0    100  1    50
+selective             1000000    2000000    0    5    1    20
+empty                 5000000    6000000    0    1    1    10
+# additional selectivity pairs
+all_full              0          20000000   0    100  1    50
+price_top_decile      9000000    20000000   0    100  1    50
+quant_narrow          0          20000000   0    100  20   30
+needle                1000000    1001000    0    100  1    50
+mid_band              2000000    5000000    2    7    10   40
+disc_single           0          20000000   5    5    1    50
+disc_quant_tight      3000000    6000000    2    4    5    15

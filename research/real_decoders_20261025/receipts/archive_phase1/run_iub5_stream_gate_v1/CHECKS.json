@@ -1,0 +1,191 @@
+[
+  {
+    "case": "Observed",
+    "stage": "build_verify",
+    "encoded_sha256": "d24c7d9d87f20f32307a6d4f6334e1325821ed3d2c13b8e119006e79baaebfb6"
+  },
+  {
+    "case": "Observed",
+    "method": "stream",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "a0eb6f99ea28dd050c69c6d460481cfbac9309ee2bcafb33056a5c1aad571c1f",
+    "result_bytes": 1870,
+    "rows": 1795,
+    "result_groups": 159,
+    "setup_ms_descriptive_only": 0.081156,
+    "query_ms_descriptive_only": 0.050853
+  },
+  {
+    "case": "Observed",
+    "method": "stream_uniform",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "a0eb6f99ea28dd050c69c6d460481cfbac9309ee2bcafb33056a5c1aad571c1f",
+    "result_bytes": 1870,
+    "rows": 1795,
+    "result_groups": 159,
+    "setup_ms_descriptive_only": 0.077501,
+    "query_ms_descriptive_only": 0.044364
+  },
+  {
+    "case": "MixedTail",
+    "stage": "build_verify",
+    "encoded_sha256": "f65e27d279eb7b5a3c5b5d456eca80ce1cd1dcbc17e9d7ae335e9f70300c7428"
+  },
+  {
+    "case": "MixedTail",
+    "method": "stream",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "e85d5ddf00f1a3263e67e057948c11ae6228ad86bfed784ec1e5d50d0e50188f",
+    "result_bytes": 246,
+    "rows": 1031,
+    "result_groups": 11,
+    "setup_ms_descriptive_only": 0.041469,
+    "query_ms_descriptive_only": 0.014671
+  },
+  {
+    "case": "MixedTail",
+    "method": "stream_uniform",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "e85d5ddf00f1a3263e67e057948c11ae6228ad86bfed784ec1e5d50d0e50188f",
+    "result_bytes": 246,
+    "rows": 1031,
+    "result_groups": 11,
+    "setup_ms_descriptive_only": 0.044734,
+    "query_ms_descriptive_only": 0.014831
+  },
+  {
+    "case": "AllSelected",
+    "stage": "build_verify",
+    "encoded_sha256": "60d79d023e25425f2cb32f3c985e4e69ba768a0d8ad77658b07d3bca916d5791"
+  },
+  {
+    "case": "AllSelected",
+    "method": "stream",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "1bb904ad65220a8ba0f5c0355490b8443d565861d44ce6c3b78dd5cba5902bad",
+    "result_bytes": 235,
+    "rows": 65,
+    "result_groups": 11,
+    "setup_ms_descriptive_only": 0.047919,
+    "query_ms_descriptive_only": 0.010645
+  },
+  {
+    "case": "AllSelected",
+    "method": "stream_uniform",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "1bb904ad65220a8ba0f5c0355490b8443d565861d44ce6c3b78dd5cba5902bad",
+    "result_bytes": 235,
+    "rows": 65,
+    "result_groups": 11,
+    "setup_ms_descriptive_only": 0.040768,
+    "query_ms_descriptive_only": 0.011567
+  },
+  {
+    "case": "AllExcluded",
+    "stage": "build_verify",
+    "encoded_sha256": "902f9fcca728cc1bc7fefb7da04fc6fca79c4c1505493b346ef878341697044a"
+  },
+  {
+    "case": "AllExcluded",
+    "method": "stream",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "8169a7327f834cf514aa99f396189ef9c72b8efb649df5252f5287657bacf7bb",
+    "result_bytes": 108,
+    "rows": 63,
+    "result_groups": 0,
+    "setup_ms_descriptive_only": 0.046256,
+    "query_ms_descriptive_only": 0.00673
+  },
+  {
+    "case": "AllExcluded",
+    "method": "stream_uniform",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "8169a7327f834cf514aa99f396189ef9c72b8efb649df5252f5287657bacf7bb",
+    "result_bytes": 108,
+    "rows": 63,
+    "result_groups": 0,
+    "setup_ms_descriptive_only": 0.039166,
+    "query_ms_descriptive_only": 0.005708
+  },
+  {
+    "case": "AllNullDates",
+    "stage": "build_verify",
+    "encoded_sha256": "6a5105cfe0880d9cf48a567ce2ea45b03602c634c5c8de054edb64f48ea1829f"
+  },
+  {
+    "case": "AllNullDates",
+    "method": "stream",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "8169a7327f834cf514aa99f396189ef9c72b8efb649df5252f5287657bacf7bb",
+    "result_bytes": 108,
+    "rows": 64,
+    "result_groups": 0,
+    "setup_ms_descriptive_only": 0.046927,
+    "query_ms_descriptive_only": 0.005207
+  },
+  {
+    "case": "AllNullDates",
+    "method": "stream_uniform",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "8169a7327f834cf514aa99f396189ef9c72b8efb649df5252f5287657bacf7bb",
+    "result_bytes": 108,
+    "rows": 64,
+    "result_groups": 0,
+    "setup_ms_descriptive_only": 0.045205,
+    "query_ms_descriptive_only": 0.005888
+  },
+  {
+    "case": "Endpoints",
+    "stage": "build_verify",
+    "encoded_sha256": "d5a7656898250edc44dce0a9af6a547045f0bea18c4b7b5d9387df50fbcfc13c"
+  },
+  {
+    "case": "Endpoints",
+    "method": "stream",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "36434664c702ccd821b3809f633d3c0453b72092b9c21552ec3adc7c15eb052e",
+    "result_bytes": 178,
+    "rows": 1024,
+    "result_groups": 6,
+    "setup_ms_descriptive_only": 0.044444,
+    "query_ms_descriptive_only": 0.011526
+  },
+  {
+    "case": "Endpoints",
+    "method": "stream_uniform",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "36434664c702ccd821b3809f633d3c0453b72092b9c21552ec3adc7c15eb052e",
+    "result_bytes": 178,
+    "rows": 1024,
+    "result_groups": 6,
+    "setup_ms_descriptive_only": 0.039617,
+    "query_ms_descriptive_only": 0.011196
+  },
+  {
+    "case": "Empty",
+    "stage": "build_verify",
+    "encoded_sha256": "929c02b3a3672b7b7872ba434701f193fc7b8274339175bca7cb5b1d07d35617"
+  },
+  {
+    "case": "Empty",
+    "method": "stream",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "8169a7327f834cf514aa99f396189ef9c72b8efb649df5252f5287657bacf7bb",
+    "result_bytes": 108,
+    "rows": 0,
+    "result_groups": 0,
+    "setup_ms_descriptive_only": 0.037103,
+    "query_ms_descriptive_only": 0.000801
+  },
+  {
+    "case": "Empty",
+    "method": "stream_uniform",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "8169a7327f834cf514aa99f396189ef9c72b8efb649df5252f5287657bacf7bb",
+    "result_bytes": 108,
+    "rows": 0,
+    "result_groups": 0,
+    "setup_ms_descriptive_only": 0.041459,
+    "query_ms_descriptive_only": 0.000721
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "case": "Observed",
+  "rows": 983040,
+  "scale_factor": 15,
+  "synthetic_row_replication": true,
+  "observations": 270,
+  "commands": 281,
+  "correctness_checks": 10,
+  "preloaded_input_bytes": 235667771,
+  "paths": [
+    "generic",
+    "stream",
+    "stream_uniform",
+    "duckdb",
+    "duckdb_proj2",
+    "arrow_full",
+    "arrow_proj",
+    "vortex_full",
+    "vortex_proj"
+  ],
+  "analysis_sha256": "00f8c931879e9181e81345dd56d6f9210ccea82c300890c23c24f8b35e3c53d3",
+  "native_binary_sha256": "35af22fdc9697ce8a544e6954a6efeebc4e7ebb4ed6d1f274bdd0bdc351f1920",
+  "scope": "synthetic scale-sensitivity test: exact 15x row replication of the pinned IG/2 Observed case; not additional real data"
+}

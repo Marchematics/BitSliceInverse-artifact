@@ -1,0 +1,160 @@
+{
+ "dataset": {
+  "rows": 1000000000,
+  "replicas": 10,
+  "gid_offset": 10,
+  "groups": 101,
+  "values": 21084,
+  "gid_file": "../../research/real_decoders_20261024/results/scale_20261101/nyc1b_gid.i32",
+  "val_file": "../../research/real_decoders_20261024/results/scale_20261101/nyc1b_val.i32",
+  "gid_bytes": 4000000000,
+  "val_bytes": 4000000000,
+  "note": "10 deterministic replicas of NYC-100M (gid + 10*r, NULL preserved), identical value distribution; build/query/storage scaling, not distributional generalization"
+ },
+ "builds": [
+  {
+   "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale build_mt ../../research/real_decoders_20261024/results/scale_20261101/nyc1b_gid.i32 ../../research/real_decoders_20261024/results/scale_20261101/nyc1b_val.i32 ../../research/real_decoders_20261024/results/scale_20261101/nyc1b.ecube 1 24",
+   "exit": 0,
+   "core_mask": "80",
+   "threads": 1,
+   "wall_s": 8.7562,
+   "time": {
+    "wall": 8.75,
+    "rss": 7826768.0
+   },
+   "metrics": {
+    "mode": "build_mt",
+    "build_ms": 8490.594,
+    "map_ms": 0.029,
+    "domain_ms": 1011.255,
+    "distinct_ms": 2445.118,
+    "accum_ms": 5018.425,
+    "merge_ms": 0.064,
+    "prefix_ms": 3.698,
+    "write_ms": 12.005,
+    "groups": 101,
+    "values": 21084,
+    "rows": 1000000000,
+    "bytes": 9087844,
+    "dense": 0,
+    "threads_requested": 1,
+    "threads_used": 1,
+    "slab_bytes_per_thread": 8517936,
+    "membudget_gb": 24.0
+   },
+   "cube": "../../research/real_decoders_20261024/results/scale_20261101/nyc1b.ecube",
+   "cube_bytes": 9087844,
+   "cube_sha256": "a251dde1c6c1aead9a52f2d12841a04efe31c7559a7ced25c644af769cdf71ef"
+  },
+  {
+   "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-83 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale build_mt ../../research/real_decoders_20261024/results/scale_20261101/nyc1b_gid.i32 ../../research/real_decoders_20261024/results/scale_20261101/nyc1b_val.i32 ../../research/real_decoders_20261024/results/scale_20261101/nyc1b_t4.ecube 4 24",
+   "exit": 0,
+   "core_mask": "80-83",
+   "threads": 4,
+   "wall_s": 2.4493,
+   "time": {
+    "wall": 2.44,
+    "rss": 7853104.0
+   },
+   "metrics": {
+    "mode": "build_mt",
+    "build_ms": 2180.316,
+    "map_ms": 0.029,
+    "domain_ms": 257.65,
+    "distinct_ms": 618.942,
+    "accum_ms": 1286.998,
+    "merge_ms": 4.552,
+    "prefix_ms": 0.776,
+    "write_ms": 11.37,
+    "groups": 101,
+    "values": 21084,
+    "rows": 1000000000,
+    "bytes": 9087844,
+    "dense": 0,
+    "threads_requested": 4,
+    "threads_used": 4,
+    "slab_bytes_per_thread": 8517936,
+    "membudget_gb": 24.0
+   },
+   "cube": "../../research/real_decoders_20261024/results/scale_20261101/nyc1b_t4.ecube",
+   "cube_bytes": 9087844,
+   "cube_sha256": "a251dde1c6c1aead9a52f2d12841a04efe31c7559a7ced25c644af769cdf71ef"
+  },
+  {
+   "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale build_mt ../../research/real_decoders_20261024/results/scale_20261101/nyc1b_gid.i32 ../../research/real_decoders_20261024/results/scale_20261101/nyc1b_val.i32 ../../research/real_decoders_20261024/results/scale_20261101/nyc1b_t8.ecube 8 24",
+   "exit": 0,
+   "core_mask": "80-87",
+   "threads": 8,
+   "wall_s": 1.4346,
+   "time": {
+    "wall": 1.43,
+    "rss": 7889044.0
+   },
+   "metrics": {
+    "mode": "build_mt",
+    "build_ms": 1163.633,
+    "map_ms": 0.059,
+    "domain_ms": 133.424,
+    "distinct_ms": 319.322,
+    "accum_ms": 691.866,
+    "merge_ms": 6.47,
+    "prefix_ms": 0.625,
+    "write_ms": 11.868,
+    "groups": 101,
+    "values": 21084,
+    "rows": 1000000000,
+    "bytes": 9087844,
+    "dense": 0,
+    "threads_requested": 8,
+    "threads_used": 8,
+    "slab_bytes_per_thread": 8517936,
+    "membudget_gb": 24.0
+   },
+   "cube": "../../research/real_decoders_20261024/results/scale_20261101/nyc1b_t8.ecube",
+   "cube_bytes": 9087844,
+   "cube_sha256": "a251dde1c6c1aead9a52f2d12841a04efe31c7559a7ced25c644af769cdf71ef"
+  },
+  {
+   "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-95 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale build_mt ../../research/real_decoders_20261024/results/scale_20261101/nyc1b_gid.i32 ../../research/real_decoders_20261024/results/scale_20261101/nyc1b_val.i32 ../../research/real_decoders_20261024/results/scale_20261101/nyc1b_t16.ecube 16 24",
+   "exit": 0,
+   "core_mask": "80-95",
+   "threads": 16,
+   "wall_s": 0.9183,
+   "time": {
+    "wall": 0.91,
+    "rss": 7959932.0
+   },
+   "metrics": {
+    "mode": "build_mt",
+    "build_ms": 649.337,
+    "map_ms": 0.027,
+    "domain_ms": 70.615,
+    "distinct_ms": 172.806,
+    "accum_ms": 379.016,
+    "merge_ms": 12.155,
+    "prefix_ms": 0.818,
+    "write_ms": 13.899,
+    "groups": 101,
+    "values": 21084,
+    "rows": 1000000000,
+    "bytes": 9087844,
+    "dense": 0,
+    "threads_requested": 16,
+    "threads_used": 16,
+    "slab_bytes_per_thread": 8517936,
+    "membudget_gb": 24.0
+   },
+   "cube": "../../research/real_decoders_20261024/results/scale_20261101/nyc1b_t16.ecube",
+   "cube_bytes": 9087844,
+   "cube_sha256": "a251dde1c6c1aead9a52f2d12841a04efe31c7559a7ced25c644af769cdf71ef"
+  }
+ ],
+ "deterministic_byte_identical": true,
+ "cube_bytes": 9087844,
+ "warm_input_read_s": 3.972,
+ "protocol": "inputs pre-read into page cache before each timed build; wall includes mmap + domain + distinct + accumulate + prefix + write",
+ "receipt": "build_mt_1b",
+ "host": "localhost (AMD EPYC 9554, 2x64C, 256T, 503GB)",
+ "date": "2026-11-01T18:29:10.169313+08:00",
+ "git_branch": "research/groups-e2e-repro-20261025"
+}

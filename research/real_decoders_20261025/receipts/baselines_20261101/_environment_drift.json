@@ -1,0 +1,90 @@
+{
+ "generated": "2026-11-01",
+ "host": "localhost (localhost), AMD EPYC 9554, 256 threads, 503 GB RAM, Ubuntu 22.04",
+ "purpose": "Document environment drift observed while this comparison table was being measured, so every number can be attributed to the exact artifact that produced it.",
+ "items": [
+  {
+   "what": "FINAL freeze: ECUBE03 (NULL-measure support) replaces ECUBE02 as the frozen row",
+   "when": "2026-11-01 19:1x-19:2x (host local time)",
+   "identity": {
+    "source": "src_eai_20261101/eai_cube3.cpp sha256 c93a4530f7b21d5e1a1f174374f5fdd49783a20ad32638b370baabf3e86562f0",
+    "binary": "src_eai_20261101/enc_cube3 sha256 96cf26e536844b4f5f9f08fb044399770936ced24b7b75575862e756e55cf71d (a rebuild from the pinned source is byte-identical)",
+    "index": "../../work/runs/nyc100_v3.ecube sha256 78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee, 1,140,168 B (+44 B over ECUBE02)",
+    "invariance": "encoded-tree build (3.365 s wall / 3.01 s in-process) and plain-column build both produce sha 78bff19a..., independently rebuilt and sha-matched"
+   },
+   "measurement": {
+    "engine_resident_query_us": {
+     "fixed": 0.921,
+     "range": "0.701-1.052"
+    },
+    "serialize_us": {
+     "fixed": 1.492,
+     "range": "1.182-1.562"
+    },
+    "cold_complete_request_ms": "1.303-1.336 quiet pinned core",
+    "exact": "8/8 NYC-100M cases exact; NULL-measure fixture (6/6) owned by the cube stream"
+   },
+   "finding": "ECUBE03 is a strict superset of ECUBE02 but is 17-26% FASTER per query in an interleaved same-window A/B (median -22.7%, range -26.0..-17.2%); ECUBE02 itself reproduces across two quiet windows (fixed 1.162 -> 1.152 us), so the delta is version-specific (recompile/code-layout), not drift. Cold startup identical (1.322 ms both). The +44 B NULL-count array has no measurable latency cost.",
+   "receipts": [
+    "eai_ecube03_frozen.json",
+    "eai_ecube02_frozen.json",
+    "cold_breakdown.json",
+    "ab_ecube02_vs_ecube03.json",
+    "eai_ecube02_prefreeze.json"
+   ]
+  },
+  {
+   "what": "ECUBE binary/format changed mid-campaign; frozen target accepted as ECUBE02",
+   "when": "2026-11-01 17:19 (host local time)",
+   "evidence": [
+    "src_eai_20261101/enc_cube mtime 17:19, recompiled from a new source eai_cube2.cpp (mtime 17:19); old source kept as enc_cube_v1.cpp.bak (mtime 17:15)",
+    "eai_cube2.cpp line 33: MAGIC = \"ECUBE02\\n\"; the prebuilt ../../work/runs/*.ecube files carry MAGIC \"ECUBE01\"",
+    "the brief's exact command (enc_cube bench ../../work/runs/nyc100_plain.ecube results/nyc_taxi_100m_prep/Observed/state.dict /dev/null 1000) now exits 1 with 'ERR magic'",
+    "ECUBE01 was therefore measured with a locally compiled copy of the saved v1 source (src_baselines_20261101/enc_cube_v1, g++ flags copied from src_eai_20261101/build.sh); the rebuild from the plain .i32 columns is byte-identical to the Lead's cube (sha256 d46d2b90172f863d180849f3821416a950caad2eb3a6fd5dda2cf4d4207fbfea)"
+   ],
+   "impact": "BASELINES_20261101.md reports eai_ecube02_frozen as the frozen materialized row and eai_ecube01 as the superseded ablation row.",
+   "receipts": [
+    "eai_cube01.json",
+    "eai_ecube02.json",
+    "eai_cube01.time"
+   ],
+   "decision": "Lead froze ECUBE02: source eai_cube2.cpp sha256 99e4dcefa1c9b391781c1583f4259cf0693761973cd6b2de0533ce77d57f1543, index nyc100_v2.ecube sha256 c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6 (1,140,124 B, built from the encoded tree). Verified: rebuilding from the pinned source gives a byte-identical binary (sha cc3afecd...) and rebuilding the index from the encoded tree with build_enc gives sha c878dba2... (build 3.16 s, pass1 291 ms + accum 2866 ms). The measurement harness uses exactly that binary+index: receipt eai_ecube02_frozen.json.",
+   "cold_request_diagnosis": {
+    "prefreeze_number": "cold 8.0-11.9 ms (receipt eai_ecube02_prefreeze.json) \u2014 CONTAMINATED, removed from all tables",
+    "quiet_window": "cold 1.29-1.32 ms per case, wall 1.325 ms, startup+wrapper 1.210 ms, in-process 0.115 ms (setup 0.046 + serialize 6.6 us + output write 0.061 ms), minflt 162; receipt cold_breakdown.json",
+    "controlled_contention": "busy loop sharing core 56: wall median 6.304 ms, min 1.304, p95 7.936, in-process unchanged 0.117 ms -> the 8-12 ms was scheduling delay, not a v2 regression",
+    "no_regression": true
+   }
+  },
+  {
+   "what": "DuckDB fixed-query latency depends on host load",
+   "when": "2026-11-01 17:03 (suite) vs 17:45 (rerun) vs 17:38 (60-rep control)",
+   "evidence": [
+    "suite run median 503.891 ms [min 440.013, p95 552.827]",
+    "rerun on settled host: median 455.304 ms (per case 455.3/181.9/205.8/253.0/283.6/346.5/425.9/458.9)",
+    "60-rep control with no other benchmark running: median 439.899, min 435.107, p95 485.692, max 503.696",
+    "the Lead's EAI-cube receipt 439.712 ms is the fast end of the same distribution, not a different protocol"
+   ],
+   "impact": "report median [min, p95]; the conservative-baseline column of the table uses the fastest observed baseline latency per case so no claim depends on the choice.",
+   "receipts": [
+    "duckdb20_scan.json",
+    "duckdb20_scan_clean.json",
+    "stability_control.json"
+   ]
+  },
+  {
+   "what": "FastLanes CSV driver schema quirk",
+   "when": "2026-11-01 17:10-17:40",
+   "evidence": [
+    "schema.json with type \"int32\" -> std::runtime_error: type int32 not found (both 100 M and 10 M inputs)",
+    "schema.json with type \"integer\" also rejected by the native driver; type \"int\" works",
+    "the 100 M-value run then completed exactly (1.1688 B/value, decode 234.8 ms/100 M -> 3.634 ns/value; encode 533.9 s dominated by CSV materialization)"
+   ],
+   "impact": "kernel row uses the full 100 M values, same column as BtrBlocks and the SQL engines.",
+   "receipts": [
+    "fastlanes_nyc100_fare.json",
+    "btrblocks_nyc100_fare.json"
+   ]
+  }
+ ]
+}

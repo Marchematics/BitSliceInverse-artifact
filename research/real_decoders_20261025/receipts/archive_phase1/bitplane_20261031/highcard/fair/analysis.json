@@ -1,0 +1,29 @@
+{
+  "input": "NYC 100M fare with synthetic group ids",
+  "representation": "BSBITS03",
+  "control": "DuckDB 2.0 single-thread, same SQL",
+  "runs": 5,
+  "exact": true,
+  "note": "Corrected fair comparison: earlier DuckDB default-thread baselines (31/440/1362 ms) were not single-thread. Single-thread DuckDB is 763/1450/2996 ms; BSBITS03 is 21.3x/27.0x/11.3x faster. 1M complete-result output dominates ~195ms.",
+  "1000": {
+    "groups": 1000,
+    "bitplane_ms": 35.807,
+    "duckdb_single_thread_ms": 762.6529,
+    "speedup_single_thread": 21.298989024492418,
+    "exact": true
+  },
+  "100000": {
+    "groups": 100000,
+    "bitplane_ms": 53.713,
+    "duckdb_single_thread_ms": 1450.3393,
+    "speedup_single_thread": 27.00164392232793,
+    "exact": true
+  },
+  "1000000": {
+    "groups": 1000000,
+    "bitplane_ms": 265.443,
+    "duckdb_single_thread_ms": 2996.0033,
+    "speedup_single_thread": 11.286804700067435,
+    "exact": true
+  }
+}

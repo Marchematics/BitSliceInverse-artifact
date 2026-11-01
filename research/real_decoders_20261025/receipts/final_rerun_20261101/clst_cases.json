@@ -1,0 +1,215 @@
+{
+ "protocol": {
+  "clst_reps": 100,
+  "runs": 3,
+  "duckdb_reps": 30,
+  "command": "../../work/clustered/bin/clst_tool query <clst_g<G>_stats.clst> -2147483648 <cut> <out.json> /dev/null 100",
+  "note": "frozen CLST numbers used 7 DuckDB reps; frozen CLST ours = 3 bench runs"
+ },
+ "loadavg": {
+  "before": "3.91 2.43 2.27 2/10696 3120305",
+  "after": "4.07 2.80 2.42 7/11665 3126134"
+ },
+ "cases": {
+  "G100000_p1": {
+   "G": 100000,
+   "p": "p1",
+   "cut": -720,
+   "ours": {
+    "median_ms": 3.562287,
+    "p95_ms": 3.608562,
+    "runs_ms": [
+     3.553504,
+     3.562287,
+     3.63404
+    ],
+    "reps": 100,
+    "scan_rows": 1039800,
+    "exact_rows": 99997
+   },
+   "duckdb": {
+    "median_ms": 226.72972455620766,
+    "p95_ms": 227.9571839608252,
+    "reps": 30
+   },
+   "frozen": {
+    "ours_median_ms": 3.671957,
+    "ours_p95_ms": 3.70791,
+    "duck1_median_ms": 227.91423415765166,
+    "duck1_reps": 7
+   },
+   "exact": true,
+   "rows": 99997,
+   "mix": {
+    "ours": {
+     "case": "G100000 p1 ours",
+     "frozen": 3.671957,
+     "rerun": 3.562287,
+     "unit": "ms",
+     "delta_pct": -2.9866907482849046,
+     "flag_gt5pct": false,
+     "note": ""
+    },
+    "duck1": {
+     "case": "G100000 p1 duckdb",
+     "frozen": 227.91423415765166,
+     "rerun": 226.72972455620766,
+     "unit": "ms",
+     "delta_pct": -0.5197172549673502,
+     "flag_gt5pct": false,
+     "note": ""
+    }
+   }
+  },
+  "G100000_p10": {
+   "G": 100000,
+   "p": "p10",
+   "cut": 650,
+   "ours": {
+    "median_ms": 32.087947,
+    "p95_ms": 32.25782,
+    "runs_ms": [
+     30.825217,
+     32.087947,
+     32.158638
+    ],
+    "reps": 100,
+    "scan_rows": 11909232,
+    "exact_rows": 100000
+   },
+   "duckdb": {
+    "median_ms": 328.597255051136,
+    "p95_ms": 331.36778604239225,
+    "reps": 30
+   },
+   "frozen": {
+    "ours_median_ms": 30.70638,
+    "ours_p95_ms": 30.896963,
+    "duck1_median_ms": 330.3756997920573,
+    "duck1_reps": 7
+   },
+   "exact": true,
+   "rows": 100000,
+   "mix": {
+    "ours": {
+     "case": "G100000 p10 ours",
+     "frozen": 30.70638,
+     "rerun": 32.087947,
+     "unit": "ms",
+     "delta_pct": 4.4992832108506455,
+     "flag_gt5pct": false,
+     "note": ""
+    },
+    "duck1": {
+     "case": "G100000 p10 duckdb",
+     "frozen": 330.3756997920573,
+     "rerun": 328.597255051136,
+     "unit": "ms",
+     "delta_pct": -0.5383097915617386,
+     "flag_gt5pct": false,
+     "note": ""
+    }
+   }
+  },
+  "G1000000_p1": {
+   "G": 1000000,
+   "p": "p1",
+   "cut": -720,
+   "ours": {
+    "median_ms": 14.813164,
+    "p95_ms": 15.036965,
+    "runs_ms": [
+     14.74073,
+     14.813164,
+     14.986163
+    ],
+    "reps": 100,
+    "scan_rows": 1039800,
+    "exact_rows": 646537
+   },
+   "duckdb": {
+    "median_ms": 253.2525365240872,
+    "p95_ms": 255.56391896679997,
+    "reps": 30
+   },
+   "frozen": {
+    "ours_median_ms": 15.024647,
+    "ours_p95_ms": 15.623067,
+    "duck1_median_ms": 262.03278079628944,
+    "duck1_reps": 7
+   },
+   "exact": true,
+   "rows": 646537,
+   "mix": {
+    "ours": {
+     "case": "G1000000 p1 ours",
+     "frozen": 15.024647,
+     "rerun": 14.813164,
+     "unit": "ms",
+     "delta_pct": -1.4075738351789524,
+     "flag_gt5pct": false,
+     "note": ""
+    },
+    "duck1": {
+     "case": "G1000000 p1 duckdb",
+     "frozen": 262.03278079628944,
+     "rerun": 253.2525365240872,
+     "unit": "ms",
+     "delta_pct": -3.3508190255891015,
+     "flag_gt5pct": false,
+     "note": ""
+    }
+   }
+  },
+  "G1000000_p10": {
+   "G": 1000000,
+   "p": "p10",
+   "cut": 650,
+   "ours": {
+    "median_ms": 106.72809,
+    "p95_ms": 111.05412,
+    "runs_ms": [
+     105.478975,
+     106.72809,
+     107.26056
+    ],
+    "reps": 100,
+    "scan_rows": 11909232,
+    "exact_rows": 999995
+   },
+   "duckdb": {
+    "median_ms": 485.38078903220594,
+    "p95_ms": 510.3480666875839,
+    "reps": 30
+   },
+   "frozen": {
+    "ours_median_ms": 104.643582,
+    "ours_p95_ms": 108.797148,
+    "duck1_median_ms": 477.1740101277828,
+    "duck1_reps": 7
+   },
+   "exact": true,
+   "rows": 999995,
+   "mix": {
+    "ours": {
+     "case": "G1000000 p10 ours",
+     "frozen": 104.643582,
+     "rerun": 106.72809,
+     "unit": "ms",
+     "delta_pct": 1.9920074983671714,
+     "flag_gt5pct": false,
+     "note": ""
+    },
+    "duck1": {
+     "case": "G1000000 p10 duckdb",
+     "frozen": 477.1740101277828,
+     "rerun": 485.38078903220594,
+     "unit": "ms",
+     "delta_pct": 1.7198713111440032,
+     "flag_gt5pct": false,
+     "note": ""
+    }
+   }
+  }
+ }
+}

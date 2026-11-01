@@ -1,0 +1,14 @@
+family,n_specs,n_exact_ECUBE03,n_exact_v2_superseded,n_exact_v1_superseded,witness
+boundary_values,66,66,66,55,boundary_values-0306 (range=-9223372036854775808;9223372036854775807)
+combined_predicates,32,32,32,27,combined_predicates-0245 (range=-4203;16333 where_not_in=1;4;3 having=max<=630090)
+empty_result,36,36,36,35,empty_result-0222 (range=1;1)
+encoded_build,12,12,12,12,-
+fixed_groupby,9,9,9,8,fixed_groupby-0008 (fixed)
+group_in,32,32,32,32,-
+group_not_in,21,21,21,12,group_not_in-0041 (where_not_in=3)
+having,40,40,40,40,-
+high_cardinality_grouping,16,16,16,16,-
+multi_aggregate,40,40,40,35,multi_aggregate-0364 (range=175;525 having=sum>=821066)
+nullable_group_keys,20,20,20,11,nullable_group_keys-0173 (where_not_in=5;2)
+range_one_sided,24,24,24,21,range_one_sided-0126 (hi=28)
+range_two_sided,46,46,46,45,range_two_sided-0105 (range=189;287)

@@ -1,0 +1,14 @@
+{
+  "case": "Observed",
+  "original_query": true,
+  "rows": 65536,
+  "projected_columns": [
+    3
+  ],
+  "binding": "ee275641f7c34fcb258559be100f83cf088b927c",
+  "source_csv": "../../work/bsi_e2e_20261025/data_sources/IGlocations1/IGlocations1_1.csv",
+  "source_csv_sha256": "186979a35563c6b6a7e88b21b5385e4ed70d131b852770d0c2423c2a76c2a447",
+  "original_sql_sha256": "bc48ffed6b1623483c32a8b66fe781d07fed506124358d0811b4236de55cb41c",
+  "trim_character_set": " \\tx0bfr",
+  "note": "one-column projected case for the splitpart/trim group-by query; result values are the distinct trimmed first tokens ordered by bytes"
+}

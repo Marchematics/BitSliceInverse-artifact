@@ -1,0 +1,3 @@
+BIND path=results/summary_100m/nyc100.summary size=50000464 magic=BSSUM01
+
+duckdb_query_ms=123.163 rows=2

@@ -1,0 +1,36 @@
+{
+ "checks": {
+  "100m_fixed": {
+   "same_rows": true
+  },
+  "100m_le_m7000": {
+   "same_rows": true
+  },
+  "100m_le_m720": {
+   "same_rows": true
+  },
+  "100m_le_650": {
+   "same_rows": true
+  },
+  "100m_le_99900": {
+   "same_rows": true
+  },
+  "1b_fixed": {
+   "same_rows": true
+  },
+  "1b_le_m7000": {
+   "same_rows": true
+  },
+  "1b_le_m720": {
+   "same_rows": true
+  },
+  "1b_le_650": {
+   "same_rows": true
+  },
+  "1b_le_99900": {
+   "same_rows": true
+  }
+ },
+ "all_same": true,
+ "note": "qbench (parallel path) vs src_eai_20261101/enc_cube (validated v2 single-thread path) on the same ECUBE02 file: complete grouped result must be identical"
+}

@@ -1,0 +1,51 @@
+{
+  "format": "format-pipeline-panel-v1",
+  "query": "IGlostions1/2",
+  "blocks": 30,
+  "paths": [
+    "native",
+    "fastlanes",
+    "btrblocks"
+  ],
+  "host_load1_at_start": 31.79,
+  "pinned_core": 13,
+  "stored_interval_ms": {
+    "native": {
+      "n": 30,
+      "median": 0.5226035,
+      "min": 0.36337,
+      "max": 2.324411
+    },
+    "fastlanes": {
+      "n": 30,
+      "median": 2.152055,
+      "min": 2.12663,
+      "max": 2.18864
+    },
+    "btrblocks": {
+      "n": 30,
+      "median": 1.187695,
+      "min": 1.1309,
+      "max": 1.43886
+    }
+  },
+  "contrasts": {
+    "fastlanes/native": {
+      "ratio_native_over_other": 0.2441507687618965,
+      "ci95": [
+        0.25300014435166557,
+        0.338635248583181
+      ]
+    },
+    "btrblocks/native": {
+      "ratio_native_over_other": 0.4347478094608832,
+      "ci95": [
+        0.43888795379902523,
+        0.5972192343390212
+      ]
+    }
+  },
+  "observations": 90,
+  "correctness_checks": 90,
+  "note": "format pipelines time persisted-input read/decode + aggregation + canonical output; compression/index construction is outside the timed interval; native values are its recorded phases"
+}

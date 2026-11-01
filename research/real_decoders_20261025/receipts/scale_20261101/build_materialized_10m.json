@@ -1,0 +1,153 @@
+{
+ "dataset": {
+  "rows": 100000000,
+  "groups": 10000000,
+  "group_key": "splitmix64(rowid) % 10000000",
+  "value": "real NYC fare cents (V=21084)"
+ },
+ "stats_runs": [
+  {
+   "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1712576.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale build_stats ../../research/real_decoders_20261024/results/scale_20261101/g10m_gid.i32 ../../research/real_decoders_20261024/results/scale_20261101/g10m_val.i32 ../../research/real_decoders_20261024/results/scale_20261101/g10m.mstats 1",
+   "exit": 0,
+   "core_mask": "80",
+   "threads": 1,
+   "wall_s": 2.7562,
+   "time": {
+    "wall": 2.75,
+    "rss": 1409876.0
+   },
+   "metrics": {
+    "mode": "build_stats",
+    "build_ms": 2678.243,
+    "domain_ms": 80.686,
+    "accum_ms": 2184.713,
+    "merge_ms": 139.447,
+    "write_ms": 273.397,
+    "groups": 10000000,
+    "rows": 100000000,
+    "bytes": 320000040,
+    "threads": 1,
+    "bytes_per_group": 32
+   },
+   "stats": "../../research/real_decoders_20261024/results/scale_20261101/g10m.mstats",
+   "stats_bytes": 320000040,
+   "stats_sha256": "401361edd2178fde72bb4f5b71a06f9c995ce33f7bd9af0ada49d2e16e8805db"
+  },
+  {
+   "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1712576.txt nice -n 5 taskset -c 80-83 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale build_stats ../../research/real_decoders_20261024/results/scale_20261101/g10m_gid.i32 ../../research/real_decoders_20261024/results/scale_20261101/g10m_val.i32 ../../research/real_decoders_20261024/results/scale_20261101/g10m_t4.mstats 4",
+   "exit": 0,
+   "core_mask": "80-83",
+   "threads": 4,
+   "wall_s": 1.6405,
+   "time": {
+    "wall": 1.63,
+    "rss": 2347452.0
+   },
+   "metrics": {
+    "mode": "build_stats",
+    "build_ms": 1510.178,
+    "domain_ms": 22.247,
+    "accum_ms": 1050.548,
+    "merge_ms": 164.504,
+    "write_ms": 272.879,
+    "groups": 10000000,
+    "rows": 100000000,
+    "bytes": 320000040,
+    "threads": 4,
+    "bytes_per_group": 32
+   },
+   "stats": "../../research/real_decoders_20261024/results/scale_20261101/g10m_t4.mstats",
+   "stats_bytes": 320000040,
+   "stats_sha256": "401361edd2178fde72bb4f5b71a06f9c995ce33f7bd9af0ada49d2e16e8805db"
+  },
+  {
+   "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1712576.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale build_stats ../../research/real_decoders_20261024/results/scale_20261101/g10m_gid.i32 ../../research/real_decoders_20261024/results/scale_20261101/g10m_val.i32 ../../research/real_decoders_20261024/results/scale_20261101/g10m_t8.mstats 8",
+   "exit": 0,
+   "core_mask": "80-87",
+   "threads": 8,
+   "wall_s": 2.0058,
+   "time": {
+    "wall": 2.0,
+    "rss": 3597696.0
+   },
+   "metrics": {
+    "mode": "build_stats",
+    "build_ms": 1803.639,
+    "domain_ms": 11.99,
+    "accum_ms": 1331.006,
+    "merge_ms": 192.578,
+    "write_ms": 268.065,
+    "groups": 10000000,
+    "rows": 100000000,
+    "bytes": 320000040,
+    "threads": 8,
+    "bytes_per_group": 32
+   },
+   "stats": "../../research/real_decoders_20261024/results/scale_20261101/g10m_t8.mstats",
+   "stats_bytes": 320000040,
+   "stats_sha256": "401361edd2178fde72bb4f5b71a06f9c995ce33f7bd9af0ada49d2e16e8805db"
+  },
+  {
+   "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1712576.txt nice -n 5 taskset -c 80-95 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale build_stats ../../research/real_decoders_20261024/results/scale_20261101/g10m_gid.i32 ../../research/real_decoders_20261024/results/scale_20261101/g10m_val.i32 ../../research/real_decoders_20261024/results/scale_20261101/g10m_t16.mstats 16",
+   "exit": 0,
+   "core_mask": "80-95",
+   "threads": 16,
+   "wall_s": 2.9376,
+   "time": {
+    "wall": 2.93,
+    "rss": 6097892.0
+   },
+   "metrics": {
+    "mode": "build_stats",
+    "build_ms": 2602.073,
+    "domain_ms": 7.604,
+    "accum_ms": 2129.528,
+    "merge_ms": 194.543,
+    "write_ms": 270.397,
+    "groups": 10000000,
+    "rows": 100000000,
+    "bytes": 320000040,
+    "threads": 16,
+    "bytes_per_group": 32
+   },
+   "stats": "../../research/real_decoders_20261024/results/scale_20261101/g10m_t16.mstats",
+   "stats_bytes": 320000040,
+   "stats_sha256": "401361edd2178fde72bb4f5b71a06f9c995ce33f7bd9af0ada49d2e16e8805db"
+  }
+ ],
+ "stats_deterministic": true,
+ "stats_bytes": 320000040,
+ "stats_bytes_per_group": 32,
+ "bsum_run": {
+  "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1712576.txt nice -n 5 taskset -c 80-95 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale build_bsum ../../research/real_decoders_20261024/results/scale_20261101/g10m_gid.i32 ../../research/real_decoders_20261024/results/scale_20261101/g10m_val.i32 ../../research/real_decoders_20261024/results/scale_20261101/g10m.bsum 16 1024",
+  "exit": 0,
+  "core_mask": "80-95",
+  "threads": 16,
+  "wall_s": 0.0517,
+  "time": {
+   "wall": 0.04,
+   "rss": 786836.0
+  },
+  "metrics": {
+   "mode": "build_bsum",
+   "build_ms": 17.989,
+   "domain_ms": 8.066,
+   "blocks_ms": 7.407,
+   "write_ms": 2.516,
+   "rows": 100000000,
+   "block": 1024,
+   "nblocks": 97657,
+   "groups": 10000000,
+   "bytes": 1562584,
+   "threads": 16
+  },
+  "bsum": "../../research/real_decoders_20261024/results/scale_20261101/g10m.bsum",
+  "bsum_bytes": 1562584,
+  "bsum_sha256": "bc85993d83e1cfa1bccee5feae3450f745dc28a9dc1b5e72a8dd6a970dcd31bf"
+ },
+ "note": "dense ECUBE02 at G=10M,V=21084 would need G*V*4 = 844 GB: infeasible (this is the O(G*V) boundary, see fit table); the router therefore uses materialized per-group stats for the fixed query and a scan for ranges",
+ "receipt": "build_materialized_10m",
+ "host": "localhost (AMD EPYC 9554, 2x64C, 256T, 503GB)",
+ "date": "2026-11-01T17:49:43.899570+08:00",
+ "git_branch": "research/groups-e2e-repro-20261025"
+}

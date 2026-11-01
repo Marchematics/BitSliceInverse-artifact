@@ -1,0 +1,1 @@
+{"method":"stream","setup_ms":2.24194,"query_ms":11.6561,"output_write_ms":0.791644,"rows":12296,"result_bytes":150832,"whole_process_rss_kib":6376,"full_result_serialization_charged":true,"empty_relation":false,"result_type":"VARCHAR"}

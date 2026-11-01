@@ -1,0 +1,183 @@
+{
+ "protocol": {
+  "launches_per_case": 20,
+  "driver_pin": "nice -n 5 taskset -c 96; children inherit",
+  "spawn": "direct exec of the frozen ECUBE03 binary (no per-launch nice/taskset wrapper); query mode writes the full serialized 11-row result",
+  "note": "frozen COLD receipt: baselines_20261101/cold_breakdown.json, 20 launches, pinned core 56"
+ },
+ "loadavg": {
+  "before": "4.07 2.80 2.42 6/11665 3126134",
+  "after": "4.07 2.80 2.42 5/11665 3126194"
+ },
+ "cases": {
+  "fixed_all4": {
+   "spec": [],
+   "launches": 20,
+   "wall_ms": {
+    "median": 1.323192147538066,
+    "p95": 2.400010824203491,
+    "min": 1.2980010360479355,
+    "max": 2.400010824203491
+   },
+   "in_process": {
+    "setup_ms": 0.04715,
+    "query_median_ms": 0.002413,
+    "serialize_median_ms": 0.00676,
+    "output_ms": 0.058899999999999994
+   },
+   "frozen": {
+    "wall_median_ms": 1.3223274145275354,
+    "wall_p95_ms": 1.455963123589754,
+    "wall_min_ms": 1.2948932126164436,
+    "setup_median_ms": 0.048100000000000004,
+    "query_median_us": 2.3884999999999996,
+    "serialize_median_us": 6.7845,
+    "output_median_ms": 0.055999999999999994
+   },
+   "mix": {
+    "wall": {
+     "case": "fixed_all4 cold wall",
+     "frozen": 1.3223274145275354,
+     "rerun": 1.323192147538066,
+     "unit": "ms",
+     "delta_pct": 0.0653947729609341,
+     "flag_gt5pct": false,
+     "note": ""
+    },
+    "setup": {
+     "case": "fixed_all4 setup",
+     "frozen": 0.048100000000000004,
+     "rerun": 0.04715,
+     "unit": "ms",
+     "delta_pct": -1.9750519750519884,
+     "flag_gt5pct": false,
+     "note": ""
+    },
+    "output": {
+     "case": "fixed_all4 output",
+     "frozen": 0.055999999999999994,
+     "rerun": 0.058899999999999994,
+     "unit": "ms",
+     "delta_pct": 5.178571428571429,
+     "flag_gt5pct": true,
+     "note": ""
+    }
+   },
+   "command": "../../work/tiers/bin/enc_cube3 query ../../work/tiers/build/final_nyc100_v3.ecube ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/final_cold_fixed_all4.json "
+  },
+  "le_m7000": {
+   "spec": [
+    "hi=-7000"
+   ],
+   "launches": 20,
+   "wall_ms": {
+    "median": 1.3199273962527514,
+    "p95": 1.37350894510746,
+    "min": 1.2975698336958885,
+    "max": 1.37350894510746
+   },
+   "in_process": {
+    "setup_ms": 0.0472,
+    "query_median_ms": 0.002013,
+    "serialize_median_ms": 0.0061635,
+    "output_ms": 0.05915
+   },
+   "frozen": {
+    "wall_median_ms": 1.316187670454383,
+    "wall_p95_ms": 1.6135890036821365,
+    "wall_min_ms": 1.2938817963004112,
+    "setup_median_ms": 0.0479,
+    "query_median_us": 2.063,
+    "serialize_median_us": 6.274,
+    "output_median_ms": 0.055349999999999996
+   },
+   "mix": {
+    "wall": {
+     "case": "le_m7000 cold wall",
+     "frozen": 1.316187670454383,
+     "rerun": 1.3199273962527514,
+     "unit": "ms",
+     "delta_pct": 0.28413317358286766,
+     "flag_gt5pct": false,
+     "note": ""
+    },
+    "setup": {
+     "case": "le_m7000 setup",
+     "frozen": 0.0479,
+     "rerun": 0.0472,
+     "unit": "ms",
+     "delta_pct": -1.4613778705636726,
+     "flag_gt5pct": false,
+     "note": ""
+    },
+    "output": {
+     "case": "le_m7000 output",
+     "frozen": 0.055349999999999996,
+     "rerun": 0.05915,
+     "unit": "ms",
+     "delta_pct": 6.865401987353216,
+     "flag_gt5pct": true,
+     "note": ""
+    }
+   },
+   "command": "../../work/tiers/bin/enc_cube3 query ../../work/tiers/build/final_nyc100_v3.ecube ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/final_cold_le_m7000.json hi=-7000"
+  },
+  "le_1350": {
+   "spec": [
+    "hi=1350"
+   ],
+   "launches": 20,
+   "wall_ms": {
+    "median": 1.331188715994358,
+    "p95": 1.4983881264925003,
+    "min": 1.3071042485535145,
+    "max": 1.4983881264925003
+   },
+   "in_process": {
+    "setup_ms": 0.0476,
+    "query_median_ms": 0.0028989999999999997,
+    "serialize_median_ms": 0.00678,
+    "output_ms": 0.0598
+   },
+   "frozen": {
+    "wall_median_ms": 1.326363068073988,
+    "wall_p95_ms": 1.6938340850174427,
+    "wall_min_ms": 1.3132886961102486,
+    "setup_median_ms": 0.04955,
+    "query_median_us": 2.989,
+    "serialize_median_us": 6.915,
+    "output_median_ms": 0.0557
+   },
+   "mix": {
+    "wall": {
+     "case": "le_1350 cold wall",
+     "frozen": 1.326363068073988,
+     "rerun": 1.331188715994358,
+     "unit": "ms",
+     "delta_pct": 0.3638255645475282,
+     "flag_gt5pct": false,
+     "note": ""
+    },
+    "setup": {
+     "case": "le_1350 setup",
+     "frozen": 0.04955,
+     "rerun": 0.0476,
+     "unit": "ms",
+     "delta_pct": -3.9354187689202695,
+     "flag_gt5pct": false,
+     "note": ""
+    },
+    "output": {
+     "case": "le_1350 output",
+     "frozen": 0.0557,
+     "rerun": 0.0598,
+     "unit": "ms",
+     "delta_pct": 7.360861759425492,
+     "flag_gt5pct": true,
+     "note": ""
+    }
+   },
+   "command": "../../work/tiers/bin/enc_cube3 query ../../work/tiers/build/final_nyc100_v3.ecube ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/final_cold_le_1350.json hi=1350"
+  }
+ }
+}

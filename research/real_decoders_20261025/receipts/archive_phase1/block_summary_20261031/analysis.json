@@ -1,0 +1,37 @@
+{
+  "configuration": "block summary, full-table group aggregates, no row-level filters",
+  "results": {
+    "nyc100": {
+      "rows": 100000000,
+      "summary_bytes": 50000464,
+      "build_ms": 371.272,
+      "summary_query_median_ms": 5.0355799999999995,
+      "runs": 10,
+      "duckdb_all4_ms": 429.974,
+      "hand_all4_ms": 253.176,
+      "speedup_vs_duckdb": 85.38718479301292,
+      "speedup_vs_hand": 50.277425837738654,
+      "exact": true
+    },
+    "nyc12": {
+      "rows": 12000000,
+      "summary_bytes": 6000208,
+      "build_ms": 45.9185,
+      "summary_query_median_ms": 0.8071415,
+      "runs": 10,
+      "duckdb_all4_ms": 54.19,
+      "speedup_vs_duckdb": 67.13816598452688,
+      "exact": true
+    },
+    "tpch12": {
+      "rows": 11997996,
+      "summary_bytes": 5999184,
+      "build_ms": 43.5797,
+      "summary_query_median_ms": 0.930115,
+      "runs": 10,
+      "duckdb_all4_ms": 79.228,
+      "speedup_vs_duckdb": 85.18086473178047,
+      "exact": true
+    }
+  }
+}

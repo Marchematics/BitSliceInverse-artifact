@@ -1,0 +1,500 @@
+[
+  {
+    "case": "Observed",
+    "stage": "build_verify",
+    "encoded_sha256": "4c1665f5cf05a8acfa99cbab05bce39ff85dd29347b7cd66ebf1985efbaea945"
+  },
+  {
+    "case": "Observed",
+    "method": "generic",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "33533e7246e3fc5f35396f59a5827cabb3f680234d52699dc0c6e33e6866ab46",
+    "result_bytes": 247
+  },
+  {
+    "case": "Observed",
+    "method": "group_domain",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "33533e7246e3fc5f35396f59a5827cabb3f680234d52699dc0c6e33e6866ab46",
+    "result_bytes": 247
+  },
+  {
+    "case": "Observed",
+    "method": "stream",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "33533e7246e3fc5f35396f59a5827cabb3f680234d52699dc0c6e33e6866ab46",
+    "result_bytes": 247
+  },
+  {
+    "case": "Observed",
+    "method": "stream_uniform",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "33533e7246e3fc5f35396f59a5827cabb3f680234d52699dc0c6e33e6866ab46",
+    "result_bytes": 247
+  },
+  {
+    "case": "Observed",
+    "method": "duckdb",
+    "complete_typed_result_equal_to_oracle": true,
+    "database_sha256": "a3691af88cf4991b6c16836c8eb7fb93495eceecb256e649781046e3df8fa461",
+    "result_sha256": "f3492d9cf3168f6d1b36a6caf874c06b7b4a8797a6ccf62178992f31d974f9e0",
+    "result_bytes": 279
+  },
+  {
+    "case": "Observed",
+    "method": "duckdb_proj2",
+    "complete_typed_result_equal_to_oracle": true,
+    "database_sha256": "f4e2a5b91f612d146f4f838e8288398d3eb1edb70fee603c1a4eb1ec6ae04796",
+    "result_sha256": "f3492d9cf3168f6d1b36a6caf874c06b7b4a8797a6ccf62178992f31d974f9e0",
+    "result_bytes": 279
+  },
+  {
+    "case": "Observed",
+    "method": "arrow_full",
+    "complete_typed_result_equal_to_oracle": true,
+    "arrow_file": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/Observed_arrow/full31.arrow",
+    "arrow_sha256": "aeaf324553d0309f00bf4560ab6beee099faf705958b4d7dd69caea0fee96c5b",
+    "result_sha256": "f3492d9cf3168f6d1b36a6caf874c06b7b4a8797a6ccf62178992f31d974f9e0",
+    "result_bytes": 279
+  },
+  {
+    "case": "Observed",
+    "method": "arrow_proj",
+    "complete_typed_result_equal_to_oracle": true,
+    "arrow_file": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/Observed_arrow/projected.arrow",
+    "arrow_sha256": "6602f595d61ca04f1312fe4bc74021d2f19e9816db1ddb2a6fe9a3c77b7b3ee4",
+    "result_sha256": "f3492d9cf3168f6d1b36a6caf874c06b7b4a8797a6ccf62178992f31d974f9e0",
+    "result_bytes": 279
+  },
+  {
+    "case": "Observed",
+    "method": "vortex_full",
+    "complete_typed_result_equal_to_oracle": true,
+    "vortex_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred8_v1/Observed_vortex/full",
+    "result_sha256": "f3492d9cf3168f6d1b36a6caf874c06b7b4a8797a6ccf62178992f31d974f9e0",
+    "result_bytes": 279
+  },
+  {
+    "case": "Observed",
+    "method": "vortex_proj",
+    "complete_typed_result_equal_to_oracle": true,
+    "vortex_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred8_v1/Observed_vortex/projected",
+    "result_sha256": "f3492d9cf3168f6d1b36a6caf874c06b7b4a8797a6ccf62178992f31d974f9e0",
+    "result_bytes": 279
+  },
+  {
+    "case": "Empty",
+    "stage": "build_verify",
+    "encoded_sha256": "929c02b3a3672b7b7872ba434701f193fc7b8274339175bca7cb5b1d07d35617"
+  },
+  {
+    "case": "Empty",
+    "method": "generic",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "7bbc0f650c7244f6860ffd59cec37c53b75737fa515434c9fe02a3143d50d323",
+    "result_bytes": 59
+  },
+  {
+    "case": "Empty",
+    "method": "group_domain",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "7bbc0f650c7244f6860ffd59cec37c53b75737fa515434c9fe02a3143d50d323",
+    "result_bytes": 59
+  },
+  {
+    "case": "Empty",
+    "method": "stream",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "7bbc0f650c7244f6860ffd59cec37c53b75737fa515434c9fe02a3143d50d323",
+    "result_bytes": 59
+  },
+  {
+    "case": "Empty",
+    "method": "stream_uniform",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "7bbc0f650c7244f6860ffd59cec37c53b75737fa515434c9fe02a3143d50d323",
+    "result_bytes": 59
+  },
+  {
+    "case": "Empty",
+    "method": "duckdb",
+    "complete_typed_result_equal_to_oracle": true,
+    "database_sha256": "bab09892d3641481cb881d77fd1cb22463436f92b924831285ae0007c069bba4",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "Empty",
+    "method": "duckdb_proj2",
+    "complete_typed_result_equal_to_oracle": true,
+    "database_sha256": "9ab72923e14661278c315802b46f8d67f18de9e6e9fdbd753e514319ee1ef1a3",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "Empty",
+    "method": "arrow_full",
+    "complete_typed_result_equal_to_oracle": true,
+    "arrow_file": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/Empty_arrow/full31.arrow",
+    "arrow_sha256": "5ef5bcfd1011414f421e122973bdd5b41461b2a8200c096e2088d97520ee8dc6",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "Empty",
+    "method": "arrow_proj",
+    "complete_typed_result_equal_to_oracle": true,
+    "arrow_file": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/Empty_arrow/projected.arrow",
+    "arrow_sha256": "30cd3269ca685919d539167fe8e03d9110266d90e7402f51d859ba50a087785e",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "Empty",
+    "method": "vortex_full",
+    "complete_typed_result_equal_to_oracle": true,
+    "vortex_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred8_v1/Empty_vortex/full",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "Empty",
+    "method": "vortex_proj",
+    "complete_typed_result_equal_to_oracle": true,
+    "vortex_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred8_v1/Empty_vortex/projected",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "Singleton",
+    "stage": "build_verify",
+    "encoded_sha256": "ea7b32af1eedbcf2bfdfe4b099e30c0af0de41460da588143d0f3228ac7eb673"
+  },
+  {
+    "case": "Singleton",
+    "method": "generic",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "7bbc0f650c7244f6860ffd59cec37c53b75737fa515434c9fe02a3143d50d323",
+    "result_bytes": 59
+  },
+  {
+    "case": "Singleton",
+    "method": "group_domain",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "7bbc0f650c7244f6860ffd59cec37c53b75737fa515434c9fe02a3143d50d323",
+    "result_bytes": 59
+  },
+  {
+    "case": "Singleton",
+    "method": "stream",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "7bbc0f650c7244f6860ffd59cec37c53b75737fa515434c9fe02a3143d50d323",
+    "result_bytes": 59
+  },
+  {
+    "case": "Singleton",
+    "method": "stream_uniform",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "7bbc0f650c7244f6860ffd59cec37c53b75737fa515434c9fe02a3143d50d323",
+    "result_bytes": 59
+  },
+  {
+    "case": "Singleton",
+    "method": "duckdb",
+    "complete_typed_result_equal_to_oracle": true,
+    "database_sha256": "cae5819ed0675a80ce40d41f6b5793fb384adf4b03724dd74fdf671641ec31ab",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "Singleton",
+    "method": "duckdb_proj2",
+    "complete_typed_result_equal_to_oracle": true,
+    "database_sha256": "d4aef41e16643ce18097d9243eefefe280f8d1547b62cbdb56029e7a3c254446",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "Singleton",
+    "method": "arrow_full",
+    "complete_typed_result_equal_to_oracle": true,
+    "arrow_file": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/Singleton_arrow/full31.arrow",
+    "arrow_sha256": "2fa16d132933569836fc5cc1fa51a3d4425e8790b889db5ef031bd48015ad15f",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "Singleton",
+    "method": "arrow_proj",
+    "complete_typed_result_equal_to_oracle": true,
+    "arrow_file": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/Singleton_arrow/projected.arrow",
+    "arrow_sha256": "deef30bf240eed1a3dee7ef7001bf9ea72eb40aea26f91d8459c475a6dd9b608",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "Singleton",
+    "method": "vortex_full",
+    "complete_typed_result_equal_to_oracle": true,
+    "vortex_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred8_v1/Singleton_vortex/full",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "Singleton",
+    "method": "vortex_proj",
+    "complete_typed_result_equal_to_oracle": true,
+    "vortex_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred8_v1/Singleton_vortex/projected",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "Boundary",
+    "stage": "build_verify",
+    "encoded_sha256": "d43a5a26cb5cd10de2a47bb465415d704c27ac9c94c45406dfbae74bafc439ce"
+  },
+  {
+    "case": "Boundary",
+    "method": "generic",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "6bf5fb83b948d41129d1ba639c54fa5eb02a426bb87af9b6e26dc6ed591318f2",
+    "result_bytes": 86
+  },
+  {
+    "case": "Boundary",
+    "method": "group_domain",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "6bf5fb83b948d41129d1ba639c54fa5eb02a426bb87af9b6e26dc6ed591318f2",
+    "result_bytes": 86
+  },
+  {
+    "case": "Boundary",
+    "method": "stream",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "6bf5fb83b948d41129d1ba639c54fa5eb02a426bb87af9b6e26dc6ed591318f2",
+    "result_bytes": 86
+  },
+  {
+    "case": "Boundary",
+    "method": "stream_uniform",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "6bf5fb83b948d41129d1ba639c54fa5eb02a426bb87af9b6e26dc6ed591318f2",
+    "result_bytes": 86
+  },
+  {
+    "case": "Boundary",
+    "method": "duckdb",
+    "complete_typed_result_equal_to_oracle": true,
+    "database_sha256": "2e01c34b6a984c856b56f70139f214198525ab6bb3ccc8659d413296d0bbcdbe",
+    "result_sha256": "58f9b57ecfb8258cdad3ec731d0dfa916e9f8c746ae5a79501b3b529833bfa7e",
+    "result_bytes": 95
+  },
+  {
+    "case": "Boundary",
+    "method": "duckdb_proj2",
+    "complete_typed_result_equal_to_oracle": true,
+    "database_sha256": "0c50cfe285c47d3bdfcbb0192545fb5d1de58235ded38cdde50df8053b12a883",
+    "result_sha256": "58f9b57ecfb8258cdad3ec731d0dfa916e9f8c746ae5a79501b3b529833bfa7e",
+    "result_bytes": 95
+  },
+  {
+    "case": "Boundary",
+    "method": "arrow_full",
+    "complete_typed_result_equal_to_oracle": true,
+    "arrow_file": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/Boundary_arrow/full31.arrow",
+    "arrow_sha256": "bd6b93647f2bd91fd0362a2c3037057de7d579dff6c3bd94295ea48a716928c2",
+    "result_sha256": "58f9b57ecfb8258cdad3ec731d0dfa916e9f8c746ae5a79501b3b529833bfa7e",
+    "result_bytes": 95
+  },
+  {
+    "case": "Boundary",
+    "method": "arrow_proj",
+    "complete_typed_result_equal_to_oracle": true,
+    "arrow_file": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/Boundary_arrow/projected.arrow",
+    "arrow_sha256": "e1310f5a6df50de37f578fec14079a0bce77b603ee07bb8f773b4956d8b5a12b",
+    "result_sha256": "58f9b57ecfb8258cdad3ec731d0dfa916e9f8c746ae5a79501b3b529833bfa7e",
+    "result_bytes": 95
+  },
+  {
+    "case": "Boundary",
+    "method": "vortex_full",
+    "complete_typed_result_equal_to_oracle": true,
+    "vortex_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred8_v1/Boundary_vortex/full",
+    "result_sha256": "58f9b57ecfb8258cdad3ec731d0dfa916e9f8c746ae5a79501b3b529833bfa7e",
+    "result_bytes": 95
+  },
+  {
+    "case": "Boundary",
+    "method": "vortex_proj",
+    "complete_typed_result_equal_to_oracle": true,
+    "vortex_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred8_v1/Boundary_vortex/projected",
+    "result_sha256": "58f9b57ecfb8258cdad3ec731d0dfa916e9f8c746ae5a79501b3b529833bfa7e",
+    "result_bytes": 95
+  },
+  {
+    "case": "AllExcluded",
+    "stage": "build_verify",
+    "encoded_sha256": "af7462cf44c5e29b86d36ce513f26a1d8d18c5529dbaf3b27011e240fab0fab3"
+  },
+  {
+    "case": "AllExcluded",
+    "method": "generic",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "7bbc0f650c7244f6860ffd59cec37c53b75737fa515434c9fe02a3143d50d323",
+    "result_bytes": 59
+  },
+  {
+    "case": "AllExcluded",
+    "method": "group_domain",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "7bbc0f650c7244f6860ffd59cec37c53b75737fa515434c9fe02a3143d50d323",
+    "result_bytes": 59
+  },
+  {
+    "case": "AllExcluded",
+    "method": "stream",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "7bbc0f650c7244f6860ffd59cec37c53b75737fa515434c9fe02a3143d50d323",
+    "result_bytes": 59
+  },
+  {
+    "case": "AllExcluded",
+    "method": "stream_uniform",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "7bbc0f650c7244f6860ffd59cec37c53b75737fa515434c9fe02a3143d50d323",
+    "result_bytes": 59
+  },
+  {
+    "case": "AllExcluded",
+    "method": "duckdb",
+    "complete_typed_result_equal_to_oracle": true,
+    "database_sha256": "479e7578679fb8c9dd584aac00a06cee6619bc615fb845a80f3c885fd0e772f0",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "AllExcluded",
+    "method": "duckdb_proj2",
+    "complete_typed_result_equal_to_oracle": true,
+    "database_sha256": "9c02e5c4fd831c3d54353230401e0796b38ea5e49466f4a506d7c61a172903d0",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "AllExcluded",
+    "method": "arrow_full",
+    "complete_typed_result_equal_to_oracle": true,
+    "arrow_file": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/AllExcluded_arrow/full31.arrow",
+    "arrow_sha256": "4df8df9780c1d25f68acb34bd0a7ea57d175f6427c84dbf2c59153cfd8b21d1c",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "AllExcluded",
+    "method": "arrow_proj",
+    "complete_typed_result_equal_to_oracle": true,
+    "arrow_file": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/AllExcluded_arrow/projected.arrow",
+    "arrow_sha256": "6314ea2ef720451966abf1c7d58d30280dcb4480513776e4966eed37c54f8bf6",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "AllExcluded",
+    "method": "vortex_full",
+    "complete_typed_result_equal_to_oracle": true,
+    "vortex_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred8_v1/AllExcluded_vortex/full",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "AllExcluded",
+    "method": "vortex_proj",
+    "complete_typed_result_equal_to_oracle": true,
+    "vortex_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred8_v1/AllExcluded_vortex/projected",
+    "result_sha256": "46c114eac5cca95bb37c2a8c5df3d482ed02132f6fd0529b6c7d11134ce93a1e",
+    "result_bytes": 65
+  },
+  {
+    "case": "RangeEndpoints",
+    "stage": "build_verify",
+    "encoded_sha256": "c2b9950d156ecf2bbed1022dfa473b96796fe1ec35753c740fdf9f03b61e3258"
+  },
+  {
+    "case": "RangeEndpoints",
+    "method": "generic",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "6bf5fb83b948d41129d1ba639c54fa5eb02a426bb87af9b6e26dc6ed591318f2",
+    "result_bytes": 86
+  },
+  {
+    "case": "RangeEndpoints",
+    "method": "group_domain",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "6bf5fb83b948d41129d1ba639c54fa5eb02a426bb87af9b6e26dc6ed591318f2",
+    "result_bytes": 86
+  },
+  {
+    "case": "RangeEndpoints",
+    "method": "stream",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "6bf5fb83b948d41129d1ba639c54fa5eb02a426bb87af9b6e26dc6ed591318f2",
+    "result_bytes": 86
+  },
+  {
+    "case": "RangeEndpoints",
+    "method": "stream_uniform",
+    "complete_typed_result_equal_to_oracle": true,
+    "result_sha256": "6bf5fb83b948d41129d1ba639c54fa5eb02a426bb87af9b6e26dc6ed591318f2",
+    "result_bytes": 86
+  },
+  {
+    "case": "RangeEndpoints",
+    "method": "duckdb",
+    "complete_typed_result_equal_to_oracle": true,
+    "database_sha256": "bc78a0c2bef3d62d29363cf97ca5e66d77f9d45a4853be70949afd91e14a0b4f",
+    "result_sha256": "58f9b57ecfb8258cdad3ec731d0dfa916e9f8c746ae5a79501b3b529833bfa7e",
+    "result_bytes": 95
+  },
+  {
+    "case": "RangeEndpoints",
+    "method": "duckdb_proj2",
+    "complete_typed_result_equal_to_oracle": true,
+    "database_sha256": "ca85210da638fe9f27235f592f09ece95322dcf7e929738732f3fbb805ef9437",
+    "result_sha256": "58f9b57ecfb8258cdad3ec731d0dfa916e9f8c746ae5a79501b3b529833bfa7e",
+    "result_bytes": 95
+  },
+  {
+    "case": "RangeEndpoints",
+    "method": "arrow_full",
+    "complete_typed_result_equal_to_oracle": true,
+    "arrow_file": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/RangeEndpoints_arrow/full31.arrow",
+    "arrow_sha256": "690fdca35b29dc3531a5e42950fac911f61282aa88536c515483db1dc2b44d14",
+    "result_sha256": "58f9b57ecfb8258cdad3ec731d0dfa916e9f8c746ae5a79501b3b529833bfa7e",
+    "result_bytes": 95
+  },
+  {
+    "case": "RangeEndpoints",
+    "method": "arrow_proj",
+    "complete_typed_result_equal_to_oracle": true,
+    "arrow_file": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/RangeEndpoints_arrow/projected.arrow",
+    "arrow_sha256": "d50a79e557906e195e4a58ad81201500085448e73e5a9195d19741420ef0ece5",
+    "result_sha256": "58f9b57ecfb8258cdad3ec731d0dfa916e9f8c746ae5a79501b3b529833bfa7e",
+    "result_bytes": 95
+  },
+  {
+    "case": "RangeEndpoints",
+    "method": "vortex_full",
+    "complete_typed_result_equal_to_oracle": true,
+    "vortex_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred8_v1/RangeEndpoints_vortex/full",
+    "result_sha256": "58f9b57ecfb8258cdad3ec731d0dfa916e9f8c746ae5a79501b3b529833bfa7e",
+    "result_bytes": 95
+  },
+  {
+    "case": "RangeEndpoints",
+    "method": "vortex_proj",
+    "complete_typed_result_equal_to_oracle": true,
+    "vortex_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred8_v1/RangeEndpoints_vortex/projected",
+    "result_sha256": "58f9b57ecfb8258cdad3ec731d0dfa916e9f8c746ae5a79501b3b529833bfa7e",
+    "result_bytes": 95
+  }
+]

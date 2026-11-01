@@ -1,0 +1,632 @@
+[
+ {
+  "block": 0,
+  "path": "old_native",
+  "stored_ms": 0.357843,
+  "wall_ms": 4.371209070086479,
+  "exact": true
+ },
+ {
+  "block": 0,
+  "path": "fast_native",
+  "stored_ms": 0.205034,
+  "wall_ms": 2.2556050680577755,
+  "exact": true
+ },
+ {
+  "block": 0,
+  "path": "plain_cpp",
+  "stored_ms": 0.993675,
+  "wall_ms": 3.086226060986519,
+  "exact": true
+ },
+ {
+  "block": 1,
+  "path": "fast_native",
+  "stored_ms": 0.186828,
+  "wall_ms": 3.2418090850114822,
+  "exact": true
+ },
+ {
+  "block": 1,
+  "path": "plain_cpp",
+  "stored_ms": 0.872612,
+  "wall_ms": 3.808512119576335,
+  "exact": true
+ },
+ {
+  "block": 1,
+  "path": "old_native",
+  "stored_ms": 0.29243,
+  "wall_ms": 2.486645942553878,
+  "exact": true
+ },
+ {
+  "block": 2,
+  "path": "plain_cpp",
+  "stored_ms": 0.867915,
+  "wall_ms": 2.969989087432623,
+  "exact": true
+ },
+ {
+  "block": 2,
+  "path": "old_native",
+  "stored_ms": 0.280382,
+  "wall_ms": 2.509858924895525,
+  "exact": true
+ },
+ {
+  "block": 2,
+  "path": "fast_native",
+  "stored_ms": 0.188239,
+  "wall_ms": 2.3169920314103365,
+  "exact": true
+ },
+ {
+  "block": 3,
+  "path": "old_native",
+  "stored_ms": 0.280442,
+  "wall_ms": 2.3336769081652164,
+  "exact": true
+ },
+ {
+  "block": 3,
+  "path": "fast_native",
+  "stored_ms": 0.182982,
+  "wall_ms": 2.2443991620093584,
+  "exact": true
+ },
+ {
+  "block": 3,
+  "path": "plain_cpp",
+  "stored_ms": 0.872111,
+  "wall_ms": 2.911144867539406,
+  "exact": true
+ },
+ {
+  "block": 4,
+  "path": "fast_native",
+  "stored_ms": 0.18815900000000002,
+  "wall_ms": 2.2471018601208925,
+  "exact": true
+ },
+ {
+  "block": 4,
+  "path": "plain_cpp",
+  "stored_ms": 0.859903,
+  "wall_ms": 2.947838045656681,
+  "exact": true
+ },
+ {
+  "block": 4,
+  "path": "old_native",
+  "stored_ms": 0.286051,
+  "wall_ms": 2.3893769830465317,
+  "exact": true
+ },
+ {
+  "block": 5,
+  "path": "plain_cpp",
+  "stored_ms": 0.893952,
+  "wall_ms": 4.559908993542194,
+  "exact": true
+ },
+ {
+  "block": 5,
+  "path": "old_native",
+  "stored_ms": 0.29066600000000004,
+  "wall_ms": 2.5265729054808617,
+  "exact": true
+ },
+ {
+  "block": 5,
+  "path": "fast_native",
+  "stored_ms": 0.19658199999999998,
+  "wall_ms": 2.405019011348486,
+  "exact": true
+ },
+ {
+  "block": 6,
+  "path": "old_native",
+  "stored_ms": 0.284018,
+  "wall_ms": 2.441681921482086,
+  "exact": true
+ },
+ {
+  "block": 6,
+  "path": "fast_native",
+  "stored_ms": 0.18868000000000001,
+  "wall_ms": 2.2398321889340878,
+  "exact": true
+ },
+ {
+  "block": 6,
+  "path": "plain_cpp",
+  "stored_ms": 0.865071,
+  "wall_ms": 2.969919005408883,
+  "exact": true
+ },
+ {
+  "block": 7,
+  "path": "fast_native",
+  "stored_ms": 0.190053,
+  "wall_ms": 2.3240428417921066,
+  "exact": true
+ },
+ {
+  "block": 7,
+  "path": "plain_cpp",
+  "stored_ms": 0.859483,
+  "wall_ms": 2.940216101706028,
+  "exact": true
+ },
+ {
+  "block": 7,
+  "path": "old_native",
+  "stored_ms": 0.286912,
+  "wall_ms": 2.417005831375718,
+  "exact": true
+ },
+ {
+  "block": 8,
+  "path": "plain_cpp",
+  "stored_ms": 0.859012,
+  "wall_ms": 2.964792074635625,
+  "exact": true
+ },
+ {
+  "block": 8,
+  "path": "old_native",
+  "stored_ms": 0.281934,
+  "wall_ms": 2.396045019850135,
+  "exact": true
+ },
+ {
+  "block": 8,
+  "path": "fast_native",
+  "stored_ms": 0.189241,
+  "wall_ms": 2.2886230144649744,
+  "exact": true
+ },
+ {
+  "block": 9,
+  "path": "old_native",
+  "stored_ms": 0.283757,
+  "wall_ms": 2.4631028063595295,
+  "exact": true
+ },
+ {
+  "block": 9,
+  "path": "fast_native",
+  "stored_ms": 0.182131,
+  "wall_ms": 2.2483740467578173,
+  "exact": true
+ },
+ {
+  "block": 9,
+  "path": "plain_cpp",
+  "stored_ms": 0.867885,
+  "wall_ms": 2.9203281737864017,
+  "exact": true
+ },
+ {
+  "block": 10,
+  "path": "fast_native",
+  "stored_ms": 0.19744299999999998,
+  "wall_ms": 2.3426099214702845,
+  "exact": true
+ },
+ {
+  "block": 10,
+  "path": "plain_cpp",
+  "stored_ms": 0.867424,
+  "wall_ms": 3.1633570324629545,
+  "exact": true
+ },
+ {
+  "block": 10,
+  "path": "old_native",
+  "stored_ms": 0.289145,
+  "wall_ms": 2.4106469936668873,
+  "exact": true
+ },
+ {
+  "block": 11,
+  "path": "plain_cpp",
+  "stored_ms": 0.854516,
+  "wall_ms": 2.9229719657450914,
+  "exact": true
+ },
+ {
+  "block": 11,
+  "path": "old_native",
+  "stored_ms": 0.290798,
+  "wall_ms": 2.385671017691493,
+  "exact": true
+ },
+ {
+  "block": 11,
+  "path": "fast_native",
+  "stored_ms": 0.185767,
+  "wall_ms": 2.199755050241947,
+  "exact": true
+ },
+ {
+  "block": 12,
+  "path": "old_native",
+  "stored_ms": 0.28178400000000003,
+  "wall_ms": 2.3724520578980446,
+  "exact": true
+ },
+ {
+  "block": 12,
+  "path": "fast_native",
+  "stored_ms": 0.186087,
+  "wall_ms": 2.2323119919747114,
+  "exact": true
+ },
+ {
+  "block": 12,
+  "path": "plain_cpp",
+  "stored_ms": 0.882115,
+  "wall_ms": 2.8872699476778507,
+  "exact": true
+ },
+ {
+  "block": 13,
+  "path": "fast_native",
+  "stored_ms": 0.18784900000000002,
+  "wall_ms": 3.27118206769228,
+  "exact": true
+ },
+ {
+  "block": 13,
+  "path": "plain_cpp",
+  "stored_ms": 0.853404,
+  "wall_ms": 2.920217113569379,
+  "exact": true
+ },
+ {
+  "block": 13,
+  "path": "old_native",
+  "stored_ms": 0.28762299999999996,
+  "wall_ms": 2.386451931670308,
+  "exact": true
+ },
+ {
+  "block": 14,
+  "path": "plain_cpp",
+  "stored_ms": 0.867213,
+  "wall_ms": 2.9641909059137106,
+  "exact": true
+ },
+ {
+  "block": 14,
+  "path": "old_native",
+  "stored_ms": 0.287382,
+  "wall_ms": 2.4194291327148676,
+  "exact": true
+ },
+ {
+  "block": 14,
+  "path": "fast_native",
+  "stored_ms": 0.188659,
+  "wall_ms": 2.2628449369221926,
+  "exact": true
+ },
+ {
+  "block": 15,
+  "path": "old_native",
+  "stored_ms": 0.283065,
+  "wall_ms": 2.3352589923888445,
+  "exact": true
+ },
+ {
+  "block": 15,
+  "path": "fast_native",
+  "stored_ms": 0.19973600000000002,
+  "wall_ms": 2.280520973727107,
+  "exact": true
+ },
+ {
+  "block": 15,
+  "path": "plain_cpp",
+  "stored_ms": 0.862827,
+  "wall_ms": 3.1470630783587694,
+  "exact": true
+ },
+ {
+  "block": 16,
+  "path": "fast_native",
+  "stored_ms": 0.190734,
+  "wall_ms": 2.2627748548984528,
+  "exact": true
+ },
+ {
+  "block": 16,
+  "path": "plain_cpp",
+  "stored_ms": 0.866192,
+  "wall_ms": 2.8896539006382227,
+  "exact": true
+ },
+ {
+  "block": 16,
+  "path": "old_native",
+  "stored_ms": 0.294303,
+  "wall_ms": 2.356208860874176,
+  "exact": true
+ },
+ {
+  "block": 17,
+  "path": "plain_cpp",
+  "stored_ms": 0.857109,
+  "wall_ms": 2.8906059451401234,
+  "exact": true
+ },
+ {
+  "block": 17,
+  "path": "old_native",
+  "stored_ms": 0.29179900000000003,
+  "wall_ms": 2.440419979393482,
+  "exact": true
+ },
+ {
+  "block": 17,
+  "path": "fast_native",
+  "stored_ms": 0.193658,
+  "wall_ms": 2.326957182958722,
+  "exact": true
+ },
+ {
+  "block": 18,
+  "path": "old_native",
+  "stored_ms": 0.28246499999999997,
+  "wall_ms": 2.337150974199176,
+  "exact": true
+ },
+ {
+  "block": 18,
+  "path": "fast_native",
+  "stored_ms": 0.192504,
+  "wall_ms": 2.2174501791596413,
+  "exact": true
+ },
+ {
+  "block": 18,
+  "path": "plain_cpp",
+  "stored_ms": 0.880613,
+  "wall_ms": 2.9534262139350176,
+  "exact": true
+ },
+ {
+  "block": 19,
+  "path": "fast_native",
+  "stored_ms": 0.189641,
+  "wall_ms": 2.2664000280201435,
+  "exact": true
+ },
+ {
+  "block": 19,
+  "path": "plain_cpp",
+  "stored_ms": 0.863639,
+  "wall_ms": 2.9368121176958084,
+  "exact": true
+ },
+ {
+  "block": 19,
+  "path": "old_native",
+  "stored_ms": 0.28688199999999997,
+  "wall_ms": 2.4132009129971266,
+  "exact": true
+ },
+ {
+  "block": 20,
+  "path": "plain_cpp",
+  "stored_ms": 0.86457,
+  "wall_ms": 3.0285329557955265,
+  "exact": true
+ },
+ {
+  "block": 20,
+  "path": "old_native",
+  "stored_ms": 0.297607,
+  "wall_ms": 2.356379060074687,
+  "exact": true
+ },
+ {
+  "block": 20,
+  "path": "fast_native",
+  "stored_ms": 0.186467,
+  "wall_ms": 2.25322088226676,
+  "exact": true
+ },
+ {
+  "block": 21,
+  "path": "old_native",
+  "stored_ms": 0.293129,
+  "wall_ms": 2.6195768732577562,
+  "exact": true
+ },
+ {
+  "block": 21,
+  "path": "fast_native",
+  "stored_ms": 0.19083299999999997,
+  "wall_ms": 2.2709660697728395,
+  "exact": true
+ },
+ {
+  "block": 21,
+  "path": "plain_cpp",
+  "stored_ms": 0.869297,
+  "wall_ms": 2.937752055004239,
+  "exact": true
+ },
+ {
+  "block": 22,
+  "path": "fast_native",
+  "stored_ms": 0.184706,
+  "wall_ms": 2.222397131845355,
+  "exact": true
+ },
+ {
+  "block": 22,
+  "path": "plain_cpp",
+  "stored_ms": 0.863017,
+  "wall_ms": 2.960024867206812,
+  "exact": true
+ },
+ {
+  "block": 22,
+  "path": "old_native",
+  "stored_ms": 0.282555,
+  "wall_ms": 2.5010460522025824,
+  "exact": true
+ },
+ {
+  "block": 23,
+  "path": "plain_cpp",
+  "stored_ms": 0.855367,
+  "wall_ms": 2.9393250588327646,
+  "exact": true
+ },
+ {
+  "block": 23,
+  "path": "old_native",
+  "stored_ms": 0.290196,
+  "wall_ms": 2.3769789841026068,
+  "exact": true
+ },
+ {
+  "block": 23,
+  "path": "fast_native",
+  "stored_ms": 0.199857,
+  "wall_ms": 2.296003047376871,
+  "exact": true
+ },
+ {
+  "block": 24,
+  "path": "old_native",
+  "stored_ms": 0.293902,
+  "wall_ms": 2.3545059375464916,
+  "exact": true
+ },
+ {
+  "block": 24,
+  "path": "fast_native",
+  "stored_ms": 0.189352,
+  "wall_ms": 2.2423160262405872,
+  "exact": true
+ },
+ {
+  "block": 24,
+  "path": "plain_cpp",
+  "stored_ms": 0.869277,
+  "wall_ms": 2.9383241198956966,
+  "exact": true
+ },
+ {
+  "block": 25,
+  "path": "fast_native",
+  "stored_ms": 0.205124,
+  "wall_ms": 2.3145091254264116,
+  "exact": true
+ },
+ {
+  "block": 25,
+  "path": "plain_cpp",
+  "stored_ms": 0.864029,
+  "wall_ms": 2.89996899664402,
+  "exact": true
+ },
+ {
+  "block": 25,
+  "path": "old_native",
+  "stored_ms": 0.283987,
+  "wall_ms": 2.484372816979885,
+  "exact": true
+ },
+ {
+  "block": 26,
+  "path": "plain_cpp",
+  "stored_ms": 0.869357,
+  "wall_ms": 2.944363048300147,
+  "exact": true
+ },
+ {
+  "block": 26,
+  "path": "old_native",
+  "stored_ms": 0.2929,
+  "wall_ms": 2.5920069310814142,
+  "exact": true
+ },
+ {
+  "block": 26,
+  "path": "fast_native",
+  "stored_ms": 0.185316,
+  "wall_ms": 2.2503880318254232,
+  "exact": true
+ },
+ {
+  "block": 27,
+  "path": "old_native",
+  "stored_ms": 0.287903,
+  "wall_ms": 2.34890915453434,
+  "exact": true
+ },
+ {
+  "block": 27,
+  "path": "fast_native",
+  "stored_ms": 0.18723800000000002,
+  "wall_ms": 2.1920430008322,
+  "exact": true
+ },
+ {
+  "block": 27,
+  "path": "plain_cpp",
+  "stored_ms": 0.869507,
+  "wall_ms": 2.89063504897058,
+  "exact": true
+ },
+ {
+  "block": 28,
+  "path": "fast_native",
+  "stored_ms": 0.189392,
+  "wall_ms": 2.2259019315242767,
+  "exact": true
+ },
+ {
+  "block": 28,
+  "path": "plain_cpp",
+  "stored_ms": 0.867204,
+  "wall_ms": 3.032378852367401,
+  "exact": true
+ },
+ {
+  "block": 28,
+  "path": "old_native",
+  "stored_ms": 0.288774,
+  "wall_ms": 2.308910945430398,
+  "exact": true
+ },
+ {
+  "block": 29,
+  "path": "plain_cpp",
+  "stored_ms": 0.859603,
+  "wall_ms": 2.8886119835078716,
+  "exact": true
+ },
+ {
+  "block": 29,
+  "path": "old_native",
+  "stored_ms": 0.29039600000000004,
+  "wall_ms": 2.3926710709929466,
+  "exact": true
+ },
+ {
+  "block": 29,
+  "path": "fast_native",
+  "stored_ms": 0.193227,
+  "wall_ms": 2.2181610111147165,
+  "exact": true
+ }
+]

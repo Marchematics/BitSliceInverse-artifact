@@ -1,0 +1,21 @@
+{
+  "input": "NYC 100M fare int32",
+  "index_bytes": 372874396,
+  "build_ms": 5481.0,
+  "results": {
+    "broad": {
+      "query_median_ms": 1.2702,
+      "duckdb_ms": 670.063,
+      "speedup_vs_duckdb": 527.5255865218076,
+      "exact": true,
+      "runs": 5
+    },
+    "selective": {
+      "query_median_ms": 0.4096,
+      "duckdb_ms": 0.9077,
+      "speedup_vs_duckdb": 2.2160644531249996,
+      "exact": true,
+      "runs": 5
+    }
+  }
+}

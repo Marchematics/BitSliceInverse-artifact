@@ -1,0 +1,666 @@
+{
+  "cell": "1B",
+  "date": "2026-11-01",
+  "artifacts": {
+    "clst_tool_sha256": "3d9b130c3e8cd75f15fc5b194a696e97d372f71dca9536d594cdb9a350eebfc2",
+    "clst_tool_cpp_sha256": "d4d3b696d7b6f9c67db445782b5a64a6046fe82f206936b89efee579bf2ece8b",
+    "gid_1b": {
+      "path": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/scale_20261101/nyc1b_gid.i32",
+      "bytes": 4000000000
+    },
+    "val_1b": {
+      "path": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/scale_20261101/nyc1b_val.i32",
+      "bytes": 4000000000
+    },
+    "parquet_1b": {
+      "path": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/scale_20261101/nyc1b.parquet",
+      "bytes": 1323000673
+    },
+    "tree_equivalent_bytes": 2518144200
+  },
+  "duckdb": {
+    "duckdb_version": "2.0.0",
+    "threads_requested": 1,
+    "threads_effective": 1,
+    "reps": 3,
+    "affinity": [
+      128
+    ],
+    "db": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/scale_20261101/nyc1b.parquet",
+    "parquet_view": true,
+    "results": {
+      "p0.1": {
+        "median_ms": 4964.294405654073,
+        "min_ms": 4940.395059064031,
+        "max_ms": 4999.554751440883,
+        "p95_ms": 4999.554751440883,
+        "reps": 3,
+        "engine_sql": "SELECT COUNT(*) FROM (SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND -7000 GROUP BY 1)"
+      },
+      "p1": {
+        "median_ms": 5308.499009348452,
+        "min_ms": 5304.7301564365625,
+        "max_ms": 5309.330404736102,
+        "p95_ms": 5309.330404736102,
+        "reps": 3,
+        "engine_sql": "SELECT COUNT(*) FROM (SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND -720 GROUP BY 1)"
+      },
+      "p10": {
+        "median_ms": 6644.957474898547,
+        "min_ms": 6642.926787957549,
+        "max_ms": 6678.807394113392,
+        "p95_ms": 6678.807394113392,
+        "reps": 3,
+        "engine_sql": "SELECT COUNT(*) FROM (SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND 650 GROUP BY 1)"
+      },
+      "p50": {
+        "median_ms": 10519.583133980632,
+        "min_ms": 10486.972575075924,
+        "max_ms": 10581.417561974376,
+        "p95_ms": 10581.417561974376,
+        "reps": 3,
+        "engine_sql": "SELECT COUNT(*) FROM (SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND 1350 GROUP BY 1)"
+      },
+      "p100": {
+        "median_ms": 5920.505334157497,
+        "min_ms": 5909.6792209893465,
+        "max_ms": 5961.162037216127,
+        "p95_ms": 5961.162037216127,
+        "reps": 3,
+        "engine_sql": "SELECT COUNT(*) FROM (SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups GROUP BY 1)"
+      }
+    },
+    "wall_s": 134.15905293868855,
+    "pin": "nice -n 5 taskset -c 128"
+  },
+  "build": {
+    "range": {
+      "build_ms": 11099.703,
+      "scatter_ms": 4869.623,
+      "bitpack_ms": 2927.253,
+      "write_ms": 1521.307,
+      "file_bytes": 875225512,
+      "ratio_to_tree_equivalent": 0.34756766987371096,
+      "sha256": "0b197ce586042d9e0850f2bf95bedf17b758aadb01477391dd496aa84c41eaa0",
+      "peak_rss_kb": 12914644.0
+    },
+    "stats": {
+      "build_ms": 13132.497,
+      "scatter_ms": 6820.545,
+      "bitpack_ms": 2935.567,
+      "write_ms": 1574.089,
+      "file_bytes": 875227536,
+      "ratio_to_tree_equivalent": 0.34756847364023075,
+      "sha256": "52152e403427da460f7870b4ac26cdab47628ce72dc23b97e278a788ed563c8b",
+      "peak_rss_kb": 12914740.0
+    }
+  },
+  "verify_lossless": true,
+  "cuts": {
+    "value_cuts": {
+      "p0.1": {
+        "target": 0.001,
+        "cut": -7000,
+        "rows": 1351370,
+        "actual_selectivity": 0.00135137
+      },
+      "p1": {
+        "target": 0.01,
+        "cut": -720,
+        "rows": 10398000,
+        "actual_selectivity": 0.010398
+      },
+      "p10": {
+        "target": 0.1,
+        "cut": 650,
+        "rows": 119092320,
+        "actual_selectivity": 0.11909232
+      },
+      "p50": {
+        "target": 0.5,
+        "cut": 1350,
+        "rows": 510398560,
+        "actual_selectivity": 0.51039856
+      },
+      "p100": {
+        "target": 1.0,
+        "cut": 2147483647,
+        "rows": 1000000000,
+        "actual_selectivity": 1.0
+      }
+    },
+    "V": 21084,
+    "gmin": -1,
+    "vmin": -226119,
+    "vmax": 86337212,
+    "gid_bits": 7
+  },
+  "series_1b": {
+    "p0.1": {
+      "lo": -2147483648,
+      "hi": -7000,
+      "target_selectivity": 0.001,
+      "actual_selectivity": 0.00135137,
+      "scan_rows": 1351370,
+      "rows": 101,
+      "fast_path": 0,
+      "ours_median_ms": 2.065189,
+      "ours_p95_ms": 2.125738,
+      "bench_medians_ms": [
+        2.022657,
+        2.065189,
+        2.183843
+      ],
+      "bench_p95_ms": [
+        2.097297,
+        2.125738,
+        2.22853
+      ],
+      "bench_spread": 1.0796902292380763,
+      "reps": 30,
+      "ours_aggregate_ms": 2.065009,
+      "ours_reset_ms": 0.00011,
+      "ns_per_matching_row": 1.5282187705809662,
+      "exact_vs_duckdb": true,
+      "duck1_median_ms": 4964.294405654073,
+      "duck1_min_ms": 4940.395059064031,
+      "duck1_max_ms": 4999.554751440883,
+      "duck1_reps": 3,
+      "duck16_median_ms": 353.1532739289105,
+      "x_duck1": 2403.7966528264833,
+      "x_duck16": 171.00288347890216,
+      "exact_protocol": "sorted multiset of (group, SUM, COUNT(*), MIN, MAX), gid -1 == SQL NULL",
+      "duck_complete_fetchall_ms": 4799.591567832977
+    },
+    "p1": {
+      "lo": -2147483648,
+      "hi": -720,
+      "target_selectivity": 0.01,
+      "actual_selectivity": 0.010398,
+      "scan_rows": 10398000,
+      "rows": 101,
+      "fast_path": 0,
+      "ours_median_ms": 16.485542,
+      "ours_p95_ms": 16.723192,
+      "bench_medians_ms": [
+        16.439493,
+        16.485542,
+        16.656875
+      ],
+      "bench_p95_ms": [
+        16.548483,
+        16.723192,
+        16.838733
+      ],
+      "bench_spread": 1.0132231571861736,
+      "reps": 30,
+      "ours_aggregate_ms": 16.485342,
+      "ours_reset_ms": 0.00015,
+      "ns_per_matching_row": 1.5854531640700134,
+      "exact_vs_duckdb": true,
+      "duck1_median_ms": 5308.499009348452,
+      "duck1_min_ms": 5304.7301564365625,
+      "duck1_max_ms": 5309.330404736102,
+      "duck1_reps": 3,
+      "duck16_median_ms": 372.95252084732056,
+      "x_duck1": 322.0093709596234,
+      "x_duck16": 22.623006319556893,
+      "exact_protocol": "sorted multiset of (group, SUM, COUNT(*), MIN, MAX), gid -1 == SQL NULL",
+      "duck_complete_fetchall_ms": 5241.388568654656
+    },
+    "p10": {
+      "lo": -2147483648,
+      "hi": 650,
+      "target_selectivity": 0.1,
+      "actual_selectivity": 0.11909232,
+      "scan_rows": 119092320,
+      "rows": 101,
+      "fast_path": 0,
+      "ours_median_ms": 193.004112,
+      "ours_p95_ms": 194.462396,
+      "bench_medians_ms": [
+        192.926331,
+        193.004112,
+        193.210772
+      ],
+      "bench_p95_ms": [
+        194.366335,
+        194.462396,
+        195.02767
+      ],
+      "bench_spread": 1.0014743503311634,
+      "reps": 30,
+      "ours_aggregate_ms": 193.003832,
+      "ours_reset_ms": 0.00033,
+      "ns_per_matching_row": 1.6206260151788126,
+      "exact_vs_duckdb": true,
+      "duck1_median_ms": 6644.957474898547,
+      "duck1_min_ms": 6642.926787957549,
+      "duck1_max_ms": 6678.807394113392,
+      "duck1_reps": 3,
+      "duck16_median_ms": 449.9097461812198,
+      "x_duck1": 34.42909794014413,
+      "x_duck16": 2.331088915769939,
+      "exact_protocol": "sorted multiset of (group, SUM, COUNT(*), MIN, MAX), gid -1 == SQL NULL",
+      "duck_complete_fetchall_ms": 6976.363864727318
+    },
+    "p50": {
+      "lo": -2147483648,
+      "hi": 1350,
+      "target_selectivity": 0.5,
+      "actual_selectivity": 0.51039856,
+      "scan_rows": 510398560,
+      "rows": 101,
+      "fast_path": 0,
+      "ours_median_ms": 827.73107,
+      "ours_p95_ms": 837.464264,
+      "bench_medians_ms": [
+        826.42786,
+        827.73107,
+        829.511342
+      ],
+      "bench_p95_ms": [
+        834.755337,
+        837.464264,
+        837.693748
+      ],
+      "bench_spread": 1.0037310963838997,
+      "reps": 30,
+      "ours_aggregate_ms": 827.73087,
+      "ours_reset_ms": 0.00029,
+      "ns_per_matching_row": 1.6217347282484496,
+      "exact_vs_duckdb": true,
+      "duck1_median_ms": 10519.583133980632,
+      "duck1_min_ms": 10486.972575075924,
+      "duck1_max_ms": 10581.417561974376,
+      "duck1_reps": 3,
+      "duck16_median_ms": 685.8426202088594,
+      "x_duck1": 12.708938343924473,
+      "x_duck16": 0.8285814621032159,
+      "exact_protocol": "sorted multiset of (group, SUM, COUNT(*), MIN, MAX), gid -1 == SQL NULL",
+      "duck_complete_fetchall_ms": 11069.327583070844
+    },
+    "p100": {
+      "lo": -2147483648,
+      "hi": 2147483647,
+      "target_selectivity": 1.0,
+      "actual_selectivity": 1.0,
+      "scan_rows": 1000000000,
+      "rows": 101,
+      "fast_path": 1,
+      "ours_median_ms": 0.00029,
+      "ours_p95_ms": 0.00032,
+      "bench_medians_ms": [
+        0.00029,
+        0.00029,
+        0.000291
+      ],
+      "bench_p95_ms": [
+        0.000331,
+        0.00032,
+        0.00032
+      ],
+      "bench_spread": 1.003448275862069,
+      "reps": 30,
+      "ours_aggregate_ms": 0.0002,
+      "ours_reset_ms": 9e-05,
+      "ns_per_matching_row": 2.9e-07,
+      "exact_vs_duckdb": true,
+      "duck1_median_ms": 5920.505334157497,
+      "duck1_min_ms": 5909.6792209893465,
+      "duck1_max_ms": 5961.162037216127,
+      "duck1_reps": 3,
+      "duck16_median_ms": 376.72408064827323,
+      "x_duck1": 20415535.63502585,
+      "x_duck16": 1299048.553959563,
+      "exact_protocol": "sorted multiset of (group, SUM, COUNT(*), MIN, MAX), gid -1 == SQL NULL",
+      "duck_complete_fetchall_ms": 8754.511148203164
+    }
+  },
+  "series_100m_g101": {
+    "p0.1": {
+      "lo": -2147483648,
+      "hi": -7000,
+      "target_selectivity": 0.001,
+      "actual_selectivity": 0.00135137,
+      "scan_rows": 135137,
+      "rows": 101,
+      "fast_path": 0,
+      "ours_median_ms": 0.17749,
+      "ours_p95_ms": 0.186123,
+      "bench_medians_ms": [
+        0.177219,
+        0.17749,
+        0.17776
+      ],
+      "bench_p95_ms": [
+        0.186613,
+        0.186123,
+        0.204139
+      ],
+      "bench_spread": 1.0030527200808041,
+      "reps": 30,
+      "ours_aggregate_ms": 0.1774,
+      "ours_reset_ms": 0.0001,
+      "ns_per_matching_row": 1.3134078749713254,
+      "exact_vs_duckdb": null,
+      "exact_note": "no DuckDB equivalent for the synthetic key; n-scaling comparator only"
+    },
+    "p1": {
+      "lo": -2147483648,
+      "hi": -720,
+      "target_selectivity": 0.01,
+      "actual_selectivity": 0.010398,
+      "scan_rows": 1039800,
+      "rows": 101,
+      "fast_path": 0,
+      "ours_median_ms": 1.403504,
+      "ours_p95_ms": 1.41458,
+      "bench_medians_ms": [
+        1.376205,
+        1.403504,
+        2.443265
+      ],
+      "bench_p95_ms": [
+        1.494687,
+        1.41458,
+        2.461673
+      ],
+      "bench_spread": 1.7753641354304046,
+      "reps": 30,
+      "ours_aggregate_ms": 1.403394,
+      "ours_reset_ms": 0.000101,
+      "ns_per_matching_row": 1.3497826505097135,
+      "exact_vs_duckdb": null,
+      "exact_note": "no DuckDB equivalent for the synthetic key; n-scaling comparator only"
+    },
+    "p10": {
+      "lo": -2147483648,
+      "hi": 650,
+      "target_selectivity": 0.1,
+      "actual_selectivity": 0.11909232,
+      "scan_rows": 11909232,
+      "rows": 101,
+      "fast_path": 0,
+      "ours_median_ms": 15.647487,
+      "ours_p95_ms": 16.131145,
+      "bench_medians_ms": [
+        15.545938,
+        15.647487,
+        28.000967
+      ],
+      "bench_p95_ms": [
+        15.811297,
+        16.131145,
+        28.451476
+      ],
+      "bench_spread": 1.8011757798082046,
+      "reps": 30,
+      "ours_aggregate_ms": 15.647396,
+      "ours_reset_ms": 0.00013,
+      "ns_per_matching_row": 1.3138955559854741,
+      "exact_vs_duckdb": null,
+      "exact_note": "no DuckDB equivalent for the synthetic key; n-scaling comparator only"
+    },
+    "p50": {
+      "lo": -2147483648,
+      "hi": 1350,
+      "target_selectivity": 0.5,
+      "actual_selectivity": 0.51039856,
+      "scan_rows": 51039856,
+      "rows": 101,
+      "fast_path": 0,
+      "ours_median_ms": 67.538316,
+      "ours_p95_ms": 69.370955,
+      "bench_medians_ms": [
+        66.892958,
+        67.538316,
+        67.738269
+      ],
+      "bench_p95_ms": [
+        68.997618,
+        69.370955,
+        70.055876
+      ],
+      "bench_spread": 1.0126367711232027,
+      "reps": 30,
+      "ours_aggregate_ms": 67.538096,
+      "ours_reset_ms": 0.00019,
+      "ns_per_matching_row": 1.3232466016361801,
+      "exact_vs_duckdb": null,
+      "exact_note": "no DuckDB equivalent for the synthetic key; n-scaling comparator only"
+    },
+    "p100": {
+      "lo": -2147483648,
+      "hi": 2147483647,
+      "target_selectivity": 1.0,
+      "actual_selectivity": 1.0,
+      "scan_rows": 100000000,
+      "rows": 101,
+      "fast_path": 1,
+      "ours_median_ms": 0.00029,
+      "ours_p95_ms": 0.000321,
+      "bench_medians_ms": [
+        0.00029,
+        0.00029,
+        0.00029
+      ],
+      "bench_p95_ms": [
+        0.00033,
+        0.000321,
+        0.000321
+      ],
+      "bench_spread": 1.0,
+      "reps": 30,
+      "ours_aggregate_ms": 0.000191,
+      "ours_reset_ms": 9e-05,
+      "ns_per_matching_row": 2.9e-06,
+      "exact_vs_duckdb": null,
+      "exact_note": "no DuckDB equivalent for the synthetic key; n-scaling comparator only"
+    }
+  },
+  "scale_check": {
+    "G_fixed": 101,
+    "cases": {
+      "p0.1": {
+        "rows_100m": 135137,
+        "rows_1b": 1351370,
+        "ns_per_row_100m": 1.3134078749713254,
+        "ns_per_row_1b": 1.5282187705809662,
+        "ratio_1b_over_100m": 1.1635523128063554,
+        "n_ratio": 10.0
+      },
+      "p1": {
+        "rows_100m": 1039800,
+        "rows_1b": 10398000,
+        "ns_per_row_100m": 1.3497826505097135,
+        "ns_per_row_1b": 1.5854531640700134,
+        "ratio_1b_over_100m": 1.1745988611361278,
+        "n_ratio": 10.0
+      },
+      "p10": {
+        "rows_100m": 11909232,
+        "rows_1b": 119092320,
+        "ns_per_row_100m": 1.3138955559854741,
+        "ns_per_row_1b": 1.6206260151788126,
+        "ratio_1b_over_100m": 1.2334511733417641,
+        "n_ratio": 10.0
+      },
+      "p50": {
+        "rows_100m": 51039856,
+        "rows_1b": 510398560,
+        "ns_per_row_100m": 1.3232466016361801,
+        "ns_per_row_1b": 1.6217347282484496,
+        "ratio_1b_over_100m": 1.2255725623955445,
+        "n_ratio": 10.0
+      },
+      "p100": {
+        "rows_100m": 100000000,
+        "rows_1b": 1000000000,
+        "ns_per_row_100m": 2.9e-06,
+        "ns_per_row_1b": 2.9e-07,
+        "ratio_1b_over_100m": 0.09999999999999999,
+        "n_ratio": 10.0
+      }
+    },
+    "note": "p100 is answered from the stored per-group totals (O(G)), so its ns-per-scan-row is not a scan cost and is excluded from the ratio aggregate",
+    "max_ratio": 1.2334511733417641,
+    "min_ratio": 1.1635523128063554
+  },
+  "replica_map": {
+    "cases": {
+      "p0.1": {
+        "rows": 101,
+        "replica_invariant": true,
+        "null_group": [
+          -8012260,
+          500,
+          -43251,
+          -7023
+        ]
+      },
+      "p1": {
+        "rows": 101,
+        "replica_invariant": true,
+        "null_group": [
+          -434452400,
+          349950,
+          -43251,
+          -720
+        ]
+      },
+      "p10": {
+        "rows": 101,
+        "replica_invariant": true,
+        "null_group": [
+          -2054853960,
+          12140790,
+          -43251,
+          650
+        ]
+      },
+      "p50": {
+        "rows": 101,
+        "replica_invariant": true,
+        "null_group": [
+          21112501500,
+          34024290,
+          -43251,
+          1350
+        ]
+      },
+      "p100": {
+        "rows": 101,
+        "replica_invariant": true,
+        "null_group": [
+          177951076140,
+          96062430,
+          -43251,
+          979200
+        ]
+      }
+    },
+    "note": "gid = passenger + 10*r, so for every passenger p in 0..9 the 10 groups {p+10r} must have identical SUM/COUNT/MIN/MAX, and the NULL group (-1) must be exactly 10x one replica",
+    "all_ok": true
+  },
+  "footprint": {
+    "rows": 1000000000,
+    "tree_equivalent_bytes": 2518144200,
+    "range_bytes": 875225512,
+    "range_ratio": 0.34756766987371096,
+    "stats_bytes": 875227536,
+    "stats_ratio": 0.34756847364023075,
+    "plain_columns_bytes": 8000000000,
+    "ratio_to_plain": 0.109403442,
+    "bytes_per_row": 0.875227536,
+    "bits_per_row_gid": 7,
+    "within_budget_1.5x": true,
+    "dense_cube_bytes_G101": 0,
+    "dense_cube_note": "at G=101 the dense ECUBE02 cube fits (9,087,844 B = 0.0036x tree-eq, SCALE_20261101 1.2) and is the right structure for this G; CLST01's 1B row is the scale check of the high-G design, whose cube alternative at G=100K/1M is 8.4/84.3 GB",
+    "dense_cube_bytes_G100k": 8433600000,
+    "dense_cube_bytes_G1m": 84336000000
+  },
+  "scan_1b": {
+    "ours_median_ms": 1615.36634,
+    "rows": 1000000000,
+    "reps": 3,
+    "ns_per_matching_row": 1.61536634
+  },
+  "scan_100m_g101": {
+    "ours_median_ms": 131.630974,
+    "rows": 100000000,
+    "reps": 3,
+    "ns_per_matching_row": 1.3163097400000001
+  },
+  "all_exact": true,
+  "duckdb_16t": {
+    "duckdb_version": "2.0.0",
+    "threads_requested": 16,
+    "threads_effective": 16,
+    "reps": 3,
+    "affinity": [
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143
+    ],
+    "db": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/scale_20261101/nyc1b.parquet",
+    "parquet_view": true,
+    "results": {
+      "p0.1": {
+        "median_ms": 353.1532739289105,
+        "min_ms": 352.26495703682303,
+        "max_ms": 385.06224984303117,
+        "p95_ms": 385.06224984303117,
+        "reps": 3,
+        "engine_sql": "SELECT COUNT(*) FROM (SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND -7000 GROUP BY 1)"
+      },
+      "p1": {
+        "median_ms": 372.95252084732056,
+        "min_ms": 370.11130433529615,
+        "max_ms": 374.6340819634497,
+        "p95_ms": 374.6340819634497,
+        "reps": 3,
+        "engine_sql": "SELECT COUNT(*) FROM (SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND -720 GROUP BY 1)"
+      },
+      "p10": {
+        "median_ms": 449.9097461812198,
+        "min_ms": 449.3025876581669,
+        "max_ms": 453.23195587843657,
+        "p95_ms": 453.23195587843657,
+        "reps": 3,
+        "engine_sql": "SELECT COUNT(*) FROM (SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND 650 GROUP BY 1)"
+      },
+      "p50": {
+        "median_ms": 685.8426202088594,
+        "min_ms": 685.7612137682736,
+        "max_ms": 687.9912563599646,
+        "p95_ms": 687.9912563599646,
+        "reps": 3,
+        "engine_sql": "SELECT COUNT(*) FROM (SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND 1350 GROUP BY 1)"
+      },
+      "p100": {
+        "median_ms": 376.72408064827323,
+        "min_ms": 375.0825161114335,
+        "max_ms": 378.1472761183977,
+        "p95_ms": 378.1472761183977,
+        "reps": 3,
+        "engine_sql": "SELECT COUNT(*) FROM (SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups GROUP BY 1)"
+      }
+    },
+    "wall_s": 9.380701788701117,
+    "pin": "nice -n 5 taskset -c 128-143"
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "status": "passed",
+  "host_load1_at_start": 14.64,
+  "pinned_core": 12,
+  "btrblocks_binary": "../../work/deps/btrblocks/build/tools/examples/bench_btrblocks_i32",
+  "fastlanes_binary": "../../work/deps/fastlanes/build/examples/bench_fastlanes_i32",
+  "runs": [
+    {
+      "codec": "btrblocks",
+      "column": "popest2014",
+      "run": 0,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 122676,
+        "bytes_per_value": 1.87189,
+        "encode_median_ms": 5.01914,
+        "decode_median_ms": 0.229839,
+        "encode_ns_per_value": 76.5861,
+        "decode_ns_per_value": 3.50706,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=1.87189 encode_ns=76.5861 decode_ns=3.50706 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "popest2014",
+      "run": 1,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 122676,
+        "bytes_per_value": 1.87189,
+        "encode_median_ms": 4.98152,
+        "decode_median_ms": 0.218112,
+        "encode_ns_per_value": 76.012,
+        "decode_ns_per_value": 3.32812,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=1.87189 encode_ns=76.012 decode_ns=3.32812 exact=1"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "popest2014",
+      "run": 0,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 142018,
+        "bytes_per_value": 2.16702,
+        "encode_median_ms": 3023.92,
+        "decode_median_ms": 0.456734,
+        "encode_ns_per_value": 46141.3,
+        "decode_ns_per_value": 6.96921,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":2.16702,\"decode_ns_per_value\":6.96921}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "popest2014",
+      "run": 1,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 142018,
+        "bytes_per_value": 2.16702,
+        "encode_median_ms": 3019.43,
+        "decode_median_ms": 0.46775,
+        "encode_ns_per_value": 46072.9,
+        "decode_ns_per_value": 7.1373,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":2.16702,\"decode_ns_per_value\":7.1373}"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "state_code",
+      "run": 0,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 282,
+        "bytes_per_value": 0.00430298,
+        "encode_median_ms": 0.352715,
+        "decode_median_ms": 0.112611,
+        "encode_ns_per_value": 5.382,
+        "decode_ns_per_value": 1.71831,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=0.00430298 encode_ns=5.382 decode_ns=1.71831 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "state_code",
+      "run": 1,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 282,
+        "bytes_per_value": 0.00430298,
+        "encode_median_ms": 0.354738,
+        "decode_median_ms": 0.1123,
+        "encode_ns_per_value": 5.41287,
+        "decode_ns_per_value": 1.71356,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=0.00430298 encode_ns=5.41287 decode_ns=1.71356 exact=1"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "state_code",
+      "run": 0,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 290,
+        "bytes_per_value": 0.00442505,
+        "encode_median_ms": 1.87025,
+        "decode_median_ms": 0.117188,
+        "encode_ns_per_value": 28.5377,
+        "decode_ns_per_value": 1.78815,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":0.00442505,\"decode_ns_per_value\":1.78815}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "state_code",
+      "run": 1,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 290,
+        "bytes_per_value": 0.00442505,
+        "encode_median_ms": 1.82409,
+        "decode_median_ms": 0.116547,
+        "encode_ns_per_value": 27.8334,
+        "decode_ns_per_value": 1.77837,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":0.00442505,\"decode_ns_per_value\":1.77837}"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "city_code",
+      "run": 0,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 122208,
+        "bytes_per_value": 1.86475,
+        "encode_median_ms": 5.6729,
+        "decode_median_ms": 0.322321,
+        "encode_ns_per_value": 86.5616,
+        "decode_ns_per_value": 4.91823,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=1.86475 encode_ns=86.5616 decode_ns=4.91823 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "city_code",
+      "run": 1,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 122208,
+        "bytes_per_value": 1.86475,
+        "encode_median_ms": 5.72103,
+        "decode_median_ms": 0.323843,
+        "encode_ns_per_value": 87.296,
+        "decode_ns_per_value": 4.94145,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=1.86475 encode_ns=87.296 decode_ns=4.94145 exact=1"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "city_code",
+      "run": 0,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 123504,
+        "bytes_per_value": 1.88452,
+        "encode_median_ms": 709.317,
+        "decode_median_ms": 0.183923,
+        "encode_ns_per_value": 10823.3,
+        "decode_ns_per_value": 2.80644,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":1.88452,\"decode_ns_per_value\":2.80644}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "city_code",
+      "run": 1,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 123504,
+        "bytes_per_value": 1.88452,
+        "encode_median_ms": 708.592,
+        "decode_median_ms": 0.183703,
+        "encode_ns_per_value": 10812.3,
+        "decode_ns_per_value": 2.80309,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":1.88452,\"decode_ns_per_value\":2.80309}"
+    }
+  ],
+  "native_reference": {
+    "ig2_encoded_bytes": 176740,
+    "ig2_bytes_per_value": 1.348419189453125,
+    "ig16_encoded_bytes": 137344,
+    "ig16_bytes_per_value": 2.095703125,
+    "note": "native encoded file sizes include structure metadata; codec bytes/value are codec-only and do not include a comparable container"
+  },
+  "host_load1_at_end": 14.56
+}

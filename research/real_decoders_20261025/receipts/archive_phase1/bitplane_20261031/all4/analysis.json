@@ -1,0 +1,27 @@
+{
+  "input": "NYC 100M encoded tree",
+  "representation": "BSBITS03 per-group bitplanes + exact group metadata",
+  "query": "SUM/COUNT/MIN/MAX all groups",
+  "query_median_ms": 37.577,
+  "runs": 5,
+  "exact": true,
+  "storage_bytes": 296995264,
+  "build_ms": 6684.764,
+  "duckdb_all4_ms": 429.974,
+  "hand_all4_ms": 253.176,
+  "speedup_vs_duckdb_all4": 11.442478111610827,
+  "speedup_vs_hand_all4": 6.737525614072438,
+  "duckdb_individual": {
+    "sum": 520.2477,
+    "count": 463.664,
+    "min": 532.059,
+    "max": 551.175
+  },
+  "speedup_individual": {
+    "sum": 13.844843920483275,
+    "count": 12.339037176996568,
+    "min": 14.159166511429865,
+    "max": 14.667881949064586
+  },
+  "note": "SUM via bitplane popcount; COUNT/MIN/MAX from exact per-group metadata in the same representation. No filters. All exact 10 groups."
+}

@@ -1,0 +1,116 @@
+{
+  "status": "passed",
+  "query": "hatred8",
+  "cases": 6,
+  "pyarrow_version": "25.0.1",
+  "python": "3.10.12",
+  "csv_sha256": "b2dc722d3418a5468a9c30c5753a1af1b46a87ac0bc96fb872237b1a73ce7145",
+  "ddl_sha256": "4ab421e7994ec01885a0746fa573c849aaad75779e30e707dd4ca8cf81a295c7",
+  "full_columns": 31,
+  "projected_columns": [
+    "State ",
+    "Keyword"
+  ],
+  "all_complete_results_equal_oracle": true,
+  "all_projected_values_verified": true,
+  "wall_s": 0.6403532028198242,
+  "scope": "external Arrow control files built from pinned CSV with declared DDL types; not a new measurement of the native method",
+  "records": [
+    {
+      "case": "AllExcluded",
+      "rows": 50,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/AllExcluded_arrow/full31.arrow",
+      "full_arrow_bytes": 15338,
+      "full_arrow_sha256": "4df8df9780c1d25f68acb34bd0a7ea57d175f6427c84dbf2c59153cfd8b21d1c",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/AllExcluded_arrow/projected.arrow",
+      "projected_arrow_bytes": 1394,
+      "projected_arrow_sha256": "6314ea2ef720451966abf1c7d58d30280dcb4480513776e4966eed37c54f8bf6",
+      "projected_columns": [
+        "State ",
+        "Keyword"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 100
+    },
+    {
+      "case": "Boundary",
+      "rows": 210,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/Boundary_arrow/full31.arrow",
+      "full_arrow_bytes": 46890,
+      "full_arrow_sha256": "bd6b93647f2bd91fd0362a2c3037057de7d579dff6c3bd94295ea48a716928c2",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/Boundary_arrow/projected.arrow",
+      "projected_arrow_bytes": 3666,
+      "projected_arrow_sha256": "e1310f5a6df50de37f578fec14079a0bce77b603ee07bb8f773b4956d8b5a12b",
+      "projected_columns": [
+        "State ",
+        "Keyword"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 420
+    },
+    {
+      "case": "Empty",
+      "rows": 0,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/Empty_arrow/full31.arrow",
+      "full_arrow_bytes": 3314,
+      "full_arrow_sha256": "5ef5bcfd1011414f421e122973bdd5b41461b2a8200c096e2088d97520ee8dc6",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/Empty_arrow/projected.arrow",
+      "projected_arrow_bytes": 366,
+      "projected_arrow_sha256": "30cd3269ca685919d539167fe8e03d9110266d90e7402f51d859ba50a087785e",
+      "projected_columns": [
+        "State ",
+        "Keyword"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 0
+    },
+    {
+      "case": "Observed",
+      "rows": 65536,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/Observed_arrow/full31.arrow",
+      "full_arrow_bytes": 27984138,
+      "full_arrow_sha256": "aeaf324553d0309f00bf4560ab6beee099faf705958b4d7dd69caea0fee96c5b",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/Observed_arrow/projected.arrow",
+      "projected_arrow_bytes": 1185394,
+      "projected_arrow_sha256": "6602f595d61ca04f1312fe4bc74021d2f19e9816db1ddb2a6fe9a3c77b7b3ee4",
+      "projected_columns": [
+        "State ",
+        "Keyword"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 131072
+    },
+    {
+      "case": "RangeEndpoints",
+      "rows": 271,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/RangeEndpoints_arrow/full31.arrow",
+      "full_arrow_bytes": 58818,
+      "full_arrow_sha256": "690fdca35b29dc3531a5e42950fac911f61282aa88536c515483db1dc2b44d14",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/RangeEndpoints_arrow/projected.arrow",
+      "projected_arrow_bytes": 4546,
+      "projected_arrow_sha256": "d50a79e557906e195e4a58ad81201500085448e73e5a9195d19741420ef0ece5",
+      "projected_columns": [
+        "State ",
+        "Keyword"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 542
+    },
+    {
+      "case": "Singleton",
+      "rows": 1,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/Singleton_arrow/full31.arrow",
+      "full_arrow_bytes": 5770,
+      "full_arrow_sha256": "2fa16d132933569836fc5cc1fa51a3d4425e8790b889db5ef031bd48015ad15f",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1/Singleton_arrow/projected.arrow",
+      "projected_arrow_bytes": 650,
+      "projected_arrow_sha256": "deef30bf240eed1a3dee7ef7001bf9ea72eb40aea26f91d8459c475a6dd9b608",
+      "projected_columns": [
+        "State ",
+        "Keyword"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 2
+    }
+  ]
+}

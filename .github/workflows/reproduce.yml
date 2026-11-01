@@ -1,0 +1,17 @@
+name: Reproduce
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: python scripts/verify.py
+      - run: python scripts/build.py
+      - run: python scripts/check.py --queries 100
+      - run: python scripts/prepare.py ig2
+      - run: python scripts/benchmark.py ig2 --reps 10
+      - run: python scripts/run.py router

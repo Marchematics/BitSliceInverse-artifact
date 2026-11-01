@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "case": "Observed",
+  "scale_factor": 8,
+  "rows": 524288,
+  "synthetic_row_replication": true,
+  "row_order": "shuffled",
+  "shuffle_seed": 20261026,
+  "prepared_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/ig2_scale8shuf_prep/Observed",
+  "arrow_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/ig2_scale8shuf_arrow/Observed_arrow",
+  "arrow_full_sha256": "8e77c5af28adedb61b1902612ed0c07a9024be9ce2229a8848b170464d7b98ef",
+  "arrow_full_bytes": 82101330,
+  "pyarrow": "25.0.1",
+  "scope": "synthetic 8x shuffled replication of the pinned Observed case"
+}

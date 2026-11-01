@@ -1,0 +1,18 @@
+{
+  "kind": "roaring_build",
+  "method": "croaring_bitmap",
+  "query": "hatred10",
+  "rows": 65536,
+  "groups": 51,
+  "filter_rows": 1568,
+  "max_bit": 26,
+  "storage_bytes": 9277,
+  "read_input_ms": 19.6327508892864,
+  "build_bitmaps_ms": 119.11374190822244,
+  "serialize_ms": 3.036700189113617,
+  "evaluate_write_ms": 0.7842229679226875,
+  "pyroaring": "1.2.0",
+  "arrow_input": "results/arrow_hatred10_v1/Observed_arrow/full31.arrow",
+  "arrow_input_sha256": "aeaf324553d0309f00bf4560ab6beee099faf705958b4d7dd69caea0fee96c5b",
+  "sql_sha256": "de973d94afba5a1fb9c3c472dcb547dd3fd8c1c9fe5e745aeb74294179596364"
+}

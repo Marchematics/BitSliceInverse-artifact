@@ -1,0 +1,41 @@
+{
+  "rows": 11997996,
+  "results": [
+    {
+      "op": "sum",
+      "exact": true,
+      "rows": 3,
+      "generic_median_ms": 32.6745,
+      "duckdb_warm_median_ms": 93.3964743744582,
+      "native_median_ms": NaN,
+      "speedup_vs_duckdb": 2.8583903158260475
+    },
+    {
+      "op": "count",
+      "exact": true,
+      "rows": 3,
+      "generic_median_ms": 26.5703,
+      "duckdb_warm_median_ms": 58.809860004112124,
+      "native_median_ms": NaN,
+      "speedup_vs_duckdb": 2.213368309884048
+    },
+    {
+      "op": "min",
+      "exact": true,
+      "rows": 3,
+      "generic_median_ms": 24.7887,
+      "duckdb_warm_median_ms": 97.76599500328302,
+      "native_median_ms": NaN,
+      "speedup_vs_duckdb": 3.9439742706669985
+    },
+    {
+      "op": "max",
+      "exact": true,
+      "rows": 3,
+      "generic_median_ms": 24.4715,
+      "duckdb_warm_median_ms": 95.4478797968477,
+      "native_median_ms": NaN,
+      "speedup_vs_duckdb": 3.9003689923726665
+    }
+  ]
+}

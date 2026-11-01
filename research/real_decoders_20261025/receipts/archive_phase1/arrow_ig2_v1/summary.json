@@ -1,0 +1,129 @@
+{
+  "status": "passed",
+  "query": "ig2",
+  "cases": 7,
+  "pyarrow_version": "25.0.1",
+  "python": "3.10.12",
+  "full_columns": 18,
+  "projected_columns": [
+    "State",
+    "POPESTIMATE2014"
+  ],
+  "all_complete_results_equal_oracle": true,
+  "all_projected_values_verified": true,
+  "scope": "external Arrow control files for IG/2 built from the prepared typed rows; not a new measurement of the native method",
+  "records": [
+    {
+      "case": "Observed",
+      "rows": 65536,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_ig2_v1/Observed_arrow/full18.arrow",
+      "full_arrow_bytes": 10265530,
+      "full_arrow_sha256": "83b12f17c8aef3a16e04a5e0e24debb0d3f556e35938f6dd945baf2abc258cc3",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_ig2_v1/Observed_arrow/projected.arrow",
+      "projected_arrow_bytes": 1321362,
+      "projected_arrow_sha256": "df1ceee208214ab84d50624281fb9c6a8b16ddb0a30d49262e203112b9a0c7e9",
+      "projected_columns": [
+        "State",
+        "POPESTIMATE2014"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 131072
+    },
+    {
+      "case": "MixedTail",
+      "rows": 1031,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_ig2_v1/MixedTail_arrow/full18.arrow",
+      "full_arrow_bytes": 147882,
+      "full_arrow_sha256": "1a851d0e479a6a5a6793d89a4d9ef01eae94439e1bfef03a960f5edfc78617fc",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_ig2_v1/MixedTail_arrow/projected.arrow",
+      "projected_arrow_bytes": 20530,
+      "projected_arrow_sha256": "86e3999943f00618045733789380e1cd5a532e8c795115db87c1a72cbc105213",
+      "projected_columns": [
+        "State",
+        "POPESTIMATE2014"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 2062
+    },
+    {
+      "case": "AbsentLiteral",
+      "rows": 65,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_ig2_v1/AbsentLiteral_arrow/full18.arrow",
+      "full_arrow_bytes": 12394,
+      "full_arrow_sha256": "734b98b625351a4094c9cfaba27a1dab2a593c3e2eab16caf2efde8586cf4ac6",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_ig2_v1/AbsentLiteral_arrow/projected.arrow",
+      "projected_arrow_bytes": 1922,
+      "projected_arrow_sha256": "5fd546e95a642531036015c2366f873580d193b2c974d01bbd867f6cbc756798",
+      "projected_columns": [
+        "State",
+        "POPESTIMATE2014"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 130
+    },
+    {
+      "case": "AllExcluded",
+      "rows": 63,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_ig2_v1/AllExcluded_arrow/full18.arrow",
+      "full_arrow_bytes": 12282,
+      "full_arrow_sha256": "d4a110f6ea98f3c381f6b330d1eb053add4bfad968274f9b16d6d30348ad5287",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_ig2_v1/AllExcluded_arrow/projected.arrow",
+      "projected_arrow_bytes": 2058,
+      "projected_arrow_sha256": "8f1f1d83edacbc86fc478fbd2afac5f7cc641f4c09fc5a3dad119e6b2e331ab8",
+      "projected_columns": [
+        "State",
+        "POPESTIMATE2014"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 126
+    },
+    {
+      "case": "AllNullPayload",
+      "rows": 64,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_ig2_v1/AllNullPayload_arrow/full18.arrow",
+      "full_arrow_bytes": 12258,
+      "full_arrow_sha256": "4e458fe236b6fe0705c3f47716e20c4ed77e2f6bdccdeef01f741a404720b04b",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_ig2_v1/AllNullPayload_arrow/projected.arrow",
+      "projected_arrow_bytes": 1906,
+      "projected_arrow_sha256": "699d78bc4c67de0c169101024b8bf4abcdeacc883c0e5ce9461531b8673bf5f8",
+      "projected_columns": [
+        "State",
+        "POPESTIMATE2014"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 128
+    },
+    {
+      "case": "Endpoints",
+      "rows": 1024,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_ig2_v1/Endpoints_arrow/full18.arrow",
+      "full_arrow_bytes": 149354,
+      "full_arrow_sha256": "ddf411049ae26fcc7e37d0aa14e8f80546d0d1e7550218bf9b21e554d006d8b8",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_ig2_v1/Endpoints_arrow/projected.arrow",
+      "projected_arrow_bytes": 22842,
+      "projected_arrow_sha256": "4aed23a697f67e8ebbfb803c56542ab9974745bd0178cea1aa48fdf712181520",
+      "projected_columns": [
+        "State",
+        "POPESTIMATE2014"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 2048
+    },
+    {
+      "case": "Empty",
+      "rows": 0,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_ig2_v1/Empty_arrow/full18.arrow",
+      "full_arrow_bytes": 2210,
+      "full_arrow_sha256": "752b075d98b7701a6a75281dc056f68e2d31806deb3d83af7081c24d1d77da16",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_ig2_v1/Empty_arrow/projected.arrow",
+      "projected_arrow_bytes": 414,
+      "projected_arrow_sha256": "f2c6f15c00fcc659184cd2e3de80e3485bfd18dd5735d13ddc527e64e63231ee",
+      "projected_columns": [
+        "State",
+        "POPESTIMATE2014"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 0
+    }
+  ]
+}

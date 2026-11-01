@@ -1,0 +1,1 @@
+{"status": "passed", "query": "IGlostions1/2", "mode": "warm_same_process_projected_db", "rows": 47, "execute_fetch_median_ms": 0.9447595803067088, "canonicalize_median_ms": 0.02161087468266487, "total_median_ms": 0.9663704549893737, "decoded_exact": true, "reps": 30}

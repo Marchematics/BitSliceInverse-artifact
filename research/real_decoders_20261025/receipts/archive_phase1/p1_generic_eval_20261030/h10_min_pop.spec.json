@@ -1,0 +1,1 @@
+{"encoded": "results/hatred10_prep_v1/Observed.encoded", "prep": "results/hatred10_prep_v1/Observed", "dict": "col24.dict", "group_id": 24, "aggs": [{"op": "min", "id": 26, "bias": 2147483648}]}

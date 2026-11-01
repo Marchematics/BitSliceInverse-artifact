@@ -1,0 +1,777 @@
+{
+  "status": "passed",
+  "host_load1_at_start": 45.53,
+  "pinned_core": 10,
+  "btrblocks_binary": "../../work/deps/btrblocks/build/tools/examples/bench_btrblocks_i32",
+  "fastlanes_binary": "../../work/deps/fastlanes/build/examples/bench_fastlanes_i32",
+  "runs": [
+    {
+      "codec": "btrblocks",
+      "column": "popest2014",
+      "run": 0,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 122676,
+        "bytes_per_value": 1.87189,
+        "encode_median_ms": 7.60928,
+        "decode_median_ms": 0.32847,
+        "encode_ns_per_value": 116.108,
+        "decode_ns_per_value": 5.01205,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=1.87189 encode_ns=116.108 decode_ns=5.01205 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "popest2014",
+      "run": 1,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 122676,
+        "bytes_per_value": 1.87189,
+        "encode_median_ms": 7.66277,
+        "decode_median_ms": 0.331495,
+        "encode_ns_per_value": 116.925,
+        "decode_ns_per_value": 5.05821,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=1.87189 encode_ns=116.925 decode_ns=5.05821 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "popest2014",
+      "run": 2,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 122676,
+        "bytes_per_value": 1.87189,
+        "encode_median_ms": 7.54433,
+        "decode_median_ms": 0.334098,
+        "encode_ns_per_value": 115.117,
+        "decode_ns_per_value": 5.09793,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=1.87189 encode_ns=115.117 decode_ns=5.09793 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "popest2014",
+      "run": 3,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 122676,
+        "bytes_per_value": 1.87189,
+        "encode_median_ms": 7.6038,
+        "decode_median_ms": 0.32816,
+        "encode_ns_per_value": 116.025,
+        "decode_ns_per_value": 5.00732,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=1.87189 encode_ns=116.025 decode_ns=5.00732 exact=1"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "popest2014",
+      "run": 0,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 142018,
+        "bytes_per_value": 2.16702,
+        "encode_median_ms": 3661.59,
+        "decode_median_ms": 0.519904,
+        "encode_ns_per_value": 55871.5,
+        "decode_ns_per_value": 7.93311,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":2.16702,\"decode_ns_per_value\":7.93311}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "popest2014",
+      "run": 1,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 142018,
+        "bytes_per_value": 2.16702,
+        "encode_median_ms": 3629.15,
+        "decode_median_ms": 0.525032,
+        "encode_ns_per_value": 55376.4,
+        "decode_ns_per_value": 8.01135,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":2.16702,\"decode_ns_per_value\":8.01135}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "popest2014",
+      "run": 2,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 142018,
+        "bytes_per_value": 2.16702,
+        "encode_median_ms": 3626.41,
+        "decode_median_ms": 0.448773,
+        "encode_ns_per_value": 55334.6,
+        "decode_ns_per_value": 6.84773,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":2.16702,\"decode_ns_per_value\":6.84773}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "popest2014",
+      "run": 3,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 142018,
+        "bytes_per_value": 2.16702,
+        "encode_median_ms": 3579.92,
+        "decode_median_ms": 0.505253,
+        "encode_ns_per_value": 54625.3,
+        "decode_ns_per_value": 7.70955,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":2.16702,\"decode_ns_per_value\":7.70955}"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "state_code",
+      "run": 0,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 282,
+        "bytes_per_value": 0.00430298,
+        "encode_median_ms": 0.409426,
+        "decode_median_ms": 0.131718,
+        "encode_ns_per_value": 6.24734,
+        "decode_ns_per_value": 2.00986,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=0.00430298 encode_ns=6.24734 decode_ns=2.00986 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "state_code",
+      "run": 1,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 282,
+        "bytes_per_value": 0.00430298,
+        "encode_median_ms": 0.397169,
+        "decode_median_ms": 0.126932,
+        "encode_ns_per_value": 6.06032,
+        "decode_ns_per_value": 1.93683,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=0.00430298 encode_ns=6.06032 decode_ns=1.93683 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "state_code",
+      "run": 2,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 282,
+        "bytes_per_value": 0.00430298,
+        "encode_median_ms": 0.398911,
+        "decode_median_ms": 0.126481,
+        "encode_ns_per_value": 6.0869,
+        "decode_ns_per_value": 1.92995,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=0.00430298 encode_ns=6.0869 decode_ns=1.92995 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "state_code",
+      "run": 3,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 282,
+        "bytes_per_value": 0.00430298,
+        "encode_median_ms": 0.39102,
+        "decode_median_ms": 0.127142,
+        "encode_ns_per_value": 5.96649,
+        "decode_ns_per_value": 1.94003,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=0.00430298 encode_ns=5.96649 decode_ns=1.94003 exact=1"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "state_code",
+      "run": 0,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 290,
+        "bytes_per_value": 0.00442505,
+        "encode_median_ms": 2.09824,
+        "decode_median_ms": 0.135284,
+        "encode_ns_per_value": 32.0166,
+        "decode_ns_per_value": 2.06427,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":0.00442505,\"decode_ns_per_value\":2.06427}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "state_code",
+      "run": 1,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 290,
+        "bytes_per_value": 0.00442505,
+        "encode_median_ms": 2.88268,
+        "decode_median_ms": 0.198834,
+        "encode_ns_per_value": 43.9863,
+        "decode_ns_per_value": 3.03397,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":0.00442505,\"decode_ns_per_value\":3.03397}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "state_code",
+      "run": 2,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 290,
+        "bytes_per_value": 0.00442505,
+        "encode_median_ms": 2.12303,
+        "decode_median_ms": 0.13301,
+        "encode_ns_per_value": 32.3948,
+        "decode_ns_per_value": 2.02957,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":0.00442505,\"decode_ns_per_value\":2.02957}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "state_code",
+      "run": 3,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 290,
+        "bytes_per_value": 0.00442505,
+        "encode_median_ms": 2.11306,
+        "decode_median_ms": 0.144947,
+        "encode_ns_per_value": 32.2428,
+        "decode_ns_per_value": 2.21172,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":0.00442505,\"decode_ns_per_value\":2.21172}"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "city_code",
+      "run": 0,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 122208,
+        "bytes_per_value": 1.86475,
+        "encode_median_ms": 6.42675,
+        "decode_median_ms": 0.362368,
+        "encode_ns_per_value": 98.0644,
+        "decode_ns_per_value": 5.5293,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=1.86475 encode_ns=98.0644 decode_ns=5.5293 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "city_code",
+      "run": 1,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 122208,
+        "bytes_per_value": 1.86475,
+        "encode_median_ms": 6.468,
+        "decode_median_ms": 0.370791,
+        "encode_ns_per_value": 98.6938,
+        "decode_ns_per_value": 5.65782,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=1.86475 encode_ns=98.6938 decode_ns=5.65782 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "city_code",
+      "run": 2,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 122208,
+        "bytes_per_value": 1.86475,
+        "encode_median_ms": 6.42312,
+        "decode_median_ms": 0.365323,
+        "encode_ns_per_value": 98.0091,
+        "decode_ns_per_value": 5.57439,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=1.86475 encode_ns=98.0091 decode_ns=5.57439 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "city_code",
+      "run": 3,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 122208,
+        "bytes_per_value": 1.86475,
+        "encode_median_ms": 6.40377,
+        "decode_median_ms": 0.359735,
+        "encode_ns_per_value": 97.7138,
+        "decode_ns_per_value": 5.48912,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=1.86475 encode_ns=97.7138 decode_ns=5.48912 exact=1"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "city_code",
+      "run": 0,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 123504,
+        "bytes_per_value": 1.88452,
+        "encode_median_ms": 854.286,
+        "decode_median_ms": 0.324685,
+        "encode_ns_per_value": 13035.4,
+        "decode_ns_per_value": 4.9543,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":1.88452,\"decode_ns_per_value\":4.9543}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "city_code",
+      "run": 1,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 123504,
+        "bytes_per_value": 1.88452,
+        "encode_median_ms": 865.318,
+        "decode_median_ms": 0.322612,
+        "encode_ns_per_value": 13203.7,
+        "decode_ns_per_value": 4.92267,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":1.88452,\"decode_ns_per_value\":4.92267}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "city_code",
+      "run": 2,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 123504,
+        "bytes_per_value": 1.88452,
+        "encode_median_ms": 1012.74,
+        "decode_median_ms": 0.399622,
+        "encode_ns_per_value": 15453.2,
+        "decode_ns_per_value": 6.09775,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":1.88452,\"decode_ns_per_value\":6.09775}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "city_code",
+      "run": 3,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 123504,
+        "bytes_per_value": 1.88452,
+        "encode_median_ms": 894.795,
+        "decode_median_ms": 0.357482,
+        "encode_ns_per_value": 13653.5,
+        "decode_ns_per_value": 5.45474,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":1.88452,\"decode_ns_per_value\":5.45474}"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "hatred_state",
+      "run": 0,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 15702,
+        "bytes_per_value": 0.239594,
+        "encode_median_ms": 1.02874,
+        "decode_median_ms": 0.262837,
+        "encode_ns_per_value": 15.6974,
+        "decode_ns_per_value": 4.01057,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=0.239594 encode_ns=15.6974 decode_ns=4.01057 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "hatred_state",
+      "run": 1,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 15702,
+        "bytes_per_value": 0.239594,
+        "encode_median_ms": 1.05297,
+        "decode_median_ms": 0.261955,
+        "encode_ns_per_value": 16.067,
+        "decode_ns_per_value": 3.99712,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=0.239594 encode_ns=16.067 decode_ns=3.99712 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "hatred_state",
+      "run": 2,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 15062,
+        "bytes_per_value": 0.229828,
+        "encode_median_ms": 0.854833,
+        "decode_median_ms": 0.221487,
+        "encode_ns_per_value": 13.0437,
+        "decode_ns_per_value": 3.37962,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=0.229828 encode_ns=13.0437 decode_ns=3.37962 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "hatred_state",
+      "run": 3,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 15702,
+        "bytes_per_value": 0.239594,
+        "encode_median_ms": 0.857757,
+        "decode_median_ms": 0.218813,
+        "encode_ns_per_value": 13.0883,
+        "decode_ns_per_value": 3.33882,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=0.239594 encode_ns=13.0883 decode_ns=3.33882 exact=1"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "hatred_state",
+      "run": 0,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 23593,
+        "bytes_per_value": 0.360001,
+        "encode_median_ms": 4.14867,
+        "decode_median_ms": 0.268685,
+        "encode_ns_per_value": 63.3036,
+        "decode_ns_per_value": 4.09981,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":0.360001,\"decode_ns_per_value\":4.09981}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "hatred_state",
+      "run": 1,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 23593,
+        "bytes_per_value": 0.360001,
+        "encode_median_ms": 4.16992,
+        "decode_median_ms": 0.285949,
+        "encode_ns_per_value": 63.6279,
+        "decode_ns_per_value": 4.36324,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":0.360001,\"decode_ns_per_value\":4.36324}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "hatred_state",
+      "run": 2,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 23593,
+        "bytes_per_value": 0.360001,
+        "encode_median_ms": 4.17772,
+        "decode_median_ms": 0.271629,
+        "encode_ns_per_value": 63.7469,
+        "decode_ns_per_value": 4.14473,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":0.360001,\"decode_ns_per_value\":4.14473}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "hatred_state",
+      "run": 3,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 23593,
+        "bytes_per_value": 0.360001,
+        "encode_median_ms": 3.47117,
+        "decode_median_ms": 0.202069,
+        "encode_ns_per_value": 52.9658,
+        "decode_ns_per_value": 3.08333,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":0.360001,\"decode_ns_per_value\":3.08333}"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "hatred_keyword",
+      "run": 0,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 1038,
+        "bytes_per_value": 0.0158386,
+        "encode_median_ms": 0.415445,
+        "decode_median_ms": 0.189291,
+        "encode_ns_per_value": 6.33919,
+        "decode_ns_per_value": 2.88835,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=0.0158386 encode_ns=6.33919 decode_ns=2.88835 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "hatred_keyword",
+      "run": 1,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 1038,
+        "bytes_per_value": 0.0158386,
+        "encode_median_ms": 0.254203,
+        "decode_median_ms": 0.120032,
+        "encode_ns_per_value": 3.87883,
+        "decode_ns_per_value": 1.83154,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=0.0158386 encode_ns=3.87883 decode_ns=1.83154 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "hatred_keyword",
+      "run": 2,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 1038,
+        "bytes_per_value": 0.0158386,
+        "encode_median_ms": 0.542576,
+        "decode_median_ms": 0.197803,
+        "encode_ns_per_value": 8.27905,
+        "decode_ns_per_value": 3.01823,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=0.0158386 encode_ns=8.27905 decode_ns=3.01823 exact=1"
+    },
+    {
+      "codec": "btrblocks",
+      "column": "hatred_keyword",
+      "run": 3,
+      "result": {
+        "codec": "btrblocks",
+        "values": 65536,
+        "compressed_bytes": 1038,
+        "bytes_per_value": 0.0158386,
+        "encode_median_ms": 0.256647,
+        "decode_median_ms": 0.131158,
+        "encode_ns_per_value": 3.91612,
+        "decode_ns_per_value": 2.00131,
+        "decoded_exact": true,
+        "max_cascade_depth": 3
+      },
+      "stdout": "codec=btrblocks values=65536 bytes_per_value=0.0158386 encode_ns=3.91612 decode_ns=2.00131 exact=1"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "hatred_keyword",
+      "run": 0,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 1452,
+        "bytes_per_value": 0.0221558,
+        "encode_median_ms": 2.20233,
+        "decode_median_ms": 0.15397,
+        "encode_ns_per_value": 33.6049,
+        "decode_ns_per_value": 2.3494,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":0.0221558,\"decode_ns_per_value\":2.3494}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "hatred_keyword",
+      "run": 1,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 1452,
+        "bytes_per_value": 0.0221558,
+        "encode_median_ms": 2.25756,
+        "decode_median_ms": 0.154321,
+        "encode_ns_per_value": 34.4476,
+        "decode_ns_per_value": 2.35475,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":0.0221558,\"decode_ns_per_value\":2.35475}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "hatred_keyword",
+      "run": 2,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 1452,
+        "bytes_per_value": 0.0221558,
+        "encode_median_ms": 2.26733,
+        "decode_median_ms": 0.155232,
+        "encode_ns_per_value": 34.5966,
+        "decode_ns_per_value": 2.36865,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":0.0221558,\"decode_ns_per_value\":2.36865}"
+    },
+    {
+      "codec": "fastlanes",
+      "column": "hatred_keyword",
+      "run": 3,
+      "result": {
+        "codec": "fastlanes",
+        "kind": "kernel",
+        "column": "int32",
+        "values": 65536,
+        "reps": 5,
+        "fls_bytes": 1452,
+        "bytes_per_value": 0.0221558,
+        "encode_median_ms": 2.22454,
+        "decode_median_ms": 0.158066,
+        "encode_ns_per_value": 33.9438,
+        "decode_ns_per_value": 2.4119,
+        "decoded_exact": true
+      },
+      "stdout": "{\"status\":\"done\",\"decoded_exact\":true,\"bytes_per_value\":0.0221558,\"decode_ns_per_value\":2.4119}"
+    }
+  ],
+  "native_reference": {
+    "ig2_encoded_bytes": 176740,
+    "ig2_bytes_per_value": 1.348419189453125,
+    "ig16_encoded_bytes": 137344,
+    "ig16_bytes_per_value": 2.095703125,
+    "note": "native encoded file sizes include structure metadata; codec bytes/value are codec-only and do not include a comparable container"
+  },
+  "host_load1_at_end": 170.98
+}

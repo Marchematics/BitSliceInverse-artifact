@@ -1,0 +1,5 @@
+{
+  "files": 27,
+  "bytes": 235667771,
+  "note": "every stored input read once before timed blocks; no flush"
+}

@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "observations": 480,
+  "blocks": 30,
+  "paths": [
+    "decoded_blocks",
+    "paid_cache",
+    "packed_source",
+    "duckdb"
+  ],
+  "profiles": [
+    "food1",
+    "ig1",
+    "iub1",
+    "iub4"
+  ],
+  "commands": 480,
+  "complete_typed_results_equal": 480,
+  "source_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_groups_repro_v2",
+  "analysis_sha256": "8cacfb08eee1bf3e5dd401e76766408d5c072925a3319dc152c47c2ee14718cd",
+  "same_fixed_host": true,
+  "no_page_cache_flush": true,
+  "no_warm_resident_claim": true,
+  "no_WHERE_pipeline_coverage_only": true,
+  "endpoint_a_primary": "complete_fresh_worker_wall_ms",
+  "endpoint_b_secondary": "reconstructed_stored_input_interval_ms",
+  "native_adapter_binary_sha256": "a808e3f77de8bfd69be81f09762695aacf20f4bc624e2ea1cd084c54db9065f2"
+}

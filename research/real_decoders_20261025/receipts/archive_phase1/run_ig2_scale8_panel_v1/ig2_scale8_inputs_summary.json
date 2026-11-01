@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "case": "Observed",
+  "scale_factor": 8,
+  "rows": 524288,
+  "synthetic_row_replication": true,
+  "source_prepared": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/ig2_prep_20261025/prepared/Observed",
+  "source_files_sha256": {
+    "col13.u32": "eb7d8fb1909aaa59a088d029c7df1c65132c7976a8ad0a6ae974dafbbbe7fae1",
+    "col17.u32": "c991058b627e3d3eec52aae954d880edf47ea16179789fda7e25d55ac1c63d8b",
+    "binding.txt": "9c45b66b36cad494dc2dc371d6566f926ce1305e8dbe3239e71b28355385ad98",
+    "query.sql": "0bc95092f92bbb2f8652e66c10db8bec5fba88b6d96c5ac23e9650fe27ecca8b",
+    "oracle.json": "8a8a562545921ed83ff8838e4173dd69d8759b22b2c019b5ff5c751ba6cafb12"
+  },
+  "prepared_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/ig2_scale8_prep/Observed",
+  "prepared_oracle_sha256": "0b3f40c34fcfdccc2c86d8b39c37bece249d2bc1214d20965175f86403f1fc52",
+  "arrow_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/ig2_scale8_arrow/Observed_arrow",
+  "arrow_full_sha256": "79535ffa3accb84b66d8a0c8ae540b9875084068dcbcba75177654cd5c44b06a",
+  "arrow_full_bytes": 82101330,
+  "arrow_projected_sha256": "ddad96a126da814f63465040c53f810ba984d0af9a46813efe5f515b6120d466",
+  "arrow_projected_bytes": 10566258,
+  "pyarrow": "25.0.1",
+  "scope": "synthetic scale-sensitivity input; rows are exact 16x replication of the pinned Observed case, not additional real data"
+}

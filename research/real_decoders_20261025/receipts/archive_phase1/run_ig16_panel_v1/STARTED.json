@@ -1,0 +1,18 @@
+{
+  "run": "run_ig16_panel_v1",
+  "paths": [
+    "native",
+    "duckdb",
+    "arrow"
+  ],
+  "blocks": 30,
+  "prep": "results/ig16_prep_v1/Observed",
+  "arrow_file": "results/ig16_controls/city.arrow",
+  "duckdb": "results/ig16_controls/city.duckdb",
+  "binary": "results/ig16_prep_v1/adapter_ig16",
+  "arrow_python": "../../work/arrow25venv/bin/python",
+  "begin_utc": "2026-10-24T22:43:09.118048+00:00",
+  "host_load1_at_start": 1.66,
+  "pinned_core": 11,
+  "max_load": 15.0
+}

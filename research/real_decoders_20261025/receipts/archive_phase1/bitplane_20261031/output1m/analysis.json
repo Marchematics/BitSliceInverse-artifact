@@ -1,0 +1,10 @@
+{
+  "case": "BSBITS03 1M groups complete output",
+  "before_ms": 265.443,
+  "after_ms": 203.213,
+  "runs": 5,
+  "query_ms": 69.662,
+  "output_ms": 131.595,
+  "exact": true,
+  "note": "Replaced per-row fprintf with buffered to_chars and one fwrite; output JSON 39MB; total203ms, still above 150ms target due result size/serialization."
+}

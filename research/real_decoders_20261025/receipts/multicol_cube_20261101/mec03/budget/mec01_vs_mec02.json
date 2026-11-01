@@ -1,0 +1,313 @@
+{
+ "rule": "index <= 0.5x projected source parquet (footprint <= 1.5x incl. source)",
+ "mec01": {
+  "source": "receipts/multicol_cube_20261101/mec01_archive/mec_sweep.json",
+  "w": 16384,
+  "count_width": 2,
+  "planes_bytes_per_entry": 10,
+  "limits": [
+   "uint16 cumulative counts -> run <= 65535 rows",
+   "no NULL group keys",
+   "value blocks only"
+  ]
+ },
+ "datasets": {
+  "tpch2": {
+   "source_parquet_bytes": 82949321,
+   "budget_bytes": 41474660,
+   "mec02": {
+    "bytes": 38695064,
+    "bytes_over_source": 0.4664904249186078,
+    "footprint": 1.466490424918608,
+    "mode": "value",
+    "build_ms": 532.814,
+    "mec_sc_us": {
+     "broad": 11.086,
+     "selective": 11.186,
+     "empty": 0.2,
+     "all_full": 2.414,
+     "price_top_decile": 4.136,
+     "quant_narrow": 0.891,
+     "needle": 6.75,
+     "mid_band": 11.667,
+     "disc_single": 0.261,
+     "disc_quant_tight": 0.421
+    },
+    "mec_full_us": {
+     "broad": 15.001,
+     "selective": 12.648,
+     "empty": 0.341,
+     "all_full": 7.19,
+     "price_top_decile": 8.883,
+     "quant_narrow": 5.778,
+     "needle": 8.512,
+     "mid_band": 12.878,
+     "disc_single": 1.202,
+     "disc_quant_tight": 1.082
+    }
+   },
+   "mec01": {
+    "bytes": 34498184,
+    "bytes_over_source": 0.4158947123870972,
+    "footprint": 1.415894712387097,
+    "W": 16384,
+    "BP": 635,
+    "runs": 1650,
+    "over_budget": false,
+    "rejects": [],
+    "applicable": true,
+    "build_ms": 337.047,
+    "mec_sc_us": {
+     "broad": 10.976,
+     "selective": 10.755,
+     "empty": 0.19,
+     "all_full": 2.453,
+     "price_top_decile": 4.737,
+     "quant_narrow": 0.841,
+     "needle": 9.784,
+     "mid_band": 11.126,
+     "disc_single": 0.261,
+     "disc_quant_tight": 0.381
+    },
+    "mec_full_us": {
+     "broad": 31.004,
+     "selective": 18.767,
+     "empty": 0.26,
+     "all_full": 104.73,
+     "price_top_decile": 10.565,
+     "quant_narrow": 20.84,
+     "needle": 10.235,
+     "mid_band": 27.6,
+     "disc_single": 8.122,
+     "disc_quant_tight": 0.711
+    },
+    "latency_source": "archived MEC01 receipt (same host/core/pin/protocol)",
+    "mec_sc_us_current": {
+     "broad": 11.086,
+     "selective": 11.186,
+     "empty": 0.2,
+     "all_full": 2.414,
+     "price_top_decile": 4.136,
+     "quant_narrow": 0.891,
+     "needle": 6.75,
+     "mid_band": 11.667,
+     "disc_single": 0.261,
+     "disc_quant_tight": 0.421
+    }
+   },
+   "budget_verdict": [
+    "MEC01 ok",
+    "MEC02 ok"
+   ]
+  },
+  "tpch2_null": {
+   "source_parquet_bytes": 83932922,
+   "budget_bytes": 41966461,
+   "mec02": {
+    "bytes": 33830936,
+    "bytes_over_source": 0.4030711095700922,
+    "footprint": 1.403071109570092,
+    "mode": "value",
+    "build_ms": 534.295,
+    "mec_sc_us": {
+     "broad": 12.378,
+     "selective": 16.273,
+     "empty": 0.26,
+     "all_full": 2.694,
+     "price_top_decile": 6.489,
+     "quant_narrow": 1.282,
+     "needle": 17.025,
+     "mid_band": 28.752,
+     "disc_single": 0.341,
+     "disc_quant_tight": 0.621
+    },
+    "mec_full_us": {
+     "broad": 17.234,
+     "selective": 18.787,
+     "empty": 0.451,
+     "all_full": 10.225,
+     "price_top_decile": 13.99,
+     "quant_narrow": 7.391,
+     "needle": 19.558,
+     "mid_band": 28.451,
+     "disc_single": 1.512,
+     "disc_quant_tight": 1.532
+    }
+   },
+   "mec01": {
+    "bytes": 37996184,
+    "bytes_over_source": 0.45269702394014116,
+    "footprint": 1.452697023940141,
+    "W": 16384,
+    "BP": 635,
+    "runs": 2200,
+    "over_budget": false,
+    "rejects": [
+     "NULL group keys (600,520 rows)"
+    ],
+    "applicable": false
+   },
+   "budget_verdict": [
+    "MEC01",
+    "MEC02 ok"
+   ]
+  },
+  "syn_cluster": {
+   "source_parquet_bytes": 66150228,
+   "budget_bytes": 33075114,
+   "mec02": {
+    "bytes": 29641600,
+    "bytes_over_source": 0.44809520535590597,
+    "footprint": 1.448095205355906,
+    "mode": "value",
+    "build_ms": 501.423,
+    "mec_sc_us": {
+     "all_full": 34.67,
+     "one_huge_run": 27.239,
+     "huge_run_window": 40.599,
+     "spread_rows": 6.62,
+     "mid_band": 3.155,
+     "point": 26.848,
+     "needle": 28.351,
+     "empty_cross": 0.15,
+     "empty_domain": 0.03,
+     "null_group_scan": 34.159
+    },
+    "mec_full_us": {
+     "all_full": 42.2,
+     "one_huge_run": 34.169,
+     "huge_run_window": 29.202,
+     "spread_rows": 12.178,
+     "mid_band": 4.105,
+     "point": 27.62,
+     "needle": 28.901,
+     "empty_cross": 0.191,
+     "empty_domain": 0.03,
+     "null_group_scan": 17.315
+    }
+   },
+   "mec01": {
+    "bytes": 38000192,
+    "bytes_over_source": 0.5744529255439603,
+    "footprint": 1.5744529255439603,
+    "W": 16384,
+    "BP": 635,
+    "runs": 2200,
+    "over_budget": true,
+    "rejects": [
+     "NULL group keys (3,000,000 rows)",
+     "run of 8,400,388 rows > 65,535 (uint16 cap)"
+    ],
+    "applicable": false
+   },
+   "budget_verdict": [
+    "MEC01",
+    "MEC02 ok"
+   ]
+  },
+  "nyc3": {
+   "source_parquet_bytes": 209115591,
+   "budget_bytes": 104557795,
+   "mec02": {
+    "bytes": 243173056,
+    "bytes_over_source": 1.162864303121234,
+    "footprint": 2.1628643031212342,
+    "mode": "rank",
+    "build_ms": 4079.014,
+    "mec_sc_us": {
+     "all_full": 7.01,
+     "v_mid": 36.241,
+     "v_top": 25.106,
+     "v_narrow": 24.766,
+     "cross_selective": 29.913,
+     "cross_tight": 0.281,
+     "empty_domain": 0.04,
+     "empty_cross": 0.471,
+     "point": 30.884,
+     "needle": 29.933
+    },
+    "mec_full_us": {
+     "all_full": 7.13,
+     "v_mid": 40.247,
+     "v_top": 26.798,
+     "v_narrow": 25.957,
+     "cross_selective": 31.705,
+     "cross_tight": 0.261,
+     "empty_domain": 0.03,
+     "empty_cross": 0.471,
+     "point": 32.597,
+     "needle": 31.886
+    }
+   },
+   "mec01": {
+    "bytes": 221457744,
+    "bytes_over_source": 1.0590207212239857,
+    "footprint": 2.0590207212239857,
+    "W": 16384,
+    "BP": 5284,
+    "runs": 350,
+    "over_budget": true,
+    "rejects": [
+     "run of 60,928,205 rows > 65,535 (uint16 cap)"
+    ],
+    "applicable": false
+   },
+   "budget_verdict": [
+    "MEC01",
+    "MEC02"
+   ]
+  },
+  "nyc3b": {
+   "source_parquet_bytes": 337088868,
+   "budget_bytes": 168544434,
+   "mec02": {
+    "bytes": 1711890784,
+    "bytes_over_source": 5.078455406008839,
+    "footprint": 6.078455406008839,
+    "mode": "rank",
+    "build_ms": 6740.027,
+    "mec_sc_us": {
+     "all_full": 502.438,
+     "v_mid": 1324.092,
+     "v_top": 913.456,
+     "v_narrow": 1035.36,
+     "cross_selective": 476.791,
+     "cross_tight": 0.12,
+     "empty_domain": 0.03,
+     "empty_cross": 0.2,
+     "point": 1222.978,
+     "needle": 1099.853
+    },
+    "mec_full_us": {
+     "all_full": 529.407,
+     "v_mid": 1356.539,
+     "v_top": 940.314,
+     "v_narrow": 1065.303,
+     "cross_selective": 494.867,
+     "cross_tight": 0.12,
+     "empty_domain": 0.03,
+     "empty_cross": 0.19,
+     "point": 1245.38,
+     "needle": 1129.585
+    }
+   },
+   "mec01": {
+    "bytes": 897937744,
+    "bytes_over_source": 2.6638012383132152,
+    "footprint": 3.6638012383132152,
+    "W": 16384,
+    "BP": 5284,
+    "runs": 13150,
+    "over_budget": true,
+    "rejects": [
+     "run of 3,328,051 rows > 65,535 (uint16 cap)"
+    ],
+    "applicable": false
+   },
+   "budget_verdict": [
+    "MEC01",
+    "MEC02"
+   ]
+  }
+ }
+}

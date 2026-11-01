@@ -1,0 +1,35 @@
+{
+  "cases": [
+    {
+      "case": "all_groups",
+      "path": "summary",
+      "ms": 9.27672
+    },
+    {
+      "case": "group_in12",
+      "path": "summary",
+      "ms": 7.61528
+    },
+    {
+      "case": "having",
+      "path": "summary",
+      "ms": 9.42761
+    },
+    {
+      "case": "all_groups_bitplane",
+      "path": "bitplane",
+      "ms": 38.249
+    },
+    {
+      "case": "broad_range",
+      "path": "value_index",
+      "ms": 1.0272
+    },
+    {
+      "case": "selective_range",
+      "path": "value_index",
+      "ms": 0.8941
+    }
+  ],
+  "note": "all exact against the direct summary oracle"
+}

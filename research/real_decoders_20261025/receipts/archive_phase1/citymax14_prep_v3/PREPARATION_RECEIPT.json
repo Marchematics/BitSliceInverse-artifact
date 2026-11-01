@@ -1,0 +1,165 @@
+{
+  "status": "passed",
+  "query": "CityMaxCapita_1/14",
+  "cases": 5,
+  "source_pins": {
+    "csv": {
+      "sha256": "5563b0dc849b76899048aadf84b7bcec0d84bf0959987fe711e1d7009160ba01",
+      "git_sha1": "b4fa057db9e4ee76fbc72b610cc3432b1c91d2c8",
+      "bytes": 24035167
+    },
+    "sql_sha256": "9b13c04a23f00ca53d14bd9a6f6a9dc8a751bf74ef79b4f94d9ce470530bdbc4",
+    "ddl_sha256": "386d552da509c73c32e5008dcf362d107c0da542b466d8b80aed2fa32aeb180a"
+  },
+  "original_SQL_unchanged": true,
+  "original_DDL_unchanged": true,
+  "rows_observed": 65536,
+  "columns": 31,
+  "projected_columns": [
+    2
+  ],
+  "city_dictionary_size_observed": 4537,
+  "null_city_rows_observed": 21554,
+  "features": [
+    "high-cardinality nullable dictionary group key",
+    "dense dictionary-code grouping",
+    "NULL group",
+    "SUM(1) without WHERE/HAVING"
+  ],
+  "case_records": [
+    {
+      "case": "Observed",
+      "rows": 65536,
+      "oracle_groups": 4537
+    },
+    {
+      "case": "Empty",
+      "rows": 0,
+      "oracle_groups": 0
+    },
+    {
+      "case": "Singleton",
+      "rows": 1,
+      "oracle_groups": 1
+    },
+    {
+      "case": "AllNullCity",
+      "rows": 64,
+      "oracle_groups": 1
+    },
+    {
+      "case": "MixedNull",
+      "rows": 92,
+      "oracle_groups": 4
+    }
+  ],
+  "engine_records": [
+    {
+      "case": "Observed",
+      "rows": 65536,
+      "full_database": "results/citymax14_prep_v3/Observed_duckdb/full31.duckdb",
+      "full_database_bytes": 17313792,
+      "full_database_sha256": "c02ce17ac4293fc1f57f36bde68a144de026c43b977d37251e6e59359acd75f2",
+      "full_value_columns_verified": 31,
+      "full_value_cells_verified": 2031616,
+      "projected_database": "results/citymax14_prep_v3/Observed_proj1/projected.duckdb",
+      "projected_database_bytes": 536576,
+      "projected_database_sha256": "a93db943c912f74ad7935cb14be1c14ef3649f372005efa7dff8215bfb44e009",
+      "projected_value_columns_verified": 1,
+      "complete_result_equals_oracle": true,
+      "projection_matched_result_equals_oracle": true,
+      "identity": {
+        "version": "2.0.0",
+        "native_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/_duckdb.abi3.so",
+        "native_module_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a"
+      }
+    },
+    {
+      "case": "Empty",
+      "rows": 0,
+      "full_database": "results/citymax14_prep_v3/Empty_duckdb/full31.duckdb",
+      "full_database_bytes": 274432,
+      "full_database_sha256": "9d0c7e3b80c4d6a95525d2aa3488f18b2071e81e994c0213f28bc4c33b56e493",
+      "full_value_columns_verified": 31,
+      "full_value_cells_verified": 0,
+      "projected_database": "results/citymax14_prep_v3/Empty_proj1/projected.duckdb",
+      "projected_database_bytes": 274432,
+      "projected_database_sha256": "e00cc66e9a1b2eb0e65176609328da515017ca689c5323803b7b548ed8cc36f4",
+      "projected_value_columns_verified": 1,
+      "complete_result_equals_oracle": true,
+      "projection_matched_result_equals_oracle": true,
+      "identity": {
+        "version": "2.0.0",
+        "native_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/_duckdb.abi3.so",
+        "native_module_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a"
+      }
+    },
+    {
+      "case": "Singleton",
+      "rows": 1,
+      "full_database": "results/citymax14_prep_v3/Singleton_duckdb/full31.duckdb",
+      "full_database_bytes": 536576,
+      "full_database_sha256": "e525cbba035b0c60c3e4301396a64fd36965010b67bed387a888889ce600c3aa",
+      "full_value_columns_verified": 31,
+      "full_value_cells_verified": 31,
+      "projected_database": "results/citymax14_prep_v3/Singleton_proj1/projected.duckdb",
+      "projected_database_bytes": 536576,
+      "projected_database_sha256": "a7968350d024bf48762985781f45f1dd41c579d22293e1d639acce4284f8e608",
+      "projected_value_columns_verified": 1,
+      "complete_result_equals_oracle": true,
+      "projection_matched_result_equals_oracle": true,
+      "identity": {
+        "version": "2.0.0",
+        "native_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/_duckdb.abi3.so",
+        "native_module_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a"
+      }
+    },
+    {
+      "case": "AllNullCity",
+      "rows": 64,
+      "full_database": "results/citymax14_prep_v3/AllNullCity_duckdb/full31.duckdb",
+      "full_database_bytes": 536576,
+      "full_database_sha256": "a8e57fd66b8fe73271cd526bcd1e5dbf89fbe9f7407a4ff8d42e0c75336c1b4d",
+      "full_value_columns_verified": 31,
+      "full_value_cells_verified": 1984,
+      "projected_database": "results/citymax14_prep_v3/AllNullCity_proj1/projected.duckdb",
+      "projected_database_bytes": 536576,
+      "projected_database_sha256": "b0769f481137e1ff8116fdd9497542dfd5ae05974efab9662f0ac00ce544c379",
+      "projected_value_columns_verified": 1,
+      "complete_result_equals_oracle": true,
+      "projection_matched_result_equals_oracle": true,
+      "identity": {
+        "version": "2.0.0",
+        "native_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/_duckdb.abi3.so",
+        "native_module_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a"
+      }
+    },
+    {
+      "case": "MixedNull",
+      "rows": 92,
+      "full_database": "results/citymax14_prep_v3/MixedNull_duckdb/full31.duckdb",
+      "full_database_bytes": 536576,
+      "full_database_sha256": "c3fc1267b863e07cf9ad2d5cb2a128cf490ac5e801bff85814c719e7d0ec0294",
+      "full_value_columns_verified": 31,
+      "full_value_cells_verified": 2852,
+      "projected_database": "results/citymax14_prep_v3/MixedNull_proj1/projected.duckdb",
+      "projected_database_bytes": 536576,
+      "projected_database_sha256": "9777307f0b32c6e511dcf4e7784e82dc4707544138a9383f05dbe630771a8f1a",
+      "projected_value_columns_verified": 1,
+      "complete_result_equals_oracle": true,
+      "projection_matched_result_equals_oracle": true,
+      "identity": {
+        "version": "2.0.0",
+        "native_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/_duckdb.abi3.so",
+        "native_module_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a"
+      }
+    }
+  ],
+  "duckdb_identity": {
+    "version": "2.0.0",
+    "native_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/_duckdb.abi3.so",
+    "native_module_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a"
+  },
+  "wall_s": 89.26898050308228,
+  "scope": "new expansion query; does not modify or re-run the frozen fixed eight"
+}

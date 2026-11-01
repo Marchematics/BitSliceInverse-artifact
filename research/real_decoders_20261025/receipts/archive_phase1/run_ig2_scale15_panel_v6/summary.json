@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "case": "Observed",
+  "rows": 983040,
+  "scale_factor": 15,
+  "synthetic_row_replication": true,
+  "observations": 270,
+  "commands": 281,
+  "correctness_checks": 10,
+  "preloaded_input_bytes": 235667771,
+  "paths": [
+    "generic",
+    "stream",
+    "stream_uniform",
+    "duckdb",
+    "duckdb_proj2",
+    "arrow_full",
+    "arrow_proj",
+    "vortex_full",
+    "vortex_proj"
+  ],
+  "host_load1_at_start": 15.48,
+  "host_load1_block_max": 14.56,
+  "arrow_python": "../../work/arrow25venv/bin/python",
+  "pinned_core": 85,
+  "max_load": 20.0,
+  "analysis_sha256": "a9c984156c225055da62ebc075e97b914277bc389c582ae51d096344a0136e6b",
+  "native_binary_sha256": "35af22fdc9697ce8a544e6954a6efeebc4e7ebb4ed6d1f274bdd0bdc351f1920",
+  "scope": "synthetic scale-sensitivity test: exact 15x row replication of the pinned IG/2 Observed case; not additional real data"
+}

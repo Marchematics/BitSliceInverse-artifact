@@ -1,0 +1,26 @@
+{
+  "source": "100M NYC exact block-summary entries",
+  "parquet_rows": 613245,
+  "parquet_bytes": 5276180,
+  "parquet_sha256": "a7e71fc3b92c9322669a14a61ea296d618390eb92d4bab538f89768d6ff946c6",
+  "sql": "SELECT name, SUM(sum), SUM(count), MIN(min), MAX(max) FROM blocks GROUP BY name HAVING SUM(sum)>=1e10 ORDER BY name",
+  "rows": 2,
+  "exact": true,
+  "datafusion_55_ms": [
+    82.99,
+    91.02,
+    87.27,
+    106.64,
+    96.58
+  ],
+  "datafusion_median_ms": 91.02,
+  "duckdb_2_ms": [
+    16.0,
+    15.5,
+    16.64,
+    16.61,
+    15.82
+  ],
+  "duckdb_median_ms": 16.0,
+  "note": "Both engines read the same Parquet file of exact block entries and execute the SQL aggregation; summary export to Parquet, not ordinary encoded execution. Direct C++ summary is 0.77 ms."
+}

@@ -1,0 +1,521 @@
+{
+ "tree_bytes": 251814420,
+ "build": {
+  "G100000": {
+   "range": {
+    "build_ms": 1921.253,
+    "sort_ms": 478.509,
+    "bitpack_ms": 468.614,
+    "write_ms": 407.753,
+    "file_bytes": 212718208,
+    "ratio_to_tree": 0.8447419651344827,
+    "sha256": "236876136509998d67030d68367d7b69b79f208d2d80e8e77bbbbeeae3a92430",
+    "peak_rss_kb": 1720784.0
+   },
+   "stats": {
+    "build_ms": 2316.977,
+    "sort_ms": 852.94,
+    "bitpack_ms": 476.069,
+    "write_ms": 421.219,
+    "file_bytes": 214718208,
+    "ratio_to_tree": 0.8526843220495475,
+    "sha256": "129e4507b71145ba464fc8711a6ca60989b187c46a4147b1260fd0dbca189536",
+    "peak_rss_kb": 1722776.0
+   }
+  },
+  "G1000000": {
+   "range": {
+    "build_ms": 2068.639,
+    "sort_ms": 486.447,
+    "bitpack_ms": 534.594,
+    "write_ms": 469.673,
+    "file_bytes": 250218208,
+    "ratio_to_tree": 0.9936611572919454,
+    "sha256": "4436757c0cb8633266c9170ec0417d40df9100edf6220b942b0de94f0cc8c182",
+    "peak_rss_kb": 1757344.0
+   },
+   "stats": {
+    "build_ms": 2925.046,
+    "sort_ms": 1284.13,
+    "bitpack_ms": 549.088,
+    "write_ms": 518.865,
+    "file_bytes": 270218208,
+    "ratio_to_tree": 1.0730847264425922,
+    "sha256": "1dfa040ed1ddb39ed106702ed3bd9432b73acd8fa9d91c9bdfff5ba205865d29",
+    "peak_rss_kb": 1777008.0
+   }
+  }
+ },
+ "verify_lossless": true,
+ "all_exact": true,
+ "duckdb": {
+  "1": {
+   "threads_requested": 1,
+   "threads_effective": 1,
+   "reps": 7,
+   "duckdb_version": "2.0.0"
+  },
+  "16": {
+   "threads_requested": 16,
+   "threads_effective": 16,
+   "reps": 7,
+   "duckdb_version": "2.0.0"
+  }
+ },
+ "footprint": {
+  "G100000": {
+   "tree_bytes": 251814420,
+   "clst_range_bytes": 212718208,
+   "clst_range_ratio": 0.8447419651344827,
+   "clst_with_stats_bytes": 214718208,
+   "clst_with_stats_ratio": 0.8526843220495475,
+   "dense_cube_bytes": 8433600000,
+   "dense_cube_ratio": 33.49133063944471,
+   "budget": "clustered representation <= 1.5x the encoded tree, with the frozen ECUBE03 index dropped for this class (the router builds only the chosen structure)",
+   "within_budget": true,
+   "clears_3x_at_1pct": true,
+   "clears_2x_at_10pct": true,
+   "x_duck1_at_1pct": 62.06887339847707,
+   "x_duck1_at_10pct": 10.7591874975838,
+   "x_duck16_at_10pct": 1.3421793185270294
+  },
+  "G1000000": {
+   "tree_bytes": 251814420,
+   "clst_range_bytes": 250218208,
+   "clst_range_ratio": 0.9936611572919454,
+   "clst_with_stats_bytes": 270218208,
+   "clst_with_stats_ratio": 1.0730847264425922,
+   "dense_cube_bytes": 84336000000,
+   "dense_cube_ratio": 334.91330639444715,
+   "budget": "clustered representation <= 1.5x the encoded tree, with the frozen ECUBE03 index dropped for this class (the router builds only the chosen structure)",
+   "within_budget": true,
+   "clears_3x_at_1pct": true,
+   "clears_2x_at_10pct": true,
+   "x_duck1_at_1pct": 17.440195486542176,
+   "x_duck1_at_10pct": 4.559993083262219,
+   "x_duck16_at_10pct": 0.4436773000372915
+  }
+ },
+ "series": {
+  "G100000": {
+   "p0.1": {
+    "actual_selectivity": 0.00135137,
+    "scan_rows": 135137,
+    "rows": 74157,
+    "ours_median_ms": 0.94621,
+    "ours_p95_ms": 1.05053,
+    "duck1_median_ms": 198.53849010542035,
+    "duck16_median_ms": 14.686609618365765,
+    "block_fallback_median_ms": 72.0761,
+    "x_duck1": 209.82497553970086,
+    "x_duck16": 15.521511734568188,
+    "x_block_fallback": 76.17347100537935,
+    "fast_path": 0,
+    "exact": true
+   },
+   "p1": {
+    "actual_selectivity": 0.010398,
+    "scan_rows": 1039800,
+    "rows": 99997,
+    "ours_median_ms": 3.671957,
+    "ours_p95_ms": 3.70791,
+    "duck1_median_ms": 227.91423415765166,
+    "duck16_median_ms": 18.08689720928669,
+    "block_fallback_median_ms": 181.2417,
+    "x_duck1": 62.06887339847707,
+    "x_duck16": 4.925683282589281,
+    "x_block_fallback": 49.35833943589209,
+    "fast_path": 0,
+    "exact": true
+   },
+   "p5": {
+    "actual_selectivity": 0.05802724,
+    "scan_rows": 5802724,
+    "rows": 100000,
+    "ours_median_ms": 15.491965,
+    "ours_p95_ms": 16.054553,
+    "duck1_median_ms": 275.3636506386101,
+    "duck16_median_ms": 31.583096366375685,
+    "block_fallback_median_ms": 154.6798,
+    "x_duck1": 17.77461094435794,
+    "x_duck16": 2.0386759437150603,
+    "x_block_fallback": 9.984517780668883,
+    "fast_path": 0,
+    "exact": true
+   },
+   "p10": {
+    "actual_selectivity": 0.11909232,
+    "scan_rows": 11909232,
+    "rows": 100000,
+    "ours_median_ms": 30.70638,
+    "ours_p95_ms": 30.896963,
+    "duck1_median_ms": 330.3756997920573,
+    "duck16_median_ms": 41.213468182832,
+    "block_fallback_median_ms": 212.1,
+    "x_duck1": 10.7591874975838,
+    "x_duck16": 1.3421793185270294,
+    "x_block_fallback": 6.907359317509911,
+    "fast_path": 0,
+    "exact": true
+   },
+   "p25": {
+    "actual_selectivity": 0.28430178,
+    "scan_rows": 28430178,
+    "rows": 100000,
+    "ours_median_ms": 72.061738,
+    "ours_p95_ms": 72.935624,
+    "duck1_median_ms": 482.246708124876,
+    "duck16_median_ms": 61.14301411435008,
+    "block_fallback_median_ms": 367.9118,
+    "x_duck1": 6.692132628342603,
+    "x_duck16": 0.8484809804941157,
+    "x_block_fallback": 5.105508279581045,
+    "fast_path": 0,
+    "exact": true
+   },
+   "p50": {
+    "actual_selectivity": 0.51039856,
+    "scan_rows": 51039856,
+    "rows": 100000,
+    "ours_median_ms": 130.091824,
+    "ours_p95_ms": 134.068228,
+    "duck1_median_ms": 715.4321488924325,
+    "duck16_median_ms": 73.31262435764074,
+    "block_fallback_median_ms": 478.1631,
+    "x_duck1": 5.499439756432598,
+    "x_duck16": 0.5635452106324587,
+    "x_block_fallback": 3.6755814877343864,
+    "fast_path": 0,
+    "exact": true
+   },
+   "p100": {
+    "actual_selectivity": 1.0,
+    "scan_rows": 100000000,
+    "rows": 100000,
+    "ours_median_ms": 0.265331,
+    "ours_p95_ms": 0.275686,
+    "duck1_median_ms": 964.8324232548475,
+    "duck16_median_ms": 90.33533185720444,
+    "block_fallback_median_ms": 386.3493,
+    "x_duck1": 3636.3350805403347,
+    "x_duck16": 340.4627874511627,
+    "x_block_fallback": 1456.1031315602024,
+    "fast_path": 1,
+    "exact": true
+   }
+  },
+  "G1000000": {
+   "p0.1": {
+    "actual_selectivity": 0.00135137,
+    "scan_rows": 135137,
+    "rows": 126472,
+    "ours_median_ms": 0.896358,
+    "ours_p95_ms": 1.00224,
+    "duck1_median_ms": 205.29888989403844,
+    "duck16_median_ms": 15.020207967609167,
+    "block_fallback_median_ms": 80.9012,
+    "x_duck1": 229.03671289154383,
+    "x_duck16": 16.75692967275259,
+    "x_block_fallback": 90.25545596737018,
+    "fast_path": 0,
+    "exact": true
+   },
+   "p1": {
+    "actual_selectivity": 0.010398,
+    "scan_rows": 1039800,
+    "rows": 646537,
+    "ours_median_ms": 15.024647,
+    "ours_p95_ms": 15.623067,
+    "duck1_median_ms": 262.03278079628944,
+    "duck16_median_ms": 19.560845103114843,
+    "block_fallback_median_ms": 233.9558,
+    "x_duck1": 17.440195486542176,
+    "x_duck16": 1.301917116795812,
+    "x_block_fallback": 15.571467336304142,
+    "fast_path": 0,
+    "exact": true
+   },
+   "p5": {
+    "actual_selectivity": 0.05802724,
+    "scan_rows": 5802724,
+    "rows": 996960,
+    "ours_median_ms": 60.271953,
+    "ours_p95_ms": 61.018365,
+    "duck1_median_ms": 371.6071378439665,
+    "duck16_median_ms": 33.495723735541105,
+    "block_fallback_median_ms": 345.1853,
+    "x_duck1": 6.165506829419755,
+    "x_duck16": 0.5557431287408441,
+    "x_block_fallback": 5.727129831017753,
+    "fast_path": 0,
+    "exact": true
+   },
+   "p10": {
+    "actual_selectivity": 0.11909232,
+    "scan_rows": 11909232,
+    "rows": 999995,
+    "ours_median_ms": 104.643582,
+    "ours_p95_ms": 108.797148,
+    "duck1_median_ms": 477.1740101277828,
+    "duck16_median_ms": 46.42798192799091,
+    "block_fallback_median_ms": 453.4269,
+    "x_duck1": 4.559993083262219,
+    "x_duck16": 0.4436773000372915,
+    "x_block_fallback": 4.333059814408876,
+    "fast_path": 0,
+    "exact": true
+   },
+   "p25": {
+    "actual_selectivity": 0.28430178,
+    "scan_rows": 28430178,
+    "rows": 1000000,
+    "ours_median_ms": 237.646306,
+    "ours_p95_ms": 242.736329,
+    "duck1_median_ms": 765.1477148756385,
+    "duck16_median_ms": 74.61294298991561,
+    "block_fallback_median_ms": 682.6328,
+    "x_duck1": 3.2196911778449375,
+    "x_duck16": 0.3139663487549249,
+    "x_block_fallback": 2.872473851960484,
+    "fast_path": 0,
+    "exact": true
+   },
+   "p50": {
+    "actual_selectivity": 0.51039856,
+    "scan_rows": 51039856,
+    "rows": 1000000,
+    "ours_median_ms": 411.01713,
+    "ours_p95_ms": 442.574505,
+    "duck1_median_ms": 1106.0890001244843,
+    "duck16_median_ms": 108.52502472698689,
+    "block_fallback_median_ms": 904.1446,
+    "x_duck1": 2.6911019502386293,
+    "x_duck16": 0.2640401501684051,
+    "x_block_fallback": 2.199773522821299,
+    "fast_path": 0,
+    "exact": true
+   },
+   "p100": {
+    "actual_selectivity": 1.0,
+    "scan_rows": 100000000,
+    "rows": 1000000,
+    "ours_median_ms": 3.158726,
+    "ours_p95_ms": 3.186096,
+    "duck1_median_ms": 1670.260583050549,
+    "duck16_median_ms": 207.07335695624352,
+    "block_fallback_median_ms": 1255.7313,
+    "x_duck1": 528.7766596566303,
+    "x_duck16": 65.55597318546891,
+    "x_block_fallback": 397.5435982734811,
+    "fast_path": 1,
+    "exact": true
+   }
+  }
+ },
+ "boundary_cases": {
+  "G100000": {
+   "vmin_single": {
+    "lo": -226119,
+    "hi": -226119,
+    "rows": 1,
+    "ours_median_ms": 6e-05,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 4.701682366430759,
+    "duck_sql": "SELECT g100000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -226119 AND -226119 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "vmax_single": {
+    "lo": 86337212,
+    "hi": 86337212,
+    "rows": 1,
+    "ours_median_ms": 6e-05,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 2.035832963883877,
+    "duck_sql": "SELECT g100000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN 86337212 AND 86337212 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "mid_single": {
+    "lo": 4880,
+    "hi": 4880,
+    "rows": 169,
+    "ours_median_ms": 0.000601,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 146.2301267310977,
+    "duck_sql": "SELECT g100000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN 4880 AND 4880 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "needle_mincount_value": {
+    "lo": -226119,
+    "hi": -226119,
+    "rows": 1,
+    "ours_median_ms": 6e-05,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 2.0885788835585117,
+    "duck_sql": "SELECT g100000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -226119 AND -226119 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "empty_lo_gt_hi": {
+    "lo": 86337212,
+    "hi": 86337211,
+    "rows": 0,
+    "ours_median_ms": 6e-05,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 1.0229488834738731,
+    "duck_sql": "SELECT g100000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN 86337212 AND 86337211 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "empty_above_domain": {
+    "lo": 1000000000000000,
+    "hi": 2000000000000000,
+    "rows": 0,
+    "ours_median_ms": 6e-05,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 0.7909447886049747,
+    "duck_sql": "SELECT g100000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN 1000000000000000 AND 2000000000000000 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "below_all": {
+    "lo": -1000000000000000,
+    "hi": -226120,
+    "rows": 0,
+    "ours_median_ms": 5e-05,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 0.668840017169714,
+    "duck_sql": "SELECT g100000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -1000000000000000 AND -226120 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "above_all": {
+    "lo": 86337213,
+    "hi": 2147483647,
+    "rows": 0,
+    "ours_median_ms": 6e-05,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 0.7961830124258995,
+    "duck_sql": "SELECT g100000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN 86337213 AND 2147483647 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "full_i32": {
+    "lo": -2147483648,
+    "hi": 2147483647,
+    "rows": 100000,
+    "ours_median_ms": 0.260924,
+    "fast_path": 1,
+    "duck_complete_fetchall_ms": 1780.9479138813913,
+    "duck_sql": "SELECT g100000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "zero_zero": {
+    "lo": 0,
+    "hi": 0,
+    "rows": 32062,
+    "ours_median_ms": 0.528599,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 198.95713729783893,
+    "duck_sql": "SELECT g100000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN 0 AND 0 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   }
+  },
+  "G1000000": {
+   "vmin_single": {
+    "lo": -226119,
+    "hi": -226119,
+    "rows": 1,
+    "ours_median_ms": 0.00015,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 2.1799602545797825,
+    "duck_sql": "SELECT g1000000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -226119 AND -226119 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "vmax_single": {
+    "lo": 86337212,
+    "hi": 86337212,
+    "rows": 1,
+    "ours_median_ms": 6e-05,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 2.2176550701260567,
+    "duck_sql": "SELECT g1000000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN 86337212 AND 86337212 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "mid_single": {
+    "lo": 4880,
+    "hi": 4880,
+    "rows": 169,
+    "ours_median_ms": 0.000911,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 135.22177701815963,
+    "duck_sql": "SELECT g1000000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN 4880 AND 4880 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "needle_mincount_value": {
+    "lo": -226119,
+    "hi": -226119,
+    "rows": 1,
+    "ours_median_ms": 0.000151,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 3.2560545951128006,
+    "duck_sql": "SELECT g1000000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -226119 AND -226119 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "empty_lo_gt_hi": {
+    "lo": 86337212,
+    "hi": 86337211,
+    "rows": 0,
+    "ours_median_ms": 0.0001,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 1.0653100907802582,
+    "duck_sql": "SELECT g1000000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN 86337212 AND 86337211 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "empty_above_domain": {
+    "lo": 1000000000000000,
+    "hi": 2000000000000000,
+    "rows": 0,
+    "ours_median_ms": 6.1e-05,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 1.1551589705049992,
+    "duck_sql": "SELECT g1000000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN 1000000000000000 AND 2000000000000000 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "below_all": {
+    "lo": -1000000000000000,
+    "hi": -226120,
+    "rows": 0,
+    "ours_median_ms": 6e-05,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 0.9452980011701584,
+    "duck_sql": "SELECT g1000000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -1000000000000000 AND -226120 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "above_all": {
+    "lo": 86337213,
+    "hi": 2147483647,
+    "rows": 0,
+    "ours_median_ms": 6.1e-05,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 1.1875848285853863,
+    "duck_sql": "SELECT g1000000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN 86337213 AND 2147483647 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "full_i32": {
+    "lo": -2147483648,
+    "hi": 2147483647,
+    "rows": 1000000,
+    "ours_median_ms": 3.281112,
+    "fast_path": 1,
+    "duck_complete_fetchall_ms": 5246.710703708231,
+    "duck_sql": "SELECT g1000000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups GROUP BY 1 ORDER BY 1",
+    "exact": true
+   },
+   "zero_zero": {
+    "lo": 0,
+    "hi": 0,
+    "rows": 37908,
+    "ours_median_ms": 0.63358,
+    "fast_path": 0,
+    "duck_complete_fetchall_ms": 254.10828506574035,
+    "duck_sql": "SELECT g1000000 AS g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN 0 AND 0 GROUP BY 1 ORDER BY 1",
+    "exact": true
+   }
+  }
+ }
+}

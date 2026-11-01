@@ -1,0 +1,22 @@
+{
+ "build_ms": 6740.027,
+ "bytes": 1711890784,
+ "rows": 101476026,
+ "G": 5,
+ "G0": 5,
+ "has_null": false,
+ "D1": 10,
+ "D2": 263,
+ "cells": 2630,
+ "runs": 13150,
+ "rows_per_run": 7716,
+ "max_run_rows": 3328051,
+ "mode": "rank",
+ "BP": 4097,
+ "BPcap": 4096,
+ "count_width": 4,
+ "w_source": "rank_fit",
+ "predicted_bytes": 1495973444,
+ "budget_bytes": 168544434,
+ "skew_share": 0.9997
+}

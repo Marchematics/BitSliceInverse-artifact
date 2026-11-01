@@ -1,0 +1,23 @@
+{
+  "input": "NYC 100M encoded tree",
+  "index_bytes": 372874396,
+  "build_ms": 3970.0,
+  "index_sha256": "bbc5a6f8f97d4358f34ee36cf9c733fcdaaf140c3a838487bdf20859771a134a",
+  "same_as_plain_build": true,
+  "results": {
+    "broad": {
+      "query_median_ms": 0.8477,
+      "duckdb_ms": 670.063,
+      "speedup_vs_duckdb": 790.4482717942668,
+      "exact": true,
+      "runs": 5
+    },
+    "selective": {
+      "query_median_ms": 0.5407,
+      "duckdb_ms": 0.9077,
+      "speedup_vs_duckdb": 1.6787497688181987,
+      "exact": true,
+      "runs": 5
+    }
+  }
+}

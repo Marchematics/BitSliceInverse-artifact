@@ -1,0 +1,1060 @@
+{
+ "cases": [
+  "fixed_all4",
+  "le_m7000",
+  "le_m720",
+  "le_509",
+  "le_650",
+  "le_930",
+  "le_1350",
+  "le_99900"
+ ],
+ "blocks": {
+  "scan": [
+   "duckdb20_scan",
+   "duckdb20_scan_clean",
+   "arrow25_acero_groupby",
+   "arrow25_dataset_parquet",
+   "vortex087_scan",
+   "vortex087_predecoded",
+   "polars20",
+   "datafusion55_parquet",
+   "clickhouse_chdb",
+   "daft0726",
+   "pandas233"
+  ],
+  "materialized": [
+   "eai_ecube03_frozen",
+   "eai_ecube02_frozen",
+   "eai_ecube01",
+   "duckdb20_materialized",
+   "materialized_summary"
+  ],
+  "index": [
+   "range_index_nyc"
+  ],
+  "positions": [
+   "cabin_sigmod24_scan"
+  ],
+  "kernel": [
+   "btrblocks_nyc100_fare",
+   "fastlanes_nyc100_fare"
+  ]
+ },
+ "methods": {
+  "arrow25_acero_groupby": {
+   "engine_version": "pyarrow 25.0.1 (Apache Arrow C++ hash-aggregate)",
+   "input_format": "Arrow IPC file (2x int64, 100M rows)",
+   "storage_bytes": 1601885562,
+   "exact_all": true,
+   "load_ms": null,
+   "build_ms": null,
+   "notes": "Arrow in-memory columnar: IPC file loaded once (load excluded), then Table.group_by(use_threads=False) per query; filter is an Arrow compute kernel producing a new table each rep. Not a SQL engine.",
+   "median_ms": {
+    "fixed_all4": 1382.1589755825698,
+    "le_m7000": 57.1237972471863,
+    "le_m720": 94.59120593965054,
+    "le_509": 249.80740388855338,
+    "le_650": 377.7054811362177,
+    "le_930": 711.1821216531098,
+    "le_1350": 1151.1089887935668,
+    "le_99900": 1780.4122995585203
+   },
+   "min_ms": {
+    "fixed_all4": 1379.1358908638358,
+    "le_m7000": 56.99592363089323,
+    "le_m720": 94.25962576642632,
+    "le_509": 246.82787293568254,
+    "le_650": 375.6881868466735,
+    "le_930": 708.5367017425597,
+    "le_1350": 1130.586232058704,
+    "le_99900": 1630.6140045635402
+   },
+   "p95_ms": {
+    "fixed_all4": 1490.8311101607978,
+    "le_m7000": 58.45480598509312,
+    "le_m720": 100.01728078350425,
+    "le_509": 276.16113517433405,
+    "le_650": 399.095153901726,
+    "le_930": 718.7474719248712,
+    "le_1350": 1292.8706659004092,
+    "le_99900": 1800.3685558214784
+   },
+   "reps": {
+    "fixed_all4": 30,
+    "le_m7000": 30,
+    "le_m720": 30,
+    "le_509": 30,
+    "le_650": 30,
+    "le_930": 30,
+    "le_1350": 30,
+    "le_99900": 30
+   }
+  },
+  "arrow25_dataset_parquet": {
+   "engine_version": "pyarrow 25.0.1 Acero scanner",
+   "input_format": "Parquet file (2x int64, 100M rows, 96 row groups)",
+   "storage_bytes": 173084977,
+   "exact_all": true,
+   "load_ms": 1.072809100151062,
+   "build_ms": null,
+   "notes": "Per-query Parquet scan with row-group pruning + Arrow compute group_by. This path decodes each rep (no resident copy), i.e. a scan-engine path.",
+   "median_ms": {
+    "fixed_all4": 2115.313103655353,
+    "le_m7000": 694.2196046002209,
+    "le_m720": 811.418138211593,
+    "le_509": 1054.0949180722237,
+    "le_650": 1205.31883998774,
+    "le_930": 1751.2570095714182,
+    "le_1350": 2311.775178415701,
+    "le_99900": 2635.785773396492
+   },
+   "min_ms": {
+    "fixed_all4": 1995.426198001951,
+    "le_m7000": 679.7761991620064,
+    "le_m720": 793.26425306499,
+    "le_509": 1042.0405589975417,
+    "le_650": 1188.0753869190812,
+    "le_930": 1719.9119310826063,
+    "le_1350": 2283.75988593325,
+    "le_99900": 2452.553423587233
+   },
+   "p95_ms": {
+    "fixed_all4": 2170.699107926339,
+    "le_m7000": 706.6123769618571,
+    "le_m720": 820.6256809644401,
+    "le_509": 1078.1524046324193,
+    "le_650": 1218.5847908258438,
+    "le_930": 1782.9627259634435,
+    "le_1350": 2337.4148909933865,
+    "le_99900": 2685.5284492485225
+   },
+   "reps": {
+    "fixed_all4": 10,
+    "le_m7000": 30,
+    "le_m720": 30,
+    "le_509": 30,
+    "le_650": 30,
+    "le_930": 30,
+    "le_1350": 10,
+    "le_99900": 10
+   }
+  },
+  "cabin_sigmod24_scan": {
+   "engine_version": "Cabin official prototype (PACMMOD/SIGMOD 2024) + NYC harness",
+   "input_format": "plain int32 fare column (400 MB); Cabin builds its index in-process",
+   "storage_bytes": null,
+   "exact_all": true,
+   "load_ms": null,
+   "build_ms": null,
+   "notes": "Cabin answers 'which rows match', not 'what are the group aggregates'. A fair SQL comparison would add a positions->values gather + aggregate pass (At 100% selectivity a bare Arrow in-memory filter+aggregate already costs ~1.78 s, so Cabin cannot compete on this query class even ignoring the pass.)",
+   "median_ms": {
+    "fixed_all4": null,
+    "le_m7000": null,
+    "le_m720": null,
+    "le_509": null,
+    "le_650": null,
+    "le_930": null,
+    "le_1350": null,
+    "le_99900": null
+   },
+   "min_ms": {
+    "fixed_all4": null,
+    "le_m7000": null,
+    "le_m720": null,
+    "le_509": null,
+    "le_650": null,
+    "le_930": null,
+    "le_1350": null,
+    "le_99900": null
+   },
+   "p95_ms": {
+    "fixed_all4": null,
+    "le_m7000": null,
+    "le_m720": null,
+    "le_509": null,
+    "le_650": null,
+    "le_930": null,
+    "le_1350": null,
+    "le_99900": null
+   },
+   "reps": {
+    "fixed_all4": 2,
+    "le_m7000": 2,
+    "le_m720": 2,
+    "le_509": 2,
+    "le_650": 2,
+    "le_930": 2,
+    "le_1350": 2,
+    "le_99900": 2
+   }
+  },
+  "clickhouse_chdb": {
+   "engine_version": "chdb 4.4.0 / ClickHouse engine 26.9.2.1",
+   "input_format": "Parquet file loaded into a ClickHouse Memory table (in-memory)",
+   "storage_bytes": 173084977,
+   "exact_all": true,
+   "load_ms": 1434.9211202934384,
+   "build_ms": null,
+   "notes": "Official ClickHouse engine via the embedded chdb wheel (server binary not downloadable: github/DNS blocked). max_threads=1, 3 untimed warm-ups (first executions are ~2x slower: CH expression JIT/page warm-up: ~1.3 s vs ~0.65 s steady state, measured). Memory table = engine-resident; result fetched as Arrow IPC stream each rep.",
+   "median_ms": {
+    "fixed_all4": 614.919038489461,
+    "le_m7000": 116.26763758249581,
+    "le_m720": 317.1488083899021,
+    "le_509": 605.150714982301,
+    "le_650": 677.0105762407184,
+    "le_930": 806.0030394699425,
+    "le_1350": 946.0543289314955,
+    "le_99900": 700.8605995215476
+   },
+   "min_ms": {
+    "fixed_all4": 608.153420034796,
+    "le_m7000": 113.74281998723745,
+    "le_m720": 311.39057129621506,
+    "le_509": 597.9872969910502,
+    "le_650": 670.9632282145321,
+    "le_930": 788.924427703023,
+    "le_1350": 932.673844974488,
+    "le_99900": 694.0937717445195
+   },
+   "p95_ms": {
+    "fixed_all4": 666.9607553631067,
+    "le_m7000": 151.69595181941986,
+    "le_m720": 373.12385719269514,
+    "le_509": 657.9365427605808,
+    "le_650": 720.3099010512233,
+    "le_930": 841.751323081553,
+    "le_1350": 988.2632740773261,
+    "le_99900": 746.6793530620635
+   },
+   "reps": {
+    "fixed_all4": 30,
+    "le_m7000": 30,
+    "le_m720": 30,
+    "le_509": 30,
+    "le_650": 30,
+    "le_930": 30,
+    "le_1350": 30,
+    "le_99900": 30
+   }
+  },
+  "daft0726": {
+   "engine_version": "daft 0.7.26 (native local runner, Rust)",
+   "input_format": "Parquet file (per-query scan+decode)",
+   "storage_bytes": 173084977,
+   "exact_all": true,
+   "load_ms": null,
+   "build_ms": null,
+   "notes": "Daft dataframe engine: read_parquet -> filter -> groupby().agg(), collect() per rep. Single-thread requested via RAYON_NUM_THREADS=1 and a single-partition source; see threading_check.  IMPORTANT: DataFrame.collect() memoises; the recorded latency builds a fresh plan per rep (plan construction ~0.8 ms included).",
+   "median_ms": {
+    "fixed_all4": 1694.9457195587456,
+    "le_m7000": 290.4092292301357,
+    "le_m720": 374.3272665888071,
+    "le_509": 785.1323683280498,
+    "le_650": 1313.357987208292,
+    "le_930": 2474.2852456402034,
+    "le_1350": 3742.7908841054887,
+    "le_99900": 1883.3657619543374
+   },
+   "min_ms": {
+    "fixed_all4": 1620.473557151854,
+    "le_m7000": 287.1011411771178,
+    "le_m720": 372.00673436746,
+    "le_509": 770.5688630230725,
+    "le_650": 1292.4998910166323,
+    "le_930": 2439.2921552062035,
+    "le_1350": 3721.312521956861,
+    "le_99900": 1784.0129029937088
+   },
+   "p95_ms": {
+    "fixed_all4": 1757.1279807016253,
+    "le_m7000": 295.6700590439141,
+    "le_m720": 404.3009616434574,
+    "le_509": 807.108358014375,
+    "le_650": 1360.696969088167,
+    "le_930": 2518.992173951119,
+    "le_1350": 3765.6055600382388,
+    "le_99900": 1996.4481112547219
+   },
+   "reps": {
+    "fixed_all4": 30,
+    "le_m7000": 30,
+    "le_m720": 30,
+    "le_509": 30,
+    "le_650": 30,
+    "le_930": 10,
+    "le_1350": 10,
+    "le_99900": 30
+   }
+  },
+  "datafusion55_parquet": {
+   "engine_version": "datafusion 55.0.0 (Rust engine, Python bindings)",
+   "input_format": "Parquet file, registered as external table",
+   "storage_bytes": 173084977,
+   "exact_all": true,
+   "load_ms": 5.553619004786015,
+   "build_ms": null,
+   "notes": "DataFusion executes the identical SQL over the Parquet file; target_partitions=1; per-rep scan+decode included.",
+   "median_ms": {
+    "fixed_all4": 1119.3539996165782,
+    "le_m7000": 502.7364718262106,
+    "le_m720": 514.504671562463,
+    "le_509": 556.3881294801831,
+    "le_650": 615.1242107152939,
+    "le_930": 768.7056832946837,
+    "le_1350": 954.1929508559406,
+    "le_99900": 1176.1552835814655
+   },
+   "min_ms": {
+    "fixed_all4": 1111.5613551810384,
+    "le_m7000": 494.50604198500514,
+    "le_m720": 507.604309823364,
+    "le_509": 554.4440848752856,
+    "le_650": 613.1751341745257,
+    "le_930": 760.4779321700335,
+    "le_1350": 950.7214883342385,
+    "le_99900": 1161.5374269895256
+   },
+   "p95_ms": {
+    "fixed_all4": 1140.9511687234044,
+    "le_m7000": 508.07184679433703,
+    "le_m720": 520.23118827492,
+    "le_509": 558.7917841039598,
+    "le_650": 630.782111082226,
+    "le_930": 778.6115049384534,
+    "le_1350": 971.3369598612189,
+    "le_99900": 1204.9304880201817
+   },
+   "reps": {
+    "fixed_all4": 30,
+    "le_m7000": 30,
+    "le_m720": 30,
+    "le_509": 30,
+    "le_650": 30,
+    "le_930": 30,
+    "le_1350": 30,
+    "le_99900": 30
+   }
+  },
+  "duckdb20_materialized": {
+   "engine_version": "2.0.0",
+   "input_format": "precomputed DuckDB TEMP TABLE per predicate",
+   "storage_bytes": 2816,
+   "exact_all": true,
+   "load_ms": 0.0,
+   "build_ms": null,
+   "notes": "Materialized baseline: one 352 B aggregate table per predicate value (8 tables). Build time rows=SUM below; query reads the table only. Requires knowing every predicate in advance; cannot answer unseen predicates.",
+   "median_ms": {
+    "fixed_all4": 0.4901329521089792,
+    "le_m7000": 0.49214065074920654,
+    "le_m720": 0.48895087093114853,
+    "le_509": 0.49250596202909946,
+    "le_650": 0.49415905959904194,
+    "le_930": 0.4948845598846674,
+    "le_1350": 0.49358303658664227,
+    "le_99900": 0.48693851567804813
+   },
+   "min_ms": {
+    "fixed_all4": 0.47814520075917244,
+    "le_m7000": 0.47719432041049004,
+    "le_m720": 0.47742389142513275,
+    "le_509": 0.48446422442793846,
+    "le_650": 0.48467470332980156,
+    "le_930": 0.4847249947488308,
+    "le_1350": 0.48548588529229164,
+    "le_99900": 0.48005813732743263
+   },
+   "p95_ms": {
+    "fixed_all4": 0.5205259658396244,
+    "le_m7000": 0.5082190036773682,
+    "le_m720": 0.4984550178050995,
+    "le_509": 0.5090092308819294,
+    "le_650": 0.5054948851466179,
+    "le_930": 0.5031311884522438,
+    "le_1350": 0.5090092308819294,
+    "le_99900": 0.4947991110384464
+   },
+   "reps": {
+    "fixed_all4": 30,
+    "le_m7000": 30,
+    "le_m720": 30,
+    "le_509": 30,
+    "le_650": 30,
+    "le_930": 30,
+    "le_1350": 30,
+    "le_99900": 30
+   }
+  },
+  "duckdb20_scan": {
+   "engine_version": "2.0.0",
+   "input_format": "DuckDB native database (storage v69, BIGINT)",
+   "storage_bytes": 257437696,
+   "exact_all": true,
+   "load_ms": 0.0,
+   "build_ms": null,
+   "notes": "Native column-store scan; threads=1; latency excludes connection open. This is the same binary/protocol as the EAI-cube receipt (Lead owns that file).",
+   "median_ms": {
+    "fixed_all4": 503.8914349861443,
+    "le_m7000": 180.73003110475838,
+    "le_m720": 205.06842387840152,
+    "le_509": 251.09370448626578,
+    "le_650": 286.6581757552922,
+    "le_930": 364.4994255155325,
+    "le_1350": 457.4294029735029,
+    "le_99900": 517.7331306040287
+   },
+   "min_ms": {
+    "fixed_all4": 440.0125411339104,
+    "le_m7000": 179.93744369596243,
+    "le_m720": 203.78844114020467,
+    "le_509": 249.61520032957196,
+    "le_650": 284.99107994139194,
+    "le_930": 359.29530300199986,
+    "le_1350": 449.8360981233418,
+    "le_99900": 505.2385590970516
+   },
+   "p95_ms": {
+    "fixed_all4": 552.8274779208004,
+    "le_m7000": 207.50691695138812,
+    "le_m720": 227.06977371126413,
+    "le_509": 273.2162051834166,
+    "le_650": 298.67279389873147,
+    "le_930": 375.48941979184747,
+    "le_1350": 476.2860559858382,
+    "le_99900": 539.9315292015672
+   },
+   "reps": {
+    "fixed_all4": 30,
+    "le_m7000": 30,
+    "le_m720": 30,
+    "le_509": 30,
+    "le_650": 30,
+    "le_930": 30,
+    "le_1350": 30,
+    "le_99900": 30
+   }
+  },
+  "duckdb20_scan_clean": {
+   "engine_version": "2.0.0",
+   "input_format": "DuckDB native database (storage v69, BIGINT)",
+   "storage_bytes": 257437696,
+   "exact_all": true,
+   "load_ms": 0.0,
+   "build_ms": null,
+   "notes": "Native column-store scan; threads=1; latency excludes connection open. This is the same binary/protocol as the EAI-cube receipt (Lead owns that file).",
+   "median_ms": {
+    "fixed_all4": 455.3042456973344,
+    "le_m7000": 181.936640990898,
+    "le_m720": 205.76881477609277,
+    "le_509": 253.03644593805075,
+    "le_650": 283.6232336703688,
+    "le_930": 346.4650728274137,
+    "le_1350": 425.86623318493366,
+    "le_99900": 458.8618215639144
+   },
+   "min_ms": {
+    "fixed_all4": 449.70187824219465,
+    "le_m7000": 180.73829589411616,
+    "le_m720": 203.92483985051513,
+    "le_509": 250.74651092290878,
+    "le_650": 281.32334491238,
+    "le_930": 345.03840282559395,
+    "le_1350": 423.68879867717624,
+    "le_99900": 455.5309838615358
+   },
+   "p95_ms": {
+    "fixed_all4": 516.7989591136575,
+    "le_m7000": 190.82719925791025,
+    "le_m720": 238.97596495226026,
+    "le_509": 260.39872597903013,
+    "le_650": 293.09727204963565,
+    "le_930": 380.1024230197072,
+    "le_1350": 450.5834933370352,
+    "le_99900": 464.28990876302123
+   },
+   "reps": {
+    "fixed_all4": 30,
+    "le_m7000": 30,
+    "le_m720": 30,
+    "le_509": 30,
+    "le_650": 30,
+    "le_930": 30,
+    "le_1350": 30,
+    "le_99900": 30
+   }
+  },
+  "eai_ecube01": {
+   "engine_version": "ECUBE01 (exact aggregate cube in the encoded column domain, this work)",
+   "input_format": "2,951,956 B ECUBE01 cube over the 21,084 observed fare values x 11 groups",
+   "storage_bytes": 2951956,
+   "exact_all": true,
+   "load_ms": null,
+   "build_ms": 3278.0,
+   "notes": "Materialized-aggregate configuration (precomputation allowed). The cube answers the same 8 SQL cases from a 2.95 MB structure; the first query after opening a process pays setup_ms (~0.08-0.14 ms) and the cold complete-request column includes process start + output.",
+   "median_ms": {
+    "fixed_all4": 0.00035,
+    "le_m7000": 0.00032,
+    "le_m720": 0.00035,
+    "le_509": 0.000351,
+    "le_650": 0.000351,
+    "le_930": 0.000351,
+    "le_1350": 0.00035,
+    "le_99900": 0.00037
+   },
+   "min_ms": {
+    "fixed_all4": 0.00034,
+    "le_m7000": 0.00031,
+    "le_m720": 0.00034,
+    "le_509": 0.00035,
+    "le_650": 0.00034,
+    "le_930": 0.00034,
+    "le_1350": 0.00034,
+    "le_99900": 0.00036
+   },
+   "p95_ms": {
+    "fixed_all4": 0.000351,
+    "le_m7000": 0.000321,
+    "le_m720": 0.000351,
+    "le_509": 0.000361,
+    "le_650": 0.000361,
+    "le_930": 0.000361,
+    "le_1350": 0.000351,
+    "le_99900": 0.000371
+   },
+   "reps": {
+    "fixed_all4": 1000,
+    "le_m7000": 1000,
+    "le_m720": 1000,
+    "le_509": 1000,
+    "le_650": 1000,
+    "le_930": 1000,
+    "le_1350": 1000,
+    "le_99900": 1000
+   }
+  },
+  "eai_ecube02_frozen": {
+   "engine_version": "ECUBE02 (ablation: eai_cube2.cpp sha256 99e4dcefa1c9b391781c1583f4259cf0693761973cd6b2de0533ce77d57f1543; index sha256 c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6, 1,140,124 B)",
+   "input_format": "2,951,956 B ECUBE01 cube over the 21,084 observed fare values x 11 groups",
+   "storage_bytes": 1140124,
+   "exact_all": true,
+   "load_ms": null,
+   "build_ms": 3166.961,
+   "notes": "Ablation row (superseded by ECUBE03). Re-measured 2026-11-01 19:2x in the same quiet window as ECUBE03 for a like-for-like hot-path comparison. Materialized-aggregate configuration (precomputation allowed). The cube answers the same 8 SQL cases from a 2.95 MB structure; the first query after opening a process pays setup_ms (~0.08-0.14 ms) and the cold complete-request column includes process start + output.",
+   "median_ms": {
+    "fixed_all4": 0.001152,
+    "le_m7000": 0.000941,
+    "le_m720": 0.000962,
+    "le_509": 0.000991,
+    "le_650": 0.001141,
+    "le_930": 0.001132,
+    "le_1350": 0.001282,
+    "le_99900": 0.001102
+   },
+   "min_ms": {
+    "fixed_all4": 0.001141,
+    "le_m7000": 0.000941,
+    "le_m720": 0.000951,
+    "le_509": 0.000981,
+    "le_650": 0.001101,
+    "le_930": 0.001121,
+    "le_1350": 0.001281,
+    "le_99900": 0.001092
+   },
+   "p95_ms": {
+    "fixed_all4": 0.001162,
+    "le_m7000": 0.000952,
+    "le_m720": 0.000972,
+    "le_509": 0.000992,
+    "le_650": 0.001152,
+    "le_930": 0.001132,
+    "le_1350": 0.001292,
+    "le_99900": 0.001112
+   },
+   "reps": {
+    "fixed_all4": 1000,
+    "le_m7000": 1000,
+    "le_m720": 1000,
+    "le_509": 1000,
+    "le_650": 1000,
+    "le_930": 1000,
+    "le_1350": 1000,
+    "le_99900": 1000
+   }
+  },
+  "eai_ecube02_prefreeze": {
+   "engine_version": "ECUBE02 (this work; enc_cube rebuilt 2026-11-01 17:19 from eai_cube2.cpp, MAGIC ECUBE02). The prebuilt .ecube files on the host are ECUBE01 and no longer load in the current binary ('ERR magic').",
+   "input_format": "2,951,956 B ECUBE01 cube over the 21,084 observed fare values x 11 groups",
+   "storage_bytes": 1140124,
+   "exact_all": true,
+   "load_ms": null,
+   "build_ms": 13328.9,
+   "notes": "Materialized-aggregate configuration (precomputation allowed). The cube answers the same 8 SQL cases from a 2.95 MB structure; the first query after opening a process pays setup_ms (~0.08-0.14 ms) and the cold complete-request column includes process start + output. Cube version note: the Lead's quoted command uses the ECUBE01 cube + old binary; the binary was rebuilt to ECUBE02 mid-campaign, so this row is the current-binary ECUBE02 artifact, measured with the same harness/protocol. ARCHIVED PRE-FREEZE MEASUREMENT: cold-request numbers here (8.0-11.9 ms) were later shown to be host contention, not a v2 regression; the frozen row is eai_ecube02_frozen.json (cold 1.29-1.32 ms on a quiet pinned core). See BASELINES_20261101.md sections 2.4/2.4b and cold_breakdown.json.",
+   "median_ms": {
+    "fixed_all4": 0.001172,
+    "le_m7000": 0.000951,
+    "le_m720": 0.000961,
+    "le_509": 0.000992,
+    "le_650": 0.001112,
+    "le_930": 0.001132,
+    "le_1350": 0.001282,
+    "le_99900": 0.001102
+   },
+   "min_ms": {
+    "fixed_all4": 0.001161,
+    "le_m7000": 0.000941,
+    "le_m720": 0.000951,
+    "le_509": 0.000981,
+    "le_650": 0.001101,
+    "le_930": 0.001121,
+    "le_1350": 0.001271,
+    "le_99900": 0.001091
+   },
+   "p95_ms": {
+    "fixed_all4": 0.001182,
+    "le_m7000": 0.000961,
+    "le_m720": 0.000971,
+    "le_509": 0.001002,
+    "le_650": 0.001122,
+    "le_930": 0.001142,
+    "le_1350": 0.001282,
+    "le_99900": 0.001112
+   },
+   "reps": {
+    "fixed_all4": 1000,
+    "le_m7000": 1000,
+    "le_m720": 1000,
+    "le_509": 1000,
+    "le_650": 1000,
+    "le_930": 1000,
+    "le_1350": 1000,
+    "le_99900": 1000
+   }
+  },
+  "eai_ecube03_frozen": {
+   "engine_version": "ECUBE03 (frozen: eai_cube3.cpp sha256 c93a4530f7b21d5e1a1f174374f5fdd49783a20ad32638b370baabf3e86562f0; binary enc_cube3 sha256 96cf26e536844b4f5f9f08fb044399770936ced24b7b75575862e756e55cf71d; index sha256 78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee, 1,140,168 B, plain and encoded builds byte-identical)",
+   "input_format": "2,951,956 B ECUBE01 cube over the 21,084 observed fare values x 11 groups",
+   "storage_bytes": 1140168,
+   "exact_all": true,
+   "load_ms": null,
+   "build_ms": 3365.269,
+   "notes": "FROZEN row per Lead 2026-11-01 (ECUBE03). Adds exact NULL-measure support (G*4 null-count array appended to the index, +44 B); hot path for non-null data is unchanged. Materialized-aggregate configuration (precomputation allowed). The cube answers the same 8 SQL cases from a 2.95 MB structure; the first query after opening a process pays setup_ms (~0.08-0.14 ms) and the cold complete-request column includes process start + output.",
+   "median_ms": {
+    "fixed_all4": 0.000921,
+    "le_m7000": 0.000701,
+    "le_m720": 0.000711,
+    "le_509": 0.000741,
+    "le_650": 0.000861,
+    "le_930": 0.000891,
+    "le_1350": 0.001052,
+    "le_99900": 0.000851
+   },
+   "min_ms": {
+    "fixed_all4": 0.000911,
+    "le_m7000": 0.00068,
+    "le_m720": 0.000701,
+    "le_509": 0.000731,
+    "le_650": 0.000851,
+    "le_930": 0.000881,
+    "le_1350": 0.001041,
+    "le_99900": 0.000841
+   },
+   "p95_ms": {
+    "fixed_all4": 0.000932,
+    "le_m7000": 0.000701,
+    "le_m720": 0.000721,
+    "le_509": 0.000741,
+    "le_650": 0.000872,
+    "le_930": 0.000902,
+    "le_1350": 0.001062,
+    "le_99900": 0.000861
+   },
+   "reps": {
+    "fixed_all4": 1000,
+    "le_m7000": 1000,
+    "le_m720": 1000,
+    "le_509": 1000,
+    "le_650": 1000,
+    "le_930": 1000,
+    "le_1350": 1000,
+    "le_99900": 1000
+   }
+  },
+  "materialized_summary": {
+   "engine_version": "hand-written C++ reader of a 11-row summary table",
+   "input_format": "precomputed 11-row CSV summary per predicate (8 files)",
+   "storage_bytes": 2592,
+   "exact_all": true,
+   "load_ms": null,
+   "build_ms": null,
+   "notes": "Classic materialized group aggregate: one 8-file set of 352 B summaries built by a single group-by pass; latency = read summary + emit complete result. 'median_ms' here is engine-resident formatting (us). Complete-request wall (fresh process) is in complete_request_ms. Requires precomputing every predicate; cannot answer unseen predicates.",
+   "median_ms": {
+    "fixed_all4": 0.0016220000000000002,
+    "le_m7000": 0.001552,
+    "le_m720": 0.001552,
+    "le_509": 0.001552,
+    "le_650": 0.001553,
+    "le_930": 0.001572,
+    "le_1350": 0.001572,
+    "le_99900": 0.0016120000000000002
+   },
+   "min_ms": {
+    "fixed_all4": 0.001592,
+    "le_m7000": 0.001542,
+    "le_m720": 0.001542,
+    "le_509": 0.001542,
+    "le_650": 0.001542,
+    "le_930": 0.001562,
+    "le_1350": 0.001562,
+    "le_99900": 0.0016020000000000001
+   },
+   "p95_ms": {
+    "fixed_all4": 0.0016220000000000002,
+    "le_m7000": 0.001552,
+    "le_m720": 0.001552,
+    "le_509": 0.001552,
+    "le_650": 0.001553,
+    "le_930": 0.001572,
+    "le_1350": 0.001572,
+    "le_99900": 0.0016120000000000002
+   },
+   "reps": {
+    "fixed_all4": 500,
+    "le_m7000": 500,
+    "le_m720": 500,
+    "le_509": 500,
+    "le_650": 500,
+    "le_930": 500,
+    "le_1350": 500,
+    "le_99900": 500
+   }
+  },
+  "pandas233": {
+   "engine_version": "pandas 2.3.3 / numpy 2.2.6",
+   "input_format": "Parquet read once into a pandas DataFrame (in-memory)",
+   "storage_bytes": 173084977,
+   "exact_all": true,
+   "load_ms": null,
+   "build_ms": null,
+   "notes": "Classic single-threaded in-memory dataframe engine (pandas groupby.agg, Cython kernels). Parquet read excluded from latency.",
+   "median_ms": {
+    "fixed_all4": 1597.3224446643144,
+    "le_m7000": 70.64249226823449,
+    "le_m720": 125.79310336150229,
+    "le_509": 344.93725653737783,
+    "le_650": 471.9892032444477,
+    "le_930": 962.536052102223,
+    "le_1350": 1657.2291504126042,
+    "le_99900": 2772.271705325693
+   },
+   "min_ms": {
+    "fixed_all4": 1583.3452683873475,
+    "le_m7000": 69.15132096037269,
+    "le_m720": 122.6233160123229,
+    "le_509": 343.0611467920244,
+    "le_650": 468.9831752330065,
+    "le_930": 951.0610271245241,
+    "le_1350": 1632.8067160211504,
+    "le_99900": 2748.8569119013846
+   },
+   "p95_ms": {
+    "fixed_all4": 1628.2762964256108,
+    "le_m7000": 73.88344686478376,
+    "le_m720": 131.47482881322503,
+    "le_509": 348.6617859452963,
+    "le_650": 476.88692808151245,
+    "le_930": 974.8471640050411,
+    "le_1350": 1673.7759192474186,
+    "le_99900": 2829.182101879269
+   },
+   "reps": {
+    "fixed_all4": 30,
+    "le_m7000": 30,
+    "le_m720": 30,
+    "le_509": 30,
+    "le_650": 30,
+    "le_930": 30,
+    "le_1350": 30,
+    "le_99900": 10
+   }
+  },
+  "polars20": {
+   "engine_version": "polars 2.0.0",
+   "input_format": "Parquet file read once into Polars DataFrame (in-memory)",
+   "storage_bytes": 173084977,
+   "exact_all": true,
+   "load_ms": null,
+   "build_ms": null,
+   "notes": "In-memory eager Polars dataframe: parquet read excluded, group_by().agg() per query; filter is an in-memory predicate pass.",
+   "median_ms": {
+    "fixed_all4": 856.7854447755963,
+    "le_m7000": 36.38694598339498,
+    "le_m720": 83.92719039693475,
+    "le_509": 126.2911232188344,
+    "le_650": 172.9299200233072,
+    "le_930": 323.3283399604261,
+    "le_1350": 533.4710499737412,
+    "le_99900": 904.650344979018
+   },
+   "min_ms": {
+    "fixed_all4": 817.414759658277,
+    "le_m7000": 35.96774907782674,
+    "le_m720": 82.14838290587068,
+    "le_509": 124.45190409198403,
+    "le_650": 169.93982391431928,
+    "le_930": 315.5542560853064,
+    "le_1350": 515.7651081681252,
+    "le_99900": 896.0089143365622
+   },
+   "p95_ms": {
+    "fixed_all4": 2513.7649360112846,
+    "le_m7000": 36.99962003156543,
+    "le_m720": 95.18162533640862,
+    "le_509": 143.95277528092265,
+    "le_650": 218.35910994559526,
+    "le_930": 385.9835839830339,
+    "le_1350": 584.6370309591293,
+    "le_99900": 1270.6679687835276
+   },
+   "reps": {
+    "fixed_all4": 30,
+    "le_m7000": 30,
+    "le_m720": 30,
+    "le_509": 30,
+    "le_650": 30,
+    "le_930": 30,
+    "le_1350": 30,
+    "le_99900": 30
+   }
+  },
+  "range_index_nyc": {
+   "engine_version": "independent reimplementation (C++17, single-column)",
+   "input_format": "two plain int32 files (fare, passenger) + sorted row-id index",
+   "storage_bytes": 400000016,
+   "exact_all": true,
+   "load_ms": null,
+   "build_ms": null,
+   "notes": "CUBIT/RABIT-like sorted row-ID range index: 400 MB uint32 row ids sorted by fare; query binary-searches the range then gathers passenger_count and accumulates SUM/COUNT/MIN/MAX. Complete SQL aggregate output, exact. Input columns (2x400 MB) are the shared source, not counted as index storage. Not an official CUBIT build.",
+   "median_ms": {
+    "fixed_all4": 1561.4538,
+    "le_m7000": 1.0245,
+    "le_m720": 21.2093,
+    "le_509": 111.0273,
+    "le_650": 189.4206,
+    "le_930": 336.934,
+    "le_1350": 572.2498,
+    "le_99900": 1509.3965
+   },
+   "min_ms": {
+    "fixed_all4": 1537.9304,
+    "le_m7000": 0.911,
+    "le_m720": 20.4606,
+    "le_509": 109.9816,
+    "le_650": 185.1278,
+    "le_930": 332.4193,
+    "le_1350": 566.0912,
+    "le_99900": 1497.9594
+   },
+   "p95_ms": {
+    "fixed_all4": 1561.4538,
+    "le_m7000": 1.0245,
+    "le_m720": 21.2093,
+    "le_509": 111.0273,
+    "le_650": 189.4206,
+    "le_930": 336.934,
+    "le_1350": 572.2498,
+    "le_99900": 1509.3965
+   },
+   "reps": {
+    "fixed_all4": 30,
+    "le_m7000": 30,
+    "le_m720": 30,
+    "le_509": 30,
+    "le_650": 30,
+    "le_930": 30,
+    "le_1350": 30,
+    "le_99900": 30
+   }
+  },
+  "stability_control": {
+   "engine_version": null,
+   "input_format": null,
+   "storage_bytes": null,
+   "exact_all": null,
+   "load_ms": null,
+   "build_ms": null,
+   "notes": null,
+   "median_ms": {
+    "fixed_all4": null,
+    "le_m7000": null,
+    "le_m720": null,
+    "le_509": null,
+    "le_650": null,
+    "le_930": null,
+    "le_1350": null,
+    "le_99900": null
+   },
+   "min_ms": {
+    "fixed_all4": null,
+    "le_m7000": null,
+    "le_m720": null,
+    "le_509": null,
+    "le_650": null,
+    "le_930": null,
+    "le_1350": null,
+    "le_99900": null
+   },
+   "p95_ms": {
+    "fixed_all4": null,
+    "le_m7000": null,
+    "le_m720": null,
+    "le_509": null,
+    "le_650": null,
+    "le_930": null,
+    "le_1350": null,
+    "le_99900": null
+   },
+   "reps": {
+    "fixed_all4": null,
+    "le_m7000": null,
+    "le_m720": null,
+    "le_509": null,
+    "le_650": null,
+    "le_930": null,
+    "le_1350": null,
+    "le_99900": null
+   }
+  },
+  "vortex087_predecoded": {
+   "engine_version": "vortex-data 0.87.0",
+   "input_format": "Vortex file decoded once into Arrow (in-memory)",
+   "storage_bytes": 160294300,
+   "exact_all": true,
+   "load_ms": 774.1820560768247,
+   "build_ms": null,
+   "notes": "Decode excluded from latency: isolates the aggregate/filter cost of the Arrow compute engine over Arrow buffers.",
+   "median_ms": {
+    "fixed_all4": 1450.0357790384442,
+    "le_m7000": 69.43314592354,
+    "le_m720": 107.95565787702799,
+    "le_509": 261.6422555875033,
+    "le_650": 390.7360271550715,
+    "le_930": 714.1234939917922,
+    "le_1350": 1157.4367934372276,
+    "le_99900": 1642.6749182865024
+   },
+   "min_ms": {
+    "fixed_all4": 1398.15410412848,
+    "le_m7000": 69.04209079220891,
+    "le_m720": 106.31936509162188,
+    "le_509": 257.61792715638876,
+    "le_650": 385.31814189627767,
+    "le_930": 706.7062454298139,
+    "le_1350": 1132.7176778577268,
+    "le_99900": 1606.7756549455225
+   },
+   "p95_ms": {
+    "fixed_all4": 1706.2372588552535,
+    "le_m7000": 92.85354474559426,
+    "le_m720": 116.36382574215531,
+    "le_509": 316.52723904699087,
+    "le_650": 443.7072379514575,
+    "le_930": 778.9888964034617,
+    "le_1350": 1225.7004687562585,
+    "le_99900": 1701.8987005576491
+   },
+   "reps": {
+    "fixed_all4": 30,
+    "le_m7000": 30,
+    "le_m720": 30,
+    "le_509": 30,
+    "le_650": 30,
+    "le_930": 30,
+    "le_1350": 30,
+    "le_99900": 30
+   }
+  },
+  "vortex087_scan": {
+   "engine_version": "vortex-data 0.87.0 (Vortex 0.87 file format)",
+   "input_format": "Vortex file (2x int64, 100M rows) 160294300 B",
+   "storage_bytes": 160294300,
+   "exact_all": true,
+   "load_ms": null,
+   "build_ms": null,
+   "notes": "Vortex compressed columnar file: every rep decodes the needed columns from the Vortex file and aggregates with Arrow compute. Natural Vortex query path.",
+   "median_ms": {
+    "fixed_all4": 1673.1038289144635,
+    "le_m7000": 179.81454613618553,
+    "le_m720": 238.2383239455521,
+    "le_509": 323.64882808178663,
+    "le_650": 435.52253884263337,
+    "le_930": 679.4369369745255,
+    "le_1350": 1018.4572520665824,
+    "le_99900": 1711.128206923604
+   },
+   "min_ms": {
+    "fixed_all4": 1597.7644617669284,
+    "le_m7000": 178.54481376707554,
+    "le_m720": 237.01224382966757,
+    "le_509": 322.17238983139396,
+    "le_650": 431.8567640148103,
+    "le_930": 673.4541640616953,
+    "le_1350": 1014.2329540103674,
+    "le_99900": 1699.4777177460492
+   },
+   "p95_ms": {
+    "fixed_all4": 1995.6734632141888,
+    "le_m7000": 182.6612399891019,
+    "le_m720": 241.5032982826233,
+    "le_509": 349.9632216989994,
+    "le_650": 475.80841975286603,
+    "le_930": 730.6549968197942,
+    "le_1350": 1083.6203969083726,
+    "le_99900": 1831.747375894338
+   },
+   "reps": {
+    "fixed_all4": 30,
+    "le_m7000": 30,
+    "le_m720": 30,
+    "le_509": 30,
+    "le_650": 30,
+    "le_930": 30,
+    "le_1350": 30,
+    "le_99900": 30
+   }
+  }
+ },
+ "conservative_baseline": {
+  "fixed_all4": [
+   "duckdb20_scan",
+   440.0125411339104
+  ],
+  "le_m7000": [
+   "polars20",
+   35.96774907782674
+  ],
+  "le_m720": [
+   "polars20",
+   82.14838290587068
+  ],
+  "le_509": [
+   "polars20",
+   124.45190409198403
+  ],
+  "le_650": [
+   "polars20",
+   169.93982391431928
+  ],
+  "le_930": [
+   "polars20",
+   315.5542560853064
+  ],
+  "le_1350": [
+   "duckdb20_scan_clean",
+   423.68879867717624
+  ],
+  "le_99900": [
+   "duckdb20_scan_clean",
+   455.5309838615358
+  ]
+ }
+}

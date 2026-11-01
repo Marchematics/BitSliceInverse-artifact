@@ -1,0 +1,22 @@
+{
+  "run": "run_ig2_bsi_scale15_panel_v1",
+  "paths": [
+    "generic",
+    "stream",
+    "duckdb",
+    "arrow_full",
+    "bsi"
+  ],
+  "blocks": 30,
+  "prep": "results/ig2_scale15_prep/Observed",
+  "arrow": "results/ig2_scale15_arrow/Observed_arrow/full18.arrow",
+  "duckdb": "results/ig2_scale15_duckdb/full18.duckdb",
+  "bsi_storage": "results/bsi_ig2_scale15/Observed_bsi",
+  "binary": "results/ig2_prep_20261025/adapter_ig2_stream",
+  "arrow_python": "../../work/arrow25venv/bin/python",
+  "roaring_python": "../../work/roaringvenv/bin/python",
+  "begin_utc": "2026-10-24T22:24:00.374498+00:00",
+  "host_load1_at_start": 2.06,
+  "pinned_core": 48,
+  "max_load": 15.0
+}

@@ -1,0 +1,1 @@
+{"encoded": "results/ig2_prep_20261025/Observed.encoded", "prep": "results/ig2_prep_20261025/prepared/Observed", "dict": "state.dict", "group_id": 17, "aggs": [{"op": "count"}], "where_not_in": ["District of Columbia"]}

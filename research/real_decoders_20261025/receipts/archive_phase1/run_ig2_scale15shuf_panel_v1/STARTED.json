@@ -1,0 +1,21 @@
+{
+  "run": "run_ig2_scale15shuf_panel_v1",
+  "case": "Observed",
+  "rows": 983040,
+  "scale_factor": 15,
+  "synthetic_row_replication": true,
+  "paths": [
+    "generic",
+    "stream",
+    "stream_uniform",
+    "duckdb",
+    "duckdb_proj2",
+    "arrow_full",
+    "arrow_proj",
+    "vortex_full",
+    "vortex_proj"
+  ],
+  "blocks": 30,
+  "endpoint_a": "complete fresh-worker wall",
+  "endpoint_b": "stored-input interval"
+}

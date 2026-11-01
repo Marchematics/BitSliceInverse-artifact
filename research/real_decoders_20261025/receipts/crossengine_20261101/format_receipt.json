@@ -1,0 +1,348 @@
+{
+ "inputs": {
+  "encoded": "../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed.encoded",
+  "prep": "../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed",
+  "parquet": "../../research/real_decoders_20261024/results/nyc_taxi_100m_arrow/nyc100m.parquet",
+  "arrow": "../../research/real_decoders_20261024/results/nyc_taxi_100m_arrow/nyc100m.arrow",
+  "plain_gid": "../../research/real_decoders_20261024/results/nyc100_plain/passenger.i32",
+  "plain_val": "../../research/real_decoders_20261024/results/nyc100_plain/fare.i32"
+ },
+ "pinned_enc_cube": "../../research/real_decoders_20261024/src_eai_20261101/enc_cube",
+ "enc_cube_sha256": "cc3afecd52837c728cd781398c3c80d2b4343f3e7386018027ed49e3269ad8fb",
+ "builds": {
+  "encoded": {
+   "cmd": "../../research/real_decoders_20261024/src_eai_20261101/enc_cube build_enc ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed.encoded ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed 17 13 ../../work/crossengine/data/fmt_encoded.ecube",
+   "wall_ms": 3416.507833171636,
+   "meta": {
+    "build_ms": 3397.21,
+    "pass1_ms": 396.185,
+    "accum_ms": 2998.08,
+    "prefix_ms": 0.249,
+    "write_ms": 2.697,
+    "groups": 11,
+    "values": 21084,
+    "rows": 100000000,
+    "bytes": 1140124,
+    "dense": 0,
+    "encoded": 1,
+    "v2": 1
+   },
+   "stdout": ""
+  },
+  "plain": {
+   "cmd": "../../research/real_decoders_20261024/src_eai_20261101/enc_cube build ../../research/real_decoders_20261024/results/nyc100_plain/passenger.i32 ../../research/real_decoders_20261024/results/nyc100_plain/fare.i32 ../../work/crossengine/data/fmt_plain.ecube",
+   "wall_ms": 6725.686714984477,
+   "meta": {
+    "build_ms": 6655.825,
+    "read_ms": 3719.261,
+    "accum_ms": 2932.976,
+    "prefix_ms": 0.26,
+    "write_ms": 3.328,
+    "groups": 11,
+    "values": 21084,
+    "rows": 100000000,
+    "bytes": 1140124,
+    "dense": 0,
+    "v2": 1
+   },
+   "stdout": ""
+  },
+  "parquet": {
+   "cmd": "../../work/crossengine/venv/bin/python ../../work/crossengine/src/dump_arrays.py parquet ../../research/real_decoders_20261024/results/nyc_taxi_100m_arrow/nyc100m.parquet ../../work/crossengine/data/dump_parquet",
+   "wall_ms": 4439.48939582333,
+   "meta": null,
+   "stdout": "{\"kind\": \"parquet\", \"src\": \"../../research/real_decoders_20261024/results/nyc_taxi_100m_arrow/nyc100m.parquet\", \"rows\": 100000000, \"groups\": 10, \"group_values\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], \"value_nulls\": 0, \"distinct_ms\": 821.4966589584947, \"dump_ms\": 3387.3548917472363, \"total_ms\": 4208.851550705731, \"gid_bytes\": 400000000, \"val_bytes\": 400000000, \"valid_bitmap\": false}\n",
+   "dump": {
+    "kind": "parquet",
+    "src": "../../research/real_decoders_20261024/results/nyc_taxi_100m_arrow/nyc100m.parquet",
+    "rows": 100000000,
+    "groups": 10,
+    "group_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "value_nulls": 0,
+    "distinct_ms": 821.4966589584947,
+    "dump_ms": 3387.3548917472363,
+    "total_ms": 4208.851550705731,
+    "gid_bytes": 400000000,
+    "val_bytes": 400000000,
+    "valid_bitmap": false
+   },
+   "gid_sha256": "3ff670a830fb83e0a4848ed19a97f6b4d40642487e82307dcf2220c8544cd283",
+   "val_sha256": "c81425abb809afd91081a345b28c893696645817f6cab045061168f4462dfc6b"
+  },
+  "cube_parquet_v2": {
+   "cmd": "../../work/crossengine/build/ecube_fmt_build build ../../work/crossengine/data/dump_parquet/gid.i32 ../../work/crossengine/data/dump_parquet/val.i32 - ../../work/crossengine/data/fmt_parquet.ecube 2",
+   "wall_ms": 6854.677084833384,
+   "meta": null,
+   "stdout": "{\"build_ms\":6782.953,\"read_ms\":448.930,\"distinct_ms\":3543.931,\"accum_ms\":2786.028,\"prefix_ms\":0.239,\"write_ms\":3.824,\"format\":2,\"rows\":100000000,\"groups\":11,\"values\":21084,\"bytes\":1140124,\"has_null_group\":1,\"null_measure\":0}\n"
+  },
+  "cube_parquet_v3": {
+   "cmd": "../../work/crossengine/build/ecube_fmt_build build ../../work/crossengine/data/dump_parquet/gid.i32 ../../work/crossengine/data/dump_parquet/val.i32 - ../../work/crossengine/data/fmt_parquet_v3.ecube 3",
+   "wall_ms": 6851.8889071419835,
+   "meta": null,
+   "stdout": "{\"build_ms\":6780.942,\"read_ms\":443.047,\"distinct_ms\":3546.852,\"accum_ms\":2788.302,\"prefix_ms\":0.241,\"write_ms\":2.500,\"format\":3,\"rows\":100000000,\"groups\":11,\"values\":21084,\"bytes\":1140168,\"has_null_group\":1,\"null_measure\":0}\n"
+  },
+  "arrow": {
+   "cmd": "../../work/crossengine/venv/bin/python ../../work/crossengine/src/dump_arrays.py arrow ../../research/real_decoders_20261024/results/nyc_taxi_100m_arrow/nyc100m.arrow ../../work/crossengine/data/dump_arrow",
+   "wall_ms": 3464.758258778602,
+   "meta": null,
+   "stdout": "{\"kind\": \"arrow\", \"src\": \"../../research/real_decoders_20261024/results/nyc_taxi_100m_arrow/nyc100m.arrow\", \"rows\": 100000000, \"groups\": 10, \"group_values\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], \"value_nulls\": 0, \"distinct_ms\": 457.48752588406205, \"dump_ms\": 2792.040518950671, \"total_ms\": 3249.528044834733, \"gid_bytes\": 400000000, \"val_bytes\": 400000000, \"valid_bitmap\": false}\n",
+   "dump": {
+    "kind": "arrow",
+    "src": "../../research/real_decoders_20261024/results/nyc_taxi_100m_arrow/nyc100m.arrow",
+    "rows": 100000000,
+    "groups": 10,
+    "group_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "value_nulls": 0,
+    "distinct_ms": 457.48752588406205,
+    "dump_ms": 2792.040518950671,
+    "total_ms": 3249.528044834733,
+    "gid_bytes": 400000000,
+    "val_bytes": 400000000,
+    "valid_bitmap": false
+   },
+   "gid_sha256": "3ff670a830fb83e0a4848ed19a97f6b4d40642487e82307dcf2220c8544cd283",
+   "val_sha256": "c81425abb809afd91081a345b28c893696645817f6cab045061168f4462dfc6b"
+  },
+  "cube_arrow_v2": {
+   "cmd": "../../work/crossengine/build/ecube_fmt_build build ../../work/crossengine/data/dump_arrow/gid.i32 ../../work/crossengine/data/dump_arrow/val.i32 - ../../work/crossengine/data/fmt_arrow.ecube 2",
+   "wall_ms": 6836.627054959536,
+   "meta": null,
+   "stdout": "{\"build_ms\":6768.369,\"read_ms\":435.069,\"distinct_ms\":3528.452,\"accum_ms\":2802.487,\"prefix_ms\":0.252,\"write_ms\":2.109,\"format\":2,\"rows\":100000000,\"groups\":11,\"values\":21084,\"bytes\":1140124,\"has_null_group\":1,\"null_measure\":0}\n"
+  },
+  "cube_arrow_v3": {
+   "cmd": "../../work/crossengine/build/ecube_fmt_build build ../../work/crossengine/data/dump_arrow/gid.i32 ../../work/crossengine/data/dump_arrow/val.i32 - ../../work/crossengine/data/fmt_arrow_v3.ecube 3",
+   "wall_ms": 6835.048058070242,
+   "meta": null,
+   "stdout": "{\"build_ms\":6766.312,\"read_ms\":425.842,\"distinct_ms\":3533.470,\"accum_ms\":2803.730,\"prefix_ms\":0.247,\"write_ms\":3.023,\"format\":3,\"rows\":100000000,\"groups\":11,\"values\":21084,\"bytes\":1140168,\"has_null_group\":1,\"null_measure\":0}\n"
+  },
+  "encoded_v3": {
+   "cmd": "../../research/real_decoders_20261024/src_eai_20261101/enc_cube3 build_enc ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed.encoded ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed 17 13 ../../work/crossengine/data/fmt_encoded_v3.ecube",
+   "wall_ms": 3397.552663926035,
+   "meta": {
+    "build_ms": 3378.347,
+    "pass1_ms": 382.921,
+    "accum_ms": 2992.171,
+    "prefix_ms": 0.246,
+    "write_ms": 3.01,
+    "groups": 11,
+    "values": 21084,
+    "rows": 100000000,
+    "bytes": 1140168,
+    "dense": 0,
+    "encoded": 1,
+    "v2": 1
+   },
+   "stdout": ""
+  }
+ },
+ "enc_cube3_sha256": "96cf26e536844b4f5f9f08fb044399770936ced24b7b75575862e756e55cf71d",
+ "plain_column_equality": {
+  "pinned_gid_sha256": "3ff670a830fb83e0a4848ed19a97f6b4d40642487e82307dcf2220c8544cd283",
+  "pinned_val_sha256": "c81425abb809afd91081a345b28c893696645817f6cab045061168f4462dfc6b",
+  "parquet_gid_equal": true,
+  "parquet_val_equal": true,
+  "arrow_gid_equal": true,
+  "arrow_val_equal": true
+ },
+ "sha256": {
+  "encoded": "c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6",
+  "plain": "c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6",
+  "parquet_v2": "c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6",
+  "parquet_v3": "78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee",
+  "arrow_v2": "c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6",
+  "arrow_v3": "78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee",
+  "encoded_v3": "78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee"
+ },
+ "sizes": {
+  "encoded": 1140124,
+  "plain": 1140124,
+  "parquet_v2": 1140124,
+  "parquet_v3": 1140168,
+  "arrow_v2": 1140124,
+  "arrow_v3": 1140168,
+  "encoded_v3": 1140168
+ },
+ "equal_across_formats": {
+  "ECUBE02": {
+   "members": [
+    "encoded",
+    "plain",
+    "parquet_v2",
+    "arrow_v2"
+   ],
+   "sha256_set": [
+    "c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6"
+   ],
+   "identical": true
+  },
+  "ECUBE03": {
+   "members": [
+    "parquet_v3",
+    "arrow_v3",
+    "encoded_v3"
+   ],
+   "sha256_set": [
+    "78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee"
+   ],
+   "identical": true
+  }
+ },
+ "query_answers": {
+  "specs": [
+   "<fixed>",
+   "hi=-720",
+   "hi=930",
+   "range=650,1350",
+   "where_in=1,2",
+   "where_not_in=0,1",
+   "having=sum>=1e10",
+   "range=80000000,90000000"
+  ],
+  "sha_by_index": {
+   "encoded": {
+    "<fixed>": "e73e56caa2ef64e67ef26fd1677260ef8373412151ba9199ccc5a93a52ba4b67",
+    "hi=-720": "7c166b5c837416b18d351ac49b92524a69040c657a2ba138c66445ec741763b7",
+    "hi=930": "7872629e2031d305bd2029db079310c1fb062da887e75df22b655bba983d8bd9",
+    "range=650,1350": "5c60c3c9ebe5d170cfcf07d2fcc02f5dc758fdecb892bbac4d580eee859a9f42",
+    "where_in=1,2": "6375fa4d29b9e3a26c28f7b9e93f74730cfa71b34902f05314b3126c7b0669e2",
+    "where_not_in=0,1": "2aa5a19fe893ceeaa171050810de3b5735b261c4e587864d40361ff28fee5815",
+    "having=sum>=1e10": "d5ec5263de621440fcfd6de0bfce69a24d6772b2a5e20ae799830e149a68a86f",
+    "range=80000000,90000000": "ee81ea337a980f0c0260d14f4ef707bb0bfc906dcddbfa72674ef5da26141bf5"
+   },
+   "plain": {
+    "<fixed>": "e73e56caa2ef64e67ef26fd1677260ef8373412151ba9199ccc5a93a52ba4b67",
+    "hi=-720": "7c166b5c837416b18d351ac49b92524a69040c657a2ba138c66445ec741763b7",
+    "hi=930": "7872629e2031d305bd2029db079310c1fb062da887e75df22b655bba983d8bd9",
+    "range=650,1350": "5c60c3c9ebe5d170cfcf07d2fcc02f5dc758fdecb892bbac4d580eee859a9f42",
+    "where_in=1,2": "6375fa4d29b9e3a26c28f7b9e93f74730cfa71b34902f05314b3126c7b0669e2",
+    "where_not_in=0,1": "2aa5a19fe893ceeaa171050810de3b5735b261c4e587864d40361ff28fee5815",
+    "having=sum>=1e10": "d5ec5263de621440fcfd6de0bfce69a24d6772b2a5e20ae799830e149a68a86f",
+    "range=80000000,90000000": "ee81ea337a980f0c0260d14f4ef707bb0bfc906dcddbfa72674ef5da26141bf5"
+   },
+   "parquet_v2": {
+    "<fixed>": "e73e56caa2ef64e67ef26fd1677260ef8373412151ba9199ccc5a93a52ba4b67",
+    "hi=-720": "7c166b5c837416b18d351ac49b92524a69040c657a2ba138c66445ec741763b7",
+    "hi=930": "7872629e2031d305bd2029db079310c1fb062da887e75df22b655bba983d8bd9",
+    "range=650,1350": "5c60c3c9ebe5d170cfcf07d2fcc02f5dc758fdecb892bbac4d580eee859a9f42",
+    "where_in=1,2": "6375fa4d29b9e3a26c28f7b9e93f74730cfa71b34902f05314b3126c7b0669e2",
+    "where_not_in=0,1": "2aa5a19fe893ceeaa171050810de3b5735b261c4e587864d40361ff28fee5815",
+    "having=sum>=1e10": "d5ec5263de621440fcfd6de0bfce69a24d6772b2a5e20ae799830e149a68a86f",
+    "range=80000000,90000000": "ee81ea337a980f0c0260d14f4ef707bb0bfc906dcddbfa72674ef5da26141bf5"
+   },
+   "parquet_v3": {
+    "<fixed>": "e73e56caa2ef64e67ef26fd1677260ef8373412151ba9199ccc5a93a52ba4b67",
+    "hi=-720": "7c166b5c837416b18d351ac49b92524a69040c657a2ba138c66445ec741763b7",
+    "hi=930": "7872629e2031d305bd2029db079310c1fb062da887e75df22b655bba983d8bd9",
+    "range=650,1350": "5c60c3c9ebe5d170cfcf07d2fcc02f5dc758fdecb892bbac4d580eee859a9f42",
+    "where_in=1,2": "6375fa4d29b9e3a26c28f7b9e93f74730cfa71b34902f05314b3126c7b0669e2",
+    "where_not_in=0,1": "2aa5a19fe893ceeaa171050810de3b5735b261c4e587864d40361ff28fee5815",
+    "having=sum>=1e10": "d5ec5263de621440fcfd6de0bfce69a24d6772b2a5e20ae799830e149a68a86f",
+    "range=80000000,90000000": "ee81ea337a980f0c0260d14f4ef707bb0bfc906dcddbfa72674ef5da26141bf5"
+   },
+   "arrow_v2": {
+    "<fixed>": "e73e56caa2ef64e67ef26fd1677260ef8373412151ba9199ccc5a93a52ba4b67",
+    "hi=-720": "7c166b5c837416b18d351ac49b92524a69040c657a2ba138c66445ec741763b7",
+    "hi=930": "7872629e2031d305bd2029db079310c1fb062da887e75df22b655bba983d8bd9",
+    "range=650,1350": "5c60c3c9ebe5d170cfcf07d2fcc02f5dc758fdecb892bbac4d580eee859a9f42",
+    "where_in=1,2": "6375fa4d29b9e3a26c28f7b9e93f74730cfa71b34902f05314b3126c7b0669e2",
+    "where_not_in=0,1": "2aa5a19fe893ceeaa171050810de3b5735b261c4e587864d40361ff28fee5815",
+    "having=sum>=1e10": "d5ec5263de621440fcfd6de0bfce69a24d6772b2a5e20ae799830e149a68a86f",
+    "range=80000000,90000000": "ee81ea337a980f0c0260d14f4ef707bb0bfc906dcddbfa72674ef5da26141bf5"
+   },
+   "arrow_v3": {
+    "<fixed>": "e73e56caa2ef64e67ef26fd1677260ef8373412151ba9199ccc5a93a52ba4b67",
+    "hi=-720": "7c166b5c837416b18d351ac49b92524a69040c657a2ba138c66445ec741763b7",
+    "hi=930": "7872629e2031d305bd2029db079310c1fb062da887e75df22b655bba983d8bd9",
+    "range=650,1350": "5c60c3c9ebe5d170cfcf07d2fcc02f5dc758fdecb892bbac4d580eee859a9f42",
+    "where_in=1,2": "6375fa4d29b9e3a26c28f7b9e93f74730cfa71b34902f05314b3126c7b0669e2",
+    "where_not_in=0,1": "2aa5a19fe893ceeaa171050810de3b5735b261c4e587864d40361ff28fee5815",
+    "having=sum>=1e10": "d5ec5263de621440fcfd6de0bfce69a24d6772b2a5e20ae799830e149a68a86f",
+    "range=80000000,90000000": "ee81ea337a980f0c0260d14f4ef707bb0bfc906dcddbfa72674ef5da26141bf5"
+   },
+   "encoded_v3": {
+    "<fixed>": "e73e56caa2ef64e67ef26fd1677260ef8373412151ba9199ccc5a93a52ba4b67",
+    "hi=-720": "7c166b5c837416b18d351ac49b92524a69040c657a2ba138c66445ec741763b7",
+    "hi=930": "7872629e2031d305bd2029db079310c1fb062da887e75df22b655bba983d8bd9",
+    "range=650,1350": "5c60c3c9ebe5d170cfcf07d2fcc02f5dc758fdecb892bbac4d580eee859a9f42",
+    "where_in=1,2": "6375fa4d29b9e3a26c28f7b9e93f74730cfa71b34902f05314b3126c7b0669e2",
+    "where_not_in=0,1": "2aa5a19fe893ceeaa171050810de3b5735b261c4e587864d40361ff28fee5815",
+    "having=sum>=1e10": "d5ec5263de621440fcfd6de0bfce69a24d6772b2a5e20ae799830e149a68a86f",
+    "range=80000000,90000000": "ee81ea337a980f0c0260d14f4ef707bb0bfc906dcddbfa72674ef5da26141bf5"
+   }
+  },
+  "all_equal_to_encoded": true
+ },
+ "index_load": {
+  "encoded": {
+   "index_load_ms": 0.087445,
+   "format": 2,
+   "groups": 11,
+   "values": 21084,
+   "index_bytes": 1140124
+  },
+  "plain": {
+   "index_load_ms": 0.093474,
+   "format": 2,
+   "groups": 11,
+   "values": 21084,
+   "index_bytes": 1140124
+  },
+  "parquet_v2": {
+   "index_load_ms": 0.0841,
+   "format": 2,
+   "groups": 11,
+   "values": 21084,
+   "index_bytes": 1140124
+  },
+  "parquet_v3": {
+   "index_load_ms": 0.090479,
+   "format": 3,
+   "groups": 11,
+   "values": 21084,
+   "index_bytes": 1140168
+  },
+  "arrow_v2": {
+   "index_load_ms": 0.089789,
+   "format": 2,
+   "groups": 11,
+   "values": 21084,
+   "index_bytes": 1140124
+  },
+  "arrow_v3": {
+   "index_load_ms": 0.08395,
+   "format": 3,
+   "groups": 11,
+   "values": 21084,
+   "index_bytes": 1140168
+  },
+  "encoded_v3": {
+   "index_load_ms": 0.088998,
+   "format": 3,
+   "groups": 11,
+   "values": 21084,
+   "index_bytes": 1140168
+  }
+ }
+}

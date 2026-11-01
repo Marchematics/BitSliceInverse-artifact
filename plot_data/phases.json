@@ -1,0 +1,26 @@
+[
+  {
+    "query": "IG/2",
+    "setup_ms": 0.114158,
+    "query_ms": 0.0812365,
+    "output_write_ms": 0.050773
+  },
+  {
+    "query": "Hatred/8",
+    "setup_ms": 0.163466,
+    "query_ms": 0.13663199999999998,
+    "output_write_ms": 0.0795295
+  },
+  {
+    "query": "CityMaxCapita/14",
+    "setup_ms": 0.2563565,
+    "query_ms": 0.590084,
+    "output_write_ms": 0.283656
+  },
+  {
+    "query": "Hatred/10",
+    "setup_ms": 0.19389,
+    "query_ms": 0.208035,
+    "output_write_ms": 0.07951449999999999
+  }
+]

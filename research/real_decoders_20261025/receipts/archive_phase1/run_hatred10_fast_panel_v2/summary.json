@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "observations": 300,
+  "blocks": 30,
+  "paths": [
+    "generic",
+    "group_domain",
+    "stream",
+    "stream_uniform",
+    "duckdb",
+    "duckdb_proj2",
+    "arrow_full",
+    "arrow_proj",
+    "vortex_full",
+    "vortex_proj"
+  ],
+  "cases": [
+    "Observed",
+    "Empty",
+    "Singleton",
+    "Boundary",
+    "AllExcluded",
+    "KeywordNone"
+  ],
+  "commands": 372,
+  "correctness_checks": 66,
+  "complete_typed_results_equal": 300,
+  "analysis_sha256": "48d6b90c6754c9a87476f5d23868f9bed2c379f2c963327b500738f3c0fbf641",
+  "native_binary_sha256": "e59ef0b82dce541070f92a8ea836b6ed737df21277441d399eb1afd24a7860a8",
+  "arrow_control_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred10_v1",
+  "vortex_control_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred10_v1",
+  "preloaded_input_bytes": 90057933,
+  "expansion_query_not_frozen_eight": true,
+  "no_page_cache_flush": true,
+  "no_warm_resident_claim": true,
+  "conditional_process_intervals": true,
+  "single_query_not_population": true
+}

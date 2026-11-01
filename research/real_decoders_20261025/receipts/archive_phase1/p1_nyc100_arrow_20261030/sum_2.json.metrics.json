@@ -1,0 +1,1 @@
+{"codec": "arrow_ipc", "op": "sum", "read_ms": 642.168055055663, "execute_ms": 503.710551885888, "stored_ms": 1145.878606941551, "rows": 10}

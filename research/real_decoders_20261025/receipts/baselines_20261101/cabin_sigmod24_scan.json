@@ -1,0 +1,228 @@
+{
+ "method": "cabin_sigmod24_scan",
+ "engine_version": "Cabin official prototype (PACMMOD/SIGMOD 2024) + NYC harness",
+ "venue": "Proc. ACM Manag. Data 2(1):57 (SIGMOD 2024), Yiyuan Chen, Shimin Chen",
+ "input_format": "plain int32 fare column (400 MB); Cabin builds its index in-process",
+ "output": "positions only (qualifying-row bitmap + CheckResult validation); NOT a SQL aggregate",
+ "storage_bytes": null,
+ "storage_note": "index bytes not exposed by the prototype harness; process RSS ~1.9 GB for 100M values incl. the 400 MB source column",
+ "declared_threads": 1,
+ "pinning": "nice -n 5 taskset -c 56",
+ "protocol": {
+  "reps_per_case": 2,
+  "index_rebuilt_per_process": true,
+  "latency": "Scan(lo,hi) selection only; no aggregation pass"
+ },
+ "cases": {
+  "fixed_all4": {
+   "reps": 2,
+   "scan_ms": 7.308,
+   "index_ms": 16048.519,
+   "check_ms": 64.701,
+   "complete_request_ms": 16425.763464998454,
+   "correct": true,
+   "raw": [
+    {
+     "rows": 100000000,
+     "index_ms": 16058.506,
+     "scan_ms": 7.287,
+     "check_ms": 64.583,
+     "correct": true,
+     "wall_ms": 16433.99250181392
+    },
+    {
+     "rows": 100000000,
+     "index_ms": 16038.532,
+     "scan_ms": 7.329,
+     "check_ms": 64.819,
+     "correct": true,
+     "wall_ms": 16417.53442818299
+    }
+   ]
+  },
+  "le_m7000": {
+   "reps": 2,
+   "scan_ms": 0.663,
+   "index_ms": 16050.6315,
+   "check_ms": 57.312,
+   "complete_request_ms": 16419.896386563778,
+   "correct": true,
+   "raw": [
+    {
+     "rows": 100000000,
+     "index_ms": 16019.69,
+     "scan_ms": 0.77,
+     "check_ms": 57.294,
+     "correct": true,
+     "wall_ms": 16388.89498496428
+    },
+    {
+     "rows": 100000000,
+     "index_ms": 16081.573,
+     "scan_ms": 0.556,
+     "check_ms": 57.33,
+     "correct": true,
+     "wall_ms": 16450.897788163275
+    }
+   ]
+  },
+  "le_m720": {
+   "reps": 2,
+   "scan_ms": 8.969999999999999,
+   "index_ms": 16092.7425,
+   "check_ms": 67.697,
+   "complete_request_ms": 16482.848214451224,
+   "correct": true,
+   "raw": [
+    {
+     "rows": 100000000,
+     "index_ms": 16078.246,
+     "scan_ms": 8.328,
+     "check_ms": 67.613,
+     "correct": true,
+     "wall_ms": 16467.42826187983
+    },
+    {
+     "rows": 100000000,
+     "index_ms": 16107.239,
+     "scan_ms": 9.612,
+     "check_ms": 67.781,
+     "correct": true,
+     "wall_ms": 16498.268167022616
+    }
+   ]
+  },
+  "le_509": {
+   "reps": 2,
+   "scan_ms": 8.8205,
+   "index_ms": 16142.9335,
+   "check_ms": 133.367,
+   "complete_request_ms": 16605.63657968305,
+   "correct": true,
+   "raw": [
+    {
+     "rows": 100000000,
+     "index_ms": 16206.958,
+     "scan_ms": 8.814,
+     "check_ms": 133.39,
+     "correct": true,
+     "wall_ms": 16668.934299144894
+    },
+    {
+     "rows": 100000000,
+     "index_ms": 16078.909,
+     "scan_ms": 8.827,
+     "check_ms": 133.344,
+     "correct": true,
+     "wall_ms": 16542.338860221207
+    }
+   ]
+  },
+  "le_650": {
+   "reps": 2,
+   "scan_ms": 7.060499999999999,
+   "index_ms": 16062.981,
+   "check_ms": 183.8385,
+   "complete_request_ms": 16573.187723523006,
+   "correct": true,
+   "raw": [
+    {
+     "rows": 100000000,
+     "index_ms": 16042.147,
+     "scan_ms": 8.636,
+     "check_ms": 183.877,
+     "correct": true,
+     "wall_ms": 16553.612780291587
+    },
+    {
+     "rows": 100000000,
+     "index_ms": 16083.815,
+     "scan_ms": 5.485,
+     "check_ms": 183.8,
+     "correct": true,
+     "wall_ms": 16592.762666754425
+    }
+   ]
+  },
+  "le_930": {
+   "reps": 2,
+   "scan_ms": 7.9830000000000005,
+   "index_ms": 16078.5965,
+   "check_ms": 312.868,
+   "complete_request_ms": 16720.932371914387,
+   "correct": true,
+   "raw": [
+    {
+     "rows": 100000000,
+     "index_ms": 16067.243,
+     "scan_ms": 9.243,
+     "check_ms": 314.881,
+     "correct": true,
+     "wall_ms": 16712.34882902354
+    },
+    {
+     "rows": 100000000,
+     "index_ms": 16089.95,
+     "scan_ms": 6.723,
+     "check_ms": 310.855,
+     "correct": true,
+     "wall_ms": 16729.515914805233
+    }
+   ]
+  },
+  "le_1350": {
+   "reps": 2,
+   "scan_ms": 8.746,
+   "index_ms": 16100.9755,
+   "check_ms": 452.39549999999997,
+   "complete_request_ms": 16885.19009994343,
+   "correct": true,
+   "raw": [
+    {
+     "rows": 100000000,
+     "index_ms": 16106.317,
+     "scan_ms": 9.143,
+     "check_ms": 454.743,
+     "correct": true,
+     "wall_ms": 16891.13562181592
+    },
+    {
+     "rows": 100000000,
+     "index_ms": 16095.634,
+     "scan_ms": 8.349,
+     "check_ms": 450.048,
+     "correct": true,
+     "wall_ms": 16879.24457807094
+    }
+   ]
+  },
+  "le_99900": {
+   "reps": 2,
+   "scan_ms": 7.404999999999999,
+   "index_ms": 16144.178,
+   "check_ms": 64.281,
+   "complete_request_ms": 16539.260359480977,
+   "correct": true,
+   "raw": [
+    {
+     "rows": 100000000,
+     "index_ms": 16026.293,
+     "scan_ms": 7.827,
+     "check_ms": 64.292,
+     "correct": true,
+     "wall_ms": 16420.61060294509
+    },
+    {
+     "rows": 100000000,
+     "index_ms": 16262.063,
+     "scan_ms": 6.983,
+     "check_ms": 64.27,
+     "correct": true,
+     "wall_ms": 16657.910116016865
+    }
+   ]
+  }
+ },
+ "exact_all": true,
+ "notes": "Cabin answers 'which rows match', not 'what are the group aggregates'. A fair SQL comparison would add a positions->values gather + aggregate pass (At 100% selectivity a bare Arrow in-memory filter+aggregate already costs ~1.78 s, so Cabin cannot compete on this query class even ignoring the pass.)"
+}

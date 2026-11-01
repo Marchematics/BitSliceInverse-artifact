@@ -1,0 +1,82 @@
+{
+ "window": {
+  "loadavg": "5.50 5.83 6.35 6/12018 2152333",
+  "rounds": 5,
+  "reps": 1000,
+  "order": "alternating per case, same window",
+  "pinned": "taskset -c 56 inherited from parent"
+ },
+ "cases": {
+  "fixed_all4": {
+   "ecube02_query_us": 1.1520000000000001,
+   "ecube03_query_us": 0.912,
+   "ecube02_serialize_us": 1.682,
+   "ecube03_serialize_us": 1.452,
+   "query_delta_pct": -20.83333333333334,
+   "serialize_delta_pct": -13.674197384066586
+  },
+  "le_m7000": {
+   "ecube02_query_us": 0.9420000000000001,
+   "ecube03_query_us": 0.7010000000000001,
+   "ecube02_serialize_us": 1.4020000000000001,
+   "ecube03_serialize_us": 1.1820000000000002,
+   "query_delta_pct": -25.583864118895967,
+   "serialize_delta_pct": -15.691868758915831
+  },
+  "le_m720": {
+   "ecube02_query_us": 0.9610000000000001,
+   "ecube03_query_us": 0.7110000000000001,
+   "ecube02_serialize_us": 1.432,
+   "ecube03_serialize_us": 1.211,
+   "query_delta_pct": -26.014568158168572,
+   "serialize_delta_pct": -15.43296089385474
+  },
+  "le_509": {
+   "ecube02_query_us": 0.992,
+   "ecube03_query_us": 0.741,
+   "ecube02_serialize_us": 1.462,
+   "ecube03_serialize_us": 1.222,
+   "query_delta_pct": -25.30241935483871,
+   "serialize_delta_pct": -16.415868673050614
+  },
+  "le_650": {
+   "ecube02_query_us": 1.1119999999999999,
+   "ecube03_query_us": 0.861,
+   "ecube02_serialize_us": 1.592,
+   "ecube03_serialize_us": 1.3519999999999999,
+   "query_delta_pct": -22.57194244604316,
+   "serialize_delta_pct": -15.075376884422123
+  },
+  "le_930": {
+   "ecube02_query_us": 1.132,
+   "ecube03_query_us": 0.8809999999999999,
+   "ecube02_serialize_us": 1.6119999999999999,
+   "ecube03_serialize_us": 1.382,
+   "query_delta_pct": -22.17314487632509,
+   "serialize_delta_pct": -14.267990074441686
+  },
+  "le_1350": {
+   "ecube02_query_us": 1.282,
+   "ecube03_query_us": 1.0610000000000002,
+   "ecube02_serialize_us": 1.7730000000000001,
+   "ecube03_serialize_us": 1.552,
+   "query_delta_pct": -17.23868954758189,
+   "serialize_delta_pct": -12.464749012972367
+  },
+  "le_99900": {
+   "ecube02_query_us": 1.1019999999999999,
+   "ecube03_query_us": 0.851,
+   "ecube02_serialize_us": 1.613,
+   "ecube03_serialize_us": 1.382,
+   "query_delta_pct": -22.776769509981847,
+   "serialize_delta_pct": -14.321140731556111
+  }
+ },
+ "summary": {
+  "query_delta_pct_median": -22.674355978012503,
+  "query_delta_pct_range": [
+   -26.014568158168572,
+   -17.23868954758189
+  ]
+ }
+}

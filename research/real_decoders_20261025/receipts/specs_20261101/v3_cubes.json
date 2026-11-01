@@ -1,0 +1,420 @@
+{
+ "binary": "../../work/specs/bin/enc_cube3_frozen",
+ "binary_sha256": "37ad8f3648c04102221b54941c4f2f82eb673a750c5f6cc9d1a24959e8f8742e",
+ "cubes": {
+  "C1": {
+   "path": "../../work/specs/cubes_v3/C1.ecube",
+   "sha256": "78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee",
+   "bytes": 1140168,
+   "build_info": {
+    "build_ms": 8783.035,
+    "read_ms": 4991.656,
+    "accum_ms": 3786.332,
+    "prefix_ms": 0.399,
+    "write_ms": 4.648,
+    "groups": 11,
+    "values": 21084,
+    "rows": 100000000,
+    "bytes": 1140168,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "C2": {
+   "path": "../../work/specs/cubes_v3/C2.ecube",
+   "sha256": "748029efe222b8de0a108e451085251f5bebe827f9d01b206d5f5bce5aab51e8",
+   "bytes": 513596,
+   "build_info": {
+    "build_ms": 962.22,
+    "read_ms": 540.176,
+    "accum_ms": 417.038,
+    "prefix_ms": 0.187,
+    "write_ms": 4.819,
+    "groups": 11,
+    "values": 9494,
+    "rows": 12000000,
+    "bytes": 513596,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "C3": {
+   "path": "../../work/specs/cubes_v3/C3.ecube",
+   "sha256": "f245f7db6ea887429e9158355e23930046d1e5e3530d6f9127ea262622ba5eaf",
+   "bytes": 20239732,
+   "build_info": {
+    "build_ms": 2688.788,
+    "read_ms": 940.387,
+    "accum_ms": 1716.196,
+    "prefix_ms": 4.446,
+    "write_ms": 27.758,
+    "groups": 3,
+    "values": 984297,
+    "rows": 11997996,
+    "bytes": 20239732,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "C4": {
+   "path": "../../work/specs/cubes_v3/C4.ecube",
+   "sha256": "35723f58e5615a2e89b48b24ca7c041fada48185bc5031123795876134800046",
+   "bytes": 36726788,
+   "build_info": {
+    "build_ms": 2784.725,
+    "read_ms": 939.17,
+    "accum_ms": 1790.095,
+    "prefix_ms": 10.282,
+    "write_ms": 45.178,
+    "groups": 7,
+    "values": 984297,
+    "rows": 11997996,
+    "bytes": 36726788,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "C5": {
+   "path": "../../work/specs/cubes_v3/C5.ecube",
+   "sha256": "1cd480430c170e8f7b546a4c2401444d2a931ad280e03fc2f081b8fe50098cd7",
+   "bytes": 2060,
+   "build_info": {
+    "build_ms": 842.559,
+    "read_ms": 519.904,
+    "accum_ms": 321.079,
+    "prefix_ms": 0.025,
+    "write_ms": 1.552,
+    "groups": 7,
+    "values": 50,
+    "rows": 11997996,
+    "bytes": 2060,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "C6": {
+   "path": "../../work/specs/cubes_v3/C6.ecube",
+   "sha256": "9a235aff4fa3f3fa8a561fc77cd605d949ef848f9fbabe2375ec5d542430e00f",
+   "bytes": 91200464,
+   "build_info": {
+    "build_ms": 1275.081,
+    "read_ms": 522.562,
+    "accum_ms": 620.769,
+    "prefix_ms": 34.286,
+    "write_ms": 97.465,
+    "groups": 400000,
+    "values": 50,
+    "rows": 11997996,
+    "bytes": 91200464,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "C7": {
+   "path": "../../work/specs/cubes_v3/C7.ecube",
+   "sha256": "eb85b2faf0589e8e27a08e61cb3e6318788b916c4c5e90f26424f835fd97149c",
+   "bytes": 168000064,
+   "build_info": {
+    "build_ms": 816.847,
+    "read_ms": 436.812,
+    "accum_ms": 134.002,
+    "prefix_ms": 67.776,
+    "write_ms": 178.256,
+    "groups": 3000000,
+    "values": 7,
+    "rows": 11997996,
+    "bytes": 168000064,
+    "dense": 1,
+    "v2": 1
+   }
+  },
+  "C8": {
+   "path": "../../work/specs/cubes_v3/C8.ecube",
+   "sha256": "c8b174200cd3eec43653ec82cb542f146ddc67d760c9e8654986e08477d4e9dc",
+   "bytes": 40848552,
+   "build_info": {
+    "build_ms": 2836.36,
+    "read_ms": 938.131,
+    "accum_ms": 1837.577,
+    "prefix_ms": 11.726,
+    "write_ms": 48.926,
+    "groups": 8,
+    "values": 984297,
+    "rows": 11997996,
+    "bytes": 40848552,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "C9": {
+   "path": "../../work/specs/cubes_v3/C9.ecube",
+   "sha256": "ab501696335fa014cfbf8731aa930b6ca2ec41fdd131c407468ee349c2a688c1",
+   "bytes": 320,
+   "build_info": {
+    "build_ms": 648.739,
+    "read_ms": 462.014,
+    "accum_ms": 186.492,
+    "prefix_ms": 0.024,
+    "write_ms": 0.21,
+    "groups": 4,
+    "values": 9,
+    "rows": 11997996,
+    "bytes": 320,
+    "dense": 1,
+    "v2": 1
+   }
+  },
+  "C10": {
+   "path": "../../work/specs/cubes_v3/C10.ecube",
+   "sha256": "a457ec64d2675d0ba77083027b64a46370b972c1009807ce52626f244cf5d2bf",
+   "bytes": 28483260,
+   "build_info": {
+    "build_ms": 2749.946,
+    "read_ms": 937.38,
+    "accum_ms": 1769.296,
+    "prefix_ms": 7.37,
+    "write_ms": 35.9,
+    "groups": 5,
+    "values": 984297,
+    "rows": 11997996,
+    "bytes": 28483260,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "C11": {
+   "path": "../../work/specs/cubes_v3/C11.ecube",
+   "sha256": "dde6cc79d7f3eaf0bebd51e64ff83639636ec6b0cf4a1f2f1c27f6ed30bbbb5c",
+   "bytes": 440864,
+   "build_info": {
+    "build_ms": 711.917,
+    "read_ms": 402.114,
+    "accum_ms": 308.443,
+    "prefix_ms": 0.134,
+    "write_ms": 1.225,
+    "groups": 1000,
+    "values": 100,
+    "rows": 11997996,
+    "bytes": 440864,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "F1": {
+   "path": "../../work/specs/cubes_v3/F1.ecube",
+   "sha256": "189d3929550a53f51b725a710af5e277d1a78dc40d35257c0aa3fa79f1d83657",
+   "bytes": 254668,
+   "build_info": {
+    "build_ms": 57.723,
+    "read_ms": 31.505,
+    "accum_ms": 25.181,
+    "prefix_ms": 0.075,
+    "write_ms": 0.962,
+    "groups": 11,
+    "values": 4705,
+    "rows": 1000000,
+    "bytes": 254668,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "F2": {
+   "path": "../../work/specs/cubes_v3/F2.ecube",
+   "sha256": "7a9e90dda7ca4b157fa06bbf70c4432eff124cd3b1927934677f26527405f60f",
+   "bytes": 12416808,
+   "build_info": {
+    "build_ms": 189.491,
+    "read_ms": 63.222,
+    "accum_ms": 111.85,
+    "prefix_ms": 1.771,
+    "write_ms": 12.647,
+    "groups": 3,
+    "values": 603850,
+    "rows": 1000000,
+    "bytes": 12416808,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "F3": {
+   "path": "../../work/specs/cubes_v3/F3.ecube",
+   "sha256": "caec83a2747b4f0689e92dafd9313a3089eee2ae71548f21523d8c29ffa031eb",
+   "bytes": 22492604,
+   "build_info": {
+    "build_ms": 203.5,
+    "read_ms": 62.531,
+    "accum_ms": 116.386,
+    "prefix_ms": 4.035,
+    "write_ms": 20.548,
+    "groups": 7,
+    "values": 602812,
+    "rows": 1000000,
+    "bytes": 22492604,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "F4": {
+   "path": "../../work/specs/cubes_v3/F4.ecube",
+   "sha256": "f94ae0d4bad2ae6ae22af283865d501b01c20311d67e50f2c3a857d272a25480",
+   "bytes": 456,
+   "build_info": {
+    "build_ms": 34.69,
+    "read_ms": 23.754,
+    "accum_ms": 9.882,
+    "prefix_ms": 0.014,
+    "write_ms": 1.04,
+    "groups": 7,
+    "values": 7,
+    "rows": 1000000,
+    "bytes": 456,
+    "dense": 1,
+    "v2": 1
+   }
+  },
+  "F5": {
+   "path": "../../work/specs/cubes_v3/F5.ecube",
+   "sha256": "695c2d8bfa043fb64a8a014d2e2d2003f22969751d4814674778ccdbe48b6f36",
+   "bytes": 440864,
+   "build_info": {
+    "build_ms": 59.286,
+    "read_ms": 32.371,
+    "accum_ms": 25.827,
+    "prefix_ms": 0.129,
+    "write_ms": 0.958,
+    "groups": 1000,
+    "values": 100,
+    "rows": 1000000,
+    "bytes": 440864,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "F6": {
+   "path": "../../work/specs/cubes_v3/F6.ecube",
+   "sha256": "ba1f7667f80e801546035b9a4e5cc0c01010d3b62ace34ccc59005461503d5a3",
+   "bytes": 22533500,
+   "build_info": {
+    "build_ms": 202.332,
+    "read_ms": 62.374,
+    "accum_ms": 115.687,
+    "prefix_ms": 4.052,
+    "write_ms": 20.219,
+    "groups": 7,
+    "values": 603906,
+    "rows": 1000000,
+    "bytes": 22533500,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "F7": {
+   "path": "../../work/specs/cubes_v3/F7.ecube",
+   "sha256": "5f7ae2cf9e6b53ab2c19fa295847c953c565128f952488ee1b69ae147dcca187",
+   "bytes": 224,
+   "build_info": {
+    "build_ms": 19.078,
+    "read_ms": 16.264,
+    "accum_ms": 2.143,
+    "prefix_ms": 0.011,
+    "write_ms": 0.661,
+    "groups": 5,
+    "values": 1,
+    "rows": 1000000,
+    "bytes": 224,
+    "dense": 1,
+    "v2": 1
+   }
+  },
+  "F8": {
+   "path": "../../work/specs/cubes_v3/F8.ecube",
+   "sha256": "6ce0b79027d92909ed7d9d725d2312d66d52f7d406bd59b227655e02a6c7a87c",
+   "bytes": 257537096,
+   "build_info": {
+    "build_ms": 537.87,
+    "read_ms": 62.626,
+    "accum_ms": 205.46,
+    "prefix_ms": 57.013,
+    "write_ms": 212.771,
+    "groups": 100,
+    "values": 603479,
+    "rows": 1000000,
+    "bytes": 257537096,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "F9": {
+   "path": "../../work/specs/cubes_v3/F9.ecube",
+   "sha256": "df37a8cd6d699683a37e749fcedb53c2b547782c9ad5753bcb040ce2dba85ce0",
+   "bytes": 25056696,
+   "build_info": {
+    "build_ms": 207.21,
+    "read_ms": 63.365,
+    "accum_ms": 116.89,
+    "prefix_ms": 4.622,
+    "write_ms": 22.332,
+    "groups": 8,
+    "values": 603771,
+    "rows": 1000000,
+    "bytes": 25056696,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "F10": {
+   "path": "../../work/specs/cubes_v3/F10.ecube",
+   "sha256": "44ec99f6428e941b4608e98b4ad019403a0b72895d0161c02fe06256006c2207",
+   "bytes": 1400064,
+   "build_info": {
+    "build_ms": 36.626,
+    "read_ms": 23.373,
+    "accum_ms": 10.291,
+    "prefix_ms": 0.457,
+    "write_ms": 2.505,
+    "groups": 25000,
+    "values": 7,
+    "rows": 1000000,
+    "bytes": 1400064,
+    "dense": 1,
+    "v2": 1
+   }
+  },
+  "F11": {
+   "path": "../../work/specs/cubes_v3/F11.ecube",
+   "sha256": "4c8ca3bbe6f067191b821db3c9fd27198eaf42d9f2788cbe6d06a6b06a5667ee",
+   "bytes": 1480,
+   "build_info": {
+    "build_ms": 0.288,
+    "read_ms": 0.105,
+    "accum_ms": 0.012,
+    "prefix_ms": 0.007,
+    "write_ms": 0.164,
+    "groups": 6,
+    "values": 39,
+    "rows": 2000,
+    "bytes": 1480,
+    "dense": 0,
+    "v2": 1
+   }
+  },
+  "F12": {
+   "path": "../../work/specs/cubes_v3/F12.ecube",
+   "sha256": "ec8c81ae5fd202f30185ea29ccc15b4f771c89e8c1e0fc0bca280584ae69bb9a",
+   "bytes": 96,
+   "build_info": {
+    "build_ms": 0.133,
+    "read_ms": 0.045,
+    "accum_ms": 0.0,
+    "prefix_ms": 0.004,
+    "write_ms": 0.084,
+    "groups": 1,
+    "values": 1,
+    "rows": 1,
+    "bytes": 96,
+    "dense": 1,
+    "v2": 1
+   }
+  }
+ }
+}

@@ -1,0 +1,190 @@
+{
+  "status": "passed",
+  "query": "Hatred_1/10",
+  "cases": 6,
+  "source_pins": {
+    "csv": {
+      "sha256": "b2dc722d3418a5468a9c30c5753a1af1b46a87ac0bc96fb872237b1a73ce7145",
+      "git_sha1": "486e0d25d7ed784ee9133fcba1a975c03ed25ea5",
+      "bytes": 24249443
+    },
+    "sql_sha256": "de973d94afba5a1fb9c3c472dcb547dd3fd8c1c9fe5e745aeb74294179596364",
+    "ddl_sha256": "4ab421e7994ec01885a0746fa573c849aaad75779e30e707dd4ca8cf81a295c7"
+  },
+  "original_SQL_unchanged": true,
+  "original_DDL_unchanged": true,
+  "rows_observed": 65536,
+  "columns": 31,
+  "projected_columns": [
+    24,
+    13,
+    26
+  ],
+  "features": [
+    "group-key lexicographic ranges",
+    "row-level dictionary IN",
+    "HAVING range on SUM(1)",
+    "integer MAX/MIN payload"
+  ],
+  "case_records": [
+    {
+      "case": "Observed",
+      "rows": 65536,
+      "oracle_groups": 18
+    },
+    {
+      "case": "Empty",
+      "rows": 0,
+      "oracle_groups": 0
+    },
+    {
+      "case": "Singleton",
+      "rows": 1,
+      "oracle_groups": 0
+    },
+    {
+      "case": "Boundary",
+      "rows": 240,
+      "oracle_groups": 4
+    },
+    {
+      "case": "AllExcluded",
+      "rows": 50,
+      "oracle_groups": 0
+    },
+    {
+      "case": "KeywordNone",
+      "rows": 40,
+      "oracle_groups": 0
+    }
+  ],
+  "engine_records": [
+    {
+      "case": "Observed",
+      "rows": 65536,
+      "full_database": "results/hatred10_prep_v1/Observed_duckdb/full31.duckdb",
+      "full_database_bytes": 20983808,
+      "full_database_sha256": "f26c7b864a1da863e81eb52ffa1250715c67ca79f02f6437988013f550dfb393",
+      "projected_database": "results/hatred10_prep_v1/Observed_proj3/projected.duckdb",
+      "projected_database_bytes": 536576,
+      "projected_database_sha256": "42bba1757f91d6cd5120bd8b2c3af136dccc96d6a10dfcff77cca86a607c5a73",
+      "complete_result_equals_oracle": true,
+      "projection_matched_result_equals_oracle": true,
+      "identity": {
+        "version": "2.0.0",
+        "native_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/_duckdb.abi3.so",
+        "native_module_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a"
+      },
+      "full_value_columns_verified": 31,
+      "full_value_cells_verified": 2031616,
+      "projected_value_columns_verified": 3
+    },
+    {
+      "case": "Empty",
+      "rows": 0,
+      "full_database": "results/hatred10_prep_v1/Empty_duckdb/full31.duckdb",
+      "full_database_bytes": 274432,
+      "full_database_sha256": "168d64948978b0229cafffa361ee8e43009f174b5ef5ca44cb4efc4d3dcdc49c",
+      "projected_database": "results/hatred10_prep_v1/Empty_proj3/projected.duckdb",
+      "projected_database_bytes": 274432,
+      "projected_database_sha256": "e8f1a8384fe80eb60cf58ab2a7a3203764a13c2e0ce2304e9ebf90ef50ad993f",
+      "complete_result_equals_oracle": true,
+      "projection_matched_result_equals_oracle": true,
+      "identity": {
+        "version": "2.0.0",
+        "native_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/_duckdb.abi3.so",
+        "native_module_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a"
+      },
+      "full_value_columns_verified": 31,
+      "full_value_cells_verified": 0,
+      "projected_value_columns_verified": 3
+    },
+    {
+      "case": "Singleton",
+      "rows": 1,
+      "full_database": "results/hatred10_prep_v1/Singleton_duckdb/full31.duckdb",
+      "full_database_bytes": 536576,
+      "full_database_sha256": "a20547858a835621feee6086c24e33e774feeefe6037966c56930e5b8938e7ec",
+      "projected_database": "results/hatred10_prep_v1/Singleton_proj3/projected.duckdb",
+      "projected_database_bytes": 536576,
+      "projected_database_sha256": "9c273c9837e1dd11153f5313e5e81a2c1421fe90a6b867053a4119ae13d0e6b0",
+      "complete_result_equals_oracle": true,
+      "projection_matched_result_equals_oracle": true,
+      "identity": {
+        "version": "2.0.0",
+        "native_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/_duckdb.abi3.so",
+        "native_module_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a"
+      },
+      "full_value_columns_verified": 31,
+      "full_value_cells_verified": 31,
+      "projected_value_columns_verified": 3
+    },
+    {
+      "case": "Boundary",
+      "rows": 240,
+      "full_database": "results/hatred10_prep_v1/Boundary_duckdb/full31.duckdb",
+      "full_database_bytes": 536576,
+      "full_database_sha256": "cce103e4359d3bb6ad6df6286116aafdcb063ebf4130b802d2f681c6ddd4eef4",
+      "projected_database": "results/hatred10_prep_v1/Boundary_proj3/projected.duckdb",
+      "projected_database_bytes": 536576,
+      "projected_database_sha256": "762ba921c9e232bc7615bdd786bb40515fbeadf3ac2cd481fa6ec190d05db56b",
+      "complete_result_equals_oracle": true,
+      "projection_matched_result_equals_oracle": true,
+      "identity": {
+        "version": "2.0.0",
+        "native_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/_duckdb.abi3.so",
+        "native_module_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a"
+      },
+      "full_value_columns_verified": 31,
+      "full_value_cells_verified": 7440,
+      "projected_value_columns_verified": 3
+    },
+    {
+      "case": "AllExcluded",
+      "rows": 50,
+      "full_database": "results/hatred10_prep_v1/AllExcluded_duckdb/full31.duckdb",
+      "full_database_bytes": 536576,
+      "full_database_sha256": "2c35e5f4d3b0d33347c57de7ab36c81a0106bbf637f1b50648dd71260b1a7925",
+      "projected_database": "results/hatred10_prep_v1/AllExcluded_proj3/projected.duckdb",
+      "projected_database_bytes": 536576,
+      "projected_database_sha256": "92e465cf111070ec7097578a0e24000ce915cbefdb6b911bac2a7f62f7eb2cfb",
+      "complete_result_equals_oracle": true,
+      "projection_matched_result_equals_oracle": true,
+      "identity": {
+        "version": "2.0.0",
+        "native_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/_duckdb.abi3.so",
+        "native_module_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a"
+      },
+      "full_value_columns_verified": 31,
+      "full_value_cells_verified": 1550,
+      "projected_value_columns_verified": 3
+    },
+    {
+      "case": "KeywordNone",
+      "rows": 40,
+      "full_database": "results/hatred10_prep_v1/KeywordNone_duckdb/full31.duckdb",
+      "full_database_bytes": 536576,
+      "full_database_sha256": "fe5dfa1bbe30a1e87246c8cd332ea46d35ddb36ea71b654452fc2a4c901cb520",
+      "projected_database": "results/hatred10_prep_v1/KeywordNone_proj3/projected.duckdb",
+      "projected_database_bytes": 536576,
+      "projected_database_sha256": "5044b52301ce8f6899b700810faedb5a659296cc640aa2109a8881316484b1ad",
+      "complete_result_equals_oracle": true,
+      "projection_matched_result_equals_oracle": true,
+      "identity": {
+        "version": "2.0.0",
+        "native_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/_duckdb.abi3.so",
+        "native_module_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a"
+      },
+      "full_value_columns_verified": 31,
+      "full_value_cells_verified": 1240,
+      "projected_value_columns_verified": 3
+    }
+  ],
+  "duckdb_identity": {
+    "version": "2.0.0",
+    "native_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/_duckdb.abi3.so",
+    "native_module_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a"
+  },
+  "wall_s": 89.51575660705566,
+  "scope": "new expansion query; does not modify or re-run the frozen fixed eight"
+}

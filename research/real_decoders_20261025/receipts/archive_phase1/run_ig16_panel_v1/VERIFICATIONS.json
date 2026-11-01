@@ -1,0 +1,21 @@
+[
+  {
+    "stage": "build_verify",
+    "sha256": "ce3c7b4e0e9e65c749e1271e3e0e10f985aaf24735c18b0d553673baab9ea8c9"
+  },
+  {
+    "method": "native",
+    "exact": true,
+    "sha256": "d3cf34f86fe8024ced5537d7f8e37ceef732974675162afe65238e45e83281e7"
+  },
+  {
+    "method": "duckdb",
+    "exact": true,
+    "sha256": "5045f497624b0f00b183180bffd72d88b9f55741164c1927951716edda1db5eb"
+  },
+  {
+    "method": "arrow",
+    "exact": true,
+    "sha256": "5045f497624b0f00b183180bffd72d88b9f55741164c1927951716edda1db5eb"
+  }
+]

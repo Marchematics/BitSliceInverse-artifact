@@ -1,0 +1,26 @@
+{
+ "bytes": 29641600,
+ "mode": "value",
+ "RB": 0,
+ "rows": 12000000,
+ "G": 4,
+ "G0": 3,
+ "has_null": true,
+ "null_group": 3,
+ "D1": 11,
+ "D2": 50,
+ "cells": 550,
+ "W": 65536,
+ "BP": 159,
+ "count_width": 4,
+ "vmin": 90110,
+ "vmax": 10489950,
+ "sections": {
+  "cumc": 1408000,
+  "cumsum": 2816000,
+  "first": 704000,
+  "last": 704000,
+  "offs": 24000000,
+  "header": 9600
+ }
+}

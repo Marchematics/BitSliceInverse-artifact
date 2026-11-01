@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "cases": 7,
+  "projected_columns": 2,
+  "all_complete_results_equal_oracle": true,
+  "all_original_rows_verified": true,
+  "original_SQL_unchanged": true,
+  "wall_s": 1.3599812984466553,
+  "not_a_timing_result": true,
+  "receipts": [
+    "AbsentLiteral",
+    "AllExcluded",
+    "AllNullPayload",
+    "Empty",
+    "Endpoints",
+    "MixedTail",
+    "Observed"
+  ]
+}

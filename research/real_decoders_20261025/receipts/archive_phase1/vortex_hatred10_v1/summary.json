@@ -1,0 +1,124 @@
+{
+  "status": "passed",
+  "query": "hatred10",
+  "prep_run": "hatred10_prep_v1",
+  "cases": 6,
+  "identity": {
+    "vortex_data": "0.87.0",
+    "pyarrow": "26.0.0",
+    "duckdb": "2.0.0",
+    "python": "3.12.15",
+    "native_module": "../../.venv/lib/python3.12/site-packages/vortex/_lib.abi3.so",
+    "native_module_sha256": "101324d9241e33f3beebbb2f347969054c26d3cfbba5f7e45ffff116dabe8228"
+  },
+  "vortex_native_sha256": "101324d9241e33f3beebbb2f347969054c26d3cfbba5f7e45ffff116dabe8228",
+  "scope": "actual Vortex 0.87 compressed load + Arrow aggregation hybrid control for an expansion query; fully-NULL columns are skipped in the full control",
+  "all_complete_results_equal_oracle": true,
+  "wall_s": 1.245680570602417,
+  "records": [
+    {
+      "case": "Observed",
+      "rows": 65536,
+      "full_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred10_v1/Observed_vortex/full",
+      "full_bytes": 10718516,
+      "projected_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred10_v1/Observed_vortex/projected",
+      "projected_bytes": 28896,
+      "full_columns": 30,
+      "skipped_all_null_columns": [
+        "City"
+      ],
+      "projected_columns": [
+        "State ",
+        "Keyword",
+        "StatePopNum"
+      ],
+      "complete_result_equals_oracle": true
+    },
+    {
+      "case": "Empty",
+      "rows": 0,
+      "full_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred10_v1/Empty_vortex/full",
+      "full_bytes": 11412,
+      "projected_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred10_v1/Empty_vortex/projected",
+      "projected_bytes": 1100,
+      "full_columns": 31,
+      "skipped_all_null_columns": [],
+      "projected_columns": [
+        "State ",
+        "Keyword",
+        "StatePopNum"
+      ],
+      "complete_result_equals_oracle": true
+    },
+    {
+      "case": "Singleton",
+      "rows": 1,
+      "full_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred10_v1/Singleton_vortex/full",
+      "full_bytes": 10413,
+      "projected_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred10_v1/Singleton_vortex/projected",
+      "projected_bytes": 1186,
+      "full_columns": 26,
+      "skipped_all_null_columns": [
+        "City",
+        "F26",
+        "F27",
+        "F28",
+        "Self Report Location"
+      ],
+      "projected_columns": [
+        "State ",
+        "Keyword",
+        "StatePopNum"
+      ],
+      "complete_result_equals_oracle": true
+    },
+    {
+      "case": "Boundary",
+      "rows": 240,
+      "full_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred10_v1/Boundary_vortex/full",
+      "full_bytes": 13181,
+      "projected_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred10_v1/Boundary_vortex/projected",
+      "projected_bytes": 2736,
+      "full_columns": 31,
+      "skipped_all_null_columns": [],
+      "projected_columns": [
+        "State ",
+        "Keyword",
+        "StatePopNum"
+      ],
+      "complete_result_equals_oracle": true
+    },
+    {
+      "case": "AllExcluded",
+      "rows": 50,
+      "full_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred10_v1/AllExcluded_vortex/full",
+      "full_bytes": 11569,
+      "projected_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred10_v1/AllExcluded_vortex/projected",
+      "projected_bytes": 1124,
+      "full_columns": 31,
+      "skipped_all_null_columns": [],
+      "projected_columns": [
+        "State ",
+        "Keyword",
+        "StatePopNum"
+      ],
+      "complete_result_equals_oracle": true
+    },
+    {
+      "case": "KeywordNone",
+      "rows": 40,
+      "full_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred10_v1/KeywordNone_vortex/full",
+      "full_bytes": 11558,
+      "projected_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred10_v1/KeywordNone_vortex/projected",
+      "projected_bytes": 1113,
+      "full_columns": 31,
+      "skipped_all_null_columns": [],
+      "projected_columns": [
+        "State ",
+        "Keyword",
+        "StatePopNum"
+      ],
+      "complete_result_equals_oracle": true
+    }
+  ]
+}

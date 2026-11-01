@@ -1,0 +1,249 @@
+{
+  "initial_generic": {
+    "source": {
+      "commit": "3a56ef259039aa55182b6a9c21584658e77861e9",
+      "repository_path": "research/real_decoders_20261025/receipts/p1_generic_eval_20261030/analysis.json",
+      "file": "initial_generic.json",
+      "sha256": "6c17f2ca98ef535e82b81a20847ceaaf8cd669863a25d7800a06b49a7878a737",
+      "source": "unmodified Git blob from the retained evidence checkout"
+    },
+    "results": [
+      {
+        "name": "cmc_count",
+        "status": "passed",
+        "rows": 4536,
+        "expected_rows": 4536,
+        "exact": true,
+        "generic_median_ms": 3.21014,
+        "duckdb_warm_median_ms": 3.460493745903174,
+        "speedup": 1.0779884197895337
+      },
+      {
+        "name": "cmc_count_top",
+        "status": "passed",
+        "rows": 3,
+        "expected_rows": 3,
+        "exact": true,
+        "generic_median_ms": 1.30243,
+        "duckdb_warm_median_ms": 2.4077168044944606,
+        "speedup": 1.8486343254489381
+      }
+    ]
+  },
+  "buffer_flat": {
+    "source": {
+      "commit": "4bb389f2e75e0d27737cfc9feaac11a94b4cd9cb",
+      "repository_path": "research/real_decoders_20261025/receipts/p1_generic_eval_20261030/analysis.json",
+      "file": "buffer_flat.json",
+      "sha256": "07ba2fdd9950dfe05ac5317e517272875efb8e35f9408fbb0b33fe6ff8ca2165",
+      "source": "unmodified Git blob from the retained evidence checkout"
+    },
+    "results": [
+      {
+        "name": "cmc_count",
+        "status": "passed",
+        "rows": 4536,
+        "expected_rows": 4536,
+        "exact": true,
+        "generic_median_ms": 1.46561,
+        "duckdb_warm_median_ms": 3.4292044738928475,
+        "speedup": 2.3397796643669513
+      },
+      {
+        "name": "cmc_count_top",
+        "status": "passed",
+        "rows": 3,
+        "expected_rows": 3,
+        "exact": true,
+        "generic_median_ms": 0.486815,
+        "duckdb_warm_median_ms": 2.274251744771997,
+        "speedup": 4.671696116126243
+      }
+    ]
+  },
+  "pre_validity_word": {
+    "source": {
+      "commit": "68a4b0c136f49ad616ac1ab0572cd0443b81450c",
+      "repository_path": "research/real_decoders_20261025/receipts/p1_generic_eval_20261030/analysis.json",
+      "file": "pre_validity_word.json",
+      "sha256": "776b0ae02b7242edab524dea7c2137501757ca0bd61446f25865c55d790e2bd7",
+      "source": "unmodified Git blob from the retained evidence checkout"
+    },
+    "results": [
+      {
+        "name": "cmc_count",
+        "status": "passed",
+        "rows": 4536,
+        "expected_rows": 4536,
+        "exact": true,
+        "generic_median_ms": 1.56391,
+        "duckdb_warm_median_ms": 3.4945344707618156,
+        "speedup": 2.2344856614266906
+      },
+      {
+        "name": "cmc_count_top",
+        "status": "passed",
+        "rows": 3,
+        "expected_rows": 3,
+        "exact": true,
+        "generic_median_ms": 0.537329,
+        "duckdb_warm_median_ms": 2.43099353586634,
+        "speedup": 4.5242180039907405
+      }
+    ]
+  },
+  "validity_word": {
+    "source": {
+      "commit": "fe7a5bbdc4b71a39ed31ff191e7e58c1bf5c00db",
+      "repository_path": "research/real_decoders_20261025/receipts/p1_generic_eval_20261030/analysis.json",
+      "file": "validity_word.json",
+      "sha256": "da46db73fc18bac0a366d8c72f3466268466d7df91bced947428e5bc99b0d907",
+      "source": "unmodified Git blob from the retained evidence checkout"
+    },
+    "results": [
+      {
+        "name": "cmc_count",
+        "status": "passed",
+        "rows": 4536,
+        "expected_rows": 4536,
+        "exact": true,
+        "generic_median_ms": 1.43309,
+        "duckdb_warm_median_ms": 3.685356661056479,
+        "speedup": 2.571615642462427
+      },
+      {
+        "name": "cmc_count_top",
+        "status": "passed",
+        "rows": 3,
+        "expected_rows": 3,
+        "exact": true,
+        "generic_median_ms": 0.505464,
+        "duckdb_warm_median_ms": 2.6002014676729837,
+        "speedup": 5.144187257001455
+      }
+    ]
+  },
+  "dictionary_views": {
+    "source": {
+      "commit": "b53ca95427e4c92a9921514ccaaf8bd7dd73a432",
+      "repository_path": "research/real_decoders_20261025/receipts/p1_generic_eval_20261030/analysis.json",
+      "file": "dictionary_views.json",
+      "sha256": "d7ade077c889d72a4cd0da9aa6d73e1141d9cd1a3571e27728fc600d73d51cc0",
+      "source": "unmodified Git blob from the retained evidence checkout"
+    },
+    "results": [
+      {
+        "name": "ig16_city_count_having",
+        "status": "passed",
+        "rows": 28,
+        "expected_rows": 28,
+        "exact": true,
+        "generic_median_ms": 1.8768,
+        "duckdb_warm_median_ms": 4.275201198955377,
+        "speedup": 2.2779205024272042
+      },
+      {
+        "name": "cmc_count",
+        "status": "passed",
+        "rows": 4536,
+        "expected_rows": 4536,
+        "exact": true,
+        "generic_median_ms": 1.41471,
+        "duckdb_warm_median_ms": 3.6295929923653603,
+        "speedup": 2.5656092007304396
+      },
+      {
+        "name": "cmc_count_top",
+        "status": "passed",
+        "rows": 3,
+        "expected_rows": 3,
+        "exact": true,
+        "generic_median_ms": 0.403187,
+        "duckdb_warm_median_ms": 2.6014908061673245,
+        "speedup": 6.452318170395683
+      }
+    ]
+  },
+  "pre_bulk_read": {
+    "source": {
+      "commit": "e0e305ed2d79ef6b8a75c0ada322e30ac35d495b",
+      "repository_path": "research/real_decoders_20261025/receipts/p1_generic_eval_20261030/analysis.json",
+      "file": "pre_bulk_read.json",
+      "sha256": "77bf525bffa77419a927d9ee049cb011d8cbec3a778657c4cbcca39a342fb5db",
+      "source": "unmodified Git blob from the retained evidence checkout"
+    },
+    "results": [
+      {
+        "name": "ig16_city_count_having",
+        "status": "passed",
+        "rows": 28,
+        "expected_rows": 28,
+        "exact": true,
+        "generic_median_ms": 1.8727,
+        "duckdb_warm_median_ms": 4.287529597058892,
+        "speedup": 2.289490893927961
+      },
+      {
+        "name": "cmc_count",
+        "status": "passed",
+        "rows": 4536,
+        "expected_rows": 4536,
+        "exact": true,
+        "generic_median_ms": 1.54011,
+        "duckdb_warm_median_ms": 3.7074692702541747,
+        "speedup": 2.407275629827853
+      },
+      {
+        "name": "cmc_count_top",
+        "status": "passed",
+        "rows": 3,
+        "expected_rows": 3,
+        "exact": true,
+        "generic_median_ms": 0.406022,
+        "duckdb_warm_median_ms": 2.5082546596725783,
+        "speedup": 6.177632393497343
+      }
+    ]
+  },
+  "bulk_read": {
+    "source": {
+      "commit": "ab895a7103005b983d69c31436069008ce4b2add",
+      "repository_path": "research/real_decoders_20261025/receipts/p1_generic_eval_20261030/analysis.json",
+      "file": "bulk_read.json",
+      "sha256": "0902f23c9a665ed0ce509e10d92b579cb3a95de8264bceb159533b507e5367a2",
+      "source": "unmodified Git blob from the retained evidence checkout"
+    },
+    "results": [
+      {
+        "name": "ig16_city_count_having",
+        "status": "passed",
+        "rows": 28,
+        "expected_rows": 28,
+        "exact": true,
+        "generic_median_ms": 0.933227,
+        "duckdb_warm_median_ms": 4.289770529915889,
+        "speedup": 4.596706406818372
+      },
+      {
+        "name": "cmc_count",
+        "status": "passed",
+        "rows": 4536,
+        "expected_rows": 4536,
+        "exact": true,
+        "generic_median_ms": 1.32456,
+        "duckdb_warm_median_ms": 3.5297727367530265,
+        "speedup": 2.6648643600539246
+      },
+      {
+        "name": "cmc_count_top",
+        "status": "passed",
+        "rows": 3,
+        "expected_rows": 3,
+        "exact": true,
+        "generic_median_ms": 0.288724,
+        "duckdb_warm_median_ms": 2.4655977884928384,
+        "speedup": 8.539635736872718
+      }
+    ]
+  }
+}

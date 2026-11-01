@@ -1,0 +1,30 @@
+{
+ "cases": {
+  "fixed": {
+   "exact": true,
+   "rows": 101,
+   "duckdb_ms_1t": 8946.42090331763
+  },
+  "le_m7000": {
+   "exact": true,
+   "rows": 101,
+   "duckdb_ms_1t": 4848.990384954959
+  },
+  "le_m720": {
+   "exact": true,
+   "rows": 101,
+   "duckdb_ms_1t": 5317.617509979755
+  },
+  "le_650": {
+   "exact": true,
+   "rows": 101,
+   "duckdb_ms_1t": 6999.660133616999
+  },
+  "le_99900": {
+   "exact": true,
+   "rows": 101,
+   "duckdb_ms_1t": 9455.570495221764
+  }
+ },
+ "all_exact_vs_duckdb_2_0": true
+}

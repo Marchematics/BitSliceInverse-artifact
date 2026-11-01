@@ -1,0 +1,13 @@
+{
+  "input": "NYC 100M encoded tree",
+  "representation": "BSBITS03",
+  "query": "SUM/COUNT/MIN/MAX WHERE passenger_count IN (1,2), all groups filtered",
+  "query_median_ms": 49.49,
+  "runs": 5,
+  "exact": true,
+  "duckdb_same_query_ms": 545.4808,
+  "speedup_vs_duckdb": 11.02204081632653,
+  "storage_bytes": 296995264,
+  "build_ms": 6684.764,
+  "note": "Group-domain filter; no numeric range; SUM popcount, COUNT/MIN/MAX metadata; exact 2 groups."
+}

@@ -1,0 +1,116 @@
+{
+  "status": "passed",
+  "query": "ig2",
+  "cases": 7,
+  "identity": {
+    "vortex_data": "0.87.0",
+    "pyarrow": "26.0.0",
+    "python": "3.12.15",
+    "native_module": "../../.venv/lib/python3.12/site-packages/vortex/_lib.abi3.so",
+    "native_module_sha256": "101324d9241e33f3beebbb2f347969054c26d3cfbba5f7e45ffff116dabe8228"
+  },
+  "vortex_native_sha256": "101324d9241e33f3beebbb2f347969054c26d3cfbba5f7e45ffff116dabe8228",
+  "scope": "actual Vortex 0.87 compressed load + Arrow aggregation hybrid control for IG/2; Vortex 0.87 has no SQL/group-by engine",
+  "all_complete_results_equal_oracle": true,
+  "wall_s": 0.6485214233398438,
+  "records": [
+    {
+      "case": "Observed",
+      "rows": 65536,
+      "full_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_ig2_v1/Observed_vortex/full",
+      "full_bytes": 1988822,
+      "projected_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_ig2_v1/Observed_vortex/projected",
+      "projected_bytes": 150924,
+      "compressed_columns": 18,
+      "projected_columns": [
+        "State",
+        "POPESTIMATE2014"
+      ],
+      "complete_result_equals_oracle": true
+    },
+    {
+      "case": "MixedTail",
+      "rows": 1031,
+      "full_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_ig2_v1/MixedTail_vortex/full",
+      "full_bytes": 10002,
+      "projected_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_ig2_v1/MixedTail_vortex/projected",
+      "projected_bytes": 4033,
+      "compressed_columns": 18,
+      "projected_columns": [
+        "State",
+        "POPESTIMATE2014"
+      ],
+      "complete_result_equals_oracle": true
+    },
+    {
+      "case": "AbsentLiteral",
+      "rows": 65,
+      "full_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_ig2_v1/AbsentLiteral_vortex/full",
+      "full_bytes": 7751,
+      "projected_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_ig2_v1/AbsentLiteral_vortex/projected",
+      "projected_bytes": 1782,
+      "compressed_columns": 18,
+      "projected_columns": [
+        "State",
+        "POPESTIMATE2014"
+      ],
+      "complete_result_equals_oracle": true
+    },
+    {
+      "case": "AllExcluded",
+      "rows": 63,
+      "full_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_ig2_v1/AllExcluded_vortex/full",
+      "full_bytes": 7860,
+      "projected_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_ig2_v1/AllExcluded_vortex/projected",
+      "projected_bytes": 1891,
+      "compressed_columns": 18,
+      "projected_columns": [
+        "State",
+        "POPESTIMATE2014"
+      ],
+      "complete_result_equals_oracle": true
+    },
+    {
+      "case": "AllNullPayload",
+      "rows": 64,
+      "full_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_ig2_v1/AllNullPayload_vortex/full",
+      "full_bytes": 7328,
+      "projected_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_ig2_v1/AllNullPayload_vortex/projected",
+      "projected_bytes": 1359,
+      "compressed_columns": 18,
+      "projected_columns": [
+        "State",
+        "POPESTIMATE2014"
+      ],
+      "complete_result_equals_oracle": true
+    },
+    {
+      "case": "Endpoints",
+      "rows": 1024,
+      "full_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_ig2_v1/Endpoints_vortex/full",
+      "full_bytes": 8069,
+      "projected_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_ig2_v1/Endpoints_vortex/projected",
+      "projected_bytes": 2100,
+      "compressed_columns": 18,
+      "projected_columns": [
+        "State",
+        "POPESTIMATE2014"
+      ],
+      "complete_result_equals_oracle": true
+    },
+    {
+      "case": "Empty",
+      "rows": 0,
+      "full_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_ig2_v1/Empty_vortex/full",
+      "full_bytes": 6672,
+      "projected_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_ig2_v1/Empty_vortex/projected",
+      "projected_bytes": 736,
+      "compressed_columns": 18,
+      "projected_columns": [
+        "State",
+        "POPESTIMATE2014"
+      ],
+      "complete_result_equals_oracle": true
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "start_utc": "2026-10-24T20:26:35.373171+00:00",
+  "cap_seconds": 900,
+  "prep_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/ig2_prep_20261025",
+  "paths": [
+    "generic",
+    "expert",
+    "group_then_filter",
+    "direct",
+    "direct_plain",
+    "direct_run",
+    "stream",
+    "stream_uniform",
+    "duckdb",
+    "duckdb_proj2",
+    "arrow_full",
+    "arrow_proj",
+    "vortex_full",
+    "vortex_proj"
+  ],
+  "profiles": [
+    "Observed",
+    "MixedTail",
+    "AbsentLiteral",
+    "AllExcluded",
+    "AllNullPayload",
+    "Endpoints",
+    "Empty"
+  ],
+  "blocks": 30,
+  "native_binary_sha256": "35af22fdc9697ce8a544e6954a6efeebc4e7ebb4ed6d1f274bdd0bdc351f1920",
+  "frozen_binary_sha256": "fb033823755f0b11fbff7f044ab2702453c41269930e333014d413f8f6af0e62",
+  "arrow_control_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_ig2_v1",
+  "vortex_control_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_ig2_v1",
+  "preloaded_input_bytes": 0,
+  "projection_control_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig2_proj2_v3",
+  "endpoint_a": "complete_fresh_worker_wall_ms",
+  "endpoint_b": "reconstructed_in_worker_stored_input_ms"
+}

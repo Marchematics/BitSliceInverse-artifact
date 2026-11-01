@@ -1,0 +1,51 @@
+{
+  "format": "p0-p1-panel-v1",
+  "query": "IGlostions1/2",
+  "blocks": 30,
+  "paths": [
+    "old_native",
+    "fast_native",
+    "plain_cpp"
+  ],
+  "host_load1_at_start": 2.88,
+  "pinned_core": 2,
+  "stored_interval_ms": {
+    "old_native": {
+      "n": 30,
+      "median": 0.287763,
+      "min": 0.280382,
+      "max": 0.357843
+    },
+    "fast_native": {
+      "n": 30,
+      "median": 0.18929649999999998,
+      "min": 0.182131,
+      "max": 0.205124
+    },
+    "plain_cpp": {
+      "n": 30,
+      "median": 0.866698,
+      "min": 0.853404,
+      "max": 0.993675
+    }
+  },
+  "contrasts": {
+    "fast/old_native": {
+      "ratio_other_over_fast": 1.5217750837738193,
+      "ci95": [
+        1.4995607868390664,
+        1.5421055824422851
+      ]
+    },
+    "fast/plain_cpp": {
+      "ratio_other_over_fast": 4.576700969933578,
+      "ci95": [
+        4.513761747015934,
+        4.615647426077085
+      ]
+    }
+  },
+  "observations": 90,
+  "correctness_checks": 90,
+  "note": "cold paired panel; native values are recorded phases; plain C++ reads plain decoded columns and uses run-splitting"
+}

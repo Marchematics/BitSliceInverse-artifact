@@ -1,0 +1,1 @@
+{"codec":"generic_encoded","rows":100000000,"groups":10,"setup_ms":71.938,"query_ms":805.866,"output_ms":0.102634,"stored_ms":877.907,"dict_ms":0.008952,"stream_ms":71.9276,"auto_perrow":false,"decoded_value_columns":true,"aggregates":4}

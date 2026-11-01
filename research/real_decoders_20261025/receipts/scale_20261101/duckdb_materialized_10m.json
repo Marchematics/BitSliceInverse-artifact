@@ -1,0 +1,64 @@
+{
+ "rows": 9999515,
+ "duckdb_table_estimated_bytes": 9999515,
+ "duckdb_version": "2.0.0",
+ "note": "DuckDB 2.0 control with the SAME pre-aggregation as the 32B/group materialized path: query reads only the 10M-row aggregate table",
+ "cases": {
+  "T1_fixed": {
+   "median_ms": 5026.910043088719,
+   "min_ms": 3705.32407425344,
+   "p95_ms": 5124.098791275173,
+   "reps": 10,
+   "result_rows": 9999515
+  },
+  "T1_ordered": {
+   "median_ms": 5256.14247424528,
+   "min_ms": 5193.92382632941,
+   "p95_ms": 5589.6137352101505,
+   "reps": 10,
+   "result_rows": 9999515
+  },
+  "T4_fixed": {
+   "median_ms": 4707.7577139716595,
+   "min_ms": 4627.905772998929,
+   "p95_ms": 5053.917029872537,
+   "reps": 10,
+   "result_rows": 9999515
+  },
+  "T4_ordered": {
+   "median_ms": 5032.21276588738,
+   "min_ms": 4858.343756292015,
+   "p95_ms": 5428.718029055744,
+   "reps": 10,
+   "result_rows": 9999515
+  },
+  "T8_fixed": {
+   "median_ms": 4809.28150145337,
+   "min_ms": 4735.808284953237,
+   "p95_ms": 5084.226856939495,
+   "reps": 10,
+   "result_rows": 9999515
+  },
+  "T8_ordered": {
+   "median_ms": 4981.554707977921,
+   "min_ms": 4868.5533460229635,
+   "p95_ms": 5096.451946999878,
+   "reps": 10,
+   "result_rows": 9999515
+  },
+  "T16_fixed": {
+   "median_ms": 4830.272458959371,
+   "min_ms": 4738.431647885591,
+   "p95_ms": 5015.075995121151,
+   "reps": 10,
+   "result_rows": 9999515
+  },
+  "T16_ordered": {
+   "median_ms": 4891.548097366467,
+   "min_ms": 4795.429822988808,
+   "p95_ms": 5168.0970950983465,
+   "reps": 10,
+   "result_rows": 9999515
+  }
+ }
+}

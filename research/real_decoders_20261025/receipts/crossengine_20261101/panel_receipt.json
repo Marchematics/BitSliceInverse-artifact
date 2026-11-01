@@ -1,0 +1,1578 @@
+{
+ "panel_size": 9,
+ "cases": [
+  "fixed",
+  "le_m720",
+  "le_930",
+  "range_mid",
+  "in_1_2",
+  "notin_0_1",
+  "having_sum",
+  "multi",
+  "narrow"
+ ],
+ "protocol": {
+  "pin": "nice -n 5 taskset -c 112",
+  "threads": 1,
+  "reps_warm": 200,
+  "reps_scan": 30,
+  "reps_datafusion": 50,
+  "reps_cold": 20,
+  "cube": "../../work/crossengine/data/nyc100_enc.ecube",
+  "dict": "../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict",
+  "duckdb_file": "../../research/real_decoders_20261024/results/nyc_taxi_100m_duckdb/nyc.duckdb",
+  "enc_cube": "../../research/real_decoders_20261024/src_eai_20261101/enc_cube",
+  "warm": "index/connection open once, 1 untimed warmup, median of reps",
+  "cold": "separate process per request, wall clock from the parent, median"
+ },
+ "engines": {
+  "duckdb_scan": {
+   "protocol": "warm_engine_resident",
+   "cases": {
+    "fixed": {
+     "name": "fixed",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc GROUP BY 1 ORDER BY 1",
+     "median_ms": 458.53304,
+     "min_ms": 456.251793,
+     "p95_ms": 486.012693,
+     "reps": 30,
+     "rows": 11
+    },
+    "le_m720": {
+     "name": "le_m720",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE fare_cents <= -720 GROUP BY 1 ORDER BY 1",
+     "median_ms": 202.998942,
+     "min_ms": 201.688085,
+     "p95_ms": 229.292503,
+     "reps": 30,
+     "rows": 11
+    },
+    "le_930": {
+     "name": "le_930",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE fare_cents <= 930 GROUP BY 1 ORDER BY 1",
+     "median_ms": 360.318056,
+     "min_ms": 357.529733,
+     "p95_ms": 402.935987,
+     "reps": 30,
+     "rows": 11
+    },
+    "range_mid": {
+     "name": "range_mid",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE fare_cents BETWEEN 650 AND 1350 GROUP BY 1 ORDER BY 1",
+     "median_ms": 457.800465,
+     "min_ms": 453.173547,
+     "p95_ms": 486.648,
+     "reps": 30,
+     "rows": 11
+    },
+    "in_1_2": {
+     "name": "in_1_2",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE passenger_count IN (1,2) GROUP BY 1 ORDER BY 1",
+     "median_ms": 621.585394,
+     "min_ms": 615.767576,
+     "p95_ms": 646.275049,
+     "reps": 30,
+     "rows": 2
+    },
+    "notin_0_1": {
+     "name": "notin_0_1",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE passenger_count NOT IN (0,1) GROUP BY 1 ORDER BY 1",
+     "median_ms": 514.242536,
+     "min_ms": 512.472028,
+     "p95_ms": 534.318886,
+     "reps": 30,
+     "rows": 8
+    },
+    "having_sum": {
+     "name": "having_sum",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc GROUP BY 1 HAVING s >= 1e10 ORDER BY 1",
+     "median_ms": 456.933492,
+     "min_ms": 454.146476,
+     "p95_ms": 477.731486,
+     "reps": 30,
+     "rows": 3
+    },
+    "multi": {
+     "name": "multi",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE passenger_count IN (1,2) AND fare_cents BETWEEN 0 AND 1000 GROUP BY 1 HAVING c >= 1000 ORDER BY 1",
+     "median_ms": 418.066235,
+     "min_ms": 414.988658,
+     "p95_ms": 430.858868,
+     "reps": 30,
+     "rows": 2
+    },
+    "narrow": {
+     "name": "narrow",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE fare_cents BETWEEN 80000000 AND 90000000 GROUP BY 1 ORDER BY 1",
+     "median_ms": 0.982197,
+     "min_ms": 0.965373,
+     "p95_ms": 1.112474,
+     "reps": 30,
+     "rows": 1
+    }
+   }
+  },
+  "duckdb_scan_prepared": {
+   "protocol": "warm_prepared",
+   "cases": {
+    "fixed": {
+     "name": "fixed",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc GROUP BY 1 ORDER BY 1",
+     "median_ms": 440.340066,
+     "min_ms": 435.929917,
+     "p95_ms": 454.634286,
+     "reps": 30,
+     "rows": 11
+    },
+    "le_m720": {
+     "name": "le_m720",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE fare_cents <= -720 GROUP BY 1 ORDER BY 1",
+     "median_ms": 203.338804,
+     "min_ms": 202.011143,
+     "p95_ms": 217.61805,
+     "reps": 30,
+     "rows": 11
+    },
+    "le_930": {
+     "name": "le_930",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE fare_cents <= 930 GROUP BY 1 ORDER BY 1",
+     "median_ms": 346.659436,
+     "min_ms": 343.141967,
+     "p95_ms": 371.621034,
+     "reps": 30,
+     "rows": 11
+    },
+    "range_mid": {
+     "name": "range_mid",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE fare_cents BETWEEN 650 AND 1350 GROUP BY 1 ORDER BY 1",
+     "median_ms": 444.930937,
+     "min_ms": 440.276091,
+     "p95_ms": 464.158374,
+     "reps": 30,
+     "rows": 11
+    },
+    "in_1_2": {
+     "name": "in_1_2",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE passenger_count IN (1,2) GROUP BY 1 ORDER BY 1",
+     "median_ms": 535.556645,
+     "min_ms": 530.269722,
+     "p95_ms": 565.191761,
+     "reps": 30,
+     "rows": 2
+    },
+    "notin_0_1": {
+     "name": "notin_0_1",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE passenger_count NOT IN (0,1) GROUP BY 1 ORDER BY 1",
+     "median_ms": 505.679795,
+     "min_ms": 503.46102,
+     "p95_ms": 521.168255,
+     "reps": 30,
+     "rows": 8
+    },
+    "having_sum": {
+     "name": "having_sum",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc GROUP BY 1 HAVING s >= 1e10 ORDER BY 1",
+     "median_ms": 441.462651,
+     "min_ms": 438.748204,
+     "p95_ms": 469.750874,
+     "reps": 30,
+     "rows": 3
+    },
+    "multi": {
+     "name": "multi",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE passenger_count IN (1,2) AND fare_cents BETWEEN 0 AND 1000 GROUP BY 1 HAVING c >= 1000 ORDER BY 1",
+     "median_ms": 383.211674,
+     "min_ms": 378.144835,
+     "p95_ms": 390.942256,
+     "reps": 30,
+     "rows": 2
+    },
+    "narrow": {
+     "name": "narrow",
+     "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE fare_cents BETWEEN 80000000 AND 90000000 GROUP BY 1 ORDER BY 1",
+     "median_ms": 0.865079,
+     "min_ms": 0.849827,
+     "p95_ms": 0.969268,
+     "reps": 30,
+     "rows": 1
+    }
+   }
+  },
+  "duckdb_floor": {
+   "unprepared": {
+    "engine": "duckdb",
+    "mode": "floor",
+    "protocol": "warm_engine_resident",
+    "sql": "SELECT 42 AS x",
+    "median_ms": 0.129336,
+    "min_ms": 0.121694,
+    "p95_ms": 0.141853,
+    "reps": 200
+   },
+   "prepared": {
+    "engine": "duckdb",
+    "mode": "floor",
+    "protocol": "warm_prepared",
+    "sql": "SELECT 42 AS x",
+    "median_ms": 0.053717,
+    "min_ms": 0.052655,
+    "p95_ms": 0.059075,
+    "reps": 200
+   }
+  },
+  "duckdb_materialized_view": {
+   "protocol": "small_table_read",
+   "cases": {
+    "fixed": {
+     "name": "fixed",
+     "build_ms": 613.715452,
+     "median_ms": 0.472887,
+     "min_ms": 0.445969,
+     "p95_ms": 0.523831,
+     "reps": 30,
+     "rows": 11,
+     "query": "SELECT g, s, c, mn, mx FROM mv_0 ORDER BY g"
+    },
+    "le_m720": {
+     "name": "le_m720",
+     "build_ms": 203.715637,
+     "median_ms": 0.460199,
+     "min_ms": 0.44676,
+     "p95_ms": 0.496191,
+     "reps": 30,
+     "rows": 11,
+     "query": "SELECT g, s, c, mn, mx FROM mv_1 ORDER BY g"
+    },
+    "le_930": {
+     "name": "le_930",
+     "build_ms": 357.911498,
+     "median_ms": 0.469442,
+     "min_ms": 0.454361,
+     "p95_ms": 0.507297,
+     "reps": 30,
+     "rows": 11,
+     "query": "SELECT g, s, c, mn, mx FROM mv_2 ORDER BY g"
+    },
+    "range_mid": {
+     "name": "range_mid",
+     "build_ms": 441.349912,
+     "median_ms": 0.465066,
+     "min_ms": 0.450145,
+     "p95_ms": 0.521427,
+     "reps": 30,
+     "rows": 11,
+     "query": "SELECT g, s, c, mn, mx FROM mv_3 ORDER BY g"
+    },
+    "in_1_2": {
+     "name": "in_1_2",
+     "build_ms": 533.606466,
+     "median_ms": 0.45338,
+     "min_ms": 0.444156,
+     "p95_ms": 0.511744,
+     "reps": 30,
+     "rows": 2,
+     "query": "SELECT g, s, c, mn, mx FROM mv_4 ORDER BY g"
+    },
+    "notin_0_1": {
+     "name": "notin_0_1",
+     "build_ms": 503.043355,
+     "median_ms": 0.456544,
+     "min_ms": 0.444627,
+     "p95_ms": 0.501989,
+     "reps": 30,
+     "rows": 8,
+     "query": "SELECT g, s, c, mn, mx FROM mv_5 ORDER BY g"
+    },
+    "having_sum": {
+     "name": "having_sum",
+     "build_ms": 464.234513,
+     "median_ms": 0.536429,
+     "min_ms": 0.512825,
+     "p95_ms": 0.60722,
+     "reps": 30,
+     "rows": 3,
+     "query": "SELECT g, s, c, mn, mx FROM mv_6 WHERE s >= 1e10 ORDER BY g"
+    },
+    "multi": {
+     "name": "multi",
+     "build_ms": 428.038232,
+     "median_ms": 0.532413,
+     "min_ms": 0.513846,
+     "p95_ms": 0.574122,
+     "reps": 30,
+     "rows": 2,
+     "query": "SELECT g, s, c, mn, mx FROM mv_7 WHERE c >= 1000 ORDER BY g"
+    },
+    "narrow": {
+     "name": "narrow",
+     "build_ms": 1.237222,
+     "median_ms": 0.455051,
+     "min_ms": 0.449043,
+     "p95_ms": 0.477114,
+     "reps": 30,
+     "rows": 1,
+     "query": "SELECT g, s, c, mn, mx FROM mv_8 ORDER BY g"
+    }
+   },
+   "total_build_ms": 3546.852287
+  },
+  "cube_warm_direct": {
+   "protocol": "warm_in_process",
+   "index_load_ms": 0.133541,
+   "cases": {
+    "fixed": {
+     "name": "fixed",
+     "spec": "",
+     "median_ms": 0.000801,
+     "min_ms": 0.000781,
+     "p95_ms": 0.000831,
+     "median_with_json_ms": 0.001763,
+     "json_bytes": 514,
+     "reps": 200,
+     "checksum": 17399750870495781993
+    },
+    "le_m720": {
+     "name": "le_m720",
+     "spec": "hi=-720",
+     "median_ms": 0.000651,
+     "min_ms": 0.000611,
+     "p95_ms": 0.000681,
+     "median_with_json_ms": 0.001602,
+     "json_bytes": 450,
+     "reps": 200,
+     "checksum": 6450198349833710531
+    },
+    "le_930": {
+     "name": "le_930",
+     "spec": "hi=930",
+     "median_ms": 0.000741,
+     "min_ms": 0.000701,
+     "p95_ms": 0.000761,
+     "median_with_json_ms": 0.001672,
+     "json_bytes": 456,
+     "reps": 200,
+     "checksum": 13206404691825255761
+    },
+    "range_mid": {
+     "name": "range_mid",
+     "spec": "range=650,1350",
+     "median_ms": 0.000491,
+     "min_ms": 0.000471,
+     "p95_ms": 0.000761,
+     "median_with_json_ms": 0.001452,
+     "json_bytes": 437,
+     "reps": 200,
+     "checksum": 374980944211787732
+    },
+    "in_1_2": {
+     "name": "in_1_2",
+     "spec": "where_in=1,2",
+     "median_ms": 0.00018,
+     "min_ms": 0.00017,
+     "p95_ms": 0.00019,
+     "median_with_json_ms": 0.000401,
+     "json_bytes": 116,
+     "reps": 200,
+     "checksum": 2058107474639973246
+    },
+    "notin_0_1": {
+     "name": "notin_0_1",
+     "spec": "where_not_in=0,1",
+     "median_ms": 0.000671,
+     "min_ms": 0.00065,
+     "p95_ms": 0.000691,
+     "median_with_json_ms": 0.001392,
+     "json_bytes": 362,
+     "reps": 200,
+     "checksum": 2448422483139081180
+    },
+    "having_sum": {
+     "name": "having_sum",
+     "spec": "having=sum>=1e10",
+     "median_ms": 0.000811,
+     "min_ms": 0.000781,
+     "p95_ms": 0.000841,
+     "median_with_json_ms": 0.001862,
+     "json_bytes": 167,
+     "reps": 200,
+     "checksum": 17399750870495781993
+    },
+    "multi": {
+     "name": "multi",
+     "spec": "where_in=1,2;range=0,1000;having=count>=1000",
+     "median_ms": 0.000181,
+     "min_ms": 0.00018,
+     "p95_ms": 0.000191,
+     "median_with_json_ms": 0.000541,
+     "json_bytes": 93,
+     "reps": 200,
+     "checksum": 15300716904298729417
+    },
+    "narrow": {
+     "name": "narrow",
+     "spec": "range=80000000,90000000",
+     "median_ms": 0.0001,
+     "min_ms": 0.0001,
+     "p95_ms": 0.000111,
+     "median_with_json_ms": 0.000221,
+     "json_bytes": 54,
+     "reps": 200,
+     "checksum": 259011638
+    }
+   }
+  },
+  "cube_warm_duckdb": {
+   "protocol": "warm_engine_resident",
+   "index_load_ms": 0.038925,
+   "cases": {
+    "fixed": {
+     "name": "fixed",
+     "spec": "",
+     "median_ms": 0.345335,
+     "min_ms": 0.333998,
+     "p95_ms": 0.368188,
+     "reps": 200,
+     "rows": 11
+    },
+    "le_m720": {
+     "name": "le_m720",
+     "spec": "hi=-720",
+     "median_ms": 0.335591,
+     "min_ms": 0.326628,
+     "p95_ms": 0.347507,
+     "reps": 200,
+     "rows": 11
+    },
+    "le_930": {
+     "name": "le_930",
+     "spec": "hi=930",
+     "median_ms": 0.333848,
+     "min_ms": 0.329121,
+     "p95_ms": 0.342891,
+     "reps": 200,
+     "rows": 11
+    },
+    "range_mid": {
+     "name": "range_mid",
+     "spec": "range=650,1350",
+     "median_ms": 0.333558,
+     "min_ms": 0.325346,
+     "p95_ms": 0.344754,
+     "reps": 200,
+     "rows": 11
+    },
+    "in_1_2": {
+     "name": "in_1_2",
+     "spec": "where_in=1,2",
+     "median_ms": 0.332136,
+     "min_ms": 0.325076,
+     "p95_ms": 0.345596,
+     "reps": 200,
+     "rows": 2
+    },
+    "notin_0_1": {
+     "name": "notin_0_1",
+     "spec": "where_not_in=0,1",
+     "median_ms": 0.332877,
+     "min_ms": 0.32753,
+     "p95_ms": 0.345134,
+     "reps": 200,
+     "rows": 8
+    },
+    "having_sum": {
+     "name": "having_sum",
+     "spec": "having=sum>=1e10",
+     "median_ms": 0.335922,
+     "min_ms": 0.330654,
+     "p95_ms": 0.34888,
+     "reps": 200,
+     "rows": 3
+    },
+    "multi": {
+     "name": "multi",
+     "spec": "where_in=1,2;range=0,1000;having=count>=1000",
+     "median_ms": 0.33507,
+     "min_ms": 0.325907,
+     "p95_ms": 0.381436,
+     "reps": 200,
+     "rows": 2
+    },
+    "narrow": {
+     "name": "narrow",
+     "spec": "range=80000000,90000000",
+     "median_ms": 0.329422,
+     "min_ms": 0.322622,
+     "p95_ms": 0.34186,
+     "reps": 200,
+     "rows": 1
+    }
+   }
+  },
+  "cube_warm_duckdb_prepared": {
+   "protocol": "warm_prepared",
+   "index_load_ms": 0.040799,
+   "cases": {
+    "fixed": {
+     "name": "fixed",
+     "spec": "",
+     "median_ms": 0.265351,
+     "min_ms": 0.258079,
+     "p95_ms": 0.282305,
+     "reps": 200,
+     "rows": 11
+    },
+    "le_m720": {
+     "name": "le_m720",
+     "spec": "hi=-720",
+     "median_ms": 0.260262,
+     "min_ms": 0.257689,
+     "p95_ms": 0.2719,
+     "reps": 200,
+     "rows": 11
+    },
+    "le_930": {
+     "name": "le_930",
+     "spec": "hi=930",
+     "median_ms": 0.260813,
+     "min_ms": 0.257999,
+     "p95_ms": 0.270778,
+     "reps": 200,
+     "rows": 11
+    },
+    "range_mid": {
+     "name": "range_mid",
+     "spec": "range=650,1350",
+     "median_ms": 0.259652,
+     "min_ms": 0.256597,
+     "p95_ms": 0.270638,
+     "reps": 200,
+     "rows": 11
+    },
+    "in_1_2": {
+     "name": "in_1_2",
+     "spec": "where_in=1,2",
+     "median_ms": 0.257699,
+     "min_ms": 0.254705,
+     "p95_ms": 0.269015,
+     "reps": 200,
+     "rows": 2
+    },
+    "notin_0_1": {
+     "name": "notin_0_1",
+     "spec": "where_not_in=0,1",
+     "median_ms": 0.260223,
+     "min_ms": 0.256447,
+     "p95_ms": 0.286961,
+     "reps": 200,
+     "rows": 8
+    },
+    "having_sum": {
+     "name": "having_sum",
+     "spec": "having=sum>=1e10",
+     "median_ms": 0.261555,
+     "min_ms": 0.25861,
+     "p95_ms": 0.290616,
+     "reps": 200,
+     "rows": 3
+    },
+    "multi": {
+     "name": "multi",
+     "spec": "where_in=1,2;range=0,1000;having=count>=1000",
+     "median_ms": 0.259842,
+     "min_ms": 0.257058,
+     "p95_ms": 0.270518,
+     "reps": 200,
+     "rows": 2
+    },
+    "narrow": {
+     "name": "narrow",
+     "spec": "range=80000000,90000000",
+     "median_ms": 0.255716,
+     "min_ms": 0.252782,
+     "p95_ms": 0.267343,
+     "reps": 200,
+     "rows": 1
+    }
+   }
+  },
+  "datafusion_warm": {
+   "protocol": "warm_engine_resident",
+   "version": "55.0.0",
+   "index_load_ms": 1.350603997707367,
+   "floor_median_ms": 0.22991886362433434,
+   "cases": {
+    "fixed": {
+     "name": "fixed",
+     "spec": "",
+     "sql": "SELECT name, sum, count, min, max FROM ecube('../../work/crossengine/data/nyc100_enc.ecube','../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict','') ORDER BY name",
+     "median_ms": 0.8732953574508429,
+     "min_ms": 0.8590808138251305,
+     "p95_ms": 0.8963341824710369,
+     "reps": 50,
+     "rows": 11,
+     "result": {
+      "name": [
+       "0",
+       "1",
+       "2",
+       "3",
+       "4",
+       "5",
+       "6",
+       "7",
+       "8",
+       "9",
+       "NULL"
+      ],
+      "sum": [
+       "1903976477",
+       "128292723154",
+       "28404813736",
+       "6756713396",
+       "4495283753",
+       "1695472138",
+       "1092259031",
+       "1043835",
+       "3883546",
+       "857711",
+       "17795107614"
+      ],
+      "count": [
+       "1105921",
+       "69403235",
+       "13276935",
+       "3186488",
+       "1936451",
+       "897123",
+       "586835",
+       "164",
+       "500",
+       "105",
+       "9606243"
+      ],
+      "min": [
+       "-38318",
+       "-226119",
+       "-128540",
+       "-99900",
+       "-99490",
+       "-15900",
+       "-7000",
+       "-7000",
+       "-9000",
+       "-9900",
+       "-43251"
+      ],
+      "max": [
+       "5055868",
+       "86337212",
+       "18750296",
+       "38698363",
+       "104040",
+       "82130",
+       "630090",
+       "12000",
+       "28222",
+       "13000",
+       "979200"
+      ]
+     }
+    },
+    "le_m720": {
+     "name": "le_m720",
+     "spec": "hi=-720",
+     "sql": "SELECT name, sum, count, min, max FROM ecube('../../work/crossengine/data/nyc100_enc.ecube','../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict','hi=-720') ORDER BY name",
+     "median_ms": 0.8811969310045242,
+     "min_ms": 0.8680638857185841,
+     "p95_ms": 0.894731841981411,
+     "reps": 50,
+     "rows": 11,
+     "result": {
+      "name": [
+       "0",
+       "1",
+       "2",
+       "3",
+       "4",
+       "5",
+       "6",
+       "7",
+       "8",
+       "9",
+       "NULL"
+      ],
+      "sum": [
+       "-608674",
+       "-1907654214",
+       "-593576705",
+       "-150612030",
+       "-149790984",
+       "-1736420",
+       "-767704",
+       "-7725",
+       "-72213",
+       "-19796",
+       "-43445240"
+      ],
+      "count": [
+       "147",
+       "730003",
+       "181325",
+       "47854",
+       "44356",
+       "791",
+       "315",
+       "2",
+       "10",
+       "2",
+       "34995"
+      ],
+      "min": [
+       "-38318",
+       "-226119",
+       "-128540",
+       "-99900",
+       "-99490",
+       "-15900",
+       "-7000",
+       "-7000",
+       "-9000",
+       "-9900",
+       "-43251"
+      ],
+      "max": [
+       "-720",
+       "-720",
+       "-720",
+       "-720",
+       "-720",
+       "-720",
+       "-720",
+       "-725",
+       "-780",
+       "-9896",
+       "-720"
+      ]
+     }
+    },
+    "le_930": {
+     "name": "le_930",
+     "spec": "hi=930",
+     "sql": "SELECT name, sum, count, min, max FROM ecube('../../work/crossengine/data/nyc100_enc.ecube','../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict','hi=930') ORDER BY name",
+     "median_ms": 0.8807217236608267,
+     "min_ms": 0.8651390671730042,
+     "p95_ms": 0.9002801962196827,
+     "reps": 50,
+     "rows": 11,
+     "result": {
+      "name": [
+       "0",
+       "1",
+       "2",
+       "3",
+       "4",
+       "5",
+       "6",
+       "7",
+       "8",
+       "9",
+       "NULL"
+      ],
+      "sum": [
+       "256879308",
+       "12430699493",
+       "1844456347",
+       "421316110",
+       "154983131",
+       "183187443",
+       "121618062",
+       "911",
+       "-56611",
+       "-16818",
+       "295846909"
+      ],
+      "count": [
+       "365787",
+       "20931300",
+       "3566795",
+       "835702",
+       "466407",
+       "257253",
+       "169234",
+       "21",
+       "37",
+       "7",
+       "1837635"
+      ],
+      "min": [
+       "-38318",
+       "-226119",
+       "-128540",
+       "-99900",
+       "-99490",
+       "-15900",
+       "-7000",
+       "-7000",
+       "-9000",
+       "-9900",
+       "-43251"
+      ],
+      "max": [
+       "930",
+       "930",
+       "930",
+       "930",
+       "930",
+       "930",
+       "930",
+       "800",
+       "911",
+       "910",
+       "930"
+      ]
+     }
+    },
+    "range_mid": {
+     "name": "range_mid",
+     "spec": "range=650,1350",
+     "sql": "SELECT name, sum, count, min, max FROM ecube('../../work/crossengine/data/nyc100_enc.ecube','../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict','range=650,1350') ORDER BY name",
+     "median_ms": 0.8804411627352238,
+     "min_ms": 0.867081806063652,
+     "p95_ms": 0.8993181400001049,
+     "reps": 50,
+     "rows": 11,
+     "result": {
+      "name": [
+       "0",
+       "1",
+       "2",
+       "3",
+       "4",
+       "5",
+       "6",
+       "7",
+       "8",
+       "9",
+       "NULL"
+      ],
+      "sum": [
+       "523388007",
+       "30980386078",
+       "5527668500",
+       "1339742863",
+       "753440852",
+       "407645780",
+       "269313135",
+       "9484",
+       "14078",
+       "5590",
+       "2332624146"
+      ],
+      "count": [
+       "533719",
+       "31406595",
+       "5568611",
+       "1343599",
+       "749450",
+       "411907",
+       "272315",
+       "12",
+       "17",
+       "6",
+       "2212794"
+      ],
+      "min": [
+       "650",
+       "650",
+       "650",
+       "650",
+       "650",
+       "650",
+       "650",
+       "700",
+       "669",
+       "650",
+       "650"
+      ],
+      "max": [
+       "1350",
+       "1350",
+       "1350",
+       "1350",
+       "1350",
+       "1350",
+       "1350",
+       "1350",
+       "1160",
+       "1140",
+       "1350"
+      ]
+     }
+    },
+    "in_1_2": {
+     "name": "in_1_2",
+     "spec": "where_in=1,2",
+     "sql": "SELECT name, sum, count, min, max FROM ecube('../../work/crossengine/data/nyc100_enc.ecube','../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict','where_in=1,2') ORDER BY name",
+     "median_ms": 0.8635818958282471,
+     "min_ms": 0.8521508425474167,
+     "p95_ms": 0.8863299153745174,
+     "reps": 50,
+     "rows": 2,
+     "result": {
+      "name": [
+       "1",
+       "2"
+      ],
+      "sum": [
+       "128292723154",
+       "28404813736"
+      ],
+      "count": [
+       "69403235",
+       "13276935"
+      ],
+      "min": [
+       "-226119",
+       "-128540"
+      ],
+      "max": [
+       "86337212",
+       "18750296"
+      ]
+     }
+    },
+    "notin_0_1": {
+     "name": "notin_0_1",
+     "spec": "where_not_in=0,1",
+     "sql": "SELECT name, sum, count, min, max FROM ecube('../../work/crossengine/data/nyc100_enc.ecube','../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict','where_not_in=0,1') ORDER BY name",
+     "median_ms": 0.874147517606616,
+     "min_ms": 0.8597420528531075,
+     "p95_ms": 0.8951523341238499,
+     "reps": 50,
+     "rows": 8,
+     "result": {
+      "name": [
+       "2",
+       "3",
+       "4",
+       "5",
+       "6",
+       "7",
+       "8",
+       "9"
+      ],
+      "sum": [
+       "28404813736",
+       "6756713396",
+       "4495283753",
+       "1695472138",
+       "1092259031",
+       "1043835",
+       "3883546",
+       "857711"
+      ],
+      "count": [
+       "13276935",
+       "3186488",
+       "1936451",
+       "897123",
+       "586835",
+       "164",
+       "500",
+       "105"
+      ],
+      "min": [
+       "-128540",
+       "-99900",
+       "-99490",
+       "-15900",
+       "-7000",
+       "-7000",
+       "-9000",
+       "-9900"
+      ],
+      "max": [
+       "18750296",
+       "38698363",
+       "104040",
+       "82130",
+       "630090",
+       "12000",
+       "28222",
+       "13000"
+      ]
+     }
+    },
+    "having_sum": {
+     "name": "having_sum",
+     "spec": "having=sum>=1e10",
+     "sql": "SELECT name, sum, count, min, max FROM ecube('../../work/crossengine/data/nyc100_enc.ecube','../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict','having=sum>=1e10') ORDER BY name",
+     "median_ms": 0.8871958125382662,
+     "min_ms": 0.870957039296627,
+     "p95_ms": 0.9011412039399147,
+     "reps": 50,
+     "rows": 3,
+     "result": {
+      "name": [
+       "1",
+       "2",
+       "NULL"
+      ],
+      "sum": [
+       "128292723154",
+       "28404813736",
+       "17795107614"
+      ],
+      "count": [
+       "69403235",
+       "13276935",
+       "9606243"
+      ],
+      "min": [
+       "-226119",
+       "-128540",
+       "-43251"
+      ],
+      "max": [
+       "86337212",
+       "18750296",
+       "979200"
+      ]
+     }
+    },
+    "multi": {
+     "name": "multi",
+     "spec": "where_in=1,2;range=0,1000;having=count>=1000",
+     "sql": "SELECT name, sum, count, min, max FROM ecube('../../work/crossengine/data/nyc100_enc.ecube','../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict','where_in=1,2;range=0,1000;having=count>=1000') ORDER BY name",
+     "median_ms": 0.8794800378382206,
+     "min_ms": 0.8656303398311138,
+     "p95_ms": 0.8945707231760025,
+     "reps": 50,
+     "rows": 2,
+     "result": {
+      "name": [
+       "1",
+       "2"
+      ],
+      "sum": [
+       "17556616419",
+       "3011438970"
+      ],
+      "count": [
+       "23043646",
+       "3898471"
+      ],
+      "min": [
+       "0",
+       "0"
+      ],
+      "max": [
+       "1000",
+       "1000"
+      ]
+     }
+    },
+    "narrow": {
+     "name": "narrow",
+     "spec": "range=80000000,90000000",
+     "sql": "SELECT name, sum, count, min, max FROM ecube('../../work/crossengine/data/nyc100_enc.ecube','../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict','range=80000000,90000000') ORDER BY name",
+     "median_ms": 0.8108608890324831,
+     "min_ms": 0.7976633496582508,
+     "p95_ms": 0.8266041986644268,
+     "reps": 50,
+     "rows": 1,
+     "result": {
+      "name": [
+       "1"
+      ],
+      "sum": [
+       "86337212"
+      ],
+      "count": [
+       "1"
+      ],
+      "min": [
+       "86337212"
+      ],
+      "max": [
+       "86337212"
+      ]
+     }
+    }
+   }
+  },
+  "cube_cold_cli": {
+   "protocol": "cold_process",
+   "cases": {
+    "fixed": {
+     "median_ms": 2.232869155704975,
+     "min_ms": 2.2021844051778316,
+     "p95_ms": 3.1436430290341377,
+     "reps": 20
+    },
+    "le_m720": {
+     "median_ms": 2.2420817986130714,
+     "min_ms": 2.194743137806654,
+     "p95_ms": 3.9910171180963516,
+     "reps": 20
+    },
+    "le_930": {
+     "median_ms": 2.250644378364086,
+     "min_ms": 2.1919901482760906,
+     "p95_ms": 3.4669158048927784,
+     "reps": 20
+    },
+    "range_mid": {
+     "median_ms": 2.2289929911494255,
+     "min_ms": 2.202215138822794,
+     "p95_ms": 3.755819983780384,
+     "reps": 20
+    },
+    "in_1_2": {
+     "median_ms": 2.164531033486128,
+     "min_ms": 2.1268967539072037,
+     "p95_ms": 2.9608518816530704,
+     "reps": 20
+    },
+    "notin_0_1": {
+     "median_ms": 2.2498327307403088,
+     "min_ms": 2.1911179646849632,
+     "p95_ms": 3.2602702267467976,
+     "reps": 20
+    },
+    "having_sum": {
+     "median_ms": 2.2434229031205177,
+     "min_ms": 2.2015227004885674,
+     "p95_ms": 2.9881903901696205,
+     "reps": 20
+    },
+    "multi": {
+     "median_ms": 2.1735536865890026,
+     "min_ms": 2.147266175597906,
+     "p95_ms": 3.0155698768794537,
+     "reps": 20
+    },
+    "narrow": {
+     "median_ms": 2.2295936942100525,
+     "min_ms": 2.177769783884287,
+     "p95_ms": 2.9940176755189896,
+     "reps": 20
+    }
+   }
+  },
+  "cube_cold_direct": {
+   "protocol": "cold_process",
+   "cases": {
+    "fixed": {
+     "median_ms": 2.1724821999669075,
+     "min_ms": 2.1393350325524807,
+     "p95_ms": 2.5922232307493687,
+     "reps": 20
+    },
+    "le_m720": {
+     "median_ms": 2.18130461871624,
+     "min_ms": 2.1610958501696587,
+     "p95_ms": 2.6283850893378258,
+     "reps": 20
+    },
+    "le_930": {
+     "median_ms": 2.1890359930694103,
+     "min_ms": 2.1514417603611946,
+     "p95_ms": 2.7337661013007164,
+     "reps": 20
+    },
+    "range_mid": {
+     "median_ms": 2.16620322316885,
+     "min_ms": 2.143729943782091,
+     "p95_ms": 2.4735829792916775,
+     "reps": 20
+    },
+    "in_1_2": {
+     "median_ms": 2.1063066087663174,
+     "min_ms": 2.0614629611372948,
+     "p95_ms": 2.342625055462122,
+     "reps": 20
+    },
+    "notin_0_1": {
+     "median_ms": 2.1645198576152325,
+     "min_ms": 2.126005943864584,
+     "p95_ms": 2.5075022131204605,
+     "reps": 20
+    },
+    "having_sum": {
+     "median_ms": 2.1791616454720497,
+     "min_ms": 2.1345680579543114,
+     "p95_ms": 3.045361954718828,
+     "reps": 20
+    },
+    "multi": {
+     "median_ms": 2.1310229785740376,
+     "min_ms": 2.103161998093128,
+     "p95_ms": 4.1050901636481285,
+     "reps": 20
+    },
+    "narrow": {
+     "median_ms": 2.1345880813896656,
+     "min_ms": 2.0863590762019157,
+     "p95_ms": 2.7374709025025368,
+     "reps": 20
+    }
+   }
+  },
+  "cube_cold_duckdb": {
+   "protocol": "cold_process",
+   "cases": {
+    "fixed": {
+     "median_ms": 61.64115900173783,
+     "min_ms": 60.38594106212258,
+     "p95_ms": 65.01614302396774,
+     "reps": 20
+    },
+    "le_m720": {
+     "median_ms": 61.44873332232237,
+     "min_ms": 60.578346718102694,
+     "p95_ms": 64.77021193131804,
+     "reps": 20
+    },
+    "le_930": {
+     "median_ms": 61.33946683257818,
+     "min_ms": 60.44646678492427,
+     "p95_ms": 67.47964210808277,
+     "reps": 20
+    },
+    "range_mid": {
+     "median_ms": 61.29963882267475,
+     "min_ms": 60.62695570290089,
+     "p95_ms": 65.93610113486648,
+     "reps": 20
+    },
+    "in_1_2": {
+     "median_ms": 61.19436863809824,
+     "min_ms": 60.573579743504524,
+     "p95_ms": 63.309738878160715,
+     "reps": 20
+    },
+    "notin_0_1": {
+     "median_ms": 61.74844177439809,
+     "min_ms": 60.40692003443837,
+     "p95_ms": 66.60057324916124,
+     "reps": 20
+    },
+    "having_sum": {
+     "median_ms": 61.60745117813349,
+     "min_ms": 60.57205703109503,
+     "p95_ms": 64.46045683696866,
+     "reps": 20
+    },
+    "multi": {
+     "median_ms": 61.39289168640971,
+     "min_ms": 60.149761848151684,
+     "p95_ms": 64.19666996225715,
+     "reps": 20
+    },
+    "narrow": {
+     "median_ms": 61.29996990785003,
+     "min_ms": 60.63064094632864,
+     "p95_ms": 72.25575298070908,
+     "reps": 20
+    }
+   }
+  }
+ },
+ "attribution": {
+  "duckdb_floor_unprepared_ms": 0.129336,
+  "duckdb_floor_prepared_ms": 0.053717,
+  "note": "the cube's own reduction is a few microseconds; the remaining warm-engine latency is DuckDB's per-query and table-function cost, bounded below by the SELECT-42 floor"
+ },
+ "exactness": {
+  "fixed": {
+   "reference_rows": 11,
+   "cube_direct_equal": true,
+   "cube_duckdb_equal": true,
+   "datafusion_equal": true,
+   "cube_direct_vs_duckdb_json_identical": true,
+   "mv_rows": 11
+  },
+  "le_m720": {
+   "reference_rows": 11,
+   "cube_direct_equal": true,
+   "cube_duckdb_equal": true,
+   "datafusion_equal": true,
+   "cube_direct_vs_duckdb_json_identical": true,
+   "mv_rows": 11
+  },
+  "le_930": {
+   "reference_rows": 11,
+   "cube_direct_equal": true,
+   "cube_duckdb_equal": true,
+   "datafusion_equal": true,
+   "cube_direct_vs_duckdb_json_identical": true,
+   "mv_rows": 11
+  },
+  "range_mid": {
+   "reference_rows": 11,
+   "cube_direct_equal": true,
+   "cube_duckdb_equal": true,
+   "datafusion_equal": true,
+   "cube_direct_vs_duckdb_json_identical": true,
+   "mv_rows": 11
+  },
+  "in_1_2": {
+   "reference_rows": 2,
+   "cube_direct_equal": true,
+   "cube_duckdb_equal": true,
+   "datafusion_equal": true,
+   "cube_direct_vs_duckdb_json_identical": true,
+   "mv_rows": 2
+  },
+  "notin_0_1": {
+   "reference_rows": 8,
+   "cube_direct_equal": true,
+   "cube_duckdb_equal": true,
+   "datafusion_equal": true,
+   "cube_direct_vs_duckdb_json_identical": true,
+   "mv_rows": 8
+  },
+  "having_sum": {
+   "reference_rows": 3,
+   "cube_direct_equal": true,
+   "cube_duckdb_equal": true,
+   "datafusion_equal": true,
+   "cube_direct_vs_duckdb_json_identical": true,
+   "mv_rows": 3
+  },
+  "multi": {
+   "reference_rows": 2,
+   "cube_direct_equal": true,
+   "cube_duckdb_equal": true,
+   "datafusion_equal": true,
+   "cube_direct_vs_duckdb_json_identical": true,
+   "mv_rows": 2
+  },
+  "narrow": {
+   "reference_rows": 1,
+   "cube_direct_equal": true,
+   "cube_duckdb_equal": true,
+   "datafusion_equal": true,
+   "cube_direct_vs_duckdb_json_identical": true,
+   "mv_rows": 1
+  }
+ },
+ "exactness_all_pass": true,
+ "mixed_workload": {
+  "per_case": [
+   {
+    "name": "fixed",
+    "cube_warm_direct_ms": 0.000801,
+    "cube_warm_duckdb_ms": 0.345335,
+    "cube_warm_duckdb_prepared_ms": 0.265351,
+    "cube_cold_cli_ms": 2.232869155704975,
+    "cube_cold_direct_ms": 2.1724821999669075,
+    "cube_cold_duckdb_ms": 61.64115900173783,
+    "datafusion_warm_ms": 0.8732953574508429,
+    "duckdb_scan_ms": 458.53304,
+    "duckdb_scan_prepared_ms": 440.340066,
+    "duckdb_mv_ms": 0.472887,
+    "duckdb_mv_build_ms": 613.715452,
+    "strongest_baseline": "duckdb_mv",
+    "strongest_baseline_ms": 0.472887,
+    "speedup_cube_warm_vs_best": 590.370786516854,
+    "speedup_cube_duck_prepared_vs_best": 1.7821187785235404,
+    "speedup_cube_cold_cli_vs_best": 0.21178446519885633,
+    "speedup_datafusion_vs_best": 0.5414972104974444
+   },
+   {
+    "name": "le_m720",
+    "cube_warm_direct_ms": 0.000651,
+    "cube_warm_duckdb_ms": 0.335591,
+    "cube_warm_duckdb_prepared_ms": 0.260262,
+    "cube_cold_cli_ms": 2.2420817986130714,
+    "cube_cold_direct_ms": 2.18130461871624,
+    "cube_cold_duckdb_ms": 61.44873332232237,
+    "datafusion_warm_ms": 0.8811969310045242,
+    "duckdb_scan_ms": 202.998942,
+    "duckdb_scan_prepared_ms": 203.338804,
+    "duckdb_mv_ms": 0.460199,
+    "duckdb_mv_build_ms": 203.715637,
+    "strongest_baseline": "duckdb_mv",
+    "strongest_baseline_ms": 0.460199,
+    "speedup_cube_warm_vs_best": 706.9109062980032,
+    "speedup_cube_duck_prepared_vs_best": 1.7682143378595416,
+    "speedup_cube_cold_cli_vs_best": 0.2052552231968853,
+    "speedup_datafusion_vs_best": 0.5222430807553928
+   },
+   {
+    "name": "le_930",
+    "cube_warm_direct_ms": 0.000741,
+    "cube_warm_duckdb_ms": 0.333848,
+    "cube_warm_duckdb_prepared_ms": 0.260813,
+    "cube_cold_cli_ms": 2.250644378364086,
+    "cube_cold_direct_ms": 2.1890359930694103,
+    "cube_cold_duckdb_ms": 61.33946683257818,
+    "datafusion_warm_ms": 0.8807217236608267,
+    "duckdb_scan_ms": 360.318056,
+    "duckdb_scan_prepared_ms": 346.659436,
+    "duckdb_mv_ms": 0.469442,
+    "duckdb_mv_build_ms": 357.911498,
+    "strongest_baseline": "duckdb_mv",
+    "strongest_baseline_ms": 0.469442,
+    "speedup_cube_warm_vs_best": 633.5249662618083,
+    "speedup_cube_duck_prepared_vs_best": 1.7999179488752477,
+    "speedup_cube_cold_cli_vs_best": 0.20858115325230583,
+    "speedup_datafusion_vs_best": 0.5330196671528749
+   },
+   {
+    "name": "range_mid",
+    "cube_warm_direct_ms": 0.000491,
+    "cube_warm_duckdb_ms": 0.333558,
+    "cube_warm_duckdb_prepared_ms": 0.259652,
+    "cube_cold_cli_ms": 2.2289929911494255,
+    "cube_cold_direct_ms": 2.16620322316885,
+    "cube_cold_duckdb_ms": 61.29963882267475,
+    "datafusion_warm_ms": 0.8804411627352238,
+    "duckdb_scan_ms": 457.800465,
+    "duckdb_scan_prepared_ms": 444.930937,
+    "duckdb_mv_ms": 0.465066,
+    "duckdb_mv_build_ms": 441.349912,
+    "strongest_baseline": "duckdb_mv",
+    "strongest_baseline_ms": 0.465066,
+    "speedup_cube_warm_vs_best": 947.1812627291242,
+    "speedup_cube_duck_prepared_vs_best": 1.7911127201022907,
+    "speedup_cube_cold_cli_vs_best": 0.20864399387823074,
+    "speedup_datafusion_vs_best": 0.5282192833365514
+   },
+   {
+    "name": "in_1_2",
+    "cube_warm_direct_ms": 0.00018,
+    "cube_warm_duckdb_ms": 0.332136,
+    "cube_warm_duckdb_prepared_ms": 0.257699,
+    "cube_cold_cli_ms": 2.164531033486128,
+    "cube_cold_direct_ms": 2.1063066087663174,
+    "cube_cold_duckdb_ms": 61.19436863809824,
+    "datafusion_warm_ms": 0.8635818958282471,
+    "duckdb_scan_ms": 621.585394,
+    "duckdb_scan_prepared_ms": 535.556645,
+    "duckdb_mv_ms": 0.45338,
+    "duckdb_mv_build_ms": 533.606466,
+    "strongest_baseline": "duckdb_mv",
+    "strongest_baseline_ms": 0.45338,
+    "speedup_cube_warm_vs_best": 2518.777777777778,
+    "speedup_cube_duck_prepared_vs_best": 1.7593393843204668,
+    "speedup_cube_cold_cli_vs_best": 0.20945876634986377,
+    "speedup_datafusion_vs_best": 0.5249994264471822
+   },
+   {
+    "name": "notin_0_1",
+    "cube_warm_direct_ms": 0.000671,
+    "cube_warm_duckdb_ms": 0.332877,
+    "cube_warm_duckdb_prepared_ms": 0.260223,
+    "cube_cold_cli_ms": 2.2498327307403088,
+    "cube_cold_direct_ms": 2.1645198576152325,
+    "cube_cold_duckdb_ms": 61.74844177439809,
+    "datafusion_warm_ms": 0.874147517606616,
+    "duckdb_scan_ms": 514.242536,
+    "duckdb_scan_prepared_ms": 505.679795,
+    "duckdb_mv_ms": 0.456544,
+    "duckdb_mv_build_ms": 503.043355,
+    "strongest_baseline": "duckdb_mv",
+    "strongest_baseline_ms": 0.456544,
+    "speedup_cube_warm_vs_best": 680.3934426229508,
+    "speedup_cube_duck_prepared_vs_best": 1.7544336972519725,
+    "speedup_cube_cold_cli_vs_best": 0.20292353016385087,
+    "speedup_datafusion_vs_best": 0.5222734044363597
+   },
+   {
+    "name": "having_sum",
+    "cube_warm_direct_ms": 0.000811,
+    "cube_warm_duckdb_ms": 0.335922,
+    "cube_warm_duckdb_prepared_ms": 0.261555,
+    "cube_cold_cli_ms": 2.2434229031205177,
+    "cube_cold_direct_ms": 2.1791616454720497,
+    "cube_cold_duckdb_ms": 61.60745117813349,
+    "datafusion_warm_ms": 0.8871958125382662,
+    "duckdb_scan_ms": 456.933492,
+    "duckdb_scan_prepared_ms": 441.462651,
+    "duckdb_mv_ms": 0.536429,
+    "duckdb_mv_build_ms": 464.234513,
+    "strongest_baseline": "duckdb_mv",
+    "strongest_baseline_ms": 0.536429,
+    "speedup_cube_warm_vs_best": 661.4414303329224,
+    "speedup_cube_duck_prepared_vs_best": 2.050922368144368,
+    "speedup_cube_cold_cli_vs_best": 0.23911184968908328,
+    "speedup_datafusion_vs_best": 0.6046342784974124
+   },
+   {
+    "name": "multi",
+    "cube_warm_direct_ms": 0.000181,
+    "cube_warm_duckdb_ms": 0.33507,
+    "cube_warm_duckdb_prepared_ms": 0.259842,
+    "cube_cold_cli_ms": 2.1735536865890026,
+    "cube_cold_direct_ms": 2.1310229785740376,
+    "cube_cold_duckdb_ms": 61.39289168640971,
+    "datafusion_warm_ms": 0.8794800378382206,
+    "duckdb_scan_ms": 418.066235,
+    "duckdb_scan_prepared_ms": 383.211674,
+    "duckdb_mv_ms": 0.532413,
+    "duckdb_mv_build_ms": 428.038232,
+    "strongest_baseline": "duckdb_mv",
+    "strongest_baseline_ms": 0.532413,
+    "speedup_cube_warm_vs_best": 2941.508287292818,
+    "speedup_cube_duck_prepared_vs_best": 2.048987461611287,
+    "speedup_cube_cold_cli_vs_best": 0.24495047133412445,
+    "speedup_datafusion_vs_best": 0.6053724667914939
+   },
+   {
+    "name": "narrow",
+    "cube_warm_direct_ms": 0.0001,
+    "cube_warm_duckdb_ms": 0.329422,
+    "cube_warm_duckdb_prepared_ms": 0.255716,
+    "cube_cold_cli_ms": 2.2295936942100525,
+    "cube_cold_direct_ms": 2.1345880813896656,
+    "cube_cold_duckdb_ms": 61.29996990785003,
+    "datafusion_warm_ms": 0.8108608890324831,
+    "duckdb_scan_ms": 0.982197,
+    "duckdb_scan_prepared_ms": 0.865079,
+    "duckdb_mv_ms": 0.455051,
+    "duckdb_mv_build_ms": 1.237222,
+    "strongest_baseline": "duckdb_mv",
+    "strongest_baseline_ms": 0.455051,
+    "speedup_cube_warm_vs_best": 4550.509999999999,
+    "speedup_cube_duck_prepared_vs_best": 1.7795171205556164,
+    "speedup_cube_cold_cli_vs_best": 0.20409593065395937,
+    "speedup_datafusion_vs_best": 0.5611949055071155
+   }
+  ],
+  "summary": {
+   "geomean_cube_warm_vs_best": 1159.891973986684,
+   "geomean_cube_duck_prepared_vs_best": 1.8337797054277347,
+   "geomean_cube_cold_cli_vs_best": 0.21449825903090716,
+   "geomean_datafusion_vs_best": 0.5483768893334466,
+   "geomean_cube_warm_vs_scan_only": 519116.6319897434,
+   "total_ms_one_pass": {
+    "cube_warm_direct": 0.004627,
+    "cube_warm_duckdb_prepared": 2.341113,
+    "cube_cold_cli": 20.015522371977568,
+    "cube_cold_direct": 19.42462520673871,
+    "cube_cold_duckdb": 552.9721211642027,
+    "datafusion_warm": 7.8309213276952505,
+    "duckdb_scan": 3491.460357,
+    "duckdb_scan_prepared": 3302.045087,
+    "duckdb_mv": 4.301411
+   },
+   "duckdb_mv_total_build_ms": 3546.852287,
+   "total_ratio_vs_scan": {
+    "cube_warm_direct": 754584.0408472011,
+    "cube_warm_duckdb_prepared": 1491.3677199690917,
+    "cube_cold_cli": 174.4376335582511,
+    "cube_cold_duckdb": 6.31398984391697,
+    "datafusion_warm": 445.85562935639723
+   },
+   "total_ratio_vs_mv": {
+    "cube_warm_direct": 929.6328074346228,
+    "cube_warm_duckdb_prepared": 1.8373359167199532,
+    "cube_cold_cli": 0.21490375919551946,
+    "datafusion_warm": 0.5492854314328766
+   }
+  }
+ }
+}

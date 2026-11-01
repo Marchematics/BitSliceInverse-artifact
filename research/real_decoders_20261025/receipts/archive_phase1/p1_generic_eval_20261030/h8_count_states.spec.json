@@ -1,0 +1,1 @@
+{"encoded": "results/hatred8_prep_v5/Observed.encoded", "prep": "results/hatred8_prep_v5/Observed", "dict": "col24.dict", "group_id": 24, "aggs": [{"op": "count"}], "where_in": ["AK", "CA", "TX", "NY"]}

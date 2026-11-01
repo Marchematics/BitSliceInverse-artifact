@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "observations": 300,
+  "blocks": 30,
+  "paths": [
+    "generic",
+    "group_domain",
+    "stream",
+    "stream_uniform",
+    "duckdb",
+    "duckdb_proj2",
+    "arrow_full",
+    "arrow_proj",
+    "vortex_full",
+    "vortex_proj"
+  ],
+  "cases": [
+    "Observed",
+    "Empty",
+    "Singleton",
+    "AllNullCity",
+    "MixedNull"
+  ],
+  "commands": 356,
+  "correctness_checks": 55,
+  "complete_typed_results_equal": 300,
+  "analysis_sha256": "e5fcfe8eb271dd224b38eabcb7b559abdb3b1ab43517eb69b18fbbfe606dc726",
+  "native_binary_sha256": "1766525e690c8960bf61b1dceb0ec0a783117338e0ef12c0f451e7ad851bc99b",
+  "arrow_control_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_citymax14_v1",
+  "vortex_control_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_citymax14_v1",
+  "preloaded_input_bytes": 83819027,
+  "expansion_query_not_frozen_eight": true,
+  "no_page_cache_flush": true,
+  "no_warm_resident_claim": true,
+  "conditional_process_intervals": true,
+  "single_query_not_population": true
+}

@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "rows": 12296,
+  "arrow_file": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/ig16_controls/city.arrow",
+  "arrow_file_bytes": 1266122,
+  "arrow_file_sha256": "e4349cc10705018c8b52004a39f1ec1b61a59d01a2f6e9c095a1a44d08e2d628",
+  "duckdb_file": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/ig16_controls/city.duckdb",
+  "duckdb_file_bytes": 798720,
+  "duckdb_file_sha256": "37a225e20e520f5a61c608f1c23cd222e6b892acc6f60eeacbeb5db145bed3ba",
+  "duckdb_version": "2.0.0",
+  "duckdb_native_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a",
+  "duckdb_equivalent_sql": "SELECT trim(split_part(\"City\", ' ', 1), ' \\tx0bfr') AS \"City - Split 1\" FROM \"IGlocations1_1\" GROUP BY \"City - Split 1\" ORDER BY \"City - Split 1\" ASC",
+  "duckdb_equivalent_result_equals_oracle": true,
+  "scope": "projection-matched one-column City controls; external dialects rewrite splitpart because the original spelling is unsupported there"
+}

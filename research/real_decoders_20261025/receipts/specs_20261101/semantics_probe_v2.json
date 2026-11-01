@@ -1,0 +1,662 @@
+{
+ "v2_binary": "../../work/specs/bin/enc_cube_v2",
+ "v2_sha256": "00dc138dbf6a280876a7dd8362a56d07590a6fb9cb2cf8c75123217bc87afe7d",
+ "v2_source_sha256": "99e4dcefa1c9b391781c1583f4259cf0693761973cd6b2de0533ce77d57f1543",
+ "probes": {
+  "S1_null_measure_fixed": {
+   "args": [],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t GROUP BY g",
+   "notes": "ECUBE02 has no measure validity bitmap. With NULL payload stored as 0, COUNT(*) still matches SQL (rows are counted) but MIN and SUM do not: MIN(a) in SQL is 5, the cube returns 0. NULL measures are OUTSIDE the structure; they must be excluded from the cube build or excluded by a range predicate in every query.",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.154,\"read_ms\":0.068,\"accum_ms\":0.000,\"prefix_ms\":0.006,\"write_ms\":0.081,\"groups\":2,\"values\":3,\"rows\":4,\"bytes\":160,\"dense\":0,\"v2\":1}"
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "5",
+     "2",
+     "5",
+     "5"
+    ],
+    [
+     "b",
+     "7",
+     "2",
+     "7",
+     "7"
+    ]
+   ],
+   "v2_rows": [
+    [
+     "a",
+     "5",
+     "2",
+     "0",
+     "5"
+    ],
+    [
+     "b",
+     "7",
+     "2",
+     "0",
+     "7"
+    ]
+   ],
+   "v2_error": null,
+   "verdict": "OUT-OF-SCOPE"
+  },
+  "S1_null_measure_range_filtered": {
+   "args": [
+    "range=0,100"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 0 AND 100 GROUP BY g",
+   "notes": "When every query ranges over the measure, NULL rows cannot enter the answer, so building from the non-NULL rows is exact.",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.169,\"read_ms\":0.067,\"accum_ms\":0.000,\"prefix_ms\":0.009,\"write_ms\":0.094,\"groups\":2,\"values\":2,\"rows\":2,\"bytes\":144,\"dense\":0,\"v2\":1}"
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "5",
+     "1",
+     "5",
+     "5"
+    ],
+    [
+     "b",
+     "7",
+     "1",
+     "7",
+     "7"
+    ]
+   ],
+   "v2_rows": [
+    [
+     "a",
+     "5",
+     "1",
+     "5",
+     "5"
+    ],
+    [
+     "b",
+     "7",
+     "1",
+     "7",
+     "7"
+    ]
+   ],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "S2_repeated_having": {
+   "args": [
+    "having=sum>=500",
+    "having=count<=4"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t GROUP BY g HAVING SUM(v) >= 500 AND COUNT(*) <= 4",
+   "notes": "v2 ANDs repeated having=; v1 applied only `count<=4` (both groups pass: SUM(a)=100<500 too).",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.171,\"read_ms\":0.080,\"accum_ms\":0.001,\"prefix_ms\":0.009,\"write_ms\":0.082,\"groups\":2,\"values\":8,\"rows\":8,\"bytes\":240,\"dense\":0,\"v2\":1}"
+   },
+   "duckdb_expected": [
+    [
+     "b",
+     "1000",
+     "4",
+     "100",
+     "400"
+    ]
+   ],
+   "v2_rows": [
+    [
+     "b",
+     "1000",
+     "4",
+     "100",
+     "400"
+    ]
+   ],
+   "v2_error": null,
+   "verdict": "PASS",
+   "v1_rows_last_wins": [
+    [
+     "a",
+     "100",
+     "4",
+     "10",
+     "40"
+    ],
+    [
+     "b",
+     "1000",
+     "4",
+     "100",
+     "400"
+    ]
+   ]
+  },
+  "S3_in_null_name_literal_group": {
+   "args": [
+    "where_in=NULL"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE g IN ('NULL') GROUP BY g",
+   "notes": "literal group value 'NULL' exists and is addressable; the SQL NULL group is dropped under any IN/NOT IN by 3VL, so the shared rendered name 'NULL' is not ambiguous for this query shape.",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.131,\"read_ms\":0.057,\"accum_ms\":0.000,\"prefix_ms\":0.009,\"write_ms\":0.065,\"groups\":3,\"values\":4,\"rows\":4,\"bytes\":184,\"dense\":1,\"v2\":1}"
+   },
+   "duckdb_expected": [
+    [
+     "NULL",
+     "5",
+     "2",
+     "2",
+     "3"
+    ]
+   ],
+   "v2_rows": [
+    [
+     "NULL",
+     "5",
+     "2",
+     "2",
+     "3"
+    ]
+   ],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "S3_not_in_null_name_literal_group": {
+   "args": [
+    "where_not_in=NULL"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE g NOT IN ('NULL') GROUP BY g",
+   "notes": "same fixture, NOT IN",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.192,\"read_ms\":0.090,\"accum_ms\":0.000,\"prefix_ms\":0.009,\"write_ms\":0.092,\"groups\":3,\"values\":4,\"rows\":4,\"bytes\":184,\"dense\":1,\"v2\":1}"
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "1",
+     "1",
+     "1",
+     "1"
+    ]
+   ],
+   "v2_rows": [
+    [
+     "a",
+     "1",
+     "1",
+     "1",
+     "1"
+    ]
+   ],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "S3_in_null_group_only": {
+   "args": [
+    "where_in=NULL"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE g IN ('NULL') GROUP BY g",
+   "notes": "only a SQL NULL group: IN can never match it, cube returns nothing",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.198,\"read_ms\":0.082,\"accum_ms\":0.001,\"prefix_ms\":0.018,\"write_ms\":0.098,\"groups\":3,\"values\":4,\"rows\":4,\"bytes\":184,\"dense\":1,\"v2\":1}"
+   },
+   "duckdb_expected": [],
+   "v2_rows": [],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "s4_lo_beyond": {
+   "args": [
+    "range=1000,2000"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 1000 AND 2000 GROUP BY g",
+   "notes": "",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.172,\"read_ms\":0.088,\"accum_ms\":0.001,\"prefix_ms\":0.009,\"write_ms\":0.074,\"groups\":2,\"values\":4,\"rows\":4,\"bytes\":176,\"dense\":0,\"v2\":1}"
+   },
+   "duckdb_expected": [],
+   "v2_rows": [],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "s4_hi_beyond": {
+   "args": [
+    "range=-2000,-1000"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN -2000 AND -1000 GROUP BY g",
+   "notes": "",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.167,\"read_ms\":0.071,\"accum_ms\":0.000,\"prefix_ms\":0.010,\"write_ms\":0.085,\"groups\":2,\"values\":4,\"rows\":4,\"bytes\":176,\"dense\":0,\"v2\":1}"
+   },
+   "duckdb_expected": [],
+   "v2_rows": [],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "s4_inverted": {
+   "args": [
+    "range=40,10"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 40 AND 10 GROUP BY g",
+   "notes": "",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.185,\"read_ms\":0.092,\"accum_ms\":0.000,\"prefix_ms\":0.010,\"write_ms\":0.083,\"groups\":2,\"values\":4,\"rows\":4,\"bytes\":176,\"dense\":0,\"v2\":1}"
+   },
+   "duckdb_expected": [],
+   "v2_rows": [],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "s5_single_observed": {
+   "args": [
+    "range=20,20"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 20 AND 20 GROUP BY g",
+   "notes": "",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.165,\"read_ms\":0.070,\"accum_ms\":0.000,\"prefix_ms\":0.009,\"write_ms\":0.085,\"groups\":2,\"values\":4,\"rows\":4,\"bytes\":176,\"dense\":0,\"v2\":1}"
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "20",
+     "1",
+     "20",
+     "20"
+    ]
+   ],
+   "v2_rows": [
+    [
+     "a",
+     "20",
+     "1",
+     "20",
+     "20"
+    ]
+   ],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "s5_single_unobserved": {
+   "args": [
+    "range=25,25"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 25 AND 25 GROUP BY g",
+   "notes": "",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.149,\"read_ms\":0.074,\"accum_ms\":0.000,\"prefix_ms\":0.009,\"write_ms\":0.066,\"groups\":2,\"values\":4,\"rows\":4,\"bytes\":176,\"dense\":0,\"v2\":1}"
+   },
+   "duckdb_expected": [],
+   "v2_rows": [],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "S6_empty_table": {
+   "v2_build": {
+    "returncode": 1,
+    "stderr": "ERR empty"
+   },
+   "verdict": "UNSUPPORTED",
+   "notes": "ECUBE02 requires at least one observed value: an empty base table (or a measure column with no non-NULL values) is rejected at build time (ERR empty). Empty *results* under predicates are supported and are covered by the 36-spec empty_result family (36/36 exact)."
+  },
+  "S7_one_row_fixed": {
+   "args": [],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t GROUP BY g",
+   "notes": "",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.139,\"read_ms\":0.064,\"accum_ms\":0.000,\"prefix_ms\":0.007,\"write_ms\":0.067,\"groups\":1,\"values\":1,\"rows\":1,\"bytes\":92,\"dense\":1,\"v2\":1}"
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "7",
+     "1",
+     "7",
+     "7"
+    ]
+   ],
+   "v2_rows": [
+    [
+     "a",
+     "7",
+     "1",
+     "7",
+     "7"
+    ]
+   ],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "S7_one_row_single_value": {
+   "args": [
+    "range=7,7"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 7 AND 7 GROUP BY g",
+   "notes": "",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.156,\"read_ms\":0.075,\"accum_ms\":0.000,\"prefix_ms\":0.010,\"write_ms\":0.071,\"groups\":1,\"values\":1,\"rows\":1,\"bytes\":92,\"dense\":1,\"v2\":1}"
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "7",
+     "1",
+     "7",
+     "7"
+    ]
+   ],
+   "v2_rows": [
+    [
+     "a",
+     "7",
+     "1",
+     "7",
+     "7"
+    ]
+   ],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "S7_one_row_empty_range": {
+   "args": [
+    "range=8,9"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 8 AND 9 GROUP BY g",
+   "notes": "",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.199,\"read_ms\":0.095,\"accum_ms\":0.000,\"prefix_ms\":0.009,\"write_ms\":0.095,\"groups\":1,\"values\":1,\"rows\":1,\"bytes\":92,\"dense\":1,\"v2\":1}"
+   },
+   "duckdb_expected": [],
+   "v2_rows": [],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "S8_all_null_group_keys": {
+   "args": [],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t GROUP BY g",
+   "notes": "zero-length dictionary + NULL group only; cube G=1 and the rendered group name is 'NULL'",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.191,\"read_ms\":0.088,\"accum_ms\":0.000,\"prefix_ms\":0.009,\"write_ms\":0.094,\"groups\":1,\"values\":6,\"rows\":6,\"bytes\":112,\"dense\":1,\"v2\":1}"
+   },
+   "duckdb_expected": [
+    [
+     "NULL",
+     "21",
+     "6",
+     "1",
+     "6"
+    ]
+   ],
+   "v2_rows": [
+    [
+     "NULL",
+     "21",
+     "6",
+     "1",
+     "6"
+    ]
+   ],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "S9_int32_extremes": {
+   "args": [],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t GROUP BY g",
+   "notes": "measure payload is int32; SUM is accumulated in i64, so two INT32_MIN/MAX rows per group still fit",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.168,\"read_ms\":0.075,\"accum_ms\":0.000,\"prefix_ms\":0.009,\"write_ms\":0.084,\"groups\":2,\"values\":2,\"rows\":4,\"bytes\":144,\"dense\":0,\"v2\":1}"
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "-1",
+     "2",
+     "-2147483648",
+     "2147483647"
+    ],
+    [
+     "b",
+     "-1",
+     "2",
+     "-2147483648",
+     "2147483647"
+    ]
+   ],
+   "v2_rows": [
+    [
+     "a",
+     "-1",
+     "2",
+     "-2147483648",
+     "2147483647"
+    ],
+    [
+     "b",
+     "-1",
+     "2",
+     "-2147483648",
+     "2147483647"
+    ]
+   ],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "S10_comma_group_name": {
+   "verdict": "NOT-EXPRESSIBLE",
+   "notes": "where_in/where_not_in are comma-split, so a group value containing ',' cannot be filtered through the CLI. No corpus/fuzz dataset has one."
+  },
+  "S11_multiblock_minmax_5_190": {
+   "args": [
+    "range=5,190"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 5 AND 190 GROUP BY g",
+   "notes": "contiguous 0..199 = 4 blocks of 64 ranks; v2 MIN/MAX use block-prefix search that must be monotone",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.201,\"read_ms\":0.085,\"accum_ms\":0.012,\"prefix_ms\":0.010,\"write_ms\":0.094,\"groups\":2,\"values\":200,\"rows\":600,\"bytes\":1784,\"dense\":1,\"v2\":1}"
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "18135",
+     "186",
+     "6",
+     "189"
+    ],
+    [
+     "b",
+     "36270",
+     "372",
+     "5",
+     "190"
+    ]
+   ],
+   "v2_rows": [
+    [
+     "a",
+     "18135",
+     "186",
+     "6",
+     "189"
+    ],
+    [
+     "b",
+     "36270",
+     "372",
+     "5",
+     "190"
+    ]
+   ],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "S11_multiblock_minmax_63_64": {
+   "args": [
+    "range=63,64"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 63 AND 64 GROUP BY g",
+   "notes": "contiguous 0..199 = 4 blocks of 64 ranks; v2 MIN/MAX use block-prefix search that must be monotone",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":6.257,\"read_ms\":0.096,\"accum_ms\":0.012,\"prefix_ms\":0.010,\"write_ms\":6.138,\"groups\":2,\"values\":200,\"rows\":600,\"bytes\":1784,\"dense\":1,\"v2\":1}"
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "189",
+     "3",
+     "63",
+     "63"
+    ],
+    [
+     "b",
+     "192",
+     "3",
+     "64",
+     "64"
+    ]
+   ],
+   "v2_rows": [
+    [
+     "a",
+     "189",
+     "3",
+     "63",
+     "63"
+    ],
+    [
+     "b",
+     "192",
+     "3",
+     "64",
+     "64"
+    ]
+   ],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "S11_multiblock_minmax_127_130": {
+   "args": [
+    "range=127,130"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 127 AND 130 GROUP BY g",
+   "notes": "contiguous 0..199 = 4 blocks of 64 ranks; v2 MIN/MAX use block-prefix search that must be monotone",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.211,\"read_ms\":0.089,\"accum_ms\":0.012,\"prefix_ms\":0.010,\"write_ms\":0.099,\"groups\":2,\"values\":200,\"rows\":600,\"bytes\":1784,\"dense\":1,\"v2\":1}"
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "387",
+     "3",
+     "129",
+     "129"
+    ],
+    [
+     "b",
+     "1155",
+     "9",
+     "127",
+     "130"
+    ]
+   ],
+   "v2_rows": [
+    [
+     "a",
+     "387",
+     "3",
+     "129",
+     "129"
+    ],
+    [
+     "b",
+     "1155",
+     "9",
+     "127",
+     "130"
+    ]
+   ],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "S11_multiblock_minmax_0_199": {
+   "args": [
+    "range=0,199"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 0 AND 199 GROUP BY g",
+   "notes": "contiguous 0..199 = 4 blocks of 64 ranks; v2 MIN/MAX use block-prefix search that must be monotone",
+   "v2_build": {
+    "returncode": 0,
+    "info": "{\"build_ms\":0.189,\"read_ms\":0.076,\"accum_ms\":0.012,\"prefix_ms\":0.010,\"write_ms\":0.091,\"groups\":2,\"values\":200,\"rows\":600,\"bytes\":1784,\"dense\":1,\"v2\":1}"
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "19899",
+     "201",
+     "0",
+     "198"
+    ],
+    [
+     "b",
+     "39801",
+     "399",
+     "1",
+     "199"
+    ]
+   ],
+   "v2_rows": [
+    [
+     "a",
+     "19899",
+     "201",
+     "0",
+     "198"
+    ],
+    [
+     "b",
+     "39801",
+     "399",
+     "1",
+     "199"
+    ]
+   ],
+   "v2_error": null,
+   "verdict": "PASS"
+  },
+  "S12_u32_count_capacity": {
+   "verdict": "BOUNDARY",
+   "notes": "ECUBE02 stores u32 per (group,rank) counts and u32 block-count prefixes. All tested pairs have n<=100,000,000 rows; per-cell and per-group counts are therefore < 2^32. The u32 format needs re-checking before a >4.29e9-row-per-group claim."
+  },
+  "S13_group_value_rendering": {
+   "verdict": "BOUNDARY",
+   "notes": "The corpus addresses groups by their rendered SQL value (BIGINT -> decimal string, VARCHAR -> exact bytes). Negative group values (C10: -2..2), values with spaces (C4/C9: 'REG AIR', 'DELIVER IN PERSON'), numeric strings and 3M distinct integers are all exact. FLOAT/DECIMAL/DATE group keys are outside the corpus: the dictionary is built from a str() rendering, so their ordering/formatting would need a pinned canonical form."
+  },
+  "S13_empty_result_predicates": {
+   "verdict": "PASS",
+   "notes": "36/36 empty_result family specs are exact (inverted, out-of-domain, IN nonexistent, NOT IN every name, impossible HAVING, unobserved single value)."
+  }
+ }
+}

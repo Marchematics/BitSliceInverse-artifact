@@ -1,0 +1,3125 @@
+[
+  {
+    "name": "build",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "build_fullsql",
+      "results/ig16_prep_v1/Observed",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "build_fullsql",
+        "results/ig16_prep_v1/Observed",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded"
+      ],
+      "pid": 3810856,
+      "exit_code": 0,
+      "wall_s": 0.010411256924271584,
+      "max_rss_kib": 8048,
+      "user_s": 0.0,
+      "system_s": 0.010085,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "verify",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "verify_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "verify_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed"
+      ],
+      "pid": 3810858,
+      "exit_code": 0,
+      "wall_s": 0.007529228925704956,
+      "max_rss_kib": 8188,
+      "user_s": 0.0,
+      "system_s": 0.007259,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 0,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/native.metrics.json"
+      ],
+      "pid": 3810860,
+      "exit_code": 0,
+      "wall_s": 0.017226372845470905,
+      "max_rss_kib": 8232,
+      "user_s": 0.0169,
+      "system_s": 0.0,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/duckdb.metrics.json"
+      ],
+      "pid": 3810862,
+      "exit_code": 0,
+      "wall_s": 0.2101264779921621,
+      "max_rss_kib": 91896,
+      "user_s": 0.172141,
+      "system_s": 0.036029,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 520,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/arrow.metrics.json"
+      ],
+      "pid": 3811120,
+      "exit_code": 0,
+      "wall_s": 0.11672266502864659,
+      "max_rss_kib": 77180,
+      "user_s": 0.09618399999999999,
+      "system_s": 0.020038,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 13,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b00_0_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b00_0_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b00_0_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b00_0_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b00_0_native.metrics.json"
+      ],
+      "pid": 3811124,
+      "exit_code": 0,
+      "wall_s": 0.01708421902731061,
+      "max_rss_kib": 8248,
+      "user_s": 0.012556999999999999,
+      "system_s": 0.0041849999999999995,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b00_1_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b00_1_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b00_1_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b00_1_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b00_1_duckdb.metrics.json"
+      ],
+      "pid": 3811126,
+      "exit_code": 0,
+      "wall_s": 0.21186215500347316,
+      "max_rss_kib": 91404,
+      "user_s": 0.166329,
+      "system_s": 0.043562,
+      "voluntary_context_switches": 501,
+      "involuntary_context_switches": 523,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b00_2_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b00_2_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b00_2_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b00_2_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b00_2_arrow.metrics.json"
+      ],
+      "pid": 3811384,
+      "exit_code": 0,
+      "wall_s": 0.11587980692274868,
+      "max_rss_kib": 77196,
+      "user_s": 0.099461,
+      "system_s": 0.015913,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 11,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b01_0_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b01_0_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b01_0_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b01_0_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b01_0_duckdb.metrics.json"
+      ],
+      "pid": 3811388,
+      "exit_code": 0,
+      "wall_s": 0.21095635602250695,
+      "max_rss_kib": 92232,
+      "user_s": 0.16724,
+      "system_s": 0.04181,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 519,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b01_1_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b01_1_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b01_1_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b01_1_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b01_1_arrow.metrics.json"
+      ],
+      "pid": 3811646,
+      "exit_code": 0,
+      "wall_s": 0.11682187602855265,
+      "max_rss_kib": 77484,
+      "user_s": 0.092266,
+      "system_s": 0.024069,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 13,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b01_2_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b01_2_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b01_2_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b01_2_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b01_2_native.metrics.json"
+      ],
+      "pid": 3811650,
+      "exit_code": 0,
+      "wall_s": 0.017231629928573966,
+      "max_rss_kib": 8052,
+      "user_s": 0.0169,
+      "system_s": 0.0,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b02_0_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b02_0_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b02_0_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b02_0_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b02_0_arrow.metrics.json"
+      ],
+      "pid": 3811652,
+      "exit_code": 0,
+      "wall_s": 0.11696123611181974,
+      "max_rss_kib": 77144,
+      "user_s": 0.08030899999999999,
+      "system_s": 0.036139,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 11,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b02_1_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b02_1_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b02_1_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b02_1_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b02_1_native.metrics.json"
+      ],
+      "pid": 3811656,
+      "exit_code": 0,
+      "wall_s": 0.01720035495236516,
+      "max_rss_kib": 8248,
+      "user_s": 0.016857999999999998,
+      "system_s": 0.0,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b02_2_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b02_2_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b02_2_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b02_2_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b02_2_duckdb.metrics.json"
+      ],
+      "pid": 3811658,
+      "exit_code": 0,
+      "wall_s": 0.2150478980038315,
+      "max_rss_kib": 91404,
+      "user_s": 0.18897,
+      "system_s": 0.024123,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 518,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b03_0_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b03_0_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b03_0_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b03_0_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b03_0_native.metrics.json"
+      ],
+      "pid": 3811916,
+      "exit_code": 0,
+      "wall_s": 0.017567281844094396,
+      "max_rss_kib": 8052,
+      "user_s": 0.012924,
+      "system_s": 0.004308,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b03_1_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b03_1_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b03_1_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b03_1_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b03_1_duckdb.metrics.json"
+      ],
+      "pid": 3811918,
+      "exit_code": 0,
+      "wall_s": 0.21383241703733802,
+      "max_rss_kib": 92288,
+      "user_s": 0.16391899999999998,
+      "system_s": 0.047976,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 518,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b03_2_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b03_2_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b03_2_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b03_2_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b03_2_arrow.metrics.json"
+      ],
+      "pid": 3812176,
+      "exit_code": 0,
+      "wall_s": 0.11692683701403439,
+      "max_rss_kib": 77396,
+      "user_s": 0.100356,
+      "system_s": 0.016056,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 13,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b04_0_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b04_0_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b04_0_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b04_0_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b04_0_duckdb.metrics.json"
+      ],
+      "pid": 3812182,
+      "exit_code": 0,
+      "wall_s": 0.21089050103910267,
+      "max_rss_kib": 91472,
+      "user_s": 0.169477,
+      "system_s": 0.039413,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 521,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b04_1_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b04_1_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b04_1_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b04_1_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b04_1_arrow.metrics.json"
+      ],
+      "pid": 3812440,
+      "exit_code": 0,
+      "wall_s": 0.1175292800180614,
+      "max_rss_kib": 77388,
+      "user_s": 0.096811,
+      "system_s": 0.020169,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 14,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b04_2_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b04_2_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b04_2_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b04_2_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b04_2_native.metrics.json"
+      ],
+      "pid": 3812444,
+      "exit_code": 0,
+      "wall_s": 0.017384719802066684,
+      "max_rss_kib": 8236,
+      "user_s": 0.017058,
+      "system_s": 0.0,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b05_0_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b05_0_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b05_0_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b05_0_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b05_0_arrow.metrics.json"
+      ],
+      "pid": 3812446,
+      "exit_code": 0,
+      "wall_s": 0.11932028597220778,
+      "max_rss_kib": 77384,
+      "user_s": 0.087055,
+      "system_s": 0.031656,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 20,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b05_1_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b05_1_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b05_1_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b05_1_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b05_1_native.metrics.json"
+      ],
+      "pid": 3812450,
+      "exit_code": 0,
+      "wall_s": 0.01728364499285817,
+      "max_rss_kib": 8192,
+      "user_s": 0.012719999999999999,
+      "system_s": 0.00424,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b05_2_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b05_2_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b05_2_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b05_2_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b05_2_duckdb.metrics.json"
+      ],
+      "pid": 3812452,
+      "exit_code": 0,
+      "wall_s": 0.21278235199861228,
+      "max_rss_kib": 92232,
+      "user_s": 0.167042,
+      "system_s": 0.043748999999999996,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 520,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b06_0_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b06_0_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b06_0_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b06_0_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b06_0_native.metrics.json"
+      ],
+      "pid": 3812710,
+      "exit_code": 0,
+      "wall_s": 0.017185233999043703,
+      "max_rss_kib": 8184,
+      "user_s": 0.016867,
+      "system_s": 0.0,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b06_1_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b06_1_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b06_1_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b06_1_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b06_1_duckdb.metrics.json"
+      ],
+      "pid": 3812712,
+      "exit_code": 0,
+      "wall_s": 0.21136938803829253,
+      "max_rss_kib": 92136,
+      "user_s": 0.173203,
+      "system_s": 0.036251,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 520,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b06_2_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b06_2_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b06_2_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b06_2_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b06_2_arrow.metrics.json"
+      ],
+      "pid": 3812970,
+      "exit_code": 0,
+      "wall_s": 0.11779716401360929,
+      "max_rss_kib": 77292,
+      "user_s": 0.088932,
+      "system_s": 0.028295999999999998,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 13,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b07_0_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b07_0_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b07_0_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b07_0_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b07_0_duckdb.metrics.json"
+      ],
+      "pid": 3812974,
+      "exit_code": 0,
+      "wall_s": 0.21273158793337643,
+      "max_rss_kib": 91488,
+      "user_s": 0.178982,
+      "system_s": 0.031819,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 519,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b07_1_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b07_1_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b07_1_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b07_1_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b07_1_arrow.metrics.json"
+      ],
+      "pid": 3813232,
+      "exit_code": 0,
+      "wall_s": 0.11709505808539689,
+      "max_rss_kib": 77448,
+      "user_s": 0.092469,
+      "system_s": 0.024121999999999998,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 13,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b07_2_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b07_2_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b07_2_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b07_2_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b07_2_native.metrics.json"
+      ],
+      "pid": 3813236,
+      "exit_code": 0,
+      "wall_s": 0.017420210177078843,
+      "max_rss_kib": 8164,
+      "user_s": 0.010236,
+      "system_s": 0.006823999999999999,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 2,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b08_0_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b08_0_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b08_0_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b08_0_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b08_0_arrow.metrics.json"
+      ],
+      "pid": 3813238,
+      "exit_code": 0,
+      "wall_s": 0.11748034995980561,
+      "max_rss_kib": 77240,
+      "user_s": 0.092766,
+      "system_s": 0.024199,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 13,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b08_1_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b08_1_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b08_1_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b08_1_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b08_1_native.metrics.json"
+      ],
+      "pid": 3813242,
+      "exit_code": 0,
+      "wall_s": 0.017208326840773225,
+      "max_rss_kib": 8228,
+      "user_s": 0.012646,
+      "system_s": 0.004215,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 2,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b08_2_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b08_2_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b08_2_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b08_2_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b08_2_duckdb.metrics.json"
+      ],
+      "pid": 3813244,
+      "exit_code": 0,
+      "wall_s": 0.21316187595948577,
+      "max_rss_kib": 91960,
+      "user_s": 0.155473,
+      "system_s": 0.05581,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 519,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b09_0_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b09_0_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b09_0_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b09_0_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b09_0_native.metrics.json"
+      ],
+      "pid": 3813502,
+      "exit_code": 0,
+      "wall_s": 0.017478805035352707,
+      "max_rss_kib": 8244,
+      "user_s": 0.017158,
+      "system_s": 0.0,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b09_1_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b09_1_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b09_1_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b09_1_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b09_1_duckdb.metrics.json"
+      ],
+      "pid": 3813504,
+      "exit_code": 0,
+      "wall_s": 0.21140236407518387,
+      "max_rss_kib": 91864,
+      "user_s": 0.15808899999999998,
+      "system_s": 0.051378,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 519,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b09_2_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b09_2_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b09_2_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b09_2_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b09_2_arrow.metrics.json"
+      ],
+      "pid": 3813764,
+      "exit_code": 0,
+      "wall_s": 0.11691551003605127,
+      "max_rss_kib": 77168,
+      "user_s": 0.096338,
+      "system_s": 0.020069999999999998,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 13,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b10_0_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b10_0_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b10_0_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b10_0_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b10_0_duckdb.metrics.json"
+      ],
+      "pid": 3813769,
+      "exit_code": 0,
+      "wall_s": 0.2132410891354084,
+      "max_rss_kib": 91600,
+      "user_s": 0.167181,
+      "system_s": 0.043785,
+      "voluntary_context_switches": 258,
+      "involuntary_context_switches": 526,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b10_1_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b10_1_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b10_1_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b10_1_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b10_1_arrow.metrics.json"
+      ],
+      "pid": 3814027,
+      "exit_code": 0,
+      "wall_s": 0.11678191786631942,
+      "max_rss_kib": 77140,
+      "user_s": 0.10023,
+      "system_s": 0.016035999999999998,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 12,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b10_2_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b10_2_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b10_2_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b10_2_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b10_2_native.metrics.json"
+      ],
+      "pid": 3814031,
+      "exit_code": 0,
+      "wall_s": 0.017205843003466725,
+      "max_rss_kib": 8196,
+      "user_s": 0.016885,
+      "system_s": 0.0,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b11_0_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b11_0_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b11_0_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b11_0_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b11_0_arrow.metrics.json"
+      ],
+      "pid": 3814033,
+      "exit_code": 0,
+      "wall_s": 0.11688372399657965,
+      "max_rss_kib": 77376,
+      "user_s": 0.080275,
+      "system_s": 0.036122999999999995,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 12,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b11_1_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b11_1_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b11_1_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b11_1_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b11_1_native.metrics.json"
+      ],
+      "pid": 3814037,
+      "exit_code": 0,
+      "wall_s": 0.017307860078290105,
+      "max_rss_kib": 8236,
+      "user_s": 0.013593,
+      "system_s": 0.003398,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b11_2_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b11_2_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b11_2_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b11_2_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b11_2_duckdb.metrics.json"
+      ],
+      "pid": 3814039,
+      "exit_code": 0,
+      "wall_s": 0.21045199199579656,
+      "max_rss_kib": 91492,
+      "user_s": 0.148411,
+      "system_s": 0.060167,
+      "voluntary_context_switches": 578,
+      "involuntary_context_switches": 519,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b12_0_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b12_0_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b12_0_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b12_0_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b12_0_native.metrics.json"
+      ],
+      "pid": 3814297,
+      "exit_code": 0,
+      "wall_s": 0.017234194092452526,
+      "max_rss_kib": 8188,
+      "user_s": 0.016913,
+      "system_s": 0.0,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b12_1_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b12_1_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b12_1_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b12_1_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b12_1_duckdb.metrics.json"
+      ],
+      "pid": 3814299,
+      "exit_code": 0,
+      "wall_s": 0.21339661092497408,
+      "max_rss_kib": 91796,
+      "user_s": 0.167593,
+      "system_s": 0.043893,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 519,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b12_2_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b12_2_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b12_2_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b12_2_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b12_2_arrow.metrics.json"
+      ],
+      "pid": 3814557,
+      "exit_code": 0,
+      "wall_s": 0.11613433994352818,
+      "max_rss_kib": 77172,
+      "user_s": 0.079756,
+      "system_s": 0.03589,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 13,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b13_0_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b13_0_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b13_0_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b13_0_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b13_0_duckdb.metrics.json"
+      ],
+      "pid": 3814561,
+      "exit_code": 0,
+      "wall_s": 0.21034129289910197,
+      "max_rss_kib": 91468,
+      "user_s": 0.152307,
+      "system_s": 0.056112999999999996,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 519,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b13_1_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b13_1_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b13_1_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b13_1_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b13_1_arrow.metrics.json"
+      ],
+      "pid": 3814819,
+      "exit_code": 0,
+      "wall_s": 0.11749134492129087,
+      "max_rss_kib": 77132,
+      "user_s": 0.08968899999999999,
+      "system_s": 0.027295999999999997,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 12,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b13_2_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b13_2_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b13_2_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b13_2_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b13_2_native.metrics.json"
+      ],
+      "pid": 3814823,
+      "exit_code": 0,
+      "wall_s": 0.01728044101037085,
+      "max_rss_kib": 8156,
+      "user_s": 0.012731,
+      "system_s": 0.004242999999999999,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b14_0_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b14_0_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b14_0_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b14_0_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b14_0_arrow.metrics.json"
+      ],
+      "pid": 3814825,
+      "exit_code": 0,
+      "wall_s": 0.11665774998255074,
+      "max_rss_kib": 77380,
+      "user_s": 0.092101,
+      "system_s": 0.024026,
+      "voluntary_context_switches": 7,
+      "involuntary_context_switches": 14,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b14_1_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b14_1_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b14_1_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b14_1_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b14_1_native.metrics.json"
+      ],
+      "pid": 3814829,
+      "exit_code": 0,
+      "wall_s": 0.017241585068404675,
+      "max_rss_kib": 8192,
+      "user_s": 0.010149,
+      "system_s": 0.0067659999999999994,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b14_2_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b14_2_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b14_2_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b14_2_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b14_2_duckdb.metrics.json"
+      ],
+      "pid": 3814831,
+      "exit_code": 0,
+      "wall_s": 0.21633424004539847,
+      "max_rss_kib": 91520,
+      "user_s": 0.169672,
+      "system_s": 0.044438,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 519,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b15_0_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b15_0_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b15_0_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b15_0_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b15_0_native.metrics.json"
+      ],
+      "pid": 3815089,
+      "exit_code": 0,
+      "wall_s": 0.01735194306820631,
+      "max_rss_kib": 8048,
+      "user_s": 0.012766999999999999,
+      "system_s": 0.004255,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b15_1_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b15_1_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b15_1_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b15_1_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b15_1_duckdb.metrics.json"
+      ],
+      "pid": 3815091,
+      "exit_code": 0,
+      "wall_s": 0.21333025582134724,
+      "max_rss_kib": 92508,
+      "user_s": 0.18334,
+      "system_s": 0.027899,
+      "voluntary_context_switches": 452,
+      "involuntary_context_switches": 534,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b15_2_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b15_2_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b15_2_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b15_2_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b15_2_arrow.metrics.json"
+      ],
+      "pid": 3815349,
+      "exit_code": 0,
+      "wall_s": 0.1168708661571145,
+      "max_rss_kib": 77632,
+      "user_s": 0.072225,
+      "system_s": 0.044136999999999996,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 13,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b16_0_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b16_0_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b16_0_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b16_0_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b16_0_duckdb.metrics.json"
+      ],
+      "pid": 3815353,
+      "exit_code": 0,
+      "wall_s": 0.20897142007015646,
+      "max_rss_kib": 91976,
+      "user_s": 0.175282,
+      "system_s": 0.031869,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 520,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b16_1_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b16_1_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b16_1_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b16_1_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b16_1_arrow.metrics.json"
+      ],
+      "pid": 3815611,
+      "exit_code": 0,
+      "wall_s": 0.11651225201785564,
+      "max_rss_kib": 77116,
+      "user_s": 0.104034,
+      "system_s": 0.012003,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 12,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b16_2_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b16_2_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b16_2_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b16_2_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b16_2_native.metrics.json"
+      ],
+      "pid": 3815685,
+      "exit_code": 0,
+      "wall_s": 0.01754742208868265,
+      "max_rss_kib": 8260,
+      "user_s": 0.012917,
+      "system_s": 0.004305,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b17_0_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b17_0_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b17_0_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b17_0_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b17_0_arrow.metrics.json"
+      ],
+      "pid": 3815691,
+      "exit_code": 0,
+      "wall_s": 0.11681393394246697,
+      "max_rss_kib": 77232,
+      "user_s": 0.096928,
+      "system_s": 0.019385,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 13,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b17_1_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b17_1_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b17_1_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b17_1_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b17_1_native.metrics.json"
+      ],
+      "pid": 3815695,
+      "exit_code": 0,
+      "wall_s": 0.017162800999358296,
+      "max_rss_kib": 8196,
+      "user_s": 0.016829,
+      "system_s": 0.0,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b17_2_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b17_2_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b17_2_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b17_2_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b17_2_duckdb.metrics.json"
+      ],
+      "pid": 3815697,
+      "exit_code": 0,
+      "wall_s": 0.21050028991885483,
+      "max_rss_kib": 91988,
+      "user_s": 0.164468,
+      "system_s": 0.044125,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 519,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b18_0_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b18_0_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b18_0_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b18_0_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b18_0_native.metrics.json"
+      ],
+      "pid": 3815955,
+      "exit_code": 0,
+      "wall_s": 0.017239321023225784,
+      "max_rss_kib": 8176,
+      "user_s": 0.008446,
+      "system_s": 0.008446,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b18_1_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b18_1_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b18_1_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b18_1_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b18_1_duckdb.metrics.json"
+      ],
+      "pid": 3815957,
+      "exit_code": 0,
+      "wall_s": 0.21207957295700908,
+      "max_rss_kib": 91804,
+      "user_s": 0.173804,
+      "system_s": 0.036377,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 519,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b18_2_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b18_2_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b18_2_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b18_2_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b18_2_arrow.metrics.json"
+      ],
+      "pid": 3816215,
+      "exit_code": 0,
+      "wall_s": 0.11690847901627421,
+      "max_rss_kib": 77356,
+      "user_s": 0.080237,
+      "system_s": 0.036106,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 12,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b19_0_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b19_0_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b19_0_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b19_0_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b19_0_duckdb.metrics.json"
+      ],
+      "pid": 3816220,
+      "exit_code": 0,
+      "wall_s": 0.21191111113876104,
+      "max_rss_kib": 92280,
+      "user_s": 0.17035599999999998,
+      "system_s": 0.039617,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 519,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b19_1_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b19_1_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b19_1_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b19_1_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b19_1_arrow.metrics.json"
+      ],
+      "pid": 3816478,
+      "exit_code": 0,
+      "wall_s": 0.11672216281294823,
+      "max_rss_kib": 77192,
+      "user_s": 0.10421699999999999,
+      "system_s": 0.012025,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 12,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b19_2_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b19_2_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b19_2_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b19_2_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b19_2_native.metrics.json"
+      ],
+      "pid": 3816482,
+      "exit_code": 0,
+      "wall_s": 0.0171205410733819,
+      "max_rss_kib": 8188,
+      "user_s": 0.0126,
+      "system_s": 0.0042,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b20_0_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b20_0_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b20_0_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b20_0_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b20_0_arrow.metrics.json"
+      ],
+      "pid": 3816484,
+      "exit_code": 0,
+      "wall_s": 0.1177543920930475,
+      "max_rss_kib": 77212,
+      "user_s": 0.09378299999999999,
+      "system_s": 0.023445,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 13,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b20_1_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b20_1_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b20_1_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b20_1_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b20_1_native.metrics.json"
+      ],
+      "pid": 3816489,
+      "exit_code": 0,
+      "wall_s": 0.017077839002013206,
+      "max_rss_kib": 8228,
+      "user_s": 0.012528,
+      "system_s": 0.004176,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 3,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b20_2_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b20_2_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b20_2_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b20_2_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b20_2_duckdb.metrics.json"
+      ],
+      "pid": 3816491,
+      "exit_code": 0,
+      "wall_s": 0.21174869895912707,
+      "max_rss_kib": 92316,
+      "user_s": 0.18159,
+      "system_s": 0.028246999999999998,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 518,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b21_0_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b21_0_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b21_0_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b21_0_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b21_0_native.metrics.json"
+      ],
+      "pid": 3816749,
+      "exit_code": 0,
+      "wall_s": 0.017436733935028315,
+      "max_rss_kib": 8124,
+      "user_s": 0.013687999999999999,
+      "system_s": 0.0034219999999999997,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b21_1_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b21_1_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b21_1_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b21_1_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b21_1_duckdb.metrics.json"
+      ],
+      "pid": 3816751,
+      "exit_code": 0,
+      "wall_s": 0.2113664811477065,
+      "max_rss_kib": 91788,
+      "user_s": 0.177247,
+      "system_s": 0.032226,
+      "voluntary_context_switches": 764,
+      "involuntary_context_switches": 519,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b21_2_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b21_2_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b21_2_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b21_2_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b21_2_arrow.metrics.json"
+      ],
+      "pid": 3817009,
+      "exit_code": 0,
+      "wall_s": 0.11664777505211532,
+      "max_rss_kib": 77220,
+      "user_s": 0.092107,
+      "system_s": 0.024027999999999997,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 11,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b22_0_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b22_0_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b22_0_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b22_0_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b22_0_duckdb.metrics.json"
+      ],
+      "pid": 3817013,
+      "exit_code": 0,
+      "wall_s": 0.21053567994385958,
+      "max_rss_kib": 91584,
+      "user_s": 0.16136399999999998,
+      "system_s": 0.047228,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 521,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b22_1_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b22_1_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b22_1_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b22_1_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b22_1_arrow.metrics.json"
+      ],
+      "pid": 3817274,
+      "exit_code": 0,
+      "wall_s": 0.11649992410093546,
+      "max_rss_kib": 77368,
+      "user_s": 0.09197999999999999,
+      "system_s": 0.023993999999999998,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 13,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b22_2_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b22_2_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b22_2_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b22_2_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b22_2_native.metrics.json"
+      ],
+      "pid": 3817278,
+      "exit_code": 0,
+      "wall_s": 0.017211311031132936,
+      "max_rss_kib": 8180,
+      "user_s": 0.012653999999999999,
+      "system_s": 0.0042179999999999995,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b23_0_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b23_0_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b23_0_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b23_0_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b23_0_arrow.metrics.json"
+      ],
+      "pid": 3817280,
+      "exit_code": 0,
+      "wall_s": 0.11580066196620464,
+      "max_rss_kib": 77428,
+      "user_s": 0.087444,
+      "system_s": 0.027822999999999997,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 13,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b23_1_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b23_1_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b23_1_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b23_1_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b23_1_native.metrics.json"
+      ],
+      "pid": 3817284,
+      "exit_code": 0,
+      "wall_s": 0.017307518981397152,
+      "max_rss_kib": 8048,
+      "user_s": 0.016984,
+      "system_s": 0.0,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b23_2_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b23_2_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b23_2_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b23_2_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b23_2_duckdb.metrics.json"
+      ],
+      "pid": 3817286,
+      "exit_code": 0,
+      "wall_s": 0.21245701401494443,
+      "max_rss_kib": 92520,
+      "user_s": 0.15095799999999998,
+      "system_s": 0.059587999999999995,
+      "voluntary_context_switches": 428,
+      "involuntary_context_switches": 520,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b24_0_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b24_0_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b24_0_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b24_0_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b24_0_native.metrics.json"
+      ],
+      "pid": 3817544,
+      "exit_code": 0,
+      "wall_s": 0.017407271079719067,
+      "max_rss_kib": 8196,
+      "user_s": 0.017079999999999998,
+      "system_s": 0.0,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b24_1_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b24_1_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b24_1_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b24_1_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b24_1_duckdb.metrics.json"
+      ],
+      "pid": 3817548,
+      "exit_code": 0,
+      "wall_s": 0.21330631989985704,
+      "max_rss_kib": 92372,
+      "user_s": 0.18348,
+      "system_s": 0.02792,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 519,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b24_2_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b24_2_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b24_2_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b24_2_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b24_2_arrow.metrics.json"
+      ],
+      "pid": 3817806,
+      "exit_code": 0,
+      "wall_s": 0.11796107701957226,
+      "max_rss_kib": 77160,
+      "user_s": 0.09787,
+      "system_s": 0.019573999999999998,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 11,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b25_0_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b25_0_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b25_0_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b25_0_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b25_0_duckdb.metrics.json"
+      ],
+      "pid": 3817810,
+      "exit_code": 0,
+      "wall_s": 0.2227267469279468,
+      "max_rss_kib": 91588,
+      "user_s": 0.16650399999999999,
+      "system_s": 0.051537,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 525,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b25_1_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b25_1_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b25_1_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b25_1_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b25_1_arrow.metrics.json"
+      ],
+      "pid": 3818068,
+      "exit_code": 0,
+      "wall_s": 0.1164927831850946,
+      "max_rss_kib": 77368,
+      "user_s": 0.09111999999999999,
+      "system_s": 0.02485,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 11,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b25_2_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b25_2_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b25_2_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b25_2_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b25_2_native.metrics.json"
+      ],
+      "pid": 3818072,
+      "exit_code": 0,
+      "wall_s": 0.01745460880920291,
+      "max_rss_kib": 8244,
+      "user_s": 0.012839999999999999,
+      "system_s": 0.00428,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b26_0_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b26_0_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b26_0_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b26_0_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b26_0_arrow.metrics.json"
+      ],
+      "pid": 3818074,
+      "exit_code": 0,
+      "wall_s": 0.11689753294922411,
+      "max_rss_kib": 77368,
+      "user_s": 0.10034399999999999,
+      "system_s": 0.016055,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 11,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b26_1_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b26_1_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b26_1_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b26_1_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b26_1_native.metrics.json"
+      ],
+      "pid": 3818078,
+      "exit_code": 0,
+      "wall_s": 0.017180185997858644,
+      "max_rss_kib": 8244,
+      "user_s": 0.016848,
+      "system_s": 0.0,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b26_2_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b26_2_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b26_2_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b26_2_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b26_2_duckdb.metrics.json"
+      ],
+      "pid": 3818080,
+      "exit_code": 0,
+      "wall_s": 0.2116327320691198,
+      "max_rss_kib": 92336,
+      "user_s": 0.162207,
+      "system_s": 0.047474999999999996,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 521,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b27_0_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b27_0_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b27_0_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b27_0_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b27_0_native.metrics.json"
+      ],
+      "pid": 3818338,
+      "exit_code": 0,
+      "wall_s": 0.017157624009996653,
+      "max_rss_kib": 8200,
+      "user_s": 0.016815999999999998,
+      "system_s": 0.0,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b27_1_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b27_1_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b27_1_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b27_1_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b27_1_duckdb.metrics.json"
+      ],
+      "pid": 3818340,
+      "exit_code": 0,
+      "wall_s": 0.21372310700826347,
+      "max_rss_kib": 91964,
+      "user_s": 0.171593,
+      "system_s": 0.039904999999999996,
+      "voluntary_context_switches": 258,
+      "involuntary_context_switches": 521,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b27_2_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b27_2_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b27_2_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b27_2_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b27_2_arrow.metrics.json"
+      ],
+      "pid": 3818598,
+      "exit_code": 0,
+      "wall_s": 0.1169615350663662,
+      "max_rss_kib": 77116,
+      "user_s": 0.09702999999999999,
+      "system_s": 0.019406,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 12,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b28_0_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b28_0_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b28_0_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b28_0_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b28_0_duckdb.metrics.json"
+      ],
+      "pid": 3818602,
+      "exit_code": 0,
+      "wall_s": 0.2129764968995005,
+      "max_rss_kib": 91464,
+      "user_s": 0.16322599999999998,
+      "system_s": 0.047772999999999996,
+      "voluntary_context_switches": 257,
+      "involuntary_context_switches": 519,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b28_1_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b28_1_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b28_1_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b28_1_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b28_1_arrow.metrics.json"
+      ],
+      "pid": 3818861,
+      "exit_code": 0,
+      "wall_s": 0.11749683087691665,
+      "max_rss_kib": 77192,
+      "user_s": 0.08472299999999999,
+      "system_s": 0.032275,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 14,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b28_2_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b28_2_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b28_2_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b28_2_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b28_2_native.metrics.json"
+      ],
+      "pid": 3818865,
+      "exit_code": 0,
+      "wall_s": 0.017395864939317107,
+      "max_rss_kib": 8236,
+      "user_s": 0.012792999999999999,
+      "system_s": 0.0042639999999999996,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b29_0_arrow",
+    "command": [
+      "../../work/arrow25venv/bin/python",
+      "fullsql_ig16_arrow_timing_worker.py",
+      "results/ig16_controls/city.arrow",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b29_0_arrow.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b29_0_arrow.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/arrow25venv/bin/python",
+        "fullsql_ig16_arrow_timing_worker.py",
+        "results/ig16_controls/city.arrow",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b29_0_arrow.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b29_0_arrow.metrics.json"
+      ],
+      "pid": 3818867,
+      "exit_code": 0,
+      "wall_s": 0.11737480713054538,
+      "max_rss_kib": 77356,
+      "user_s": 0.10073299999999999,
+      "system_s": 0.016117,
+      "voluntary_context_switches": 6,
+      "involuntary_context_switches": 13,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b29_1_native",
+    "command": [
+      "results/ig16_prep_v1/adapter_ig16",
+      "query_fullsql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+      "results/ig16_prep_v1/Observed",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "stream",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b29_1_native.result.json",
+      "-",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b29_1_native.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "results/ig16_prep_v1/adapter_ig16",
+        "query_fullsql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/Observed.encoded",
+        "results/ig16_prep_v1/Observed",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "stream",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b29_1_native.result.json",
+        "-",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b29_1_native.metrics.json"
+      ],
+      "pid": 3818871,
+      "exit_code": 0,
+      "wall_s": 0.017314478987827897,
+      "max_rss_kib": 8232,
+      "user_s": 0.012735999999999999,
+      "system_s": 0.004245,
+      "voluntary_context_switches": 1,
+      "involuntary_context_switches": 1,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  },
+  {
+    "name": "b29_2_duckdb",
+    "command": [
+      "../../work/inversedb-strong-20261022/.venv312/bin/python",
+      "fullsql_ig16_duck_timing_worker.py",
+      "results/ig16_controls/city.duckdb",
+      "results/ig16_prep_v1/Observed/query.sql",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b29_2_duckdb.result.json",
+      "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b29_2_duckdb.metrics.json"
+    ],
+    "exit_code": 0,
+    "resource": {
+      "command": [
+        "../../work/inversedb-strong-20261022/.venv312/bin/python",
+        "fullsql_ig16_duck_timing_worker.py",
+        "results/ig16_controls/city.duckdb",
+        "results/ig16_prep_v1/Observed/query.sql",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b29_2_duckdb.result.json",
+        "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig16_panel_v1/b29_2_duckdb.metrics.json"
+      ],
+      "pid": 3818873,
+      "exit_code": 0,
+      "wall_s": 0.21322972001507878,
+      "max_rss_kib": 91424,
+      "user_s": 0.151473,
+      "system_s": 0.059792,
+      "voluntary_context_switches": 306,
+      "involuntary_context_switches": 521,
+      "scope": "complete fresh worker including runtime and imports"
+    }
+  }
+]

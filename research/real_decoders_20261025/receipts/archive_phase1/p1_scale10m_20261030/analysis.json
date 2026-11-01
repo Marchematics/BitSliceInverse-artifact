@@ -1,0 +1,40 @@
+{
+  "results": [
+    {
+      "op": "sum",
+      "exact": true,
+      "rows": 47,
+      "generic_median_ms": 13.1843,
+      "duckdb_warm_median_ms": 57.71564161404967,
+      "native_median_ms": 15.452635999999998,
+      "speedup_vs_duckdb": 4.377603787387247
+    },
+    {
+      "op": "count",
+      "exact": true,
+      "rows": 47,
+      "generic_median_ms": 16.3828,
+      "duckdb_warm_median_ms": 51.480555813759565,
+      "native_median_ms": 14.996003,
+      "speedup_vs_duckdb": 3.14235392080472
+    },
+    {
+      "op": "min",
+      "exact": true,
+      "rows": 47,
+      "generic_median_ms": 13.2104,
+      "duckdb_warm_median_ms": 56.68902937322855,
+      "native_median_ms": 15.80107,
+      "speedup_vs_duckdb": 4.291242458459134
+    },
+    {
+      "op": "max",
+      "exact": true,
+      "rows": 47,
+      "generic_median_ms": 13.0268,
+      "duckdb_warm_median_ms": 59.671520767733455,
+      "native_median_ms": 15.083587000000001,
+      "speedup_vs_duckdb": 4.580673747024093
+    }
+  ]
+}

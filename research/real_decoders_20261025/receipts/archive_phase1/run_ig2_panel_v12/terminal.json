@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "error": null,
+  "start_utc": "2026-10-24T20:26:35.373171+00:00",
+  "end_utc": "2026-10-24T20:28:27.108934+00:00",
+  "wall_s": 111.73619207087904,
+  "cap_seconds": 900,
+  "commands": 539,
+  "blocks": 30,
+  "paths": [
+    "generic",
+    "expert",
+    "group_then_filter",
+    "direct",
+    "direct_plain",
+    "direct_run",
+    "stream",
+    "stream_uniform",
+    "duckdb",
+    "duckdb_proj2",
+    "arrow_full",
+    "arrow_proj",
+    "vortex_full",
+    "vortex_proj"
+  ],
+  "profiles": [
+    "Observed",
+    "MixedTail",
+    "AbsentLiteral",
+    "AllExcluded",
+    "AllNullPayload",
+    "Endpoints",
+    "Empty"
+  ],
+  "partial_evidence_retained": true,
+  "no_retry": true,
+  "no_page_cache_flush": true,
+  "no_warm_resident_claim": true,
+  "one_fixed_query_single_host": true
+}

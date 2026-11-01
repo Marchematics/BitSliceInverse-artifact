@@ -1,0 +1,12 @@
+{
+  "case": "BSBITS03 1M groups, binary complete result",
+  "before_json_ms": 265.443,
+  "json_buffer_ms": 203.213,
+  "binary_ms": 118.978,
+  "runs": 5,
+  "query_ms": 72.1,
+  "output_ms": 47.2,
+  "bytes": 32000000,
+  "exact": true,
+  "note": "Binary typed result (32B/row, 32MB) answers the complete 1M-group result in 119ms, meeting the <=150ms target; canonical JSON is 203ms. Format differs from JSON; comparison must state result encoding."
+}

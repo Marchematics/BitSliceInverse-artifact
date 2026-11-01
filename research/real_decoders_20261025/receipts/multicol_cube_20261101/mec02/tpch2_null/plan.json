@@ -1,0 +1,91 @@
+{
+ "mode": "value",
+ "rows": 11997996,
+ "G": 4,
+ "has_null": true,
+ "D1": 11,
+ "D2": 50,
+ "runs": 2200,
+ "rows_per_run": 5453,
+ "count_width": 2,
+ "vspan": 10399852,
+ "budget_bytes": 41966461,
+ "candidates": [
+  {
+   "W": 512,
+   "BP": 20313,
+   "planes_bytes": 625671200,
+   "offs_bytes": 23995992,
+   "total_bytes": 649675384,
+   "est_residual_rows": 591,
+   "fits": false
+  },
+  {
+   "W": 1024,
+   "BP": 10157,
+   "planes_bytes": 312866400,
+   "offs_bytes": 23995992,
+   "total_bytes": 336870584,
+   "est_residual_rows": 1181,
+   "fits": false
+  },
+  {
+   "W": 2048,
+   "BP": 5079,
+   "planes_bytes": 156464000,
+   "offs_bytes": 23995992,
+   "total_bytes": 180468184,
+   "est_residual_rows": 2363,
+   "fits": false
+  },
+  {
+   "W": 4096,
+   "BP": 2540,
+   "planes_bytes": 78262800,
+   "offs_bytes": 23995992,
+   "total_bytes": 102266984,
+   "est_residual_rows": 4725,
+   "fits": false
+  },
+  {
+   "W": 8192,
+   "BP": 1270,
+   "planes_bytes": 39146800,
+   "offs_bytes": 23995992,
+   "total_bytes": 63150984,
+   "est_residual_rows": 9451,
+   "fits": false
+  },
+  {
+   "W": 16384,
+   "BP": 635,
+   "planes_bytes": 19588800,
+   "offs_bytes": 23995992,
+   "total_bytes": 43592984,
+   "est_residual_rows": 18902,
+   "fits": false
+  },
+  {
+   "W": 32768,
+   "BP": 318,
+   "planes_bytes": 9825200,
+   "offs_bytes": 23995992,
+   "total_bytes": 33829384,
+   "est_residual_rows": 37803,
+   "fits": true
+  },
+  {
+   "W": 65536,
+   "BP": 159,
+   "planes_bytes": 4928000,
+   "offs_bytes": 23995992,
+   "total_bytes": 28932184,
+   "est_residual_rows": 75607,
+   "fits": true
+  }
+ ],
+ "picked_W": 32768,
+ "picked_BP": 318,
+ "picked_bytes": 33829384,
+ "rule": "smallest W (power of two, <=65536) whose predicted footprint fits the budget; residual rows per query are monotone increasing in W"
+}

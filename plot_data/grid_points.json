@@ -1,0 +1,1232 @@
+[
+  {
+    "name": "ig2_sum_pop",
+    "status": "passed",
+    "rows": 47,
+    "expected_rows": 47,
+    "exact": true,
+    "generic_median_ms": 0.261024,
+    "duckdb_warm_median_ms": 2.330738321567575,
+    "speedup": 8.929210806544896
+  },
+  {
+    "name": "ig2_count",
+    "status": "passed",
+    "rows": 47,
+    "expected_rows": 47,
+    "exact": true,
+    "generic_median_ms": 0.211132,
+    "duckdb_warm_median_ms": 2.1365790627896786,
+    "speedup": 10.119636354459194
+  },
+  {
+    "name": "ig2_min_pop",
+    "status": "passed",
+    "rows": 47,
+    "expected_rows": 47,
+    "exact": true,
+    "generic_median_ms": 0.283315,
+    "duckdb_warm_median_ms": 2.22366905460755,
+    "speedup": 7.848751582540812
+  },
+  {
+    "name": "ig2_max_pop",
+    "status": "passed",
+    "rows": 47,
+    "expected_rows": 47,
+    "exact": true,
+    "generic_median_ms": 0.285058,
+    "duckdb_warm_median_ms": 2.2226622638603053,
+    "speedup": 7.7972281565867485
+  },
+  {
+    "name": "ig2_sum_west",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.212604,
+    "duckdb_warm_median_ms": 2.184029668569565,
+    "speedup": 10.27275906647836
+  },
+  {
+    "name": "h8_count",
+    "status": "passed",
+    "rows": 51,
+    "expected_rows": 51,
+    "exact": true,
+    "generic_median_ms": 0.210432,
+    "duckdb_warm_median_ms": 2.004882600158453,
+    "speedup": 9.527460653125251
+  },
+  {
+    "name": "h8_count_states",
+    "status": "passed",
+    "rows": 4,
+    "expected_rows": 4,
+    "exact": true,
+    "generic_median_ms": 0.266862,
+    "duckdb_warm_median_ms": 2.3871544593324265,
+    "speedup": 8.9452768072353
+  },
+  {
+    "name": "h10_sum_pop",
+    "status": "passed",
+    "rows": 51,
+    "expected_rows": 51,
+    "exact": true,
+    "generic_median_ms": 0.288894,
+    "duckdb_warm_median_ms": 2.240971801802516,
+    "speedup": 7.757072842643032
+  },
+  {
+    "name": "h10_max_pop",
+    "status": "passed",
+    "rows": 51,
+    "expected_rows": 51,
+    "exact": true,
+    "generic_median_ms": 0.253012,
+    "duckdb_warm_median_ms": 2.0687240020682416,
+    "speedup": 8.17638689891484
+  },
+  {
+    "name": "h10_min_pop",
+    "status": "passed",
+    "rows": 51,
+    "expected_rows": 51,
+    "exact": true,
+    "generic_median_ms": 0.281563,
+    "duckdb_warm_median_ms": 2.078753663226962,
+    "speedup": 7.382907779882165
+  },
+  {
+    "name": "h10_count",
+    "status": "passed",
+    "rows": 51,
+    "expected_rows": 51,
+    "exact": true,
+    "generic_median_ms": 0.277787,
+    "duckdb_warm_median_ms": 2.041017605612675,
+    "speedup": 7.3474194458800275
+  },
+  {
+    "name": "ig2_sum_dc",
+    "status": "passed",
+    "rows": 47,
+    "expected_rows": 47,
+    "exact": true,
+    "generic_median_ms": 0.249096,
+    "duckdb_warm_median_ms": 2.40646805614233,
+    "speedup": 9.660805697973192
+  },
+  {
+    "name": "ig2_min_dc",
+    "status": "passed",
+    "rows": 47,
+    "expected_rows": 47,
+    "exact": true,
+    "generic_median_ms": 0.280972,
+    "duckdb_warm_median_ms": 2.3154912050813437,
+    "speedup": 8.241003392086556
+  },
+  {
+    "name": "ig2_max_dc",
+    "status": "passed",
+    "rows": 47,
+    "expected_rows": 47,
+    "exact": true,
+    "generic_median_ms": 0.222389,
+    "duckdb_warm_median_ms": 2.098080003634095,
+    "speedup": 9.434279589521493
+  },
+  {
+    "name": "ig2_count_dc",
+    "status": "passed",
+    "rows": 47,
+    "expected_rows": 47,
+    "exact": true,
+    "generic_median_ms": 0.210421,
+    "duckdb_warm_median_ms": 2.1614132759471736,
+    "speedup": 10.271851554489208
+  },
+  {
+    "name": "ig2_sum_west",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.212725,
+    "duckdb_warm_median_ms": 2.3352681193500757,
+    "speedup": 10.97787340157516
+  },
+  {
+    "name": "ig2_min_west",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.225142,
+    "duckdb_warm_median_ms": 2.2247899944583573,
+    "speedup": 9.881719068225197
+  },
+  {
+    "name": "ig2_max_west",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.212695,
+    "duckdb_warm_median_ms": 2.3476739258815846,
+    "speedup": 11.037748540781799
+  },
+  {
+    "name": "ig2_count_west",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.210651,
+    "duckdb_warm_median_ms": 2.183248537282149,
+    "speedup": 10.364292299975546
+  },
+  {
+    "name": "ig2_sum_south",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.214427,
+    "duckdb_warm_median_ms": 2.264953466753165,
+    "speedup": 10.562818426565519
+  },
+  {
+    "name": "ig2_min_south",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.198044,
+    "duckdb_warm_median_ms": 2.1015469450503588,
+    "speedup": 10.611515345329114
+  },
+  {
+    "name": "ig2_max_south",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.193617,
+    "duckdb_warm_median_ms": 2.2108546613405147,
+    "speedup": 11.418701154033554
+  },
+  {
+    "name": "ig2_count_south",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.235537,
+    "duckdb_warm_median_ms": 2.138888401289781,
+    "speedup": 9.080901944449412
+  },
+  {
+    "name": "ig2_sum_northeast",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.201509,
+    "duckdb_warm_median_ms": 2.3132639937102795,
+    "speedup": 11.479705589875785
+  },
+  {
+    "name": "ig2_min_northeast",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.19545,
+    "duckdb_warm_median_ms": 2.2708673340578875,
+    "speedup": 11.618661212882515
+  },
+  {
+    "name": "ig2_max_northeast",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.225403,
+    "duckdb_warm_median_ms": 2.24839779548347,
+    "speedup": 9.9750127348947
+  },
+  {
+    "name": "ig2_count_northeast",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.210812,
+    "duckdb_warm_median_ms": 2.1763994048039117,
+    "speedup": 10.323887657267669
+  },
+  {
+    "name": "h8_keyword_count",
+    "status": "passed",
+    "rows": 115,
+    "expected_rows": 115,
+    "exact": true,
+    "generic_median_ms": 0.242067,
+    "duckdb_warm_median_ms": 2.044375737508138,
+    "speedup": 8.445495410395214
+  },
+  {
+    "name": "h10_keyword_count",
+    "status": "passed",
+    "rows": 115,
+    "expected_rows": 115,
+    "exact": true,
+    "generic_median_ms": 0.322201,
+    "duckdb_warm_median_ms": 2.081484937419494,
+    "speedup": 6.460206322821761
+  },
+  {
+    "name": "ig2_sum_count_dc",
+    "status": "passed",
+    "rows": 47,
+    "expected_rows": 47,
+    "exact": true,
+    "generic_median_ms": 0.264588,
+    "duckdb_warm_median_ms": 2.436353530113896,
+    "speedup": 9.208102900032866
+  },
+  {
+    "name": "ig2_min_max_dc",
+    "status": "passed",
+    "rows": 47,
+    "expected_rows": 47,
+    "exact": true,
+    "generic_median_ms": 0.26606,
+    "duckdb_warm_median_ms": 2.3660749352226653,
+    "speedup": 8.893012610774507
+  },
+  {
+    "name": "ig2_sum_min_max_dc",
+    "status": "passed",
+    "rows": 47,
+    "expected_rows": 47,
+    "exact": true,
+    "generic_median_ms": 0.331254,
+    "duckdb_warm_median_ms": 2.661256135130922,
+    "speedup": 8.033883772364778
+  },
+  {
+    "name": "h10_sum_count",
+    "status": "passed",
+    "rows": 51,
+    "expected_rows": 51,
+    "exact": true,
+    "generic_median_ms": 0.298738,
+    "duckdb_warm_median_ms": 2.187385860209664,
+    "speedup": 7.3220877833073255
+  },
+  {
+    "name": "h10_min_max",
+    "status": "passed",
+    "rows": 51,
+    "expected_rows": 51,
+    "exact": true,
+    "generic_median_ms": 0.309042,
+    "duckdb_warm_median_ms": 2.01244472215573,
+    "speedup": 6.511880981082603
+  },
+  {
+    "name": "ig2_sum_having",
+    "status": "passed",
+    "rows": 11,
+    "expected_rows": 11,
+    "exact": true,
+    "generic_median_ms": 0.249657,
+    "duckdb_warm_median_ms": 2.4121889378875494,
+    "speedup": 9.662012032058183
+  },
+  {
+    "name": "ig2_count_having",
+    "status": "passed",
+    "rows": 22,
+    "expected_rows": 22,
+    "exact": true,
+    "generic_median_ms": 0.203191,
+    "duckdb_warm_median_ms": 2.168096136301756,
+    "speedup": 10.670237049385829
+  },
+  {
+    "name": "h10_count_having",
+    "status": "passed",
+    "rows": 50,
+    "expected_rows": 50,
+    "exact": true,
+    "generic_median_ms": 0.23758,
+    "duckdb_warm_median_ms": 2.1634816036870084,
+    "speedup": 9.106328831075883
+  },
+  {
+    "name": "cmc_count_having_1000",
+    "status": "passed",
+    "rows": 2,
+    "expected_rows": 2,
+    "exact": true,
+    "generic_median_ms": 0.273592,
+    "duckdb_warm_median_ms": 2.3101134691387415,
+    "speedup": 8.443644072702204
+  },
+  {
+    "name": "cmc_count_having_100",
+    "status": "passed",
+    "rows": 40,
+    "expected_rows": 40,
+    "exact": true,
+    "generic_median_ms": 0.27302,
+    "duckdb_warm_median_ms": 2.338200326388081,
+    "speedup": 8.564208945821116
+  },
+  {
+    "name": "h8_count_keyword_filter",
+    "status": "passed",
+    "rows": 49,
+    "expected_rows": 49,
+    "exact": true,
+    "generic_median_ms": 0.350101,
+    "duckdb_warm_median_ms": 2.371184201911092,
+    "speedup": 6.77285755228089
+  },
+  {
+    "name": "h10_sum_keyword_filter",
+    "status": "passed",
+    "rows": 49,
+    "expected_rows": 49,
+    "exact": true,
+    "generic_median_ms": 0.361347,
+    "duckdb_warm_median_ms": 2.52291279224058,
+    "speedup": 6.981966896751821
+  },
+  {
+    "name": "ig16_city_count_having",
+    "status": "passed",
+    "rows": 28,
+    "expected_rows": 28,
+    "exact": true,
+    "generic_median_ms": 0.862083,
+    "duckdb_warm_median_ms": 4.047398408874869,
+    "speedup": 4.6949057212297065
+  },
+  {
+    "name": "ig2_sum_west2",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.201759,
+    "duckdb_warm_median_ms": 2.1306972640256086,
+    "speedup": 10.56060579218577
+  },
+  {
+    "name": "ig2_min_west2",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.243148,
+    "duckdb_warm_median_ms": 2.0782603416591883,
+    "speedup": 8.547305927497607
+  },
+  {
+    "name": "ig2_max_west2",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.193857,
+    "duckdb_warm_median_ms": 2.193728213508924,
+    "speedup": 11.316218725704639
+  },
+  {
+    "name": "ig2_count_west2",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.203842,
+    "duckdb_warm_median_ms": 2.1381921445329986,
+    "speedup": 10.489458230065436
+  },
+  {
+    "name": "ig2_sum_northeast2",
+    "status": "passed",
+    "rows": 6,
+    "expected_rows": 6,
+    "exact": true,
+    "generic_median_ms": 0.203251,
+    "duckdb_warm_median_ms": 2.6133815913150706,
+    "speedup": 12.857902747416105
+  },
+  {
+    "name": "ig2_min_northeast2",
+    "status": "passed",
+    "rows": 6,
+    "expected_rows": 6,
+    "exact": true,
+    "generic_median_ms": 0.206916,
+    "duckdb_warm_median_ms": 2.5525344690928855,
+    "speedup": 12.33609034145685
+  },
+  {
+    "name": "ig2_max_northeast2",
+    "status": "passed",
+    "rows": 6,
+    "expected_rows": 6,
+    "exact": true,
+    "generic_median_ms": 0.20242,
+    "duckdb_warm_median_ms": 2.5355281929175058,
+    "speedup": 12.526075451622892
+  },
+  {
+    "name": "ig2_count_northeast2",
+    "status": "passed",
+    "rows": 6,
+    "expected_rows": 6,
+    "exact": true,
+    "generic_median_ms": 0.207747,
+    "duckdb_warm_median_ms": 2.5586212053894997,
+    "speedup": 12.316044060272832
+  },
+  {
+    "name": "ig2_sum_south2",
+    "status": "passed",
+    "rows": 6,
+    "expected_rows": 6,
+    "exact": true,
+    "generic_median_ms": 0.195721,
+    "duckdb_warm_median_ms": 2.635625454907616,
+    "speedup": 13.466237424229469
+  },
+  {
+    "name": "ig2_min_south2",
+    "status": "passed",
+    "rows": 6,
+    "expected_rows": 6,
+    "exact": true,
+    "generic_median_ms": 0.20927,
+    "duckdb_warm_median_ms": 2.5563926746447883,
+    "speedup": 12.215762768886071
+  },
+  {
+    "name": "ig2_max_south2",
+    "status": "passed",
+    "rows": 6,
+    "expected_rows": 6,
+    "exact": true,
+    "generic_median_ms": 0.194789,
+    "duckdb_warm_median_ms": 2.6470885456850133,
+    "speedup": 13.589517609747025
+  },
+  {
+    "name": "ig2_count_south2",
+    "status": "passed",
+    "rows": 6,
+    "expected_rows": 6,
+    "exact": true,
+    "generic_median_ms": 0.204543,
+    "duckdb_warm_median_ms": 2.5040905301769576,
+    "speedup": 12.242367278161353
+  },
+  {
+    "name": "ig2_sum_midwest",
+    "status": "passed",
+    "rows": 7,
+    "expected_rows": 7,
+    "exact": true,
+    "generic_median_ms": 0.218533,
+    "duckdb_warm_median_ms": 2.569569523135821,
+    "speedup": 11.758267735929223
+  },
+  {
+    "name": "ig2_min_midwest",
+    "status": "passed",
+    "rows": 7,
+    "expected_rows": 7,
+    "exact": true,
+    "generic_median_ms": 0.217181,
+    "duckdb_warm_median_ms": 2.7288575967152915,
+    "speedup": 12.564900229372235
+  },
+  {
+    "name": "ig2_max_midwest",
+    "status": "passed",
+    "rows": 7,
+    "expected_rows": 7,
+    "exact": true,
+    "generic_median_ms": 0.210581,
+    "duckdb_warm_median_ms": 2.671582934757074,
+    "speedup": 12.686723563650443
+  },
+  {
+    "name": "ig2_count_midwest",
+    "status": "passed",
+    "rows": 7,
+    "expected_rows": 7,
+    "exact": true,
+    "generic_median_ms": 0.229829,
+    "duckdb_warm_median_ms": 2.564724007000526,
+    "speedup": 11.15927061859263
+  },
+  {
+    "name": "ig2_sum_mountain",
+    "status": "passed",
+    "rows": 7,
+    "expected_rows": 7,
+    "exact": true,
+    "generic_median_ms": 0.203762,
+    "duckdb_warm_median_ms": 2.558057134350141,
+    "speedup": 12.554142255916908
+  },
+  {
+    "name": "ig2_min_mountain",
+    "status": "passed",
+    "rows": 7,
+    "expected_rows": 7,
+    "exact": true,
+    "generic_median_ms": 0.198494,
+    "duckdb_warm_median_ms": 2.5643733950952687,
+    "speedup": 12.91914816112965
+  },
+  {
+    "name": "ig2_max_mountain",
+    "status": "passed",
+    "rows": 7,
+    "expected_rows": 7,
+    "exact": true,
+    "generic_median_ms": 0.194679,
+    "duckdb_warm_median_ms": 2.462091064080596,
+    "speedup": 12.646926808133369
+  },
+  {
+    "name": "ig2_count_mountain",
+    "status": "passed",
+    "rows": 7,
+    "expected_rows": 7,
+    "exact": true,
+    "generic_median_ms": 0.233495,
+    "duckdb_warm_median_ms": 2.371692998955647,
+    "speedup": 10.15736096685431
+  },
+  {
+    "name": "ig2_sum_pacific",
+    "status": "passed",
+    "rows": 5,
+    "expected_rows": 5,
+    "exact": true,
+    "generic_median_ms": 0.205975,
+    "duckdb_warm_median_ms": 2.580217473829786,
+    "speedup": 12.52684779138141
+  },
+  {
+    "name": "ig2_min_pacific",
+    "status": "passed",
+    "rows": 5,
+    "expected_rows": 5,
+    "exact": true,
+    "generic_median_ms": 0.449623,
+    "duckdb_warm_median_ms": 2.730409801006317,
+    "speedup": 6.072664879257327
+  },
+  {
+    "name": "ig2_max_pacific",
+    "status": "passed",
+    "rows": 5,
+    "expected_rows": 5,
+    "exact": true,
+    "generic_median_ms": 0.320509,
+    "duckdb_warm_median_ms": 2.5403136697908244,
+    "speedup": 7.925873126155036
+  },
+  {
+    "name": "ig2_count_pacific",
+    "status": "passed",
+    "rows": 5,
+    "expected_rows": 5,
+    "exact": true,
+    "generic_median_ms": 0.316843,
+    "duckdb_warm_median_ms": 2.627358337243398,
+    "speedup": 8.29230356120665
+  },
+  {
+    "name": "ig2_sum_east",
+    "status": "passed",
+    "rows": 4,
+    "expected_rows": 4,
+    "exact": true,
+    "generic_median_ms": 0.408805,
+    "duckdb_warm_median_ms": 2.569184343641003,
+    "speedup": 6.284620647108042
+  },
+  {
+    "name": "ig2_min_east",
+    "status": "passed",
+    "rows": 4,
+    "expected_rows": 4,
+    "exact": true,
+    "generic_median_ms": 0.345434,
+    "duckdb_warm_median_ms": 2.5003965323170028,
+    "speedup": 7.238420457502743
+  },
+  {
+    "name": "ig2_max_east",
+    "status": "passed",
+    "rows": 4,
+    "expected_rows": 4,
+    "exact": true,
+    "generic_median_ms": 0.352404,
+    "duckdb_warm_median_ms": 2.499056002125144,
+    "speedup": 7.091451862422515
+  },
+  {
+    "name": "ig2_count_east",
+    "status": "passed",
+    "rows": 4,
+    "expected_rows": 4,
+    "exact": true,
+    "generic_median_ms": 0.245371,
+    "duckdb_warm_median_ms": 2.4397456708053746,
+    "speedup": 9.943088917620154
+  },
+  {
+    "name": "h10_sum_kw_bimbo",
+    "status": "passed",
+    "rows": 49,
+    "expected_rows": 49,
+    "exact": true,
+    "generic_median_ms": 0.440631,
+    "duckdb_warm_median_ms": 2.595763731126984,
+    "speedup": 5.8910147745550905
+  },
+  {
+    "name": "h10_count_kw_bimbo",
+    "status": "passed",
+    "rows": 49,
+    "expected_rows": 49,
+    "exact": true,
+    "generic_median_ms": 0.521416,
+    "duckdb_warm_median_ms": 2.4850405286997557,
+    "speedup": 4.765946055931839
+  },
+  {
+    "name": "h10_min_kw_bimbo",
+    "status": "passed",
+    "rows": 49,
+    "expected_rows": 49,
+    "exact": true,
+    "generic_median_ms": 0.50999,
+    "duckdb_warm_median_ms": 2.5368693905572095,
+    "speedup": 4.974351243273808
+  },
+  {
+    "name": "h10_max_kw_bimbo",
+    "status": "passed",
+    "rows": 49,
+    "expected_rows": 49,
+    "exact": true,
+    "generic_median_ms": 0.423276,
+    "duckdb_warm_median_ms": 2.4196048577626548,
+    "speedup": 5.716376212595693
+  },
+  {
+    "name": "h10_sum_kw_fat",
+    "status": "passed",
+    "rows": 49,
+    "expected_rows": 49,
+    "exact": true,
+    "generic_median_ms": 0.418288,
+    "duckdb_warm_median_ms": 2.5822410670419536,
+    "speedup": 6.173356794940217
+  },
+  {
+    "name": "h10_count_kw_fat",
+    "status": "passed",
+    "rows": 49,
+    "expected_rows": 49,
+    "exact": true,
+    "generic_median_ms": 0.413262,
+    "duckdb_warm_median_ms": 2.4669493238131204,
+    "speedup": 5.969455995985888
+  },
+  {
+    "name": "h10_min_kw_fat",
+    "status": "passed",
+    "rows": 49,
+    "expected_rows": 49,
+    "exact": true,
+    "generic_median_ms": 0.484914,
+    "duckdb_warm_median_ms": 2.5198883997897306,
+    "speedup": 5.1965676383641854
+  },
+  {
+    "name": "h10_max_kw_fat",
+    "status": "passed",
+    "rows": 49,
+    "expected_rows": 49,
+    "exact": true,
+    "generic_median_ms": 0.402606,
+    "duckdb_warm_median_ms": 2.5134225375950336,
+    "speedup": 6.242883955020624
+  },
+  {
+    "name": "h10_sum_kw_slur",
+    "status": "passed",
+    "rows": 0,
+    "expected_rows": 0,
+    "exact": true,
+    "generic_median_ms": 0.35616,
+    "duckdb_warm_median_ms": 2.1248510107398033,
+    "speedup": 5.966001265554255
+  },
+  {
+    "name": "h10_count_kw_slur",
+    "status": "passed",
+    "rows": 0,
+    "expected_rows": 0,
+    "exact": true,
+    "generic_median_ms": 0.472446,
+    "duckdb_warm_median_ms": 2.051599401359757,
+    "speedup": 4.342505601401551
+  },
+  {
+    "name": "h10_min_kw_slur",
+    "status": "passed",
+    "rows": 0,
+    "expected_rows": 0,
+    "exact": true,
+    "generic_median_ms": 0.344443,
+    "duckdb_warm_median_ms": 2.0954576010505357,
+    "speedup": 6.083612095616795
+  },
+  {
+    "name": "h10_max_kw_slur",
+    "status": "passed",
+    "rows": 0,
+    "expected_rows": 0,
+    "exact": true,
+    "generic_median_ms": 0.515078,
+    "duckdb_warm_median_ms": 2.2369687911123037,
+    "speedup": 4.342970950248901
+  },
+  {
+    "name": "h8_count_kw_bimbo",
+    "status": "passed",
+    "rows": 49,
+    "expected_rows": 49,
+    "exact": true,
+    "generic_median_ms": 0.361647,
+    "duckdb_warm_median_ms": 2.4761951994150877,
+    "speedup": 6.846994996267321
+  },
+  {
+    "name": "h8_count_kw_fat",
+    "status": "passed",
+    "rows": 49,
+    "expected_rows": 49,
+    "exact": true,
+    "generic_median_ms": 0.395857,
+    "duckdb_warm_median_ms": 2.464192065720757,
+    "speedup": 6.224955137134765
+  },
+  {
+    "name": "h8_count_kw_slur",
+    "status": "passed",
+    "rows": 0,
+    "expected_rows": 0,
+    "exact": true,
+    "generic_median_ms": 0.354137,
+    "duckdb_warm_median_ms": 2.045768406242132,
+    "speedup": 5.77677115422035
+  },
+  {
+    "name": "cmc_count_having_1",
+    "status": "passed",
+    "rows": 4536,
+    "expected_rows": 4536,
+    "exact": true,
+    "generic_median_ms": 1.34252,
+    "duckdb_warm_median_ms": 3.7435233437766633,
+    "speedup": 2.788430223591949
+  },
+  {
+    "name": "cmc_count_having_5",
+    "status": "passed",
+    "rows": 1651,
+    "expected_rows": 1651,
+    "exact": true,
+    "generic_median_ms": 0.693032,
+    "duckdb_warm_median_ms": 3.016680929188927,
+    "speedup": 4.352873935386717
+  },
+  {
+    "name": "cmc_count_having_10",
+    "status": "passed",
+    "rows": 891,
+    "expected_rows": 891,
+    "exact": true,
+    "generic_median_ms": 0.58638,
+    "duckdb_warm_median_ms": 2.8636071210106215,
+    "speedup": 4.883534774396503
+  },
+  {
+    "name": "cmc_count_having_50",
+    "status": "passed",
+    "rows": 106,
+    "expected_rows": 106,
+    "exact": true,
+    "generic_median_ms": 0.420752,
+    "duckdb_warm_median_ms": 2.700478940581282,
+    "speedup": 6.418220093026966
+  },
+  {
+    "name": "cmc_count_having_200",
+    "status": "passed",
+    "rows": 16,
+    "expected_rows": 16,
+    "exact": true,
+    "generic_median_ms": 0.311176,
+    "duckdb_warm_median_ms": 2.674525137990713,
+    "speedup": 8.594895293951696
+  },
+  {
+    "name": "cmc_count_having_500",
+    "status": "passed",
+    "rows": 9,
+    "expected_rows": 9,
+    "exact": true,
+    "generic_median_ms": 0.309313,
+    "duckdb_warm_median_ms": 2.651863405480981,
+    "speedup": 8.573397838050715
+  },
+  {
+    "name": "ig16_city_count_having_1",
+    "status": "passed",
+    "rows": 25863,
+    "expected_rows": 25863,
+    "exact": true,
+    "generic_median_ms": 5.61049,
+    "duckdb_warm_median_ms": 12.888169599076113,
+    "speedup": 2.2971557919319188
+  },
+  {
+    "name": "ig16_city_count_having_5",
+    "status": "passed",
+    "rows": 2252,
+    "expected_rows": 2252,
+    "exact": true,
+    "generic_median_ms": 1.45396,
+    "duckdb_warm_median_ms": 4.751602389539282,
+    "speedup": 3.268042029725221
+  },
+  {
+    "name": "ig16_city_count_having_10",
+    "status": "passed",
+    "rows": 437,
+    "expected_rows": 437,
+    "exact": true,
+    "generic_median_ms": 1.10829,
+    "duckdb_warm_median_ms": 4.36851866543293,
+    "speedup": 3.9416747109808172
+  },
+  {
+    "name": "ig16_city_count_having_20",
+    "status": "passed",
+    "rows": 75,
+    "expected_rows": 75,
+    "exact": true,
+    "generic_median_ms": 1.03998,
+    "duckdb_warm_median_ms": 4.265118731806676,
+    "speedup": 4.101154572017419
+  },
+  {
+    "name": "ig16_city_count_having_50",
+    "status": "passed",
+    "rows": 15,
+    "expected_rows": 15,
+    "exact": true,
+    "generic_median_ms": 0.9923,
+    "duckdb_warm_median_ms": 4.275239864364266,
+    "speedup": 4.3084146572248985
+  },
+  {
+    "name": "ig2_sum_count_west2",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.322521,
+    "duckdb_warm_median_ms": 2.4225617914150157,
+    "speedup": 7.511330398377209
+  },
+  {
+    "name": "h10_sum_count_kw_bimbo",
+    "status": "passed",
+    "rows": 49,
+    "expected_rows": 49,
+    "exact": true,
+    "generic_median_ms": 0.483512,
+    "duckdb_warm_median_ms": 2.7629437235494456,
+    "speedup": 5.714322961062901
+  },
+  {
+    "name": "nyc_sum",
+    "status": "passed",
+    "rows": 10,
+    "expected_rows": 10,
+    "exact": true,
+    "generic_median_ms": 37.5751,
+    "duckdb_warm_median_ms": 69.59620326136549,
+    "speedup": 1.852189435593398
+  },
+  {
+    "name": "nyc_count",
+    "status": "passed",
+    "rows": 10,
+    "expected_rows": 10,
+    "exact": true,
+    "generic_median_ms": 27.3981,
+    "duckdb_warm_median_ms": 61.44810967768232,
+    "speedup": 2.24278726180583
+  },
+  {
+    "name": "nyc_min",
+    "status": "passed",
+    "rows": 10,
+    "expected_rows": 10,
+    "exact": true,
+    "generic_median_ms": 33.1314,
+    "duckdb_warm_median_ms": 73.52007979837556,
+    "speedup": 2.2190453708076197
+  },
+  {
+    "name": "nyc_max",
+    "status": "passed",
+    "rows": 10,
+    "expected_rows": 10,
+    "exact": true,
+    "generic_median_ms": 33.4848,
+    "duckdb_warm_median_ms": 73.58821347976725,
+    "speedup": 2.197660236279364
+  },
+  {
+    "name": "nyc_sum_having",
+    "status": "passed",
+    "rows": 1,
+    "expected_rows": 1,
+    "exact": true,
+    "generic_median_ms": 37.515,
+    "duckdb_warm_median_ms": 69.64544093546768,
+    "speedup": 1.8564691706108936
+  },
+  {
+    "name": "nyc_count_having",
+    "status": "passed",
+    "rows": 2,
+    "expected_rows": 2,
+    "exact": true,
+    "generic_median_ms": 27.3997,
+    "duckdb_warm_median_ms": 61.8121579910318,
+    "speedup": 2.2559428749596457
+  },
+  {
+    "name": "nyc_min_having",
+    "status": "passed",
+    "rows": 6,
+    "expected_rows": 6,
+    "exact": true,
+    "generic_median_ms": 33.3834,
+    "duckdb_warm_median_ms": 71.53830346651375,
+    "speedup": 2.1429304225008163
+  },
+  {
+    "name": "nyc100_sum",
+    "status": "passed",
+    "rows": 10,
+    "expected_rows": 10,
+    "exact": true,
+    "generic_median_ms": 288.43,
+    "duckdb_warm_median_ms": 510.4318684587876,
+    "speedup": 1.7696906301660285
+  },
+  {
+    "name": "nyc100_count",
+    "status": "passed",
+    "rows": 10,
+    "expected_rows": 10,
+    "exact": true,
+    "generic_median_ms": 211.144,
+    "duckdb_warm_median_ms": 447.4350535931687,
+    "speedup": 2.119099067902326
+  },
+  {
+    "name": "nyc100_min",
+    "status": "passed",
+    "rows": 10,
+    "expected_rows": 10,
+    "exact": true,
+    "generic_median_ms": 255.265,
+    "duckdb_warm_median_ms": 555.9114308096468,
+    "speedup": 2.177781641860995
+  },
+  {
+    "name": "nyc100_max",
+    "status": "passed",
+    "rows": 10,
+    "expected_rows": 10,
+    "exact": true,
+    "generic_median_ms": 235.26,
+    "duckdb_warm_median_ms": 540.823217931514,
+    "speedup": 2.2988320068499277
+  },
+  {
+    "name": "tpch_sum",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 37.5663,
+    "duckdb_warm_median_ms": 95.13066833217938,
+    "speedup": 2.5323406439329768
+  },
+  {
+    "name": "tpch_count",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 23.0076,
+    "duckdb_warm_median_ms": 63.282486594592534,
+    "speedup": 2.750503598575798
+  },
+  {
+    "name": "tpch_min",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 27.8708,
+    "duckdb_warm_median_ms": 97.71659052930772,
+    "speedup": 3.5060561781257706
+  },
+  {
+    "name": "tpch_max",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 28.3519,
+    "duckdb_warm_median_ms": 97.59490525660415,
+    "speedup": 3.4422703683564118
+  },
+  {
+    "name": "tpch_sum_having",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 37.331,
+    "duckdb_warm_median_ms": 95.35669734080632,
+    "speedup": 2.5543568975062634
+  },
+  {
+    "name": "tpch_count_having",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 22.9295,
+    "duckdb_warm_median_ms": 63.31136852192382,
+    "speedup": 2.7611316654058666
+  },
+  {
+    "name": "nyc_sum_fare_pos",
+    "status": "passed",
+    "rows": 10,
+    "expected_rows": 10,
+    "exact": true,
+    "generic_median_ms": 41.0286,
+    "duckdb_warm_median_ms": 82.80281154438853,
+    "speedup": 2.018172970668961
+  },
+  {
+    "name": "nyc_count_fare_range",
+    "status": "passed",
+    "rows": 10,
+    "expected_rows": 10,
+    "exact": true,
+    "generic_median_ms": 28.2203,
+    "duckdb_warm_median_ms": 90.38412881394227,
+    "speedup": 3.202805385270258
+  },
+  {
+    "name": "nyc_min_fare_pos",
+    "status": "passed",
+    "rows": 10,
+    "expected_rows": 10,
+    "exact": true,
+    "generic_median_ms": 38.9941,
+    "duckdb_warm_median_ms": 86.85747906565666,
+    "speedup": 2.2274518213180112
+  },
+  {
+    "name": "tpch_sum_price_high",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 40.4875,
+    "duckdb_warm_median_ms": 145.83797714052102,
+    "speedup": 3.602049450831023
+  },
+  {
+    "name": "tpch_count_price_range",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 35.8795,
+    "duckdb_warm_median_ms": 60.245969596629344,
+    "speedup": 1.679119541705691
+  },
+  {
+    "name": "ig2_sum_pop_high",
+    "status": "passed",
+    "rows": 42,
+    "expected_rows": 42,
+    "exact": true,
+    "generic_median_ms": 0.310985,
+    "duckdb_warm_median_ms": 1.9980249926447868,
+    "speedup": 6.424827540379075
+  },
+  {
+    "name": "cmc_count",
+    "status": "passed",
+    "rows": 4536,
+    "expected_rows": 4536,
+    "exact": true,
+    "generic_median_ms": 1.41196,
+    "duckdb_warm_median_ms": 3.5399770053724446,
+    "speedup": 2.507136891535486
+  },
+  {
+    "name": "cmc_count_top",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 0.285188,
+    "duckdb_warm_median_ms": 2.384611669306954,
+    "speedup": 8.36154280442008
+  }
+]

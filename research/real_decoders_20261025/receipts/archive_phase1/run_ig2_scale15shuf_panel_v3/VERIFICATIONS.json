@@ -1,0 +1,52 @@
+[
+  {
+    "stage": "build_verify",
+    "rows": 983040,
+    "sha256": "08492c383f4052097484c2bdec76c9ca5adcc46818bf5816073fb780d649604c"
+  },
+  {
+    "method": "generic",
+    "exact": true,
+    "sha256": "8629ae71dc90594ce8485256fe449a7d81c9f61fa1d1d52c069e9a4f41cf1d17"
+  },
+  {
+    "method": "stream",
+    "exact": true,
+    "sha256": "8629ae71dc90594ce8485256fe449a7d81c9f61fa1d1d52c069e9a4f41cf1d17"
+  },
+  {
+    "method": "stream_uniform",
+    "exact": true,
+    "sha256": "8629ae71dc90594ce8485256fe449a7d81c9f61fa1d1d52c069e9a4f41cf1d17"
+  },
+  {
+    "method": "duckdb",
+    "exact": true,
+    "sha256": "a9ca1f3332aef95776f18132bbd7b0c1b530db74c236fdb4f1d99b8aee3a4fc9"
+  },
+  {
+    "method": "duckdb_proj2",
+    "exact": true,
+    "sha256": "a9ca1f3332aef95776f18132bbd7b0c1b530db74c236fdb4f1d99b8aee3a4fc9"
+  },
+  {
+    "method": "arrow_full",
+    "exact": true,
+    "sha256": "a9ca1f3332aef95776f18132bbd7b0c1b530db74c236fdb4f1d99b8aee3a4fc9"
+  },
+  {
+    "method": "arrow_proj",
+    "exact": true,
+    "sha256": "a9ca1f3332aef95776f18132bbd7b0c1b530db74c236fdb4f1d99b8aee3a4fc9"
+  },
+  {
+    "method": "vortex_full",
+    "exact": true,
+    "sha256": "a9ca1f3332aef95776f18132bbd7b0c1b530db74c236fdb4f1d99b8aee3a4fc9"
+  },
+  {
+    "method": "vortex_proj",
+    "exact": true,
+    "sha256": "a9ca1f3332aef95776f18132bbd7b0c1b530db74c236fdb4f1d99b8aee3a4fc9"
+  }
+]

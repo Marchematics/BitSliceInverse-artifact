@@ -1,0 +1,20 @@
+{
+  "input": "NYC 100M encoded tree",
+  "index_bytes": 372874396,
+  "results": {
+    "having": {
+      "query_median_ms": 0.7714,
+      "duckdb_ms": 547.472,
+      "speedup_vs_duckdb": 709.7122115633912,
+      "exact": true,
+      "runs": 5
+    },
+    "in12": {
+      "query_median_ms": 0.5339,
+      "duckdb_ms": 639.186,
+      "speedup_vs_duckdb": 1197.2017231691327,
+      "exact": true,
+      "runs": 5
+    }
+  }
+}

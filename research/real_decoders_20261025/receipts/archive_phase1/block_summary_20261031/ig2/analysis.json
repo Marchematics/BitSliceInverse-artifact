@@ -1,0 +1,35 @@
+{
+  "configuration": "block summary, IG2 group State, all four aggregates",
+  "results": {
+    "ig2_65k": {
+      "rows": 65536,
+      "summary_bytes": 98384,
+      "build_ms": 2.50762,
+      "query_median_ms": 0.136756,
+      "runs": 3,
+      "duckdb_all4_ms": 0.9512,
+      "speedup_vs_duckdb": 6.955453508438388,
+      "exact": true
+    },
+    "ig2_983k": {
+      "rows": 983040,
+      "summary_bytes": 1474640,
+      "build_ms": 8.20967,
+      "query_median_ms": 0.31411,
+      "runs": 3,
+      "duckdb_all4_ms": 5.3439,
+      "speedup_vs_duckdb": 17.012829900353378,
+      "exact": true
+    },
+    "ig2_10m": {
+      "rows": 10027008,
+      "summary_bytes": 15040592,
+      "build_ms": 75.668,
+      "query_median_ms": 1.58319,
+      "runs": 3,
+      "duckdb_all4_ms": 46.4437,
+      "speedup_vs_duckdb": 29.33551879433296,
+      "exact": true
+    }
+  }
+}

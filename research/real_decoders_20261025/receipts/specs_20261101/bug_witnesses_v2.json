@@ -1,0 +1,1172 @@
+{
+ "v1_binary": "../../work/specs/bin/enc_cube_orig",
+ "v1_sha256": "2f832ea01fa01db17af178b829e3ab0ac233589f32f8d08e675554e5fa0b4b6b",
+ "v2_binary": "../../work/specs/bin/enc_cube_v2",
+ "v2_sha256": "00dc138dbf6a280876a7dd8362a56d07590a6fb9cb2cf8c75123217bc87afe7d",
+ "v2_source_sha256": "99e4dcefa1c9b391781c1583f4259cf0693761973cd6b2de0533ce77d57f1543",
+ "lead_v2_binary": "../../research/real_decoders_20261024/src_eai_20261101/enc_cube",
+ "lead_v2_sha256": "cc3afecd52837c728cd781398c3c80d2b4343f3e7386018027ed49e3269ad8fb",
+ "witnesses": {
+  "BUG1_dense_gap_range": {
+   "fixture": "dense_gap",
+   "rows": 8,
+   "args": [
+    "range=4,8"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 4 AND 8 GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [],
+    "error": null,
+    "ok": false
+   },
+   "v2": {
+    "dense_build": 0,
+    "rows": [
+     [
+      "a",
+      "16",
+      "2",
+      "8",
+      "8"
+     ],
+     [
+      "b",
+      "16",
+      "2",
+      "8",
+      "8"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "16",
+     "2",
+     "8",
+     "8"
+    ],
+    [
+     "b",
+     "16",
+     "2",
+     "8",
+     "8"
+    ]
+   ]
+  },
+  "BUG1_dense_gap_low": {
+   "fixture": "dense_gap",
+   "rows": 8,
+   "args": [
+    "range=0,4"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 0 AND 4 GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "16",
+      "4",
+      "0",
+      "1"
+     ],
+     [
+      "b",
+      "16",
+      "4",
+      "0",
+      "1"
+     ]
+    ],
+    "error": null,
+    "ok": false
+   },
+   "v2": {
+    "dense_build": 0,
+    "rows": [
+     [
+      "a",
+      "0",
+      "2",
+      "0",
+      "0"
+     ],
+     [
+      "b",
+      "0",
+      "2",
+      "0",
+      "0"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "0",
+     "2",
+     "0",
+     "0"
+    ],
+    [
+     "b",
+     "0",
+     "2",
+     "0",
+     "0"
+    ]
+   ]
+  },
+  "BUG1_dense_gap_fixed": {
+   "fixture": "dense_gap",
+   "rows": 8,
+   "args": [],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "16",
+      "4",
+      "0",
+      "1"
+     ],
+     [
+      "b",
+      "16",
+      "4",
+      "0",
+      "1"
+     ]
+    ],
+    "error": null,
+    "ok": false
+   },
+   "v2": {
+    "dense_build": 0,
+    "rows": [
+     [
+      "a",
+      "16",
+      "4",
+      "0",
+      "8"
+     ],
+     [
+      "b",
+      "16",
+      "4",
+      "0",
+      "8"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "16",
+     "4",
+     "0",
+     "8"
+    ],
+    [
+     "b",
+     "16",
+     "4",
+     "0",
+     "8"
+    ]
+   ]
+  },
+  "BUG2_null_group_not_in": {
+   "fixture": "null_notin",
+   "rows": 4,
+   "args": [
+    "where_not_in=a"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE g NOT IN ('a') GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "NULL",
+      "1",
+      "1",
+      "1",
+      "1"
+     ],
+     [
+      "b",
+      "4",
+      "1",
+      "4",
+      "4"
+     ]
+    ],
+    "error": null,
+    "ok": false
+   },
+   "v2": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "b",
+      "4",
+      "1",
+      "4",
+      "4"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "b",
+     "4",
+     "1",
+     "4",
+     "4"
+    ]
+   ]
+  },
+  "BUG2_null_group_in_control": {
+   "fixture": "null_notin",
+   "rows": 4,
+   "args": [
+    "where_in=a,b"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE g IN ('a','b') GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "5",
+      "2",
+      "2",
+      "3"
+     ],
+     [
+      "b",
+      "4",
+      "1",
+      "4",
+      "4"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "v2": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "5",
+      "2",
+      "2",
+      "3"
+     ],
+     [
+      "b",
+      "4",
+      "1",
+      "4",
+      "4"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "5",
+     "2",
+     "2",
+     "3"
+    ],
+    [
+     "b",
+     "4",
+     "1",
+     "4",
+     "4"
+    ]
+   ]
+  },
+  "BUG2_null_group_fixed_control": {
+   "fixture": "null_notin",
+   "rows": 4,
+   "args": [],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "NULL",
+      "1",
+      "1",
+      "1",
+      "1"
+     ],
+     [
+      "a",
+      "5",
+      "2",
+      "2",
+      "3"
+     ],
+     [
+      "b",
+      "4",
+      "1",
+      "4",
+      "4"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "v2": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "NULL",
+      "1",
+      "1",
+      "1",
+      "1"
+     ],
+     [
+      "a",
+      "5",
+      "2",
+      "2",
+      "3"
+     ],
+     [
+      "b",
+      "4",
+      "1",
+      "4",
+      "4"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "NULL",
+     "1",
+     "1",
+     "1",
+     "1"
+    ],
+    [
+     "a",
+     "5",
+     "2",
+     "2",
+     "3"
+    ],
+    [
+     "b",
+     "4",
+     "1",
+     "4",
+     "4"
+    ]
+   ]
+  },
+  "BUG3_dense_int64_bounds": {
+   "fixture": "dense_ok",
+   "rows": 18,
+   "args": [
+    "range=-9223372036854775808,9223372036854775807"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN -9223372036854775808 AND 9223372036854775807 GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [],
+    "error": null,
+    "ok": false
+   },
+   "v2": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "36",
+      "9",
+      "0",
+      "8"
+     ],
+     [
+      "b",
+      "36",
+      "9",
+      "0",
+      "8"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "36",
+     "9",
+     "0",
+     "8"
+    ],
+    [
+     "b",
+     "36",
+     "9",
+     "0",
+     "8"
+    ]
+   ]
+  },
+  "BUG4_multiblock_minmax_dense_5_190": {
+   "fixture": "multiblock_dense",
+   "rows": 600,
+   "args": [
+    "range=5,190"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 5 AND 190 GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "18135",
+      "186",
+      "6",
+      "189"
+     ],
+     [
+      "b",
+      "36270",
+      "372",
+      "5",
+      "190"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "v2": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "18135",
+      "186",
+      "6",
+      "189"
+     ],
+     [
+      "b",
+      "36270",
+      "372",
+      "5",
+      "190"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "18135",
+     "186",
+     "6",
+     "189"
+    ],
+    [
+     "b",
+     "36270",
+     "372",
+     "5",
+     "190"
+    ]
+   ]
+  },
+  "BUG4_multiblock_minmax_dense_63_64": {
+   "fixture": "multiblock_dense",
+   "rows": 600,
+   "args": [
+    "range=63,64"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 63 AND 64 GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "189",
+      "3",
+      "63",
+      "63"
+     ],
+     [
+      "b",
+      "192",
+      "3",
+      "64",
+      "64"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "v2": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "189",
+      "3",
+      "63",
+      "63"
+     ],
+     [
+      "b",
+      "192",
+      "3",
+      "64",
+      "64"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "189",
+     "3",
+     "63",
+     "63"
+    ],
+    [
+     "b",
+     "192",
+     "3",
+     "64",
+     "64"
+    ]
+   ]
+  },
+  "BUG4_multiblock_minmax_dense_64_66": {
+   "fixture": "multiblock_dense",
+   "rows": 600,
+   "args": [
+    "range=64,66"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 64 AND 66 GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "198",
+      "3",
+      "66",
+      "66"
+     ],
+     [
+      "b",
+      "387",
+      "6",
+      "64",
+      "65"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "v2": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "198",
+      "3",
+      "66",
+      "66"
+     ],
+     [
+      "b",
+      "387",
+      "6",
+      "64",
+      "65"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "198",
+     "3",
+     "66",
+     "66"
+    ],
+    [
+     "b",
+     "387",
+     "6",
+     "64",
+     "65"
+    ]
+   ]
+  },
+  "BUG4_multiblock_minmax_dense_127_130": {
+   "fixture": "multiblock_dense",
+   "rows": 600,
+   "args": [
+    "range=127,130"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 127 AND 130 GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "387",
+      "3",
+      "129",
+      "129"
+     ],
+     [
+      "b",
+      "1155",
+      "9",
+      "127",
+      "130"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "v2": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "387",
+      "3",
+      "129",
+      "129"
+     ],
+     [
+      "b",
+      "1155",
+      "9",
+      "127",
+      "130"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "387",
+     "3",
+     "129",
+     "129"
+    ],
+    [
+     "b",
+     "1155",
+     "9",
+     "127",
+     "130"
+    ]
+   ]
+  },
+  "BUG4_multiblock_minmax_dense_191_199": {
+   "fixture": "multiblock_dense",
+   "rows": 600,
+   "args": [
+    "range=191,199"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 191 AND 199 GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "1755",
+      "9",
+      "192",
+      "198"
+     ],
+     [
+      "b",
+      "3510",
+      "18",
+      "191",
+      "199"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "v2": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "1755",
+      "9",
+      "192",
+      "198"
+     ],
+     [
+      "b",
+      "3510",
+      "18",
+      "191",
+      "199"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "1755",
+     "9",
+     "192",
+     "198"
+    ],
+    [
+     "b",
+     "3510",
+     "18",
+     "191",
+     "199"
+    ]
+   ]
+  },
+  "BUG4_multiblock_minmax_dense_0_199": {
+   "fixture": "multiblock_dense",
+   "rows": 600,
+   "args": [
+    "range=0,199"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 0 AND 199 GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "19899",
+      "201",
+      "0",
+      "198"
+     ],
+     [
+      "b",
+      "39801",
+      "399",
+      "1",
+      "199"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "v2": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "19899",
+      "201",
+      "0",
+      "198"
+     ],
+     [
+      "b",
+      "39801",
+      "399",
+      "1",
+      "199"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "19899",
+     "201",
+     "0",
+     "198"
+    ],
+    [
+     "b",
+     "39801",
+     "399",
+     "1",
+     "199"
+    ]
+   ]
+  },
+  "BUG4_multiblock_minmax_gappy_0_600": {
+   "fixture": "multiblock_gappy",
+   "rows": 600,
+   "args": [
+    "range=0,600"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 0 AND 600 GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "59697",
+      "201",
+      "0",
+      "198"
+     ],
+     [
+      "b",
+      "119403",
+      "399",
+      "1",
+      "199"
+     ]
+    ],
+    "error": null,
+    "ok": false
+   },
+   "v2": {
+    "dense_build": 0,
+    "rows": [
+     [
+      "a",
+      "59697",
+      "201",
+      "0",
+      "594"
+     ],
+     [
+      "b",
+      "119403",
+      "399",
+      "3",
+      "597"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "59697",
+     "201",
+     "0",
+     "594"
+    ],
+    [
+     "b",
+     "119403",
+     "399",
+     "3",
+     "597"
+    ]
+   ]
+  },
+  "BUG4_multiblock_minmax_gappy_150_300": {
+   "fixture": "multiblock_gappy",
+   "rows": 600,
+   "args": [
+    "range=150,300"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 150 AND 300 GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "a",
+      "26622",
+      "51",
+      "150",
+      "198"
+     ],
+     [
+      "b",
+      "51903",
+      "99",
+      "151",
+      "199"
+     ]
+    ],
+    "error": null,
+    "ok": false
+   },
+   "v2": {
+    "dense_build": 0,
+    "rows": [
+     [
+      "a",
+      "11475",
+      "51",
+      "153",
+      "297"
+     ],
+     [
+      "b",
+      "22950",
+      "102",
+      "150",
+      "300"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "11475",
+     "51",
+     "153",
+     "297"
+    ],
+    [
+     "b",
+     "22950",
+     "102",
+     "150",
+     "300"
+    ]
+   ]
+  },
+  "BUG4_multiblock_minmax_gappy_297_300": {
+   "fixture": "multiblock_gappy",
+   "rows": 600,
+   "args": [
+    "range=297,300"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 297 AND 300 GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [],
+    "error": null,
+    "ok": false
+   },
+   "v2": {
+    "dense_build": 0,
+    "rows": [
+     [
+      "a",
+      "891",
+      "3",
+      "297",
+      "297"
+     ],
+     [
+      "b",
+      "900",
+      "3",
+      "300",
+      "300"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "891",
+     "3",
+     "297",
+     "297"
+    ],
+    [
+     "b",
+     "900",
+     "3",
+     "300",
+     "300"
+    ]
+   ]
+  },
+  "BUG4_multiblock_minmax_gappy_591_597": {
+   "fixture": "multiblock_gappy",
+   "rows": 600,
+   "args": [
+    "range=591,597"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 591 AND 597 GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [],
+    "error": null,
+    "ok": false
+   },
+   "v2": {
+    "dense_build": 0,
+    "rows": [
+     [
+      "a",
+      "1782",
+      "3",
+      "594",
+      "594"
+     ],
+     [
+      "b",
+      "3564",
+      "6",
+      "591",
+      "597"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "a",
+     "1782",
+     "3",
+     "594",
+     "594"
+    ],
+    [
+     "b",
+     "3564",
+     "6",
+     "591",
+     "597"
+    ]
+   ]
+  },
+  "W5_repeated_having_and": {
+   "fixture": "having_and",
+   "rows": 8,
+   "args": [
+    "having=sum>=500",
+    "having=count<=4"
+   ],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t GROUP BY g HAVING SUM(v) >= 500 AND COUNT(*) <= 4",
+   "v1": {
+    "dense_build": 0,
+    "rows": [
+     [
+      "a",
+      "100",
+      "4",
+      "10",
+      "40"
+     ],
+     [
+      "b",
+      "1000",
+      "4",
+      "100",
+      "400"
+     ]
+    ],
+    "error": null,
+    "ok": false
+   },
+   "v2": {
+    "dense_build": 0,
+    "rows": [
+     [
+      "b",
+      "1000",
+      "4",
+      "100",
+      "400"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "b",
+     "1000",
+     "4",
+     "100",
+     "400"
+    ]
+   ]
+  },
+  "S8_all_null_group_keys": {
+   "fixture": "all_null_group",
+   "rows": 6,
+   "args": [],
+   "sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t GROUP BY g",
+   "v1": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "NULL",
+      "21",
+      "6",
+      "1",
+      "6"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "v2": {
+    "dense_build": 1,
+    "rows": [
+     [
+      "NULL",
+      "21",
+      "6",
+      "1",
+      "6"
+     ]
+    ],
+    "error": null,
+    "ok": true
+   },
+   "duckdb_expected": [
+    [
+     "NULL",
+     "21",
+     "6",
+     "1",
+     "6"
+    ]
+   ]
+  }
+ }
+}

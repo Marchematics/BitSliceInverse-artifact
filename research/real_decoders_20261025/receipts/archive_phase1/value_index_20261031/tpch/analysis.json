@@ -1,0 +1,21 @@
+{
+  "input": "TPC-H SF2 12M, price range",
+  "index_bytes": 49491792,
+  "build_ms": 818.0,
+  "results": {
+    "sum_high": {
+      "query_median_ms": 0.4063,
+      "duckdb_ms": 145.838,
+      "speedup_vs_duckdb": 358.94166871769625,
+      "exact": true,
+      "runs": 5
+    },
+    "count_range": {
+      "query_median_ms": 0.3758,
+      "duckdb_ms": 60.246,
+      "speedup_vs_duckdb": 160.31399680681213,
+      "exact": true,
+      "runs": 5
+    }
+  }
+}

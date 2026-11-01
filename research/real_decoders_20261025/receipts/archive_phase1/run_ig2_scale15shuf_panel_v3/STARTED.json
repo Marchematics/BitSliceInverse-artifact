@@ -1,0 +1,25 @@
+{
+  "run": "run_ig2_scale15shuf_panel_v3",
+  "case": "Observed",
+  "rows": 983040,
+  "scale_factor": 15,
+  "synthetic_row_replication": true,
+  "paths": [
+    "generic",
+    "stream",
+    "stream_uniform",
+    "duckdb",
+    "duckdb_proj2",
+    "arrow_full",
+    "arrow_proj",
+    "vortex_full",
+    "vortex_proj"
+  ],
+  "blocks": 30,
+  "endpoint_a": "complete fresh-worker wall",
+  "endpoint_b": "stored-input interval",
+  "host_load1_at_start": 7.27,
+  "pinned_core": 34,
+  "arrow_python": "../../work/arrow25venv/bin/python",
+  "max_load": 20.0
+}

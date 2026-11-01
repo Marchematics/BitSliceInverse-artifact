@@ -1,0 +1,320 @@
+{
+ "parquet": "../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet",
+ "parquet_bytes": 505390241,
+ "duckdb_version": "2.0.0",
+ "results": {
+  "1": {
+   "fixed": {
+    "median_ms": 20421.65701603517,
+    "min_ms": 19356.855349149555,
+    "p95_ms": 20870.75279466808,
+    "reps": 5,
+    "result_rows": 9999515,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet')  GROUP BY 1",
+    "agg": [
+     "132715282761781859225150",
+     "100000000",
+     "190442134391",
+     "-226119",
+     "86337212"
+    ]
+   },
+   "le_m7000": {
+    "median_ms": 845.6258629448712,
+    "min_ms": 842.7525148727,
+    "p95_ms": 854.0542600676417,
+    "reps": 5,
+    "result_rows": 134225,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet') WHERE v <= -7000 GROUP BY 1",
+    "agg": [
+     "1778769109000334826033",
+     "135137",
+     "-1123312851",
+     "-226119",
+     "-7000"
+    ]
+   },
+   "le_m720": {
+    "median_ms": 2177.328286226839,
+    "min_ms": 2079.2229818180203,
+    "p95_ms": 2179.703845642507,
+    "reps": 5,
+    "result_rows": 987645,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet') WHERE v <= -720 GROUP BY 1",
+    "agg": [
+     "13108080879295470490616",
+     "1039800",
+     "-2848291705",
+     "-226119",
+     "-720"
+    ]
+   },
+   "le_650": {
+    "median_ms": 11629.42411703989,
+    "min_ms": 11116.40398716554,
+    "p95_ms": 11752.269497141242,
+    "reps": 5,
+    "result_rows": 6959832,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet') WHERE v <= 650 GROUP BY 1",
+    "agg": [
+     "92388752795466994440894",
+     "11909232",
+     "2060250425",
+     "-226119",
+     "650"
+    ]
+   },
+   "le_99900": {
+    "median_ms": 20763.445963617414,
+    "min_ms": 19740.95932394266,
+    "p95_ms": 21057.742588222027,
+    "reps": 5,
+    "result_rows": 9999515,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet') WHERE v <= 99900 GROUP BY 1",
+    "agg": [
+     "132715282761755114808382",
+     "99999914",
+     "190174677711",
+     "-226119",
+     "99900"
+    ]
+   }
+  },
+  "4": {
+   "fixed": {
+    "median_ms": 17790.214725770056,
+    "min_ms": 15551.152268890291,
+    "p95_ms": 18165.125623811036,
+    "reps": 5,
+    "result_rows": 9999515,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet')  GROUP BY 1",
+    "agg": [
+     "132715282761781859225150",
+     "100000000",
+     "190442134391",
+     "-226119",
+     "86337212"
+    ]
+   },
+   "le_m7000": {
+    "median_ms": 393.3808677829802,
+    "min_ms": 377.9945373535156,
+    "p95_ms": 468.2652782648802,
+    "reps": 5,
+    "result_rows": 134225,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet') WHERE v <= -7000 GROUP BY 1",
+    "agg": [
+     "1778769109000334826033",
+     "135137",
+     "-1123312851",
+     "-226119",
+     "-7000"
+    ]
+   },
+   "le_m720": {
+    "median_ms": 1643.5640202835202,
+    "min_ms": 1576.8449190072715,
+    "p95_ms": 1726.4284039847553,
+    "reps": 5,
+    "result_rows": 987645,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet') WHERE v <= -720 GROUP BY 1",
+    "agg": [
+     "13108080879295470490616",
+     "1039800",
+     "-2848291705",
+     "-226119",
+     "-720"
+    ]
+   },
+   "le_650": {
+    "median_ms": 10783.392688725144,
+    "min_ms": 9964.165949262679,
+    "p95_ms": 11071.445011999458,
+    "reps": 5,
+    "result_rows": 6959832,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet') WHERE v <= 650 GROUP BY 1",
+    "agg": [
+     "92388752795466994440894",
+     "11909232",
+     "2060250425",
+     "-226119",
+     "650"
+    ]
+   },
+   "le_99900": {
+    "median_ms": 16864.42814907059,
+    "min_ms": 15737.715976778418,
+    "p95_ms": 17119.23871235922,
+    "reps": 5,
+    "result_rows": 9999515,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet') WHERE v <= 99900 GROUP BY 1",
+    "agg": [
+     "132715282761755114808382",
+     "99999914",
+     "190174677711",
+     "-226119",
+     "99900"
+    ]
+   }
+  },
+  "8": {
+   "fixed": {
+    "median_ms": 15766.31818106398,
+    "min_ms": 14837.117357179523,
+    "p95_ms": 16252.73833423853,
+    "reps": 5,
+    "result_rows": 9999515,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet')  GROUP BY 1",
+    "agg": [
+     "132715282761781859225150",
+     "100000000",
+     "190442134391",
+     "-226119",
+     "86337212"
+    ]
+   },
+   "le_m7000": {
+    "median_ms": 308.28888015821576,
+    "min_ms": 287.9160507582128,
+    "p95_ms": 346.4574650861323,
+    "reps": 5,
+    "result_rows": 134225,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet') WHERE v <= -7000 GROUP BY 1",
+    "agg": [
+     "1778769109000334826033",
+     "135137",
+     "-1123312851",
+     "-226119",
+     "-7000"
+    ]
+   },
+   "le_m720": {
+    "median_ms": 1549.3947938084602,
+    "min_ms": 1459.8515769466758,
+    "p95_ms": 1568.4184660203755,
+    "reps": 5,
+    "result_rows": 987645,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet') WHERE v <= -720 GROUP BY 1",
+    "agg": [
+     "13108080879295470490616",
+     "1039800",
+     "-2848291705",
+     "-226119",
+     "-720"
+    ]
+   },
+   "le_650": {
+    "median_ms": 10404.93049705401,
+    "min_ms": 9498.016370926052,
+    "p95_ms": 10546.522985678166,
+    "reps": 5,
+    "result_rows": 6959832,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet') WHERE v <= 650 GROUP BY 1",
+    "agg": [
+     "92388752795466994440894",
+     "11909232",
+     "2060250425",
+     "-226119",
+     "650"
+    ]
+   },
+   "le_99900": {
+    "median_ms": 15934.467962943017,
+    "min_ms": 14893.000644166023,
+    "p95_ms": 16609.89297227934,
+    "reps": 5,
+    "result_rows": 9999515,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet') WHERE v <= 99900 GROUP BY 1",
+    "agg": [
+     "132715282761755114808382",
+     "99999914",
+     "190174677711",
+     "-226119",
+     "99900"
+    ]
+   }
+  },
+  "16": {
+   "fixed": {
+    "median_ms": 16389.74596792832,
+    "min_ms": 16046.802963595837,
+    "p95_ms": 16408.4984799847,
+    "reps": 5,
+    "result_rows": 9999515,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet')  GROUP BY 1",
+    "agg": [
+     "132715282761781859225150",
+     "100000000",
+     "190442134391",
+     "-226119",
+     "86337212"
+    ]
+   },
+   "le_m7000": {
+    "median_ms": 318.91389517113566,
+    "min_ms": 265.50197694450617,
+    "p95_ms": 394.97984014451504,
+    "reps": 5,
+    "result_rows": 134225,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet') WHERE v <= -7000 GROUP BY 1",
+    "agg": [
+     "1778769109000334826033",
+     "135137",
+     "-1123312851",
+     "-226119",
+     "-7000"
+    ]
+   },
+   "le_m720": {
+    "median_ms": 1514.9379931390285,
+    "min_ms": 1398.3936361037195,
+    "p95_ms": 1528.3098849467933,
+    "reps": 5,
+    "result_rows": 987645,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet') WHERE v <= -720 GROUP BY 1",
+    "agg": [
+     "13108080879295470490616",
+     "1039800",
+     "-2848291705",
+     "-226119",
+     "-720"
+    ]
+   },
+   "le_650": {
+    "median_ms": 10036.409948952496,
+    "min_ms": 9395.366843789816,
+    "p95_ms": 10506.7831100896,
+    "reps": 5,
+    "result_rows": 6959832,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet') WHERE v <= 650 GROUP BY 1",
+    "agg": [
+     "92388752795466994440894",
+     "11909232",
+     "2060250425",
+     "-226119",
+     "650"
+    ]
+   },
+   "le_99900": {
+    "median_ms": 15309.705832973123,
+    "min_ms": 14787.027507089078,
+    "p95_ms": 16152.382177766412,
+    "reps": 5,
+    "result_rows": 9999515,
+    "sql": "SELECT g, SUM(v)::HUGEINT AS s, COUNT(*)::HUGEINT AS c, MIN(v)::BIGINT AS mn, MAX(v)::BIGINT AS mx FROM read_parquet('../../research/real_decoders_20261024/results/scale_20261101/g10m.parquet') WHERE v <= 99900 GROUP BY 1",
+    "agg": [
+     "132715282761755114808382",
+     "99999914",
+     "190174677711",
+     "-226119",
+     "99900"
+    ]
+   }
+  }
+ },
+ "note": "agg = [group_chk, total_cnt, total_sum, min_mn, max_mx]",
+ "receipt": "duckdb_10m",
+ "host": "localhost (AMD EPYC 9554, 2x64C, 256T, 503GB)",
+ "date": "2026-11-01T18:11:56.242297+08:00",
+ "git_branch": "research/groups-e2e-repro-20261025"
+}

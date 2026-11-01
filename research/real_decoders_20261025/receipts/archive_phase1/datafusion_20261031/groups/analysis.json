@@ -1,0 +1,10 @@
+{
+  "engine": "DataFusion 55.0.0",
+  "input": "355-byte 10-row group summary CSV",
+  "sql": "SELECT name,sum,count,min,max FROM groups WHERE sum>=1e10 ORDER BY name",
+  "times_ms": [14.66, 6.95, 3.81, 6.94, 5.89],
+  "median_ms": 6.94,
+  "rows": 2,
+  "exact_values": true,
+  "note": "CSV infers numeric group names; values match direct summary. Second-engine low-latency interface over the two-level group summary; not ordinary scan/speed claim."
+}

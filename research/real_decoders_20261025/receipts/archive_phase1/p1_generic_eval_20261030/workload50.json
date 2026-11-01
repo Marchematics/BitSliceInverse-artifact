@@ -1,0 +1,367 @@
+{
+  "selected": 50,
+  "exact": 50,
+  "families": [
+    "100M scale",
+    "12M real NYC",
+    "HAVING",
+    "TPC-H generated",
+    "group filter",
+    "grouped aggregate",
+    "multi-aggregate",
+    "numeric range",
+    "output-bound"
+  ],
+  "queries": [
+    {
+      "name": "ig2_sum_pop",
+      "family": "grouped aggregate",
+      "rows": 47,
+      "speedup": 8.929210806544896,
+      "exact": true
+    },
+    {
+      "name": "ig2_count",
+      "family": "grouped aggregate",
+      "rows": 47,
+      "speedup": 10.119636354459194,
+      "exact": true
+    },
+    {
+      "name": "ig2_min_pop",
+      "family": "grouped aggregate",
+      "rows": 47,
+      "speedup": 7.848751582540812,
+      "exact": true
+    },
+    {
+      "name": "ig2_max_pop",
+      "family": "grouped aggregate",
+      "rows": 47,
+      "speedup": 7.7972281565867485,
+      "exact": true
+    },
+    {
+      "name": "ig2_sum_west",
+      "family": "grouped aggregate",
+      "rows": 3,
+      "speedup": 10.27275906647836,
+      "exact": true
+    },
+    {
+      "name": "h8_count",
+      "family": "grouped aggregate",
+      "rows": 51,
+      "speedup": 9.527460653125251,
+      "exact": true
+    },
+    {
+      "name": "h8_count_states",
+      "family": "grouped aggregate",
+      "rows": 4,
+      "speedup": 8.9452768072353,
+      "exact": true
+    },
+    {
+      "name": "h10_sum_pop",
+      "family": "grouped aggregate",
+      "rows": 51,
+      "speedup": 7.757072842643032,
+      "exact": true
+    },
+    {
+      "name": "ig2_sum_dc",
+      "family": "group filter",
+      "rows": 47,
+      "speedup": 9.660805697973192,
+      "exact": true
+    },
+    {
+      "name": "ig2_min_dc",
+      "family": "group filter",
+      "rows": 47,
+      "speedup": 8.241003392086556,
+      "exact": true
+    },
+    {
+      "name": "ig2_max_dc",
+      "family": "group filter",
+      "rows": 47,
+      "speedup": 9.434279589521493,
+      "exact": true
+    },
+    {
+      "name": "ig2_count_dc",
+      "family": "group filter",
+      "rows": 47,
+      "speedup": 10.271851554489208,
+      "exact": true
+    },
+    {
+      "name": "ig2_sum_south",
+      "family": "group filter",
+      "rows": 3,
+      "speedup": 10.562818426565519,
+      "exact": true
+    },
+    {
+      "name": "ig2_min_south",
+      "family": "group filter",
+      "rows": 3,
+      "speedup": 10.611515345329114,
+      "exact": true
+    },
+    {
+      "name": "ig2_max_south",
+      "family": "group filter",
+      "rows": 3,
+      "speedup": 11.418701154033554,
+      "exact": true
+    },
+    {
+      "name": "ig2_count_south",
+      "family": "group filter",
+      "rows": 3,
+      "speedup": 9.080901944449412,
+      "exact": true
+    },
+    {
+      "name": "h10_sum_count",
+      "family": "multi-aggregate",
+      "rows": 51,
+      "speedup": 7.3220877833073255,
+      "exact": true
+    },
+    {
+      "name": "h10_min_max",
+      "family": "multi-aggregate",
+      "rows": 51,
+      "speedup": 6.511880981082603,
+      "exact": true
+    },
+    {
+      "name": "ig2_sum_count_west2",
+      "family": "multi-aggregate",
+      "rows": 3,
+      "speedup": 7.511330398377209,
+      "exact": true
+    },
+    {
+      "name": "h10_sum_count_kw_bimbo",
+      "family": "multi-aggregate",
+      "rows": 49,
+      "speedup": 5.714322961062901,
+      "exact": true
+    },
+    {
+      "name": "ig2_sum_having",
+      "family": "HAVING",
+      "rows": 11,
+      "speedup": 9.662012032058183,
+      "exact": true
+    },
+    {
+      "name": "ig2_count_having",
+      "family": "HAVING",
+      "rows": 22,
+      "speedup": 10.670237049385829,
+      "exact": true
+    },
+    {
+      "name": "h10_count_having",
+      "family": "HAVING",
+      "rows": 50,
+      "speedup": 9.106328831075883,
+      "exact": true
+    },
+    {
+      "name": "cmc_count_having_1000",
+      "family": "HAVING",
+      "rows": 2,
+      "speedup": 8.443644072702204,
+      "exact": true
+    },
+    {
+      "name": "cmc_count_having_100",
+      "family": "HAVING",
+      "rows": 40,
+      "speedup": 8.564208945821116,
+      "exact": true
+    },
+    {
+      "name": "ig16_city_count_having",
+      "family": "HAVING",
+      "rows": 28,
+      "speedup": 4.6949057212297065,
+      "exact": true
+    },
+    {
+      "name": "cmc_count_having_1",
+      "family": "HAVING",
+      "rows": 4536,
+      "speedup": 2.788430223591949,
+      "exact": true
+    },
+    {
+      "name": "cmc_count_having_5",
+      "family": "HAVING",
+      "rows": 1651,
+      "speedup": 4.352873935386717,
+      "exact": true
+    },
+    {
+      "name": "nyc_sum",
+      "family": "12M real NYC",
+      "rows": 10,
+      "speedup": 1.852189435593398,
+      "exact": true
+    },
+    {
+      "name": "nyc_count",
+      "family": "12M real NYC",
+      "rows": 10,
+      "speedup": 2.24278726180583,
+      "exact": true
+    },
+    {
+      "name": "nyc_min",
+      "family": "12M real NYC",
+      "rows": 10,
+      "speedup": 2.2190453708076197,
+      "exact": true
+    },
+    {
+      "name": "nyc_max",
+      "family": "12M real NYC",
+      "rows": 10,
+      "speedup": 2.197660236279364,
+      "exact": true
+    },
+    {
+      "name": "nyc100_sum",
+      "family": "100M scale",
+      "rows": 10,
+      "speedup": 1.7696906301660285,
+      "exact": true
+    },
+    {
+      "name": "nyc100_count",
+      "family": "100M scale",
+      "rows": 10,
+      "speedup": 2.119099067902326,
+      "exact": true
+    },
+    {
+      "name": "nyc100_min",
+      "family": "100M scale",
+      "rows": 10,
+      "speedup": 2.177781641860995,
+      "exact": true
+    },
+    {
+      "name": "nyc100_max",
+      "family": "100M scale",
+      "rows": 10,
+      "speedup": 2.2988320068499277,
+      "exact": true
+    },
+    {
+      "name": "tpch_sum",
+      "family": "TPC-H generated",
+      "rows": 3,
+      "speedup": 2.5323406439329768,
+      "exact": true
+    },
+    {
+      "name": "tpch_count",
+      "family": "TPC-H generated",
+      "rows": 3,
+      "speedup": 2.750503598575798,
+      "exact": true
+    },
+    {
+      "name": "tpch_min",
+      "family": "TPC-H generated",
+      "rows": 3,
+      "speedup": 3.5060561781257706,
+      "exact": true
+    },
+    {
+      "name": "tpch_max",
+      "family": "TPC-H generated",
+      "rows": 3,
+      "speedup": 3.4422703683564118,
+      "exact": true
+    },
+    {
+      "name": "tpch_sum_having",
+      "family": "TPC-H generated",
+      "rows": 3,
+      "speedup": 2.5543568975062634,
+      "exact": true
+    },
+    {
+      "name": "tpch_count_having",
+      "family": "TPC-H generated",
+      "rows": 3,
+      "speedup": 2.7611316654058666,
+      "exact": true
+    },
+    {
+      "name": "tpch_sum_price_high",
+      "family": "TPC-H generated",
+      "rows": 3,
+      "speedup": 3.602049450831023,
+      "exact": true
+    },
+    {
+      "name": "tpch_count_price_range",
+      "family": "TPC-H generated",
+      "rows": 3,
+      "speedup": 1.679119541705691,
+      "exact": true
+    },
+    {
+      "name": "nyc_sum_fare_pos",
+      "family": "numeric range",
+      "rows": 10,
+      "speedup": 2.018172970668961,
+      "exact": true
+    },
+    {
+      "name": "nyc_count_fare_range",
+      "family": "numeric range",
+      "rows": 10,
+      "speedup": 3.202805385270258,
+      "exact": true
+    },
+    {
+      "name": "nyc_min_fare_pos",
+      "family": "numeric range",
+      "rows": 10,
+      "speedup": 2.2274518213180112,
+      "exact": true
+    },
+    {
+      "name": "ig2_sum_pop_high",
+      "family": "numeric range",
+      "rows": 42,
+      "speedup": 6.424827540379075,
+      "exact": true
+    },
+    {
+      "name": "cmc_count",
+      "family": "output-bound",
+      "rows": 4536,
+      "speedup": 2.507136891535486,
+      "exact": true
+    },
+    {
+      "name": "cmc_count_top",
+      "family": "output-bound",
+      "rows": 3,
+      "speedup": 8.36154280442008,
+      "exact": true
+    }
+  ]
+}

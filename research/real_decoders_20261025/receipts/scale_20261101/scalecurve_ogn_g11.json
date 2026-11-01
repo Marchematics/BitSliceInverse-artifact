@@ -1,0 +1,2108 @@
+{
+ "design": "G=11, V=21084, n = k x 100M identical replicas with NO group offset; index bytes and latency must be flat in n by construction of the structure (O(G*V) bytes, O(G*(V/R)) query)",
+ "points": [
+  {
+   "n_rows": 100000000,
+   "replicas": 1,
+   "gen": {
+    "reused": true
+   },
+   "build": null,
+   "cube": "../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube",
+   "cube_bytes": 1140124,
+   "cube_sha256": "c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6",
+   "query": {
+    "T1_fixed": {
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/g11q_100000000_t1_fixed.json 30 1",
+     "exit": 0,
+     "core_mask": "80",
+     "threads": 1,
+     "wall_s": 0.0091,
+     "time": {
+      "wall": 0.0,
+      "rss": 5540.0
+     },
+     "metrics": {
+      "mode": "qbench",
+      "threads": 1,
+      "reps": 30,
+      "fresh_alloc": 0,
+      "setup_ms": 0.156,
+      "warmup_ms": 0.239,
+      "query_median_ms": 0.0009,
+      "query_p95_ms": 0.0014,
+      "query_min_ms": 0.0009,
+      "serialize1_median_ms": 0.0006,
+      "serialize1_p95_ms": 0.0011,
+      "serializeT_median_ms": 0.0006,
+      "serializeT_p95_ms": 0.0006,
+      "output_ms": 1.795,
+      "rows": 11,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "dense": 0,
+      "rank_lo": 0,
+      "rank_hi": 21084,
+      "checksum": 4436698847792244919,
+      "names_synthesized": 0,
+      "total_cnt": 100000000,
+      "total_sum": 190442134391,
+      "min_mn": -226119,
+      "max_mx": 86337212,
+      "group_chk": "18620628283119"
+     },
+     "rows": [
+      [
+       "0",
+       "1903976477",
+       "1105921",
+       "-38318",
+       "5055868"
+      ],
+      [
+       "1",
+       "128292723154",
+       "69403235",
+       "-226119",
+       "86337212"
+      ],
+      [
+       "2",
+       "28404813736",
+       "13276935",
+       "-128540",
+       "18750296"
+      ],
+      [
+       "3",
+       "6756713396",
+       "3186488",
+       "-99900",
+       "38698363"
+      ],
+      [
+       "4",
+       "4495283753",
+       "1936451",
+       "-99490",
+       "104040"
+      ],
+      [
+       "5",
+       "1695472138",
+       "897123",
+       "-15900",
+       "82130"
+      ],
+      [
+       "6",
+       "1092259031",
+       "586835",
+       "-7000",
+       "630090"
+      ],
+      [
+       "7",
+       "1043835",
+       "164",
+       "-7000",
+       "12000"
+      ],
+      [
+       "8",
+       "3883546",
+       "500",
+       "-9000",
+       "28222"
+      ],
+      [
+       "9",
+       "857711",
+       "105",
+       "-9900",
+       "13000"
+      ],
+      [
+       "NULL",
+       "17795107614",
+       "9606243",
+       "-43251",
+       "979200"
+      ]
+     ]
+    },
+    "T1_le_m720": {
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/g11q_100000000_t1_le_m720.json 30 1 hi=-720",
+     "exit": 0,
+     "core_mask": "80",
+     "threads": 1,
+     "wall_s": 0.007,
+     "time": {
+      "wall": 0.0,
+      "rss": 5632.0
+     },
+     "metrics": {
+      "mode": "qbench",
+      "threads": 1,
+      "reps": 30,
+      "fresh_alloc": 0,
+      "setup_ms": 0.064,
+      "warmup_ms": 0.078,
+      "query_median_ms": 0.0008,
+      "query_p95_ms": 0.0011,
+      "query_min_ms": 0.0008,
+      "serialize1_median_ms": 0.0005,
+      "serialize1_p95_ms": 0.001,
+      "serializeT_median_ms": 0.0005,
+      "serializeT_p95_ms": 0.0005,
+      "output_ms": 0.26,
+      "rows": 11,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "dense": 0,
+      "rank_lo": 0,
+      "rank_hi": 5250,
+      "checksum": 15488708107749510301,
+      "names_synthesized": 0,
+      "total_cnt": 1039800,
+      "total_sum": -2848291705,
+      "min_mn": -226119,
+      "max_mx": -720,
+      "group_chk": "-130281653539"
+     },
+     "rows": [
+      [
+       "0",
+       "-608674",
+       "147",
+       "-38318",
+       "-720"
+      ],
+      [
+       "1",
+       "-1907654214",
+       "730003",
+       "-226119",
+       "-720"
+      ],
+      [
+       "2",
+       "-593576705",
+       "181325",
+       "-128540",
+       "-720"
+      ],
+      [
+       "3",
+       "-150612030",
+       "47854",
+       "-99900",
+       "-720"
+      ],
+      [
+       "4",
+       "-149790984",
+       "44356",
+       "-99490",
+       "-720"
+      ],
+      [
+       "5",
+       "-1736420",
+       "791",
+       "-15900",
+       "-720"
+      ],
+      [
+       "6",
+       "-767704",
+       "315",
+       "-7000",
+       "-720"
+      ],
+      [
+       "7",
+       "-7725",
+       "2",
+       "-7000",
+       "-725"
+      ],
+      [
+       "8",
+       "-72213",
+       "10",
+       "-9000",
+       "-780"
+      ],
+      [
+       "9",
+       "-19796",
+       "2",
+       "-9900",
+       "-9896"
+      ],
+      [
+       "NULL",
+       "-43445240",
+       "34995",
+       "-43251",
+       "-720"
+      ]
+     ]
+    },
+    "T8_fixed": {
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/g11q_100000000_t8_fixed.json 30 8",
+     "exit": 0,
+     "core_mask": "80-87",
+     "threads": 8,
+     "wall_s": 0.0289,
+     "time": {
+      "wall": 0.02,
+      "rss": 5736.0
+     },
+     "metrics": {
+      "mode": "qbench",
+      "threads": 8,
+      "reps": 30,
+      "fresh_alloc": 0,
+      "setup_ms": 0.049,
+      "warmup_ms": 17.379,
+      "query_median_ms": 0.0011,
+      "query_p95_ms": 0.0015,
+      "query_min_ms": 0.001,
+      "serialize1_median_ms": 0.0006,
+      "serialize1_p95_ms": 0.0012,
+      "serializeT_median_ms": 0.2003,
+      "serializeT_p95_ms": 0.2189,
+      "output_ms": 0.732,
+      "rows": 11,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "dense": 0,
+      "rank_lo": 0,
+      "rank_hi": 21084,
+      "checksum": 4436698847792244919,
+      "names_synthesized": 0,
+      "total_cnt": 100000000,
+      "total_sum": 190442134391,
+      "min_mn": -226119,
+      "max_mx": 86337212,
+      "group_chk": "18620628283119"
+     },
+     "rows": [
+      [
+       "0",
+       "1903976477",
+       "1105921",
+       "-38318",
+       "5055868"
+      ],
+      [
+       "1",
+       "128292723154",
+       "69403235",
+       "-226119",
+       "86337212"
+      ],
+      [
+       "2",
+       "28404813736",
+       "13276935",
+       "-128540",
+       "18750296"
+      ],
+      [
+       "3",
+       "6756713396",
+       "3186488",
+       "-99900",
+       "38698363"
+      ],
+      [
+       "4",
+       "4495283753",
+       "1936451",
+       "-99490",
+       "104040"
+      ],
+      [
+       "5",
+       "1695472138",
+       "897123",
+       "-15900",
+       "82130"
+      ],
+      [
+       "6",
+       "1092259031",
+       "586835",
+       "-7000",
+       "630090"
+      ],
+      [
+       "7",
+       "1043835",
+       "164",
+       "-7000",
+       "12000"
+      ],
+      [
+       "8",
+       "3883546",
+       "500",
+       "-9000",
+       "28222"
+      ],
+      [
+       "9",
+       "857711",
+       "105",
+       "-9900",
+       "13000"
+      ],
+      [
+       "NULL",
+       "17795107614",
+       "9606243",
+       "-43251",
+       "979200"
+      ]
+     ]
+    },
+    "T8_le_m720": {
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/g11q_100000000_t8_le_m720.json 30 8 hi=-720",
+     "exit": 0,
+     "core_mask": "80-87",
+     "threads": 8,
+     "wall_s": 0.0275,
+     "time": {
+      "wall": 0.02,
+      "rss": 6004.0
+     },
+     "metrics": {
+      "mode": "qbench",
+      "threads": 8,
+      "reps": 30,
+      "fresh_alloc": 0,
+      "setup_ms": 0.062,
+      "warmup_ms": 16.143,
+      "query_median_ms": 0.001,
+      "query_p95_ms": 0.0012,
+      "query_min_ms": 0.0008,
+      "serialize1_median_ms": 0.0005,
+      "serialize1_p95_ms": 0.0011,
+      "serializeT_median_ms": 0.1973,
+      "serializeT_p95_ms": 0.2159,
+      "output_ms": 0.565,
+      "rows": 11,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "dense": 0,
+      "rank_lo": 0,
+      "rank_hi": 5250,
+      "checksum": 15488708107749510301,
+      "names_synthesized": 0,
+      "total_cnt": 1039800,
+      "total_sum": -2848291705,
+      "min_mn": -226119,
+      "max_mx": -720,
+      "group_chk": "-130281653539"
+     },
+     "rows": [
+      [
+       "0",
+       "-608674",
+       "147",
+       "-38318",
+       "-720"
+      ],
+      [
+       "1",
+       "-1907654214",
+       "730003",
+       "-226119",
+       "-720"
+      ],
+      [
+       "2",
+       "-593576705",
+       "181325",
+       "-128540",
+       "-720"
+      ],
+      [
+       "3",
+       "-150612030",
+       "47854",
+       "-99900",
+       "-720"
+      ],
+      [
+       "4",
+       "-149790984",
+       "44356",
+       "-99490",
+       "-720"
+      ],
+      [
+       "5",
+       "-1736420",
+       "791",
+       "-15900",
+       "-720"
+      ],
+      [
+       "6",
+       "-767704",
+       "315",
+       "-7000",
+       "-720"
+      ],
+      [
+       "7",
+       "-7725",
+       "2",
+       "-7000",
+       "-725"
+      ],
+      [
+       "8",
+       "-72213",
+       "10",
+       "-9000",
+       "-780"
+      ],
+      [
+       "9",
+       "-19796",
+       "2",
+       "-9900",
+       "-9896"
+      ],
+      [
+       "NULL",
+       "-43445240",
+       "34995",
+       "-43251",
+       "-720"
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "n_rows": 300000000,
+   "replicas": 3,
+   "gen": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/gen_scale replica ../../research/real_decoders_20261024/results/nyc100_plain/passenger.i32 ../../research/real_decoders_20261024/results/nyc100_plain/fare.i32 ../../research/real_decoders_20261024/results/scale_20261101/g11_300000000_gid.i32 ../../research/real_decoders_20261024/results/scale_20261101/g11_300000000_val.i32 3 0",
+    "exit": 0,
+    "core_mask": "80",
+    "threads": 1,
+    "wall_s": 2.879,
+    "time": {
+     "wall": 2.87,
+     "rss": 915396.0
+    },
+    "metrics": null
+   },
+   "build": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale build_mt ../../research/real_decoders_20261024/results/scale_20261101/g11_300000000_gid.i32 ../../research/real_decoders_20261024/results/scale_20261101/g11_300000000_val.i32 ../../research/real_decoders_20261024/results/scale_20261101/g11_300000000.ecube 1 24",
+    "exit": 0,
+    "core_mask": "80",
+    "threads": 1,
+    "wall_s": 2.7154,
+    "time": {
+     "wall": 2.71,
+     "rss": 2350056.0
+    },
+    "metrics": {
+     "mode": "build_mt",
+     "build_ms": 2541.648,
+     "map_ms": 0.054,
+     "domain_ms": 301.038,
+     "distinct_ms": 719.471,
+     "accum_ms": 1518.285,
+     "merge_ms": 0.058,
+     "prefix_ms": 0.324,
+     "write_ms": 2.419,
+     "groups": 11,
+     "values": 21084,
+     "rows": 300000000,
+     "bytes": 1140124,
+     "dense": 0,
+     "threads_requested": 1,
+     "threads_used": 1,
+     "slab_bytes_per_thread": 927696,
+     "membudget_gb": 24.0
+    },
+    "cube": "../../research/real_decoders_20261024/results/scale_20261101/g11_300000000.ecube",
+    "cube_bytes": 1140124,
+    "cube_sha256": "1be0a2cd6c4c717813d0ada2a2d8b9e33f3392ab184eb83f936cd07f5fd50b97"
+   },
+   "cube": "../../research/real_decoders_20261024/results/scale_20261101/g11_300000000.ecube",
+   "cube_bytes": 1140124,
+   "cube_sha256": "1be0a2cd6c4c717813d0ada2a2d8b9e33f3392ab184eb83f936cd07f5fd50b97",
+   "query": {
+    "T1_fixed": {
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/g11_300000000.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/g11q_300000000_t1_fixed.json 30 1",
+     "exit": 0,
+     "core_mask": "80",
+     "threads": 1,
+     "wall_s": 0.0065,
+     "time": {
+      "wall": 0.0,
+      "rss": 5368.0
+     },
+     "metrics": {
+      "mode": "qbench",
+      "threads": 1,
+      "reps": 30,
+      "fresh_alloc": 0,
+      "setup_ms": 0.074,
+      "warmup_ms": 0.07,
+      "query_median_ms": 0.001,
+      "query_p95_ms": 0.0015,
+      "query_min_ms": 0.001,
+      "serialize1_median_ms": 0.0006,
+      "serialize1_p95_ms": 0.0011,
+      "serializeT_median_ms": 0.0006,
+      "serializeT_p95_ms": 0.0007,
+      "output_ms": 0.841,
+      "rows": 11,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "dense": 0,
+      "rank_lo": 0,
+      "rank_hi": 21084,
+      "checksum": 1070643273301097509,
+      "names_synthesized": 0,
+      "total_cnt": 300000000,
+      "total_sum": 571326403173,
+      "min_mn": -226119,
+      "max_mx": 86337212,
+      "group_chk": "55569002354973"
+     },
+     "rows": [
+      [
+       "0",
+       "5711929431",
+       "3317763",
+       "-38318",
+       "5055868"
+      ],
+      [
+       "1",
+       "384878169462",
+       "208209705",
+       "-226119",
+       "86337212"
+      ],
+      [
+       "2",
+       "85214441208",
+       "39830805",
+       "-128540",
+       "18750296"
+      ],
+      [
+       "3",
+       "20270140188",
+       "9559464",
+       "-99900",
+       "38698363"
+      ],
+      [
+       "4",
+       "13485851259",
+       "5809353",
+       "-99490",
+       "104040"
+      ],
+      [
+       "5",
+       "5086416414",
+       "2691369",
+       "-15900",
+       "82130"
+      ],
+      [
+       "6",
+       "3276777093",
+       "1760505",
+       "-7000",
+       "630090"
+      ],
+      [
+       "7",
+       "3131505",
+       "492",
+       "-7000",
+       "12000"
+      ],
+      [
+       "8",
+       "11650638",
+       "1500",
+       "-9000",
+       "28222"
+      ],
+      [
+       "9",
+       "2573133",
+       "315",
+       "-9900",
+       "13000"
+      ],
+      [
+       "NULL",
+       "53385322842",
+       "28818729",
+       "-43251",
+       "979200"
+      ]
+     ]
+    },
+    "T1_le_m720": {
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/g11_300000000.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/g11q_300000000_t1_le_m720.json 30 1 hi=-720",
+     "exit": 0,
+     "core_mask": "80",
+     "threads": 1,
+     "wall_s": 0.0058,
+     "time": {
+      "wall": 0.0,
+      "rss": 5432.0
+     },
+     "metrics": {
+      "mode": "qbench",
+      "threads": 1,
+      "reps": 30,
+      "fresh_alloc": 0,
+      "setup_ms": 0.058,
+      "warmup_ms": 0.064,
+      "query_median_ms": 0.0007,
+      "query_p95_ms": 0.0012,
+      "query_min_ms": 0.0007,
+      "serialize1_median_ms": 0.0005,
+      "serialize1_p95_ms": 0.0009,
+      "serializeT_median_ms": 0.0005,
+      "serializeT_p95_ms": 0.0005,
+      "output_ms": 0.167,
+      "rows": 11,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "dense": 0,
+      "rank_lo": 0,
+      "rank_hi": 5250,
+      "checksum": 1990792740900454947,
+      "names_synthesized": 0,
+      "total_cnt": 3119400,
+      "total_sum": -8544875115,
+      "min_mn": -226119,
+      "max_mx": -720,
+      "group_chk": "-682823209509"
+     },
+     "rows": [
+      [
+       "0",
+       "-1826022",
+       "441",
+       "-38318",
+       "-720"
+      ],
+      [
+       "1",
+       "-5722962642",
+       "2190009",
+       "-226119",
+       "-720"
+      ],
+      [
+       "2",
+       "-1780730115",
+       "543975",
+       "-128540",
+       "-720"
+      ],
+      [
+       "3",
+       "-451836090",
+       "143562",
+       "-99900",
+       "-720"
+      ],
+      [
+       "4",
+       "-449372952",
+       "133068",
+       "-99490",
+       "-720"
+      ],
+      [
+       "5",
+       "-5209260",
+       "2373",
+       "-15900",
+       "-720"
+      ],
+      [
+       "6",
+       "-2303112",
+       "945",
+       "-7000",
+       "-720"
+      ],
+      [
+       "7",
+       "-23175",
+       "6",
+       "-7000",
+       "-725"
+      ],
+      [
+       "8",
+       "-216639",
+       "30",
+       "-9000",
+       "-780"
+      ],
+      [
+       "9",
+       "-59388",
+       "6",
+       "-9900",
+       "-9896"
+      ],
+      [
+       "NULL",
+       "-130335720",
+       "104985",
+       "-43251",
+       "-720"
+      ]
+     ]
+    },
+    "T8_fixed": {
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/g11_300000000.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/g11q_300000000_t8_fixed.json 30 8",
+     "exit": 0,
+     "core_mask": "80-87",
+     "threads": 8,
+     "wall_s": 0.0288,
+     "time": {
+      "wall": 0.02,
+      "rss": 5536.0
+     },
+     "metrics": {
+      "mode": "qbench",
+      "threads": 8,
+      "reps": 30,
+      "fresh_alloc": 0,
+      "setup_ms": 0.051,
+      "warmup_ms": 17.485,
+      "query_median_ms": 0.001,
+      "query_p95_ms": 0.0015,
+      "query_min_ms": 0.0009,
+      "serialize1_median_ms": 0.0006,
+      "serialize1_p95_ms": 0.0012,
+      "serializeT_median_ms": 0.2012,
+      "serializeT_p95_ms": 0.2244,
+      "output_ms": 0.662,
+      "rows": 11,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "dense": 0,
+      "rank_lo": 0,
+      "rank_hi": 21084,
+      "checksum": 1070643273301097509,
+      "names_synthesized": 0,
+      "total_cnt": 300000000,
+      "total_sum": 571326403173,
+      "min_mn": -226119,
+      "max_mx": 86337212,
+      "group_chk": "55569002354973"
+     },
+     "rows": [
+      [
+       "0",
+       "5711929431",
+       "3317763",
+       "-38318",
+       "5055868"
+      ],
+      [
+       "1",
+       "384878169462",
+       "208209705",
+       "-226119",
+       "86337212"
+      ],
+      [
+       "2",
+       "85214441208",
+       "39830805",
+       "-128540",
+       "18750296"
+      ],
+      [
+       "3",
+       "20270140188",
+       "9559464",
+       "-99900",
+       "38698363"
+      ],
+      [
+       "4",
+       "13485851259",
+       "5809353",
+       "-99490",
+       "104040"
+      ],
+      [
+       "5",
+       "5086416414",
+       "2691369",
+       "-15900",
+       "82130"
+      ],
+      [
+       "6",
+       "3276777093",
+       "1760505",
+       "-7000",
+       "630090"
+      ],
+      [
+       "7",
+       "3131505",
+       "492",
+       "-7000",
+       "12000"
+      ],
+      [
+       "8",
+       "11650638",
+       "1500",
+       "-9000",
+       "28222"
+      ],
+      [
+       "9",
+       "2573133",
+       "315",
+       "-9900",
+       "13000"
+      ],
+      [
+       "NULL",
+       "53385322842",
+       "28818729",
+       "-43251",
+       "979200"
+      ]
+     ]
+    },
+    "T8_le_m720": {
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/g11_300000000.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/g11q_300000000_t8_le_m720.json 30 8 hi=-720",
+     "exit": 0,
+     "core_mask": "80-87",
+     "threads": 8,
+     "wall_s": 0.032,
+     "time": {
+      "wall": 0.03,
+      "rss": 5864.0
+     },
+     "metrics": {
+      "mode": "qbench",
+      "threads": 8,
+      "reps": 30,
+      "fresh_alloc": 0,
+      "setup_ms": 0.068,
+      "warmup_ms": 20.117,
+      "query_median_ms": 0.001,
+      "query_p95_ms": 0.0013,
+      "query_min_ms": 0.0009,
+      "serialize1_median_ms": 0.0005,
+      "serialize1_p95_ms": 0.001,
+      "serializeT_median_ms": 0.1985,
+      "serializeT_p95_ms": 0.2356,
+      "output_ms": 0.734,
+      "rows": 11,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "dense": 0,
+      "rank_lo": 0,
+      "rank_hi": 5250,
+      "checksum": 1990792740900454947,
+      "names_synthesized": 0,
+      "total_cnt": 3119400,
+      "total_sum": -8544875115,
+      "min_mn": -226119,
+      "max_mx": -720,
+      "group_chk": "-682823209509"
+     },
+     "rows": [
+      [
+       "0",
+       "-1826022",
+       "441",
+       "-38318",
+       "-720"
+      ],
+      [
+       "1",
+       "-5722962642",
+       "2190009",
+       "-226119",
+       "-720"
+      ],
+      [
+       "2",
+       "-1780730115",
+       "543975",
+       "-128540",
+       "-720"
+      ],
+      [
+       "3",
+       "-451836090",
+       "143562",
+       "-99900",
+       "-720"
+      ],
+      [
+       "4",
+       "-449372952",
+       "133068",
+       "-99490",
+       "-720"
+      ],
+      [
+       "5",
+       "-5209260",
+       "2373",
+       "-15900",
+       "-720"
+      ],
+      [
+       "6",
+       "-2303112",
+       "945",
+       "-7000",
+       "-720"
+      ],
+      [
+       "7",
+       "-23175",
+       "6",
+       "-7000",
+       "-725"
+      ],
+      [
+       "8",
+       "-216639",
+       "30",
+       "-9000",
+       "-780"
+      ],
+      [
+       "9",
+       "-59388",
+       "6",
+       "-9900",
+       "-9896"
+      ],
+      [
+       "NULL",
+       "-130335720",
+       "104985",
+       "-43251",
+       "-720"
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "n_rows": 600000000,
+   "replicas": 6,
+   "gen": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/gen_scale replica ../../research/real_decoders_20261024/results/nyc100_plain/passenger.i32 ../../research/real_decoders_20261024/results/nyc100_plain/fare.i32 ../../research/real_decoders_20261024/results/scale_20261101/g11_600000000_gid.i32 ../../research/real_decoders_20261024/results/scale_20261101/g11_600000000_val.i32 6 0",
+    "exit": 0,
+    "core_mask": "80",
+    "threads": 1,
+    "wall_s": 6.0547,
+    "time": {
+     "wall": 6.05,
+     "rss": 915480.0
+    },
+    "metrics": null
+   },
+   "build": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale build_mt ../../research/real_decoders_20261024/results/scale_20261101/g11_600000000_gid.i32 ../../research/real_decoders_20261024/results/scale_20261101/g11_600000000_val.i32 ../../research/real_decoders_20261024/results/scale_20261101/g11_600000000.ecube 1 24",
+    "exit": 0,
+    "core_mask": "80",
+    "threads": 1,
+    "wall_s": 5.4356,
+    "time": {
+     "wall": 5.43,
+     "rss": 4693844.0
+    },
+    "metrics": {
+     "mode": "build_mt",
+     "build_ms": 5098.966,
+     "map_ms": 0.062,
+     "domain_ms": 600.883,
+     "distinct_ms": 1454.551,
+     "accum_ms": 3039.654,
+     "merge_ms": 0.073,
+     "prefix_ms": 0.38,
+     "write_ms": 3.363,
+     "groups": 11,
+     "values": 21084,
+     "rows": 600000000,
+     "bytes": 1140124,
+     "dense": 0,
+     "threads_requested": 1,
+     "threads_used": 1,
+     "slab_bytes_per_thread": 927696,
+     "membudget_gb": 24.0
+    },
+    "cube": "../../research/real_decoders_20261024/results/scale_20261101/g11_600000000.ecube",
+    "cube_bytes": 1140124,
+    "cube_sha256": "2a5cab8cbb07ae04e27cb0915867dcd8ec0a295d87d4dcf31fdcaa4a325cf634"
+   },
+   "cube": "../../research/real_decoders_20261024/results/scale_20261101/g11_600000000.ecube",
+   "cube_bytes": 1140124,
+   "cube_sha256": "2a5cab8cbb07ae04e27cb0915867dcd8ec0a295d87d4dcf31fdcaa4a325cf634",
+   "query": {
+    "T1_fixed": {
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/g11_600000000.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/g11q_600000000_t1_fixed.json 30 1",
+     "exit": 0,
+     "core_mask": "80",
+     "threads": 1,
+     "wall_s": 0.0064,
+     "time": {
+      "wall": 0.0,
+      "rss": 5368.0
+     },
+     "metrics": {
+      "mode": "qbench",
+      "threads": 1,
+      "reps": 30,
+      "fresh_alloc": 0,
+      "setup_ms": 0.085,
+      "warmup_ms": 0.076,
+      "query_median_ms": 0.001,
+      "query_p95_ms": 0.0014,
+      "query_min_ms": 0.001,
+      "serialize1_median_ms": 0.0006,
+      "serialize1_p95_ms": 0.0011,
+      "serializeT_median_ms": 0.0006,
+      "serializeT_p95_ms": 0.0006,
+      "output_ms": 1.408,
+      "rows": 11,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "dense": 0,
+      "rank_lo": 0,
+      "rank_hi": 21084,
+      "checksum": 5244931948419152202,
+      "names_synthesized": 0,
+      "total_cnt": 600000000,
+      "total_sum": 1142652806346,
+      "min_mn": -226119,
+      "max_mx": 86337212,
+      "group_chk": "110991563462754"
+     },
+     "rows": [
+      [
+       "0",
+       "11423858862",
+       "6635526",
+       "-38318",
+       "5055868"
+      ],
+      [
+       "1",
+       "769756338924",
+       "416419410",
+       "-226119",
+       "86337212"
+      ],
+      [
+       "2",
+       "170428882416",
+       "79661610",
+       "-128540",
+       "18750296"
+      ],
+      [
+       "3",
+       "40540280376",
+       "19118928",
+       "-99900",
+       "38698363"
+      ],
+      [
+       "4",
+       "26971702518",
+       "11618706",
+       "-99490",
+       "104040"
+      ],
+      [
+       "5",
+       "10172832828",
+       "5382738",
+       "-15900",
+       "82130"
+      ],
+      [
+       "6",
+       "6553554186",
+       "3521010",
+       "-7000",
+       "630090"
+      ],
+      [
+       "7",
+       "6263010",
+       "984",
+       "-7000",
+       "12000"
+      ],
+      [
+       "8",
+       "23301276",
+       "3000",
+       "-9000",
+       "28222"
+      ],
+      [
+       "9",
+       "5146266",
+       "630",
+       "-9900",
+       "13000"
+      ],
+      [
+       "NULL",
+       "106770645684",
+       "57637458",
+       "-43251",
+       "979200"
+      ]
+     ]
+    },
+    "T1_le_m720": {
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/g11_600000000.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/g11q_600000000_t1_le_m720.json 30 1 hi=-720",
+     "exit": 0,
+     "core_mask": "80",
+     "threads": 1,
+     "wall_s": 0.0042,
+     "time": {
+      "wall": 0.0,
+      "rss": 5536.0
+     },
+     "metrics": {
+      "mode": "qbench",
+      "threads": 1,
+      "reps": 30,
+      "fresh_alloc": 0,
+      "setup_ms": 0.065,
+      "warmup_ms": 0.07,
+      "query_median_ms": 0.0007,
+      "query_p95_ms": 0.001,
+      "query_min_ms": 0.0007,
+      "serialize1_median_ms": 0.0005,
+      "serialize1_p95_ms": 0.001,
+      "serializeT_median_ms": 0.0005,
+      "serializeT_p95_ms": 0.0005,
+      "output_ms": 0.209,
+      "rows": 11,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "dense": 0,
+      "rank_lo": 0,
+      "rank_hi": 5250,
+      "checksum": 190663764336423532,
+      "names_synthesized": 0,
+      "total_cnt": 6238800,
+      "total_sum": -17089750230,
+      "min_mn": -226119,
+      "max_mx": -720,
+      "group_chk": "-1511635543464"
+     },
+     "rows": [
+      [
+       "0",
+       "-3652044",
+       "882",
+       "-38318",
+       "-720"
+      ],
+      [
+       "1",
+       "-11445925284",
+       "4380018",
+       "-226119",
+       "-720"
+      ],
+      [
+       "2",
+       "-3561460230",
+       "1087950",
+       "-128540",
+       "-720"
+      ],
+      [
+       "3",
+       "-903672180",
+       "287124",
+       "-99900",
+       "-720"
+      ],
+      [
+       "4",
+       "-898745904",
+       "266136",
+       "-99490",
+       "-720"
+      ],
+      [
+       "5",
+       "-10418520",
+       "4746",
+       "-15900",
+       "-720"
+      ],
+      [
+       "6",
+       "-4606224",
+       "1890",
+       "-7000",
+       "-720"
+      ],
+      [
+       "7",
+       "-46350",
+       "12",
+       "-7000",
+       "-725"
+      ],
+      [
+       "8",
+       "-433278",
+       "60",
+       "-9000",
+       "-780"
+      ],
+      [
+       "9",
+       "-118776",
+       "12",
+       "-9900",
+       "-9896"
+      ],
+      [
+       "NULL",
+       "-260671440",
+       "209970",
+       "-43251",
+       "-720"
+      ]
+     ]
+    },
+    "T8_fixed": {
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/g11_600000000.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/g11q_600000000_t8_fixed.json 30 8",
+     "exit": 0,
+     "core_mask": "80-87",
+     "threads": 8,
+     "wall_s": 0.0295,
+     "time": {
+      "wall": 0.02,
+      "rss": 5668.0
+     },
+     "metrics": {
+      "mode": "qbench",
+      "threads": 8,
+      "reps": 30,
+      "fresh_alloc": 0,
+      "setup_ms": 0.05,
+      "warmup_ms": 17.895,
+      "query_median_ms": 0.001,
+      "query_p95_ms": 0.0014,
+      "query_min_ms": 0.0009,
+      "serialize1_median_ms": 0.0006,
+      "serialize1_p95_ms": 0.0011,
+      "serializeT_median_ms": 0.2015,
+      "serializeT_p95_ms": 0.2322,
+      "output_ms": 0.744,
+      "rows": 11,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "dense": 0,
+      "rank_lo": 0,
+      "rank_hi": 21084,
+      "checksum": 5244931948419152202,
+      "names_synthesized": 0,
+      "total_cnt": 600000000,
+      "total_sum": 1142652806346,
+      "min_mn": -226119,
+      "max_mx": 86337212,
+      "group_chk": "110991563462754"
+     },
+     "rows": [
+      [
+       "0",
+       "11423858862",
+       "6635526",
+       "-38318",
+       "5055868"
+      ],
+      [
+       "1",
+       "769756338924",
+       "416419410",
+       "-226119",
+       "86337212"
+      ],
+      [
+       "2",
+       "170428882416",
+       "79661610",
+       "-128540",
+       "18750296"
+      ],
+      [
+       "3",
+       "40540280376",
+       "19118928",
+       "-99900",
+       "38698363"
+      ],
+      [
+       "4",
+       "26971702518",
+       "11618706",
+       "-99490",
+       "104040"
+      ],
+      [
+       "5",
+       "10172832828",
+       "5382738",
+       "-15900",
+       "82130"
+      ],
+      [
+       "6",
+       "6553554186",
+       "3521010",
+       "-7000",
+       "630090"
+      ],
+      [
+       "7",
+       "6263010",
+       "984",
+       "-7000",
+       "12000"
+      ],
+      [
+       "8",
+       "23301276",
+       "3000",
+       "-9000",
+       "28222"
+      ],
+      [
+       "9",
+       "5146266",
+       "630",
+       "-9900",
+       "13000"
+      ],
+      [
+       "NULL",
+       "106770645684",
+       "57637458",
+       "-43251",
+       "979200"
+      ]
+     ]
+    },
+    "T8_le_m720": {
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/g11_600000000.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/g11q_600000000_t8_le_m720.json 30 8 hi=-720",
+     "exit": 0,
+     "core_mask": "80-87",
+     "threads": 8,
+     "wall_s": 0.0316,
+     "time": {
+      "wall": 0.03,
+      "rss": 5584.0
+     },
+     "metrics": {
+      "mode": "qbench",
+      "threads": 8,
+      "reps": 30,
+      "fresh_alloc": 0,
+      "setup_ms": 0.056,
+      "warmup_ms": 19.193,
+      "query_median_ms": 0.0009,
+      "query_p95_ms": 0.0012,
+      "query_min_ms": 0.0008,
+      "serialize1_median_ms": 0.0005,
+      "serialize1_p95_ms": 0.001,
+      "serializeT_median_ms": 0.2008,
+      "serializeT_p95_ms": 0.2263,
+      "output_ms": 0.704,
+      "rows": 11,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "dense": 0,
+      "rank_lo": 0,
+      "rank_hi": 5250,
+      "checksum": 190663764336423532,
+      "names_synthesized": 0,
+      "total_cnt": 6238800,
+      "total_sum": -17089750230,
+      "min_mn": -226119,
+      "max_mx": -720,
+      "group_chk": "-1511635543464"
+     },
+     "rows": [
+      [
+       "0",
+       "-3652044",
+       "882",
+       "-38318",
+       "-720"
+      ],
+      [
+       "1",
+       "-11445925284",
+       "4380018",
+       "-226119",
+       "-720"
+      ],
+      [
+       "2",
+       "-3561460230",
+       "1087950",
+       "-128540",
+       "-720"
+      ],
+      [
+       "3",
+       "-903672180",
+       "287124",
+       "-99900",
+       "-720"
+      ],
+      [
+       "4",
+       "-898745904",
+       "266136",
+       "-99490",
+       "-720"
+      ],
+      [
+       "5",
+       "-10418520",
+       "4746",
+       "-15900",
+       "-720"
+      ],
+      [
+       "6",
+       "-4606224",
+       "1890",
+       "-7000",
+       "-720"
+      ],
+      [
+       "7",
+       "-46350",
+       "12",
+       "-7000",
+       "-725"
+      ],
+      [
+       "8",
+       "-433278",
+       "60",
+       "-9000",
+       "-780"
+      ],
+      [
+       "9",
+       "-118776",
+       "12",
+       "-9900",
+       "-9896"
+      ],
+      [
+       "NULL",
+       "-260671440",
+       "209970",
+       "-43251",
+       "-720"
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "n_rows": 1000000000,
+   "replicas": 10,
+   "gen": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/gen_scale replica ../../research/real_decoders_20261024/results/nyc100_plain/passenger.i32 ../../research/real_decoders_20261024/results/nyc100_plain/fare.i32 ../../research/real_decoders_20261024/results/scale_20261101/g11_1000000000_gid.i32 ../../research/real_decoders_20261024/results/scale_20261101/g11_1000000000_val.i32 10 0",
+    "exit": 0,
+    "core_mask": "80",
+    "threads": 1,
+    "wall_s": 11.695,
+    "time": {
+     "wall": 11.69,
+     "rss": 915552.0
+    },
+    "metrics": null
+   },
+   "build": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale build_mt ../../research/real_decoders_20261024/results/scale_20261101/g11_1000000000_gid.i32 ../../research/real_decoders_20261024/results/scale_20261101/g11_1000000000_val.i32 ../../research/real_decoders_20261024/results/scale_20261101/g11_1000000000.ecube 1 24",
+    "exit": 0,
+    "core_mask": "80",
+    "threads": 1,
+    "wall_s": 9.0035,
+    "time": {
+     "wall": 9.0,
+     "rss": 7818764.0
+    },
+    "metrics": {
+     "mode": "build_mt",
+     "build_ms": 8449.79,
+     "map_ms": 0.065,
+     "domain_ms": 1000.005,
+     "distinct_ms": 2434.189,
+     "accum_ms": 5012.743,
+     "merge_ms": 0.062,
+     "prefix_ms": 0.328,
+     "write_ms": 2.399,
+     "groups": 11,
+     "values": 21084,
+     "rows": 1000000000,
+     "bytes": 1140124,
+     "dense": 0,
+     "threads_requested": 1,
+     "threads_used": 1,
+     "slab_bytes_per_thread": 927696,
+     "membudget_gb": 24.0
+    },
+    "cube": "../../research/real_decoders_20261024/results/scale_20261101/g11_1000000000.ecube",
+    "cube_bytes": 1140124,
+    "cube_sha256": "dc4e9156bf23098304cab3b7ee6ff4ff04f5153f338ca56f994b7b54b9668595"
+   },
+   "cube": "../../research/real_decoders_20261024/results/scale_20261101/g11_1000000000.ecube",
+   "cube_bytes": 1140124,
+   "cube_sha256": "dc4e9156bf23098304cab3b7ee6ff4ff04f5153f338ca56f994b7b54b9668595",
+   "query": {
+    "T1_fixed": {
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/g11_1000000000.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/g11q_1000000000_t1_fixed.json 30 1",
+     "exit": 0,
+     "core_mask": "80",
+     "threads": 1,
+     "wall_s": 0.0077,
+     "time": {
+      "wall": 0.0,
+      "rss": 5404.0
+     },
+     "metrics": {
+      "mode": "qbench",
+      "threads": 1,
+      "reps": 30,
+      "fresh_alloc": 0,
+      "setup_ms": 0.072,
+      "warmup_ms": 0.081,
+      "query_median_ms": 0.0009,
+      "query_p95_ms": 0.0013,
+      "query_min_ms": 0.0009,
+      "serialize1_median_ms": 0.0006,
+      "serialize1_p95_ms": 0.0011,
+      "serializeT_median_ms": 0.0006,
+      "serializeT_p95_ms": 0.0006,
+      "output_ms": 0.082,
+      "rows": 11,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "dense": 0,
+      "rank_lo": 0,
+      "rank_hi": 21084,
+      "checksum": 16959564873146408998,
+      "names_synthesized": 0,
+      "total_cnt": 1000000000,
+      "total_sum": 1904421343910,
+      "min_mn": -226119,
+      "max_mx": 86337212,
+      "group_chk": "184888311606462"
+     },
+     "rows": [
+      [
+       "0",
+       "19039764770",
+       "11059210",
+       "-38318",
+       "5055868"
+      ],
+      [
+       "1",
+       "1282927231540",
+       "694032350",
+       "-226119",
+       "86337212"
+      ],
+      [
+       "2",
+       "284048137360",
+       "132769350",
+       "-128540",
+       "18750296"
+      ],
+      [
+       "3",
+       "67567133960",
+       "31864880",
+       "-99900",
+       "38698363"
+      ],
+      [
+       "4",
+       "44952837530",
+       "19364510",
+       "-99490",
+       "104040"
+      ],
+      [
+       "5",
+       "16954721380",
+       "8971230",
+       "-15900",
+       "82130"
+      ],
+      [
+       "6",
+       "10922590310",
+       "5868350",
+       "-7000",
+       "630090"
+      ],
+      [
+       "7",
+       "10438350",
+       "1640",
+       "-7000",
+       "12000"
+      ],
+      [
+       "8",
+       "38835460",
+       "5000",
+       "-9000",
+       "28222"
+      ],
+      [
+       "9",
+       "8577110",
+       "1050",
+       "-9900",
+       "13000"
+      ],
+      [
+       "NULL",
+       "177951076140",
+       "96062430",
+       "-43251",
+       "979200"
+      ]
+     ]
+    },
+    "T1_le_m720": {
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/g11_1000000000.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/g11q_1000000000_t1_le_m720.json 30 1 hi=-720",
+     "exit": 0,
+     "core_mask": "80",
+     "threads": 1,
+     "wall_s": 0.005,
+     "time": {
+      "wall": 0.0,
+      "rss": 5652.0
+     },
+     "metrics": {
+      "mode": "qbench",
+      "threads": 1,
+      "reps": 30,
+      "fresh_alloc": 0,
+      "setup_ms": 0.061,
+      "warmup_ms": 0.062,
+      "query_median_ms": 0.0007,
+      "query_p95_ms": 0.001,
+      "query_min_ms": 0.0007,
+      "serialize1_median_ms": 0.0005,
+      "serialize1_p95_ms": 0.001,
+      "serializeT_median_ms": 0.0005,
+      "serializeT_p95_ms": 0.0005,
+      "output_ms": 0.048,
+      "rows": 11,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "dense": 0,
+      "rank_lo": 0,
+      "rank_hi": 5250,
+      "checksum": 10088321178057416056,
+      "names_synthesized": 0,
+      "total_cnt": 10398000,
+      "total_sum": -28482917050,
+      "min_mn": -226119,
+      "max_mx": -720,
+      "group_chk": "-2616718655404"
+     },
+     "rows": [
+      [
+       "0",
+       "-6086740",
+       "1470",
+       "-38318",
+       "-720"
+      ],
+      [
+       "1",
+       "-19076542140",
+       "7300030",
+       "-226119",
+       "-720"
+      ],
+      [
+       "2",
+       "-5935767050",
+       "1813250",
+       "-128540",
+       "-720"
+      ],
+      [
+       "3",
+       "-1506120300",
+       "478540",
+       "-99900",
+       "-720"
+      ],
+      [
+       "4",
+       "-1497909840",
+       "443560",
+       "-99490",
+       "-720"
+      ],
+      [
+       "5",
+       "-17364200",
+       "7910",
+       "-15900",
+       "-720"
+      ],
+      [
+       "6",
+       "-7677040",
+       "3150",
+       "-7000",
+       "-720"
+      ],
+      [
+       "7",
+       "-77250",
+       "20",
+       "-7000",
+       "-725"
+      ],
+      [
+       "8",
+       "-722130",
+       "100",
+       "-9000",
+       "-780"
+      ],
+      [
+       "9",
+       "-197960",
+       "20",
+       "-9900",
+       "-9896"
+      ],
+      [
+       "NULL",
+       "-434452400",
+       "349950",
+       "-43251",
+       "-720"
+      ]
+     ]
+    },
+    "T8_fixed": {
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/g11_1000000000.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/g11q_1000000000_t8_fixed.json 30 8",
+     "exit": 0,
+     "core_mask": "80-87",
+     "threads": 8,
+     "wall_s": 0.0272,
+     "time": {
+      "wall": 0.02,
+      "rss": 5816.0
+     },
+     "metrics": {
+      "mode": "qbench",
+      "threads": 8,
+      "reps": 30,
+      "fresh_alloc": 0,
+      "setup_ms": 0.053,
+      "warmup_ms": 14.897,
+      "query_median_ms": 0.001,
+      "query_p95_ms": 0.0014,
+      "query_min_ms": 0.001,
+      "serialize1_median_ms": 0.0006,
+      "serialize1_p95_ms": 0.0011,
+      "serializeT_median_ms": 0.1993,
+      "serializeT_p95_ms": 0.2403,
+      "output_ms": 0.282,
+      "rows": 11,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "dense": 0,
+      "rank_lo": 0,
+      "rank_hi": 21084,
+      "checksum": 16959564873146408998,
+      "names_synthesized": 0,
+      "total_cnt": 1000000000,
+      "total_sum": 1904421343910,
+      "min_mn": -226119,
+      "max_mx": 86337212,
+      "group_chk": "184888311606462"
+     },
+     "rows": [
+      [
+       "0",
+       "19039764770",
+       "11059210",
+       "-38318",
+       "5055868"
+      ],
+      [
+       "1",
+       "1282927231540",
+       "694032350",
+       "-226119",
+       "86337212"
+      ],
+      [
+       "2",
+       "284048137360",
+       "132769350",
+       "-128540",
+       "18750296"
+      ],
+      [
+       "3",
+       "67567133960",
+       "31864880",
+       "-99900",
+       "38698363"
+      ],
+      [
+       "4",
+       "44952837530",
+       "19364510",
+       "-99490",
+       "104040"
+      ],
+      [
+       "5",
+       "16954721380",
+       "8971230",
+       "-15900",
+       "82130"
+      ],
+      [
+       "6",
+       "10922590310",
+       "5868350",
+       "-7000",
+       "630090"
+      ],
+      [
+       "7",
+       "10438350",
+       "1640",
+       "-7000",
+       "12000"
+      ],
+      [
+       "8",
+       "38835460",
+       "5000",
+       "-9000",
+       "28222"
+      ],
+      [
+       "9",
+       "8577110",
+       "1050",
+       "-9900",
+       "13000"
+      ],
+      [
+       "NULL",
+       "177951076140",
+       "96062430",
+       "-43251",
+       "979200"
+      ]
+     ]
+    },
+    "T8_le_m720": {
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_2020174.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/g11_1000000000.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/g11q_1000000000_t8_le_m720.json 30 8 hi=-720",
+     "exit": 0,
+     "core_mask": "80-87",
+     "threads": 8,
+     "wall_s": 0.0275,
+     "time": {
+      "wall": 0.02,
+      "rss": 6004.0
+     },
+     "metrics": {
+      "mode": "qbench",
+      "threads": 8,
+      "reps": 30,
+      "fresh_alloc": 0,
+      "setup_ms": 0.063,
+      "warmup_ms": 16.971,
+      "query_median_ms": 0.001,
+      "query_p95_ms": 0.0013,
+      "query_min_ms": 0.0009,
+      "serialize1_median_ms": 0.0005,
+      "serialize1_p95_ms": 0.001,
+      "serializeT_median_ms": 0.1949,
+      "serializeT_p95_ms": 0.2131,
+      "output_ms": 0.269,
+      "rows": 11,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "dense": 0,
+      "rank_lo": 0,
+      "rank_hi": 5250,
+      "checksum": 10088321178057416056,
+      "names_synthesized": 0,
+      "total_cnt": 10398000,
+      "total_sum": -28482917050,
+      "min_mn": -226119,
+      "max_mx": -720,
+      "group_chk": "-2616718655404"
+     },
+     "rows": [
+      [
+       "0",
+       "-6086740",
+       "1470",
+       "-38318",
+       "-720"
+      ],
+      [
+       "1",
+       "-19076542140",
+       "7300030",
+       "-226119",
+       "-720"
+      ],
+      [
+       "2",
+       "-5935767050",
+       "1813250",
+       "-128540",
+       "-720"
+      ],
+      [
+       "3",
+       "-1506120300",
+       "478540",
+       "-99900",
+       "-720"
+      ],
+      [
+       "4",
+       "-1497909840",
+       "443560",
+       "-99490",
+       "-720"
+      ],
+      [
+       "5",
+       "-17364200",
+       "7910",
+       "-15900",
+       "-720"
+      ],
+      [
+       "6",
+       "-7677040",
+       "3150",
+       "-7000",
+       "-720"
+      ],
+      [
+       "7",
+       "-77250",
+       "20",
+       "-7000",
+       "-725"
+      ],
+      [
+       "8",
+       "-722130",
+       "100",
+       "-9000",
+       "-780"
+      ],
+      [
+       "9",
+       "-197960",
+       "20",
+       "-9900",
+       "-9896"
+      ],
+      [
+       "NULL",
+       "-434452400",
+       "349950",
+       "-43251",
+       "-720"
+      ]
+     ]
+    }
+   }
+  }
+ ],
+ "protocol": "build T=1 warm page cache; qbench T=1 and T=8, 30 reps, engine-resident",
+ "receipt": "scalecurve_ogn_g11",
+ "host": "localhost (AMD EPYC 9554, 2x64C, 256T, 503GB)",
+ "date": "2026-11-01T18:33:28.042263+08:00",
+ "git_branch": "research/groups-e2e-repro-20261025"
+}

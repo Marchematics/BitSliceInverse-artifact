@@ -1,0 +1,2442 @@
+{
+ "protocol": {
+  "host": "localhost (AMD EPYC 9554)",
+  "date": "2026-11-01",
+  "driver_pin": "nice -n 5 taskset -c 97",
+  "subprocess_pin": "nice -n 5 taskset -c 96",
+  "pstate": "0.5 s deterministic pinned busy loop before every timed bench run",
+  "ours": "engine-resident, structure's own bench; no result serialization",
+  "controls": "DuckDB 2.0.0 threads=1 (config), forced full aggregation (SELECT COUNT(*) FROM (.. GROUP BY ..)) so client materialization is excluded; MV control = same convention over the pre-aggregated table; CLI controls = in-process query_ms over repeated launches",
+  "reps": {
+   "ours_cube": 1000,
+   "ours_mec": 200,
+   "ours_clst": 100,
+   "control_duckdb": 100,
+   "control_secondary_duckdb": 30,
+   "control_bitplane_launches": 40,
+   "control_sorted_index_launches": 20,
+   "control_value_index_launches": 100
+  },
+  "exactness": "element-wise full grouped result vs DuckDB 2.0.0 (group, SUM, COUNT(*), MIN, MAX; NULL groups matched as NULL)",
+  "artifacts": {
+   "enc_cube3_bin_sha256": "2e52137aeaad6f631be376cc22d30fb7a0aed33663ccfc0fe3edfbec53746542",
+   "eai_cube3_src_sha256": "ae8339cfd55dfc8ed4c4a7ba5dca8d92ebb291c9152511591ae569c35fde6c03",
+   "mec_bin_sha256": "933a1fadbb9600219109dab6a795eeca322e85c25746c1a24bccc9a138bda72e",
+   "mec_index_sha256": "3c97213b26a22706798990169f54a95bd6597950cf27604183096958f6665662",
+   "sorted_index_bin_sha256": "de9c8e7f8a9a26e786cfb55ef490b8ae532823ab40df1f9f0d52c346e17c8efd",
+   "sorted_index_sha256": "c43a5d453d7358ac8e4768b36ddd0aff0d555cf9e7e7353d7b069e1ebbbeffe5",
+   "bitplane_bin_sha256": "fa9537d928717c23704e9ab1b7b2778d2865a2ee15d69e49d8514d8cc90ce7d1",
+   "bitplane_sha256": "3e6d4b0386d17de9ae5a23c23c23ad00561820ee811a59ea4ace29d7bcffd2e1",
+   "value_index_sha256": "bbc5a6f8f97d4358f34ee36cf9c733fcdaaf140c3a838487bdf20859771a134a",
+   "clst_tool_sha256": "3d9b130c3e8cd75f15fc5b194a696e97d372f71dca9536d594cdb9a350eebfc2",
+   "clst_G100000_sha256": "129e4507b71145ba464fc8711a6ca60989b187c46a4147b1260fd0dbca189536",
+   "clst_G1000000_sha256": "1dfa040ed1ddb39ed106702ed3bd9432b73acd8fa9d91c9bdfff5ba205865d29"
+  },
+  "duckdb_version": "2.0.0",
+  "duckdb_threads_effective": 1
+ },
+ "queries": {
+  "A01": {
+   "id": "A01",
+   "group": "A",
+   "desc": "fixed all-four",
+   "structure": "ECUBE03 (cube)",
+   "kind": "fixed",
+   "spec": [],
+   "ours": {
+    "median_us": 0.962,
+    "p95_us": 0.972,
+    "serialize_us": 1.492,
+    "runs_us": [
+     0.9610000000000001,
+     0.962,
+     0.962
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 11,
+   "controls": {
+    "duckdb_mv": {
+     "median": 0.31896913424134254,
+     "p95": 0.3330088220536709,
+     "min": 0.3137011080980301,
+     "max": 0.34878309816122055,
+     "n": 100
+    },
+    "duckdb_scan": {
+     "median": 327.5912399403751,
+     "p95": 330.127305816859,
+     "min": 327.0922773517668,
+     "max": 338.1579997949302,
+     "n": 30
+    }
+   },
+   "baseline_name": "duckdb_mv",
+   "baseline_median_ms": 0.31896913424134254,
+   "baseline_p95_ms": 0.3330088220536709,
+   "S": 331.5687466126222,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc GROUP BY 1) AS q"
+  },
+  "A02": {
+   "id": "A02",
+   "group": "A",
+   "desc": "v <= -7000 (0.135%)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "hi=-7000"
+   ],
+   "ours": {
+    "median_us": 0.8310000000000001,
+    "p95_us": 0.832,
+    "serialize_us": 1.1720000000000002,
+    "runs_us": [
+     0.7110000000000001,
+     0.8310000000000001,
+     0.9520000000000001
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 11,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/nyc100.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/vidx_A02.json range=-2147483648,-7000",
+   "controls": {
+    "duckdb_scan": {
+     "median": 172.73488780483603,
+     "p95": 182.89764318615198,
+     "min": 171.62479320541024,
+     "max": 239.39337860792875,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.38295,
+     "p95": 0.5775,
+     "min": 0.2221,
+     "max": 0.6695,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.38295,
+   "baseline_p95_ms": 0.5775,
+   "S": 460.8303249097472,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents <= -7000 GROUP BY 1) AS q"
+  },
+  "A03": {
+   "id": "A03",
+   "group": "A",
+   "desc": "v <= -720 (1.04%)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "hi=-720"
+   ],
+   "ours": {
+    "median_us": 0.8220000000000001,
+    "p95_us": 0.832,
+    "serialize_us": 1.302,
+    "runs_us": [
+     0.712,
+     0.8220000000000001,
+     0.8310000000000001
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 11,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/nyc100.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/vidx_A03.json range=-2147483648,-720",
+   "controls": {
+    "duckdb_scan": {
+     "median": 190.93457190319896,
+     "p95": 202.03897031024098,
+     "min": 190.12482278048992,
+     "max": 265.5057953670621,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.26295,
+     "p95": 0.6104,
+     "min": 0.2382,
+     "max": 0.7314,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.26295,
+   "baseline_p95_ms": 0.6104,
+   "S": 319.89051094890516,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents <= -720 GROUP BY 1) AS q"
+  },
+  "A04": {
+   "id": "A04",
+   "group": "A",
+   "desc": "v <= 509 (5.8%)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "hi=509"
+   ],
+   "ours": {
+    "median_us": 0.8720000000000001,
+    "p95_us": 0.882,
+    "serialize_us": 1.3519999999999999,
+    "runs_us": [
+     0.871,
+     0.8720000000000001,
+     0.9909999999999999
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 11,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/nyc100.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/vidx_A04.json range=-2147483648,509",
+   "controls": {
+    "duckdb_scan": {
+     "median": 209.1270189266652,
+     "p95": 229.84414920210838,
+     "min": 206.4094659872353,
+     "max": 260.004760697484,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.28659999999999997,
+     "p95": 0.698,
+     "min": 0.2669,
+     "max": 0.8276,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.28659999999999997,
+   "baseline_p95_ms": 0.698,
+   "S": 328.6697247706421,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents <= 509 GROUP BY 1) AS q"
+  },
+  "A05": {
+   "id": "A05",
+   "group": "A",
+   "desc": "v <= 650 (11.9%)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "hi=650"
+   ],
+   "ours": {
+    "median_us": 0.901,
+    "p95_us": 1.021,
+    "serialize_us": 1.382,
+    "runs_us": [
+     0.892,
+     0.901,
+     1.021
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 11,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/nyc100.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/vidx_A05.json range=-2147483648,650",
+   "controls": {
+    "duckdb_scan": {
+     "median": 228.14562660641968,
+     "p95": 236.23071424663067,
+     "min": 225.99134733900428,
+     "max": 237.8548509441316,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.50995,
+     "p95": 0.7673,
+     "min": 0.2905,
+     "max": 0.8773,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.50995,
+   "baseline_p95_ms": 0.7673,
+   "S": 565.9822419533851,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents <= 650 GROUP BY 1) AS q"
+  },
+  "A06": {
+   "id": "A06",
+   "group": "A",
+   "desc": "v <= 930 (28.4%)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "hi=930"
+   ],
+   "ours": {
+    "median_us": 0.9319999999999999,
+    "p95_us": 0.9520000000000001,
+    "serialize_us": 1.4220000000000002,
+    "runs_us": [
+     0.9309999999999999,
+     0.9319999999999999,
+     1.0510000000000002
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 11,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/nyc100.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/vidx_A06.json range=-2147483648,930",
+   "controls": {
+    "duckdb_scan": {
+     "median": 283.4726166911423,
+     "p95": 309.0351726859808,
+     "min": 282.2853811085224,
+     "max": 335.6597381643951,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.3607,
+     "p95": 0.8803,
+     "min": 0.3387,
+     "max": 1.0269,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.3607,
+   "baseline_p95_ms": 0.8803,
+   "S": 387.01716738197433,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents <= 930 GROUP BY 1) AS q"
+  },
+  "A07": {
+   "id": "A07",
+   "group": "A",
+   "desc": "v <= 1350 (51%)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "hi=1350"
+   ],
+   "ours": {
+    "median_us": 1.242,
+    "p95_us": 1.252,
+    "serialize_us": 1.642,
+    "runs_us": [
+     1.1620000000000001,
+     1.242,
+     1.262
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 11,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/nyc100.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/vidx_A07.json range=-2147483648,1350",
+   "controls": {
+    "duckdb_scan": {
+     "median": 356.7047000396997,
+     "p95": 372.354150749743,
+     "min": 352.90986811742187,
+     "max": 413.766419980675,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.3849,
+     "p95": 0.9124,
+     "min": 0.3604,
+     "max": 1.0825,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.3849,
+   "baseline_p95_ms": 0.9124,
+   "S": 309.9033816425121,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents <= 1350 GROUP BY 1) AS q"
+  },
+  "A08": {
+   "id": "A08",
+   "group": "A",
+   "desc": "v <= 2500 (broad)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "hi=2500"
+   ],
+   "ours": {
+    "median_us": 1.111,
+    "p95_us": 1.1119999999999999,
+    "serialize_us": 1.613,
+    "runs_us": [
+     1.1019999999999999,
+     1.111,
+     1.202
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 11,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/nyc100.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/vidx_A08.json range=-2147483648,2500",
+   "controls": {
+    "duckdb_scan": {
+     "median": 445.9550688043237,
+     "p95": 464.71089124679565,
+     "min": 444.5552588440478,
+     "max": 501.2826770544052,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.37865000000000004,
+     "p95": 0.9342,
+     "min": 0.3616,
+     "max": 1.0891,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.37865000000000004,
+   "baseline_p95_ms": 0.9342,
+   "S": 340.81908190819087,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents <= 2500 GROUP BY 1) AS q"
+  },
+  "A09": {
+   "id": "A09",
+   "group": "A",
+   "desc": "v <= 99900 (99.9999%)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "hi=99900"
+   ],
+   "ours": {
+    "median_us": 0.862,
+    "p95_us": 0.972,
+    "serialize_us": 1.3719999999999999,
+    "runs_us": [
+     0.861,
+     0.862,
+     0.971
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 11,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/nyc100.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/vidx_A09.json range=-2147483648,99900",
+   "controls": {
+    "duckdb_scan": {
+     "median": 404.8393853008747,
+     "p95": 413.2494041696191,
+     "min": 403.6286687478423,
+     "max": 413.49212592467666,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.3645,
+     "p95": 0.9005,
+     "min": 0.3507,
+     "max": 1.0408,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.3645,
+   "baseline_p95_ms": 0.9005,
+   "S": 422.8538283062645,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents <= 99900 GROUP BY 1) AS q"
+  },
+  "A10": {
+   "id": "A10",
+   "group": "A",
+   "desc": "needle 80M..90M (1 row)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "range=80000000,90000000"
+   ],
+   "ours": {
+    "median_us": 0.101,
+    "p95_us": 0.111,
+    "serialize_us": 0.15,
+    "runs_us": [
+     0.1,
+     0.101,
+     0.101
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 1,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/nyc100.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/vidx_A10.json range=80000000,90000000",
+   "controls": {
+    "duckdb_scan": {
+     "median": 0.884609529748559,
+     "p95": 0.9225299581885338,
+     "min": 0.8649853989481926,
+     "max": 0.9277071803808212,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.19935,
+     "p95": 0.2123,
+     "min": 0.1902,
+     "max": 0.2655,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.19935,
+   "baseline_p95_ms": 0.2123,
+   "S": 1973.7623762376236,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents BETWEEN 80000000 AND 90000000 GROUP BY 1) AS q"
+  },
+  "A11": {
+   "id": "A11",
+   "group": "A",
+   "desc": "range -1000..1000",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "range=-1000,1000"
+   ],
+   "ours": {
+    "median_us": 0.742,
+    "p95_us": 0.761,
+    "serialize_us": 1.231,
+    "runs_us": [
+     0.741,
+     0.742,
+     0.751
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 11,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/nyc100.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/vidx_A11.json range=-1000,1000",
+   "controls": {
+    "duckdb_scan": {
+     "median": 344.21708970330656,
+     "p95": 367.64166271314025,
+     "min": 339.74761608988047,
+     "max": 414.67084689065814,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.3477,
+     "p95": 0.8523,
+     "min": 0.3322,
+     "max": 1.0163,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.3477,
+   "baseline_p95_ms": 0.8523,
+   "S": 468.59838274932616,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents BETWEEN -1000 AND 1000 GROUP BY 1) AS q"
+  },
+  "A12": {
+   "id": "A12",
+   "group": "A",
+   "desc": "range 0..300",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "range=0,300"
+   ],
+   "ours": {
+    "median_us": 0.39,
+    "p95_us": 0.391,
+    "serialize_us": 0.791,
+    "runs_us": [
+     0.381,
+     0.39,
+     0.40099999999999997
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 11,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/nyc100.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/vidx_A12.json range=0,300",
+   "controls": {
+    "duckdb_scan": {
+     "median": 239.0546048991382,
+     "p95": 240.8464951440692,
+     "min": 237.24234569817781,
+     "max": 247.19405313953757,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.3116,
+     "p95": 0.5784,
+     "min": 0.2224,
+     "max": 0.6851,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.3116,
+   "baseline_p95_ms": 0.5784,
+   "S": 798.9743589743589,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents BETWEEN 0 AND 300 GROUP BY 1) AS q"
+  },
+  "A13": {
+   "id": "A13",
+   "group": "A",
+   "desc": "v >= 1300 (lo-only)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "lo=1300"
+   ],
+   "ours": {
+    "median_us": 0.8109999999999999,
+    "p95_us": 0.8220000000000001,
+    "serialize_us": 1.322,
+    "runs_us": [
+     0.8109999999999999,
+     0.8109999999999999,
+     0.821
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 11,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/nyc100.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/vidx_A13.json range=1300,2147483647",
+   "controls": {
+    "duckdb_scan": {
+     "median": 361.02307634428144,
+     "p95": 365.9548978321254,
+     "min": 358.5256487131119,
+     "max": 370.1830976642668,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.37895,
+     "p95": 0.9282,
+     "min": 0.3596,
+     "max": 1.0977,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.37895,
+   "baseline_p95_ms": 0.9282,
+   "S": 467.26263871763257,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents >= 1300 GROUP BY 1) AS q"
+  },
+  "A14": {
+   "id": "A14",
+   "group": "A",
+   "desc": "g IN (1,2)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "fixed",
+   "spec": [
+    "where_in=1,2"
+   ],
+   "ours": {
+    "median_us": 0.231,
+    "p95_us": 0.241,
+    "serialize_us": 0.34,
+    "runs_us": [
+     0.23,
+     0.231,
+     0.231
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 2,
+   "controls": {
+    "duckdb_mv": {
+     "median": 0.4250712227076292,
+     "p95": 0.4431670531630516,
+     "min": 0.4151472821831703,
+     "max": 0.46748295426368713,
+     "n": 100
+    },
+    "duckdb_scan": {
+     "median": 421.37739388272166,
+     "p95": 428.24383499100804,
+     "min": 416.8711672537029,
+     "max": 441.5633277967572,
+     "n": 30
+    }
+   },
+   "baseline_name": "duckdb_mv",
+   "baseline_median_ms": 0.4250712227076292,
+   "baseline_p95_ms": 0.4431670531630516,
+   "S": 1840.13516323649,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE passenger_count IN (1,2) GROUP BY 1) AS q"
+  },
+  "A15": {
+   "id": "A15",
+   "group": "A",
+   "desc": "g IN (1)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "fixed",
+   "spec": [
+    "where_in=1"
+   ],
+   "ours": {
+    "median_us": 0.15,
+    "p95_us": 0.16,
+    "serialize_us": 0.21000000000000002,
+    "runs_us": [
+     0.15,
+     0.15,
+     0.15
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 1,
+   "controls": {
+    "duckdb_mv": {
+     "median": 0.4023823421448469,
+     "p95": 0.41928282007575035,
+     "min": 0.3923429176211357,
+     "max": 0.4659811966121197,
+     "n": 100
+    },
+    "duckdb_scan": {
+     "median": 327.25447695702314,
+     "p95": 332.1322537958622,
+     "min": 326.76637219265103,
+     "max": 332.3993068188429,
+     "n": 30
+    }
+   },
+   "baseline_name": "duckdb_mv",
+   "baseline_median_ms": 0.4023823421448469,
+   "baseline_p95_ms": 0.41928282007575035,
+   "S": 2682.548947632313,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE passenger_count IN (1) GROUP BY 1) AS q"
+  },
+  "A16": {
+   "id": "A16",
+   "group": "A",
+   "desc": "g IN (1,2,3,4)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "fixed",
+   "spec": [
+    "where_in=1,2,3,4"
+   ],
+   "ours": {
+    "median_us": 0.40099999999999997,
+    "p95_us": 0.41100000000000003,
+    "serialize_us": 0.611,
+    "runs_us": [
+     0.40099999999999997,
+     0.40099999999999997,
+     0.43
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 4,
+   "controls": {
+    "duckdb_mv": {
+     "median": 0.44094398617744446,
+     "p95": 0.4636370576918125,
+     "min": 0.43130991980433464,
+     "max": 0.49597397446632385,
+     "n": 100
+    },
+    "duckdb_scan": {
+     "median": 438.50696785375476,
+     "p95": 441.6578970849514,
+     "min": 436.8770341388881,
+     "max": 442.0692580752075,
+     "n": 30
+    }
+   },
+   "baseline_name": "duckdb_mv",
+   "baseline_median_ms": 0.44094398617744446,
+   "baseline_p95_ms": 0.4636370576918125,
+   "S": 1099.6109380983653,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE passenger_count IN (1,2,3,4) GROUP BY 1) AS q"
+  },
+  "A17": {
+   "id": "A17",
+   "group": "A",
+   "desc": "g NOT IN (1)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "fixed",
+   "spec": [
+    "where_not_in=1"
+   ],
+   "ours": {
+    "median_us": 0.8310000000000001,
+    "p95_us": 0.832,
+    "serialize_us": 1.252,
+    "runs_us": [
+     0.8109999999999999,
+     0.8310000000000001,
+     0.9219999999999999
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 9,
+   "controls": {
+    "duckdb_mv": {
+     "median": 0.40291808545589447,
+     "p95": 0.4200432449579239,
+     "min": 0.3954470157623291,
+     "max": 0.4595210775732994,
+     "n": 100
+    },
+    "duckdb_scan": {
+     "median": 359.65607943944633,
+     "p95": 363.05712908506393,
+     "min": 358.73480094596744,
+     "max": 369.38396701589227,
+     "n": 30
+    }
+   },
+   "baseline_name": "duckdb_mv",
+   "baseline_median_ms": 0.40291808545589447,
+   "baseline_p95_ms": 0.4200432449579239,
+   "S": 484.85930861118464,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE passenger_count NOT IN (1) GROUP BY 1) AS q"
+  },
+  "A18": {
+   "id": "A18",
+   "group": "A",
+   "desc": "g NOT IN (0)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "fixed",
+   "spec": [
+    "where_not_in=0"
+   ],
+   "ours": {
+    "median_us": 0.8109999999999999,
+    "p95_us": 0.812,
+    "serialize_us": 1.231,
+    "runs_us": [
+     0.8009999999999999,
+     0.8109999999999999,
+     0.892
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 9,
+   "controls": {
+    "duckdb_mv": {
+     "median": 0.40322798304259777,
+     "p95": 0.4231068305671215,
+     "min": 0.3950060345232487,
+     "max": 0.5029328167438507,
+     "n": 100
+    },
+    "duckdb_scan": {
+     "median": 456.7828730214387,
+     "p95": 464.5818406715989,
+     "min": 453.3740603365004,
+     "max": 464.73625721409917,
+     "n": 30
+    }
+   },
+   "baseline_name": "duckdb_mv",
+   "baseline_median_ms": 0.40322798304259777,
+   "baseline_p95_ms": 0.4231068305671215,
+   "S": 497.19849943600224,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE passenger_count NOT IN (0) GROUP BY 1) AS q"
+  },
+  "A19": {
+   "id": "A19",
+   "group": "A",
+   "desc": "HAVING sum >= 1e10",
+   "structure": "ECUBE03 (cube)",
+   "kind": "fixed",
+   "spec": [
+    "having=sum>=1e10"
+   ],
+   "ours": {
+    "median_us": 0.9610000000000001,
+    "p95_us": 0.972,
+    "serialize_us": 1.7930000000000001,
+    "runs_us": [
+     0.9520000000000001,
+     0.9610000000000001,
+     0.971
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 3,
+   "controls": {
+    "duckdb_mv": {
+     "median": 0.4239932168275118,
+     "p95": 0.4450189881026745,
+     "min": 0.4124320112168789,
+     "max": 0.5123871378600597,
+     "n": 100
+    },
+    "duckdb_scan": {
+     "median": 533.7288500741124,
+     "p95": 539.2717649228871,
+     "min": 531.5833152271807,
+     "max": 544.0484597347677,
+     "n": 30
+    }
+   },
+   "baseline_name": "duckdb_mv",
+   "baseline_median_ms": 0.4239932168275118,
+   "baseline_p95_ms": 0.4450189881026745,
+   "S": 441.20001751041804,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc GROUP BY 1 HAVING SUM(fare_cents) >= 1e10) AS q"
+  },
+  "A20": {
+   "id": "A20",
+   "group": "A",
+   "desc": "HAVING count >= 1e6",
+   "structure": "ECUBE03 (cube)",
+   "kind": "fixed",
+   "spec": [
+    "having=count>=1e6"
+   ],
+   "ours": {
+    "median_us": 0.9610000000000001,
+    "p95_us": 0.992,
+    "serialize_us": 1.9629999999999999,
+    "runs_us": [
+     0.9520000000000001,
+     0.9610000000000001,
+     0.971
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 6,
+   "controls": {
+    "duckdb_mv": {
+     "median": 0.423637917265296,
+     "p95": 0.44792285189032555,
+     "min": 0.41300198063254356,
+     "max": 0.5476279184222221,
+     "n": 100
+    },
+    "duckdb_scan": {
+     "median": 471.20217187330127,
+     "p95": 485.5915429070592,
+     "min": 469.73800798878074,
+     "max": 488.89384092763066,
+     "n": 30
+    }
+   },
+   "baseline_name": "duckdb_mv",
+   "baseline_median_ms": 0.423637917265296,
+   "baseline_p95_ms": 0.44792285189032555,
+   "S": 440.83029892330484,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc GROUP BY 1 HAVING COUNT(*) >= 1e6) AS q"
+  },
+  "A21": {
+   "id": "A21",
+   "group": "A",
+   "desc": "HAVING max >= 1e6",
+   "structure": "ECUBE03 (cube)",
+   "kind": "fixed",
+   "spec": [
+    "having=max>=1e6"
+   ],
+   "ours": {
+    "median_us": 0.9610000000000001,
+    "p95_us": 0.971,
+    "serialize_us": 1.9729999999999999,
+    "runs_us": [
+     0.9610000000000001,
+     0.9610000000000001,
+     0.9810000000000001
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 4,
+   "controls": {
+    "duckdb_mv": {
+     "median": 0.4208735190331936,
+     "p95": 0.44682109728455544,
+     "min": 0.412612222135067,
+     "max": 0.47713611274957657,
+     "n": 100
+    },
+    "duckdb_scan": {
+     "median": 565.2982553001493,
+     "p95": 570.3208991326392,
+     "min": 563.2144999690354,
+     "max": 575.4860541783273,
+     "n": 30
+    }
+   },
+   "baseline_name": "duckdb_mv",
+   "baseline_median_ms": 0.4208735190331936,
+   "baseline_p95_ms": 0.44682109728455544,
+   "S": 437.9537138742909,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc GROUP BY 1 HAVING MAX(fare_cents) >= 1e6) AS q"
+  },
+  "A22": {
+   "id": "A22",
+   "group": "A",
+   "desc": "HAVING min >= -100000",
+   "structure": "ECUBE03 (cube)",
+   "kind": "fixed",
+   "spec": [
+    "having=min>=-100000"
+   ],
+   "ours": {
+    "median_us": 0.962,
+    "p95_us": 0.972,
+    "serialize_us": 2.154,
+    "runs_us": [
+     0.9610000000000001,
+     0.962,
+     0.971
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 9,
+   "controls": {
+    "duckdb_mv": {
+     "median": 0.41301664896309376,
+     "p95": 0.4365858621895313,
+     "min": 0.4021748900413513,
+     "max": 0.47537311911582947,
+     "n": 100
+    },
+    "duckdb_scan": {
+     "median": 564.1781319864094,
+     "p95": 565.6695910729468,
+     "min": 563.1812796927989,
+     "max": 565.6980448402464,
+     "n": 30
+    }
+   },
+   "baseline_name": "duckdb_mv",
+   "baseline_median_ms": 0.41301664896309376,
+   "baseline_p95_ms": 0.4365858621895313,
+   "S": 429.3312359283719,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc GROUP BY 1 HAVING MIN(fare_cents) >= -100000) AS q"
+  },
+  "A23": {
+   "id": "A23",
+   "group": "A",
+   "desc": "empty range (lo > hi)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "range=100,50"
+   ],
+   "ours": {
+    "median_us": 0.08,
+    "p95_us": 0.081,
+    "serialize_us": 0.08,
+    "runs_us": [
+     0.06999999999999999,
+     0.08,
+     0.08
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 0,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/nyc100.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/vidx_A23.json range=100,50",
+   "controls": {
+    "duckdb_scan": {
+     "median": 0.5210686940699816,
+     "p95": 0.5496200174093246,
+     "min": 0.512195285409689,
+     "max": 0.550681259483099,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.18125,
+     "p95": 0.1929,
+     "min": 0.1734,
+     "max": 0.2534,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.18125,
+   "baseline_p95_ms": 0.1929,
+   "S": 2265.625,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents BETWEEN 100 AND 50 GROUP BY 1) AS q"
+  },
+  "A24": {
+   "id": "A24",
+   "group": "A",
+   "desc": "full i32 range",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "range=-2147483648,2147483647"
+   ],
+   "ours": {
+    "median_us": 0.9810000000000001,
+    "p95_us": 0.982,
+    "serialize_us": 1.502,
+    "runs_us": [
+     0.9810000000000001,
+     0.9810000000000001,
+     1.101
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 11,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/nyc100.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/vidx_A24.json range=-2147483648,2147483647",
+   "controls": {
+    "duckdb_scan": {
+     "median": 328.9239399600774,
+     "p95": 331.17891009896994,
+     "min": 327.00572395697236,
+     "max": 331.19408087804914,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.3675,
+     "p95": 0.893,
+     "min": 0.3484,
+     "max": 1.0383,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.3675,
+   "baseline_p95_ms": 0.893,
+   "S": 374.6177370030581,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents BETWEEN -2147483648 AND 2147483647 GROUP BY 1) AS q"
+  },
+  "A25": {
+   "id": "A25",
+   "group": "A",
+   "desc": "single extreme value",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "range=-226119,-226119"
+   ],
+   "ours": {
+    "median_us": 0.11,
+    "p95_us": 0.121,
+    "serialize_us": 0.16,
+    "runs_us": [
+     0.11,
+     0.11,
+     0.11
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 1,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/nyc100.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/tiers/build/vidx_A25.json range=-226119,-226119",
+   "controls": {
+    "duckdb_scan": {
+     "median": 0.8615334518253803,
+     "p95": 0.8894139900803566,
+     "min": 0.8457908406853676,
+     "max": 0.8993376977741718,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.1953,
+     "p95": 0.2076,
+     "min": 0.1885,
+     "max": 0.2804,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.1953,
+   "baseline_p95_ms": 0.2076,
+   "S": 1775.4545454545455,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents = -226119 GROUP BY 1) AS q"
+  },
+  "B01": {
+   "id": "B01",
+   "group": "B",
+   "desc": "tpch2:broad",
+   "structure": "MEC02",
+   "kind": "range",
+   "params": {
+    "v0": 0,
+    "v1": 2000000,
+    "a0": 0,
+    "a1": 100,
+    "b0": 1,
+    "b1": 50
+   },
+   "ours": {
+    "median_us": 37.024,
+    "p95_us": 37.344,
+    "sc_median_us": 29.863,
+    "reps": 200
+   },
+   "exact": true,
+   "duckdb_rows": 3,
+   "bitplane_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/multibits query ../../work/tiers/build/tpch2_mb.bin ../../work/tiers/build/bp_B01.json 0 2000000 0 100 1 50",
+   "sorted_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_eai_multi_20261101/sorted_index query ../../work/tiers/build/tpch2_ridx.bin ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/g.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/v.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c1.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c2.i64 ../../work/tiers/build/sidx_B01.json 0 2000000 0 100 1 50",
+   "controls": {
+    "duckdb_scan_sc": {
+     "median": 31.99202474206686,
+     "p95": 32.338754273951054,
+     "min": 31.816011760383844,
+     "max": 34.89979216828942,
+     "n": 100
+    },
+    "bitplane": {
+     "median": 11.085999999999999,
+     "p95": 20.914,
+     "min": 10.818,
+     "max": 24.535,
+     "n": 40
+    },
+    "sorted_index": {
+     "median": 68.1035,
+     "p95": 69.8834,
+     "min": 67.9194,
+     "max": 69.8834,
+     "n": 20
+    }
+   },
+   "baseline_name": "bitplane",
+   "baseline_median_ms": 11.085999999999999,
+   "baseline_p95_ms": 20.914,
+   "S": 299.42739844425233,
+   "S_sc": 371.22861065532595
+  },
+  "B02": {
+   "id": "B02",
+   "group": "B",
+   "desc": "tpch2:selective",
+   "structure": "MEC02",
+   "kind": "range",
+   "params": {
+    "v0": 1000000,
+    "v1": 2000000,
+    "a0": 0,
+    "a1": 5,
+    "b0": 1,
+    "b1": 20
+   },
+   "ours": {
+    "median_us": 29.703,
+    "p95_us": 29.923,
+    "sc_median_us": 27.851,
+    "reps": 200
+   },
+   "exact": true,
+   "duckdb_rows": 3,
+   "bitplane_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/multibits query ../../work/tiers/build/tpch2_mb.bin ../../work/tiers/build/bp_B02.json 1000000 2000000 0 5 1 20",
+   "sorted_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_eai_multi_20261101/sorted_index query ../../work/tiers/build/tpch2_ridx.bin ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/g.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/v.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c1.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c2.i64 ../../work/tiers/build/sidx_B02.json 1000000 2000000 0 5 1 20",
+   "controls": {
+    "duckdb_scan_sc": {
+     "median": 47.61893698014319,
+     "p95": 48.38140960782766,
+     "min": 46.44444910809398,
+     "max": 49.1352928802371,
+     "n": 100
+    },
+    "bitplane": {
+     "median": 16.69,
+     "p95": 26.175,
+     "min": 16.547,
+     "max": 36.753,
+     "n": 40
+    },
+    "sorted_index": {
+     "median": 40.92485,
+     "p95": 42.6145,
+     "min": 40.7799,
+     "max": 42.6145,
+     "n": 20
+    }
+   },
+   "baseline_name": "bitplane",
+   "baseline_median_ms": 16.69,
+   "baseline_p95_ms": 26.175,
+   "S": 561.8961047705619,
+   "S_sc": 599.260349718143
+  },
+  "B03": {
+   "id": "B03",
+   "group": "B",
+   "desc": "tpch2:empty",
+   "structure": "MEC02",
+   "kind": "range",
+   "params": {
+    "v0": 5000000,
+    "v1": 6000000,
+    "a0": 0,
+    "a1": 1,
+    "b0": 1,
+    "b1": 10
+   },
+   "ours": {
+    "median_us": 0.891,
+    "p95_us": 0.892,
+    "sc_median_us": 0.561,
+    "reps": 200
+   },
+   "exact": true,
+   "duckdb_rows": 0,
+   "bitplane_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/multibits query ../../work/tiers/build/tpch2_mb.bin ../../work/tiers/build/bp_B03.json 5000000 6000000 0 1 1 10",
+   "sorted_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_eai_multi_20261101/sorted_index query ../../work/tiers/build/tpch2_ridx.bin ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/g.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/v.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c1.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c2.i64 ../../work/tiers/build/sidx_B03.json 5000000 6000000 0 1 1 10",
+   "controls": {
+    "duckdb_scan_sc": {
+     "median": 23.706730222329497,
+     "p95": 28.65771623328328,
+     "min": 23.32543022930622,
+     "max": 28.809815645217896,
+     "n": 100
+    },
+    "bitplane": {
+     "median": 15.1815,
+     "p95": 24.022,
+     "min": 14.955,
+     "max": 34.594,
+     "n": 40
+    },
+    "sorted_index": {
+     "median": 13.6734,
+     "p95": 14.4153,
+     "min": 13.3802,
+     "max": 14.4153,
+     "n": 20
+    }
+   },
+   "baseline_name": "sorted_index",
+   "baseline_median_ms": 13.6734,
+   "baseline_p95_ms": 14.4153,
+   "S": 15346.127946127948,
+   "S_sc": 24373.26203208556
+  },
+  "B04": {
+   "id": "B04",
+   "group": "B",
+   "desc": "tpch2:all_full",
+   "structure": "MEC02",
+   "kind": "range",
+   "params": {
+    "v0": 0,
+    "v1": 20000000,
+    "a0": 0,
+    "a1": 100,
+    "b0": 1,
+    "b1": 50
+   },
+   "ours": {
+    "median_us": 17.496,
+    "p95_us": 17.566,
+    "sc_median_us": 6.39,
+    "reps": 200
+   },
+   "exact": true,
+   "duckdb_rows": 3,
+   "bitplane_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/multibits query ../../work/tiers/build/tpch2_mb.bin ../../work/tiers/build/bp_B04.json 0 20000000 0 100 1 50",
+   "sorted_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_eai_multi_20261101/sorted_index query ../../work/tiers/build/tpch2_ridx.bin ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/g.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/v.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c1.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c2.i64 ../../work/tiers/build/sidx_B04.json 0 20000000 0 100 1 50",
+   "controls": {
+    "duckdb_scan_sc": {
+     "median": 41.49913368746638,
+     "p95": 41.95059509947896,
+     "min": 41.40547337010503,
+     "max": 169.87703694030643,
+     "n": 100
+    },
+    "bitplane": {
+     "median": 8.284500000000001,
+     "p95": 17.33,
+     "min": 8.225,
+     "max": 19.273,
+     "n": 40
+    },
+    "sorted_index": {
+     "median": 68.30539999999999,
+     "p95": 70.6397,
+     "min": 68.1465,
+     "max": 70.6397,
+     "n": 20
+    }
+   },
+   "baseline_name": "bitplane",
+   "baseline_median_ms": 8.284500000000001,
+   "baseline_p95_ms": 17.33,
+   "S": 473.50823045267504,
+   "S_sc": 1296.478873239437
+  },
+  "B05": {
+   "id": "B05",
+   "group": "B",
+   "desc": "tpch2:price_top_decile",
+   "structure": "MEC02",
+   "kind": "range",
+   "params": {
+    "v0": 9000000,
+    "v1": 20000000,
+    "a0": 0,
+    "a1": 100,
+    "b0": 1,
+    "b1": 50
+   },
+   "ours": {
+    "median_us": 21.281,
+    "p95_us": 21.431,
+    "sc_median_us": 10.916,
+    "reps": 200
+   },
+   "exact": true,
+   "duckdb_rows": 3,
+   "bitplane_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/multibits query ../../work/tiers/build/tpch2_mb.bin ../../work/tiers/build/bp_B05.json 9000000 20000000 0 100 1 50",
+   "sorted_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_eai_multi_20261101/sorted_index query ../../work/tiers/build/tpch2_ridx.bin ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/g.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/v.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c1.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c2.i64 ../../work/tiers/build/sidx_B05.json 9000000 20000000 0 100 1 50",
+   "controls": {
+    "duckdb_scan_sc": {
+     "median": 19.453556975349784,
+     "p95": 19.721532240509987,
+     "min": 19.341619685292244,
+     "max": 20.062238443642855,
+     "n": 100
+    },
+    "bitplane": {
+     "median": 10.9505,
+     "p95": 21.115,
+     "min": 10.816,
+     "max": 24.534,
+     "n": 40
+    },
+    "sorted_index": {
+     "median": 52.81365,
+     "p95": 55.6742,
+     "min": 52.7273,
+     "max": 55.6742,
+     "n": 20
+    }
+   },
+   "baseline_name": "bitplane",
+   "baseline_median_ms": 10.9505,
+   "baseline_p95_ms": 21.115,
+   "S": 514.5669846341807,
+   "S_sc": 1003.1604983510443
+  },
+  "B06": {
+   "id": "B06",
+   "group": "B",
+   "desc": "tpch2:quant_narrow",
+   "structure": "MEC02",
+   "kind": "range",
+   "params": {
+    "v0": 0,
+    "v1": 20000000,
+    "a0": 0,
+    "a1": 100,
+    "b0": 20,
+    "b1": 30
+   },
+   "ours": {
+    "median_us": 15.532,
+    "p95_us": 15.593,
+    "sc_median_us": 1.642,
+    "reps": 200
+   },
+   "exact": true,
+   "duckdb_rows": 3,
+   "bitplane_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/multibits query ../../work/tiers/build/tpch2_mb.bin ../../work/tiers/build/bp_B06.json 0 20000000 0 100 20 30",
+   "sorted_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_eai_multi_20261101/sorted_index query ../../work/tiers/build/tpch2_ridx.bin ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/g.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/v.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c1.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c2.i64 ../../work/tiers/build/sidx_B06.json 0 20000000 0 100 20 30",
+   "controls": {
+    "duckdb_scan_sc": {
+     "median": 34.467516699805856,
+     "p95": 34.86178582534194,
+     "min": 34.28793093189597,
+     "max": 35.832797177135944,
+     "n": 100
+    },
+    "bitplane": {
+     "median": 10.3905,
+     "p95": 20.568,
+     "min": 10.312,
+     "max": 24.233,
+     "n": 40
+    },
+    "sorted_index": {
+     "median": 64.21209999999999,
+     "p95": 66.57,
+     "min": 63.9148,
+     "max": 66.57,
+     "n": 20
+    }
+   },
+   "baseline_name": "bitplane",
+   "baseline_median_ms": 10.3905,
+   "baseline_p95_ms": 20.568,
+   "S": 668.9737316507855,
+   "S_sc": 6327.95371498173
+  },
+  "B07": {
+   "id": "B07",
+   "group": "B",
+   "desc": "tpch2:needle",
+   "structure": "MEC02",
+   "kind": "range",
+   "params": {
+    "v0": 1000000,
+    "v1": 1001000,
+    "a0": 0,
+    "a1": 100,
+    "b0": 1,
+    "b1": 50
+   },
+   "ours": {
+    "median_us": 14.802,
+    "p95_us": 14.941,
+    "sc_median_us": 11.787,
+    "reps": 200
+   },
+   "exact": true,
+   "duckdb_rows": 3,
+   "bitplane_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/multibits query ../../work/tiers/build/tpch2_mb.bin ../../work/tiers/build/bp_B07.json 1000000 1001000 0 100 1 50",
+   "sorted_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_eai_multi_20261101/sorted_index query ../../work/tiers/build/tpch2_ridx.bin ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/g.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/v.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c1.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c2.i64 ../../work/tiers/build/sidx_B07.json 1000000 1001000 0 100 1 50",
+   "controls": {
+    "duckdb_scan_sc": {
+     "median": 20.287163089960814,
+     "p95": 20.52383217960596,
+     "min": 20.162736997008324,
+     "max": 21.109233144670725,
+     "n": 100
+    },
+    "bitplane": {
+     "median": 13.77,
+     "p95": 23.482,
+     "min": 13.532,
+     "max": 31.705,
+     "n": 40
+    },
+    "sorted_index": {
+     "median": 36.2968,
+     "p95": 38.1904,
+     "min": 36.1314,
+     "max": 38.1904,
+     "n": 20
+    }
+   },
+   "baseline_name": "bitplane",
+   "baseline_median_ms": 13.77,
+   "baseline_p95_ms": 23.482,
+   "S": 930.2796919335225,
+   "S_sc": 1168.236192415373
+  },
+  "B08": {
+   "id": "B08",
+   "group": "B",
+   "desc": "tpch2:mid_band",
+   "structure": "MEC02",
+   "kind": "range",
+   "params": {
+    "v0": 2000000,
+    "v1": 5000000,
+    "a0": 2,
+    "a1": 7,
+    "b0": 10,
+    "b1": 40
+   },
+   "ours": {
+    "median_us": 22.242,
+    "p95_us": 22.463,
+    "sc_median_us": 20.239,
+    "reps": 200
+   },
+   "exact": true,
+   "duckdb_rows": 3,
+   "bitplane_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/multibits query ../../work/tiers/build/tpch2_mb.bin ../../work/tiers/build/bp_B08.json 2000000 5000000 2 7 10 40",
+   "sorted_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_eai_multi_20261101/sorted_index query ../../work/tiers/build/tpch2_ridx.bin ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/g.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/v.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c1.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c2.i64 ../../work/tiers/build/sidx_B08.json 2000000 5000000 2 7 10 40",
+   "controls": {
+    "duckdb_scan_sc": {
+     "median": 60.30184146948159,
+     "p95": 61.862628906965256,
+     "min": 58.767142705619335,
+     "max": 63.48352087661624,
+     "n": 100
+    },
+    "bitplane": {
+     "median": 17.944499999999998,
+     "p95": 26.292,
+     "min": 17.79,
+     "max": 39.843,
+     "n": 40
+    },
+    "sorted_index": {
+     "median": 55.763450000000006,
+     "p95": 57.4126,
+     "min": 55.5909,
+     "max": 57.4126,
+     "n": 20
+    }
+   },
+   "baseline_name": "bitplane",
+   "baseline_median_ms": 17.944499999999998,
+   "baseline_p95_ms": 26.292,
+   "S": 806.784461828972,
+   "S_sc": 886.6297741983298
+  },
+  "B09": {
+   "id": "B09",
+   "group": "B",
+   "desc": "tpch2:disc_single",
+   "structure": "MEC02",
+   "kind": "range",
+   "params": {
+    "v0": 0,
+    "v1": 20000000,
+    "a0": 5,
+    "a1": 5,
+    "b0": 1,
+    "b1": 50
+   },
+   "ours": {
+    "median_us": 1.642,
+    "p95_us": 1.662,
+    "sc_median_us": 0.521,
+    "reps": 200
+   },
+   "exact": true,
+   "duckdb_rows": 3,
+   "bitplane_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/multibits query ../../work/tiers/build/tpch2_mb.bin ../../work/tiers/build/bp_B09.json 0 20000000 5 5 1 50",
+   "sorted_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_eai_multi_20261101/sorted_index query ../../work/tiers/build/tpch2_ridx.bin ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/g.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/v.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c1.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c2.i64 ../../work/tiers/build/sidx_B09.json 0 20000000 5 5 1 50",
+   "controls": {
+    "duckdb_scan_sc": {
+     "median": 26.441321475431323,
+     "p95": 26.728494092822075,
+     "min": 26.170553639531136,
+     "max": 53.533269092440605,
+     "n": 100
+    },
+    "bitplane": {
+     "median": 9.7855,
+     "p95": 18.777,
+     "min": 9.709,
+     "max": 22.866,
+     "n": 40
+    },
+    "sorted_index": {
+     "median": 53.93585,
+     "p95": 55.8367,
+     "min": 53.4094,
+     "max": 55.8367,
+     "n": 20
+    }
+   },
+   "baseline_name": "bitplane",
+   "baseline_median_ms": 9.7855,
+   "baseline_p95_ms": 18.777,
+   "S": 5959.500609013398,
+   "S_sc": 18782.14971209213
+  },
+  "B10": {
+   "id": "B10",
+   "group": "B",
+   "desc": "tpch2:disc_quant_tight",
+   "structure": "MEC02",
+   "kind": "range",
+   "params": {
+    "v0": 3000000,
+    "v1": 6000000,
+    "a0": 2,
+    "a1": 4,
+    "b0": 5,
+    "b1": 15
+   },
+   "ours": {
+    "median_us": 1.963,
+    "p95_us": 1.983,
+    "sc_median_us": 0.751,
+    "reps": 200
+   },
+   "exact": true,
+   "duckdb_rows": 3,
+   "bitplane_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/multibits query ../../work/tiers/build/tpch2_mb.bin ../../work/tiers/build/bp_B10.json 3000000 6000000 2 4 5 15",
+   "sorted_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_eai_multi_20261101/sorted_index query ../../work/tiers/build/tpch2_ridx.bin ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/g.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/v.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c1.i64 ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/eai_multi_20261101/datasets/tpch2/c2.i64 ../../work/tiers/build/sidx_B10.json 3000000 6000000 2 4 5 15",
+   "controls": {
+    "duckdb_scan_sc": {
+     "median": 34.29580107331276,
+     "p95": 36.21248621493578,
+     "min": 33.38293079286814,
+     "max": 40.43312789872289,
+     "n": 100
+    },
+    "bitplane": {
+     "median": 18.433999999999997,
+     "p95": 26.501,
+     "min": 18.288,
+     "max": 40.532,
+     "n": 40
+    },
+    "sorted_index": {
+     "median": 25.3417,
+     "p95": 27.0636,
+     "min": 25.161,
+     "max": 27.0636,
+     "n": 20
+    }
+   },
+   "baseline_name": "bitplane",
+   "baseline_median_ms": 18.433999999999997,
+   "baseline_p95_ms": 26.501,
+   "S": 9390.72847682119,
+   "S_sc": 24545.93874833555
+  },
+  "C100_p0.1": {
+   "id": "C100_p0.1",
+   "group": "C",
+   "desc": "G=100,000 v <= -7000",
+   "structure": "CLST01 (range scan; stats fast-path at p100)",
+   "kind": "range",
+   "params": {
+    "G": 100000,
+    "lo": -2147483648,
+    "hi": -7000,
+    "p": "p0.1"
+   },
+   "ours": {
+    "median_ms": 0.944503,
+    "p95_ms": 0.976189,
+    "runs_ms": [
+     0.943722,
+     0.944503,
+     0.947337
+    ],
+    "reps": 100,
+    "fast_path": 0,
+    "rows": 74157,
+    "selectivity": 0.00135137
+   },
+   "exact": true,
+   "duckdb_rows": 74157,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT g100000, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND -7000 GROUP BY 1) AS q",
+   "controls": {
+    "duckdb_scan": {
+     "median": 196.8644664157182,
+     "p95": 200.64827427268028,
+     "min": 195.49836870282888,
+     "max": 206.6286811605096,
+     "n": 100
+    }
+   },
+   "baseline_name": "duckdb_scan",
+   "baseline_median_ms": 196.8644664157182,
+   "baseline_p95_ms": 200.64827427268028,
+   "S": 208.43180637405936
+  },
+  "C100_p1": {
+   "id": "C100_p1",
+   "group": "C",
+   "desc": "G=100,000 v <= -720",
+   "structure": "CLST01 (range scan; stats fast-path at p100)",
+   "kind": "range",
+   "params": {
+    "G": 100000,
+    "lo": -2147483648,
+    "hi": -720,
+    "p": "p1"
+   },
+   "ours": {
+    "median_ms": 3.594702,
+    "p95_ms": 4.124352,
+    "runs_ms": [
+     3.567262,
+     3.594702,
+     3.632527
+    ],
+    "reps": 100,
+    "fast_path": 0,
+    "rows": 99997,
+    "selectivity": 0.010398
+   },
+   "exact": true,
+   "duckdb_rows": 99997,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT g100000, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND -720 GROUP BY 1) AS q",
+   "controls": {
+    "duckdb_scan": {
+     "median": 225.85247131064534,
+     "p95": 227.22041001543403,
+     "min": 224.48081010952592,
+     "max": 229.88154832273722,
+     "n": 100
+    }
+   },
+   "baseline_name": "duckdb_scan",
+   "baseline_median_ms": 225.85247131064534,
+   "baseline_p95_ms": 227.22041001543403,
+   "S": 62.829261315860215
+  },
+  "C100_p10": {
+   "id": "C100_p10",
+   "group": "C",
+   "desc": "G=100,000 v <= 650",
+   "structure": "CLST01 (range scan; stats fast-path at p100)",
+   "kind": "range",
+   "params": {
+    "G": 100000,
+    "lo": -2147483648,
+    "hi": 650,
+    "p": "p10"
+   },
+   "ours": {
+    "median_ms": 30.581764,
+    "p95_ms": 30.77264,
+    "runs_ms": [
+     30.359307,
+     30.581764,
+     30.59161
+    ],
+    "reps": 100,
+    "fast_path": 0,
+    "rows": 100000,
+    "selectivity": 0.11909232
+   },
+   "exact": true,
+   "duckdb_rows": 100000,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT g100000, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND 650 GROUP BY 1) AS q",
+   "controls": {
+    "duckdb_scan": {
+     "median": 328.0186562333256,
+     "p95": 332.04421773552895,
+     "min": 325.1209771260619,
+     "max": 333.2831971347332,
+     "n": 100
+    }
+   },
+   "baseline_name": "duckdb_scan",
+   "baseline_median_ms": 328.0186562333256,
+   "baseline_p95_ms": 332.04421773552895,
+   "S": 10.725956038158087
+  },
+  "C100_p50": {
+   "id": "C100_p50",
+   "group": "C",
+   "desc": "G=100,000 v <= 1350",
+   "structure": "CLST01 (range scan; stats fast-path at p100)",
+   "kind": "range",
+   "params": {
+    "G": 100000,
+    "lo": -2147483648,
+    "hi": 1350,
+    "p": "p50"
+   },
+   "ours": {
+    "median_ms": 142.736483,
+    "p95_ms": 143.351482,
+    "runs_ms": [
+     137.295754,
+     142.736483,
+     142.789968
+    ],
+    "reps": 100,
+    "fast_path": 0,
+    "rows": 100000,
+    "selectivity": 0.51039856
+   },
+   "exact": true,
+   "duckdb_rows": 100000,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT g100000, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND 1350 GROUP BY 1) AS q",
+   "controls": {
+    "duckdb_scan": {
+     "median": 686.1022294033319,
+     "p95": 698.4529849141836,
+     "min": 676.4761907979846,
+     "max": 699.3373110890388,
+     "n": 100
+    }
+   },
+   "baseline_name": "duckdb_scan",
+   "baseline_median_ms": 686.1022294033319,
+   "baseline_p95_ms": 698.4529849141836,
+   "S": 4.806775499739137
+  },
+  "C100_p100": {
+   "id": "C100_p100",
+   "group": "C",
+   "desc": "G=100,000 v <= 2147483647",
+   "structure": "CLST01 (range scan; stats fast-path at p100)",
+   "kind": "range",
+   "params": {
+    "G": 100000,
+    "lo": -2147483648,
+    "hi": 2147483647,
+    "p": "p100"
+   },
+   "ours": {
+    "median_ms": 0.26242,
+    "p95_ms": 0.274017,
+    "runs_ms": [
+     0.261969,
+     0.26242,
+     0.263702
+    ],
+    "reps": 100,
+    "fast_path": 1,
+    "rows": 100000,
+    "selectivity": 1.0
+   },
+   "exact": true,
+   "duckdb_rows": 100000,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT g100000, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND 2147483647 GROUP BY 1) AS q",
+   "duckdb_mv_sql": "SELECT COUNT(*) FROM (SELECT g,s,c,mn,mx FROM mv_g100000) AS q",
+   "controls": {
+    "duckdb_scan": {
+     "median": 961.7633493617177,
+     "p95": 970.1047488488257,
+     "min": 939.4835340790451,
+     "max": 998.5835580155253,
+     "n": 100
+    },
+    "duckdb_mv": {
+     "median": 0.32290187664330006,
+     "p95": 0.33893994987010956,
+     "min": 0.3163181245326996,
+     "max": 0.3685629926621914,
+     "n": 100
+    }
+   },
+   "baseline_name": "duckdb_mv",
+   "baseline_median_ms": 0.32290187664330006,
+   "baseline_p95_ms": 0.33893994987010956,
+   "S": 1.2304773898456676
+  },
+  "C1000_p0.1": {
+   "id": "C1000_p0.1",
+   "group": "C",
+   "desc": "G=1,000,000 v <= -7000",
+   "structure": "CLST01 (range scan; stats fast-path at p100)",
+   "kind": "range",
+   "params": {
+    "G": 1000000,
+    "lo": -2147483648,
+    "hi": -7000,
+    "p": "p0.1"
+   },
+   "ours": {
+    "median_ms": 0.888455,
+    "p95_ms": 0.913491,
+    "runs_ms": [
+     0.869348,
+     0.888455,
+     0.906611
+    ],
+    "reps": 100,
+    "fast_path": 0,
+    "rows": 126472,
+    "selectivity": 0.00135137
+   },
+   "exact": true,
+   "duckdb_rows": 126472,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT g1000000, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND -7000 GROUP BY 1) AS q",
+   "controls": {
+    "duckdb_scan": {
+     "median": 203.7638444453478,
+     "p95": 205.27619682252407,
+     "min": 202.48969085514545,
+     "max": 223.07213814929128,
+     "n": 100
+    }
+   },
+   "baseline_name": "duckdb_scan",
+   "baseline_median_ms": 203.7638444453478,
+   "baseline_p95_ms": 205.27619682252407,
+   "S": 229.34627465133045
+  },
+  "C1000_p1": {
+   "id": "C1000_p1",
+   "group": "C",
+   "desc": "G=1,000,000 v <= -720",
+   "structure": "CLST01 (range scan; stats fast-path at p100)",
+   "kind": "range",
+   "params": {
+    "G": 1000000,
+    "lo": -2147483648,
+    "hi": -720,
+    "p": "p1"
+   },
+   "ours": {
+    "median_ms": 14.59658,
+    "p95_ms": 14.72157,
+    "runs_ms": [
+     14.508461,
+     14.59658,
+     14.636345
+    ],
+    "reps": 100,
+    "fast_path": 0,
+    "rows": 646537,
+    "selectivity": 0.010398
+   },
+   "exact": true,
+   "duckdb_rows": 646537,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT g1000000, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND -720 GROUP BY 1) AS q",
+   "controls": {
+    "duckdb_scan": {
+     "median": 253.6993024405092,
+     "p95": 256.75720209255815,
+     "min": 251.87773816287518,
+     "max": 261.063473764807,
+     "n": 100
+    }
+   },
+   "baseline_name": "duckdb_scan",
+   "baseline_median_ms": 253.6993024405092,
+   "baseline_p95_ms": 256.75720209255815,
+   "S": 17.380735928588013
+  },
+  "C1000_p10": {
+   "id": "C1000_p10",
+   "group": "C",
+   "desc": "G=1,000,000 v <= 650",
+   "structure": "CLST01 (range scan; stats fast-path at p100)",
+   "kind": "range",
+   "params": {
+    "G": 1000000,
+    "lo": -2147483648,
+    "hi": 650,
+    "p": "p10"
+   },
+   "ours": {
+    "median_ms": 107.12979,
+    "p95_ms": 111.249838,
+    "runs_ms": [
+     106.844205,
+     107.12979,
+     110.765671
+    ],
+    "reps": 100,
+    "fast_path": 0,
+    "rows": 999995,
+    "selectivity": 0.11909232
+   },
+   "exact": true,
+   "duckdb_rows": 999995,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT g1000000, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND 650 GROUP BY 1) AS q",
+   "controls": {
+    "duckdb_scan": {
+     "median": 497.48835153877735,
+     "p95": 516.8168940581381,
+     "min": 483.7637608870864,
+     "max": 549.2284027859569,
+     "n": 100
+    }
+   },
+   "baseline_name": "duckdb_scan",
+   "baseline_median_ms": 497.48835153877735,
+   "baseline_p95_ms": 516.8168940581381,
+   "S": 4.643790971108758
+  },
+  "C1000_p50": {
+   "id": "C1000_p50",
+   "group": "C",
+   "desc": "G=1,000,000 v <= 1350",
+   "structure": "CLST01 (range scan; stats fast-path at p100)",
+   "kind": "range",
+   "params": {
+    "G": 1000000,
+    "lo": -2147483648,
+    "hi": 1350,
+    "p": "p50"
+   },
+   "ours": {
+    "median_ms": 408.254764,
+    "p95_ms": 418.380586,
+    "runs_ms": [
+     407.940719,
+     408.254764,
+     410.243367
+    ],
+    "reps": 100,
+    "fast_path": 0,
+    "rows": 1000000,
+    "selectivity": 0.51039856
+   },
+   "exact": true,
+   "duckdb_rows": 1000000,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT g1000000, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND 1350 GROUP BY 1) AS q",
+   "controls": {
+    "duckdb_scan": {
+     "median": 1223.5097610391676,
+     "p95": 1279.040731023997,
+     "min": 1192.9150721989572,
+     "max": 1380.0169229507446,
+     "n": 100
+    }
+   },
+   "baseline_name": "duckdb_scan",
+   "baseline_median_ms": 1223.5097610391676,
+   "baseline_p95_ms": 1279.040731023997,
+   "S": 2.9969270880061734
+  },
+  "C1000_p100": {
+   "id": "C1000_p100",
+   "group": "C",
+   "desc": "G=1,000,000 v <= 2147483647",
+   "structure": "CLST01 (range scan; stats fast-path at p100)",
+   "kind": "range",
+   "params": {
+    "G": 1000000,
+    "lo": -2147483648,
+    "hi": 2147483647,
+    "p": "p100"
+   },
+   "ours": {
+    "median_ms": 3.248114,
+    "p95_ms": 3.275804,
+    "runs_ms": [
+     3.234815,
+     3.248114,
+     3.249206
+    ],
+    "reps": 100,
+    "fast_path": 1,
+    "rows": 1000000,
+    "selectivity": 1.0
+   },
+   "exact": true,
+   "duckdb_rows": 1000000,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT g1000000, SUM(v), COUNT(*), MIN(v), MAX(v) FROM groups WHERE v BETWEEN -2147483648 AND 2147483647 GROUP BY 1) AS q",
+   "duckdb_mv_sql": "SELECT COUNT(*) FROM (SELECT g,s,c,mn,mx FROM mv_g1000000) AS q",
+   "controls": {
+    "duckdb_scan": {
+     "median": 1874.8988532461226,
+     "p95": 2003.8089817389846,
+     "min": 1764.1700557433069,
+     "max": 2086.497758049518,
+     "n": 100
+    },
+    "duckdb_mv": {
+     "median": 0.3293645568192005,
+     "p95": 0.365586020052433,
+     "min": 0.31800800934433937,
+     "max": 4.328536801040173,
+     "n": 100
+    }
+   },
+   "baseline_name": "duckdb_mv",
+   "baseline_median_ms": 0.3293645568192005,
+   "baseline_p95_ms": 0.365586020052433,
+   "S": 0.10140178479548455
+  },
+  "D01": {
+   "id": "D01",
+   "group": "D",
+   "desc": "original IG2 SQL (NOT IN DC)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "fixed",
+   "spec": [
+    "where_not_in=District of Columbia"
+   ],
+   "ours": {
+    "median_us": 3.114,
+    "p95_us": 3.184,
+    "serialize_us": 5.146999999999999,
+    "runs_us": [
+     3.064,
+     3.114,
+     3.154
+    ],
+    "reps": 2000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 47,
+   "controls": {
+    "duckdb_mv": {
+     "median": 0.4033211153000593,
+     "p95": 0.42081577703356743,
+     "min": 0.396891962736845,
+     "max": 0.461044255644083,
+     "n": 100
+    },
+    "duckdb_scan": {
+     "median": 2.127260435372591,
+     "p95": 2.143948804587126,
+     "min": 2.1098600700497627,
+     "max": 2.1699671633541584,
+     "n": 30
+    }
+   },
+   "baseline_name": "duckdb_mv",
+   "baseline_median_ms": 0.4033211153000593,
+   "baseline_p95_ms": 0.42081577703356743,
+   "S": 129.5186625883299,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT g, CAST(SUM(v) AS BIGINT), COUNT(*), MIN(v), MAX(v) FROM t WHERE g NOT IN ('District of Columbia') GROUP BY 1) AS q"
+  },
+  "D02": {
+   "id": "D02",
+   "group": "D",
+   "desc": "fixed all 48 groups",
+   "structure": "ECUBE03 (cube)",
+   "kind": "fixed",
+   "spec": [],
+   "ours": {
+    "median_us": 3.155,
+    "p95_us": 3.194,
+    "serialize_us": 5.267,
+    "runs_us": [
+     3.144,
+     3.155,
+     3.195
+    ],
+    "reps": 2000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 48,
+   "controls": {
+    "duckdb_mv": {
+     "median": 0.3201467916369438,
+     "p95": 0.3417930565774441,
+     "min": 0.3130221739411354,
+     "max": 0.7520229555666447,
+     "n": 100
+    },
+    "duckdb_scan": {
+     "median": 2.5064670480787754,
+     "p95": 2.52749165520072,
+     "min": 1.9280090928077698,
+     "max": 2.5305668823421,
+     "n": 30
+    }
+   },
+   "baseline_name": "duckdb_mv",
+   "baseline_median_ms": 0.3201467916369438,
+   "baseline_p95_ms": 0.3417930565774441,
+   "S": 101.47283411630549,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT g, CAST(SUM(v) AS BIGINT), COUNT(*), MIN(v), MAX(v) FROM t GROUP BY 1) AS q"
+  },
+  "D03": {
+   "id": "D03",
+   "group": "D",
+   "desc": "v <= 98 (p10)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "hi=98"
+   ],
+   "ours": {
+    "median_us": 3.595,
+    "p95_us": 3.625,
+    "serialize_us": 5.146999999999999,
+    "runs_us": [
+     3.5149999999999997,
+     3.595,
+     3.745
+    ],
+    "reps": 2000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 44,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/ig2_65k.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/ig2_prep_20261025/prepared/Observed/state.dict ../../work/tiers/build/vidx_D03.json range=-2147483648,98",
+   "controls": {
+    "duckdb_scan": {
+     "median": 0.8787554688751698,
+     "p95": 0.9131957776844501,
+     "min": 0.867379829287529,
+     "max": 0.9404360316693783,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.0173,
+     "p95": 0.0191,
+     "min": 0.0165,
+     "max": 0.0315,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.0173,
+   "baseline_p95_ms": 0.0191,
+   "S": 4.812239221140473,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT g, CAST(SUM(v) AS BIGINT), COUNT(*), MIN(v), MAX(v) FROM t WHERE v <= 98 GROUP BY 1) AS q"
+  },
+  "D04": {
+   "id": "D04",
+   "group": "D",
+   "desc": "v <= 1109 (p50)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "range",
+   "spec": [
+    "hi=1109"
+   ],
+   "ours": {
+    "median_us": 3.245,
+    "p95_us": 3.294,
+    "serialize_us": 5.047000000000001,
+    "runs_us": [
+     3.2239999999999998,
+     3.245,
+     3.4949999999999997
+    ],
+    "reps": 2000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 46,
+   "value_index_cmd": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_encoded_ops_20261030/value_index_v2 ../../work/tiers/build/ig2_65k.vidx ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/ig2_prep_20261025/prepared/Observed/state.dict ../../work/tiers/build/vidx_D04.json range=-2147483648,1109",
+   "controls": {
+    "duckdb_scan": {
+     "median": 1.4677601866424084,
+     "p95": 1.5116683207452297,
+     "min": 1.441718079149723,
+     "max": 1.5410296618938446,
+     "n": 30
+    },
+    "value_index": {
+     "median": 0.0188,
+     "p95": 0.0203,
+     "min": 0.018,
+     "max": 0.0345,
+     "n": 100
+    }
+   },
+   "baseline_name": "value_index",
+   "baseline_median_ms": 0.0188,
+   "baseline_p95_ms": 0.0203,
+   "S": 5.793528505392913,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT g, CAST(SUM(v) AS BIGINT), COUNT(*), MIN(v), MAX(v) FROM t WHERE v <= 1109 GROUP BY 1) AS q"
+  },
+  "D05": {
+   "id": "D05",
+   "group": "D",
+   "desc": "g IN (Alabama, Alaska)",
+   "structure": "ECUBE03 (cube)",
+   "kind": "fixed",
+   "spec": [
+    "where_in=Alabama,Alaska"
+   ],
+   "ours": {
+    "median_us": 0.32,
+    "p95_us": 0.321,
+    "serialize_us": 0.41100000000000003,
+    "runs_us": [
+     0.32,
+     0.32,
+     0.321
+    ],
+    "reps": 2000,
+    "runs": 3
+   },
+   "exact": true,
+   "duckdb_rows": 2,
+   "controls": {
+    "duckdb_mv": {
+     "median": 0.4659709520637989,
+     "p95": 0.5898899398744106,
+     "min": 0.43376488611102104,
+     "max": 0.6925268098711967,
+     "n": 100
+    },
+    "duckdb_scan": {
+     "median": 1.8001638818532228,
+     "p95": 1.8227063119411469,
+     "min": 1.3027172535657883,
+     "max": 1.8604407086968422,
+     "n": 30
+    }
+   },
+   "baseline_name": "duckdb_mv",
+   "baseline_median_ms": 0.4659709520637989,
+   "baseline_p95_ms": 0.5898899398744106,
+   "S": 1456.1592251993716,
+   "duckdb_engine_sql": "SELECT COUNT(*) FROM (SELECT g, CAST(SUM(v) AS BIGINT), COUNT(*), MIN(v), MAX(v) FROM t WHERE g IN ('Alabama','Alaska') GROUP BY 1) AS q"
+  }
+ },
+ "builds": {
+  "nyc100_ecube03": null,
+  "ig2_65k_ecube03": null,
+  "nyc100_value_index": null,
+  "ig2_65k_value_index": null
+ },
+ "value_index_bytes": 372874396,
+ "mv_build_ms": 604.3895832262933,
+ "mv_build_ms_C": {
+  "100000": 1880.9988740831614,
+  "1000000": 4363.564787898213
+ },
+ "summary": {
+  "n_queries": 50,
+  "n_exact": 50,
+  "frac_S_ge_1": 0.98,
+  "frac_S_ge_2": 0.96,
+  "frac_S_ge_3": 0.94,
+  "frac_S_ge_10": 0.86,
+  "median_S": 439.3920063987979,
+  "geomean_S": 242.5131487208147,
+  "min_S": 0.10140178479548455,
+  "max_S": 15346.127946127948,
+  "by_group": {
+   "A": {
+    "n": 25,
+    "median_S": 460.8303249097472,
+    "frac_ge_3": 1.0,
+    "frac_ge_10": 1.0
+   },
+   "B": {
+    "n": 10,
+    "median_S": 737.8790967398787,
+    "frac_ge_3": 1.0,
+    "frac_ge_10": 1.0
+   },
+   "C": {
+    "n": 10,
+    "median_S": 7.766365768948612,
+    "frac_ge_3": 0.7,
+    "frac_ge_10": 0.5
+   },
+   "D": {
+    "n": 5,
+    "median_S": 101.47283411630549,
+    "frac_ge_3": 1.0,
+    "frac_ge_10": 0.6
+   }
+  },
+  "baseline_names_used": {
+   "sorted_index": 1,
+   "bitplane": 9,
+   "duckdb_scan": 8,
+   "duckdb_mv": 15,
+   "value_index": 17
+  },
+  "metric_J_pass": true,
+  "wall_s": 1296.218060016632
+ },
+ "commands": {
+  "pin_subprocesses": "nice -n 5 taskset -c 96",
+  "pin_driver": "nice -n 5 taskset -c 97",
+  "build_nyc100_cube3": "work/local build_enc results/nyc_taxi_100m_prep/Observed.encoded results/nyc_taxi_100m_prep/Observed 17 13 work/local",
+  "build_ig2_65k_cube3": "work/local build_enc results/ig2_prep_20261025/Observed.encoded results/ig2_prep_20261025/prepared/Observed 17 13 work/local",
+  "ours_A_D": "work/local bench <cube> <state.dict> /dev/null 1000 <spec>  (query mode: work/local query <cube> <state.dict> <out.json> <spec>)",
+  "ours_B": "src_eai_multi_20261101/mec bench work/local 200 results/eai_multi_20261101/datasets/tpch2/cases.txt",
+  "ours_C": "../../work/clustered/bin/clst_tool query ../../work/clustered/build/clst_g<G>_stats.clst -2147483648 <cut> <out.json> /dev/null 100",
+  "control_duckdb_scan": "duckdb.connect(config={'threads': 1}); SELECT COUNT(*) FROM (<same aggregation with WHERE>)  # 100 reps, warm",
+  "control_duckdb_mv": "duckdb.connect(config={'threads': 1}); CREATE TEMP TABLE mv AS SELECT <g>,SUM(v),COUNT(*),MIN(v),MAX(v) FROM <table> GROUP BY 1; SELECT COUNT(*) FROM (SELECT <cols> FROM mv [WHERE ...])  # 100 reps",
+  "control_value_index": "src_encoded_ops_20261030/value_index_v2 work/local results/nyc_taxi_100m_prep/Observed/state.dict <out.json> range=<lo>,<hi>   # 100 launches, stderr query_ms",
+  "control_bitplane": "src_encoded_ops_20261030/multibits query work/local <out.json> <vlo> <vhi> <a_lo> <a_hi> <b_lo> <b_hi>   # 40 launches, stderr query_ms",
+  "control_sorted_index": "src_eai_multi_20261101/sorted_index query work/local results/eai_multi_20261101/datasets/tpch2/{g,v,c1,c2}.i64 <out.json> <vlo> <vhi> <a_lo> <a_hi> <b_lo> <b_hi>   # 20 launches, stderr query_ms"
+ }
+}

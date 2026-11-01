@@ -1,0 +1,3160 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "profile": "food1",
+      "case": "Observed",
+      "rows": 65536,
+      "binding": "40a6eeb5d643197d68798b96f03894604400a7a0",
+      "original_projected_columns": [
+        3
+      ],
+      "full_schema_columns": 6,
+      "projected_source_types": [
+        "varchar(40)"
+      ],
+      "projected_nullable": [
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "d32878f9ac9f2a5f253d026fcd454838f607be39aaa971cbbff103f038fb3267",
+      "original_sql_sha256": "f5498a40629db32bc39027c60f712cbfbd3c09074fad0b958081747b5d38d85a",
+      "source_rows_sha256": "1b9065b0e376f99732b2a8947950172f49ff81cc8452d409da681d72d88a244f",
+      "source_csv": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/input_round3/Food_1.csv",
+      "source_csv_sha256": "c04892ea46c7ed1fbf09f1700d9152023deb110bfb47090c5cabfe370ee8e513",
+      "observed_original_query": true,
+      "dictionaries": [
+        {
+          "column": 3,
+          "cardinality": 181,
+          "bytes": 1599,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": true,
+      "sum_literal_one": false,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "device",
+          "type": "VARCHAR"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 567,
+          "sha256": "994c96f82ff073a87c06c412632c22ef0ebfe9c125c687cfdefcbe9addbcc5ab",
+          "git_sha1": "8b46ae3f84ae1b2916a970c69102b0a4ee33af9a"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "8a563618c61c5399c2da2a0025ac4644059e0f5aadbde7ed4741543f101d9570",
+          "git_sha1": "d9d9f5df0fcc90134e2554d803af60a2b530ee7b"
+        },
+        "col3.biased.u32": {
+          "bytes": 262144,
+          "sha256": "af8681f8bab16bff923743802a64dd23981b7cbae2bd659c01216ee1c8bbdb02",
+          "git_sha1": "d6517ba896c5add2b9a4d5a700c39b0c8ecaefdb"
+        },
+        "col3.dict": {
+          "bytes": 1599,
+          "sha256": "52a8f072e2ab9d308873a7408d91a998fcf297993f064a65998d9179c9d2f65a",
+          "git_sha1": "df5072a5281fdcd587855d8eb98bc772fb16b83d"
+        },
+        "col3.u32": {
+          "bytes": 262144,
+          "sha256": "af8681f8bab16bff923743802a64dd23981b7cbae2bd659c01216ee1c8bbdb02",
+          "git_sha1": "d6517ba896c5add2b9a4d5a700c39b0c8ecaefdb"
+        },
+        "col3.valid.bitmap": {
+          "bytes": 8192,
+          "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f",
+          "git_sha1": "b4033a70859495e76028b6ef104256ff854ea609"
+        },
+        "columns.tsv": {
+          "bytes": 15,
+          "sha256": "ee60f413f6bd5b8d375ac34fa0fcec2053cb7a7addc98025167c4c997187e59d",
+          "git_sha1": "df75c495517a6a25a82864c1bc3ae36cff0dc7a4"
+        },
+        "oracle.bitmap": {
+          "bytes": 8192,
+          "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f",
+          "git_sha1": "b4033a70859495e76028b6ef104256ff854ea609"
+        },
+        "oracle.json": {
+          "bytes": 4904,
+          "sha256": "0f76c17c97c490b14d7cef78f7036c9efc9052726735664fb4841229fbbeec0d",
+          "git_sha1": "7bab3b161c5f22a442357647ddd567a6e2bf05ae"
+        },
+        "profile.txt": {
+          "bytes": 6,
+          "sha256": "bd0528c40e243a7d3474b308376309a48d1476254f09b245f62ddfd82a0ad38e",
+          "git_sha1": "c3a1a465427a55a5bb6d17693abc309f7e82c5d8"
+        },
+        "query.sql": {
+          "bytes": 102,
+          "sha256": "f5498a40629db32bc39027c60f712cbfbd3c09074fad0b958081747b5d38d85a",
+          "git_sha1": "b1ee84b12412e29a3a108561860df5d2d6964bfd"
+        },
+        "schema.sql": {
+          "bytes": 238,
+          "sha256": "d32878f9ac9f2a5f253d026fcd454838f607be39aaa971cbbff103f038fb3267",
+          "git_sha1": "680acf5b8572a69aaee7787cb57b30530e5197df"
+        },
+        "source_rows.jsonl": {
+          "bytes": 2544978,
+          "sha256": "1b9065b0e376f99732b2a8947950172f49ff81cc8452d409da681d72d88a244f",
+          "git_sha1": "3e4523f838dd849bc67fa34ae49bde8b069ee299"
+        }
+      }
+    },
+    {
+      "profile": "food1",
+      "case": "MixedTail",
+      "rows": 1031,
+      "binding": "02e8ef91264a9c492a4ce53f9764704bbbea938e",
+      "original_projected_columns": [
+        3
+      ],
+      "full_schema_columns": 6,
+      "projected_source_types": [
+        "varchar(40)"
+      ],
+      "projected_nullable": [
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "d32878f9ac9f2a5f253d026fcd454838f607be39aaa971cbbff103f038fb3267",
+      "original_sql_sha256": "f5498a40629db32bc39027c60f712cbfbd3c09074fad0b958081747b5d38d85a",
+      "source_rows_sha256": "2e7f1c5b4207171c91669ed584f19340e739a17308353cc90bfde3613afe3a8d",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 3,
+          "cardinality": 11,
+          "bytes": 120,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": true,
+      "sum_literal_one": false,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "device",
+          "type": "VARCHAR"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 563,
+          "sha256": "04f5f7082c7cfb12d97d9618743e0ffa819eeee4bd97f5ac05cedb9e9ac02384",
+          "git_sha1": "630e33533d9a1b99bac5ead5bc52ccd32fb8f8e1"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "96d7df45d995fc868e865a729924608633fccdd52daa931009147ef7990c4b86",
+          "git_sha1": "1d9331ab35b1ca2c6d901d52608fd9c2c745734f"
+        },
+        "col3.biased.u32": {
+          "bytes": 4124,
+          "sha256": "a20d5ec046f5dd5405fbde6b457dcc5606dc0a39afc4e99e655a9e271467353b",
+          "git_sha1": "64c10dd82ad15400e1dd0e7858a7f65d22709466"
+        },
+        "col3.dict": {
+          "bytes": 120,
+          "sha256": "bfe9a9c283c9e4aeb58e3b4680978972ce4d3d2204744edfdf182637305a5689",
+          "git_sha1": "74b4523652abd05d4e0cb210418927dbaf88e57b"
+        },
+        "col3.u32": {
+          "bytes": 4124,
+          "sha256": "a20d5ec046f5dd5405fbde6b457dcc5606dc0a39afc4e99e655a9e271467353b",
+          "git_sha1": "64c10dd82ad15400e1dd0e7858a7f65d22709466"
+        },
+        "col3.valid.bitmap": {
+          "bytes": 136,
+          "sha256": "8dc5db3a98afcb5be11f03999e02052ab78681e0dd0b3b1ab52aa5463c3414a4",
+          "git_sha1": "da8867dd5a508d06b0f4b2cab460f29036c5656d"
+        },
+        "columns.tsv": {
+          "bytes": 14,
+          "sha256": "e19578ca3763b72fb791f55b4ad515803cd75c5df3f584ad5d19af0adfcb7b16",
+          "git_sha1": "48c4ebc580e30c2715f1439032d6fdb9eb07ff23"
+        },
+        "oracle.bitmap": {
+          "bytes": 136,
+          "sha256": "8dc5db3a98afcb5be11f03999e02052ab78681e0dd0b3b1ab52aa5463c3414a4",
+          "git_sha1": "da8867dd5a508d06b0f4b2cab460f29036c5656d"
+        },
+        "oracle.json": {
+          "bytes": 368,
+          "sha256": "4dab2b4738cace2a2f39b0feec9195a7e0c482ff024513012080d4ff4683e6d8",
+          "git_sha1": "c47fb92c3e314e51e6d344d7286921fa71a8c36c"
+        },
+        "profile.txt": {
+          "bytes": 6,
+          "sha256": "bd0528c40e243a7d3474b308376309a48d1476254f09b245f62ddfd82a0ad38e",
+          "git_sha1": "c3a1a465427a55a5bb6d17693abc309f7e82c5d8"
+        },
+        "query.sql": {
+          "bytes": 102,
+          "sha256": "f5498a40629db32bc39027c60f712cbfbd3c09074fad0b958081747b5d38d85a",
+          "git_sha1": "b1ee84b12412e29a3a108561860df5d2d6964bfd"
+        },
+        "schema.sql": {
+          "bytes": 238,
+          "sha256": "d32878f9ac9f2a5f253d026fcd454838f607be39aaa971cbbff103f038fb3267",
+          "git_sha1": "680acf5b8572a69aaee7787cb57b30530e5197df"
+        },
+        "source_rows.jsonl": {
+          "bytes": 31236,
+          "sha256": "2e7f1c5b4207171c91669ed584f19340e739a17308353cc90bfde3613afe3a8d",
+          "git_sha1": "02e8ef91264a9c492a4ce53f9764704bbbea938e"
+        }
+      }
+    },
+    {
+      "profile": "food1",
+      "case": "Endpoints",
+      "rows": 65,
+      "binding": "95655a4b3d20b2659188befe9de762358cfc142f",
+      "original_projected_columns": [
+        3
+      ],
+      "full_schema_columns": 6,
+      "projected_source_types": [
+        "varchar(40)"
+      ],
+      "projected_nullable": [
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "d32878f9ac9f2a5f253d026fcd454838f607be39aaa971cbbff103f038fb3267",
+      "original_sql_sha256": "f5498a40629db32bc39027c60f712cbfbd3c09074fad0b958081747b5d38d85a",
+      "source_rows_sha256": "16885c7492dd2e72407764e2a97ed0c6e565eb1ceb3c52d2d243f5c3bf6f7b10",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 3,
+          "cardinality": 11,
+          "bytes": 120,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": true,
+      "sum_literal_one": false,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "device",
+          "type": "VARCHAR"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 557,
+          "sha256": "55edde5e9b391f37993acaa5cba3d84ec3d5b962545206951b9eced4c5040227",
+          "git_sha1": "c8ba4a038abc61e282fa7df7881fb65a230c7c03"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "70bf8cd29f4ded21fb6c4e932a8b2ede797065ae311c99de5d141a74137dda2c",
+          "git_sha1": "30efb1acc0074ee4457ca99fad6c8664f1356eb4"
+        },
+        "col3.biased.u32": {
+          "bytes": 260,
+          "sha256": "ddc69776307d3f734b987f26ba9f171a6a44b993ab21bdd25cb18bba0154cfc2",
+          "git_sha1": "9bc4ef403f18fac93f0619f33b8bb07605760831"
+        },
+        "col3.dict": {
+          "bytes": 120,
+          "sha256": "7529632ff8b097197a6736776b72cce1da691ba8efebcad325336fa8c67f56cf",
+          "git_sha1": "0b0427825a293dea5b8596d0e56ba0b22bc31606"
+        },
+        "col3.u32": {
+          "bytes": 260,
+          "sha256": "ddc69776307d3f734b987f26ba9f171a6a44b993ab21bdd25cb18bba0154cfc2",
+          "git_sha1": "9bc4ef403f18fac93f0619f33b8bb07605760831"
+        },
+        "col3.valid.bitmap": {
+          "bytes": 16,
+          "sha256": "c9cb04ba987a95a535a8ba7d18b3815d0f04b47add63f2b18ed0a66f9a6d617a",
+          "git_sha1": "f153b932ec0eaa2a7b368686a0f04c8f976d5cba"
+        },
+        "columns.tsv": {
+          "bytes": 12,
+          "sha256": "a1c24ee515fba4eead42c1e96cc2ae36378115c14eca7367ba7bea22febe7cf9",
+          "git_sha1": "0b39e522b95d437f388e43d21d0bc5cb7278aaee"
+        },
+        "oracle.bitmap": {
+          "bytes": 16,
+          "sha256": "c9cb04ba987a95a535a8ba7d18b3815d0f04b47add63f2b18ed0a66f9a6d617a",
+          "git_sha1": "f153b932ec0eaa2a7b368686a0f04c8f976d5cba"
+        },
+        "oracle.json": {
+          "bytes": 368,
+          "sha256": "4dab2b4738cace2a2f39b0feec9195a7e0c482ff024513012080d4ff4683e6d8",
+          "git_sha1": "c47fb92c3e314e51e6d344d7286921fa71a8c36c"
+        },
+        "profile.txt": {
+          "bytes": 6,
+          "sha256": "bd0528c40e243a7d3474b308376309a48d1476254f09b245f62ddfd82a0ad38e",
+          "git_sha1": "c3a1a465427a55a5bb6d17693abc309f7e82c5d8"
+        },
+        "query.sql": {
+          "bytes": 102,
+          "sha256": "f5498a40629db32bc39027c60f712cbfbd3c09074fad0b958081747b5d38d85a",
+          "git_sha1": "b1ee84b12412e29a3a108561860df5d2d6964bfd"
+        },
+        "schema.sql": {
+          "bytes": 238,
+          "sha256": "d32878f9ac9f2a5f253d026fcd454838f607be39aaa971cbbff103f038fb3267",
+          "git_sha1": "680acf5b8572a69aaee7787cb57b30530e5197df"
+        },
+        "source_rows.jsonl": {
+          "bytes": 1930,
+          "sha256": "16885c7492dd2e72407764e2a97ed0c6e565eb1ceb3c52d2d243f5c3bf6f7b10",
+          "git_sha1": "95655a4b3d20b2659188befe9de762358cfc142f"
+        }
+      }
+    },
+    {
+      "profile": "food1",
+      "case": "Singleton",
+      "rows": 1,
+      "binding": "455751ac4a007b468d2573b0466184fa26b93347",
+      "original_projected_columns": [
+        3
+      ],
+      "full_schema_columns": 6,
+      "projected_source_types": [
+        "varchar(40)"
+      ],
+      "projected_nullable": [
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "d32878f9ac9f2a5f253d026fcd454838f607be39aaa971cbbff103f038fb3267",
+      "original_sql_sha256": "f5498a40629db32bc39027c60f712cbfbd3c09074fad0b958081747b5d38d85a",
+      "source_rows_sha256": "546c724e58dd5d0a81b4b02a6141eed85d20d288b0bab0a9e44b7102ea87d522",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 3,
+          "cardinality": 1,
+          "bytes": 58,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": true,
+      "sum_literal_one": false,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "device",
+          "type": "VARCHAR"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 553,
+          "sha256": "6b202590e169d728fc2d75541fae2ea271b32c9f7b71e01c8ef96cab054a0cf5",
+          "git_sha1": "284a47258bf396113c42a234cfeaab8dbd983326"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "7aa47d01383022e01eb3b480e32502dac23e517e7700a0e0d2a471cb0e7f5074",
+          "git_sha1": "eb057c2bdaaeaa92fe27cf050792f6fee376490e"
+        },
+        "col3.biased.u32": {
+          "bytes": 4,
+          "sha256": "6d58692645c9d1cfaf13541cbd258f86193ef63c2f1d38f6bbca9617372d7bd6",
+          "git_sha1": "68cbac134512379eff90debd6438aad9b6a03f91"
+        },
+        "col3.dict": {
+          "bytes": 58,
+          "sha256": "8a8008098d1de1b720b36b49129b88c951edc0d6ea650c4f701c6edc698957f1",
+          "git_sha1": "eaea4798c81eabce66b4f4940a83b81818f24027"
+        },
+        "col3.u32": {
+          "bytes": 4,
+          "sha256": "6d58692645c9d1cfaf13541cbd258f86193ef63c2f1d38f6bbca9617372d7bd6",
+          "git_sha1": "68cbac134512379eff90debd6438aad9b6a03f91"
+        },
+        "col3.valid.bitmap": {
+          "bytes": 8,
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8",
+          "git_sha1": "20d5cb86e6dff1f3684dc229a358a2ea697cecfb"
+        },
+        "columns.tsv": {
+          "bytes": 11,
+          "sha256": "8aa82c9a3dba7d24c9f2fc0252bea4beaff3aa69f39862e666da71c390e79e27",
+          "git_sha1": "ae5c983608a3017586315c4b32ac31f3bd42e598"
+        },
+        "oracle.bitmap": {
+          "bytes": 8,
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8",
+          "git_sha1": "20d5cb86e6dff1f3684dc229a358a2ea697cecfb"
+        },
+        "oracle.json": {
+          "bytes": 123,
+          "sha256": "53c1de9e002baccab36dc90b10e43f4c4a1b05074250b3524590b6303b2a61e1",
+          "git_sha1": "c24752b8649e0240fa352dbbf81b2765e2c04835"
+        },
+        "profile.txt": {
+          "bytes": 6,
+          "sha256": "bd0528c40e243a7d3474b308376309a48d1476254f09b245f62ddfd82a0ad38e",
+          "git_sha1": "c3a1a465427a55a5bb6d17693abc309f7e82c5d8"
+        },
+        "query.sql": {
+          "bytes": 102,
+          "sha256": "f5498a40629db32bc39027c60f712cbfbd3c09074fad0b958081747b5d38d85a",
+          "git_sha1": "b1ee84b12412e29a3a108561860df5d2d6964bfd"
+        },
+        "schema.sql": {
+          "bytes": 238,
+          "sha256": "d32878f9ac9f2a5f253d026fcd454838f607be39aaa971cbbff103f038fb3267",
+          "git_sha1": "680acf5b8572a69aaee7787cb57b30530e5197df"
+        },
+        "source_rows.jsonl": {
+          "bytes": 22,
+          "sha256": "546c724e58dd5d0a81b4b02a6141eed85d20d288b0bab0a9e44b7102ea87d522",
+          "git_sha1": "455751ac4a007b468d2573b0466184fa26b93347"
+        }
+      }
+    },
+    {
+      "profile": "food1",
+      "case": "Empty",
+      "rows": 0,
+      "binding": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "original_projected_columns": [
+        3
+      ],
+      "full_schema_columns": 6,
+      "projected_source_types": [
+        "varchar(40)"
+      ],
+      "projected_nullable": [
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "d32878f9ac9f2a5f253d026fcd454838f607be39aaa971cbbff103f038fb3267",
+      "original_sql_sha256": "f5498a40629db32bc39027c60f712cbfbd3c09074fad0b958081747b5d38d85a",
+      "source_rows_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 3,
+          "cardinality": 0,
+          "bytes": 52,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": true,
+      "sum_literal_one": false,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "device",
+          "type": "VARCHAR"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 553,
+          "sha256": "052239a5380f87afb6da480e98dcd88df2c3c61b2254b0480b9b43d151af6b01",
+          "git_sha1": "4daeaeebaf919587d9ad68365085a0286a2b5514"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "9ca990ad213db6735ea35d90b25433efd2e35300a1a42469eeed91c2d62ae235",
+          "git_sha1": "cca7a1a76e98af9898d8d111566f96c975b6ba7c"
+        },
+        "col3.biased.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col3.dict": {
+          "bytes": 52,
+          "sha256": "f93a3b4c7d334dea41645918d9fa4e3661aa6546fb78854d057873f63fafe8ff",
+          "git_sha1": "8f4318ade2601a668c81957baf8b0577eb82105e"
+        },
+        "col3.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col3.valid.bitmap": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "columns.tsv": {
+          "bytes": 11,
+          "sha256": "d48db004ad82cfb31ac54f4430ad9ff1b0b43d718f330df9a20eacde48439fa8",
+          "git_sha1": "d437cfc81680a8576a66948d493285f5a3d1339e"
+        },
+        "empty.txt": {
+          "bytes": 2,
+          "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+          "git_sha1": "d00491fd7e5bb6fa28c517a0bb32b8b506539d4d"
+        },
+        "oracle.bitmap": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "oracle.json": {
+          "bytes": 97,
+          "sha256": "dc629ab39b75031d01ea4bdd3314bbec0b7adeae8c32befdfb721290de550fb4",
+          "git_sha1": "e687cf4167a292e0816bfd2a9f9b88dbb6ccc1b7"
+        },
+        "profile.txt": {
+          "bytes": 6,
+          "sha256": "bd0528c40e243a7d3474b308376309a48d1476254f09b245f62ddfd82a0ad38e",
+          "git_sha1": "c3a1a465427a55a5bb6d17693abc309f7e82c5d8"
+        },
+        "query.sql": {
+          "bytes": 102,
+          "sha256": "f5498a40629db32bc39027c60f712cbfbd3c09074fad0b958081747b5d38d85a",
+          "git_sha1": "b1ee84b12412e29a3a108561860df5d2d6964bfd"
+        },
+        "schema.sql": {
+          "bytes": 238,
+          "sha256": "d32878f9ac9f2a5f253d026fcd454838f607be39aaa971cbbff103f038fb3267",
+          "git_sha1": "680acf5b8572a69aaee7787cb57b30530e5197df"
+        },
+        "source_rows.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        }
+      }
+    },
+    {
+      "profile": "ig1",
+      "case": "Observed",
+      "rows": 65536,
+      "binding": "ee275641f7c34fcb258559be100f83cf088b927c",
+      "original_projected_columns": [
+        17
+      ],
+      "full_schema_columns": 18,
+      "projected_source_types": [
+        "varchar(20)"
+      ],
+      "projected_nullable": [
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "bd070cf6fed9e82b84ea20636b13ab014cb69970892dc452c8039f96611da0bc",
+      "original_sql_sha256": "d1b467eb9276fbe0cf53e5d115a9fd2f40d720ff8b085e3a407fbb38f84f80e8",
+      "source_rows_sha256": "66b3f7bbaf2105e053278c10612f1118743b586205274cd6191183e7e242da8b",
+      "source_csv": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/input_round3/IGlocations1_1.csv",
+      "source_csv_sha256": "186979a35563c6b6a7e88b21b5385e4ed70d131b852770d0c2423c2a76c2a447",
+      "observed_original_query": true,
+      "dictionaries": [
+        {
+          "column": 17,
+          "cardinality": 48,
+          "bytes": 657,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": true,
+      "sum_literal_one": false,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "State",
+          "type": "VARCHAR"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 565,
+          "sha256": "1fa5dd7ed972922f11b602780061dd57ba6d4822579b2d724ebb766240f281e3",
+          "git_sha1": "ca840b33c9a424215e79c25780baec99e96b67eb"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "9c45b66b36cad494dc2dc371d6566f926ce1305e8dbe3239e71b28355385ad98",
+          "git_sha1": "129cf0f6e91f2f3ba9394e97fe27981b42a3b086"
+        },
+        "col17.biased.u32": {
+          "bytes": 262144,
+          "sha256": "c991058b627e3d3eec52aae954d880edf47ea16179789fda7e25d55ac1c63d8b",
+          "git_sha1": "5585a715abfef9c36be9337ef73382e0b703923e"
+        },
+        "col17.dict": {
+          "bytes": 657,
+          "sha256": "cedf98acf75727dab7558012bae76451c8e96a0b8c8153c52dc243d6cfe36fa2",
+          "git_sha1": "876e77be4de89363420579db56ee51b43bb05076"
+        },
+        "col17.u32": {
+          "bytes": 262144,
+          "sha256": "c991058b627e3d3eec52aae954d880edf47ea16179789fda7e25d55ac1c63d8b",
+          "git_sha1": "5585a715abfef9c36be9337ef73382e0b703923e"
+        },
+        "col17.valid.bitmap": {
+          "bytes": 8192,
+          "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f",
+          "git_sha1": "b4033a70859495e76028b6ef104256ff854ea609"
+        },
+        "columns.tsv": {
+          "bytes": 16,
+          "sha256": "88456de872b2856b707233fe0fc357504a318387fd2c38d8addf4e03e65d30b9",
+          "git_sha1": "6f64177549cc355f24203f18d160b4d56f019c01"
+        },
+        "oracle.bitmap": {
+          "bytes": 8192,
+          "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f",
+          "git_sha1": "b4033a70859495e76028b6ef104256ff854ea609"
+        },
+        "oracle.json": {
+          "bytes": 1567,
+          "sha256": "0ea181df794668e567b632b0e064c382d610b768bc12240940aacdca8750e541",
+          "git_sha1": "679d110f1d05b9898c24c4a4f38e913e28154018"
+        },
+        "profile.txt": {
+          "bytes": 4,
+          "sha256": "63c422836fa68ebf0b88dfd9a1bd8872248f4433b23673a72c966dd021a7e6d1",
+          "git_sha1": "017741918900cda4e47b12cf7dda19026aaa9787"
+        },
+        "query.sql": {
+          "bytes": 122,
+          "sha256": "d1b467eb9276fbe0cf53e5d115a9fd2f40d720ff8b085e3a407fbb38f84f80e8",
+          "git_sha1": "2d31260c5f28cce38d1d3d20df6453c2e2796f83"
+        },
+        "schema.sql": {
+          "bytes": 649,
+          "sha256": "bd070cf6fed9e82b84ea20636b13ab014cb69970892dc452c8039f96611da0bc",
+          "git_sha1": "72070b40d476197fb6431732ab19326d1ab42439"
+        },
+        "source_rows.jsonl": {
+          "bytes": 5978124,
+          "sha256": "66b3f7bbaf2105e053278c10612f1118743b586205274cd6191183e7e242da8b",
+          "git_sha1": "caabcb22e6275f3f20ff415e610b0ec774afbdd4"
+        }
+      }
+    },
+    {
+      "profile": "ig1",
+      "case": "MixedTail",
+      "rows": 1031,
+      "binding": "85d1f4dba2a03e8c9a839d6625de266dd503063f",
+      "original_projected_columns": [
+        17
+      ],
+      "full_schema_columns": 18,
+      "projected_source_types": [
+        "varchar(20)"
+      ],
+      "projected_nullable": [
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "bd070cf6fed9e82b84ea20636b13ab014cb69970892dc452c8039f96611da0bc",
+      "original_sql_sha256": "d1b467eb9276fbe0cf53e5d115a9fd2f40d720ff8b085e3a407fbb38f84f80e8",
+      "source_rows_sha256": "90163dddff6bb1b5e27d36581900219c58032aab36c50a19070b15a9a343edb4",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 17,
+          "cardinality": 11,
+          "bytes": 120,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": true,
+      "sum_literal_one": false,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "State",
+          "type": "VARCHAR"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 562,
+          "sha256": "893db7495e7de2b2139a02c70f13da02e3aa466af24def321a31d191dbd28bd9",
+          "git_sha1": "41eca3e4438e61ce3a528d355b6929c34f6c444e"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "b43ed572c60e29d2cc0c54298d3dc014cf7e13db3b1e78284c5500822eba34cc",
+          "git_sha1": "8402acdfbdfba36375ca79f415a1868a7ce26360"
+        },
+        "col17.biased.u32": {
+          "bytes": 4124,
+          "sha256": "a20d5ec046f5dd5405fbde6b457dcc5606dc0a39afc4e99e655a9e271467353b",
+          "git_sha1": "64c10dd82ad15400e1dd0e7858a7f65d22709466"
+        },
+        "col17.dict": {
+          "bytes": 120,
+          "sha256": "801353bac318a7bdc46fc19cfa67f49a7bcd66c87bd4caf2237c5ae8fb1586e1",
+          "git_sha1": "5633157a82b457544a8c8e9130aa073c875620b1"
+        },
+        "col17.u32": {
+          "bytes": 4124,
+          "sha256": "a20d5ec046f5dd5405fbde6b457dcc5606dc0a39afc4e99e655a9e271467353b",
+          "git_sha1": "64c10dd82ad15400e1dd0e7858a7f65d22709466"
+        },
+        "col17.valid.bitmap": {
+          "bytes": 136,
+          "sha256": "8dc5db3a98afcb5be11f03999e02052ab78681e0dd0b3b1ab52aa5463c3414a4",
+          "git_sha1": "da8867dd5a508d06b0f4b2cab460f29036c5656d"
+        },
+        "columns.tsv": {
+          "bytes": 15,
+          "sha256": "1d3b361f207ee35e1a5b642f2e7c8395b7cf130857a8c37186f2a4102dcaa750",
+          "git_sha1": "8f04ec2ade2efaca43e721614122ed3ee7a1f324"
+        },
+        "oracle.bitmap": {
+          "bytes": 136,
+          "sha256": "8dc5db3a98afcb5be11f03999e02052ab78681e0dd0b3b1ab52aa5463c3414a4",
+          "git_sha1": "da8867dd5a508d06b0f4b2cab460f29036c5656d"
+        },
+        "oracle.json": {
+          "bytes": 367,
+          "sha256": "83d9deddabf792b397a1a3c314d5dcc09ab7d57582ab552b66b0f2c8434610f8",
+          "git_sha1": "e37ec3e1b8a68409c392fa4b2559ddac9e7874e3"
+        },
+        "profile.txt": {
+          "bytes": 4,
+          "sha256": "63c422836fa68ebf0b88dfd9a1bd8872248f4433b23673a72c966dd021a7e6d1",
+          "git_sha1": "017741918900cda4e47b12cf7dda19026aaa9787"
+        },
+        "query.sql": {
+          "bytes": 122,
+          "sha256": "d1b467eb9276fbe0cf53e5d115a9fd2f40d720ff8b085e3a407fbb38f84f80e8",
+          "git_sha1": "2d31260c5f28cce38d1d3d20df6453c2e2796f83"
+        },
+        "schema.sql": {
+          "bytes": 649,
+          "sha256": "bd070cf6fed9e82b84ea20636b13ab014cb69970892dc452c8039f96611da0bc",
+          "git_sha1": "72070b40d476197fb6431732ab19326d1ab42439"
+        },
+        "source_rows.jsonl": {
+          "bytes": 50517,
+          "sha256": "90163dddff6bb1b5e27d36581900219c58032aab36c50a19070b15a9a343edb4",
+          "git_sha1": "85d1f4dba2a03e8c9a839d6625de266dd503063f"
+        }
+      }
+    },
+    {
+      "profile": "ig1",
+      "case": "Endpoints",
+      "rows": 65,
+      "binding": "1e2535576a95fef6a2398bcded73cee48cba7768",
+      "original_projected_columns": [
+        17
+      ],
+      "full_schema_columns": 18,
+      "projected_source_types": [
+        "varchar(20)"
+      ],
+      "projected_nullable": [
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "bd070cf6fed9e82b84ea20636b13ab014cb69970892dc452c8039f96611da0bc",
+      "original_sql_sha256": "d1b467eb9276fbe0cf53e5d115a9fd2f40d720ff8b085e3a407fbb38f84f80e8",
+      "source_rows_sha256": "284acd30d90c8400159c19c46c7d8039b32898510a4e2e9ce3f195dfbd180500",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 17,
+          "cardinality": 11,
+          "bytes": 120,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": true,
+      "sum_literal_one": false,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "State",
+          "type": "VARCHAR"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 556,
+          "sha256": "b747005bfaff3d3febc1f26270acf085ceca128a3b06dac4acec2c74ae157cf0",
+          "git_sha1": "cb29c676eb7d35699522eba49b110860165d265a"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "8c1aaf9b5721868d0ac653f52cfab1c4c2cfe11cae5a0e9f9c03f5f625a6cfcc",
+          "git_sha1": "ada51bff103518e7a7d76acc4c833962648b1ad0"
+        },
+        "col17.biased.u32": {
+          "bytes": 260,
+          "sha256": "ddc69776307d3f734b987f26ba9f171a6a44b993ab21bdd25cb18bba0154cfc2",
+          "git_sha1": "9bc4ef403f18fac93f0619f33b8bb07605760831"
+        },
+        "col17.dict": {
+          "bytes": 120,
+          "sha256": "93999034b7a1833751c41a017964308bfad825484b477278075161a070c4422d",
+          "git_sha1": "d4507d5218ca00ebabbe5beccaa456913380302f"
+        },
+        "col17.u32": {
+          "bytes": 260,
+          "sha256": "ddc69776307d3f734b987f26ba9f171a6a44b993ab21bdd25cb18bba0154cfc2",
+          "git_sha1": "9bc4ef403f18fac93f0619f33b8bb07605760831"
+        },
+        "col17.valid.bitmap": {
+          "bytes": 16,
+          "sha256": "c9cb04ba987a95a535a8ba7d18b3815d0f04b47add63f2b18ed0a66f9a6d617a",
+          "git_sha1": "f153b932ec0eaa2a7b368686a0f04c8f976d5cba"
+        },
+        "columns.tsv": {
+          "bytes": 13,
+          "sha256": "287db384fcaaad4cc5efd79e778b782ded7d9d4c24425e0b10369c9c7846194a",
+          "git_sha1": "b8c60b89d80d5a2aec2773478f27f75e6aefb5ea"
+        },
+        "oracle.bitmap": {
+          "bytes": 16,
+          "sha256": "c9cb04ba987a95a535a8ba7d18b3815d0f04b47add63f2b18ed0a66f9a6d617a",
+          "git_sha1": "f153b932ec0eaa2a7b368686a0f04c8f976d5cba"
+        },
+        "oracle.json": {
+          "bytes": 367,
+          "sha256": "83d9deddabf792b397a1a3c314d5dcc09ab7d57582ab552b66b0f2c8434610f8",
+          "git_sha1": "e37ec3e1b8a68409c392fa4b2559ddac9e7874e3"
+        },
+        "profile.txt": {
+          "bytes": 4,
+          "sha256": "63c422836fa68ebf0b88dfd9a1bd8872248f4433b23673a72c966dd021a7e6d1",
+          "git_sha1": "017741918900cda4e47b12cf7dda19026aaa9787"
+        },
+        "query.sql": {
+          "bytes": 122,
+          "sha256": "d1b467eb9276fbe0cf53e5d115a9fd2f40d720ff8b085e3a407fbb38f84f80e8",
+          "git_sha1": "2d31260c5f28cce38d1d3d20df6453c2e2796f83"
+        },
+        "schema.sql": {
+          "bytes": 649,
+          "sha256": "bd070cf6fed9e82b84ea20636b13ab014cb69970892dc452c8039f96611da0bc",
+          "git_sha1": "72070b40d476197fb6431732ab19326d1ab42439"
+        },
+        "source_rows.jsonl": {
+          "bytes": 3180,
+          "sha256": "284acd30d90c8400159c19c46c7d8039b32898510a4e2e9ce3f195dfbd180500",
+          "git_sha1": "1e2535576a95fef6a2398bcded73cee48cba7768"
+        }
+      }
+    },
+    {
+      "profile": "ig1",
+      "case": "Singleton",
+      "rows": 1,
+      "binding": "38c19acfc93c45cdcc658d9161e3c8b26bd899f0",
+      "original_projected_columns": [
+        17
+      ],
+      "full_schema_columns": 18,
+      "projected_source_types": [
+        "varchar(20)"
+      ],
+      "projected_nullable": [
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "bd070cf6fed9e82b84ea20636b13ab014cb69970892dc452c8039f96611da0bc",
+      "original_sql_sha256": "d1b467eb9276fbe0cf53e5d115a9fd2f40d720ff8b085e3a407fbb38f84f80e8",
+      "source_rows_sha256": "cd26bc898ae45d6443cc2dcf32e23ef4a29fad22eb4ac95b267145c54ae4868c",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 17,
+          "cardinality": 1,
+          "bytes": 57,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": true,
+      "sum_literal_one": false,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "State",
+          "type": "VARCHAR"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 552,
+          "sha256": "29e9fc6e413bcfd0ce2378139dfbbe1d7bd397b4f5de792105df056bec69d9fa",
+          "git_sha1": "1a17bd6f2dc0907f039bb67830e14c8368e919b8"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "f57aa0da8dd6cbef54f916bc0d8e89a9ccc95709dec36b1e88c61e1d31eeed49",
+          "git_sha1": "d06eb4d7feec913ef83244a9ebe395902b217c45"
+        },
+        "col17.biased.u32": {
+          "bytes": 4,
+          "sha256": "6d58692645c9d1cfaf13541cbd258f86193ef63c2f1d38f6bbca9617372d7bd6",
+          "git_sha1": "68cbac134512379eff90debd6438aad9b6a03f91"
+        },
+        "col17.dict": {
+          "bytes": 57,
+          "sha256": "16e9ac2a9fb98a903f05534b0e87552f6a36e66d8d156e59b1ed7af83209d0cc",
+          "git_sha1": "ca3c3951c313bd44f534b319ef6d7e1025e43c89"
+        },
+        "col17.u32": {
+          "bytes": 4,
+          "sha256": "6d58692645c9d1cfaf13541cbd258f86193ef63c2f1d38f6bbca9617372d7bd6",
+          "git_sha1": "68cbac134512379eff90debd6438aad9b6a03f91"
+        },
+        "col17.valid.bitmap": {
+          "bytes": 8,
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8",
+          "git_sha1": "20d5cb86e6dff1f3684dc229a358a2ea697cecfb"
+        },
+        "columns.tsv": {
+          "bytes": 12,
+          "sha256": "b8ec0b10906432d4d9777a06631a1da7d5436ece766266a6fa531fad0b0763ea",
+          "git_sha1": "37c98910ebdb66066ad0e64b0e293aa28c73a47c"
+        },
+        "oracle.bitmap": {
+          "bytes": 8,
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8",
+          "git_sha1": "20d5cb86e6dff1f3684dc229a358a2ea697cecfb"
+        },
+        "oracle.json": {
+          "bytes": 122,
+          "sha256": "9b1ba0e2f59101f76162336ba5e0814d67c1aa13362a34f5c01c597b9ae9f553",
+          "git_sha1": "51b8d479431d61ca32af3d20d6cc88970f905ff6"
+        },
+        "profile.txt": {
+          "bytes": 4,
+          "sha256": "63c422836fa68ebf0b88dfd9a1bd8872248f4433b23673a72c966dd021a7e6d1",
+          "git_sha1": "017741918900cda4e47b12cf7dda19026aaa9787"
+        },
+        "query.sql": {
+          "bytes": 122,
+          "sha256": "d1b467eb9276fbe0cf53e5d115a9fd2f40d720ff8b085e3a407fbb38f84f80e8",
+          "git_sha1": "2d31260c5f28cce38d1d3d20df6453c2e2796f83"
+        },
+        "schema.sql": {
+          "bytes": 649,
+          "sha256": "bd070cf6fed9e82b84ea20636b13ab014cb69970892dc452c8039f96611da0bc",
+          "git_sha1": "72070b40d476197fb6431732ab19326d1ab42439"
+        },
+        "source_rows.jsonl": {
+          "bytes": 50,
+          "sha256": "cd26bc898ae45d6443cc2dcf32e23ef4a29fad22eb4ac95b267145c54ae4868c",
+          "git_sha1": "38c19acfc93c45cdcc658d9161e3c8b26bd899f0"
+        }
+      }
+    },
+    {
+      "profile": "ig1",
+      "case": "Empty",
+      "rows": 0,
+      "binding": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "original_projected_columns": [
+        17
+      ],
+      "full_schema_columns": 18,
+      "projected_source_types": [
+        "varchar(20)"
+      ],
+      "projected_nullable": [
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "bd070cf6fed9e82b84ea20636b13ab014cb69970892dc452c8039f96611da0bc",
+      "original_sql_sha256": "d1b467eb9276fbe0cf53e5d115a9fd2f40d720ff8b085e3a407fbb38f84f80e8",
+      "source_rows_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 17,
+          "cardinality": 0,
+          "bytes": 52,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": true,
+      "sum_literal_one": false,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "State",
+          "type": "VARCHAR"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 552,
+          "sha256": "75b6b02af9b213a88bebc5cf188431158d848b071e5a65857a95ed86b5651c3e",
+          "git_sha1": "3d0d728297cb27d26764cf2610f696f244c195c3"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "9ca990ad213db6735ea35d90b25433efd2e35300a1a42469eeed91c2d62ae235",
+          "git_sha1": "cca7a1a76e98af9898d8d111566f96c975b6ba7c"
+        },
+        "col17.biased.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col17.dict": {
+          "bytes": 52,
+          "sha256": "f93a3b4c7d334dea41645918d9fa4e3661aa6546fb78854d057873f63fafe8ff",
+          "git_sha1": "8f4318ade2601a668c81957baf8b0577eb82105e"
+        },
+        "col17.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col17.valid.bitmap": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "columns.tsv": {
+          "bytes": 12,
+          "sha256": "4699c3bc0847409f8a60a10566919ad548e23f1d62227f096146e917105d1d9e",
+          "git_sha1": "806ff77144948553c08e7cf04fc21e535944bfa5"
+        },
+        "empty.txt": {
+          "bytes": 2,
+          "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+          "git_sha1": "d00491fd7e5bb6fa28c517a0bb32b8b506539d4d"
+        },
+        "oracle.bitmap": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "oracle.json": {
+          "bytes": 96,
+          "sha256": "0e278240ba64175c277fd934e9830705ec29e6f66baa2f927a00b7d06cd620fd",
+          "git_sha1": "ff9e0c75af9aa25e8edb26c842cf77c83480264e"
+        },
+        "profile.txt": {
+          "bytes": 4,
+          "sha256": "63c422836fa68ebf0b88dfd9a1bd8872248f4433b23673a72c966dd021a7e6d1",
+          "git_sha1": "017741918900cda4e47b12cf7dda19026aaa9787"
+        },
+        "query.sql": {
+          "bytes": 122,
+          "sha256": "d1b467eb9276fbe0cf53e5d115a9fd2f40d720ff8b085e3a407fbb38f84f80e8",
+          "git_sha1": "2d31260c5f28cce38d1d3d20df6453c2e2796f83"
+        },
+        "schema.sql": {
+          "bytes": 649,
+          "sha256": "bd070cf6fed9e82b84ea20636b13ab014cb69970892dc452c8039f96611da0bc",
+          "git_sha1": "72070b40d476197fb6431732ab19326d1ab42439"
+        },
+        "source_rows.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        }
+      }
+    },
+    {
+      "profile": "iub1",
+      "case": "Observed",
+      "rows": 1795,
+      "binding": "405d3ce9144d61aff8781f848040a418e3b0bf01",
+      "original_projected_columns": [
+        6,
+        17,
+        18,
+        26
+      ],
+      "full_schema_columns": 27,
+      "projected_source_types": [
+        "date",
+        "smallint",
+        "varchar(2)",
+        "varchar(1)"
+      ],
+      "projected_nullable": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+      "original_sql_sha256": "adb4208a44b48ed8d1fac47dba376d577cb5457b36571e310c67ec460c85af49",
+      "source_rows_sha256": "ff7b3d293d49fc5038c84c59e087e798f2fde6638e15a583f4739b9695a9e832",
+      "source_csv": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/input_round3/IUBLibrary_1.csv",
+      "source_csv_sha256": "333660e1abbf44ddc6f8216779b425186f6a37028341821630658d68670e856e",
+      "observed_original_query": true,
+      "dictionaries": [
+        {
+          "column": 18,
+          "cardinality": 173,
+          "bytes": 1072,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 26,
+          "cardinality": 22,
+          "bytes": 162,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": false,
+      "sum_literal_one": true,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "Calculation_649925789325832192",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "PubYear",
+          "type": "BIGINT"
+        },
+        {
+          "name": "Sh",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "usr:Number of Records:ok",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "yr:DateLastCharged:ok",
+          "type": "BIGINT"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 1071,
+          "sha256": "34383977d90416c78384507756157a9b634daa52c308e244656d15de287d990f",
+          "git_sha1": "c0cd4acac56d988478c100a8b69b1b439f4f20d8"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "8abcb1ddfe9a057e306d511fa476c712b2d43a6c1e9b04ba3f7cce60fa5d0481",
+          "git_sha1": "6b6a8e7b35446771e803fd4eceb913c298abbde6"
+        },
+        "col17.biased.u16": {
+          "bytes": 3590,
+          "sha256": "5484f43ef12f532e27e1a162e1b8b709444bb4146c14a9ae0baa89bf50246d6c",
+          "git_sha1": "68c9344ec274b0fd34453d5c550e71311c3c5e12"
+        },
+        "col17.u32": {
+          "bytes": 7180,
+          "sha256": "b88f2a80bf6ebe1fe947bd02293520c1e72d1980a6f4378b0a6b39d47d4338f1",
+          "git_sha1": "9d61d0e37fbf8578c232c881ee23852b655d5bf3"
+        },
+        "col17.valid.bitmap": {
+          "bytes": 232,
+          "sha256": "bbf87b2b23a405a9b043c13927ae0b38c237a2bf5e3a4819299f955d63ca8d08",
+          "git_sha1": "b7a300b33e07ca872be6e40ad6d42872dfeaae12"
+        },
+        "col18.biased.u32": {
+          "bytes": 7180,
+          "sha256": "5df0a719d344f9193f64724ab6d47ecc0e8addbf063741073b94a87ae4c88d0f",
+          "git_sha1": "b86686728627e9b89eb4a994b4ed5b70b9a1abfc"
+        },
+        "col18.dict": {
+          "bytes": 1072,
+          "sha256": "660f26e6c9e9b9607b51cc76ac3be58a99046677925897a8f094823246b01f0b",
+          "git_sha1": "8a8b9f07235424a81ffdd119e60baace17e5b9d9"
+        },
+        "col18.u32": {
+          "bytes": 7180,
+          "sha256": "5df0a719d344f9193f64724ab6d47ecc0e8addbf063741073b94a87ae4c88d0f",
+          "git_sha1": "b86686728627e9b89eb4a994b4ed5b70b9a1abfc"
+        },
+        "col18.valid.bitmap": {
+          "bytes": 232,
+          "sha256": "bbf87b2b23a405a9b043c13927ae0b38c237a2bf5e3a4819299f955d63ca8d08",
+          "git_sha1": "b7a300b33e07ca872be6e40ad6d42872dfeaae12"
+        },
+        "col26.biased.u32": {
+          "bytes": 7180,
+          "sha256": "ac666ec7635906c6d3c661121a4094c3ac432041cdfe7ea3f7c4dbfe5b35a094",
+          "git_sha1": "9ed035384469a83ebdc1868c9da32d5b79016d12"
+        },
+        "col26.dict": {
+          "bytes": 162,
+          "sha256": "67a8e4f5726018f64af8f169c16d7549b6baf3c836932614cc440e172561b456",
+          "git_sha1": "f32a53d1e8a2717a0c3c9fe26ea440dc737a9a07"
+        },
+        "col26.u32": {
+          "bytes": 7180,
+          "sha256": "ac666ec7635906c6d3c661121a4094c3ac432041cdfe7ea3f7c4dbfe5b35a094",
+          "git_sha1": "9ed035384469a83ebdc1868c9da32d5b79016d12"
+        },
+        "col26.valid.bitmap": {
+          "bytes": 232,
+          "sha256": "bbf87b2b23a405a9b043c13927ae0b38c237a2bf5e3a4819299f955d63ca8d08",
+          "git_sha1": "b7a300b33e07ca872be6e40ad6d42872dfeaae12"
+        },
+        "col6.biased.u32": {
+          "bytes": 7180,
+          "sha256": "7b440934e227552d02c2129cea412c1e3aafaab1afe9e3996c569879f55bc541",
+          "git_sha1": "38b888ae2b483a4c5c9fbbf16ba9988c0ee68d05"
+        },
+        "col6.u32": {
+          "bytes": 7180,
+          "sha256": "7b440934e227552d02c2129cea412c1e3aafaab1afe9e3996c569879f55bc541",
+          "git_sha1": "38b888ae2b483a4c5c9fbbf16ba9988c0ee68d05"
+        },
+        "col6.valid.bitmap": {
+          "bytes": 232,
+          "sha256": "bbf87b2b23a405a9b043c13927ae0b38c237a2bf5e3a4819299f955d63ca8d08",
+          "git_sha1": "b7a300b33e07ca872be6e40ad6d42872dfeaae12"
+        },
+        "columns.tsv": {
+          "bytes": 59,
+          "sha256": "7b21d8e35be7d94246311313211db2875c8c418f4d06b8eb1451f75fdd59429e",
+          "git_sha1": "23818fa026edd4f09bc8270294c683c5c56530b9"
+        },
+        "oracle.bitmap": {
+          "bytes": 232,
+          "sha256": "bbf87b2b23a405a9b043c13927ae0b38c237a2bf5e3a4819299f955d63ca8d08",
+          "git_sha1": "b7a300b33e07ca872be6e40ad6d42872dfeaae12"
+        },
+        "oracle.json": {
+          "bytes": 124865,
+          "sha256": "0c8e9e0c009f2db7b79e4c09ef6c43bc721de99f1c4884fa59efd53ff19133f8",
+          "git_sha1": "7ebf64cf35c71661f8eddfaea368f40d83a7f53e"
+        },
+        "profile.txt": {
+          "bytes": 5,
+          "sha256": "f31367192a5df31f01e848a0105edbba9dd5cfe5012414733115ce6e094f1625",
+          "git_sha1": "03d147d2c72d0d6d00809a7766ab70c843230e72"
+        },
+        "query.sql": {
+          "bytes": 486,
+          "sha256": "adb4208a44b48ed8d1fac47dba376d577cb5457b36571e310c67ec460c85af49",
+          "git_sha1": "92bfda5a1453bcfd3c440bf97cc3e64336b58232"
+        },
+        "schema.sql": {
+          "bytes": 946,
+          "sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+          "git_sha1": "e28775e154b114fe59a9e0b4d2b28f7691aae7f7"
+        },
+        "source_rows.jsonl": {
+          "bytes": 527667,
+          "sha256": "ff7b3d293d49fc5038c84c59e087e798f2fde6638e15a583f4739b9695a9e832",
+          "git_sha1": "c29d81ce796480d6c8caf463421c8751e78db975"
+        }
+      }
+    },
+    {
+      "profile": "iub1",
+      "case": "MixedTail",
+      "rows": 1031,
+      "binding": "4840983d7c47dcfd1faebb382c7f50c1bf1d5afb",
+      "original_projected_columns": [
+        6,
+        17,
+        18,
+        26
+      ],
+      "full_schema_columns": 27,
+      "projected_source_types": [
+        "date",
+        "smallint",
+        "varchar(2)",
+        "varchar(1)"
+      ],
+      "projected_nullable": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+      "original_sql_sha256": "adb4208a44b48ed8d1fac47dba376d577cb5457b36571e310c67ec460c85af49",
+      "source_rows_sha256": "0f41abc35530da651ced4ff9e78af8eb35a2edaa8b27de9f5ef9ea103b52d056",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 18,
+          "cardinality": 11,
+          "bytes": 117,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 26,
+          "cardinality": 10,
+          "bytes": 109,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": false,
+      "sum_literal_one": true,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "Calculation_649925789325832192",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "PubYear",
+          "type": "BIGINT"
+        },
+        {
+          "name": "Sh",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "usr:Number of Records:ok",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "yr:DateLastCharged:ok",
+          "type": "BIGINT"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 1070,
+          "sha256": "a28a33967fadd0fde9c1c1fb1a15cb77dcc7614cf3e30d2c09ff02ac47fda59c",
+          "git_sha1": "8a0690460a069a0ead60cb972eca52454573db9d"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "5ff9786a1155094e8ffe9511e41986592350eb133aac4d34b4b30a2e3b0a055c",
+          "git_sha1": "abe43a7d8b99235fa159f4ff8847b2676fa2e9b4"
+        },
+        "col17.biased.u16": {
+          "bytes": 2062,
+          "sha256": "550393c24a17a9ab8aed84a06898a3284d62c682e6ec6f77955d69217e596586",
+          "git_sha1": "fd88b3f95ad95388034984680ac22963778de9a6"
+        },
+        "col17.u32": {
+          "bytes": 4124,
+          "sha256": "b5d40303df63cc460d1ac66bcc616ac50c0fcc32a86d368203dcd1236b202720",
+          "git_sha1": "de8ace3f2bdec02564456d5b5fc0237c0508b9a1"
+        },
+        "col17.valid.bitmap": {
+          "bytes": 136,
+          "sha256": "8dc5db3a98afcb5be11f03999e02052ab78681e0dd0b3b1ab52aa5463c3414a4",
+          "git_sha1": "da8867dd5a508d06b0f4b2cab460f29036c5656d"
+        },
+        "col18.biased.u32": {
+          "bytes": 4124,
+          "sha256": "c9494cd408130ba92742a6bd8df1b4b3959c3e9b74aeed0f8573978cfa43b722",
+          "git_sha1": "5acc601e50284391239688eb041181c8f4cd4fd1"
+        },
+        "col18.dict": {
+          "bytes": 117,
+          "sha256": "23a5ab7834eb6e440b3a2538f7c41e3b93a8de35eabf5c6dbaf21a9c1451d917",
+          "git_sha1": "550a70e52fa41103debd1dd0b3fc9784e7bc4ff3"
+        },
+        "col18.u32": {
+          "bytes": 4124,
+          "sha256": "c9494cd408130ba92742a6bd8df1b4b3959c3e9b74aeed0f8573978cfa43b722",
+          "git_sha1": "5acc601e50284391239688eb041181c8f4cd4fd1"
+        },
+        "col18.valid.bitmap": {
+          "bytes": 136,
+          "sha256": "8dc5db3a98afcb5be11f03999e02052ab78681e0dd0b3b1ab52aa5463c3414a4",
+          "git_sha1": "da8867dd5a508d06b0f4b2cab460f29036c5656d"
+        },
+        "col26.biased.u32": {
+          "bytes": 4124,
+          "sha256": "56848ab9fad3ac8ea41d9bc4d3e2074112efb2349fa79653fd8c17615e2caeb1",
+          "git_sha1": "79e4da8427be8799ea0fe71afb5d13588f2df7ff"
+        },
+        "col26.dict": {
+          "bytes": 109,
+          "sha256": "8f3281dc663fd4cc8c46df985bad04c399a44541fd4d8e62bfa94206975ee44f",
+          "git_sha1": "591c8069cf601424fddaae193e47e8592bfaa29a"
+        },
+        "col26.u32": {
+          "bytes": 4124,
+          "sha256": "56848ab9fad3ac8ea41d9bc4d3e2074112efb2349fa79653fd8c17615e2caeb1",
+          "git_sha1": "79e4da8427be8799ea0fe71afb5d13588f2df7ff"
+        },
+        "col26.valid.bitmap": {
+          "bytes": 136,
+          "sha256": "8dc5db3a98afcb5be11f03999e02052ab78681e0dd0b3b1ab52aa5463c3414a4",
+          "git_sha1": "da8867dd5a508d06b0f4b2cab460f29036c5656d"
+        },
+        "col6.biased.u32": {
+          "bytes": 4124,
+          "sha256": "17d6e547de3644e98824d7a0641ada0154224c9cc565f19541939431464ee7fc",
+          "git_sha1": "e37b334114725ab23b75061805de6b2152d2aaec"
+        },
+        "col6.u32": {
+          "bytes": 4124,
+          "sha256": "17d6e547de3644e98824d7a0641ada0154224c9cc565f19541939431464ee7fc",
+          "git_sha1": "e37b334114725ab23b75061805de6b2152d2aaec"
+        },
+        "col6.valid.bitmap": {
+          "bytes": 136,
+          "sha256": "8dc5db3a98afcb5be11f03999e02052ab78681e0dd0b3b1ab52aa5463c3414a4",
+          "git_sha1": "da8867dd5a508d06b0f4b2cab460f29036c5656d"
+        },
+        "columns.tsv": {
+          "bytes": 59,
+          "sha256": "614286f88dff4a9b721f2e4c67928eaee028651f7dade38754f7ba11c7f11f7a",
+          "git_sha1": "ba32485bd94ea63f1f1eda42916c719246229572"
+        },
+        "oracle.bitmap": {
+          "bytes": 136,
+          "sha256": "8dc5db3a98afcb5be11f03999e02052ab78681e0dd0b3b1ab52aa5463c3414a4",
+          "git_sha1": "da8867dd5a508d06b0f4b2cab460f29036c5656d"
+        },
+        "oracle.json": {
+          "bytes": 2939,
+          "sha256": "309ff659b71cceb14dd072030f694f8e73537b7b0d4b4d123d2eb755f1e17c2f",
+          "git_sha1": "10fd12709b775f1b60e1c491fab63b5acadcb175"
+        },
+        "profile.txt": {
+          "bytes": 5,
+          "sha256": "f31367192a5df31f01e848a0105edbba9dd5cfe5012414733115ce6e094f1625",
+          "git_sha1": "03d147d2c72d0d6d00809a7766ab70c843230e72"
+        },
+        "query.sql": {
+          "bytes": 486,
+          "sha256": "adb4208a44b48ed8d1fac47dba376d577cb5457b36571e310c67ec460c85af49",
+          "git_sha1": "92bfda5a1453bcfd3c440bf97cc3e64336b58232"
+        },
+        "schema.sql": {
+          "bytes": 946,
+          "sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+          "git_sha1": "e28775e154b114fe59a9e0b4d2b28f7691aae7f7"
+        },
+        "source_rows.jsonl": {
+          "bytes": 160645,
+          "sha256": "0f41abc35530da651ced4ff9e78af8eb35a2edaa8b27de9f5ef9ea103b52d056",
+          "git_sha1": "4840983d7c47dcfd1faebb382c7f50c1bf1d5afb"
+        }
+      }
+    },
+    {
+      "profile": "iub1",
+      "case": "Endpoints",
+      "rows": 65,
+      "binding": "78a3c5cd15605cc16a5ba8da46443516ff293eff",
+      "original_projected_columns": [
+        6,
+        17,
+        18,
+        26
+      ],
+      "full_schema_columns": 27,
+      "projected_source_types": [
+        "date",
+        "smallint",
+        "varchar(2)",
+        "varchar(1)"
+      ],
+      "projected_nullable": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+      "original_sql_sha256": "adb4208a44b48ed8d1fac47dba376d577cb5457b36571e310c67ec460c85af49",
+      "source_rows_sha256": "17b3a42eb9992cce794ec4f5cfbe9ce4ed3dc1d89ced86bd0eb5dd14a7bbaac8",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 18,
+          "cardinality": 11,
+          "bytes": 117,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 26,
+          "cardinality": 10,
+          "bytes": 109,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": false,
+      "sum_literal_one": true,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "Calculation_649925789325832192",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "PubYear",
+          "type": "BIGINT"
+        },
+        {
+          "name": "Sh",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "usr:Number of Records:ok",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "yr:DateLastCharged:ok",
+          "type": "BIGINT"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 1059,
+          "sha256": "611963722cc5e31b5d555a95795a01bf0cc39ae9d38f7c4ac382b539b098f9b3",
+          "git_sha1": "bb44a25d20dc998e3908dce7be805dffb11b1b1e"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "46e5b32f6c9320640e7dae668fc0f5921db2d78d6e70f9173a0d97945b7d0ec2",
+          "git_sha1": "4da36706f38b0a9b67d197b20e8f2a1d323f4a7f"
+        },
+        "col17.biased.u16": {
+          "bytes": 130,
+          "sha256": "f8b29d29af02c44b0f0b287b44d5fa190a878a8b872ddafa1da2952873f43066",
+          "git_sha1": "b156b4d3ff895f6659907ff05454600f229064e1"
+        },
+        "col17.u32": {
+          "bytes": 260,
+          "sha256": "773cb852c597d827e8efe94a0bae8a5b494784c658ef54c2004d0cdadffefc59",
+          "git_sha1": "3f9177264fb880b64bb69d1cb4fdd15c0f1b8c86"
+        },
+        "col17.valid.bitmap": {
+          "bytes": 16,
+          "sha256": "c9cb04ba987a95a535a8ba7d18b3815d0f04b47add63f2b18ed0a66f9a6d617a",
+          "git_sha1": "f153b932ec0eaa2a7b368686a0f04c8f976d5cba"
+        },
+        "col18.biased.u32": {
+          "bytes": 260,
+          "sha256": "2b76c9bd68ee394f23725b2e60109be9ec24fe5d762528e6ea4ba5a0435cfd06",
+          "git_sha1": "92066212b0283d74ecc57b4552d5f7ff6742f8a5"
+        },
+        "col18.dict": {
+          "bytes": 117,
+          "sha256": "f38f8e611784b5ed3d5ca09796573c8f238afcfa64bb4ad296c51147f4309d81",
+          "git_sha1": "fdb723129b7d9ce5de1aee5118ad0b1bea920229"
+        },
+        "col18.u32": {
+          "bytes": 260,
+          "sha256": "2b76c9bd68ee394f23725b2e60109be9ec24fe5d762528e6ea4ba5a0435cfd06",
+          "git_sha1": "92066212b0283d74ecc57b4552d5f7ff6742f8a5"
+        },
+        "col18.valid.bitmap": {
+          "bytes": 16,
+          "sha256": "c9cb04ba987a95a535a8ba7d18b3815d0f04b47add63f2b18ed0a66f9a6d617a",
+          "git_sha1": "f153b932ec0eaa2a7b368686a0f04c8f976d5cba"
+        },
+        "col26.biased.u32": {
+          "bytes": 260,
+          "sha256": "3f8dd50d01c4319f3d30a81d4408e70d023f168dee032628debd4bb155b4751d",
+          "git_sha1": "069784db0c87d1256d73dd9a17a175904d057b41"
+        },
+        "col26.dict": {
+          "bytes": 109,
+          "sha256": "893cd2eebaea5cd3d5a2ce37aed5033e82921be907233ed36bac2cf35e99f34f",
+          "git_sha1": "012ba1ae3153c94abacdb146311d6dc00ccd6309"
+        },
+        "col26.u32": {
+          "bytes": 260,
+          "sha256": "3f8dd50d01c4319f3d30a81d4408e70d023f168dee032628debd4bb155b4751d",
+          "git_sha1": "069784db0c87d1256d73dd9a17a175904d057b41"
+        },
+        "col26.valid.bitmap": {
+          "bytes": 16,
+          "sha256": "c9cb04ba987a95a535a8ba7d18b3815d0f04b47add63f2b18ed0a66f9a6d617a",
+          "git_sha1": "f153b932ec0eaa2a7b368686a0f04c8f976d5cba"
+        },
+        "col6.biased.u32": {
+          "bytes": 260,
+          "sha256": "2d6335120c6c6dd1accc6e4cf6da7594c6c9e476d287dda0c9a2229649a20294",
+          "git_sha1": "7e64ee493df16c4906e6eb58950d9e49a7986714"
+        },
+        "col6.u32": {
+          "bytes": 260,
+          "sha256": "2d6335120c6c6dd1accc6e4cf6da7594c6c9e476d287dda0c9a2229649a20294",
+          "git_sha1": "7e64ee493df16c4906e6eb58950d9e49a7986714"
+        },
+        "col6.valid.bitmap": {
+          "bytes": 16,
+          "sha256": "c9cb04ba987a95a535a8ba7d18b3815d0f04b47add63f2b18ed0a66f9a6d617a",
+          "git_sha1": "f153b932ec0eaa2a7b368686a0f04c8f976d5cba"
+        },
+        "columns.tsv": {
+          "bytes": 51,
+          "sha256": "7f1aae0ce487102a82e802da7713b96061e15222a1e818a56b2ee515af856615",
+          "git_sha1": "b0430ff31bb6f9f96b5c45c36a4eb9bdc43148fb"
+        },
+        "oracle.bitmap": {
+          "bytes": 16,
+          "sha256": "c9cb04ba987a95a535a8ba7d18b3815d0f04b47add63f2b18ed0a66f9a6d617a",
+          "git_sha1": "f153b932ec0eaa2a7b368686a0f04c8f976d5cba"
+        },
+        "oracle.json": {
+          "bytes": 4170,
+          "sha256": "26da407b3a64aaa0457cd2ce95791d6841fed8993ec3ede27f1db15c7fe4263f",
+          "git_sha1": "5b233d9384bbbe0fc82fd85ae8b46dfda6db9ee9"
+        },
+        "profile.txt": {
+          "bytes": 5,
+          "sha256": "f31367192a5df31f01e848a0105edbba9dd5cfe5012414733115ce6e094f1625",
+          "git_sha1": "03d147d2c72d0d6d00809a7766ab70c843230e72"
+        },
+        "query.sql": {
+          "bytes": 486,
+          "sha256": "adb4208a44b48ed8d1fac47dba376d577cb5457b36571e310c67ec460c85af49",
+          "git_sha1": "92bfda5a1453bcfd3c440bf97cc3e64336b58232"
+        },
+        "schema.sql": {
+          "bytes": 946,
+          "sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+          "git_sha1": "e28775e154b114fe59a9e0b4d2b28f7691aae7f7"
+        },
+        "source_rows.jsonl": {
+          "bytes": 10132,
+          "sha256": "17b3a42eb9992cce794ec4f5cfbe9ce4ed3dc1d89ced86bd0eb5dd14a7bbaac8",
+          "git_sha1": "78a3c5cd15605cc16a5ba8da46443516ff293eff"
+        }
+      }
+    },
+    {
+      "profile": "iub1",
+      "case": "Singleton",
+      "rows": 1,
+      "binding": "4e970605ac8643b1694bc3d2a451025e527983a6",
+      "original_projected_columns": [
+        6,
+        17,
+        18,
+        26
+      ],
+      "full_schema_columns": 27,
+      "projected_source_types": [
+        "date",
+        "smallint",
+        "varchar(2)",
+        "varchar(1)"
+      ],
+      "projected_nullable": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+      "original_sql_sha256": "adb4208a44b48ed8d1fac47dba376d577cb5457b36571e310c67ec460c85af49",
+      "source_rows_sha256": "ab9ee08cef310261cc7f633cb97a44b5d0861908109d91a31f98300053f78281",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 18,
+          "cardinality": 1,
+          "bytes": 57,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 26,
+          "cardinality": 1,
+          "bytes": 57,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": false,
+      "sum_literal_one": true,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "Calculation_649925789325832192",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "PubYear",
+          "type": "BIGINT"
+        },
+        {
+          "name": "Sh",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "usr:Number of Records:ok",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "yr:DateLastCharged:ok",
+          "type": "BIGINT"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 1050,
+          "sha256": "c8726de75f3e06240ad0a25b3139af186f6852d407ca39f46cd0275f8226d999",
+          "git_sha1": "c4f78fdd4f263e4820f01cd79e4240e4468753a9"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "07af873f178cc19cc62a176e53e55ca5e0e314de86fdad29e3c1e1aa64845560",
+          "git_sha1": "6671619eab79602ef9ccc389d5d5e7f82af760d1"
+        },
+        "col17.biased.u16": {
+          "bytes": 2,
+          "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+          "git_sha1": "09f370e38f498a462e1ca0faa724559b6630c04f"
+        },
+        "col17.u32": {
+          "bytes": 4,
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+          "git_sha1": "593f4708db84ac8fd0f5cc47c634f38c013fe9e4"
+        },
+        "col17.valid.bitmap": {
+          "bytes": 8,
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8",
+          "git_sha1": "20d5cb86e6dff1f3684dc229a358a2ea697cecfb"
+        },
+        "col18.biased.u32": {
+          "bytes": 4,
+          "sha256": "6d58692645c9d1cfaf13541cbd258f86193ef63c2f1d38f6bbca9617372d7bd6",
+          "git_sha1": "68cbac134512379eff90debd6438aad9b6a03f91"
+        },
+        "col18.dict": {
+          "bytes": 57,
+          "sha256": "7a33ac554ae229d4cb74b32d3dd2c05ec5603c59aa3c42111f7451da99cc7f1d",
+          "git_sha1": "7264f28a5d1a10172d9e509af1fbc95dce451d4e"
+        },
+        "col18.u32": {
+          "bytes": 4,
+          "sha256": "6d58692645c9d1cfaf13541cbd258f86193ef63c2f1d38f6bbca9617372d7bd6",
+          "git_sha1": "68cbac134512379eff90debd6438aad9b6a03f91"
+        },
+        "col18.valid.bitmap": {
+          "bytes": 8,
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8",
+          "git_sha1": "20d5cb86e6dff1f3684dc229a358a2ea697cecfb"
+        },
+        "col26.biased.u32": {
+          "bytes": 4,
+          "sha256": "6d58692645c9d1cfaf13541cbd258f86193ef63c2f1d38f6bbca9617372d7bd6",
+          "git_sha1": "68cbac134512379eff90debd6438aad9b6a03f91"
+        },
+        "col26.dict": {
+          "bytes": 57,
+          "sha256": "902270851457d441e4e4971208aea6b47f5ad9d7bc18b1280033611c61d0a6d7",
+          "git_sha1": "cb57dfb1727f962678dd8fdcc5523061cbedd978"
+        },
+        "col26.u32": {
+          "bytes": 4,
+          "sha256": "6d58692645c9d1cfaf13541cbd258f86193ef63c2f1d38f6bbca9617372d7bd6",
+          "git_sha1": "68cbac134512379eff90debd6438aad9b6a03f91"
+        },
+        "col26.valid.bitmap": {
+          "bytes": 8,
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8",
+          "git_sha1": "20d5cb86e6dff1f3684dc229a358a2ea697cecfb"
+        },
+        "col6.biased.u32": {
+          "bytes": 4,
+          "sha256": "400588390fc5a14d9e3910d418a3e395fc8c9d6f9e18dfe47e1d514c229acc36",
+          "git_sha1": "787b470d8e1b4061d0211f3287b7023d0313df61"
+        },
+        "col6.u32": {
+          "bytes": 4,
+          "sha256": "400588390fc5a14d9e3910d418a3e395fc8c9d6f9e18dfe47e1d514c229acc36",
+          "git_sha1": "787b470d8e1b4061d0211f3287b7023d0313df61"
+        },
+        "col6.valid.bitmap": {
+          "bytes": 8,
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8",
+          "git_sha1": "20d5cb86e6dff1f3684dc229a358a2ea697cecfb"
+        },
+        "columns.tsv": {
+          "bytes": 47,
+          "sha256": "5ff7eef8947ff4d38f205d25d57fe549b7d7f12c527a23d67432d372d063abe4",
+          "git_sha1": "7980cbb8028ef0dab0e85b19cef38b052c2b390d"
+        },
+        "oracle.bitmap": {
+          "bytes": 8,
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8",
+          "git_sha1": "20d5cb86e6dff1f3684dc229a358a2ea697cecfb"
+        },
+        "oracle.json": {
+          "bytes": 470,
+          "sha256": "bab81c7cedcf43401c281dfd244b1b0f7f0c989bb0a7d9f546d9aaaedd515fca",
+          "git_sha1": "d59c494a5bd67083e16b6232b36662870d968c70"
+        },
+        "profile.txt": {
+          "bytes": 5,
+          "sha256": "f31367192a5df31f01e848a0105edbba9dd5cfe5012414733115ce6e094f1625",
+          "git_sha1": "03d147d2c72d0d6d00809a7766ab70c843230e72"
+        },
+        "query.sql": {
+          "bytes": 486,
+          "sha256": "adb4208a44b48ed8d1fac47dba376d577cb5457b36571e310c67ec460c85af49",
+          "git_sha1": "92bfda5a1453bcfd3c440bf97cc3e64336b58232"
+        },
+        "schema.sql": {
+          "bytes": 946,
+          "sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+          "git_sha1": "e28775e154b114fe59a9e0b4d2b28f7691aae7f7"
+        },
+        "source_rows.jsonl": {
+          "bytes": 153,
+          "sha256": "ab9ee08cef310261cc7f633cb97a44b5d0861908109d91a31f98300053f78281",
+          "git_sha1": "4e970605ac8643b1694bc3d2a451025e527983a6"
+        }
+      }
+    },
+    {
+      "profile": "iub1",
+      "case": "Empty",
+      "rows": 0,
+      "binding": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "original_projected_columns": [
+        6,
+        17,
+        18,
+        26
+      ],
+      "full_schema_columns": 27,
+      "projected_source_types": [
+        "date",
+        "smallint",
+        "varchar(2)",
+        "varchar(1)"
+      ],
+      "projected_nullable": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+      "original_sql_sha256": "adb4208a44b48ed8d1fac47dba376d577cb5457b36571e310c67ec460c85af49",
+      "source_rows_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 18,
+          "cardinality": 0,
+          "bytes": 52,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 26,
+          "cardinality": 0,
+          "bytes": 52,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": false,
+      "sum_literal_one": true,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "Calculation_649925789325832192",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "PubYear",
+          "type": "BIGINT"
+        },
+        {
+          "name": "Sh",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "usr:Number of Records:ok",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "yr:DateLastCharged:ok",
+          "type": "BIGINT"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 1050,
+          "sha256": "2b53110ffab95a9ad2d7baa94affa8ce9975e09783b8e08df3196f27515c1fe4",
+          "git_sha1": "b5684c3667685e9cf05b424c8f018ec400ad8918"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "9ca990ad213db6735ea35d90b25433efd2e35300a1a42469eeed91c2d62ae235",
+          "git_sha1": "cca7a1a76e98af9898d8d111566f96c975b6ba7c"
+        },
+        "col17.biased.u16": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col17.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col17.valid.bitmap": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col18.biased.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col18.dict": {
+          "bytes": 52,
+          "sha256": "f93a3b4c7d334dea41645918d9fa4e3661aa6546fb78854d057873f63fafe8ff",
+          "git_sha1": "8f4318ade2601a668c81957baf8b0577eb82105e"
+        },
+        "col18.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col18.valid.bitmap": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col26.biased.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col26.dict": {
+          "bytes": 52,
+          "sha256": "f93a3b4c7d334dea41645918d9fa4e3661aa6546fb78854d057873f63fafe8ff",
+          "git_sha1": "8f4318ade2601a668c81957baf8b0577eb82105e"
+        },
+        "col26.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col26.valid.bitmap": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col6.biased.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col6.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col6.valid.bitmap": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "columns.tsv": {
+          "bytes": 47,
+          "sha256": "96c05ce96eaea427f3410b0ef3eafa40da969c9fb059eb565d13e747b79ce072",
+          "git_sha1": "65bf499fbf076a26c1e4c97ab5389aceac32ee13"
+        },
+        "empty.txt": {
+          "bytes": 2,
+          "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+          "git_sha1": "d00491fd7e5bb6fa28c517a0bb32b8b506539d4d"
+        },
+        "oracle.bitmap": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "oracle.json": {
+          "bytes": 393,
+          "sha256": "6fbb0484a5f1550eacfeaad80f89ff74f0347705ff7b556cb7767b448982dabe",
+          "git_sha1": "1105d74cf03bafb6b4c2b6e897c41344fafe0438"
+        },
+        "profile.txt": {
+          "bytes": 5,
+          "sha256": "f31367192a5df31f01e848a0105edbba9dd5cfe5012414733115ce6e094f1625",
+          "git_sha1": "03d147d2c72d0d6d00809a7766ab70c843230e72"
+        },
+        "query.sql": {
+          "bytes": 486,
+          "sha256": "adb4208a44b48ed8d1fac47dba376d577cb5457b36571e310c67ec460c85af49",
+          "git_sha1": "92bfda5a1453bcfd3c440bf97cc3e64336b58232"
+        },
+        "schema.sql": {
+          "bytes": 946,
+          "sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+          "git_sha1": "e28775e154b114fe59a9e0b4d2b28f7691aae7f7"
+        },
+        "source_rows.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        }
+      }
+    },
+    {
+      "profile": "iub4",
+      "case": "Observed",
+      "rows": 1795,
+      "binding": "405d3ce9144d61aff8781f848040a418e3b0bf01",
+      "original_projected_columns": [
+        9,
+        18,
+        25
+      ],
+      "full_schema_columns": 27,
+      "projected_source_types": [
+        "varchar(8)",
+        "varchar(2)",
+        "varchar(8)"
+      ],
+      "projected_nullable": [
+        true,
+        false,
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+      "original_sql_sha256": "5ac8d9210bc1d611c735c44d7ee75c025eac6deb7a5241a9a1a1f39e362782d7",
+      "source_rows_sha256": "ff7b3d293d49fc5038c84c59e087e798f2fde6638e15a583f4739b9695a9e832",
+      "source_csv": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/input_round3/IUBLibrary_1.csv",
+      "source_csv_sha256": "333660e1abbf44ddc6f8216779b425186f6a37028341821630658d68670e856e",
+      "observed_original_query": true,
+      "dictionaries": [
+        {
+          "column": 9,
+          "cardinality": 3,
+          "bytes": 83,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 18,
+          "cardinality": 173,
+          "bytes": 1072,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 25,
+          "cardinality": 3,
+          "bytes": 83,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": false,
+      "sum_literal_one": false,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "Inactive (group)",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "Inactive",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "Sh",
+          "type": "VARCHAR"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 901,
+          "sha256": "eec2ba6a4f4a5e3636f0e228c990f1753b3136a764470c3a7efcd1ebc8a79e85",
+          "git_sha1": "1c11444d1fbbd729067a4068530aa819b0c51979"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "8abcb1ddfe9a057e306d511fa476c712b2d43a6c1e9b04ba3f7cce60fa5d0481",
+          "git_sha1": "6b6a8e7b35446771e803fd4eceb913c298abbde6"
+        },
+        "col18.biased.u32": {
+          "bytes": 7180,
+          "sha256": "5df0a719d344f9193f64724ab6d47ecc0e8addbf063741073b94a87ae4c88d0f",
+          "git_sha1": "b86686728627e9b89eb4a994b4ed5b70b9a1abfc"
+        },
+        "col18.dict": {
+          "bytes": 1072,
+          "sha256": "660f26e6c9e9b9607b51cc76ac3be58a99046677925897a8f094823246b01f0b",
+          "git_sha1": "8a8b9f07235424a81ffdd119e60baace17e5b9d9"
+        },
+        "col18.u32": {
+          "bytes": 7180,
+          "sha256": "5df0a719d344f9193f64724ab6d47ecc0e8addbf063741073b94a87ae4c88d0f",
+          "git_sha1": "b86686728627e9b89eb4a994b4ed5b70b9a1abfc"
+        },
+        "col18.valid.bitmap": {
+          "bytes": 232,
+          "sha256": "bbf87b2b23a405a9b043c13927ae0b38c237a2bf5e3a4819299f955d63ca8d08",
+          "git_sha1": "b7a300b33e07ca872be6e40ad6d42872dfeaae12"
+        },
+        "col25.biased.u32": {
+          "bytes": 7180,
+          "sha256": "48e01007302617abeffe09638a68a8c952d868b02292487a15c2489a337d7c0b",
+          "git_sha1": "1655c307dade7ce4cfe559364e350af78e3c2045"
+        },
+        "col25.dict": {
+          "bytes": 83,
+          "sha256": "46e38f0e8d5b89d3845f2c91c43139e43bde87e7912064bd69ab360d3bdc898c",
+          "git_sha1": "a0fe788fe984f34ebddba96f46e7186c0eb09250"
+        },
+        "col25.u32": {
+          "bytes": 7180,
+          "sha256": "48e01007302617abeffe09638a68a8c952d868b02292487a15c2489a337d7c0b",
+          "git_sha1": "1655c307dade7ce4cfe559364e350af78e3c2045"
+        },
+        "col25.valid.bitmap": {
+          "bytes": 232,
+          "sha256": "bbf87b2b23a405a9b043c13927ae0b38c237a2bf5e3a4819299f955d63ca8d08",
+          "git_sha1": "b7a300b33e07ca872be6e40ad6d42872dfeaae12"
+        },
+        "col9.biased.u32": {
+          "bytes": 7180,
+          "sha256": "b59ee97497be80db1e960c22b92c560d9d8429c3c98a9f82d8ca652de322ceb2",
+          "git_sha1": "dfc04f19542ece32dea8f085c960ae32199999e0"
+        },
+        "col9.dict": {
+          "bytes": 83,
+          "sha256": "46e38f0e8d5b89d3845f2c91c43139e43bde87e7912064bd69ab360d3bdc898c",
+          "git_sha1": "a0fe788fe984f34ebddba96f46e7186c0eb09250"
+        },
+        "col9.u32": {
+          "bytes": 7180,
+          "sha256": "b59ee97497be80db1e960c22b92c560d9d8429c3c98a9f82d8ca652de322ceb2",
+          "git_sha1": "dfc04f19542ece32dea8f085c960ae32199999e0"
+        },
+        "col9.valid.bitmap": {
+          "bytes": 232,
+          "sha256": "989cf52d90ffa94b6d761b58b9be673c6956de4b4b5947844f69d562d48fddfa",
+          "git_sha1": "953254335005e37718969a88fe0eea41c39bddf1"
+        },
+        "columns.tsv": {
+          "bytes": 44,
+          "sha256": "6ffa3866bd73d37ff555388fa6daff8510a3f742cae37c7a0d0b0514d53850e5",
+          "git_sha1": "fcc3f424a3b27e5259e18409d82377031230ae72"
+        },
+        "oracle.bitmap": {
+          "bytes": 232,
+          "sha256": "bbf87b2b23a405a9b043c13927ae0b38c237a2bf5e3a4819299f955d63ca8d08",
+          "git_sha1": "b7a300b33e07ca872be6e40ad6d42872dfeaae12"
+        },
+        "oracle.json": {
+          "bytes": 19894,
+          "sha256": "8c856cd2410c29806867c9515ee643697ea62e81e85826591cfb6997c122b563",
+          "git_sha1": "a9a2f1c2224f62c9b1a61f340cdd4a586759c983"
+        },
+        "profile.txt": {
+          "bytes": 5,
+          "sha256": "305b90ffd97946a167ff4c1084361f37ba54b984b613bed804ed1135e4a52ab2",
+          "git_sha1": "8c505fa07af703e6a3e52dde9c2db9d615238678"
+        },
+        "query.sql": {
+          "bytes": 251,
+          "sha256": "5ac8d9210bc1d611c735c44d7ee75c025eac6deb7a5241a9a1a1f39e362782d7",
+          "git_sha1": "51e5a845ef0b72f84f0a2cf6090ac4c3b8996710"
+        },
+        "schema.sql": {
+          "bytes": 946,
+          "sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+          "git_sha1": "e28775e154b114fe59a9e0b4d2b28f7691aae7f7"
+        },
+        "source_rows.jsonl": {
+          "bytes": 527667,
+          "sha256": "ff7b3d293d49fc5038c84c59e087e798f2fde6638e15a583f4739b9695a9e832",
+          "git_sha1": "c29d81ce796480d6c8caf463421c8751e78db975"
+        }
+      }
+    },
+    {
+      "profile": "iub4",
+      "case": "MixedTail",
+      "rows": 1031,
+      "binding": "4a7875ad64e4b18f4e7acd19a92e99b25722052f",
+      "original_projected_columns": [
+        9,
+        18,
+        25
+      ],
+      "full_schema_columns": 27,
+      "projected_source_types": [
+        "varchar(8)",
+        "varchar(2)",
+        "varchar(8)"
+      ],
+      "projected_nullable": [
+        true,
+        false,
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+      "original_sql_sha256": "5ac8d9210bc1d611c735c44d7ee75c025eac6deb7a5241a9a1a1f39e362782d7",
+      "source_rows_sha256": "20c72579cdcdfc951d96227e805ab679a619258db203a452f2a0f0b357524a32",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 9,
+          "cardinality": 12,
+          "bytes": 125,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 18,
+          "cardinality": 11,
+          "bytes": 117,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 25,
+          "cardinality": 12,
+          "bytes": 125,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": false,
+      "sum_literal_one": false,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "Inactive (group)",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "Inactive",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "Sh",
+          "type": "VARCHAR"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 902,
+          "sha256": "6993ad20a5e3f03e2b3b025d0069f78f323a4cd4bf18f885bb14b6b437f38757",
+          "git_sha1": "ee8944bf45a7610a604727522eddcbf99d8f6856"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "08bff657d5ebcacb19fc5c3b9eba69a9c04072b48a88efa72eb65d7701a6d185",
+          "git_sha1": "479283999e73c4fae6d4f23aeea31ebb62acdabe"
+        },
+        "col18.biased.u32": {
+          "bytes": 4124,
+          "sha256": "1256755c4804fd1c81c583739708ed676bf9f7ea416d12365931bc9d127a3f40",
+          "git_sha1": "53aaf9655966345821fa8a5a6a4d2e29c5de6527"
+        },
+        "col18.dict": {
+          "bytes": 117,
+          "sha256": "35e12641eac75a8b54a77e8b006f3e677f8f825b463bbe658a0b7d917a833f4b",
+          "git_sha1": "af99caa96eeaea131ec42b2c08d2fa819abb6348"
+        },
+        "col18.u32": {
+          "bytes": 4124,
+          "sha256": "1256755c4804fd1c81c583739708ed676bf9f7ea416d12365931bc9d127a3f40",
+          "git_sha1": "53aaf9655966345821fa8a5a6a4d2e29c5de6527"
+        },
+        "col18.valid.bitmap": {
+          "bytes": 136,
+          "sha256": "8dc5db3a98afcb5be11f03999e02052ab78681e0dd0b3b1ab52aa5463c3414a4",
+          "git_sha1": "da8867dd5a508d06b0f4b2cab460f29036c5656d"
+        },
+        "col25.biased.u32": {
+          "bytes": 4124,
+          "sha256": "69191f17823d2ae260840a5d76f1344b770bf4fe0907f2eb8b087417980eb048",
+          "git_sha1": "6da4af324655a83d2ab7a3a2ac427308eeda837a"
+        },
+        "col25.dict": {
+          "bytes": 125,
+          "sha256": "1b77239fab116a3f13dbfa8af8a88bacc0a59a34b2cafd18aa4011f09fdb8ae3",
+          "git_sha1": "fb14f0c536d7034d77e70087ef71a4ac57831af0"
+        },
+        "col25.u32": {
+          "bytes": 4124,
+          "sha256": "69191f17823d2ae260840a5d76f1344b770bf4fe0907f2eb8b087417980eb048",
+          "git_sha1": "6da4af324655a83d2ab7a3a2ac427308eeda837a"
+        },
+        "col25.valid.bitmap": {
+          "bytes": 136,
+          "sha256": "8dc5db3a98afcb5be11f03999e02052ab78681e0dd0b3b1ab52aa5463c3414a4",
+          "git_sha1": "da8867dd5a508d06b0f4b2cab460f29036c5656d"
+        },
+        "col9.biased.u32": {
+          "bytes": 4124,
+          "sha256": "cedde483de6b89c41b19d2583a5f46468d0f7eb4251df5060062f34a128de301",
+          "git_sha1": "f0eec6dc600f836bac2506e96f56b99db415abc1"
+        },
+        "col9.dict": {
+          "bytes": 125,
+          "sha256": "42e39b3bf4c3cc74ff64932ddca747594051cf2f2c8cf1c7af911fe3c9440d1b",
+          "git_sha1": "c73e83474438a6f2046d8f33955a9563cf5976b5"
+        },
+        "col9.u32": {
+          "bytes": 4124,
+          "sha256": "cedde483de6b89c41b19d2583a5f46468d0f7eb4251df5060062f34a128de301",
+          "git_sha1": "f0eec6dc600f836bac2506e96f56b99db415abc1"
+        },
+        "col9.valid.bitmap": {
+          "bytes": 136,
+          "sha256": "1588273788844b26cf53d0047ef585b58047548cd42a257448e16892b3fc3d13",
+          "git_sha1": "a06da7047b4622ef0812a89d882e24a66bc79464"
+        },
+        "columns.tsv": {
+          "bytes": 44,
+          "sha256": "61e0aab15a8165da58bb434fd094cad64d85b1918fdede28ec8fca5614097b9f",
+          "git_sha1": "4987631930926831fd02e04645310425ee89e8ab"
+        },
+        "oracle.bitmap": {
+          "bytes": 136,
+          "sha256": "8dc5db3a98afcb5be11f03999e02052ab78681e0dd0b3b1ab52aa5463c3414a4",
+          "git_sha1": "da8867dd5a508d06b0f4b2cab460f29036c5656d"
+        },
+        "oracle.json": {
+          "bytes": 2028,
+          "sha256": "ce7e0850ef0d40276cb310a3f47f432a8cf3b2a0ee711324b083f7a7579bf125",
+          "git_sha1": "532886119ba7decad0da7ad285c08835807abc3c"
+        },
+        "profile.txt": {
+          "bytes": 5,
+          "sha256": "305b90ffd97946a167ff4c1084361f37ba54b984b613bed804ed1135e4a52ab2",
+          "git_sha1": "8c505fa07af703e6a3e52dde9c2db9d615238678"
+        },
+        "query.sql": {
+          "bytes": 251,
+          "sha256": "5ac8d9210bc1d611c735c44d7ee75c025eac6deb7a5241a9a1a1f39e362782d7",
+          "git_sha1": "51e5a845ef0b72f84f0a2cf6090ac4c3b8996710"
+        },
+        "schema.sql": {
+          "bytes": 946,
+          "sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+          "git_sha1": "e28775e154b114fe59a9e0b4d2b28f7691aae7f7"
+        },
+        "source_rows.jsonl": {
+          "bytes": 158395,
+          "sha256": "20c72579cdcdfc951d96227e805ab679a619258db203a452f2a0f0b357524a32",
+          "git_sha1": "4a7875ad64e4b18f4e7acd19a92e99b25722052f"
+        }
+      }
+    },
+    {
+      "profile": "iub4",
+      "case": "Endpoints",
+      "rows": 65,
+      "binding": "21fa0d5fad69cf7de9cd7558dd1bcf0089dfb400",
+      "original_projected_columns": [
+        9,
+        18,
+        25
+      ],
+      "full_schema_columns": 27,
+      "projected_source_types": [
+        "varchar(8)",
+        "varchar(2)",
+        "varchar(8)"
+      ],
+      "projected_nullable": [
+        true,
+        false,
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+      "original_sql_sha256": "5ac8d9210bc1d611c735c44d7ee75c025eac6deb7a5241a9a1a1f39e362782d7",
+      "source_rows_sha256": "31768a18e25708bc121b5c0e16b2d3370d7a14d55832ce3df8d431c760d31bdf",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 9,
+          "cardinality": 12,
+          "bytes": 125,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 18,
+          "cardinality": 11,
+          "bytes": 117,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 25,
+          "cardinality": 12,
+          "bytes": 125,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": false,
+      "sum_literal_one": false,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "Inactive (group)",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "Inactive",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "Sh",
+          "type": "VARCHAR"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 893,
+          "sha256": "a3a00ea534223cf35326820559db889b4c3b4611875014103fdfb4f935e1cb9e",
+          "git_sha1": "5bd4c8a087cb0deb080418dc6e43062df75a6838"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "6613031375fecc7ec1de96273f10a6cde1e0e9e3f09231fd43d9f16dddbc89e0",
+          "git_sha1": "62cb9ef77eb469250568f16bc8b31cc9971b2a78"
+        },
+        "col18.biased.u32": {
+          "bytes": 260,
+          "sha256": "e9adf8414cb436c95cb6fb85afac2d80a3ae5477adee1a8bd2b9b655b626d632",
+          "git_sha1": "1d1e4ae5fa3b2649dbd09b15918889f196d04a73"
+        },
+        "col18.dict": {
+          "bytes": 117,
+          "sha256": "ae2fd8f014aeba0bf18e227e3eef4f0a869d8315264e4f815d4484a0a9313317",
+          "git_sha1": "a63804e9bf7e9fb7190d070f921e002b688d074f"
+        },
+        "col18.u32": {
+          "bytes": 260,
+          "sha256": "e9adf8414cb436c95cb6fb85afac2d80a3ae5477adee1a8bd2b9b655b626d632",
+          "git_sha1": "1d1e4ae5fa3b2649dbd09b15918889f196d04a73"
+        },
+        "col18.valid.bitmap": {
+          "bytes": 16,
+          "sha256": "c9cb04ba987a95a535a8ba7d18b3815d0f04b47add63f2b18ed0a66f9a6d617a",
+          "git_sha1": "f153b932ec0eaa2a7b368686a0f04c8f976d5cba"
+        },
+        "col25.biased.u32": {
+          "bytes": 260,
+          "sha256": "3c1516351fa11c1dea122ef00328010083dbf3d6ebab4faddee1cd48d176713b",
+          "git_sha1": "8567f256d0baeeb2f65636c0b29c3336b8355bee"
+        },
+        "col25.dict": {
+          "bytes": 125,
+          "sha256": "6d602f59d6682ba5ea0dbc624dd798ddf74e01a83ee56209b255f96841817bfe",
+          "git_sha1": "8a07e5c48658efa068db40964ce06e261523fe80"
+        },
+        "col25.u32": {
+          "bytes": 260,
+          "sha256": "3c1516351fa11c1dea122ef00328010083dbf3d6ebab4faddee1cd48d176713b",
+          "git_sha1": "8567f256d0baeeb2f65636c0b29c3336b8355bee"
+        },
+        "col25.valid.bitmap": {
+          "bytes": 16,
+          "sha256": "c9cb04ba987a95a535a8ba7d18b3815d0f04b47add63f2b18ed0a66f9a6d617a",
+          "git_sha1": "f153b932ec0eaa2a7b368686a0f04c8f976d5cba"
+        },
+        "col9.biased.u32": {
+          "bytes": 260,
+          "sha256": "1f8f43a9f24e39a850afd8e363763b150e57b1120d9cf0dca08642d9ebeb1dc8",
+          "git_sha1": "9da0a04da85e00d2f31a215375075262a3d2e477"
+        },
+        "col9.dict": {
+          "bytes": 125,
+          "sha256": "59637b4ad8d8784af0583ebbf17f9ea7ae06d428c80e973f240e730678c16f1c",
+          "git_sha1": "bf5b393109f6d060c0528a42a6e838083deaadc0"
+        },
+        "col9.u32": {
+          "bytes": 260,
+          "sha256": "1f8f43a9f24e39a850afd8e363763b150e57b1120d9cf0dca08642d9ebeb1dc8",
+          "git_sha1": "9da0a04da85e00d2f31a215375075262a3d2e477"
+        },
+        "col9.valid.bitmap": {
+          "bytes": 16,
+          "sha256": "827ba5fd00b82831dcc80c2166292c0d3774e74c9a22cc123a834a1cef7c2bef",
+          "git_sha1": "ffeb58c0c4f129a752d026997ddbbb848636df85"
+        },
+        "columns.tsv": {
+          "bytes": 38,
+          "sha256": "6508ba6ffe18ff66180c539444bbc4f55845b008e3594aaf034e22374d7f9414",
+          "git_sha1": "604636579240fce4308d781c0637608568e8e3c4"
+        },
+        "oracle.bitmap": {
+          "bytes": 16,
+          "sha256": "c9cb04ba987a95a535a8ba7d18b3815d0f04b47add63f2b18ed0a66f9a6d617a",
+          "git_sha1": "f153b932ec0eaa2a7b368686a0f04c8f976d5cba"
+        },
+        "oracle.json": {
+          "bytes": 3198,
+          "sha256": "4ab846068f46a8c884cd6c8ab4b3c0627aedf3c4ea6fd10c8046063bace9a979",
+          "git_sha1": "910d90f8b1693a82c1ee6727b25dfc1921c1478a"
+        },
+        "profile.txt": {
+          "bytes": 5,
+          "sha256": "305b90ffd97946a167ff4c1084361f37ba54b984b613bed804ed1135e4a52ab2",
+          "git_sha1": "8c505fa07af703e6a3e52dde9c2db9d615238678"
+        },
+        "query.sql": {
+          "bytes": 251,
+          "sha256": "5ac8d9210bc1d611c735c44d7ee75c025eac6deb7a5241a9a1a1f39e362782d7",
+          "git_sha1": "51e5a845ef0b72f84f0a2cf6090ac4c3b8996710"
+        },
+        "schema.sql": {
+          "bytes": 946,
+          "sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+          "git_sha1": "e28775e154b114fe59a9e0b4d2b28f7691aae7f7"
+        },
+        "source_rows.jsonl": {
+          "bytes": 9990,
+          "sha256": "31768a18e25708bc121b5c0e16b2d3370d7a14d55832ce3df8d431c760d31bdf",
+          "git_sha1": "21fa0d5fad69cf7de9cd7558dd1bcf0089dfb400"
+        }
+      }
+    },
+    {
+      "profile": "iub4",
+      "case": "Singleton",
+      "rows": 1,
+      "binding": "f556a56ce05d6de2d0dff2521c870349d2870fae",
+      "original_projected_columns": [
+        9,
+        18,
+        25
+      ],
+      "full_schema_columns": 27,
+      "projected_source_types": [
+        "varchar(8)",
+        "varchar(2)",
+        "varchar(8)"
+      ],
+      "projected_nullable": [
+        true,
+        false,
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+      "original_sql_sha256": "5ac8d9210bc1d611c735c44d7ee75c025eac6deb7a5241a9a1a1f39e362782d7",
+      "source_rows_sha256": "d43927952809672bec181f39ed4651f8e5bf3f92ca90c13ab6f9e5355908dbf4",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 9,
+          "cardinality": 0,
+          "bytes": 52,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 18,
+          "cardinality": 1,
+          "bytes": 57,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 25,
+          "cardinality": 1,
+          "bytes": 57,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": false,
+      "sum_literal_one": false,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "Inactive (group)",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "Inactive",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "Sh",
+          "type": "VARCHAR"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 884,
+          "sha256": "87af80addc177d46744e7a6a12592050892de510cfb7e1080efd54ad01249ebf",
+          "git_sha1": "4d0449de8466b30f2673e6c5973b650fe5c46e01"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "0de2f3f0884523ec44a9931c6cef6070ffbc38861ad0df1c3ada4d83c4c55309",
+          "git_sha1": "f50c6bd1749c1976971ed95d65dd97272a1460a9"
+        },
+        "col18.biased.u32": {
+          "bytes": 4,
+          "sha256": "6d58692645c9d1cfaf13541cbd258f86193ef63c2f1d38f6bbca9617372d7bd6",
+          "git_sha1": "68cbac134512379eff90debd6438aad9b6a03f91"
+        },
+        "col18.dict": {
+          "bytes": 57,
+          "sha256": "04eafc922987a4d3b706498e9f5a59810f1cfeef1bc06eedb3b4766bf2124b78",
+          "git_sha1": "cddcbbc778b85e797a26737e73cf4c9a0cc363bb"
+        },
+        "col18.u32": {
+          "bytes": 4,
+          "sha256": "6d58692645c9d1cfaf13541cbd258f86193ef63c2f1d38f6bbca9617372d7bd6",
+          "git_sha1": "68cbac134512379eff90debd6438aad9b6a03f91"
+        },
+        "col18.valid.bitmap": {
+          "bytes": 8,
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8",
+          "git_sha1": "20d5cb86e6dff1f3684dc229a358a2ea697cecfb"
+        },
+        "col25.biased.u32": {
+          "bytes": 4,
+          "sha256": "6d58692645c9d1cfaf13541cbd258f86193ef63c2f1d38f6bbca9617372d7bd6",
+          "git_sha1": "68cbac134512379eff90debd6438aad9b6a03f91"
+        },
+        "col25.dict": {
+          "bytes": 57,
+          "sha256": "9271be76ba69558d4267fff79c1f5be7e0b6ac9bcb3246f10551d1645f2527fe",
+          "git_sha1": "ad99aed23bb810c5cbebbf19fb4b99a89a7dfad9"
+        },
+        "col25.u32": {
+          "bytes": 4,
+          "sha256": "6d58692645c9d1cfaf13541cbd258f86193ef63c2f1d38f6bbca9617372d7bd6",
+          "git_sha1": "68cbac134512379eff90debd6438aad9b6a03f91"
+        },
+        "col25.valid.bitmap": {
+          "bytes": 8,
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8",
+          "git_sha1": "20d5cb86e6dff1f3684dc229a358a2ea697cecfb"
+        },
+        "col9.biased.u32": {
+          "bytes": 4,
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+          "git_sha1": "593f4708db84ac8fd0f5cc47c634f38c013fe9e4"
+        },
+        "col9.dict": {
+          "bytes": 52,
+          "sha256": "db9d848a333a566c0fb81746f4b50e6e1463620a4f8f3e6fc36957130c0c66c0",
+          "git_sha1": "2b6411090afebfec3ec2211f5c9682b871a33097"
+        },
+        "col9.u32": {
+          "bytes": 4,
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+          "git_sha1": "593f4708db84ac8fd0f5cc47c634f38c013fe9e4"
+        },
+        "col9.valid.bitmap": {
+          "bytes": 8,
+          "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+          "git_sha1": "1b1cb4d44c57c2d7a5122870fa6ac3e62ff7e94e"
+        },
+        "columns.tsv": {
+          "bytes": 35,
+          "sha256": "168b0c24ed1f5a75f89a11588c01c77eef4f95aad50090f366a32fe725a127c3",
+          "git_sha1": "04e84199a943909f351ccd57d2e263fff427daec"
+        },
+        "oracle.bitmap": {
+          "bytes": 8,
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8",
+          "git_sha1": "20d5cb86e6dff1f3684dc229a358a2ea697cecfb"
+        },
+        "oracle.json": {
+          "bytes": 275,
+          "sha256": "f95bfbd555b6c7e313136cd4a4e478a82bfcd4ef1ceee1281036d782b47a0aa0",
+          "git_sha1": "31cd22ee3a0cdb25e148fd6fca5f0fef9e0ea611"
+        },
+        "profile.txt": {
+          "bytes": 5,
+          "sha256": "305b90ffd97946a167ff4c1084361f37ba54b984b613bed804ed1135e4a52ab2",
+          "git_sha1": "8c505fa07af703e6a3e52dde9c2db9d615238678"
+        },
+        "query.sql": {
+          "bytes": 251,
+          "sha256": "5ac8d9210bc1d611c735c44d7ee75c025eac6deb7a5241a9a1a1f39e362782d7",
+          "git_sha1": "51e5a845ef0b72f84f0a2cf6090ac4c3b8996710"
+        },
+        "schema.sql": {
+          "bytes": 946,
+          "sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+          "git_sha1": "e28775e154b114fe59a9e0b4d2b28f7691aae7f7"
+        },
+        "source_rows.jsonl": {
+          "bytes": 148,
+          "sha256": "d43927952809672bec181f39ed4651f8e5bf3f92ca90c13ab6f9e5355908dbf4",
+          "git_sha1": "f556a56ce05d6de2d0dff2521c870349d2870fae"
+        }
+      }
+    },
+    {
+      "profile": "iub4",
+      "case": "Empty",
+      "rows": 0,
+      "binding": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "original_projected_columns": [
+        9,
+        18,
+        25
+      ],
+      "full_schema_columns": 27,
+      "projected_source_types": [
+        "varchar(8)",
+        "varchar(2)",
+        "varchar(8)"
+      ],
+      "projected_nullable": [
+        true,
+        false,
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+      "original_sql_sha256": "5ac8d9210bc1d611c735c44d7ee75c025eac6deb7a5241a9a1a1f39e362782d7",
+      "source_rows_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 9,
+          "cardinality": 0,
+          "bytes": 52,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 18,
+          "cardinality": 0,
+          "bytes": 52,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 25,
+          "cardinality": 0,
+          "bytes": 52,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": false,
+      "sum_literal_one": false,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "Inactive (group)",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "Inactive",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "Sh",
+          "type": "VARCHAR"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 884,
+          "sha256": "2f114a9c676ce7c9e0c6feae80da6dc122e879c0f93a17146f0b3da446cb0672",
+          "git_sha1": "7b7924030d562d74e89c1eb6c373c0e98bd04e56"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "9ca990ad213db6735ea35d90b25433efd2e35300a1a42469eeed91c2d62ae235",
+          "git_sha1": "cca7a1a76e98af9898d8d111566f96c975b6ba7c"
+        },
+        "col18.biased.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col18.dict": {
+          "bytes": 52,
+          "sha256": "f93a3b4c7d334dea41645918d9fa4e3661aa6546fb78854d057873f63fafe8ff",
+          "git_sha1": "8f4318ade2601a668c81957baf8b0577eb82105e"
+        },
+        "col18.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col18.valid.bitmap": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col25.biased.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col25.dict": {
+          "bytes": 52,
+          "sha256": "f93a3b4c7d334dea41645918d9fa4e3661aa6546fb78854d057873f63fafe8ff",
+          "git_sha1": "8f4318ade2601a668c81957baf8b0577eb82105e"
+        },
+        "col25.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col25.valid.bitmap": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col9.biased.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col9.dict": {
+          "bytes": 52,
+          "sha256": "f93a3b4c7d334dea41645918d9fa4e3661aa6546fb78854d057873f63fafe8ff",
+          "git_sha1": "8f4318ade2601a668c81957baf8b0577eb82105e"
+        },
+        "col9.u32": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "col9.valid.bitmap": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "columns.tsv": {
+          "bytes": 35,
+          "sha256": "ed4a70513d8b93bf8469947c0c39fe34c2d50c510b5726f85334d30acfd73734",
+          "git_sha1": "c441cd1e50cb9095e853ea19a785d31a3aa519f3"
+        },
+        "empty.txt": {
+          "bytes": 2,
+          "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+          "git_sha1": "d00491fd7e5bb6fa28c517a0bb32b8b506539d4d"
+        },
+        "oracle.bitmap": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "oracle.json": {
+          "bytes": 227,
+          "sha256": "50851be23e6b72df594fe0b910ce8ad20924fd5414d873383ee0dfeab99ecb2f",
+          "git_sha1": "8d9a69f80f393934b8951f797733cbd4c2267ec6"
+        },
+        "profile.txt": {
+          "bytes": 5,
+          "sha256": "305b90ffd97946a167ff4c1084361f37ba54b984b613bed804ed1135e4a52ab2",
+          "git_sha1": "8c505fa07af703e6a3e52dde9c2db9d615238678"
+        },
+        "query.sql": {
+          "bytes": 251,
+          "sha256": "5ac8d9210bc1d611c735c44d7ee75c025eac6deb7a5241a9a1a1f39e362782d7",
+          "git_sha1": "51e5a845ef0b72f84f0a2cf6090ac4c3b8996710"
+        },
+        "schema.sql": {
+          "bytes": 946,
+          "sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+          "git_sha1": "e28775e154b114fe59a9e0b4d2b28f7691aae7f7"
+        },
+        "source_rows.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        }
+      }
+    },
+    {
+      "profile": "iub4",
+      "case": "AllNullInactive",
+      "rows": 64,
+      "binding": "dc6a421d7f0f60deaef7b28328c9c5ae0749a4e2",
+      "original_projected_columns": [
+        9,
+        18,
+        25
+      ],
+      "full_schema_columns": 27,
+      "projected_source_types": [
+        "varchar(8)",
+        "varchar(2)",
+        "varchar(8)"
+      ],
+      "projected_nullable": [
+        true,
+        false,
+        false
+      ],
+      "original_NOT_NULL_unchanged_all_cases": true,
+      "schema_sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+      "original_sql_sha256": "5ac8d9210bc1d611c735c44d7ee75c025eac6deb7a5241a9a1a1f39e362782d7",
+      "source_rows_sha256": "65a91eb51b33fec1e397d6eb2a8e1d0b776bbe15a519898ac3713f3ba18561f3",
+      "source_csv": null,
+      "source_csv_sha256": null,
+      "observed_original_query": false,
+      "dictionaries": [
+        {
+          "column": 9,
+          "cardinality": 0,
+          "bytes": 52,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 18,
+          "cardinality": 10,
+          "bytes": 112,
+          "first_occurrence_original_strings": true
+        },
+        {
+          "column": 25,
+          "cardinality": 11,
+          "bytes": 120,
+          "first_occurrence_original_strings": true
+        }
+      ],
+      "ordered_original_SQL": false,
+      "sum_literal_one": false,
+      "no_WHERE": true,
+      "representation": "original finite DATE32 / SMALLINT16 / literal original UTF8 code32; fixed family5",
+      "no_year_cache_or_group_index": true,
+      "full_typed_output_columns": [
+        {
+          "name": "Inactive (group)",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "Inactive",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "Sh",
+          "type": "VARCHAR"
+        }
+      ],
+      "files": {
+        "RESTORATION_RECEIPT.json": {
+          "bytes": 892,
+          "sha256": "8cf2afb94f4cb9935717db2cc3b788850efe9d6daa27334f90b3247900b757fd",
+          "git_sha1": "3960718b07b95f3a3a8305ab2021d7bc44066a02"
+        },
+        "binding.txt": {
+          "bytes": 41,
+          "sha256": "91c87f2c2543aa3280eb690fa0d53ae2b28019a9925ae551fcb4b7bff47396f8",
+          "git_sha1": "d6c539e6b97e6b283ecce4fec154141b0eb6bb31"
+        },
+        "col18.biased.u32": {
+          "bytes": 256,
+          "sha256": "f5c8bf2f5db69087135ed57ff738fad973f0be307918193500a269b783d0a7e5",
+          "git_sha1": "bf6594db4e6f1a11e7566f24c0b824ac812201c2"
+        },
+        "col18.dict": {
+          "bytes": 112,
+          "sha256": "c74eacf167274fca8b2a09d59994c30d05a94588bb833f0fc763bcd85c704f4d",
+          "git_sha1": "c0b784c05f7d5cd219acd7e57bafa49ef3ac5064"
+        },
+        "col18.u32": {
+          "bytes": 256,
+          "sha256": "f5c8bf2f5db69087135ed57ff738fad973f0be307918193500a269b783d0a7e5",
+          "git_sha1": "bf6594db4e6f1a11e7566f24c0b824ac812201c2"
+        },
+        "col18.valid.bitmap": {
+          "bytes": 8,
+          "sha256": "12a3ae445661ce5dee78d0650d33362dec29c4f82af05e7e57fb595bbbacf0ca",
+          "git_sha1": "8663f7de5dd7a79b04f7fcc4fea0046e2659a1a1"
+        },
+        "col25.biased.u32": {
+          "bytes": 256,
+          "sha256": "4c6c6dab6af710318769df332fba093ac14e090ad5386ad83082948c73ebb033",
+          "git_sha1": "a106d3a9220e146e77f9fa552f846776ffcccee8"
+        },
+        "col25.dict": {
+          "bytes": 120,
+          "sha256": "488c56aae983350ac474b787cdabf0522b01c0051a588b2745b747af19caac94",
+          "git_sha1": "5157b04627c1f468e92faf19a9353e013293f16a"
+        },
+        "col25.u32": {
+          "bytes": 256,
+          "sha256": "4c6c6dab6af710318769df332fba093ac14e090ad5386ad83082948c73ebb033",
+          "git_sha1": "a106d3a9220e146e77f9fa552f846776ffcccee8"
+        },
+        "col25.valid.bitmap": {
+          "bytes": 8,
+          "sha256": "12a3ae445661ce5dee78d0650d33362dec29c4f82af05e7e57fb595bbbacf0ca",
+          "git_sha1": "8663f7de5dd7a79b04f7fcc4fea0046e2659a1a1"
+        },
+        "col9.biased.u32": {
+          "bytes": 256,
+          "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1",
+          "git_sha1": "65f57c2ee985713476ac0b6e3483e6fe472e2176"
+        },
+        "col9.dict": {
+          "bytes": 52,
+          "sha256": "e2c3a74795862a147987d0c24eb81cedce7c69942a8487faa22ed51f9154d66c",
+          "git_sha1": "248f11520dd8bf498b2756be3904631cd74ae2b9"
+        },
+        "col9.u32": {
+          "bytes": 256,
+          "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1",
+          "git_sha1": "65f57c2ee985713476ac0b6e3483e6fe472e2176"
+        },
+        "col9.valid.bitmap": {
+          "bytes": 8,
+          "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+          "git_sha1": "1b1cb4d44c57c2d7a5122870fa6ac3e62ff7e94e"
+        },
+        "columns.tsv": {
+          "bytes": 38,
+          "sha256": "79a2e0f45418542bb170052cdbded609e66cf59cd4107cfe37a38ae44529730a",
+          "git_sha1": "6c7499113971989b5b46268062562d15a6059e61"
+        },
+        "oracle.bitmap": {
+          "bytes": 8,
+          "sha256": "12a3ae445661ce5dee78d0650d33362dec29c4f82af05e7e57fb595bbbacf0ca",
+          "git_sha1": "8663f7de5dd7a79b04f7fcc4fea0046e2659a1a1"
+        },
+        "oracle.json": {
+          "bytes": 3350,
+          "sha256": "fee1deb664efa07d923b0a610cd82c924278c055efb17c6e146459767ff804a5",
+          "git_sha1": "228e1fcc2a2161e70d728f90ff7b006220d8e661"
+        },
+        "profile.txt": {
+          "bytes": 5,
+          "sha256": "305b90ffd97946a167ff4c1084361f37ba54b984b613bed804ed1135e4a52ab2",
+          "git_sha1": "8c505fa07af703e6a3e52dde9c2db9d615238678"
+        },
+        "query.sql": {
+          "bytes": 251,
+          "sha256": "5ac8d9210bc1d611c735c44d7ee75c025eac6deb7a5241a9a1a1f39e362782d7",
+          "git_sha1": "51e5a845ef0b72f84f0a2cf6090ac4c3b8996710"
+        },
+        "schema.sql": {
+          "bytes": 946,
+          "sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+          "git_sha1": "e28775e154b114fe59a9e0b4d2b28f7691aae7f7"
+        },
+        "source_rows.jsonl": {
+          "bytes": 9858,
+          "sha256": "65a91eb51b33fec1e397d6eb2a8e1d0b776bbe15a519898ac3713f3ba18561f3",
+          "git_sha1": "dc6a421d7f0f60deaef7b28328c9c5ae0749a4e2"
+        }
+      }
+    }
+  ],
+  "sources": [
+    {
+      "table": "Food",
+      "path": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/input_round3/Food_1.csv",
+      "bytes": 2043925,
+      "sha256": "c04892ea46c7ed1fbf09f1700d9152023deb110bfb47090c5cabfe370ee8e513",
+      "git_sha1": "40a6eeb5d643197d68798b96f03894604400a7a0",
+      "rows": 65536,
+      "original_CSV_retained_in_place": true,
+      "all_original_fields_validated": true
+    },
+    {
+      "table": "IGlocations1",
+      "path": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/input_round3/IGlocations1_1.csv",
+      "bytes": 5453836,
+      "sha256": "186979a35563c6b6a7e88b21b5385e4ed70d131b852770d0c2423c2a76c2a447",
+      "git_sha1": "ee275641f7c34fcb258559be100f83cf088b927c",
+      "rows": 65536,
+      "original_CSV_retained_in_place": true,
+      "all_original_fields_validated": true
+    },
+    {
+      "table": "IUBLibrary",
+      "path": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/input_round3/IUBLibrary_1.csv",
+      "bytes": 453969,
+      "sha256": "333660e1abbf44ddc6f8216779b425186f6a37028341821630658d68670e856e",
+      "git_sha1": "405d3ce9144d61aff8781f848040a418e3b0bf01",
+      "rows": 1795,
+      "original_CSV_retained_in_place": true,
+      "all_original_fields_validated": true
+    }
+  ],
+  "dialect_receipt_path": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_groups_repro_v2/DIALECT_RECEIPT.json",
+  "dialect_receipt_sha256": "46358577d82f907b64af2e678e14521a09596a7b2a6dd6f496a17a9baf61bbc3",
+  "dialect_before_observed_reads": true,
+  "authored_dialect_executions": 8,
+  "all_original_rows_and_CSV_lines_preserved": true,
+  "all_full_schema_original_values_validated": true,
+  "full_projected_original_values_and_validity_restored": true,
+  "original_NOT_NULL_unchanged_all_cases": true,
+  "fixed_codecs_independent_of_values_and_query_outputs": true,
+  "new_projection_frozen_before_inspection": true,
+  "fresh_unseen_dataset_claim": false,
+  "no_WHERE_no_predicate_compiler_speed_claim": true,
+  "no_timing_claim": true
+}

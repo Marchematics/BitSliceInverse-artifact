@@ -1,0 +1,853 @@
+{
+ "protocol": {
+  "host": "localhost (AMD EPYC 9554, 2x64C/256T)",
+  "pin": "nice -n 5 taskset -c 80 / 80-83 / 80-87 / 80-95 for 1/4/8/16T",
+  "timing": "1 warmup build (also P-state/ page-cache warm-up) + 3 timed builds per configuration; medians reported; /usr/bin/time -f 'wall=%e rss=%M' per run",
+  "page_cache": "encoded tree pre-read before each timed run",
+  "binary": "../../research/real_decoders_20261024/src_scale_20261101/ecube3_mt (copy of src_eai_20261101/eai_cube3.cpp + build_enc_mt/build_plain_mt)",
+  "frozen_reference_binary": "../../work/specs/bin/enc_cube3_frozen",
+  "frozen_reference_sha256": "37ad8f3648c04102221b54941c4f2f82eb673a750c5f6cc9d1a24959e8f8742e",
+  "identity_rule": "every *_mt build must equal the frozen single-thread build sha256"
+ },
+ "datasets": {
+  "nyc100m": {
+   "frozen_sha256": "78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee",
+   "reference_1t": {
+    "threads": 1,
+    "core_mask": "80",
+    "reps": 3,
+    "wall_s_median": 3.4028,
+    "wall_s_all": [
+     3.3131,
+     3.4028,
+     3.409
+    ],
+    "build_ms_median": 3379.855,
+    "build_ms_all": [
+     3290.13,
+     3379.855,
+     3385.947
+    ],
+    "peak_rss_mb": 284416.0,
+    "metrics": {
+     "build_ms": 3290.13,
+     "pass1_ms": 380.543,
+     "accum_ms": 2906.536,
+     "prefix_ms": 0.251,
+     "write_ms": 2.8,
+     "groups": 11,
+     "values": 21084,
+     "rows": 100000000,
+     "bytes": 1140168,
+     "dense": 0,
+     "encoded": 1,
+     "v2": 1
+    },
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_3170140.txt nice -n 5 taskset -c 80 ../../work/specs/bin/enc_cube3_frozen build_enc ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed.encoded ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed 17 13 ../../work/scale/e3_nyc100m_ref.ecube",
+    "exit": 0,
+    "sha256": "78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee"
+   },
+   "mt": {
+    "T1": {
+     "threads": 1,
+     "core_mask": "80",
+     "reps": 3,
+     "wall_s_median": 1.1057,
+     "wall_s_all": [
+      1.1039,
+      1.1057,
+      1.1138
+     ],
+     "build_ms_median": 1083.759,
+     "build_ms_all": [
+      1080.983,
+      1083.759,
+      1089.872
+     ],
+     "peak_rss_mb": 284720.0,
+     "metrics": {
+      "mode": "build_enc_mt",
+      "build_ms": 1089.872,
+      "load_ms": 78.437,
+      "domain_ms": 86.328,
+      "distinct_ms": 255.837,
+      "accum_ms": 666.04,
+      "merge_ms": 0.057,
+      "prefix_ms": 0.254,
+      "write_ms": 2.92,
+      "groups": 11,
+      "values": 21084,
+      "rows": 100000000,
+      "bytes": 1140168,
+      "dense": 0,
+      "null_measure": 0,
+      "threads_requested": 1,
+      "threads_used": 1,
+      "slab_bytes_per_thread": 927740,
+      "encoded": 1,
+      "v3_frozen": 1
+     },
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_3170140.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/ecube3_mt build_enc_mt ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed.encoded ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed 17 13 ../../work/scale/e3_nyc100m_t1.ecube 1 24",
+     "exit": 0,
+     "sha256": "78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee",
+     "byte_identical": true
+    },
+    "T4": {
+     "threads": 4,
+     "core_mask": "80-83",
+     "reps": 3,
+     "wall_s_median": 0.3702,
+     "wall_s_all": [
+      0.3694,
+      0.3702,
+      0.3802
+     ],
+     "build_ms_median": 347.204,
+     "build_ms_all": [
+      346.542,
+      347.204,
+      356.871
+     ],
+     "peak_rss_mb": 288416.0,
+     "metrics": {
+      "mode": "build_enc_mt",
+      "build_ms": 346.542,
+      "load_ms": 77.685,
+      "domain_ms": 28.554,
+      "distinct_ms": 71.057,
+      "accum_ms": 166.054,
+      "merge_ms": 0.372,
+      "prefix_ms": 0.142,
+      "write_ms": 2.678,
+      "groups": 11,
+      "values": 21084,
+      "rows": 100000000,
+      "bytes": 1140168,
+      "dense": 0,
+      "null_measure": 0,
+      "threads_requested": 4,
+      "threads_used": 4,
+      "slab_bytes_per_thread": 927740,
+      "encoded": 1,
+      "v3_frozen": 1
+     },
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_3170140.txt nice -n 5 taskset -c 80-83 ../../research/real_decoders_20261024/src_scale_20261101/ecube3_mt build_enc_mt ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed.encoded ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed 17 13 ../../work/scale/e3_nyc100m_t4.ecube 4 24",
+     "exit": 0,
+     "sha256": "78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee",
+     "byte_identical": true
+    },
+    "T8": {
+     "threads": 8,
+     "core_mask": "80-87",
+     "reps": 3,
+     "wall_s_median": 0.2443,
+     "wall_s_all": [
+      0.242,
+      0.2443,
+      0.2444
+     ],
+     "build_ms_median": 221.987,
+     "build_ms_all": [
+      219.732,
+      221.987,
+      223.183
+     ],
+     "peak_rss_mb": 293712.0,
+     "metrics": {
+      "mode": "build_enc_mt",
+      "build_ms": 219.732,
+      "load_ms": 77.535,
+      "domain_ms": 13.818,
+      "distinct_ms": 39.201,
+      "accum_ms": 85.605,
+      "merge_ms": 0.763,
+      "prefix_ms": 0.233,
+      "write_ms": 2.576,
+      "groups": 11,
+      "values": 21084,
+      "rows": 100000000,
+      "bytes": 1140168,
+      "dense": 0,
+      "null_measure": 0,
+      "threads_requested": 8,
+      "threads_used": 8,
+      "slab_bytes_per_thread": 927740,
+      "encoded": 1,
+      "v3_frozen": 1
+     },
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_3170140.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/ecube3_mt build_enc_mt ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed.encoded ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed 17 13 ../../work/scale/e3_nyc100m_t8.ecube 8 24",
+     "exit": 0,
+     "sha256": "78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee",
+     "byte_identical": true
+    },
+    "T16": {
+     "threads": 16,
+     "core_mask": "80-95",
+     "reps": 3,
+     "wall_s_median": 0.191,
+     "wall_s_all": [
+      0.1905,
+      0.191,
+      0.193
+     ],
+     "build_ms_median": 168.499,
+     "build_ms_all": [
+      167.624,
+      168.499,
+      170.412
+     ],
+     "peak_rss_mb": 303416.0,
+     "metrics": {
+      "mode": "build_enc_mt",
+      "build_ms": 167.624,
+      "load_ms": 77.704,
+      "domain_ms": 8.029,
+      "distinct_ms": 29.767,
+      "accum_ms": 47.608,
+      "merge_ms": 1.538,
+      "prefix_ms": 0.532,
+      "write_ms": 2.445,
+      "groups": 11,
+      "values": 21084,
+      "rows": 100000000,
+      "bytes": 1140168,
+      "dense": 0,
+      "null_measure": 0,
+      "threads_requested": 16,
+      "threads_used": 16,
+      "slab_bytes_per_thread": 927740,
+      "encoded": 1,
+      "v3_frozen": 1
+     },
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_3170140.txt nice -n 5 taskset -c 80-95 ../../research/real_decoders_20261024/src_scale_20261101/ecube3_mt build_enc_mt ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed.encoded ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed 17 13 ../../work/scale/e3_nyc100m_t16.ecube 16 24",
+     "exit": 0,
+     "sha256": "78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee",
+     "byte_identical": true
+    }
+   }
+  },
+  "nyc12m": {
+   "frozen_sha256": "748029efe222b8de0a108e451085251f5bebe827f9d01b206d5f5bce5aab51e8",
+   "reference_1t": {
+    "threads": 1,
+    "core_mask": "80",
+    "reps": 3,
+    "wall_s_median": 0.3921,
+    "wall_s_all": [
+     0.3798,
+     0.3921,
+     0.3936
+    ],
+    "build_ms_median": 382.487,
+    "build_ms_all": [
+     369.965,
+     382.487,
+     384.137
+    ],
+    "peak_rss_mb": 38716.0,
+    "metrics": {
+     "build_ms": 382.487,
+     "pass1_ms": 45.211,
+     "accum_ms": 334.709,
+     "prefix_ms": 0.133,
+     "write_ms": 2.434,
+     "groups": 11,
+     "values": 9494,
+     "rows": 12000000,
+     "bytes": 513596,
+     "dense": 0,
+     "encoded": 1,
+     "v2": 1
+    },
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_3170140.txt nice -n 5 taskset -c 80 ../../work/specs/bin/enc_cube3_frozen build_enc ../../research/real_decoders_20261024/results/nyc_taxi_2023_prep/Observed.encoded ../../research/real_decoders_20261024/results/nyc_taxi_2023_prep/Observed 17 13 ../../work/scale/e3_nyc12m_ref.ecube",
+    "exit": 0,
+    "sha256": "748029efe222b8de0a108e451085251f5bebe827f9d01b206d5f5bce5aab51e8"
+   },
+   "mt": {
+    "T1": {
+     "threads": 1,
+     "core_mask": "80",
+     "reps": 3,
+     "wall_s_median": 0.1202,
+     "wall_s_all": [
+      0.12,
+      0.1202,
+      0.1222
+     ],
+     "build_ms_median": 110.801,
+     "build_ms_all": [
+      110.729,
+      110.801,
+      112.414
+     ],
+     "peak_rss_mb": 39368.0,
+     "metrics": {
+      "mode": "build_enc_mt",
+      "build_ms": 110.801,
+      "load_ms": 9.125,
+      "domain_ms": 10.363,
+      "distinct_ms": 30.775,
+      "accum_ms": 58.354,
+      "merge_ms": 0.051,
+      "prefix_ms": 0.124,
+      "write_ms": 2.008,
+      "groups": 11,
+      "values": 9494,
+      "rows": 12000000,
+      "bytes": 513596,
+      "dense": 0,
+      "null_measure": 0,
+      "threads_requested": 1,
+      "threads_used": 1,
+      "slab_bytes_per_thread": 417780,
+      "encoded": 1,
+      "v3_frozen": 1
+     },
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_3170140.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/ecube3_mt build_enc_mt ../../research/real_decoders_20261024/results/nyc_taxi_2023_prep/Observed.encoded ../../research/real_decoders_20261024/results/nyc_taxi_2023_prep/Observed 17 13 ../../work/scale/e3_nyc12m_t1.ecube 1 24",
+     "exit": 0,
+     "sha256": "748029efe222b8de0a108e451085251f5bebe827f9d01b206d5f5bce5aab51e8",
+     "byte_identical": true
+    },
+    "T4": {
+     "threads": 4,
+     "core_mask": "80-83",
+     "reps": 3,
+     "wall_s_median": 0.0478,
+     "wall_s_all": [
+      0.0462,
+      0.0478,
+      0.0478
+     ],
+     "build_ms_median": 38.981,
+     "build_ms_all": [
+      38.855,
+      38.981,
+      39.099
+     ],
+     "peak_rss_mb": 41372.0,
+     "metrics": {
+      "mode": "build_enc_mt",
+      "build_ms": 38.981,
+      "load_ms": 8.751,
+      "domain_ms": 3.413,
+      "distinct_ms": 9.764,
+      "accum_ms": 15.348,
+      "merge_ms": 0.192,
+      "prefix_ms": 0.103,
+      "write_ms": 1.409,
+      "groups": 11,
+      "values": 9494,
+      "rows": 12000000,
+      "bytes": 513596,
+      "dense": 0,
+      "null_measure": 0,
+      "threads_requested": 4,
+      "threads_used": 4,
+      "slab_bytes_per_thread": 417780,
+      "encoded": 1,
+      "v3_frozen": 1
+     },
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_3170140.txt nice -n 5 taskset -c 80-83 ../../research/real_decoders_20261024/src_scale_20261101/ecube3_mt build_enc_mt ../../research/real_decoders_20261024/results/nyc_taxi_2023_prep/Observed.encoded ../../research/real_decoders_20261024/results/nyc_taxi_2023_prep/Observed 17 13 ../../work/scale/e3_nyc12m_t4.ecube 4 24",
+     "exit": 0,
+     "sha256": "748029efe222b8de0a108e451085251f5bebe827f9d01b206d5f5bce5aab51e8",
+     "byte_identical": true
+    },
+    "T8": {
+     "threads": 8,
+     "core_mask": "80-87",
+     "reps": 3,
+     "wall_s_median": 0.0361,
+     "wall_s_all": [
+      0.0351,
+      0.0361,
+      0.0375
+     ],
+     "build_ms_median": 27.735,
+     "build_ms_all": [
+      27.694,
+      27.735,
+      28.508
+     ],
+     "peak_rss_mb": 43948.0,
+     "metrics": {
+      "mode": "build_enc_mt",
+      "build_ms": 27.735,
+      "load_ms": 8.723,
+      "domain_ms": 1.885,
+      "distinct_ms": 6.769,
+      "accum_ms": 8.76,
+      "merge_ms": 0.382,
+      "prefix_ms": 0.202,
+      "write_ms": 1.014,
+      "groups": 11,
+      "values": 9494,
+      "rows": 12000000,
+      "bytes": 513596,
+      "dense": 0,
+      "null_measure": 0,
+      "threads_requested": 8,
+      "threads_used": 8,
+      "slab_bytes_per_thread": 417780,
+      "encoded": 1,
+      "v3_frozen": 1
+     },
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_3170140.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/ecube3_mt build_enc_mt ../../research/real_decoders_20261024/results/nyc_taxi_2023_prep/Observed.encoded ../../research/real_decoders_20261024/results/nyc_taxi_2023_prep/Observed 17 13 ../../work/scale/e3_nyc12m_t8.ecube 8 24",
+     "exit": 0,
+     "sha256": "748029efe222b8de0a108e451085251f5bebe827f9d01b206d5f5bce5aab51e8",
+     "byte_identical": true
+    },
+    "T16": {
+     "threads": 16,
+     "core_mask": "80-95",
+     "reps": 3,
+     "wall_s_median": 0.0376,
+     "wall_s_all": [
+      0.0366,
+      0.0376,
+      0.0379
+     ],
+     "build_ms_median": 28.906,
+     "build_ms_all": [
+      28.844,
+      28.906,
+      30.097
+     ],
+     "peak_rss_mb": 48484.0,
+     "metrics": {
+      "mode": "build_enc_mt",
+      "build_ms": 28.844,
+      "load_ms": 8.785,
+      "domain_ms": 1.339,
+      "distinct_ms": 8.82,
+      "accum_ms": 7.12,
+      "merge_ms": 0.909,
+      "prefix_ms": 0.486,
+      "write_ms": 1.386,
+      "groups": 11,
+      "values": 9494,
+      "rows": 12000000,
+      "bytes": 513596,
+      "dense": 0,
+      "null_measure": 0,
+      "threads_requested": 16,
+      "threads_used": 16,
+      "slab_bytes_per_thread": 417780,
+      "encoded": 1,
+      "v3_frozen": 1
+     },
+     "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_3170140.txt nice -n 5 taskset -c 80-95 ../../research/real_decoders_20261024/src_scale_20261101/ecube3_mt build_enc_mt ../../research/real_decoders_20261024/results/nyc_taxi_2023_prep/Observed.encoded ../../research/real_decoders_20261024/results/nyc_taxi_2023_prep/Observed 17 13 ../../work/scale/e3_nyc12m_t16.ecube 16 24",
+     "exit": 0,
+     "sha256": "748029efe222b8de0a108e451085251f5bebe827f9d01b206d5f5bce5aab51e8",
+     "byte_identical": true
+    }
+   }
+  }
+ },
+ "null_measure": {
+  "reference_sha256": "914de2e7977c264bba0757332a74a24b8a24803aa405f99b4852db60b5edbd9b",
+  "builds": {
+   "T1": {
+    "threads": 1,
+    "core_mask": "80",
+    "reps": 3,
+    "wall_s_median": 0.9661,
+    "wall_s_all": [
+     0.965,
+     0.9661,
+     0.9683
+    ],
+    "build_ms_median": 926.829,
+    "build_ms_all": [
+     925.63,
+     926.829,
+     929.689
+    ],
+    "peak_rss_mb": 800060.0,
+    "metrics": {
+     "mode": "build_plain_mt",
+     "build_ms": 925.63,
+     "map_ms": 0.032,
+     "distinct_ms": 325.259,
+     "accum_ms": 597.375,
+     "merge_ms": 0.053,
+     "prefix_ms": 0.25,
+     "write_ms": 2.661,
+     "groups": 11,
+     "values": 21084,
+     "rows": 100000000,
+     "bytes": 1140168,
+     "dense": 0,
+     "null_measure": 1,
+     "threads_requested": 1,
+     "threads_used": 1,
+     "slab_bytes_per_thread": 927740,
+     "v3_frozen": 1
+    },
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_3170140.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/ecube3_mt build_plain_mt ../../work/tiers/build/gid_nyc_g10.i32 ../../work/tiers/build/val_nyc100.i32 ../../work/scale/e3_null_t1.ecube 1 ../../work/tiers/build/nyc_null_valid.bits 24",
+    "exit": 0,
+    "sha256": "914de2e7977c264bba0757332a74a24b8a24803aa405f99b4852db60b5edbd9b",
+    "byte_identical": true
+   },
+   "T16": {
+    "threads": 16,
+    "core_mask": "80-95",
+    "reps": 3,
+    "wall_s_median": 0.1511,
+    "wall_s_all": [
+     0.1368,
+     0.1511,
+     0.1514
+    ],
+    "build_ms_median": 114.317,
+    "build_ms_all": [
+     100.57,
+     114.317,
+     114.851
+    ],
+    "peak_rss_mb": 818560.0,
+    "metrics": {
+     "mode": "build_plain_mt",
+     "build_ms": 114.851,
+     "map_ms": 0.027,
+     "distinct_ms": 59.336,
+     "accum_ms": 49.814,
+     "merge_ms": 1.616,
+     "prefix_ms": 0.502,
+     "write_ms": 3.557,
+     "groups": 11,
+     "values": 21084,
+     "rows": 100000000,
+     "bytes": 1140168,
+     "dense": 0,
+     "null_measure": 1,
+     "threads_requested": 16,
+     "threads_used": 16,
+     "slab_bytes_per_thread": 927740,
+     "v3_frozen": 1
+    },
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_3170140.txt nice -n 5 taskset -c 80-95 ../../research/real_decoders_20261024/src_scale_20261101/ecube3_mt build_plain_mt ../../work/tiers/build/gid_nyc_g10.i32 ../../work/tiers/build/val_nyc100.i32 ../../work/scale/e3_null_t16.ecube 16 ../../work/tiers/build/nyc_null_valid.bits 24",
+    "exit": 0,
+    "sha256": "914de2e7977c264bba0757332a74a24b8a24803aa405f99b4852db60b5edbd9b",
+    "byte_identical": true
+   }
+  },
+  "reference_1t": {
+   "wall_s": 6.4875,
+   "metrics": {
+    "build_ms": 6417.952,
+    "read_ms": 3662.047,
+    "accum_ms": 2753.298,
+    "prefix_ms": 0.258,
+    "write_ms": 2.349,
+    "groups": 11,
+    "values": 21084,
+    "rows": 100000000,
+    "bytes": 1140168,
+    "dense": 0,
+    "v2": 1
+   },
+   "sha256": "914de2e7977c264bba0757332a74a24b8a24803aa405f99b4852db60b5edbd9b"
+  }
+ },
+ "dense_rule_fixtures": {
+  "plain": {
+   "single_thread": {
+    "metrics": {
+     "build_ms": 61.645,
+     "read_ms": 54.392,
+     "accum_ms": 6.209,
+     "prefix_ms": 0.001,
+     "write_ms": 1.043,
+     "groups": 3,
+     "values": 10,
+     "rows": 2000000,
+     "bytes": 268,
+     "dense": 1,
+     "v2": 1
+    },
+    "sha256": "2588046dbc0f48ba4b3ff6dc219f8d312fc81adbb1053fe79ad35905c9140b24",
+    "header": {
+     "magic": "ECUBE03",
+     "n": 2000000,
+     "groups": 3,
+     "values": 10,
+     "vmin": -5,
+     "dense": 1,
+     "has_null": 0,
+     "null_group": 4294967295,
+     "block_ranks": 64,
+     "null_measure": 0
+    }
+   },
+   "parallel_16t": {
+    "metrics": {
+     "mode": "build_plain_mt",
+     "build_ms": 9.029,
+     "map_ms": 0.025,
+     "distinct_ms": 5.629,
+     "accum_ms": 1.903,
+     "merge_ms": 0.489,
+     "prefix_ms": 0.469,
+     "write_ms": 0.513,
+     "groups": 3,
+     "values": 10,
+     "rows": 2000000,
+     "bytes": 268,
+     "dense": 1,
+     "null_measure": 0,
+     "threads_requested": 16,
+     "threads_used": 16,
+     "slab_bytes_per_thread": 132,
+     "v3_frozen": 1
+    },
+    "sha256": "2588046dbc0f48ba4b3ff6dc219f8d312fc81adbb1053fe79ad35905c9140b24",
+    "header": {
+     "magic": "ECUBE03",
+     "n": 2000000,
+     "groups": 3,
+     "values": 10,
+     "vmin": -5,
+     "dense": 1,
+     "has_null": 0,
+     "null_group": 4294967295,
+     "block_ranks": 64,
+     "null_measure": 0
+    }
+   },
+   "bytes": 268,
+   "byte_identical": true,
+   "header_flags_equal": true
+  },
+  "null": {
+   "single_thread": {
+    "metrics": {
+     "build_ms": 61.723,
+     "read_ms": 55.138,
+     "accum_ms": 5.387,
+     "prefix_ms": 0.001,
+     "write_ms": 1.198,
+     "groups": 3,
+     "values": 10,
+     "rows": 2000000,
+     "bytes": 268,
+     "dense": 1,
+     "v2": 1
+    },
+    "sha256": "84e7f0bfe63ac8ec2153d960f71a17d9ccc13b19c37bd5caba50441769e510df",
+    "header": {
+     "magic": "ECUBE03",
+     "n": 2000000,
+     "groups": 3,
+     "values": 10,
+     "vmin": -5,
+     "dense": 1,
+     "has_null": 0,
+     "null_group": 4294967295,
+     "block_ranks": 64,
+     "null_measure": 1
+    }
+   },
+   "parallel_16t": {
+    "metrics": {
+     "mode": "build_plain_mt",
+     "build_ms": 7.988,
+     "map_ms": 0.026,
+     "distinct_ms": 5.527,
+     "accum_ms": 1.018,
+     "merge_ms": 0.462,
+     "prefix_ms": 0.451,
+     "write_ms": 0.503,
+     "groups": 3,
+     "values": 10,
+     "rows": 2000000,
+     "bytes": 268,
+     "dense": 1,
+     "null_measure": 1,
+     "threads_requested": 16,
+     "threads_used": 16,
+     "slab_bytes_per_thread": 132,
+     "v3_frozen": 1
+    },
+    "sha256": "84e7f0bfe63ac8ec2153d960f71a17d9ccc13b19c37bd5caba50441769e510df",
+    "header": {
+     "magic": "ECUBE03",
+     "n": 2000000,
+     "groups": 3,
+     "values": 10,
+     "vmin": -5,
+     "dense": 1,
+     "has_null": 0,
+     "null_group": 4294967295,
+     "block_ranks": 64,
+     "null_measure": 1
+    }
+   },
+   "bytes": 268,
+   "byte_identical": true,
+   "header_flags_equal": true
+  }
+ },
+ "tpch_sf2_encoded_16t": {
+  "threads": 16,
+  "core_mask": "80-95",
+  "reps": 1,
+  "wall_s_median": 1.3226,
+  "wall_s_all": [
+   1.3226
+  ],
+  "build_ms_median": 1295.939,
+  "build_ms_all": [
+   1295.939
+  ],
+  "peak_rss_mb": 524396.0,
+  "metrics": {
+   "mode": "build_enc_mt",
+   "build_ms": 1295.939,
+   "load_ms": 9.789,
+   "domain_ms": 1.315,
+   "distinct_ms": 1134.862,
+   "accum_ms": 105.188,
+   "merge_ms": 13.962,
+   "prefix_ms": 1.64,
+   "write_ms": 29.183,
+   "groups": 3,
+   "values": 984297,
+   "rows": 11997996,
+   "bytes": 20239732,
+   "dense": 0,
+   "null_measure": 0,
+   "threads_requested": 16,
+   "threads_used": 16,
+   "slab_bytes_per_thread": 11811576,
+   "encoded": 1,
+   "v3_frozen": 1
+  },
+  "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_3170140.txt nice -n 5 taskset -c 80-95 ../../research/real_decoders_20261024/src_scale_20261101/ecube3_mt build_enc_mt ../../research/real_decoders_20261024/results/tpch_sf2_prep/Observed.encoded ../../research/real_decoders_20261024/results/tpch_sf2_prep/Observed 17 13 ../../work/scale/e3_tpch_t16.ecube 16 24",
+  "exit": 0,
+  "sha256": "f245f7db6ea887429e9158355e23930046d1e5e3530d6f9127ea262622ba5eaf",
+  "byte_identical": true
+ },
+ "query_1t": {
+  "median_ms": 0.000921,
+  "p95_ms": 0.001362,
+  "reps": 30,
+  "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_3170140.txt nice -n 5 taskset -c 80 ../../work/specs/bin/enc_cube3_frozen bench ../../work/specs/cubes_v3/C1.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/e3_q.json 30"
+ },
+ "baseline_duckdb_1t": {
+  "fixed_all4_median_ms": 441.634823102504,
+  "duckdb_version": "2.0.0",
+  "receipt": "results/nyc_taxi_100m_duckdb/nyc.duckdb"
+ },
+ "amortization": {
+  "baseline": {
+   "duckdb_1t_fixed_median_ms": 441.634823102504,
+   "frozen_program_number_ms": 450.7991,
+   "source": "DuckDB 2.0.0 NYC-100M fixed GROUP BY, threads=1, fresh re-measurement on the same host (frozen TIERS number 450.7991 ms)"
+  },
+  "rows": {
+   "ecube03_shipped_serial_1t": {
+    "build_ms": 3379.855,
+    "query_ms": 0.000921,
+    "baseline_ms": 441.634823102504,
+    "break_even_Q": 7.6530696214882745,
+    "Q_at_2x_real": 15.306171163043315,
+    "Q_at_2x_first_integer": 16,
+    "rows": {
+     "Q1": {
+      "index_cost_ms": 3379.855921,
+      "baseline_cost_ms": 441.634823102504,
+      "ratio": 0.13066676018894832
+     },
+     "Q10": {
+      "index_cost_ms": 3379.86421,
+      "baseline_cost_ms": 4416.34823102504,
+      "ratio": 1.3066643973324124
+     },
+     "Q100": {
+      "index_cost_ms": 3379.9471,
+      "baseline_cost_ms": 44163.4823102504,
+      "ratio": 13.066323526261817
+     },
+     "Q1000": {
+      "index_cost_ms": 3380.776,
+      "baseline_cost_ms": 441634.823102504,
+      "ratio": 130.6311991987946
+     }
+    }
+   },
+   "ecube03_build_enc_mt_1t": {
+    "build_ms": 1083.759,
+    "query_ms": 0.000921,
+    "baseline_ms": 441.634823102504,
+    "break_even_Q": 2.453976007821197,
+    "Q_at_2x_real": 4.907962250892023,
+    "Q_at_2x_first_integer": 5,
+    "rows": {
+     "Q1": {
+      "index_cost_ms": 1083.759921,
+      "baseline_cost_ms": 441.634823102504,
+      "ratio": 0.4075024500767675
+     },
+     "Q10": {
+      "index_cost_ms": 1083.76821,
+      "baseline_cost_ms": 4416.34823102504,
+      "ratio": 4.0749933336991315
+     },
+     "Q100": {
+      "index_cost_ms": 1083.8511,
+      "baseline_cost_ms": 44163.4823102504,
+      "ratio": 40.74681689232995
+     },
+     "Q1000": {
+      "index_cost_ms": 1084.68,
+      "baseline_cost_ms": 441634.823102504,
+      "ratio": 407.15678642779807
+     }
+    }
+   },
+   "ecube03_build_enc_mt_16t": {
+    "build_ms": 168.499,
+    "query_ms": 0.000921,
+    "baseline_ms": 441.634823102504,
+    "break_even_Q": 0.38153547360793666,
+    "Q_at_2x_real": 0.763072538556132,
+    "Q_at_2x_first_integer": 1,
+    "rows": {
+     "Q1": {
+      "index_cost_ms": 168.499921,
+      "baseline_cost_ms": 441.634823102504,
+      "ratio": 2.620979407477016
+     },
+     "Q10": {
+      "index_cost_ms": 168.50821,
+      "baseline_cost_ms": 4416.34823102504,
+      "ratio": 26.208504802377526
+     },
+     "Q100": {
+      "index_cost_ms": 168.59109999999998,
+      "baseline_cost_ms": 44163.4823102504,
+      "ratio": 261.95619051213504
+     },
+     "Q1000": {
+      "index_cost_ms": 169.42,
+      "baseline_cost_ms": 441634.823102504,
+      "ratio": 2606.7455029070006
+     }
+    }
+   },
+   "ecube02_tiers_frozen_row": {
+    "build_ms": 3242.0,
+    "query_ms": 0.0012,
+    "baseline_ms": 441.634823102504,
+    "break_even_Q": 7.19,
+    "Q_at_2x": 14.38,
+    "note": "TIERS_20261101 frozen row, superseded by ECUBE03; kept for continuity"
+   }
+  },
+  "formula": "break_even Q = T_build/(T_base - T_query); Q@2x = ceil(2*T_build/(T_base - 2*T_query))"
+ },
+ "receipt": "ecube3_build_mt",
+ "host": "localhost (AMD EPYC 9554, 2x64C, 256T, 503GB)",
+ "date": "2026-11-01T22:46:43.292992+08:00",
+ "git_branch": "research/groups-e2e-repro-20261025"
+}

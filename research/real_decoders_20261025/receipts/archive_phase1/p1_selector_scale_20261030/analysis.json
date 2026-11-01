@@ -1,0 +1,129 @@
+{
+  "specs": 12,
+  "auto_optimal": 10,
+  "auto_within_5pct": 10,
+  "max_regret": 0.06603908713712436,
+  "median_regret": 0.0006464217286403784,
+  "records": [
+    {
+      "name": "tpch_count.spec",
+      "variants": {
+        "auto": 22.576349999999998,
+        "perrow": 22.547199999999997,
+        "run": 22.6164
+      },
+      "best": "perrow",
+      "regret": 0.0012928434572807568
+    },
+    {
+      "name": "tpch_max.spec",
+      "variants": {
+        "auto": 27.96835,
+        "perrow": 28.0295,
+        "run": 70.2327
+      },
+      "best": "auto",
+      "regret": 0.0
+    },
+    {
+      "name": "tpch_min.spec",
+      "variants": {
+        "auto": 27.98885,
+        "perrow": 27.44695,
+        "run": 70.512
+      },
+      "best": "perrow",
+      "regret": 0.019743541632130324
+    },
+    {
+      "name": "tpch_sum.spec",
+      "variants": {
+        "auto": 37.0308,
+        "perrow": 36.9821,
+        "run": 73.54965
+      },
+      "best": "perrow",
+      "regret": 0.0013168532884826334
+    },
+    {
+      "name": "10m_count.spec",
+      "variants": {
+        "auto": 15.549199999999999,
+        "perrow": 16.09665,
+        "run": 15.7081
+      },
+      "best": "auto",
+      "regret": 0.0
+    },
+    {
+      "name": "10m_max.spec",
+      "variants": {
+        "auto": 15.198599999999999,
+        "perrow": 20.1194,
+        "run": 15.354700000000001
+      },
+      "best": "auto",
+      "regret": 0.0
+    },
+    {
+      "name": "10m_min.spec",
+      "variants": {
+        "auto": 20.0427,
+        "perrow": 20.2131,
+        "run": 20.1042
+      },
+      "best": "auto",
+      "regret": 0.0
+    },
+    {
+      "name": "10m_sum.spec",
+      "variants": {
+        "auto": 20.2243,
+        "perrow": 27.7209,
+        "run": 20.06465
+      },
+      "best": "run",
+      "regret": 0.007956779709588746
+    },
+    {
+      "name": "shuf983k_sum",
+      "variants": {
+        "auto": 2.8768849999999997,
+        "perrow": 2.877875,
+        "run": 6.759235
+      },
+      "best": "auto",
+      "regret": 0.0
+    },
+    {
+      "name": "shuf983k_count",
+      "variants": {
+        "auto": 1.75054,
+        "perrow": 1.6572200000000001,
+        "run": 1.6734499999999999
+      },
+      "best": "perrow",
+      "regret": 0.05631117172131628
+    },
+    {
+      "name": "shuf983k_min",
+      "variants": {
+        "auto": 2.269965,
+        "perrow": 2.129345,
+        "run": 5.99727
+      },
+      "best": "perrow",
+      "regret": 0.06603908713712436
+    },
+    {
+      "name": "shuf983k_max",
+      "variants": {
+        "auto": 2.19509,
+        "perrow": 2.22777,
+        "run": 5.9975000000000005
+      },
+      "best": "auto",
+      "regret": 0.0
+    }
+  ]
+}

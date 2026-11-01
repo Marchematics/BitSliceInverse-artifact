@@ -1,0 +1,607 @@
+{
+ "build": {
+  "wall_s": 3.3624450960196555,
+  "build_ms": 3342.327,
+  "phase_ms": {
+   "pass1_ms": 378.493,
+   "accum_ms": 2961.003,
+   "prefix_ms": 0.249,
+   "write_ms": 2.583
+  },
+  "bytes": 1140168,
+  "sha256": "78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee",
+  "frozen_bytes": 1140168,
+  "frozen_sha256": "78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee",
+  "bytes_match": true,
+  "sha_match": true,
+  "command": "../../work/tiers/bin/enc_cube3 build_enc ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed.encoded ../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed 17 13 ../../work/tiers/build/final_nyc100_v3.ecube"
+ },
+ "cases": {
+  "fixed GROUP BY (no predicate)": {
+   "label": "fixed GROUP BY (no predicate)",
+   "spec": [],
+   "duckdb_sql": "SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc GROUP BY 1 ORDER BY 1",
+   "ours": {
+    "median_us": 0.9610000000000001,
+    "p95_us": 0.972,
+    "serialize_us": 1.4729999999999999,
+    "runs_us": [
+     0.9610000000000001,
+     0.9610000000000001,
+     0.962
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "rows": 11,
+   "duckdb": {
+    "median_ms": 328.0707751400769,
+    "p95_ms": 358.5777743719518,
+    "reps": 30
+   },
+   "frozen": {
+    "median_us": 0.921,
+    "p95_us": 0.9319999999999999,
+    "serialize_us": 1.492,
+    "reps": 1000,
+    "case": "fixed_all4",
+    "source": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+   },
+   "rows_cmp": {
+    "median": {
+     "case": "fixed_all4 median",
+     "frozen": 0.921,
+     "rerun": 0.9610000000000001,
+     "unit": "us",
+     "delta_pct": 4.343105320304021,
+     "flag_gt5pct": false,
+     "note": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+    },
+    "p95": {
+     "case": "fixed_all4 p95",
+     "frozen": 0.9319999999999999,
+     "rerun": 0.972,
+     "unit": "us",
+     "delta_pct": 4.291845493562236,
+     "flag_gt5pct": false,
+     "note": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+    }
+   }
+  },
+  "0.135% (v <= -7000)": {
+   "label": "0.135% (v <= -7000)",
+   "spec": [
+    "hi=-7000"
+   ],
+   "duckdb_sql": "SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents <= -7000 GROUP BY 1 ORDER BY 1",
+   "ours": {
+    "median_us": 0.7110000000000001,
+    "p95_us": 0.7110000000000001,
+    "serialize_us": 1.1820000000000002,
+    "runs_us": [
+     0.7110000000000001,
+     0.7110000000000001,
+     0.8109999999999999
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "rows": 11,
+   "duckdb": {
+    "median_ms": 173.50138630717993,
+    "p95_ms": 228.20298001170158,
+    "reps": 30
+   },
+   "frozen": {
+    "median_us": 0.7010000000000001,
+    "p95_us": 0.7010000000000001,
+    "serialize_us": 1.1820000000000002,
+    "reps": 1000,
+    "case": "le_m7000",
+    "source": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+   },
+   "rows_cmp": {
+    "median": {
+     "case": "le_m7000 median",
+     "frozen": 0.7010000000000001,
+     "rerun": 0.7110000000000001,
+     "unit": "us",
+     "delta_pct": 1.4265335235378043,
+     "flag_gt5pct": false,
+     "note": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+    },
+    "p95": {
+     "case": "le_m7000 p95",
+     "frozen": 0.7010000000000001,
+     "rerun": 0.7110000000000001,
+     "unit": "us",
+     "delta_pct": 1.4265335235378043,
+     "flag_gt5pct": false,
+     "note": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+    }
+   }
+  },
+  "1.040% (v <= -720)": {
+   "label": "1.040% (v <= -720)",
+   "spec": [
+    "hi=-720"
+   ],
+   "duckdb_sql": "SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents <= -720 GROUP BY 1 ORDER BY 1",
+   "ours": {
+    "median_us": 0.8009999999999999,
+    "p95_us": 0.812,
+    "serialize_us": 1.1720000000000002,
+    "runs_us": [
+     0.721,
+     0.8009999999999999,
+     0.941
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "rows": 11,
+   "duckdb": {
+    "median_ms": 191.4891293272376,
+    "p95_ms": 203.81101593375206,
+    "reps": 30
+   },
+   "frozen": {
+    "median_us": 0.7110000000000001,
+    "p95_us": 0.721,
+    "serialize_us": 1.212,
+    "reps": 1000,
+    "case": "le_m720",
+    "source": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+   },
+   "rows_cmp": {
+    "median": {
+     "case": "le_m720 median",
+     "frozen": 0.7110000000000001,
+     "rerun": 0.8009999999999999,
+     "unit": "us",
+     "delta_pct": 12.658227848101244,
+     "flag_gt5pct": true,
+     "note": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+    },
+    "p95": {
+     "case": "le_m720 p95",
+     "frozen": 0.721,
+     "rerun": 0.812,
+     "unit": "us",
+     "delta_pct": 12.621359223300981,
+     "flag_gt5pct": true,
+     "note": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+    }
+   }
+  },
+  "5.803% (v <= 509)": {
+   "label": "5.803% (v <= 509)",
+   "spec": [
+    "hi=509"
+   ],
+   "duckdb_sql": "SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents <= 509 GROUP BY 1 ORDER BY 1",
+   "ours": {
+    "median_us": 0.861,
+    "p95_us": 0.8720000000000001,
+    "serialize_us": 1.2409999999999999,
+    "runs_us": [
+     0.761,
+     0.861,
+     0.862
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "rows": 11,
+   "duckdb": {
+    "median_ms": 208.90011196024716,
+    "p95_ms": 219.21327291056514,
+    "reps": 30
+   },
+   "frozen": {
+    "median_us": 0.741,
+    "p95_us": 0.741,
+    "serialize_us": 1.222,
+    "reps": 1000,
+    "case": "le_509",
+    "source": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+   },
+   "rows_cmp": {
+    "median": {
+     "case": "le_509 median",
+     "frozen": 0.741,
+     "rerun": 0.861,
+     "unit": "us",
+     "delta_pct": 16.194331983805668,
+     "flag_gt5pct": true,
+     "note": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+    },
+    "p95": {
+     "case": "le_509 p95",
+     "frozen": 0.741,
+     "rerun": 0.8720000000000001,
+     "unit": "us",
+     "delta_pct": 17.678812415654537,
+     "flag_gt5pct": true,
+     "note": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+    }
+   }
+  },
+  "11.909% (v <= 650)": {
+   "label": "11.909% (v <= 650)",
+   "spec": [
+    "hi=650"
+   ],
+   "duckdb_sql": "SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents <= 650 GROUP BY 1 ORDER BY 1",
+   "ours": {
+    "median_us": 0.911,
+    "p95_us": 0.912,
+    "serialize_us": 1.3719999999999999,
+    "runs_us": [
+     0.891,
+     0.911,
+     1.001
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "rows": 11,
+   "duckdb": {
+    "median_ms": 230.38378660567105,
+    "p95_ms": 254.19553508982062,
+    "reps": 30
+   },
+   "frozen": {
+    "median_us": 0.861,
+    "p95_us": 0.8720000000000001,
+    "serialize_us": 1.3619999999999999,
+    "reps": 1000,
+    "case": "le_650",
+    "source": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+   },
+   "rows_cmp": {
+    "median": {
+     "case": "le_650 median",
+     "frozen": 0.861,
+     "rerun": 0.911,
+     "unit": "us",
+     "delta_pct": 5.807200929152153,
+     "flag_gt5pct": true,
+     "note": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+    },
+    "p95": {
+     "case": "le_650 p95",
+     "frozen": 0.8720000000000001,
+     "rerun": 0.912,
+     "unit": "us",
+     "delta_pct": 4.587155963302743,
+     "flag_gt5pct": false,
+     "note": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+    }
+   }
+  },
+  "28.430% (v <= 930)": {
+   "label": "28.430% (v <= 930)",
+   "spec": [
+    "hi=930"
+   ],
+   "duckdb_sql": "SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents <= 930 GROUP BY 1 ORDER BY 1",
+   "ours": {
+    "median_us": 0.9309999999999999,
+    "p95_us": 0.9420000000000001,
+    "serialize_us": 1.4120000000000001,
+    "runs_us": [
+     0.921,
+     0.9309999999999999,
+     0.9309999999999999
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "rows": 11,
+   "duckdb": {
+    "median_ms": 283.678135368973,
+    "p95_ms": 320.2359741553664,
+    "reps": 30
+   },
+   "frozen": {
+    "median_us": 0.891,
+    "p95_us": 0.902,
+    "serialize_us": 1.382,
+    "reps": 1000,
+    "case": "le_930",
+    "source": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+   },
+   "rows_cmp": {
+    "median": {
+     "case": "le_930 median",
+     "frozen": 0.891,
+     "rerun": 0.9309999999999999,
+     "unit": "us",
+     "delta_pct": 4.489337822671147,
+     "flag_gt5pct": false,
+     "note": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+    },
+    "p95": {
+     "case": "le_930 p95",
+     "frozen": 0.902,
+     "rerun": 0.9420000000000001,
+     "unit": "us",
+     "delta_pct": 4.4345898004434625,
+     "flag_gt5pct": false,
+     "note": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+    }
+   }
+  },
+  "51.040% (v <= 1350)": {
+   "label": "51.040% (v <= 1350)",
+   "spec": [
+    "hi=1350"
+   ],
+   "duckdb_sql": "SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents <= 1350 GROUP BY 1 ORDER BY 1",
+   "ours": {
+    "median_us": 1.161,
+    "p95_us": 1.272,
+    "serialize_us": 1.632,
+    "runs_us": [
+     1.142,
+     1.161,
+     1.1620000000000001
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "rows": 11,
+   "duckdb": {
+    "median_ms": 357.8465934842825,
+    "p95_ms": 361.8273790925741,
+    "reps": 30
+   },
+   "frozen": {
+    "median_us": 1.052,
+    "p95_us": 1.062,
+    "serialize_us": 1.562,
+    "reps": 1000,
+    "case": "le_1350",
+    "source": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+   },
+   "rows_cmp": {
+    "median": {
+     "case": "le_1350 median",
+     "frozen": 1.052,
+     "rerun": 1.161,
+     "unit": "us",
+     "delta_pct": 10.361216730038022,
+     "flag_gt5pct": true,
+     "note": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+    },
+    "p95": {
+     "case": "le_1350 p95",
+     "frozen": 1.062,
+     "rerun": 1.272,
+     "unit": "us",
+     "delta_pct": 19.774011299435024,
+     "flag_gt5pct": true,
+     "note": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+    }
+   }
+  },
+  "99.9999% (v <= 99900)": {
+   "label": "99.9999% (v <= 99900)",
+   "spec": [
+    "hi=99900"
+   ],
+   "duckdb_sql": "SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE fare_cents <= 99900 GROUP BY 1 ORDER BY 1",
+   "ours": {
+    "median_us": 0.861,
+    "p95_us": 0.871,
+    "serialize_us": 1.3719999999999999,
+    "runs_us": [
+     0.851,
+     0.861,
+     0.861
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "rows": 11,
+   "duckdb": {
+    "median_ms": 403.95382745191455,
+    "p95_ms": 475.19705165177584,
+    "reps": 30
+   },
+   "frozen": {
+    "median_us": 0.851,
+    "p95_us": 0.861,
+    "serialize_us": 1.3719999999999999,
+    "reps": 1000,
+    "case": "le_99900",
+    "source": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+   },
+   "rows_cmp": {
+    "median": {
+     "case": "le_99900 median",
+     "frozen": 0.851,
+     "rerun": 0.861,
+     "unit": "us",
+     "delta_pct": 1.1750881316098718,
+     "flag_gt5pct": false,
+     "note": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+    },
+    "p95": {
+     "case": "le_99900 p95",
+     "frozen": 0.861,
+     "rerun": 0.871,
+     "unit": "us",
+     "delta_pct": 1.1614401858304308,
+     "flag_gt5pct": false,
+     "note": "receipts/baselines_20261101/eai_ecube03_frozen.json"
+    }
+   }
+  },
+  "g IN (1,2)": {
+   "label": "g IN (1,2)",
+   "spec": [
+    "where_in=1,2"
+   ],
+   "duckdb_sql": "SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE passenger_count IN (1,2) GROUP BY 1 ORDER BY 1",
+   "ours": {
+    "median_us": 0.231,
+    "p95_us": 0.241,
+    "serialize_us": 0.34,
+    "runs_us": [
+     0.23,
+     0.231,
+     0.231
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "rows": 2,
+   "duckdb": {
+    "median_ms": 422.1307700499892,
+    "p95_ms": 431.4225409179926,
+    "reps": 30
+   },
+   "frozen": {
+    "median_us": 0.23,
+    "p95_us": 0.231,
+    "case": "in_1_2",
+    "source": "receipts/eai_cube_20261101/runs/eai_sweep_nyc100_v3.json"
+   },
+   "rows_cmp": {
+    "median": {
+     "case": "in_1_2 median",
+     "frozen": 0.23,
+     "rerun": 0.231,
+     "unit": "us",
+     "delta_pct": 0.43478260869565255,
+     "flag_gt5pct": false,
+     "note": "receipts/eai_cube_20261101/runs/eai_sweep_nyc100_v3.json"
+    },
+    "p95": {
+     "case": "in_1_2 p95",
+     "frozen": 0.231,
+     "rerun": 0.241,
+     "unit": "us",
+     "delta_pct": 4.32900432900432,
+     "flag_gt5pct": false,
+     "note": "receipts/eai_cube_20261101/runs/eai_sweep_nyc100_v3.json"
+    }
+   }
+  },
+  "g NOT IN (0,1)": {
+   "label": "g NOT IN (0,1)",
+   "spec": [
+    "where_not_in=0,1"
+   ],
+   "duckdb_sql": "SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc WHERE passenger_count NOT IN (0,1) GROUP BY 1 ORDER BY 1",
+   "ours": {
+    "median_us": 0.851,
+    "p95_us": 0.861,
+    "serialize_us": 1.131,
+    "runs_us": [
+     0.761,
+     0.851,
+     0.861
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "rows": 8,
+   "duckdb": {
+    "median_ms": 387.90139206685126,
+    "p95_ms": 389.6679859608412,
+    "reps": 30
+   },
+   "frozen": {
+    "median_us": 1392.0,
+    "p95_us": 1392.0,
+    "case": "not_in_0_1",
+    "source": "MASTER_TABLES_20261101.md table-1 row 10 / Lead measurement (core 48, frozen index, 2000 reps; raw stderr not in checkout)"
+   },
+   "rows_cmp": {
+    "median": {
+     "case": "not_in_0_1 median",
+     "frozen": 1392.0,
+     "rerun": 0.851,
+     "unit": "us",
+     "delta_pct": -99.93886494252872,
+     "flag_gt5pct": true,
+     "note": "MASTER_TABLES_20261101.md table-1 row 10 / Lead measurement (core 48, frozen index, 2000 reps; raw stderr not in checkout)"
+    },
+    "p95": {
+     "case": "not_in_0_1 p95",
+     "frozen": 1392.0,
+     "rerun": 0.861,
+     "unit": "us",
+     "delta_pct": -99.93814655172413,
+     "flag_gt5pct": true,
+     "note": "MASTER_TABLES_20261101.md table-1 row 10 / Lead measurement (core 48, frozen index, 2000 reps; raw stderr not in checkout)"
+    }
+   }
+  },
+  "HAVING sum >= 1e10": {
+   "label": "HAVING sum >= 1e10",
+   "spec": [
+    "having=sum>=1e10"
+   ],
+   "duckdb_sql": "SELECT passenger_count, CAST(SUM(fare_cents) AS BIGINT), COUNT(*), MIN(fare_cents), MAX(fare_cents) FROM nyc GROUP BY 1 HAVING SUM(fare_cents) >= 1e10 ORDER BY 1",
+   "ours": {
+    "median_us": 0.971,
+    "p95_us": 0.982,
+    "serialize_us": 1.7329999999999999,
+    "runs_us": [
+     0.9610000000000001,
+     0.971,
+     1.081
+    ],
+    "reps": 1000,
+    "runs": 3
+   },
+   "exact": true,
+   "rows": 3,
+   "duckdb": {
+    "median_ms": 533.1805953755975,
+    "p95_ms": 557.1855953894556,
+    "reps": 30
+   },
+   "frozen": {
+    "median_us": 0.9510000000000001,
+    "p95_us": 0.9520000000000001,
+    "case": "having",
+    "source": "receipts/eai_cube_20261101/runs/eai_sweep_nyc100_v3.json"
+   },
+   "rows_cmp": {
+    "median": {
+     "case": "having median",
+     "frozen": 0.9510000000000001,
+     "rerun": 0.971,
+     "unit": "us",
+     "delta_pct": 2.103049421661399,
+     "flag_gt5pct": false,
+     "note": "receipts/eai_cube_20261101/runs/eai_sweep_nyc100_v3.json"
+    },
+    "p95": {
+     "case": "having p95",
+     "frozen": 0.9520000000000001,
+     "rerun": 0.982,
+     "unit": "us",
+     "delta_pct": 3.1512605042016717,
+     "flag_gt5pct": false,
+     "note": "receipts/eai_cube_20261101/runs/eai_sweep_nyc100_v3.json"
+    }
+   }
+  }
+ }
+}

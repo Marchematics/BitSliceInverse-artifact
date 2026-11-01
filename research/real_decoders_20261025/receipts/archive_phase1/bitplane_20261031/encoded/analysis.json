@@ -1,0 +1,16 @@
+{
+  "input": "NYC 100M encoded tree",
+  "representation": "BSBITS02 built directly from encoded tree",
+  "storage_bytes": 296995264,
+  "build_ms": 6700,
+  "query_median_ms": 32.414,
+  "runs": 5,
+  "exact": true,
+  "duckdb_sum_ms": 520.2477,
+  "hand_sum_ms": 183.2593,
+  "encoded_sum_ms": 273.171,
+  "speedup_vs_duckdb": 16.050092552600727,
+  "speedup_vs_hand": 5.653708274202505,
+  "speedup_vs_encoded": 8.427562164496821,
+  "note": "Built from encoded tree; outputs identical to plain-built bitplanes but files are not byte-identical (internal ordering/padding), both exact. SUM only."
+}

@@ -1,0 +1,34 @@
+{
+  "start_utc": "2026-10-24T20:37:07.723631+00:00",
+  "cap_seconds": 900,
+  "prep_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/hatred8_prep_v5",
+  "paths": [
+    "generic",
+    "group_domain",
+    "stream",
+    "stream_uniform",
+    "duckdb",
+    "duckdb_proj2",
+    "arrow_full",
+    "arrow_proj",
+    "vortex_full",
+    "vortex_proj"
+  ],
+  "cases": [
+    "Observed",
+    "Empty",
+    "Singleton",
+    "Boundary",
+    "AllExcluded",
+    "RangeEndpoints"
+  ],
+  "blocks": 30,
+  "native_binary_sha256": "d10992c0033916e48fa0e57ea7560a7eb8959c1e2437ab12f606eab88d38c548",
+  "arrow_control_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_hatred8_v1",
+  "vortex_control_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_hatred8_v1",
+  "preloaded_input_bytes": 0,
+  "query": "Hatred_1/8",
+  "expansion_query_not_frozen_eight": true,
+  "endpoint_a": "complete_fresh_worker_wall_ms",
+  "endpoint_b": "reconstructed_in_worker_stored_input_ms"
+}

@@ -1,0 +1,2794 @@
+{
+  "status": "passed",
+  "error": null,
+  "stage": "authored exact-original-SQL dialect before observed preparation",
+  "profiles": [
+    "food1",
+    "ig1",
+    "iub1",
+    "iub4"
+  ],
+  "executions": [
+    {
+      "profile": "food1",
+      "case": "Empty",
+      "rows": 0,
+      "original_sql_sha256": "f5498a40629db32bc39027c60f712cbfbd3c09074fad0b958081747b5d38d85a",
+      "original_ddl_sha256": "d32878f9ac9f2a5f253d026fcd454838f607be39aaa971cbbff103f038fb3267",
+      "actual_schema_columns": [
+        [
+          0,
+          "Number of Records",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          1,
+          "activity_sec",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          2,
+          "application",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          3,
+          "device",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          4,
+          "subscribers",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          5,
+          "volume_total_bytes",
+          "DOUBLE",
+          true,
+          null,
+          false
+        ]
+      ],
+      "settings": {
+        "threads": 1,
+        "preserve_insertion_order": true,
+        "default_collation": "",
+        "default_null_order": "NULLS_LAST",
+        "TimeZone": "Asia/Shanghai",
+        "binary_behavior_probes": [
+          false,
+          false,
+          false
+        ],
+        "default_ascending_null_probe": [
+          0,
+          1,
+          null
+        ]
+      },
+      "actual_cursor_description": [
+        {
+          "name": "device",
+          "type": "VARCHAR"
+        }
+      ],
+      "original_engine_returned_sequence": [],
+      "canonical_complete_result": {
+        "columns": [
+          {
+            "name": "device",
+            "type": "VARCHAR"
+          }
+        ],
+        "rows": []
+      },
+      "independent_oracle": {
+        "columns": [
+          {
+            "name": "device",
+            "type": "VARCHAR"
+          }
+        ],
+        "rows": []
+      },
+      "complete_typed_result_equal": true,
+      "original_SQL_rewritten": false,
+      "original_NOT_NULL_unchanged": true
+    },
+    {
+      "profile": "food1",
+      "case": "AuthoredNonempty",
+      "rows": 37,
+      "original_sql_sha256": "f5498a40629db32bc39027c60f712cbfbd3c09074fad0b958081747b5d38d85a",
+      "original_ddl_sha256": "d32878f9ac9f2a5f253d026fcd454838f607be39aaa971cbbff103f038fb3267",
+      "actual_schema_columns": [
+        [
+          0,
+          "Number of Records",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          1,
+          "activity_sec",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          2,
+          "application",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          3,
+          "device",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          4,
+          "subscribers",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          5,
+          "volume_total_bytes",
+          "DOUBLE",
+          true,
+          null,
+          false
+        ]
+      ],
+      "settings": {
+        "threads": 1,
+        "preserve_insertion_order": true,
+        "default_collation": "",
+        "default_null_order": "NULLS_LAST",
+        "TimeZone": "Asia/Shanghai",
+        "binary_behavior_probes": [
+          false,
+          false,
+          false
+        ],
+        "default_ascending_null_probe": [
+          0,
+          1,
+          null
+        ]
+      },
+      "actual_cursor_description": [
+        {
+          "name": "device",
+          "type": "VARCHAR"
+        }
+      ],
+      "original_engine_returned_sequence": [
+        [
+          ""
+        ],
+        [
+          "\n"
+        ],
+        [
+          "\"\\"
+        ],
+        [
+          "A"
+        ],
+        [
+          "a"
+        ],
+        [
+          "é"
+        ],
+        [
+          "null"
+        ],
+        [
+          "é"
+        ],
+        [
+          " "
+        ],
+        [
+          " "
+        ],
+        [
+          "😀"
+        ]
+      ],
+      "canonical_complete_result": {
+        "columns": [
+          {
+            "name": "device",
+            "type": "VARCHAR"
+          }
+        ],
+        "rows": [
+          [
+            ""
+          ],
+          [
+            "\n"
+          ],
+          [
+            "\"\\"
+          ],
+          [
+            "A"
+          ],
+          [
+            "a"
+          ],
+          [
+            "é"
+          ],
+          [
+            "null"
+          ],
+          [
+            "é"
+          ],
+          [
+            " "
+          ],
+          [
+            " "
+          ],
+          [
+            "😀"
+          ]
+        ]
+      },
+      "independent_oracle": {
+        "columns": [
+          {
+            "name": "device",
+            "type": "VARCHAR"
+          }
+        ],
+        "rows": [
+          [
+            ""
+          ],
+          [
+            "\n"
+          ],
+          [
+            "\"\\"
+          ],
+          [
+            "A"
+          ],
+          [
+            "a"
+          ],
+          [
+            "é"
+          ],
+          [
+            "null"
+          ],
+          [
+            "é"
+          ],
+          [
+            " "
+          ],
+          [
+            " "
+          ],
+          [
+            "😀"
+          ]
+        ]
+      },
+      "complete_typed_result_equal": true,
+      "original_SQL_rewritten": false,
+      "original_NOT_NULL_unchanged": true
+    },
+    {
+      "profile": "ig1",
+      "case": "Empty",
+      "rows": 0,
+      "original_sql_sha256": "d1b467eb9276fbe0cf53e5d115a9fd2f40d720ff8b085e3a407fbb38f84f80e8",
+      "original_ddl_sha256": "bd070cf6fed9e82b84ea20636b13ab014cb69970892dc452c8039f96611da0bc",
+      "actual_schema_columns": [
+        [
+          0,
+          "CENSUS2010POP",
+          "INTEGER",
+          false,
+          null,
+          false
+        ],
+        [
+          1,
+          "CONCIT",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          2,
+          "COUSUB",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          3,
+          "City",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          4,
+          "County Code",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          5,
+          "ESTIMATESBASE2010",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          6,
+          "FUNCSTAT",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          7,
+          "Number of Records",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          8,
+          "PLACE",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          9,
+          "POPESTIMATE2010",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          10,
+          "POPESTIMATE2011",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          11,
+          "POPESTIMATE2012",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          12,
+          "POPESTIMATE2013",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          13,
+          "POPESTIMATE2014",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          14,
+          "PRIMGEO_FLAG",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          15,
+          "SUMLEV",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          16,
+          "State code",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          17,
+          "State",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ]
+      ],
+      "settings": {
+        "threads": 1,
+        "preserve_insertion_order": true,
+        "default_collation": "",
+        "default_null_order": "NULLS_LAST",
+        "TimeZone": "Asia/Shanghai",
+        "binary_behavior_probes": [
+          false,
+          false,
+          false
+        ],
+        "default_ascending_null_probe": [
+          0,
+          1,
+          null
+        ]
+      },
+      "actual_cursor_description": [
+        {
+          "name": "State",
+          "type": "VARCHAR"
+        }
+      ],
+      "original_engine_returned_sequence": [],
+      "canonical_complete_result": {
+        "columns": [
+          {
+            "name": "State",
+            "type": "VARCHAR"
+          }
+        ],
+        "rows": []
+      },
+      "independent_oracle": {
+        "columns": [
+          {
+            "name": "State",
+            "type": "VARCHAR"
+          }
+        ],
+        "rows": []
+      },
+      "complete_typed_result_equal": true,
+      "original_SQL_rewritten": false,
+      "original_NOT_NULL_unchanged": true
+    },
+    {
+      "profile": "ig1",
+      "case": "AuthoredNonempty",
+      "rows": 37,
+      "original_sql_sha256": "d1b467eb9276fbe0cf53e5d115a9fd2f40d720ff8b085e3a407fbb38f84f80e8",
+      "original_ddl_sha256": "bd070cf6fed9e82b84ea20636b13ab014cb69970892dc452c8039f96611da0bc",
+      "actual_schema_columns": [
+        [
+          0,
+          "CENSUS2010POP",
+          "INTEGER",
+          false,
+          null,
+          false
+        ],
+        [
+          1,
+          "CONCIT",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          2,
+          "COUSUB",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          3,
+          "City",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          4,
+          "County Code",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          5,
+          "ESTIMATESBASE2010",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          6,
+          "FUNCSTAT",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          7,
+          "Number of Records",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          8,
+          "PLACE",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          9,
+          "POPESTIMATE2010",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          10,
+          "POPESTIMATE2011",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          11,
+          "POPESTIMATE2012",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          12,
+          "POPESTIMATE2013",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          13,
+          "POPESTIMATE2014",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          14,
+          "PRIMGEO_FLAG",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          15,
+          "SUMLEV",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          16,
+          "State code",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          17,
+          "State",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ]
+      ],
+      "settings": {
+        "threads": 1,
+        "preserve_insertion_order": true,
+        "default_collation": "",
+        "default_null_order": "NULLS_LAST",
+        "TimeZone": "Asia/Shanghai",
+        "binary_behavior_probes": [
+          false,
+          false,
+          false
+        ],
+        "default_ascending_null_probe": [
+          0,
+          1,
+          null
+        ]
+      },
+      "actual_cursor_description": [
+        {
+          "name": "State",
+          "type": "VARCHAR"
+        }
+      ],
+      "original_engine_returned_sequence": [
+        [
+          ""
+        ],
+        [
+          "\n"
+        ],
+        [
+          "\"\\"
+        ],
+        [
+          "A"
+        ],
+        [
+          "a"
+        ],
+        [
+          "é"
+        ],
+        [
+          "null"
+        ],
+        [
+          "é"
+        ],
+        [
+          " "
+        ],
+        [
+          " "
+        ],
+        [
+          "😀"
+        ]
+      ],
+      "canonical_complete_result": {
+        "columns": [
+          {
+            "name": "State",
+            "type": "VARCHAR"
+          }
+        ],
+        "rows": [
+          [
+            ""
+          ],
+          [
+            "\n"
+          ],
+          [
+            "\"\\"
+          ],
+          [
+            "A"
+          ],
+          [
+            "a"
+          ],
+          [
+            "é"
+          ],
+          [
+            "null"
+          ],
+          [
+            "é"
+          ],
+          [
+            " "
+          ],
+          [
+            " "
+          ],
+          [
+            "😀"
+          ]
+        ]
+      },
+      "independent_oracle": {
+        "columns": [
+          {
+            "name": "State",
+            "type": "VARCHAR"
+          }
+        ],
+        "rows": [
+          [
+            ""
+          ],
+          [
+            "\n"
+          ],
+          [
+            "\"\\"
+          ],
+          [
+            "A"
+          ],
+          [
+            "a"
+          ],
+          [
+            "é"
+          ],
+          [
+            "null"
+          ],
+          [
+            "é"
+          ],
+          [
+            " "
+          ],
+          [
+            " "
+          ],
+          [
+            "😀"
+          ]
+        ]
+      },
+      "complete_typed_result_equal": true,
+      "original_SQL_rewritten": false,
+      "original_NOT_NULL_unchanged": true
+    },
+    {
+      "profile": "iub1",
+      "case": "Empty",
+      "rows": 0,
+      "original_sql_sha256": "adb4208a44b48ed8d1fac47dba376d577cb5457b36571e310c67ec460c85af49",
+      "original_ddl_sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+      "actual_schema_columns": [
+        [
+          0,
+          "Author",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          1,
+          "CallNumber",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          2,
+          "CallSequence",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          3,
+          "CatalogKey",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          4,
+          "ClasscodeLCSUDOCNLM",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          5,
+          "CopyNumber",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          6,
+          "DateLastCharged",
+          "DATE",
+          true,
+          null,
+          false
+        ],
+        [
+          7,
+          "DateofPublication260c",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          8,
+          "Format",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          9,
+          "Inactive",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          10,
+          "ItemCreatedDate",
+          "DATE",
+          true,
+          null,
+          false
+        ],
+        [
+          11,
+          "ItemType",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          12,
+          "Language",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          13,
+          "LastActivityDate",
+          "DATE",
+          true,
+          null,
+          false
+        ],
+        [
+          14,
+          "Library",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          15,
+          "MARCkey",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          16,
+          "OCLC",
+          "INTEGER",
+          false,
+          null,
+          false
+        ],
+        [
+          17,
+          "PubYear",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          18,
+          "Sh",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          19,
+          "TitleControlNumber",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          20,
+          "TitleCreatedDate",
+          "DATE",
+          true,
+          null,
+          false
+        ],
+        [
+          21,
+          "Title",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          22,
+          "TotalCharges",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          23,
+          "Type",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          24,
+          "elvingKey",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          25,
+          "Inactive (group)",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          26,
+          "Calculation_649925789325832192",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ]
+      ],
+      "settings": {
+        "threads": 1,
+        "preserve_insertion_order": true,
+        "default_collation": "",
+        "default_null_order": "NULLS_LAST",
+        "TimeZone": "Asia/Shanghai",
+        "binary_behavior_probes": [
+          false,
+          false,
+          false
+        ],
+        "default_ascending_null_probe": [
+          0,
+          1,
+          null
+        ]
+      },
+      "actual_cursor_description": [
+        {
+          "name": "Calculation_649925789325832192",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "PubYear",
+          "type": "BIGINT"
+        },
+        {
+          "name": "Sh",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "usr:Number of Records:ok",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "yr:DateLastCharged:ok",
+          "type": "BIGINT"
+        }
+      ],
+      "original_engine_returned_sequence": [],
+      "canonical_complete_result": {
+        "columns": [
+          {
+            "name": "Calculation_649925789325832192",
+            "type": "VARCHAR"
+          },
+          {
+            "name": "PubYear",
+            "type": "BIGINT"
+          },
+          {
+            "name": "Sh",
+            "type": "VARCHAR"
+          },
+          {
+            "name": "usr:Number of Records:ok",
+            "type": "HUGEINT"
+          },
+          {
+            "name": "yr:DateLastCharged:ok",
+            "type": "BIGINT"
+          }
+        ],
+        "rows": []
+      },
+      "independent_oracle": {
+        "columns": [
+          {
+            "name": "Calculation_649925789325832192",
+            "type": "VARCHAR"
+          },
+          {
+            "name": "PubYear",
+            "type": "BIGINT"
+          },
+          {
+            "name": "Sh",
+            "type": "VARCHAR"
+          },
+          {
+            "name": "usr:Number of Records:ok",
+            "type": "HUGEINT"
+          },
+          {
+            "name": "yr:DateLastCharged:ok",
+            "type": "BIGINT"
+          }
+        ],
+        "rows": []
+      },
+      "complete_typed_result_equal": true,
+      "original_SQL_rewritten": false,
+      "original_NOT_NULL_unchanged": true
+    },
+    {
+      "profile": "iub1",
+      "case": "AuthoredNonempty",
+      "rows": 9,
+      "original_sql_sha256": "adb4208a44b48ed8d1fac47dba376d577cb5457b36571e310c67ec460c85af49",
+      "original_ddl_sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+      "actual_schema_columns": [
+        [
+          0,
+          "Author",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          1,
+          "CallNumber",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          2,
+          "CallSequence",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          3,
+          "CatalogKey",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          4,
+          "ClasscodeLCSUDOCNLM",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          5,
+          "CopyNumber",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          6,
+          "DateLastCharged",
+          "DATE",
+          true,
+          null,
+          false
+        ],
+        [
+          7,
+          "DateofPublication260c",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          8,
+          "Format",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          9,
+          "Inactive",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          10,
+          "ItemCreatedDate",
+          "DATE",
+          true,
+          null,
+          false
+        ],
+        [
+          11,
+          "ItemType",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          12,
+          "Language",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          13,
+          "LastActivityDate",
+          "DATE",
+          true,
+          null,
+          false
+        ],
+        [
+          14,
+          "Library",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          15,
+          "MARCkey",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          16,
+          "OCLC",
+          "INTEGER",
+          false,
+          null,
+          false
+        ],
+        [
+          17,
+          "PubYear",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          18,
+          "Sh",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          19,
+          "TitleControlNumber",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          20,
+          "TitleCreatedDate",
+          "DATE",
+          true,
+          null,
+          false
+        ],
+        [
+          21,
+          "Title",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          22,
+          "TotalCharges",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          23,
+          "Type",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          24,
+          "elvingKey",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          25,
+          "Inactive (group)",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          26,
+          "Calculation_649925789325832192",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ]
+      ],
+      "settings": {
+        "threads": 1,
+        "preserve_insertion_order": true,
+        "default_collation": "",
+        "default_null_order": "NULLS_LAST",
+        "TimeZone": "Asia/Shanghai",
+        "binary_behavior_probes": [
+          false,
+          false,
+          false
+        ],
+        "default_ascending_null_probe": [
+          0,
+          1,
+          null
+        ]
+      },
+      "actual_cursor_description": [
+        {
+          "name": "Calculation_649925789325832192",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "PubYear",
+          "type": "BIGINT"
+        },
+        {
+          "name": "Sh",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "usr:Number of Records:ok",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "yr:DateLastCharged:ok",
+          "type": "BIGINT"
+        }
+      ],
+      "original_engine_returned_sequence": [
+        [
+          "A",
+          "-32768",
+          "Z",
+          "2",
+          "1900"
+        ],
+        [
+          "A",
+          "-32768",
+          "Z",
+          "1",
+          "1901"
+        ],
+        [
+          "A",
+          "0",
+          "Z",
+          "1",
+          "1900"
+        ],
+        [
+          "A",
+          "32767",
+          "Z",
+          "1",
+          "2000"
+        ],
+        [
+          "A",
+          "1900",
+          "Z",
+          "1",
+          "2000"
+        ],
+        [
+          "A",
+          "2000",
+          "Z",
+          "1",
+          "1900"
+        ],
+        [
+          "A",
+          "-1",
+          "Z",
+          "1",
+          "1"
+        ],
+        [
+          "A",
+          "-1",
+          "Z",
+          "1",
+          "9999"
+        ]
+      ],
+      "canonical_complete_result": {
+        "columns": [
+          {
+            "name": "Calculation_649925789325832192",
+            "type": "VARCHAR"
+          },
+          {
+            "name": "PubYear",
+            "type": "BIGINT"
+          },
+          {
+            "name": "Sh",
+            "type": "VARCHAR"
+          },
+          {
+            "name": "usr:Number of Records:ok",
+            "type": "HUGEINT"
+          },
+          {
+            "name": "yr:DateLastCharged:ok",
+            "type": "BIGINT"
+          }
+        ],
+        "rows": [
+          [
+            "A",
+            "-32768",
+            "Z",
+            "2",
+            "1900"
+          ],
+          [
+            "A",
+            "-32768",
+            "Z",
+            "1",
+            "1901"
+          ],
+          [
+            "A",
+            "-1",
+            "Z",
+            "1",
+            "1"
+          ],
+          [
+            "A",
+            "-1",
+            "Z",
+            "1",
+            "9999"
+          ],
+          [
+            "A",
+            "0",
+            "Z",
+            "1",
+            "1900"
+          ],
+          [
+            "A",
+            "1900",
+            "Z",
+            "1",
+            "2000"
+          ],
+          [
+            "A",
+            "2000",
+            "Z",
+            "1",
+            "1900"
+          ],
+          [
+            "A",
+            "32767",
+            "Z",
+            "1",
+            "2000"
+          ]
+        ]
+      },
+      "independent_oracle": {
+        "columns": [
+          {
+            "name": "Calculation_649925789325832192",
+            "type": "VARCHAR"
+          },
+          {
+            "name": "PubYear",
+            "type": "BIGINT"
+          },
+          {
+            "name": "Sh",
+            "type": "VARCHAR"
+          },
+          {
+            "name": "usr:Number of Records:ok",
+            "type": "HUGEINT"
+          },
+          {
+            "name": "yr:DateLastCharged:ok",
+            "type": "BIGINT"
+          }
+        ],
+        "rows": [
+          [
+            "A",
+            "-32768",
+            "Z",
+            "2",
+            "1900"
+          ],
+          [
+            "A",
+            "-32768",
+            "Z",
+            "1",
+            "1901"
+          ],
+          [
+            "A",
+            "-1",
+            "Z",
+            "1",
+            "1"
+          ],
+          [
+            "A",
+            "-1",
+            "Z",
+            "1",
+            "9999"
+          ],
+          [
+            "A",
+            "0",
+            "Z",
+            "1",
+            "1900"
+          ],
+          [
+            "A",
+            "1900",
+            "Z",
+            "1",
+            "2000"
+          ],
+          [
+            "A",
+            "2000",
+            "Z",
+            "1",
+            "1900"
+          ],
+          [
+            "A",
+            "32767",
+            "Z",
+            "1",
+            "2000"
+          ]
+        ]
+      },
+      "complete_typed_result_equal": true,
+      "original_SQL_rewritten": false,
+      "original_NOT_NULL_unchanged": true
+    },
+    {
+      "profile": "iub4",
+      "case": "Empty",
+      "rows": 0,
+      "original_sql_sha256": "5ac8d9210bc1d611c735c44d7ee75c025eac6deb7a5241a9a1a1f39e362782d7",
+      "original_ddl_sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+      "actual_schema_columns": [
+        [
+          0,
+          "Author",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          1,
+          "CallNumber",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          2,
+          "CallSequence",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          3,
+          "CatalogKey",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          4,
+          "ClasscodeLCSUDOCNLM",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          5,
+          "CopyNumber",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          6,
+          "DateLastCharged",
+          "DATE",
+          true,
+          null,
+          false
+        ],
+        [
+          7,
+          "DateofPublication260c",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          8,
+          "Format",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          9,
+          "Inactive",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          10,
+          "ItemCreatedDate",
+          "DATE",
+          true,
+          null,
+          false
+        ],
+        [
+          11,
+          "ItemType",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          12,
+          "Language",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          13,
+          "LastActivityDate",
+          "DATE",
+          true,
+          null,
+          false
+        ],
+        [
+          14,
+          "Library",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          15,
+          "MARCkey",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          16,
+          "OCLC",
+          "INTEGER",
+          false,
+          null,
+          false
+        ],
+        [
+          17,
+          "PubYear",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          18,
+          "Sh",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          19,
+          "TitleControlNumber",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          20,
+          "TitleCreatedDate",
+          "DATE",
+          true,
+          null,
+          false
+        ],
+        [
+          21,
+          "Title",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          22,
+          "TotalCharges",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          23,
+          "Type",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          24,
+          "elvingKey",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          25,
+          "Inactive (group)",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          26,
+          "Calculation_649925789325832192",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ]
+      ],
+      "settings": {
+        "threads": 1,
+        "preserve_insertion_order": true,
+        "default_collation": "",
+        "default_null_order": "NULLS_LAST",
+        "TimeZone": "Asia/Shanghai",
+        "binary_behavior_probes": [
+          false,
+          false,
+          false
+        ],
+        "default_ascending_null_probe": [
+          0,
+          1,
+          null
+        ]
+      },
+      "actual_cursor_description": [
+        {
+          "name": "Inactive (group)",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "Inactive",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "Sh",
+          "type": "VARCHAR"
+        }
+      ],
+      "original_engine_returned_sequence": [],
+      "canonical_complete_result": {
+        "columns": [
+          {
+            "name": "Inactive (group)",
+            "type": "VARCHAR"
+          },
+          {
+            "name": "Inactive",
+            "type": "VARCHAR"
+          },
+          {
+            "name": "Sh",
+            "type": "VARCHAR"
+          }
+        ],
+        "rows": []
+      },
+      "independent_oracle": {
+        "columns": [
+          {
+            "name": "Inactive (group)",
+            "type": "VARCHAR"
+          },
+          {
+            "name": "Inactive",
+            "type": "VARCHAR"
+          },
+          {
+            "name": "Sh",
+            "type": "VARCHAR"
+          }
+        ],
+        "rows": []
+      },
+      "complete_typed_result_equal": true,
+      "original_SQL_rewritten": false,
+      "original_NOT_NULL_unchanged": true
+    },
+    {
+      "profile": "iub4",
+      "case": "AuthoredNonempty",
+      "rows": 37,
+      "original_sql_sha256": "5ac8d9210bc1d611c735c44d7ee75c025eac6deb7a5241a9a1a1f39e362782d7",
+      "original_ddl_sha256": "28ad4b0608d4e4042f6b45654ef775fb0ece9341c4b3c4cb59bdd7ed05f97106",
+      "actual_schema_columns": [
+        [
+          0,
+          "Author",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          1,
+          "CallNumber",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          2,
+          "CallSequence",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          3,
+          "CatalogKey",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          4,
+          "ClasscodeLCSUDOCNLM",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          5,
+          "CopyNumber",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          6,
+          "DateLastCharged",
+          "DATE",
+          true,
+          null,
+          false
+        ],
+        [
+          7,
+          "DateofPublication260c",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          8,
+          "Format",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          9,
+          "Inactive",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          10,
+          "ItemCreatedDate",
+          "DATE",
+          true,
+          null,
+          false
+        ],
+        [
+          11,
+          "ItemType",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          12,
+          "Language",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          13,
+          "LastActivityDate",
+          "DATE",
+          true,
+          null,
+          false
+        ],
+        [
+          14,
+          "Library",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          15,
+          "MARCkey",
+          "INTEGER",
+          true,
+          null,
+          false
+        ],
+        [
+          16,
+          "OCLC",
+          "INTEGER",
+          false,
+          null,
+          false
+        ],
+        [
+          17,
+          "PubYear",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          18,
+          "Sh",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          19,
+          "TitleControlNumber",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          20,
+          "TitleCreatedDate",
+          "DATE",
+          true,
+          null,
+          false
+        ],
+        [
+          21,
+          "Title",
+          "VARCHAR",
+          false,
+          null,
+          false
+        ],
+        [
+          22,
+          "TotalCharges",
+          "SMALLINT",
+          true,
+          null,
+          false
+        ],
+        [
+          23,
+          "Type",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          24,
+          "elvingKey",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          25,
+          "Inactive (group)",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ],
+        [
+          26,
+          "Calculation_649925789325832192",
+          "VARCHAR",
+          true,
+          null,
+          false
+        ]
+      ],
+      "settings": {
+        "threads": 1,
+        "preserve_insertion_order": true,
+        "default_collation": "",
+        "default_null_order": "NULLS_LAST",
+        "TimeZone": "Asia/Shanghai",
+        "binary_behavior_probes": [
+          false,
+          false,
+          false
+        ],
+        "default_ascending_null_probe": [
+          0,
+          1,
+          null
+        ]
+      },
+      "actual_cursor_description": [
+        {
+          "name": "Inactive (group)",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "Inactive",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "Sh",
+          "type": "VARCHAR"
+        }
+      ],
+      "original_engine_returned_sequence": [
+        [
+          "G",
+          null,
+          "S"
+        ],
+        [
+          "G",
+          "",
+          "S"
+        ],
+        [
+          "G",
+          "x",
+          "S"
+        ],
+        [
+          "G",
+          "é",
+          "S"
+        ],
+        [
+          "\"\\",
+          "a",
+          "a"
+        ],
+        [
+          " ",
+          "é",
+          "é"
+        ],
+        [
+          " ",
+          null,
+          "é"
+        ],
+        [
+          "null",
+          "😀",
+          "😀"
+        ],
+        [
+          "",
+          "\n",
+          "\n"
+        ],
+        [
+          "A",
+          null,
+          "\"\\"
+        ],
+        [
+          "a",
+          " ",
+          " "
+        ],
+        [
+          "é",
+          " ",
+          " "
+        ],
+        [
+          "é",
+          null,
+          ""
+        ],
+        [
+          "😀",
+          "",
+          "A"
+        ],
+        [
+          "\n",
+          "A",
+          "a"
+        ],
+        [
+          "\"\\",
+          null,
+          "é"
+        ],
+        [
+          " ",
+          "é",
+          "é"
+        ],
+        [
+          " ",
+          "é",
+          "😀"
+        ],
+        [
+          "null",
+          null,
+          "\n"
+        ],
+        [
+          "",
+          "\n",
+          "\"\\"
+        ],
+        [
+          "A",
+          "\"\\",
+          " "
+        ],
+        [
+          "a",
+          null,
+          " "
+        ],
+        [
+          "é",
+          " ",
+          ""
+        ],
+        [
+          "é",
+          "null",
+          "A"
+        ],
+        [
+          "😀",
+          null,
+          "a"
+        ],
+        [
+          "\n",
+          "A",
+          "é"
+        ],
+        [
+          "\"\\",
+          "a",
+          "é"
+        ],
+        [
+          " ",
+          null,
+          "😀"
+        ],
+        [
+          " ",
+          "é",
+          "\n"
+        ],
+        [
+          "null",
+          "😀",
+          "\"\\"
+        ],
+        [
+          "",
+          null,
+          " "
+        ],
+        [
+          "A",
+          "\"\\",
+          " "
+        ],
+        [
+          "a",
+          " ",
+          ""
+        ],
+        [
+          "é",
+          null,
+          "A"
+        ],
+        [
+          "é",
+          "null",
+          "a"
+        ],
+        [
+          "😀",
+          "",
+          "é"
+        ],
+        [
+          "\n",
+          null,
+          "é"
+        ]
+      ],
+      "canonical_complete_result": {
+        "columns": [
+          {
+            "name": "Inactive (group)",
+            "type": "VARCHAR"
+          },
+          {
+            "name": "Inactive",
+            "type": "VARCHAR"
+          },
+          {
+            "name": "Sh",
+            "type": "VARCHAR"
+          }
+        ],
+        "rows": [
+          [
+            "",
+            null,
+            " "
+          ],
+          [
+            "",
+            "\n",
+            "\n"
+          ],
+          [
+            "",
+            "\n",
+            "\"\\"
+          ],
+          [
+            "\n",
+            null,
+            "é"
+          ],
+          [
+            "\n",
+            "A",
+            "a"
+          ],
+          [
+            "\n",
+            "A",
+            "é"
+          ],
+          [
+            "\"\\",
+            null,
+            "é"
+          ],
+          [
+            "\"\\",
+            "a",
+            "a"
+          ],
+          [
+            "\"\\",
+            "a",
+            "é"
+          ],
+          [
+            "A",
+            null,
+            "\"\\"
+          ],
+          [
+            "A",
+            "\"\\",
+            " "
+          ],
+          [
+            "A",
+            "\"\\",
+            " "
+          ],
+          [
+            "G",
+            null,
+            "S"
+          ],
+          [
+            "G",
+            "",
+            "S"
+          ],
+          [
+            "G",
+            "x",
+            "S"
+          ],
+          [
+            "G",
+            "é",
+            "S"
+          ],
+          [
+            "a",
+            null,
+            " "
+          ],
+          [
+            "a",
+            " ",
+            ""
+          ],
+          [
+            "a",
+            " ",
+            " "
+          ],
+          [
+            "é",
+            null,
+            ""
+          ],
+          [
+            "é",
+            "null",
+            "A"
+          ],
+          [
+            "é",
+            "null",
+            "a"
+          ],
+          [
+            "null",
+            null,
+            "\n"
+          ],
+          [
+            "null",
+            "😀",
+            "\"\\"
+          ],
+          [
+            "null",
+            "😀",
+            "😀"
+          ],
+          [
+            "é",
+            null,
+            "A"
+          ],
+          [
+            "é",
+            " ",
+            ""
+          ],
+          [
+            "é",
+            " ",
+            " "
+          ],
+          [
+            " ",
+            null,
+            "😀"
+          ],
+          [
+            " ",
+            "é",
+            "é"
+          ],
+          [
+            " ",
+            "é",
+            "é"
+          ],
+          [
+            " ",
+            null,
+            "é"
+          ],
+          [
+            " ",
+            "é",
+            "\n"
+          ],
+          [
+            " ",
+            "é",
+            "😀"
+          ],
+          [
+            "😀",
+            null,
+            "a"
+          ],
+          [
+            "😀",
+            "",
+            "A"
+          ],
+          [
+            "😀",
+            "",
+            "é"
+          ]
+        ]
+      },
+      "independent_oracle": {
+        "columns": [
+          {
+            "name": "Inactive (group)",
+            "type": "VARCHAR"
+          },
+          {
+            "name": "Inactive",
+            "type": "VARCHAR"
+          },
+          {
+            "name": "Sh",
+            "type": "VARCHAR"
+          }
+        ],
+        "rows": [
+          [
+            "",
+            null,
+            " "
+          ],
+          [
+            "",
+            "\n",
+            "\n"
+          ],
+          [
+            "",
+            "\n",
+            "\"\\"
+          ],
+          [
+            "\n",
+            null,
+            "é"
+          ],
+          [
+            "\n",
+            "A",
+            "a"
+          ],
+          [
+            "\n",
+            "A",
+            "é"
+          ],
+          [
+            "\"\\",
+            null,
+            "é"
+          ],
+          [
+            "\"\\",
+            "a",
+            "a"
+          ],
+          [
+            "\"\\",
+            "a",
+            "é"
+          ],
+          [
+            "A",
+            null,
+            "\"\\"
+          ],
+          [
+            "A",
+            "\"\\",
+            " "
+          ],
+          [
+            "A",
+            "\"\\",
+            " "
+          ],
+          [
+            "G",
+            null,
+            "S"
+          ],
+          [
+            "G",
+            "",
+            "S"
+          ],
+          [
+            "G",
+            "x",
+            "S"
+          ],
+          [
+            "G",
+            "é",
+            "S"
+          ],
+          [
+            "a",
+            null,
+            " "
+          ],
+          [
+            "a",
+            " ",
+            ""
+          ],
+          [
+            "a",
+            " ",
+            " "
+          ],
+          [
+            "é",
+            null,
+            ""
+          ],
+          [
+            "é",
+            "null",
+            "A"
+          ],
+          [
+            "é",
+            "null",
+            "a"
+          ],
+          [
+            "null",
+            null,
+            "\n"
+          ],
+          [
+            "null",
+            "😀",
+            "\"\\"
+          ],
+          [
+            "null",
+            "😀",
+            "😀"
+          ],
+          [
+            "é",
+            null,
+            "A"
+          ],
+          [
+            "é",
+            " ",
+            ""
+          ],
+          [
+            "é",
+            " ",
+            " "
+          ],
+          [
+            " ",
+            null,
+            "😀"
+          ],
+          [
+            " ",
+            "é",
+            "é"
+          ],
+          [
+            " ",
+            "é",
+            "é"
+          ],
+          [
+            " ",
+            null,
+            "é"
+          ],
+          [
+            " ",
+            "é",
+            "\n"
+          ],
+          [
+            " ",
+            "é",
+            "😀"
+          ],
+          [
+            "😀",
+            null,
+            "a"
+          ],
+          [
+            "😀",
+            "",
+            "A"
+          ],
+          [
+            "😀",
+            "",
+            "é"
+          ]
+        ]
+      },
+      "complete_typed_result_equal": true,
+      "original_SQL_rewritten": false,
+      "original_NOT_NULL_unchanged": true
+    }
+  ],
+  "completed_original_queries": 8,
+  "identity": {
+    "version": "2.0.0",
+    "python_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/duckdb/__init__.py",
+    "python_module_sha256": "85ce0baebdb7a81409c005056ef962270947aff974df00fb79d84642f11ac0e7",
+    "native_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/_duckdb.abi3.so",
+    "native_module_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a",
+    "cpu_affinity": [
+      101
+    ],
+    "environment_threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "RAYON_NUM_THREADS": "1"
+    }
+  },
+  "preparer_source_sha256": "e69bba32d05e07ceebc39c6a6b6b907afbca6a3b3278829d87b73de241e85726",
+  "observed_values_used": false,
+  "query_coverage_increment": 0,
+  "no_timing_claim": true,
+  "iub1_duplicate_alias_binding_requires_independent_tuples": true,
+  "original_sql_commit": "cf9909083bf9ed185cd7f5121a2881e1fea0e7a9",
+  "wall_ms": 505.4295409936458
+}

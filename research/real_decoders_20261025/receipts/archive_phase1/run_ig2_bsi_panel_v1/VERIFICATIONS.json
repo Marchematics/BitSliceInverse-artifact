@@ -1,0 +1,31 @@
+[
+  {
+    "stage": "build_verify",
+    "sha256": "5c9cacb68eb55b016571f30955b3a753fac69b48fd2b44a3f0848c076500c29d"
+  },
+  {
+    "method": "generic",
+    "exact": true,
+    "sha256": "a1ec06ceddc1644cee20ccc10f6b6824ea001c086f48aa8a1d0af2d1cdf3fa6c"
+  },
+  {
+    "method": "stream",
+    "exact": true,
+    "sha256": "a1ec06ceddc1644cee20ccc10f6b6824ea001c086f48aa8a1d0af2d1cdf3fa6c"
+  },
+  {
+    "method": "duckdb",
+    "exact": true,
+    "sha256": "09f9229fc9e2cc19d9dc7e3d00baafc260181a308bd2c77530f9b639228d7173"
+  },
+  {
+    "method": "arrow_full",
+    "exact": true,
+    "sha256": "09f9229fc9e2cc19d9dc7e3d00baafc260181a308bd2c77530f9b639228d7173"
+  },
+  {
+    "method": "bsi",
+    "exact": true,
+    "sha256": "09f9229fc9e2cc19d9dc7e3d00baafc260181a308bd2c77530f9b639228d7173"
+  }
+]

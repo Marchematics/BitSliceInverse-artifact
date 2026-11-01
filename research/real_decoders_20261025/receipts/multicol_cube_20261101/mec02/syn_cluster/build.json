@@ -1,0 +1,26 @@
+{
+ "build_ms": 501.423,
+ "bytes": 29641600,
+ "rows": 12000000,
+ "G": 4,
+ "G0": 3,
+ "has_null": true,
+ "D1": 11,
+ "D2": 50,
+ "cells": 550,
+ "runs": 2200,
+ "rows_per_run": 5454,
+ "max_run_rows": 8400388,
+ "W": 65536,
+ "BP": 159,
+ "count_width": 4,
+ "w_source": "auto_fit",
+ "budget_bytes": 33075114,
+ "phase_ms": {
+  "shape": 194.624,
+  "counting_sort": 96.436,
+  "run_radix": 75.762,
+  "grid": 95.931,
+  "write": 38.669
+ }
+}

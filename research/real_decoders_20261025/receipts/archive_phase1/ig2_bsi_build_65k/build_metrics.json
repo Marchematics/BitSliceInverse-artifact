@@ -1,0 +1,17 @@
+{
+  "kind": "bsi_build",
+  "method": "croaring_bsi",
+  "rows": 65536,
+  "groups": 48,
+  "max_bit": 26,
+  "storage_bytes": 134899,
+  "read_input_ms": 11.696078814566135,
+  "build_bitmaps_ms": 118.3471530675888,
+  "serialize_ms": 3.1227851286530495,
+  "evaluate_write_ms": 1.2479478027671576,
+  "pyroaring": "1.2.0",
+  "arrow_input": "results/arrow_ig2_v1/Observed_arrow/full18.arrow",
+  "arrow_input_sha256": "83b12f17c8aef3a16e04a5e0e24debb0d3f556e35938f6dd945baf2abc258cc3",
+  "storage": "results/bsi_ig2_v1/Observed_bsi",
+  "sql_sha256": "0bc95092f92bbb2f8652e66c10db8bec5fba88b6d96c5ac23e9650fe27ecca8b"
+}

@@ -1,0 +1,19 @@
+{
+  "input": "NYC 100M encoded-built BSBITS03",
+  "filter": "numeric range via bitplane comparison masks",
+  "exact": true,
+  "control": "DuckDB 2.0 single-thread",
+  "broad": {
+    "range": "fare>=0",
+    "bitplane_ms": 155.338,
+    "duckdb_ms": 622.058,
+    "speedup": 4.004544927834786
+  },
+  "narrow": {
+    "range": "80M..90M",
+    "bitplane_ms": 136.638,
+    "duckdb_ms": 0.921,
+    "speedup": 0.006740438238264612
+  },
+  "note": "Exact range masks implemented, but bitplane filtering is not competitive: broad 4.0x, narrow loses to DuckDB zone maps. The sparse value index remains the best broad-range path (790x); narrow remains 1.68x."
+}

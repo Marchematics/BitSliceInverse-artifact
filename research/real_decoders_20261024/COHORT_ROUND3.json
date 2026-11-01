@@ -1,0 +1,675 @@
+{
+  "format": "bitslice-round3-cohort-v1",
+  "created_stage": "metadata-only-before-new-values",
+  "data_repository": "azimafroozeh/FastLanes_Data",
+  "data_commit": "e5fab9e21e0037a6a3f54633c73a3524d08fe8f3",
+  "selection_rule": {
+    "prefix": "public_bi/tables/",
+    "csv_size_at_most": 6291456,
+    "exclude_development_tables": [
+      "Bimbo"
+    ],
+    "no_favorable_replacements": true
+  },
+  "expected_tables": 4,
+  "expected_queries": 1800,
+  "expected_queried_columns": 18,
+  "expected_nullable_column_queries": 1540,
+  "expected_not_null_column_queries": 260,
+  "expected_operator_counts": {
+    "=": 44,
+    "!=": 44,
+    "<": 426,
+    "<=": 426,
+    ">": 430,
+    ">=": 430
+  },
+  "corpus": {
+    "local_file": "selectivity_mini.connector_decoded.csv",
+    "source_path": "public_bi/selectivity_mini.csv",
+    "bytes": 4370489,
+    "git_sha1": "fea6b05246ec78dbf99f126af4e0f205d801bb69",
+    "sha256": "37882098c4587af3845485e94da7ccafbdc9fad05d112a991075ec5d76238c4b",
+    "expected_all_queries": 43442,
+    "expected_all_tables": 36,
+    "development_queries": 385,
+    "nondevelopment_queries": 43057,
+    "nondevelopment_outside_cohort_queries": 41257
+  },
+  "source_format": {
+    "encoding": "utf-8-strict-no-new-replacements",
+    "field_delimiter": "|",
+    "record_delimiter": "LF",
+    "quote_handling": "none",
+    "header": false,
+    "null_token": "null",
+    "allow_unterminated_final_record": true,
+    "strip_whitespace": false,
+    "source_integer_grammar": "[+-]?[0-9]+",
+    "enforce_not_null_all_columns": true,
+    "validate_signed_integer_ranges_all_columns": true,
+    "unqueried_noninteger_values": "preserved raw; only row width/nullability checked",
+    "format_repository": "cwida/public_bi_benchmark",
+    "format_commit": "7d8a05a7fface61ae3cc7ad80579ca0ccafaae97",
+    "format_path": "scripts/monetdb/lib/1-create-MonetDB-load_sql.sh",
+    "format_git_sha1": "0967e8b2d400630254e5009be5ee589e76aa7766"
+  },
+  "semantics": {
+    "filter_only": true,
+    "sql_projection_materialized": false,
+    "signed_mapping": "u = x - source_type_min",
+    "null_source_placeholder": 0,
+    "null_u32_placeholder": 0,
+    "validity_every_queried_column": true,
+    "bitmap_bitorder": "little",
+    "bitmap_byte_alignment": 8,
+    "validity_padding_bits": 0,
+    "query_order": "complete original source-record order; duplicates retained",
+    "query_operator_codes": {
+      "=": 0,
+      "!=": 1,
+      "<": 2,
+      "<=": 3,
+      ">": 4,
+      ">=": 5
+    },
+    "fold_codes": {
+      "ordinary": -1,
+      "false": 0,
+      "valid_rows": 1
+    },
+    "null_literal_semantics": "SQL UNKNOWN; final WHERE selection false",
+    "out_of_type_literal_policy": "exact type-bound constant folding before U32 narrowing",
+    "family_codes": {
+      "cross_rle": 0,
+      "patched_ffor": 2,
+      "dict_ffor": 3,
+      "plain_ffor": 5
+    },
+    "iub_missing_expression_policy": "fixed plain FFOR",
+    "plain_ffor_shape": "CHUNKS -> PATCH(empty) -> PACK; unchanged codec2 execution",
+    "final_1024_block_padding": "zero normalized codes; charged; never exposed beyond logical row_count",
+    "source_width_packed": "invertible signed-type-min bias in u16/u32 plus full validity; not original native signed bytes",
+    "unsupported_query_policy": "retain coverage failure and abort; never drop"
+  },
+  "tables": [
+    {
+      "name": "Arade",
+      "local_file": "Arade_1.csv",
+      "source_path": "public_bi/tables/Arade/Arade_1/Arade_1.csv",
+      "bytes": 5635711,
+      "git_sha1": "37995ef80f78a816f9e437e9362467f8ca969d73",
+      "expected_queries": 12,
+      "schema_source": {
+        "repository": "azimafroozeh/FastLanes_Data",
+        "commit": "e5fab9e21e0037a6a3f54633c73a3524d08fe8f3",
+        "path": "public_bi/tables/Arade/Arade_1/schema.json",
+        "bytes": 1287,
+        "git_sha1": "977a9e638d5163c4d2930584ed704c23387b92e4",
+        "substitution_for_missing_data_json": false
+      },
+      "columns": [
+        {
+          "index": 0,
+          "name": "F1",
+          "type": "varchar(3)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 1,
+          "name": "F2",
+          "type": "varchar(5)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 2,
+          "name": "F3",
+          "type": "timestamp",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 3,
+          "name": "F4",
+          "type": "decimal(8, 4)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 4,
+          "name": "F5",
+          "type": "decimal(8, 6)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 5,
+          "name": "F6",
+          "type": "varchar(1)",
+          "nullable": true,
+          "queried": false
+        },
+        {
+          "index": 6,
+          "name": "F7",
+          "type": "varchar(1)",
+          "nullable": true,
+          "queried": false
+        },
+        {
+          "index": 7,
+          "name": "F8",
+          "type": "decimal(9, 6)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 8,
+          "name": "F9",
+          "type": "decimal(9, 6)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 9,
+          "name": "Number of Records",
+          "type": "smallint",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 10,
+          "name": "WNET (bin)",
+          "type": "smallint",
+          "nullable": false,
+          "queried": true,
+          "expected_queries": 12,
+          "published_expression": "EXP_FFOR_SLPATCH_I08",
+          "family": 2,
+          "signed_bits": 16
+        }
+      ]
+    },
+    {
+      "name": "Food",
+      "local_file": "Food_1.csv",
+      "source_path": "public_bi/tables/Food/Food_1/Food_1.csv",
+      "bytes": 2043925,
+      "git_sha1": "40a6eeb5d643197d68798b96f03894604400a7a0",
+      "expected_queries": 14,
+      "schema_source": {
+        "repository": "azimafroozeh/FastLanes_Data",
+        "commit": "e5fab9e21e0037a6a3f54633c73a3524d08fe8f3",
+        "path": "public_bi/tables/Food/Food_1/schema.json",
+        "bytes": 758,
+        "git_sha1": "d613a16f92238a3a2e31829956e78f46e1ca869b",
+        "substitution_for_missing_data_json": false
+      },
+      "columns": [
+        {
+          "index": 0,
+          "name": "Number of Records",
+          "type": "smallint",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 1,
+          "name": "activity_sec",
+          "type": "integer",
+          "nullable": false,
+          "queried": true,
+          "expected_queries": 8,
+          "published_expression": "EXP_DICT_I32_FFOR_U16",
+          "family": 3,
+          "signed_bits": 32
+        },
+        {
+          "index": 2,
+          "name": "application",
+          "type": "varchar(28)",
+          "nullable": true,
+          "queried": false
+        },
+        {
+          "index": 3,
+          "name": "device",
+          "type": "varchar(40)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 4,
+          "name": "subscribers",
+          "type": "smallint",
+          "nullable": false,
+          "queried": true,
+          "expected_queries": 6,
+          "published_expression": "EXP_FFOR_SLPATCH_I16",
+          "family": 2,
+          "signed_bits": 16
+        },
+        {
+          "index": 5,
+          "name": "volume_total_bytes",
+          "type": "double",
+          "nullable": false,
+          "queried": false
+        }
+      ]
+    },
+    {
+      "name": "IGlocations1",
+      "local_file": "IGlocations1_1.csv",
+      "source_path": "public_bi/tables/IGlocations1/IGlocations1_1/IGlocations1_1.csv",
+      "bytes": 5453836,
+      "git_sha1": "ee275641f7c34fcb258559be100f83cf088b927c",
+      "expected_queries": 1386,
+      "schema_source": {
+        "repository": "azimafroozeh/FastLanes_Data",
+        "commit": "e5fab9e21e0037a6a3f54633c73a3524d08fe8f3",
+        "path": "public_bi/tables/IGlocations1/IGlocations1_1/schema.json",
+        "bytes": 2173,
+        "git_sha1": "87f2c193c9ba31e9c89874abc4686a3165839071",
+        "substitution_for_missing_data_json": false
+      },
+      "columns": [
+        {
+          "index": 0,
+          "name": "CENSUS2010POP",
+          "type": "integer",
+          "nullable": true,
+          "queried": true,
+          "expected_queries": 1352,
+          "published_expression": "EXP_FFOR_SLPATCH_I32",
+          "family": 2,
+          "signed_bits": 32
+        },
+        {
+          "index": 1,
+          "name": "CONCIT",
+          "type": "integer",
+          "nullable": false,
+          "queried": true,
+          "expected_queries": 2,
+          "published_expression": "EXP_DICT_I32_FFOR_U08",
+          "family": 3,
+          "signed_bits": 32
+        },
+        {
+          "index": 2,
+          "name": "COUSUB",
+          "type": "integer",
+          "nullable": false,
+          "queried": true,
+          "expected_queries": 2,
+          "published_expression": "EXP_FFOR_I32",
+          "family": 5,
+          "signed_bits": 32
+        },
+        {
+          "index": 3,
+          "name": "City",
+          "type": "varchar(57)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 4,
+          "name": "County Code",
+          "type": "smallint",
+          "nullable": false,
+          "queried": true,
+          "expected_queries": 3,
+          "published_expression": "EXP_CROSS_RLE_I16",
+          "family": 0,
+          "signed_bits": 16
+        },
+        {
+          "index": 5,
+          "name": "ESTIMATESBASE2010",
+          "type": "integer",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 6,
+          "name": "FUNCSTAT",
+          "type": "varchar(1)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 7,
+          "name": "Number of Records",
+          "type": "smallint",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 8,
+          "name": "PLACE",
+          "type": "integer",
+          "nullable": false,
+          "queried": true,
+          "expected_queries": 2,
+          "published_expression": "EXP_FFOR_I32",
+          "family": 5,
+          "signed_bits": 32
+        },
+        {
+          "index": 9,
+          "name": "POPESTIMATE2010",
+          "type": "integer",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 10,
+          "name": "POPESTIMATE2011",
+          "type": "integer",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 11,
+          "name": "POPESTIMATE2012",
+          "type": "integer",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 12,
+          "name": "POPESTIMATE2013",
+          "type": "integer",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 13,
+          "name": "POPESTIMATE2014",
+          "type": "integer",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 14,
+          "name": "PRIMGEO_FLAG",
+          "type": "smallint",
+          "nullable": false,
+          "queried": true,
+          "expected_queries": 4,
+          "published_expression": "EXP_DICT_I08_FFOR_U08",
+          "family": 3,
+          "signed_bits": 16
+        },
+        {
+          "index": 15,
+          "name": "SUMLEV",
+          "type": "smallint",
+          "nullable": false,
+          "queried": true,
+          "expected_queries": 8,
+          "published_expression": "EXP_DICT_I16_FFOR_U08",
+          "family": 3,
+          "signed_bits": 16
+        },
+        {
+          "index": 16,
+          "name": "State code",
+          "type": "smallint",
+          "nullable": false,
+          "queried": true,
+          "expected_queries": 13,
+          "published_expression": "EXP_DICT_I08_FFOR_U08",
+          "family": 3,
+          "signed_bits": 16
+        },
+        {
+          "index": 17,
+          "name": "State",
+          "type": "varchar(20)",
+          "nullable": false,
+          "queried": false
+        }
+      ]
+    },
+    {
+      "name": "IUBLibrary",
+      "local_file": "IUBLibrary_1.csv",
+      "source_path": "public_bi/tables/IUBLibrary/IUBLibrary_1/IUBLibrary_1.csv",
+      "bytes": 453969,
+      "git_sha1": "405d3ce9144d61aff8781f848040a418e3b0bf01",
+      "expected_queries": 388,
+      "schema_source": {
+        "repository": "cwida/public_bi_benchmark",
+        "commit": "cf9909083bf9ed185cd7f5121a2881e1fea0e7a9",
+        "path": "benchmark/IUBLibrary/tables/IUBLibrary_1.table.sql",
+        "bytes": 946,
+        "git_sha1": "e28775e154b114fe59a9e0b4d2b28f7691aae7f7",
+        "substitution_for_missing_data_json": true
+      },
+      "columns": [
+        {
+          "index": 0,
+          "name": "Author",
+          "type": "varchar(117)",
+          "nullable": true,
+          "queried": false
+        },
+        {
+          "index": 1,
+          "name": "CallNumber",
+          "type": "varchar(32)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 2,
+          "name": "CallSequence",
+          "type": "smallint",
+          "nullable": false,
+          "queried": true,
+          "expected_queries": 21,
+          "published_expression": null,
+          "family": 5,
+          "signed_bits": 16
+        },
+        {
+          "index": 3,
+          "name": "CatalogKey",
+          "type": "integer",
+          "nullable": false,
+          "queried": true,
+          "expected_queries": 78,
+          "published_expression": null,
+          "family": 5,
+          "signed_bits": 32
+        },
+        {
+          "index": 4,
+          "name": "ClasscodeLCSUDOCNLM",
+          "type": "varchar(2)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 5,
+          "name": "CopyNumber",
+          "type": "smallint",
+          "nullable": false,
+          "queried": true,
+          "expected_queries": 2,
+          "published_expression": null,
+          "family": 5,
+          "signed_bits": 16
+        },
+        {
+          "index": 6,
+          "name": "DateLastCharged",
+          "type": "date",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 7,
+          "name": "DateofPublication260c",
+          "type": "varchar(17)",
+          "nullable": true,
+          "queried": false
+        },
+        {
+          "index": 8,
+          "name": "Format",
+          "type": "varchar(6)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 9,
+          "name": "Inactive",
+          "type": "varchar(8)",
+          "nullable": true,
+          "queried": false
+        },
+        {
+          "index": 10,
+          "name": "ItemCreatedDate",
+          "type": "date",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 11,
+          "name": "ItemType",
+          "type": "varchar(6)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 12,
+          "name": "Language",
+          "type": "varchar(3)",
+          "nullable": true,
+          "queried": false
+        },
+        {
+          "index": 13,
+          "name": "LastActivityDate",
+          "type": "date",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 14,
+          "name": "Library",
+          "type": "varchar(7)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 15,
+          "name": "MARCkey",
+          "type": "integer",
+          "nullable": false,
+          "queried": true,
+          "expected_queries": 58,
+          "published_expression": null,
+          "family": 5,
+          "signed_bits": 32
+        },
+        {
+          "index": 16,
+          "name": "OCLC",
+          "type": "integer",
+          "nullable": true,
+          "queried": true,
+          "expected_queries": 188,
+          "published_expression": null,
+          "family": 5,
+          "signed_bits": 32
+        },
+        {
+          "index": 17,
+          "name": "PubYear",
+          "type": "smallint",
+          "nullable": false,
+          "queried": true,
+          "expected_queries": 19,
+          "published_expression": null,
+          "family": 5,
+          "signed_bits": 16
+        },
+        {
+          "index": 18,
+          "name": "Sh",
+          "type": "varchar(2)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 19,
+          "name": "TitleControlNumber",
+          "type": "varchar(9)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 20,
+          "name": "TitleCreatedDate",
+          "type": "date",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 21,
+          "name": "Title",
+          "type": "varchar(118)",
+          "nullable": true,
+          "queried": false
+        },
+        {
+          "index": 22,
+          "name": "TotalCharges",
+          "type": "smallint",
+          "nullable": false,
+          "queried": true,
+          "expected_queries": 22,
+          "published_expression": null,
+          "family": 5,
+          "signed_bits": 16
+        },
+        {
+          "index": 23,
+          "name": "Type",
+          "type": "varchar(1)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 24,
+          "name": "elvingKey",
+          "type": "varchar(53)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 25,
+          "name": "Inactive (group)",
+          "type": "varchar(8)",
+          "nullable": false,
+          "queried": false
+        },
+        {
+          "index": 26,
+          "name": "Calculation_649925789325832192",
+          "type": "varchar(1)",
+          "nullable": false,
+          "queried": false
+        }
+      ]
+    }
+  ]
+}

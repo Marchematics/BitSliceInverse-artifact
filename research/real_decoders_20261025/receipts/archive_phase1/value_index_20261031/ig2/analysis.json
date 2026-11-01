@@ -1,0 +1,23 @@
+{
+  "input": "IG2 State group, POPESTIMATE2014 range>=1,000,000",
+  "index_bytes": {
+    "65k": 270936,
+    "10m": 41362024
+  },
+  "results": {
+    "65k": {
+      "query_median_ms": 0.277,
+      "duckdb_ms": 0.835365,
+      "speedup_vs_duckdb": 3.0157581227436823,
+      "exact": true,
+      "runs": 5
+    },
+    "10m": {
+      "query_median_ms": 1.138,
+      "duckdb_ms": 18.36013,
+      "speedup_vs_duckdb": 16.133681898066786,
+      "exact": true,
+      "runs": 5
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+ "protocol": {
+  "pin": "nice -n 5 taskset -c 96",
+  "T_total": "T_build + Q*T_query, both sides single-thread, warm engine",
+  "break_even_Q": "T_build/(T_base - T_query)",
+  "Q_2x": "smallest Q with cumulative baseline cost / cumulative cost >= 2"
+ },
+ "configs": {
+  "cube_100m": {
+   "name": "single-column ECUBE02 cube, NYC-100M fixed GROUP BY",
+   "builder": "build_enc from the 251.8 MB encoded tree -> 1.14 MB index",
+   "build_ms": 3242.0,
+   "query_ms": 0.0011610000000000001,
+   "baseline_ms": 450.79911523498595,
+   "break_even_Q": 7.1916919088547,
+   "Q_2x": 14.383420861248448,
+   "cumulative": {
+    "1": {
+     "cost_ms": 3242.001161,
+     "ratio": 0.13904964645229687,
+     "ge_2x": false
+    },
+    "10": {
+     "cost_ms": 3242.01161,
+     "ratio": 1.3904919829543299,
+     "ge_2x": false
+    },
+    "100": {
+     "cost_ms": 3242.1161,
+     "ratio": 13.904471688567412,
+     "ge_2x": true
+    },
+    "1000": {
+     "cost_ms": 3243.161,
+     "ratio": 138.99991867039162,
+     "ge_2x": true
+    }
+   },
+   "detail": "index 1140124 B; DuckDB scan median 450.8 ms"
+  },
+  "mec_tpch2": {
+   "name": "MEC02 TPC-H SF2 3-predicate conjunction (case broad, SUM/COUNT/MIN/MAX)",
+   "builder": "mec build from 4 raw i64 columns, auto-fit -> 36.9 MB index",
+   "build_ms": 596.7055726796389,
+   "query_ms": 0.015042,
+   "baseline_ms": 38.29115047119558,
+   "break_even_Q": 15.589504693996924,
+   "Q_2x": 31.19126713986721,
+   "cumulative": {
+    "1": {
+     "cost_ms": 596.7206146796389,
+     "ratio": 0.06416931061071676,
+     "ge_2x": false
+    },
+    "10": {
+     "cost_ms": 596.8559926796389,
+     "ratio": 0.6415475582189264,
+     "ge_2x": false
+    },
+    "100": {
+     "cost_ms": 598.2097726796388,
+     "ratio": 6.400957025438259,
+     "ge_2x": true
+    },
+    "1000": {
+     "cost_ms": 611.7475726796389,
+     "ratio": 62.59305664829824,
+     "ge_2x": true
+    }
+   },
+   "detail": "index 38695064 B; MEC sc(SUM/COUNT) 11.08 us; DuckDB 38.29 ms"
+  },
+  "materialized_1m": {
+   "name": "materialized per-group stats, 1,000,000 groups (100M rows)",
+   "builder": "one pass over value+gid columns -> 32 MB (32 B/group)",
+   "build_ms": 1107.0382720790803,
+   "query_ms": 2.0606,
+   "baseline_ms": 1994.3536119535565,
+   "break_even_Q": 0.5556603699540995,
+   "Q_2x": 1.1124713530239843,
+   "cumulative": {
+    "1": {
+     "cost_ms": 1109.0988720790804,
+     "ratio": 1.7981747724754302,
+     "ge_2x": false
+    },
+    "10": {
+     "cost_ms": 1127.6442720790803,
+     "ratio": 17.68601731356726,
+     "ge_2x": true
+    },
+    "100": {
+     "cost_ms": 1313.0982720790803,
+     "ratio": 151.88151978875257,
+     "ge_2x": true
+    },
+    "1000": {
+     "cost_ms": 3167.6382720790803,
+     "ratio": 629.602701019445,
+     "ge_2x": true
+    }
+   },
+   "detail": "32000040 B; DuckDB engine (full aggregation, scalar result) 1994.4 ms; complete fetchall 5512.8 ms"
+  },
+  "duckdb_scan": {
+   "name": "DuckDB 2.0 scan baseline (reference row)",
+   "builder": "persistent .duckdb table; load excluded",
+   "build_ms": 0.0,
+   "query_ms": 450.79911523498595,
+   "baseline_ms": 450.79911523498595,
+   "break_even_Q": null,
+   "Q_2x": null,
+   "cumulative": {
+    "1": {
+     "cost_ms": 450.79911523498595,
+     "ratio": 1.0,
+     "ge_2x": false
+    },
+    "10": {
+     "cost_ms": 4507.9911523498595,
+     "ratio": 1.0,
+     "ge_2x": false
+    },
+    "100": {
+     "cost_ms": 45079.911523498595,
+     "ratio": 1.0,
+     "ge_2x": false
+    },
+    "1000": {
+     "cost_ms": 450799.11523498595,
+     "ratio": 1.0,
+     "ge_2x": false
+    }
+   },
+   "detail": "T_build=0 (assumes an already-loaded DB); this is the denominator of every ratio in the table"
+  }
+ },
+ "mec_measurement": {
+  "mec_build_wall_s": 0.5967055726796389,
+  "mec_index_bytes": 38695064,
+  "mec_build_json": null,
+  "mec_bench_reps": 200,
+  "case": "broad",
+  "mec_params": [
+   0,
+   2000000,
+   0,
+   100,
+   1,
+   50
+  ],
+  "mec_full_median_us": 15.042,
+  "mec_full_p95_us": 15.182,
+  "mec_sc_median_us": 11.076,
+  "mec_sc_p95_us": 11.186,
+  "mec_rows": 3,
+  "duckdb_median_ms": 38.29115047119558,
+  "duckdb_p95_ms": 41.00587731227279,
+  "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v BETWEEN 0 AND 2000000 AND c1 BETWEEN 0 AND 100 AND c2 BETWEEN 1 AND 50 GROUP BY 1 ORDER BY 1",
+  "duckdb_version": "2.0.0",
+  "note": "MEC full = SUM/COUNT/MIN/MAX (comparable to the cube's five-field result); sc = SUM/COUNT only; DuckDB baseline is the same five aggregates over the same 4 columns, 1 warmup + 30 reps."
+ }
+}

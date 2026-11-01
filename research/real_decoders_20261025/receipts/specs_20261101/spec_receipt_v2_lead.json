@@ -1,0 +1,154 @@
+{
+ "tag": "v2_lead",
+ "binary": "../../research/real_decoders_20261024/src_eai_20261101/enc_cube",
+ "binary_sha256": "cc3afecd52837c728cd781398c3c80d2b4343f3e7386018027ed49e3269ad8fb",
+ "corpus": "../../work/specs/out/spec_corpus_20261101.json",
+ "corpus_sha256": "f9d819de6f63fa1de5fadc94f2aab829de8c1e165c41b1bb9941f5dfa1ed9ef8",
+ "duckdb_version": "2.0.0",
+ "host": "localhost",
+ "core_pin": "taskset -c 72, nice -n 5",
+ "cube_prefix": "../../work/specs/cubes_v2",
+ "n_specs": 394,
+ "n_exact": 394,
+ "n_fail": 0,
+ "started": "2026-11-01T17:25:19",
+ "wall_s": 12.8,
+ "families": {
+  "boundary_values": {
+   "specs": 66,
+   "exact": 66,
+   "fail": 0,
+   "median_ms": 1.32
+  },
+  "combined_predicates": {
+   "specs": 32,
+   "exact": 32,
+   "fail": 0,
+   "median_ms": 1.475
+  },
+  "empty_result": {
+   "specs": 36,
+   "exact": 36,
+   "fail": 0,
+   "median_ms": 1.23
+  },
+  "encoded_build": {
+   "specs": 12,
+   "exact": 12,
+   "fail": 0,
+   "median_ms": 1.279
+  },
+  "fixed_groupby": {
+   "specs": 9,
+   "exact": 9,
+   "fail": 0,
+   "median_ms": 2.04
+  },
+  "group_in": {
+   "specs": 32,
+   "exact": 32,
+   "fail": 0,
+   "median_ms": 1.322
+  },
+  "group_not_in": {
+   "specs": 21,
+   "exact": 21,
+   "fail": 0,
+   "median_ms": 1.375
+  },
+  "having": {
+   "specs": 40,
+   "exact": 40,
+   "fail": 0,
+   "median_ms": 1.33
+  },
+  "high_cardinality_grouping": {
+   "specs": 16,
+   "exact": 16,
+   "fail": 0,
+   "median_ms": 457.613
+  },
+  "multi_aggregate": {
+   "specs": 40,
+   "exact": 40,
+   "fail": 0,
+   "median_ms": 1.304
+  },
+  "nullable_group_keys": {
+   "specs": 20,
+   "exact": 20,
+   "fail": 0,
+   "median_ms": 1.285
+  },
+  "range_one_sided": {
+   "specs": 24,
+   "exact": 24,
+   "fail": 0,
+   "median_ms": 1.344
+  },
+  "range_two_sided": {
+   "specs": 46,
+   "exact": 46,
+   "fail": 0,
+   "median_ms": 1.285
+  }
+ },
+ "pairs": {
+  "C1": {
+   "specs": 75,
+   "exact": 75,
+   "fail": 0
+  },
+  "C10": {
+   "specs": 39,
+   "exact": 39,
+   "fail": 0
+  },
+  "C11": {
+   "specs": 32,
+   "exact": 32,
+   "fail": 0
+  },
+  "C2": {
+   "specs": 77,
+   "exact": 77,
+   "fail": 0
+  },
+  "C3": {
+   "specs": 27,
+   "exact": 27,
+   "fail": 0
+  },
+  "C4": {
+   "specs": 24,
+   "exact": 24,
+   "fail": 0
+  },
+  "C5": {
+   "specs": 48,
+   "exact": 48,
+   "fail": 0
+  },
+  "C6": {
+   "specs": 12,
+   "exact": 12,
+   "fail": 0
+  },
+  "C7": {
+   "specs": 5,
+   "exact": 5,
+   "fail": 0
+  },
+  "C8": {
+   "specs": 19,
+   "exact": 19,
+   "fail": 0
+  },
+  "C9": {
+   "specs": 36,
+   "exact": 36,
+   "fail": 0
+  }
+ },
+ "failures": []
+}

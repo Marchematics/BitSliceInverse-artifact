@@ -1,0 +1,10 @@
+{
+  "duckdb_version": "1.5 (C API, libduckdb)",
+  "function": "bsi_summary(summary_path, dict_path)",
+  "sql": "SELECT name,sum,count,min,max FROM bsi_summary(...) WHERE sum>=1e10 ORDER BY name",
+  "rows": 2,
+  "query_median_ms": 124.545,
+  "runs": 5,
+  "exact": true,
+  "note": "Table function performs the exact summary reduction in bind; DuckDB executes the SQL filter/order. 50MB sidecar is read per query; not a planner-pushdown integration."
+}

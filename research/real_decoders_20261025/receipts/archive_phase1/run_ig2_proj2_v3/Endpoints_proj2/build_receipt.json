@@ -1,0 +1,30 @@
+{
+  "case": "Endpoints",
+  "status": "passed",
+  "identity": {
+    "version": "2.0.0",
+    "native_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/_duckdb.abi3.so",
+    "native_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a"
+  },
+  "source_full18_database": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig2_specialization_v8/Endpoints_duckdb/full18.duckdb",
+  "source_full18_sha256": "5309d72d1acd0d721429be0cfdc04323abeec1ea0e42ce4982954ea5f2f64a61",
+  "projected_database": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig2_proj2_v3/Endpoints_proj2/projected.duckdb",
+  "projected_database_bytes": 536576,
+  "projected_database_sha256": "61d61020b83614ac84da047cebc1b92e3c2c38518af1ffe960972bdf26f9b01f",
+  "projected_columns": [
+    "State",
+    "POPESTIMATE2014"
+  ],
+  "projected_native_types": [
+    "VARCHAR",
+    "INTEGER"
+  ],
+  "rows": 1024,
+  "full_value_cells_verified": 2048,
+  "original_row_order_preserved": true,
+  "original_SQL_bytes_unchanged": true,
+  "complete_result_equals_oracle": true,
+  "result_sha256": "d2a9f34db9411d6701e3d964a3238c423e08273962f354ede892f6c9c13f8e7e",
+  "build_ms_not_a_timing_result": 33.20813691243529,
+  "scope": "projection-pruned persisted DuckDB control for the same exact SQL; not a full-schema claim"
+}

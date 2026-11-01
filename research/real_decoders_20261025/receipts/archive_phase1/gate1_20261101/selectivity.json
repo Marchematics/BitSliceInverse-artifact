@@ -1,0 +1,65 @@
+[
+  {
+    "selectivity": 0.001,
+    "threshold": -7000,
+    "bitplane_ms": 146.96,
+    "value_index_ms": 0.6483,
+    "duckdb_ms": 183.26752400025725,
+    "exact_bp": true,
+    "exact_vi": true
+  },
+  {
+    "selectivity": 0.01,
+    "threshold": -720,
+    "bitplane_ms": 144.608,
+    "value_index_ms": 0.6095,
+    "duckdb_ms": 198.14841891638935,
+    "exact_bp": true,
+    "exact_vi": true
+  },
+  {
+    "selectivity": 0.05,
+    "threshold": 509,
+    "bitplane_ms": 144.657,
+    "value_index_ms": 0.7469,
+    "duckdb_ms": 235.82219798117876,
+    "exact_bp": true,
+    "exact_vi": true
+  },
+  {
+    "selectivity": 0.1,
+    "threshold": 650,
+    "bitplane_ms": 144.289,
+    "value_index_ms": 0.7497,
+    "duckdb_ms": 270.1165790203959,
+    "exact_bp": true,
+    "exact_vi": true
+  },
+  {
+    "selectivity": 0.25,
+    "threshold": 930,
+    "bitplane_ms": 144.37,
+    "value_index_ms": 0.8642,
+    "duckdb_ms": 341.4380589965731,
+    "exact_bp": true,
+    "exact_vi": true
+  },
+  {
+    "selectivity": 0.5,
+    "threshold": 1350,
+    "bitplane_ms": 148.434,
+    "value_index_ms": 0.8562,
+    "duckdb_ms": 430.5389451328665,
+    "exact_bp": true,
+    "exact_vi": true
+  },
+  {
+    "selectivity": 1.0,
+    "threshold": 99900,
+    "bitplane_ms": 146.572,
+    "value_index_ms": 0.8004,
+    "duckdb_ms": 462.07402693107724,
+    "exact_bp": true,
+    "exact_vi": true
+  }
+]

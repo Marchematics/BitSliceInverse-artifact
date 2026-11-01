@@ -1,0 +1,22 @@
+{
+  "run": "run_hatred10_roaring_panel_v1",
+  "paths": [
+    "generic",
+    "stream",
+    "duckdb",
+    "arrow_full",
+    "bsi"
+  ],
+  "blocks": 30,
+  "prep": "results/hatred10_prep_v1/Observed",
+  "arrow": "results/arrow_hatred10_v1/Observed_arrow/full31.arrow",
+  "duckdb": "results/hatred10_prep_v1/Observed_duckdb/full31.duckdb",
+  "bsi_storage": "results/roaring_hatred10_v1/Observed_roaring",
+  "binary": "results/hatred10_prep_v1/adapter_hatred10",
+  "arrow_python": "../../work/arrow25venv/bin/python",
+  "roaring_python": "../../work/roaringvenv/bin/python",
+  "begin_utc": "2026-10-24T22:31:17.067781+00:00",
+  "host_load1_at_start": 4.18,
+  "pinned_core": 28,
+  "max_load": 15.0
+}

@@ -1,0 +1,58 @@
+{
+  "stored_queries": [
+    {
+      "query": "IG/2",
+      "median_ms": {
+        "generic": 1.3076705,
+        "stream": 0.24796100000000001,
+        "duckdb_proj2": 43.138689012266695,
+        "arrow_proj": 15.337014338001609,
+        "vortex_proj": 6.458877585828304
+      }
+    },
+    {
+      "query": "Hatred/8",
+      "median_ms": {
+        "generic": 3.6139799999999997,
+        "stream": 0.38006400000000007,
+        "duckdb_proj2": 43.97362354211509,
+        "arrow_proj": 14.844640507362783,
+        "vortex_proj": 10.64444484654814
+      }
+    },
+    {
+      "query": "CityMaxCapita/14",
+      "median_ms": {
+        "generic": 7.750020999999999,
+        "stream": 1.1323094999999999,
+        "duckdb_proj2": 56.91194208338857,
+        "arrow_proj": 22.680916590616107,
+        "vortex_proj": 15.97316307015717
+      }
+    },
+    {
+      "query": "Hatred/10",
+      "median_ms": {
+        "generic": 4.615298,
+        "stream": 0.4767925,
+        "duckdb_proj2": 44.959384482353926,
+        "arrow_proj": 15.356580028310418,
+        "vortex_proj": 10.877166409045458
+      }
+    }
+  ],
+  "complete_worker_ig2": {
+    "median_ms": {
+      "stream": 3.414647071622312,
+      "duckdb_proj2": 209.22141894698143,
+      "arrow_proj": 104.51450664550066,
+      "vortex_proj": 287.62165550142527
+    },
+    "control_over_fused": {
+      "duckdb_proj2": 61.27175504775652,
+      "arrow_proj": 30.60770394518266,
+      "vortex_proj": 84.23173741489339
+    }
+  },
+  "statistic": "Latencies are medians; complete-worker ratios divide worker medians, not paired stored-input contrasts"
+}

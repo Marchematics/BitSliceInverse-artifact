@@ -1,0 +1,62 @@
+{
+ "seed": 20261101,
+ "total": 310,
+ "fixed": 10,
+ "random": 300,
+ "mismatches": 0,
+ "index": "results/eai_multi_20261101/tpch2/index.mec",
+ "index_sha256": "3c97213b26a22706798990169f54a95bd6597950cf27604183096958f6665662",
+ "dataset": "tpch2",
+ "value_domain": [
+  90099,
+  10489950
+ ],
+ "c1_domain": [
+  0,
+  10
+ ],
+ "c2_domain": [
+  1,
+  50
+ ],
+ "mode": "value",
+ "block_width": 16384,
+ "BP": 635,
+ "groups": [
+  0,
+  1,
+  2
+ ],
+ "modes": [
+  "block_align",
+  "block_align+gin",
+  "block_align+gnotin",
+  "fixed:all_full",
+  "fixed:broad",
+  "fixed:disc_quant_tight",
+  "fixed:disc_single",
+  "fixed:empty",
+  "fixed:mid_band",
+  "fixed:needle",
+  "fixed:price_top_decile",
+  "fixed:quant_narrow",
+  "fixed:selective",
+  "full",
+  "full+gin",
+  "full+gnotin",
+  "narrow",
+  "narrow+gin",
+  "narrow+gnotin",
+  "outside",
+  "outside+gin",
+  "outside+gnotin",
+  "point",
+  "point+gin",
+  "point+gnotin",
+  "uniform",
+  "uniform+gin",
+  "uniform+gnotin"
+ ],
+ "group_filter_cases": 59,
+ "failures": []
+}

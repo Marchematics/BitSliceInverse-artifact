@@ -1,0 +1,1 @@
+{"codec":"btrblocks","values":65536,"compressed_bytes":122208,"bytes_per_value":1.86475,"encode_median_ms":6.42675,"decode_median_ms":0.362368,"encode_ns_per_value":98.0644,"decode_ns_per_value":5.5293,"decoded_exact":true,"max_cascade_depth":3}

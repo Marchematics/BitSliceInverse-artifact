@@ -1,0 +1,32 @@
+{
+  "results": {
+    "sum": {
+      "control_median_ms": 243.120372062549,
+      "reps": 3,
+      "generic_median_ms": 29.0023,
+      "control_over_generic": 8.382796263142888,
+      "exact": true
+    },
+    "count": {
+      "control_median_ms": 240.12779397889972,
+      "reps": 3,
+      "generic_median_ms": 24.4346,
+      "control_over_generic": 9.82736750259467,
+      "exact": true
+    },
+    "min": {
+      "control_median_ms": 182.2743839584291,
+      "reps": 3,
+      "generic_median_ms": 28.5518,
+      "control_over_generic": 6.383989239152316,
+      "exact": true
+    },
+    "max": {
+      "control_median_ms": 244.35500986874104,
+      "reps": 3,
+      "generic_median_ms": 28.3106,
+      "control_over_generic": 8.631219750508327,
+      "exact": true
+    }
+  }
+}

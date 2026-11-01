@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "cases": 7,
+  "methods": [
+    "stream",
+    "stream_uniform"
+  ],
+  "complete_typed_outputs_checked": 14,
+  "all_exact": true,
+  "relation_rows_observed": 1795,
+  "no_timing_claim": true,
+  "note": "IUB/5 has two physical blocks, so streaming load is not expected to be a material performance lever at this scale; this gate only establishes exact generalization of the reader/kernel pair to a second original query shape.",
+  "native_binary_sha256": "8f0351fb3f46596173fc3f183592a6f5f5a3f1b801d81536d3b27927c7973bea",
+  "wall_s": 0.0468289852142334
+}

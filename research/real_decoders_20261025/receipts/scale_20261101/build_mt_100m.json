@@ -1,0 +1,202 @@
+{
+ "runs": [
+  {
+   "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_eai_20261101/enc_cube build ../../research/real_decoders_20261024/results/nyc100_plain/passenger.i32 ../../research/real_decoders_20261024/results/nyc100_plain/fare.i32 ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube",
+   "exit": 0,
+   "core_mask": "80",
+   "threads": 1,
+   "wall_s": 6.7752,
+   "time": {
+    "wall": 6.77,
+    "rss": 1176900.0
+   },
+   "metrics": {
+    "build_ms": 6695.001,
+    "read_ms": 3727.049,
+    "accum_ms": 2965.246,
+    "prefix_ms": 0.253,
+    "write_ms": 2.453,
+    "groups": 11,
+    "values": 21084,
+    "rows": 100000000,
+    "bytes": 1140124,
+    "dense": 0,
+    "v2": 1
+   },
+   "cube": "../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube",
+   "cube_sha256": "c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6",
+   "variant": "v2_plain_validated_path"
+  },
+  {
+   "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_eai_20261101/enc_cube build_enc ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed.encoded ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed 17 13 ../../work/scale/nyc100_enc.ecube",
+   "exit": 0,
+   "core_mask": "80",
+   "threads": 1,
+   "wall_s": 3.2126,
+   "time": {
+    "wall": 3.21,
+    "rss": 284380.0
+   },
+   "metrics": {
+    "build_ms": 3190.532,
+    "pass1_ms": 316.868,
+    "accum_ms": 2871.006,
+    "prefix_ms": 0.249,
+    "write_ms": 2.409,
+    "groups": 11,
+    "values": 21084,
+    "rows": 100000000,
+    "bytes": 1140124,
+    "dense": 0,
+    "encoded": 1,
+    "v2": 1
+   },
+   "cube": "../../work/scale/nyc100_enc.ecube",
+   "cube_sha256": "c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6",
+   "variant": "v2_encoded_tree"
+  },
+  {
+   "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale build_mt ../../research/real_decoders_20261024/results/nyc100_plain/passenger.i32 ../../research/real_decoders_20261024/results/nyc100_plain/fare.i32 ../../work/scale/nyc100_mt1.ecube 1 24",
+   "exit": 0,
+   "core_mask": "80",
+   "threads": 1,
+   "wall_s": 0.9176,
+   "time": {
+    "wall": 0.91,
+    "rss": 787776.0
+   },
+   "metrics": {
+    "mode": "build_mt",
+    "build_ms": 869.681,
+    "map_ms": 0.028,
+    "domain_ms": 115.612,
+    "distinct_ms": 241.996,
+    "accum_ms": 508.883,
+    "merge_ms": 0.053,
+    "prefix_ms": 0.243,
+    "write_ms": 2.866,
+    "groups": 11,
+    "values": 21084,
+    "rows": 100000000,
+    "bytes": 1140124,
+    "dense": 0,
+    "threads_requested": 1,
+    "threads_used": 1,
+    "slab_bytes_per_thread": 927696,
+    "membudget_gb": 24.0
+   },
+   "cube": "../../work/scale/nyc100_mt1.ecube",
+   "cube_sha256": "c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6",
+   "variant": "build_mt_T1"
+  },
+  {
+   "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-83 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale build_mt ../../research/real_decoders_20261024/results/nyc100_plain/passenger.i32 ../../research/real_decoders_20261024/results/nyc100_plain/fare.i32 ../../work/scale/nyc100_mt4.ecube 4 24",
+   "exit": 0,
+   "core_mask": "80-83",
+   "threads": 4,
+   "wall_s": 0.2794,
+   "time": {
+    "wall": 0.27,
+    "rss": 791308.0
+   },
+   "metrics": {
+    "mode": "build_mt",
+    "build_ms": 231.417,
+    "map_ms": 0.055,
+    "domain_ms": 30.875,
+    "distinct_ms": 67.947,
+    "accum_ms": 128.588,
+    "merge_ms": 0.455,
+    "prefix_ms": 0.146,
+    "write_ms": 3.351,
+    "groups": 11,
+    "values": 21084,
+    "rows": 100000000,
+    "bytes": 1140124,
+    "dense": 0,
+    "threads_requested": 4,
+    "threads_used": 4,
+    "slab_bytes_per_thread": 927696,
+    "membudget_gb": 24.0
+   },
+   "cube": "../../work/scale/nyc100_mt4.ecube",
+   "cube_sha256": "c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6",
+   "variant": "build_mt_T4"
+  },
+  {
+   "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale build_mt ../../research/real_decoders_20261024/results/nyc100_plain/passenger.i32 ../../research/real_decoders_20261024/results/nyc100_plain/fare.i32 ../../work/scale/nyc100_mt8.ecube 8 24",
+   "exit": 0,
+   "core_mask": "80-87",
+   "threads": 8,
+   "wall_s": 0.2022,
+   "time": {
+    "wall": 0.2,
+    "rss": 796492.0
+   },
+   "metrics": {
+    "mode": "build_mt",
+    "build_ms": 155.332,
+    "map_ms": 0.027,
+    "domain_ms": 20.121,
+    "distinct_ms": 63.265,
+    "accum_ms": 67.387,
+    "merge_ms": 0.917,
+    "prefix_ms": 0.249,
+    "write_ms": 3.365,
+    "groups": 11,
+    "values": 21084,
+    "rows": 100000000,
+    "bytes": 1140124,
+    "dense": 0,
+    "threads_requested": 8,
+    "threads_used": 8,
+    "slab_bytes_per_thread": 927696,
+    "membudget_gb": 24.0
+   },
+   "cube": "../../work/scale/nyc100_mt8.ecube",
+   "cube_sha256": "c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6",
+   "variant": "build_mt_T8"
+  },
+  {
+   "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-95 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale build_mt ../../research/real_decoders_20261024/results/nyc100_plain/passenger.i32 ../../research/real_decoders_20261024/results/nyc100_plain/fare.i32 ../../work/scale/nyc100_mt16.ecube 16 24",
+   "exit": 0,
+   "core_mask": "80-95",
+   "threads": 16,
+   "wall_s": 0.148,
+   "time": {
+    "wall": 0.14,
+    "rss": 806116.0
+   },
+   "metrics": {
+    "mode": "build_mt",
+    "build_ms": 98.953,
+    "map_ms": 0.031,
+    "domain_ms": 11.015,
+    "distinct_ms": 44.222,
+    "accum_ms": 38.941,
+    "merge_ms": 1.874,
+    "prefix_ms": 0.575,
+    "write_ms": 2.297,
+    "groups": 11,
+    "values": 21084,
+    "rows": 100000000,
+    "bytes": 1140124,
+    "dense": 0,
+    "threads_requested": 16,
+    "threads_used": 16,
+    "slab_bytes_per_thread": 927696,
+    "membudget_gb": 24.0
+   },
+   "cube": "../../work/scale/nyc100_mt16.ecube",
+   "cube_sha256": "c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6",
+   "variant": "build_mt_T16"
+  }
+ ],
+ "all_byte_identical": true,
+ "cube_sha256": "c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6",
+ "cube_bytes": 1140124,
+ "receipt": "build_mt_100m",
+ "host": "localhost (AMD EPYC 9554, 2x64C, 256T, 503GB)",
+ "date": "2026-11-01T18:29:24.974210+08:00",
+ "git_branch": "research/groups-e2e-repro-20261025"
+}

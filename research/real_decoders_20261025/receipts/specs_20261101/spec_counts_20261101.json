@@ -1,0 +1,20 @@
+{
+ "n_specs": 394,
+ "families": {
+  "boundary_values": 66,
+  "combined_predicates": 32,
+  "empty_result": 36,
+  "encoded_build": 12,
+  "fixed_groupby": 9,
+  "group_in": 32,
+  "group_not_in": 21,
+  "having": 40,
+  "high_cardinality_grouping": 16,
+  "multi_aggregate": 40,
+  "nullable_group_keys": 20,
+  "range_one_sided": 24,
+  "range_two_sided": 46
+ },
+ "n_digest_specs": 8,
+ "n_rows_stored": 8027
+}

@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "case": "Observed",
+  "rows": 524288,
+  "scale_factor": 16,
+  "duckdb": {
+    "version": "2.0.0",
+    "native": "../../.venv/lib/python3.12/site-packages/_duckdb.abi3.so",
+    "native_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a",
+    "pinned_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a"
+  },
+  "full_database": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/ig2_scale8_duckdb/full18.duckdb",
+  "full_database_bytes": 18624512,
+  "full_database_sha256": "12bab2fd84a1848d872760be4ab9e1a79e6e6970521e5c9a5664dc6b3fa1e1dd",
+  "projected_database": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/ig2_scale8_duckdb/proj2/projected.duckdb",
+  "projected_database_bytes": 2633728,
+  "projected_database_sha256": "14a4f065c14a9ef864cad32c426b9d5e5a00504ec8a9941fa91cf348dadf964d",
+  "full_query_result_equals_oracle": true,
+  "projected_query_result_equals_oracle": true,
+  "pyarrow": "26.0.0",
+  "scope": "synthetic 16x row-replicated scale test; not additional real data"
+}

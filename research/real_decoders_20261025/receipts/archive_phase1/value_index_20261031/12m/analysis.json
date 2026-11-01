@@ -1,0 +1,28 @@
+{
+  "input": "NYC 12M fare int32",
+  "index_bytes": 141166036,
+  "build_ms": 853.0,
+  "results": {
+    "sum_pos": {
+      "query_median_ms": 0.6502,
+      "duckdb_ms": 82.8028,
+      "speedup_vs_duckdb": 127.3497385419871,
+      "exact": true,
+      "runs": 5
+    },
+    "count_range": {
+      "query_median_ms": 0.5141,
+      "duckdb_ms": 90.3841,
+      "speedup_vs_duckdb": 175.8103481812877,
+      "exact": true,
+      "runs": 5
+    },
+    "min_pos": {
+      "query_median_ms": 0.5132,
+      "duckdb_ms": 86.8575,
+      "speedup_vs_duckdb": 169.24688230709276,
+      "exact": true,
+      "runs": 5
+    }
+  }
+}

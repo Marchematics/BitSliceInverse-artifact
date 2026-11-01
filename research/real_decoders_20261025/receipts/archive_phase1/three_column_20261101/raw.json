@@ -1,0 +1,278 @@
+{
+  "ranges": {
+    "broad": [
+      0,
+      2000000,
+      0,
+      100,
+      1,
+      50
+    ],
+    "selective": [
+      1000000,
+      2000000,
+      0,
+      5,
+      1,
+      20
+    ],
+    "ultra_empty": [
+      5000000,
+      6000000,
+      0,
+      1,
+      1,
+      10
+    ]
+  },
+  "bitplane": {
+    "broad": {
+      "metrics": [
+        {
+          "query_ms": 11.737,
+          "output_ms": 0.333,
+          "stored_ms": 12.07
+        },
+        {
+          "query_ms": 13.798,
+          "output_ms": 0.225,
+          "stored_ms": 14.024
+        },
+        {
+          "query_ms": 13.49,
+          "output_ms": 0.221,
+          "stored_ms": 13.71
+        },
+        {
+          "query_ms": 13.251,
+          "output_ms": 2.514,
+          "stored_ms": 15.765
+        },
+        {
+          "query_ms": 14.347,
+          "output_ms": 0.224,
+          "stored_ms": 14.571
+        }
+      ],
+      "rows": [
+        [
+          "0",
+          "822179944631",
+          "792617"
+        ],
+        [
+          "1",
+          "1686399452534",
+          "1628021"
+        ],
+        [
+          "2",
+          "821530811679",
+          "792539"
+        ]
+      ],
+      "exact_all": true
+    },
+    "selective": {
+      "metrics": [
+        {
+          "query_ms": 18.691,
+          "output_ms": 0.248,
+          "stored_ms": 18.939
+        },
+        {
+          "query_ms": 19.497,
+          "output_ms": 0.24,
+          "stored_ms": 19.737
+        },
+        {
+          "query_ms": 20.322,
+          "output_ms": 0.243,
+          "stored_ms": 20.566
+        },
+        {
+          "query_ms": 19.301,
+          "output_ms": 0.236,
+          "stored_ms": 19.536
+        },
+        {
+          "query_ms": 19.076,
+          "output_ms": 0.226,
+          "stored_ms": 19.302
+        }
+      ],
+      "rows": [
+        [
+          "0",
+          "336298314589",
+          "224052"
+        ],
+        [
+          "1",
+          "689936177497",
+          "459734"
+        ],
+        [
+          "2",
+          "334951029478",
+          "223263"
+        ]
+      ],
+      "exact_all": true
+    },
+    "ultra_empty": {
+      "metrics": [
+        {
+          "query_ms": 18.035,
+          "output_ms": 1.378,
+          "stored_ms": 19.413
+        },
+        {
+          "query_ms": 18.99,
+          "output_ms": 0.218,
+          "stored_ms": 19.207
+        },
+        {
+          "query_ms": 18.823,
+          "output_ms": 0.21,
+          "stored_ms": 19.033
+        },
+        {
+          "query_ms": 18.849,
+          "output_ms": 0.627,
+          "stored_ms": 19.476
+        },
+        {
+          "query_ms": 18.065,
+          "output_ms": 0.228,
+          "stored_ms": 18.294
+        }
+      ],
+      "rows": [],
+      "exact_all": true
+    }
+  },
+  "duckdb": {
+    "broad": {
+      "sql": "SELECT CASE WHEN l_returnflag=chr(65) THEN 0 WHEN l_returnflag=chr(78) THEN 1 ELSE 2 END AS g, SUM(l_extendedprice*100), COUNT(*), MIN(l_extendedprice*100), MAX(l_extendedprice*100) FROM lineitem WHERE l_extendedprice*100 BETWEEN 0 AND 2000000 AND l_discount*100 BETWEEN 0 AND 100 AND l_quantity BETWEEN 1 AND 50 GROUP BY 1 ORDER BY 1",
+      "raw_ms": [
+        58.04893095046282,
+        57.49718891456723,
+        57.51225212588906,
+        60.42886804789305,
+        57.500062976032495
+      ],
+      "median_ms": 57.51225212588906,
+      "rows": [
+        [
+          "0",
+          "822179944631.00",
+          "792617",
+          "90199.00",
+          "2000000.00"
+        ],
+        [
+          "1",
+          "1686399452534.00",
+          "1628021",
+          "90099.00",
+          "2000000.00"
+        ],
+        [
+          "2",
+          "821530811679.00",
+          "792539",
+          "90199.00",
+          "2000000.00"
+        ]
+      ]
+    },
+    "selective": {
+      "sql": "SELECT CASE WHEN l_returnflag=chr(65) THEN 0 WHEN l_returnflag=chr(78) THEN 1 ELSE 2 END AS g, SUM(l_extendedprice*100), COUNT(*), MIN(l_extendedprice*100), MAX(l_extendedprice*100) FROM lineitem WHERE l_extendedprice*100 BETWEEN 1000000 AND 2000000 AND l_discount*100 BETWEEN 0 AND 5 AND l_quantity BETWEEN 1 AND 20 GROUP BY 1 ORDER BY 1",
+      "raw_ms": [
+        76.3749280013144,
+        75.84677101112902,
+        77.95502315275371,
+        75.89156716130674,
+        76.03237009607255
+      ],
+      "median_ms": 76.03237009607255,
+      "rows": [
+        [
+          "0",
+          "336298314589.00",
+          "224052",
+          "1000000.00",
+          "2000000.00"
+        ],
+        [
+          "1",
+          "689936177497.00",
+          "459734",
+          "1000000.00",
+          "2000000.00"
+        ],
+        [
+          "2",
+          "334951029478.00",
+          "223263",
+          "1000000.00",
+          "2000000.00"
+        ]
+      ]
+    },
+    "ultra_empty": {
+      "sql": "SELECT CASE WHEN l_returnflag=chr(65) THEN 0 WHEN l_returnflag=chr(78) THEN 1 ELSE 2 END AS g, SUM(l_extendedprice*100), COUNT(*), MIN(l_extendedprice*100), MAX(l_extendedprice*100) FROM lineitem WHERE l_extendedprice*100 BETWEEN 5000000 AND 6000000 AND l_discount*100 BETWEEN 0 AND 1 AND l_quantity BETWEEN 1 AND 10 GROUP BY 1 ORDER BY 1",
+      "raw_ms": [
+        41.89276089891791,
+        41.74409504048526,
+        41.9871280901134,
+        42.04351990483701,
+        42.06133587285876
+      ],
+      "median_ms": 41.9871280901134,
+      "rows": []
+    }
+  },
+  "warm_ig2": {
+    "sql": "SELECT State, SUM(POPESTIMATE2014) FROM IGlocations1_1 WHERE State <> chr(68)||chr(105)||chr(115)||chr(116)||chr(114)||chr(105)||chr(99)||chr(116)||chr(32)||chr(111)||chr(102)||chr(32)||chr(67)||chr(111)||chr(108)||chr(117)||chr(109)||chr(98)||chr(105)||chr(97) GROUP BY 1",
+    "runs_ms": [
+      1.5035939868539572,
+      1.43757788464427,
+      1.3508419506251812,
+      1.3903290964663029,
+      1.330382190644741,
+      1.341627910733223,
+      1.2986559886485338,
+      1.291095046326518,
+      1.3184649869799614,
+      1.2958019506186247,
+      1.2882021255791187,
+      1.3179939705878496,
+      1.3008001260459423,
+      1.2941400054842234,
+      1.3356199488043785,
+      1.2874798849225044,
+      1.2902140151709318,
+      1.3246338348835707,
+      1.2959330342710018,
+      1.2875508982688189,
+      1.3061368372291327,
+      1.2870999053120613,
+      1.301429932937026,
+      1.2944398913532495,
+      1.2857681140303612,
+      1.2939989101141691,
+      1.2910449877381325,
+      1.277244882658124,
+      1.2955020647495985,
+      1.3168631121516228
+    ],
+    "median_ms": 1.2972945114597678
+  },
+  "exact_sum_count": {
+    "broad": true,
+    "selective": true,
+    "ultra_empty": true
+  }
+}

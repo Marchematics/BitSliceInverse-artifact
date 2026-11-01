@@ -1,0 +1,22 @@
+{
+ "launches": 25,
+ "pin": "nice -n 5 taskset -c 96",
+ "protocol": "fresh process per launch, 0.5 s pinned warmup before each launch",
+ "variants": {
+  "true": {
+   "median_ms": 2.368994988501072,
+   "min_ms": 1.961681991815567,
+   "p95_ms": 2.8530303388834
+  },
+  "enc_cube_query": {
+   "median_ms": 4.017238970845938,
+   "min_ms": 3.795479889959097,
+   "p95_ms": 4.253897350281477
+  },
+  "python_noop": {
+   "median_ms": 13.330379035323858,
+   "min_ms": 13.076945208013058,
+   "p95_ms": 13.534922152757645
+  }
+ }
+}

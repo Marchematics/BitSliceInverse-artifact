@@ -1,0 +1,28 @@
+{
+ "measurement": "cold complete-request latency for the 1B cube",
+ "host": "localhost (AMD EPYC 9554), pinned, no GPU",
+ "protocol": "parent-observed wall time of fresh processes; 100 launches for ours, 3 for DuckDB (each ~9.5 s); python perf_counter",
+ "cube": {
+  "path": "/tmp/nyc1b_v3.ecube (built from results/scale_20261101/g11_1000000000_{gid,val}.i32)",
+  "format": "ECUBE03",
+  "rows": 1000000000,
+  "groups": 11,
+  "values": 21084,
+  "bytes": 1140168,
+  "sha256": "b648d3b013b63f816b1895ce8d9ba0bab020a928975055786960acabded8193b",
+  "cold_ms": {"n": 100, "median": 1.2440052814781666, "mean": 1.2714295322075486,
+               "min": 1.2245019897818565, "p95": 1.4895610511302948},
+  "in_process_stderr_one_run": {"setup_ms": 0.0588, "query_median_ms": 0.002373,
+                                "serialize_median_ms": 0.007240, "output_ms": 0.7385}
+ },
+ "duckdb_control": {
+  "version": "2.0.0", "threads": 1,
+  "query": "select g,sum(v),count(*),min(v),max(v) from read_parquet('nyc1b.parquet') group by 1 order by 1",
+  "process": "fresh python -c: import + connect + SET threads=1 + execute + fetchall",
+  "ok": true,
+  "cold_ms": {"n": 3, "median": 9504.892021883279, "mean": 9574.71116973708,
+               "min": 9348.517772275954, "p95": 9504.892021883279}
+ },
+ "ratio": "cold complete request 7,640x (9504.89 / 1.244)",
+ "note": "The 1B G=101 variant has a 9,087,844 B index instead of 1,140,168 B; the cold request is dominated by process start-up (1.21 ms of the 1.24 ms), so the index-size difference is within noise. This closes the 'cold 1B cube' evidence gap."
+}

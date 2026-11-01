@@ -1,0 +1,166 @@
+{
+  "created_utc": "2026-10-23T14:52:00Z",
+  "purpose": "Source-faithful primitive-backed filter operator gate, not native FastLanes container or SQL end-to-end benchmark",
+  "repositories": [
+    {
+      "repository": "cwida/FastLanes",
+      "commit": "f0edc1020a538f1f8098640fce8347c9ac247a0d"
+    },
+    {
+      "repository": "azimafroozeh/FastLanes_Data",
+      "commit": "e5fab9e21e0037a6a3f54633c73a3524d08fe8f3"
+    },
+    {
+      "repository": "future-file-format/F3",
+      "commit": "bd92506447dc1333820cfe9a34ebbf497fe0219e"
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "public_bi/selectivity_mini.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fea6b05246ec78dbf99f126af4e0f205d801bb69",
+      "size": 4370489,
+      "url": "https://api.github.com/repos/azimafroozeh/FastLanes_Data/git/blobs/fea6b05246ec78dbf99f126af4e0f205d801bb69"
+    },
+    {
+      "path": "public_bi/tables/Bimbo/Bimbo_1/Bimbo_1.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0e458c3702b891681b630cb0ce5a2775ae51c163",
+      "size": 2784694,
+      "url": "https://api.github.com/repos/azimafroozeh/FastLanes_Data/git/blobs/0e458c3702b891681b630cb0ce5a2775ae51c163"
+    },
+    {
+      "path": "public_bi/tables/Bimbo/Bimbo_1/schema.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "829592dc26b68091b224d8220ee7b4c25312e4b5",
+      "size": 1457,
+      "url": "https://api.github.com/repos/azimafroozeh/FastLanes_Data/git/blobs/829592dc26b68091b224d8220ee7b4c25312e4b5"
+    }
+  ],
+  "vendor": [
+    {
+      "path": "src/alp/src/fastlanes_gen_ffor.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06ac31b3c16a0e66e0f9998cfc643c48de2fa5d5",
+      "size": 883025,
+      "url": "https://api.github.com/repos/cwida/FastLanes/git/blobs/06ac31b3c16a0e66e0f9998cfc643c48de2fa5d5"
+    },
+    {
+      "path": "src/alp/src/fastlanes_gen_unffor.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff8be35f99d34384a37f1cdbc2a1e7f433d01181",
+      "size": 1246549,
+      "url": "https://api.github.com/repos/cwida/FastLanes/git/blobs/ff8be35f99d34384a37f1cdbc2a1e7f433d01181"
+    },
+    {
+      "path": "src/primitives/fls_generated/fallback/scalar_aav_uf1/fallback_scalar_aav_1024_uf1_transpose_src.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e64bce396f21aaeaac89379bc236df2d804f7226",
+      "size": 246679,
+      "url": "https://api.github.com/repos/cwida/FastLanes/git/blobs/e64bce396f21aaeaac89379bc236df2d804f7226"
+    },
+    {
+      "path": "src/primitives/fls_generated/fallback/scalar_aav_uf1/fallback_scalar_aav_1024_uf1_untranspose_src.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83b4f1ee19a5289e4eba24f52c87f9a95461ac69",
+      "size": 246705,
+      "url": "https://api.github.com/repos/cwida/FastLanes/git/blobs/83b4f1ee19a5289e4eba24f52c87f9a95461ac69"
+    },
+    {
+      "path": "src/primitives/fls_generated/fallback/scalar_aav_uf1/fallback_scalar_aav_1024_uf1_rsum_src.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d13f16d70bf4f1b60933360694d44bf4c240a79c",
+      "size": 22964,
+      "url": "https://api.github.com/repos/cwida/FastLanes/git/blobs/d13f16d70bf4f1b60933360694d44bf4c240a79c"
+    },
+    {
+      "path": "src/primitives/fls_generated/fallback/scalar_aav_uf1/fallback_scalar_aav_1024_uf1_unrsum_src.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b71273207983dc645793e29fde1019b5b8e9f580",
+      "size": 27732,
+      "url": "https://api.github.com/repos/cwida/FastLanes/git/blobs/b71273207983dc645793e29fde1019b5b8e9f580"
+    },
+    {
+      "path": "src/include/fls_gen/transpose/transpose.hpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4885bf44d4382e2a7300a9bd5b6ba577cbbcae7",
+      "size": 5648,
+      "url": "https://api.github.com/repos/cwida/FastLanes/git/blobs/f4885bf44d4382e2a7300a9bd5b6ba577cbbcae7"
+    },
+    {
+      "path": "src/include/fls_gen/untranspose/untranspose.hpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39da01a8d01f106b17cdef224fb97b28472ed435",
+      "size": 5880,
+      "url": "https://api.github.com/repos/cwida/FastLanes/git/blobs/39da01a8d01f106b17cdef224fb97b28472ed435"
+    },
+    {
+      "path": "src/include/fls_gen/rsum/rsum.hpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6e989c5af0b6081da41f5f22f3b0384cd7ea851",
+      "size": 4981,
+      "url": "https://api.github.com/repos/cwida/FastLanes/git/blobs/d6e989c5af0b6081da41f5f22f3b0384cd7ea851"
+    },
+    {
+      "path": "src/include/fls_gen/unrsum/unrsum.hpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce3e1d01fa58d5c2a2795de48922531237580b68",
+      "size": 3083,
+      "url": "https://api.github.com/repos/cwida/FastLanes/git/blobs/ce3e1d01fa58d5c2a2795de48922531237580b68"
+    },
+    {
+      "path": "src/include/fls/common/restrict.hpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff2677868d1aa3e72335d936a38d0439d0aa4d88",
+      "size": 1464,
+      "url": "https://api.github.com/repos/cwida/FastLanes/git/blobs/ff2677868d1aa3e72335d936a38d0439d0aa4d88"
+    },
+    {
+      "path": "src/include/fls/ffor.hpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e52af01c3d289dd2c855f4e9d855a21531fdd951",
+      "size": 1776,
+      "url": "https://api.github.com/repos/cwida/FastLanes/git/blobs/e52af01c3d289dd2c855f4e9d855a21531fdd951"
+    },
+    {
+      "path": "src/include/fls/unffor.hpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b1ea70ac7cf7a4af79f06fb5dd585f274e07f6e",
+      "size": 1806,
+      "url": "https://api.github.com/repos/cwida/FastLanes/git/blobs/2b1ea70ac7cf7a4af79f06fb5dd585f274e07f6e"
+    },
+    {
+      "path": "src/include/fls_gen/macros.hpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "134ad6495865c2ecab17a4f66bcd6a45aa38f573",
+      "size": 694,
+      "url": "https://api.github.com/repos/cwida/FastLanes/git/blobs/134ad6495865c2ecab17a4f66bcd6a45aa38f573"
+    },
+    {
+      "path": "src/include/fls/compiler.hpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1fd9fac5fbb4aeb9a56e0b017db38b6fef4cc4bb",
+      "size": 5099,
+      "url": "https://api.github.com/repos/cwida/FastLanes/git/blobs/1fd9fac5fbb4aeb9a56e0b017db38b6fef4cc4bb"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+ "workstream": "specs",
+ "generated": "2026-11-01",
+ "primary_format": "ECUBE03 (v3, FROZEN)",
+ "corpus_seed": 20261101,
+ "duckdb_version": "2.0.0",
+ "corpus_sha256": "f9d819de6f63fa1de5fadc94f2aab829de8c1e165c41b1bb9941f5dfa1ed9ef8",
+ "corpus_n_specs": 394,
+ "frozen": {
+  "source": "research/real_decoders_20261024/src_eai_20261101/eai_cube3.cpp",
+  "source_sha256": "c93a4530f7b21d5e1a1f174374f5fdd49783a20ad32638b370baabf3e86562f0",
+  "index_sha256": "78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee",
+  "index_bytes": 1140168,
+  "frozen_binary_sha256": "96cf26e536844b4f5f9f08fb044399770936ced24b7b75575862e756e55cf71d",
+  "our_binary": "../../work/specs/bin/enc_cube3_frozen",
+  "our_binary_sha256": "37ad8f3648c04102221b54941c4f2f82eb673a750c5f6cc9d1a24959e8f8742e",
+  "build_command": "bash src_eai_20261101/build.sh  # compiles eai_cube3.cpp -> src_eai_20261101/enc_cube3; SPECS pinned build: src_specs_20261101/build_v3.sh -> ../../work/specs/bin/enc_cube3_frozen",
+  "frozen_receipt": "research/real_decoders_20261025/receipts/baselines_20261101/eai_ecube03_frozen.json",
+  "encoded_index_sha256": {
+   "C1": "78bff19a0dbd89d0e3b16254cb2a0c807669d982b3a9233b1ba5504dd04c89ee",
+   "C2": "748029efe222b8de0a108e451085251f5bebe827f9d01b206d5f5bce5aab51e8",
+   "C3": "f245f7db6ea887429e9158355e23930046d1e5e3530d6f9127ea262622ba5eaf"
+  }
+ },
+ "spec_runs": {
+  "v3": {
+   "n": 394,
+   "exact": 394
+  },
+  "v2": {
+   "n": 394,
+   "exact": 394
+  },
+  "v1": {
+   "n": 394,
+   "exact": 349
+  }
+ },
+ "differential": {
+  "seed": 20261101,
+  "n_plans": 100000,
+  "n_unique": 100000,
+  "plans_sha256": "696f3fa7886ad566f78dc6e7fa63fcc59e2c655e044c5b09e676f303deaf5bb1",
+  "v3": {
+   "n": 100000,
+   "exact": 100000
+  },
+  "v2": {
+   "n": 100000,
+   "exact": 100000,
+   "plans_sha256": "696f3fa7886ad566f78dc6e7fa63fcc59e2c655e044c5b09e676f303deaf5bb1"
+  },
+  "v1": {
+   "n": 100000,
+   "exact": 82567
+  }
+ },
+ "witness": {
+  "total": 19,
+  "v3_pass": 19,
+  "v2_pass": 19,
+  "v1_pass": 9
+ },
+ "semantics": {
+  "verdict_counts": {
+   "PASS": 26,
+   "UNSUPPORTED": 1,
+   "NOT-EXPRESSIBLE": 1,
+   "BOUNDARY": 2
+  },
+  "null_fixture_pass": 6,
+  "null_fixture_total": 6,
+  "null_fixture_cases": [
+   "N1_null_measure_fixed",
+   "N2_null_measure_range_0_10",
+   "N3_null_measure_range_6_10",
+   "N4_null_measure_lo_only",
+   "N5_null_measure_having_sum",
+   "N6_null_measure_group_in_no_range"
+  ],
+  "receipt": "semantics_probe_v3.json"
+ }
+}

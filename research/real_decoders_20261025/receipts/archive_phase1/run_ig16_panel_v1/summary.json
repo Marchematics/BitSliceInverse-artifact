@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "observations": 90,
+  "correctness_checks": 4,
+  "analysis_sha256": "104114612eae20a2ad8ec7316c70b0b74ccef4cf1321dbb5aef781c33d4ee282",
+  "prep": "results/ig16_prep_v1/Observed",
+  "arrow_file": "results/ig16_controls/city.arrow",
+  "duckdb": "results/ig16_controls/city.duckdb",
+  "binary_sha256": "afcae9c7332e317608ad4b6626518b1b3ebf7f0e14f034da1d368787fe6fd453",
+  "arrow_python": "../../work/arrow25venv/bin/python",
+  "preloaded_input_bytes": 2202186,
+  "host_load1_at_start": 1.66,
+  "host_load1_block_max": 1.75,
+  "pinned_core": 11,
+  "max_load": 15.0
+}

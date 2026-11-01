@@ -1,0 +1,11 @@
+{
+  "duckdb_version": "1.5 C API",
+  "function": "bsi_blocks(summary,dict)",
+  "sql": "SELECT name,SUM(sum),SUM(count),MIN(min),MAX(max) FROM bsi_blocks(...) GROUP BY name HAVING SUM(sum)>=1e10 ORDER BY name",
+  "rows": 2,
+  "query_median_ms": 246.325,
+  "runs": 5,
+  "exact": true,
+  "entries": 1562512,
+  "note": "DuckDB performs the GROUP BY over exact block-summary entries; no C++ pre-reduction inside the function. Interface integration, not a speed result."
+}

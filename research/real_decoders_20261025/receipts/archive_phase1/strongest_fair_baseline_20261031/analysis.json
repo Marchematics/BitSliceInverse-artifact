@@ -1,0 +1,21 @@
+{
+  "query": "NYC 100M group passenger_count, plain mapped int32",
+  "results": {
+    "sum": {
+      "median_ms": 183.2593,
+      "runs": 3
+    },
+    "count": {
+      "median_ms": 153.1641,
+      "runs": 3
+    },
+    "min": {
+      "median_ms": 248.9499,
+      "runs": 3
+    },
+    "max": {
+      "median_ms": 251.2096,
+      "runs": 3
+    }
+  }
+}

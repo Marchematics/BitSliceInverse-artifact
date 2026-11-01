@@ -1,0 +1,27 @@
+{
+  "query": "SUM/COUNT/MIN/MAX GROUP BY fixed groups",
+  "materialized_storage": "small group summary (355 B for 10 groups; CSV for high-card)",
+  "materialized_build": "one-pass group aggregation, ~0.25 s for 10 groups (hand plain all-four scan)",
+  "exact": true,
+  "note": "Materialized group aggregates answer fixed GROUP BY without scanning bitplanes; they are a stronger baseline than bitplane for this query.",
+  "10": {
+    "materialized_ms": 0.194,
+    "bitplane_ms": 37.577,
+    "duckdb_single_thread_ms": null
+  },
+  "1000": {
+    "materialized_ms": 0.6354,
+    "bitplane_ms": 35.807,
+    "duckdb_single_thread_ms": 762.653
+  },
+  "100000": {
+    "materialized_ms": 43.594,
+    "bitplane_ms": 53.713,
+    "duckdb_single_thread_ms": 1450.339
+  },
+  "1000000": {
+    "materialized_ms": 417.2892,
+    "bitplane_ms": 265.443,
+    "duckdb_single_thread_ms": 2996.003
+  }
+}

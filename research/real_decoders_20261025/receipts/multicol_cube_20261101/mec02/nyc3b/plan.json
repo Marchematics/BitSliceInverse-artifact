@@ -1,0 +1,69 @@
+{
+ "mode": "rank",
+ "rows": 101476026,
+ "G": 5,
+ "has_null": false,
+ "D1": 10,
+ "D2": 263,
+ "runs": 13150,
+ "rows_per_run": 7716,
+ "max_run_rows": 3328051,
+ "count_width": 4,
+ "vspan": 86564583,
+ "budget_bytes": 168544434,
+ "skew_share": 0.9997,
+ "rule": "value blocks would put >4% of the rows in one block, so equi-depth (rank) blocks are used: BPr = smallest max-blocks-per-run whose predicted footprint fits the budget (else 4096 latency-first), RB_r = ceil(len_r/BPr) per run",
+ "candidates": [
+  {
+   "BP": 512,
+   "max_RB": 6501,
+   "total_bytes": 364863044,
+   "est_residual_rows": 396390,
+   "fits": false
+  },
+  {
+   "BP": 1024,
+   "max_RB": 3251,
+   "total_bytes": 526450244,
+   "est_residual_rows": 198195,
+   "fits": false
+  },
+  {
+   "BP": 2048,
+   "max_RB": 1626,
+   "total_bytes": 849624644,
+   "est_residual_rows": 99097,
+   "fits": false
+  },
+  {
+   "BP": 4096,
+   "max_RB": 813,
+   "total_bytes": 1495973444,
+   "est_residual_rows": 49548,
+   "fits": false
+  },
+  {
+   "BP": 8192,
+   "max_RB": 407,
+   "total_bytes": 2788671044,
+   "est_residual_rows": 24774,
+   "fits": false
+  },
+  {
+   "BP": 16384,
+   "max_RB": 204,
+   "total_bytes": 5374066244,
+   "est_residual_rows": 12387,
+   "fits": false
+  },
+  {
+   "BP": 32768,
+   "max_RB": 102,
+   "total_bytes": 10544856644,
+   "est_residual_rows": 6193,
+   "fits": false
+  }
+ ],
+ "picked_BP": 4096,
+ "picked_bytes": 1495973444
+}

@@ -1,0 +1,773 @@
+{
+ "method": "daft0726",
+ "engine_version": "daft 0.7.26 (native local runner, Rust)",
+ "input_format": "Parquet file (per-query scan+decode)",
+ "storage_bytes": 173084977,
+ "storage_human": "165.1 MB",
+ "declared_threads": 1,
+ "host": "localhost",
+ "cpu": "x86_64",
+ "python": "3.10.12",
+ "protocol": {
+  "reps_requested": 30,
+  "slow_stop_ms": 2000.0,
+  "min_reps": 10,
+  "warmup": 3,
+  "latency": "execute full query + fetch complete 11-row result",
+  "threads": 1,
+  "pinning": "taskset -c 56, nice -n 5"
+ },
+ "reference": "DuckDB 2.0.0 rows in runs/reference.json",
+ "load_ms": null,
+ "build_ms": null,
+ "notes": "Daft dataframe engine: read_parquet -> filter -> groupby().agg(), collect() per rep. Single-thread requested via RAYON_NUM_THREADS=1 and a single-partition source; see threading_check.  IMPORTANT: DataFrame.collect() memoises; the recorded latency builds a fresh plan per rep (plan construction ~0.8 ms included).",
+ "cases": {
+  "fixed_all4": {
+   "label": "no predicate, 100M rows",
+   "where": "",
+   "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc  GROUP BY 1 ORDER BY 1",
+   "reps": 30,
+   "median_ms": 1694.9457195587456,
+   "mean_ms": 1695.4238848139842,
+   "min_ms": 1620.473557151854,
+   "p95_ms": 1757.1279807016253,
+   "result": [
+    [
+     1,
+     128292723154,
+     69403235,
+     -226119,
+     86337212
+    ],
+    [
+     0,
+     1903976477,
+     1105921,
+     -38318,
+     5055868
+    ],
+    [
+     4,
+     4495283753,
+     1936451,
+     -99490,
+     104040
+    ],
+    [
+     2,
+     28404813736,
+     13276935,
+     -128540,
+     18750296
+    ],
+    [
+     3,
+     6756713396,
+     3186488,
+     -99900,
+     38698363
+    ],
+    [
+     5,
+     1695472138,
+     897123,
+     -15900,
+     82130
+    ],
+    [
+     6,
+     1092259031,
+     586835,
+     -7000,
+     630090
+    ],
+    [
+     8,
+     3883546,
+     500,
+     -9000,
+     28222
+    ],
+    [
+     7,
+     1043835,
+     164,
+     -7000,
+     12000
+    ],
+    [
+     9,
+     857711,
+     105,
+     -9900,
+     13000
+    ],
+    [
+     null,
+     17795107614,
+     9606243,
+     -43251,
+     979200
+    ]
+   ],
+   "exactness": {
+    "exact": true,
+    "n_groups": 11
+   }
+  },
+  "le_m7000": {
+   "label": "fare<=-7000 (0.135%)",
+   "where": "WHERE fare_cents <= -7000",
+   "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE fare_cents <= -7000 GROUP BY 1 ORDER BY 1",
+   "reps": 30,
+   "median_ms": 290.4092292301357,
+   "mean_ms": 291.129753474767,
+   "min_ms": 287.1011411771178,
+   "p95_ms": 295.6700590439141,
+   "result": [
+    [
+     1,
+     -655689086,
+     76631,
+     -226119,
+     -7000
+    ],
+    [
+     2,
+     -314807400,
+     40686,
+     -128540,
+     -7000
+    ],
+    [
+     3,
+     -71768544,
+     8731,
+     -99900,
+     -7000
+    ],
+    [
+     4,
+     -78222780,
+     8770,
+     -99490,
+     -7000
+    ],
+    [
+     5,
+     -1066500,
+     149,
+     -15900,
+     -7000
+    ],
+    [
+     6,
+     -497000,
+     71,
+     -7000,
+     -7000
+    ],
+    [
+     0,
+     -364419,
+     38,
+     -38318,
+     -7000
+    ],
+    [
+     null,
+     -801226,
+     50,
+     -43251,
+     -7023
+    ],
+    [
+     8,
+     -69100,
+     8,
+     -9000,
+     -8000
+    ],
+    [
+     7,
+     -7000,
+     1,
+     -7000,
+     -7000
+    ],
+    [
+     9,
+     -19796,
+     2,
+     -9900,
+     -9896
+    ]
+   ],
+   "exactness": {
+    "exact": true,
+    "n_groups": 11
+   }
+  },
+  "le_m720": {
+   "label": "fare<=-720 (1%)",
+   "where": "WHERE fare_cents <= -720",
+   "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE fare_cents <= -720 GROUP BY 1 ORDER BY 1",
+   "reps": 30,
+   "median_ms": 374.3272665888071,
+   "mean_ms": 378.6502888581405,
+   "min_ms": 372.00673436746,
+   "p95_ms": 404.3009616434574,
+   "result": [
+    [
+     2,
+     -593576705,
+     181325,
+     -128540,
+     -720
+    ],
+    [
+     1,
+     -1907654214,
+     730003,
+     -226119,
+     -720
+    ],
+    [
+     3,
+     -150612030,
+     47854,
+     -99900,
+     -720
+    ],
+    [
+     4,
+     -149790984,
+     44356,
+     -99490,
+     -720
+    ],
+    [
+     5,
+     -1736420,
+     791,
+     -15900,
+     -720
+    ],
+    [
+     6,
+     -767704,
+     315,
+     -7000,
+     -720
+    ],
+    [
+     0,
+     -608674,
+     147,
+     -38318,
+     -720
+    ],
+    [
+     null,
+     -43445240,
+     34995,
+     -43251,
+     -720
+    ],
+    [
+     8,
+     -72213,
+     10,
+     -9000,
+     -780
+    ],
+    [
+     7,
+     -7725,
+     2,
+     -7000,
+     -725
+    ],
+    [
+     9,
+     -19796,
+     2,
+     -9900,
+     -9896
+    ]
+   ],
+   "exactness": {
+    "exact": true,
+    "n_groups": 11
+   }
+  },
+  "le_509": {
+   "label": "fare<=509 (5%)",
+   "where": "WHERE fare_cents <= 509",
+   "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE fare_cents <= 509 GROUP BY 1 ORDER BY 1",
+   "reps": 30,
+   "median_ms": 785.1323683280498,
+   "mean_ms": 787.4383765272796,
+   "min_ms": 770.5688630230725,
+   "p95_ms": 807.108358014375,
+   "result": [
+    [
+     1,
+     -803769099,
+     3728767,
+     -226119,
+     509
+    ],
+    [
+     2,
+     -431893590,
+     621581,
+     -128540,
+     509
+    ],
+    [
+     4,
+     -132766221,
+     97332,
+     -99490,
+     509
+    ],
+    [
+     3,
+     -115658118,
+     143502,
+     -99900,
+     509
+    ],
+    [
+     5,
+     11918424,
+     34996,
+     -15900,
+     509
+    ],
+    [
+     0,
+     25925841,
+     64555,
+     -38318,
+     509
+    ],
+    [
+     6,
+     8352497,
+     22278,
+     -7000,
+     509
+    ],
+    [
+     null,
+     -280728852,
+     1089677,
+     -43251,
+     509
+    ],
+    [
+     8,
+     -69529,
+     21,
+     -9000,
+     500
+    ],
+    [
+     9,
+     -19288,
+     4,
+     -9900,
+     500
+    ],
+    [
+     7,
+     -6223,
+     11,
+     -7000,
+     500
+    ]
+   ],
+   "exactness": {
+    "exact": true,
+    "n_groups": 11
+   }
+  },
+  "le_650": {
+   "label": "fare<=650 (10%)",
+   "where": "WHERE fare_cents <= 650",
+   "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE fare_cents <= 650 GROUP BY 1 ORDER BY 1",
+   "reps": 30,
+   "median_ms": 1313.357987208292,
+   "mean_ms": 1319.464135930563,
+   "min_ms": 1292.4998910166323,
+   "p95_ms": 1360.696969088167,
+   "result": [
+    [
+     1,
+     2137739228,
+     8480700,
+     -226119,
+     650
+    ],
+    [
+     2,
+     50661475,
+     1400378,
+     -128540,
+     650
+    ],
+    [
+     4,
+     -77338054,
+     186678,
+     -99490,
+     650
+    ],
+    [
+     3,
+     -6457330,
+     319651,
+     -99900,
+     650
+    ],
+    [
+     0,
+     78981402,
+     150341,
+     -38318,
+     650
+    ],
+    [
+     5,
+     49208493,
+     95243,
+     -15900,
+     650
+    ],
+    [
+     6,
+     33034997,
+     62125,
+     -7000,
+     650
+    ],
+    [
+     null,
+     -205485396,
+     1214079,
+     -43251,
+     650
+    ],
+    [
+     8,
+     -69529,
+     21,
+     -9000,
+     500
+    ],
+    [
+     9,
+     -18638,
+     5,
+     -9900,
+     650
+    ],
+    [
+     7,
+     -6223,
+     11,
+     -7000,
+     500
+    ]
+   ],
+   "exactness": {
+    "exact": true,
+    "n_groups": 11
+   }
+  },
+  "le_930": {
+   "label": "fare<=930 (25%)",
+   "where": "WHERE fare_cents <= 930",
+   "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE fare_cents <= 930 GROUP BY 1 ORDER BY 1",
+   "reps": 10,
+   "median_ms": 2474.2852456402034,
+   "mean_ms": 2478.472545510158,
+   "min_ms": 2439.2921552062035,
+   "p95_ms": 2518.992173951119,
+   "result": [
+    [
+     1,
+     12430699493,
+     20931300,
+     -226119,
+     930
+    ],
+    [
+     3,
+     421316110,
+     835702,
+     -99900,
+     930
+    ],
+    [
+     4,
+     154983131,
+     466407,
+     -99490,
+     930
+    ],
+    [
+     2,
+     1844456347,
+     3566795,
+     -128540,
+     930
+    ],
+    [
+     6,
+     121618062,
+     169234,
+     -7000,
+     930
+    ],
+    [
+     0,
+     256879308,
+     365787,
+     -38318,
+     930
+    ],
+    [
+     5,
+     183187443,
+     257253,
+     -15900,
+     930
+    ],
+    [
+     null,
+     295846909,
+     1837635,
+     -43251,
+     930
+    ],
+    [
+     9,
+     -16818,
+     7,
+     -9900,
+     910
+    ],
+    [
+     8,
+     -56611,
+     37,
+     -9000,
+     911
+    ],
+    [
+     7,
+     911,
+     21,
+     -7000,
+     800
+    ]
+   ],
+   "exactness": {
+    "exact": true,
+    "n_groups": 11
+   }
+  },
+  "le_1350": {
+   "label": "fare<=1350 (50%)",
+   "where": "WHERE fare_cents <= 1350",
+   "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE fare_cents <= 1350 GROUP BY 1 ORDER BY 1",
+   "reps": 10,
+   "median_ms": 3742.7908841054887,
+   "mean_ms": 3745.139696635306,
+   "min_ms": 3721.312521956861,
+   "p95_ms": 3765.6055600382388,
+   "result": [
+    [
+     1,
+     31396836906,
+     37239159,
+     -226119,
+     1350
+    ],
+    [
+     0,
+     571732309,
+     636926,
+     -38318,
+     1350
+    ],
+    [
+     3,
+     1267970283,
+     1562765,
+     -99900,
+     1350
+    ],
+    [
+     4,
+     642610248,
+     884601,
+     -99490,
+     1350
+    ],
+    [
+     2,
+     5291871725,
+     6528284,
+     -128540,
+     1350
+    ],
+    [
+     5,
+     435063023,
+     473625,
+     -15900,
+     1350
+    ],
+    [
+     6,
+     287759532,
+     311996,
+     -7000,
+     1350
+    ],
+    [
+     null,
+     2111250150,
+     3402429,
+     -43251,
+     1350
+    ],
+    [
+     9,
+     -13698,
+     10,
+     -9900,
+     1140
+    ],
+    [
+     8,
+     -55451,
+     38,
+     -9000,
+     1160
+    ],
+    [
+     7,
+     3261,
+     23,
+     -7000,
+     1350
+    ]
+   ],
+   "exactness": {
+    "exact": true,
+    "n_groups": 11
+   }
+  },
+  "le_99900": {
+   "label": "fare<=99900 (100%)",
+   "where": "WHERE fare_cents <= 99900",
+   "sql": "SELECT passenger_count AS g, SUM(fare_cents) AS s, COUNT(*) AS c, MIN(fare_cents) AS mn, MAX(fare_cents) AS mx FROM nyc WHERE fare_cents <= 99900 GROUP BY 1 ORDER BY 1",
+   "reps": 30,
+   "median_ms": 1883.3657619543374,
+   "mean_ms": 1884.7022553440183,
+   "min_ms": 1784.0129029937088,
+   "p95_ms": 1996.4481112547219,
+   "result": [
+    [
+     1,
+     128097584041,
+     69403182,
+     -226119,
+     99900
+    ],
+    [
+     0,
+     1895051405,
+     1105908,
+     -38318,
+     81010
+    ],
+    [
+     4,
+     4495179713,
+     1936450,
+     -99490,
+     99490
+    ],
+    [
+     2,
+     28383116124,
+     13276924,
+     -128540,
+     99900
+    ],
+    [
+     3,
+     6717485843,
+     3186484,
+     -99900,
+     99900
+    ],
+    [
+     5,
+     1695472138,
+     897123,
+     -15900,
+     82130
+    ],
+    [
+     6,
+     1091628941,
+     586834,
+     -7000,
+     56229
+    ],
+    [
+     8,
+     3883546,
+     500,
+     -9000,
+     28222
+    ],
+    [
+     7,
+     1043835,
+     164,
+     -7000,
+     12000
+    ],
+    [
+     9,
+     857711,
+     105,
+     -9900,
+     13000
+    ],
+    [
+     null,
+     17793374414,
+     9606240,
+     -43251,
+     68600
+    ]
+   ],
+   "exactness": {
+    "exact": true,
+    "n_groups": 11
+   }
+  }
+ },
+ "exact_all": true,
+ "threading_check": "RAYON_NUM_THREADS=1 (daft local runner)",
+ "memoisation_trap_ms": 0.0659450888633728
+}

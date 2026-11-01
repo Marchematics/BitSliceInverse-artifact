@@ -1,0 +1,42 @@
+[
+  {
+    "name": "nyc_sum_fare_pos",
+    "status": "passed",
+    "rows": 10,
+    "expected_rows": 10,
+    "exact": true,
+    "generic_median_ms": 41.0286,
+    "duckdb_warm_median_ms": 82.80281154438853,
+    "speedup": 2.018172970668961
+  },
+  {
+    "name": "tpch_sum_price_high",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 40.4875,
+    "duckdb_warm_median_ms": 145.83797714052102,
+    "speedup": 3.602049450831023
+  },
+  {
+    "name": "tpch_count_price_range",
+    "status": "passed",
+    "rows": 3,
+    "expected_rows": 3,
+    "exact": true,
+    "generic_median_ms": 35.8795,
+    "duckdb_warm_median_ms": 60.245969596629344,
+    "speedup": 1.679119541705691
+  },
+  {
+    "name": "ig2_sum_pop_high",
+    "status": "passed",
+    "rows": 42,
+    "expected_rows": 42,
+    "exact": true,
+    "generic_median_ms": 0.310985,
+    "duckdb_warm_median_ms": 1.9980249926447868,
+    "speedup": 6.424827540379075
+  }
+]

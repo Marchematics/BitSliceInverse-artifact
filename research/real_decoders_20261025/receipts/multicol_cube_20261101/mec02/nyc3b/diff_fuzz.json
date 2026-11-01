@@ -1,0 +1,62 @@
+{
+ "seed": 20261101,
+ "total": 110,
+ "fixed": 10,
+ "random": 100,
+ "mismatches": 0,
+ "index": "results/eai_multi_20261101/nyc3b/index.mec",
+ "index_sha256": "919f86e549705e1a56d4f70f4e1c7d908c3f9f7efc3440c348a85eb962d9284c",
+ "dataset": "nyc3b",
+ "value_domain": [
+  -226545,
+  86338037
+ ],
+ "c1_domain": [
+  0,
+  9
+ ],
+ "c2_domain": [
+  1,
+  265
+ ],
+ "mode": "rank",
+ "block_width": 0,
+ "BP": 4097,
+ "groups": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "modes": [
+  "block_align",
+  "block_align+gin",
+  "fixed:all_full",
+  "fixed:cross_selective",
+  "fixed:cross_tight",
+  "fixed:empty_cross",
+  "fixed:empty_domain",
+  "fixed:needle",
+  "fixed:point",
+  "fixed:v_mid",
+  "fixed:v_narrow",
+  "fixed:v_top",
+  "full",
+  "full+gin",
+  "full+gnotin",
+  "narrow",
+  "narrow+gin",
+  "narrow+gnotin",
+  "outside",
+  "outside+gin",
+  "outside+gnotin",
+  "point",
+  "point+gin",
+  "uniform",
+  "uniform+gin",
+  "uniform+gnotin"
+ ],
+ "group_filter_cases": 24,
+ "failures": []
+}

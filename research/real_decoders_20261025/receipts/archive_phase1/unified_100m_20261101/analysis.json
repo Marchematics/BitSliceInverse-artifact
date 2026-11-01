@@ -1,0 +1,34 @@
+{
+  "input": "NYC 100M",
+  "query": "SUM/COUNT/MIN/MAX GROUP BY passenger_count",
+  "rows": 10,
+  "exact": true,
+  "paths": {
+    "materialized_groups": {
+      "ms": 0.194,
+      "build": "~0.25 s",
+      "storage": "355 B"
+    },
+    "BSBITS03": {
+      "ms": 37.577,
+      "build": "6.68 s",
+      "storage": "296,995,264 B"
+    },
+    "hand_plain_all4": {
+      "ms": 253.176,
+      "build": 0,
+      "storage": "800 MB plain"
+    },
+    "duckdb_all4": {
+      "ms": 429.974,
+      "build": 0,
+      "storage": "persisted DB"
+    },
+    "direct_tree_all4": {
+      "ms": 876.666,
+      "build": 0,
+      "storage": "251,814,420 B encoded tree"
+    }
+  },
+  "note": "Same 100M all-four SQL. Direct-tree all-four is 871-887 ms; materialized groups 0.194 ms; BSBITS03 37.58 ms. Materialized is the strongest fixed-group representation; bitplanes are not independently necessary for this query."
+}

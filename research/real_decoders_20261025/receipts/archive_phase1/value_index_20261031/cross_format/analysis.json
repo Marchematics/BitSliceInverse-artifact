@@ -1,0 +1,8 @@
+{
+  "formats": ["encoded tree", "Parquet", "Arrow IPC"],
+  "index_bytes": 372874396,
+  "sha256": "bbc5a6f8f97d4358f34ee36cf9c733fcdaaf140c3a838487bdf20859771a134a",
+  "identical_across_formats": true,
+  "build_seconds": {"encoded_cpp": 3.97, "parquet_python": 6.77, "arrow_python": 6.84},
+  "note": "Same BSVIDX02 sparse-prefix index byte-identical from encoded/Parquet/Arrow; query behavior identical. Not a dual-engine SQL integration."
+}

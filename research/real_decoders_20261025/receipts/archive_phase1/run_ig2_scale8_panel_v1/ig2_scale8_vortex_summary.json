@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "case": "Observed",
+  "rows": 524288,
+  "scale_factor": 16,
+  "vortex_data": "0.87.0",
+  "pyarrow": "26.0.0",
+  "python": "3.12.15",
+  "native_sha256": "101324d9241e33f3beebbb2f347969054c26d3cfbba5f7e45ffff116dabe8228",
+  "full_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/ig2_scale8_vortex/Observed_vortex/full",
+  "full_compressed_bytes": 10217485,
+  "projected_dir": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/ig2_scale8_vortex/Observed_vortex/projected",
+  "projected_compressed_bytes": 956248,
+  "reloaded_query_result_equals_oracle": true,
+  "scope": "synthetic 16x row-replicated scale test; Vortex compressed load + Arrow aggregation hybrid, not a pure Vortex engine measurement"
+}

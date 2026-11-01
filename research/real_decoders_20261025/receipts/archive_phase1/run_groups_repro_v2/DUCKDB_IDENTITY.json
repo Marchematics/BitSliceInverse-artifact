@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "python_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/duckdb/__init__.py",
+  "python_module_sha256": "85ce0baebdb7a81409c005056ef962270947aff974df00fb79d84642f11ac0e7",
+  "native_module": "../../work/bsi_e2e_20261025/repo/bitslice_external_20261021/deps/site/_duckdb.abi3.so",
+  "native_module_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a",
+  "cpu_affinity": [
+    101
+  ],
+  "environment_threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "RAYON_NUM_THREADS": "1"
+  }
+}

@@ -1,0 +1,33 @@
+{
+ "seed": 20261101,
+ "total": 310,
+ "fixed": 10,
+ "random": 300,
+ "mismatches": 0,
+ "index": "../../research/real_decoders_20261024/results/eai_multi_20261101/mec_lineitem_sf2.mec",
+ "index_sha256": "306c9748eaa9d54ff59599d76509bad7999f1155bfeb0012baca8f85e72d2541",
+ "value_domain": [
+  90099,
+  10489950
+ ],
+ "block_width": 16384,
+ "modes": [
+  "block_align",
+  "fixed:all_full",
+  "fixed:broad",
+  "fixed:disc_quant_tight",
+  "fixed:disc_single",
+  "fixed:empty",
+  "fixed:mid_band",
+  "fixed:needle",
+  "fixed:price_top_decile",
+  "fixed:quant_narrow",
+  "fixed:selective",
+  "full",
+  "narrow",
+  "outside",
+  "point",
+  "uniform"
+ ],
+ "failures": []
+}

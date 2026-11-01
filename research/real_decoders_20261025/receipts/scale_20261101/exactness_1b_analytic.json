@@ -1,0 +1,40 @@
+{
+ "checks": {
+  "fixed": {
+   "ok": true,
+   "rows_got": 101,
+   "rows_expected": 101,
+   "reasons": []
+  },
+  "le_m7000": {
+   "ok": true,
+   "rows_got": 101,
+   "rows_expected": 101,
+   "reasons": []
+  },
+  "le_m720": {
+   "ok": true,
+   "rows_got": 101,
+   "rows_expected": 101,
+   "reasons": []
+  },
+  "le_650": {
+   "ok": true,
+   "rows_got": 101,
+   "rows_expected": 101,
+   "reasons": []
+  },
+  "le_99900": {
+   "ok": true,
+   "rows_got": 101,
+   "rows_expected": 101,
+   "reasons": []
+  }
+ },
+ "all_exact": true,
+ "note": "1B replica map vs the 100M cube verified against DuckDB 2.0",
+ "receipt": "exactness_1b_analytic",
+ "host": "localhost (AMD EPYC 9554, 2x64C, 256T, 503GB)",
+ "date": "2026-11-01T18:32:22.369063+08:00",
+ "git_branch": "research/groups-e2e-repro-20261025"
+}

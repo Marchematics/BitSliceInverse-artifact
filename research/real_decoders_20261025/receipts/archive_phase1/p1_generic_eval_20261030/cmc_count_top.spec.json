@@ -1,0 +1,1 @@
+{"encoded": "results/citymax14_prep_v3/Observed.encoded", "prep": "results/citymax14_prep_v3/Observed", "dict": "col2.dict", "group_id": 2, "aggs": [{"op": "count"}], "where_in": ["Manhattan", "Chicago", "Washington"]}

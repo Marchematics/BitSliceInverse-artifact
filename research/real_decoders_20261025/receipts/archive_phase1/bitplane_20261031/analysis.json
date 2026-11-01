@@ -1,0 +1,17 @@
+{
+  "input": "NYC 100M fare int32, group passenger_count",
+  "representation": "BSBITS02 per-group bitplanes with per-group base",
+  "rows": 100000000,
+  "storage_bytes": 296995264,
+  "build_ms": 7200,
+  "query_median_ms": 33.004,
+  "runs": 5,
+  "exact": true,
+  "duckdb_sum_ms": 520.2477,
+  "hand_sum_ms": 183.2593,
+  "encoded_sum_ms": 273.171,
+  "speedup_vs_duckdb": 15.76317113077203,
+  "speedup_vs_hand": 5.552639074051631,
+  "speedup_vs_encoded": 8.276905829596412,
+  "note": "SUM only; bitplanes are a new representation built from plain columns, not the existing encoded tree; no COUNT/MIN/MAX/filters yet."
+}

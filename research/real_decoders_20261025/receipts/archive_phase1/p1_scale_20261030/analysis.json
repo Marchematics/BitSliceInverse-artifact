@@ -1,0 +1,124 @@
+{
+  "results": [
+    {
+      "variant": "ordered",
+      "op": "sum",
+      "status": "passed",
+      "exact": true,
+      "rows": 47,
+      "generic_median_ms": 1.211465,
+      "duckdb_warm_median_ms": 6.430736696347594,
+      "speedup": 5.308231518324998
+    },
+    {
+      "variant": "ordered",
+      "op": "count",
+      "status": "passed",
+      "exact": true,
+      "rows": 47,
+      "generic_median_ms": 1.45967,
+      "duckdb_warm_median_ms": 5.3068541921675205,
+      "speedup": 3.635653395745285
+    },
+    {
+      "variant": "ordered",
+      "op": "min",
+      "status": "passed",
+      "exact": true,
+      "rows": 47,
+      "generic_median_ms": 2.666955,
+      "duckdb_warm_median_ms": 6.411585211753845,
+      "speedup": 2.4040845127697485
+    },
+    {
+      "variant": "ordered",
+      "op": "max",
+      "status": "passed",
+      "exact": true,
+      "rows": 47,
+      "generic_median_ms": 2.7273449999999997,
+      "duckdb_warm_median_ms": 6.418924801982939,
+      "speedup": 2.3535433918271944
+    },
+    {
+      "variant": "shuffled",
+      "op": "sum",
+      "status": "passed",
+      "exact": true,
+      "rows": 47,
+      "generic_median_ms": 4.52852,
+      "duckdb_warm_median_ms": 6.315750093199313,
+      "speedup": 1.3946609694114882
+    },
+    {
+      "variant": "shuffled",
+      "op": "count",
+      "status": "passed",
+      "exact": true,
+      "rows": 47,
+      "generic_median_ms": 1.56281,
+      "duckdb_warm_median_ms": 5.336860101670027,
+      "speedup": 3.414912946340263
+    },
+    {
+      "variant": "shuffled",
+      "op": "min",
+      "status": "passed",
+      "exact": true,
+      "rows": 47,
+      "generic_median_ms": 4.756584999999999,
+      "duckdb_warm_median_ms": 6.425044615752995,
+      "speedup": 1.3507683802040742
+    },
+    {
+      "variant": "shuffled",
+      "op": "max",
+      "status": "passed",
+      "exact": true,
+      "rows": 47,
+      "generic_median_ms": 4.178565,
+      "duckdb_warm_median_ms": 6.393686588853598,
+      "speedup": 1.530115383834785
+    },
+    {
+      "variant": "block",
+      "op": "sum",
+      "status": "passed",
+      "exact": true,
+      "rows": 47,
+      "generic_median_ms": 1.561795,
+      "duckdb_warm_median_ms": 6.560357310809195,
+      "speedup": 4.200523955326528
+    },
+    {
+      "variant": "block",
+      "op": "count",
+      "status": "passed",
+      "exact": true,
+      "rows": 47,
+      "generic_median_ms": 1.64604,
+      "duckdb_warm_median_ms": 5.466977506875992,
+      "speedup": 3.321290799054696
+    },
+    {
+      "variant": "block",
+      "op": "min",
+      "status": "passed",
+      "exact": true,
+      "rows": 47,
+      "generic_median_ms": 2.819915,
+      "duckdb_warm_median_ms": 6.621635006740689,
+      "speedup": 2.3481682982432766
+    },
+    {
+      "variant": "block",
+      "op": "max",
+      "status": "passed",
+      "exact": true,
+      "rows": 47,
+      "generic_median_ms": 2.881965,
+      "duckdb_warm_median_ms": 6.564689590595663,
+      "speedup": 2.277851948443393
+    }
+  ]
+}

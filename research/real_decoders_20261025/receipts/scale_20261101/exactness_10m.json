@@ -1,0 +1,32 @@
+{
+ "checks": {
+  "matstats_vs_duckdb_fixed": {
+   "cube": [
+    "132715282761781859225150",
+    "100000000",
+    "190442134391",
+    "-226119",
+    "86337212"
+   ],
+   "duckdb": [
+    "132715282761781859225150",
+    "100000000",
+    "190442134391",
+    "-226119",
+    "86337212"
+   ],
+   "equal": true
+  },
+  "sample_1000_groups": {
+   "matched": 1000,
+   "mismatched": 0,
+   "first_bad": []
+  }
+ },
+ "all_exact": true,
+ "note": "full 10M-group aggregate checksum + 1000 random groups compared row-for-row against DuckDB 2.0",
+ "receipt": "exactness_10m",
+ "host": "localhost (AMD EPYC 9554, 2x64C, 256T, 503GB)",
+ "date": "2026-11-01T18:32:22.861170+08:00",
+ "git_branch": "research/groups-e2e-repro-20261025"
+}

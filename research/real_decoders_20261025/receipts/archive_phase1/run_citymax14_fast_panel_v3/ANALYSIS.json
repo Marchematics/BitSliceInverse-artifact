@@ -1,0 +1,537 @@
+{
+  "format": "citymax14-expansion-panel-v1",
+  "query": "CityMaxCapita_1/14",
+  "retained_observations": 300,
+  "blocks": 30,
+  "paths": [
+    "generic",
+    "group_domain",
+    "stream",
+    "stream_uniform",
+    "duckdb",
+    "duckdb_proj2",
+    "arrow_full",
+    "arrow_proj",
+    "vortex_full",
+    "vortex_proj"
+  ],
+  "features": [
+    "high-cardinality nullable dictionary group key",
+    "dense dictionary-code grouping",
+    "NULL group",
+    "SUM(1) without WHERE/HAVING"
+  ],
+  "endpoint_a": "complete fresh-worker wall, ms",
+  "endpoint_b": "reconstructed in-worker stored-input interval, ms",
+  "bootstrap": {
+    "resamples": 10000,
+    "seed": 20261025,
+    "warning": "conditional-process percentile intervals on one fixed host/query; not population or multiplicity-adjusted"
+  },
+  "endpoint_a_ms": {
+    "generic": {
+      "n": 30,
+      "median": 11.76503743045032,
+      "p95": 13.535379897803068,
+      "min": 10.422265157103539,
+      "max": 13.970416970551014
+    },
+    "group_domain": {
+      "n": 30,
+      "median": 6.024468457326293,
+      "p95": 7.927787955850363,
+      "min": 4.408164881169796,
+      "max": 7.930641062557697
+    },
+    "stream": {
+      "n": 30,
+      "median": 5.04989898763597,
+      "p95": 6.900596898049116,
+      "min": 3.7371369544416666,
+      "max": 7.332229055464268
+    },
+    "stream_uniform": {
+      "n": 30,
+      "median": 4.958253121003509,
+      "p95": 5.801721941679716,
+      "min": 3.460959065705538,
+      "max": 6.742869038134813
+    },
+    "duckdb": {
+      "n": 30,
+      "median": 218.8895681174472,
+      "p95": 224.99781497754157,
+      "min": 215.15853889286518,
+      "max": 233.67095296271145
+    },
+    "duckdb_proj2": {
+      "n": 30,
+      "median": 218.88283849693835,
+      "p95": 223.06217486038804,
+      "min": 212.77884603478014,
+      "max": 235.78596184961498
+    },
+    "arrow_full": {
+      "n": 30,
+      "median": 113.27075702138245,
+      "p95": 115.73327891528606,
+      "min": 110.85178283974528,
+      "max": 118.53077984414995
+    },
+    "arrow_proj": {
+      "n": 30,
+      "median": 111.35554197244346,
+      "p95": 114.52964507043362,
+      "min": 109.15031214244664,
+      "max": 117.31878691352904
+    },
+    "vortex_full": {
+      "n": 30,
+      "median": 354.7969964565709,
+      "p95": 359.44037698209286,
+      "min": 343.4485769830644,
+      "max": 370.7872370723635
+    },
+    "vortex_proj": {
+      "n": 30,
+      "median": 296.56286048702896,
+      "p95": 301.3548790477216,
+      "min": 283.9773849118501,
+      "max": 310.2548241149634
+    }
+  },
+  "endpoint_b_ms": {
+    "generic": {
+      "n": 30,
+      "median": 7.373697,
+      "p95": 8.778441,
+      "min": 7.251434,
+      "max": 9.764543
+    },
+    "group_domain": {
+      "n": 30,
+      "median": 1.7430775,
+      "p95": 3.141634,
+      "min": 1.6025700000000003,
+      "max": 3.209895
+    },
+    "stream": {
+      "n": 30,
+      "median": 1.308061,
+      "p95": 2.841104,
+      "min": 0.930261,
+      "max": 2.8532189999999997
+    },
+    "stream_uniform": {
+      "n": 30,
+      "median": 1.0053845,
+      "p95": 2.381878,
+      "min": 0.944251,
+      "max": 2.5441979999999997
+    },
+    "duckdb": {
+      "n": 30,
+      "median": 52.64849937520921,
+      "p95": 55.31875719316304,
+      "min": 49.2735980078578,
+      "max": 56.096527026966214
+    },
+    "duckdb_proj2": {
+      "n": 30,
+      "median": 51.92459002137184,
+      "p95": 53.26900794170797,
+      "min": 48.4200669452548,
+      "max": 58.39825980365276
+    },
+    "arrow_full": {
+      "n": 30,
+      "median": 23.020560038276017,
+      "p95": 24.847549851983786,
+      "min": 21.32703294046223,
+      "max": 25.301208021119237
+    },
+    "arrow_proj": {
+      "n": 30,
+      "median": 21.49892004672438,
+      "p95": 23.442274890840054,
+      "min": 20.470887888222933,
+      "max": 24.98173899948597
+    },
+    "vortex_full": {
+      "n": 30,
+      "median": 71.213437942788,
+      "p95": 78.16196605563164,
+      "min": 69.54730185680091,
+      "max": 94.82349711470306
+    },
+    "vortex_proj": {
+      "n": 30,
+      "median": 15.196127584204078,
+      "p95": 17.16563291847706,
+      "min": 14.811978908255696,
+      "max": 17.202366841956973
+    }
+  },
+  "contrasts": {
+    "generic/duckdb": {
+      "a": {
+        "geomean_ratio": 0.054168519075834455,
+        "interval_95": [
+          0.05269256798237774,
+          0.05574819361093623
+        ]
+      },
+      "b": {
+        "geomean_ratio": 0.1487971245945174,
+        "interval_95": [
+          0.14444404960512344,
+          0.15355719234602577
+        ]
+      }
+    },
+    "group_domain/duckdb": {
+      "a": {
+        "geomean_ratio": 0.02723373781181428,
+        "interval_95": [
+          0.025777681390084798,
+          0.028786547054367468
+        ]
+      },
+      "b": {
+        "geomean_ratio": 0.038041035389480955,
+        "interval_95": [
+          0.034910027175710026,
+          0.04172444563522762
+        ]
+      }
+    },
+    "stream/generic": {
+      "a": {
+        "geomean_ratio": 0.42158141648846187,
+        "interval_95": [
+          0.3928775784874018,
+          0.45412783296609277
+        ]
+      },
+      "b": {
+        "geomean_ratio": 0.17176081449218902,
+        "interval_95": [
+          0.15226306755748317,
+          0.19522877704776503
+        ]
+      }
+    },
+    "stream/group_domain": {
+      "a": {
+        "geomean_ratio": 0.8385349509814941,
+        "interval_95": [
+          0.7657214206895373,
+          0.9181415651077454
+        ]
+      },
+      "b": {
+        "geomean_ratio": 0.6718406860586438,
+        "interval_95": [
+          0.5709116633184493,
+          0.7978350184017705
+        ]
+      }
+    },
+    "stream/duckdb": {
+      "a": {
+        "geomean_ratio": 0.022836441001072547,
+        "interval_95": [
+          0.02131224813569465,
+          0.024513866582716173
+        ]
+      },
+      "b": {
+        "geomean_ratio": 0.025557515314450042,
+        "interval_95": [
+          0.022738532101523365,
+          0.028948065672844938
+        ]
+      }
+    },
+    "stream/duckdb_proj2": {
+      "a": {
+        "geomean_ratio": 0.022874858454874206,
+        "interval_95": [
+          0.021394143411247655,
+          0.024497787949619355
+        ]
+      },
+      "b": {
+        "geomean_ratio": 0.025820418069651664,
+        "interval_95": [
+          0.023027029887716086,
+          0.029195303392888262
+        ]
+      }
+    },
+    "stream/arrow_full": {
+      "a": {
+        "geomean_ratio": 0.04423710336423828,
+        "interval_95": [
+          0.04135260615509521,
+          0.04734619979461753
+        ]
+      },
+      "b": {
+        "geomean_ratio": 0.05809270856257068,
+        "interval_95": [
+          0.05179840929139739,
+          0.06573828928851573
+        ]
+      }
+    },
+    "stream/arrow_proj": {
+      "a": {
+        "geomean_ratio": 0.04497105908853108,
+        "interval_95": [
+          0.0419852598407812,
+          0.04824906950255658
+        ]
+      },
+      "b": {
+        "geomean_ratio": 0.06206051954668749,
+        "interval_95": [
+          0.055236192291753264,
+          0.07020980961158099
+        ]
+      }
+    },
+    "stream/vortex_full": {
+      "a": {
+        "geomean_ratio": 0.014153990707121875,
+        "interval_95": [
+          0.013227906399545535,
+          0.015163180714898342
+        ]
+      },
+      "b": {
+        "geomean_ratio": 0.01865544176505202,
+        "interval_95": [
+          0.0165701983791764,
+          0.021200544036979876
+        ]
+      }
+    },
+    "stream/vortex_proj": {
+      "a": {
+        "geomean_ratio": 0.01699014198454993,
+        "interval_95": [
+          0.015869046939472154,
+          0.018218866698804473
+        ]
+      },
+      "b": {
+        "geomean_ratio": 0.08621457925221555,
+        "interval_95": [
+          0.0765606487607956,
+          0.09803853577877109
+        ]
+      }
+    },
+    "vortex_proj/vortex_full": {
+      "a": {
+        "geomean_ratio": 0.8330707724510412,
+        "interval_95": [
+          0.8260500635812039,
+          0.8407901975991995
+        ]
+      },
+      "b": {
+        "geomean_ratio": 0.21638384049264625,
+        "interval_95": [
+          0.21043628238848655,
+          0.2212313817664235
+        ]
+      }
+    },
+    "vortex_full/duckdb": {
+      "a": {
+        "geomean_ratio": 1.613427723220273,
+        "interval_95": [
+          1.6017398774723892,
+          1.6246373477191771
+        ]
+      },
+      "b": {
+        "geomean_ratio": 1.3699764195521735,
+        "interval_95": [
+          1.3443606396361663,
+          1.402651854727006
+        ]
+      }
+    },
+    "vortex_full/arrow_full": {
+      "a": {
+        "geomean_ratio": 3.1254156004199896,
+        "interval_95": [
+          3.106257430107999,
+          3.1442385755422593
+        ]
+      },
+      "b": {
+        "geomean_ratio": 3.1139819305377188,
+        "interval_95": [
+          3.0397178954667545,
+          3.2008335706804836
+        ]
+      }
+    },
+    "arrow_proj/arrow_full": {
+      "a": {
+        "geomean_ratio": 0.9836793764886008,
+        "interval_95": [
+          0.9762753677256084,
+          0.9908960710739587
+        ]
+      },
+      "b": {
+        "geomean_ratio": 0.9360654565398557,
+        "interval_95": [
+          0.9144247684470772,
+          0.9588885928616739
+        ]
+      }
+    },
+    "arrow_full/duckdb": {
+      "a": {
+        "geomean_ratio": 0.5162282171380544,
+        "interval_95": [
+          0.5121345490377998,
+          0.5201584821260797
+        ]
+      },
+      "b": {
+        "geomean_ratio": 0.4399435995813912,
+        "interval_95": [
+          0.43195807240570394,
+          0.44825128510760676
+        ]
+      }
+    },
+    "group_domain/duckdb_proj2": {
+      "a": {
+        "geomean_ratio": 0.027279552782027136,
+        "interval_95": [
+          0.02581794530342392,
+          0.02887077190817109
+        ]
+      },
+      "b": {
+        "geomean_ratio": 0.03843235249881526,
+        "interval_95": [
+          0.03522950537277455,
+          0.042156843380634204
+        ]
+      }
+    },
+    "duckdb_proj2/duckdb": {
+      "a": {
+        "geomean_ratio": 0.9983205380755713,
+        "interval_95": [
+          0.9908196050018576,
+          1.0063332890123307
+        ]
+      },
+      "b": {
+        "geomean_ratio": 0.9898180287208194,
+        "interval_95": [
+          0.9782034881373264,
+          1.0023979948891626
+        ]
+      }
+    },
+    "group_domain/generic": {
+      "a": {
+        "geomean_ratio": 0.5027595045322873,
+        "interval_95": [
+          0.4704086890659446,
+          0.5372262733850596
+        ]
+      },
+      "b": {
+        "geomean_ratio": 0.255657059860165,
+        "interval_95": [
+          0.2321451946327853,
+          0.28348789100769617
+        ]
+      }
+    }
+  },
+  "phase_medians_ms": {
+    "generic": {
+      "setup_ms": 0.6240245,
+      "query_ms": 6.550805,
+      "output_write_ms": 0.12749850000000001,
+      "decoded_blocks": 64.0,
+      "dictionary_count": 4536.0,
+      "null_group_rows": 21554.0
+    },
+    "group_domain": {
+      "setup_ms": 0.6227325,
+      "query_ms": 0.881155,
+      "output_write_ms": 0.1245395,
+      "decoded_blocks": 64.0,
+      "dictionary_count": 4536.0,
+      "null_group_rows": 21554.0
+    },
+    "stream": {
+      "setup_ms": 0.2765735,
+      "query_ms": 0.577287,
+      "output_write_ms": 0.4719605,
+      "decoded_blocks": 64.0,
+      "dictionary_count": 4536.0,
+      "null_group_rows": 21554.0
+    },
+    "stream_uniform": {
+      "setup_ms": 0.277435,
+      "query_ms": 0.589064,
+      "output_write_ms": 0.123308,
+      "decoded_blocks": 64.0,
+      "dictionary_count": 4536.0,
+      "null_group_rows": 21554.0
+    },
+    "duckdb": {
+      "setup_open_configure_ms": 28.825743589550257,
+      "execute_fetch_ms": 8.263270952738822,
+      "canonicalize_serialize_close_ms": 15.445956611074507,
+      "import_ms_outside_interval": 76.64252049289644,
+      "identity_hash_ms_outside_interval": 44.66695000883192
+    },
+    "duckdb_proj2": {
+      "setup_open_configure_ms": 28.895725030452013,
+      "execute_fetch_ms": 8.011181489564478,
+      "canonicalize_serialize_close_ms": 14.905169373378158,
+      "import_ms_outside_interval": 76.59376389347017,
+      "identity_hash_ms_outside_interval": 44.73267693538219
+    },
+    "arrow_full": {
+      "read_table_ms": 1.1395829496905208,
+      "execute_materialize_ms": 19.521211506798863,
+      "canonicalize_serialize_close_ms": 1.878212089650333,
+      "import_ms_outside_interval": 55.19046587869525
+    },
+    "arrow_proj": {
+      "read_table_ms": 0.6789385806769133,
+      "execute_materialize_ms": 18.964276066981256,
+      "canonicalize_serialize_close_ms": 1.5936974668875337,
+      "import_ms_outside_interval": 55.24776049423963
+    },
+    "vortex_full": {
+      "read_decode_ms": 57.619038969278336,
+      "execute_materialize_ms": 9.818072547204792,
+      "canonicalize_serialize_close_ms": 3.426685114391148,
+      "import_ms_outside_interval": 91.1562783876434
+    },
+    "vortex_proj": {
+      "read_decode_ms": 4.786630510352552,
+      "execute_materialize_ms": 8.437893586233258,
+      "canonicalize_serialize_close_ms": 1.8591145053505898,
+      "import_ms_outside_interval": 91.73655556514859
+    }
+  }
+}

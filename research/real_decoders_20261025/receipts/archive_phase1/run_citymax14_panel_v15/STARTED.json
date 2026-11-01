@@ -1,0 +1,33 @@
+{
+  "start_utc": "2026-10-24T21:14:43.472086+00:00",
+  "cap_seconds": 900,
+  "prep_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/citymax14_prep_v3",
+  "paths": [
+    "generic",
+    "group_domain",
+    "stream",
+    "stream_uniform",
+    "duckdb",
+    "duckdb_proj2",
+    "arrow_full",
+    "arrow_proj",
+    "vortex_full",
+    "vortex_proj"
+  ],
+  "cases": [
+    "Observed",
+    "Empty",
+    "Singleton",
+    "AllNullCity",
+    "MixedNull"
+  ],
+  "blocks": 30,
+  "native_binary_sha256": "3275f64aab04f3b1d083686c39ca8445061201607a7bb174c6e58ad70ace1c76",
+  "arrow_control_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_citymax14_v1",
+  "vortex_control_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_citymax14_v1",
+  "preloaded_input_bytes": 0,
+  "query": "CityMaxCapita_1/14",
+  "expansion_query_not_frozen_eight": true,
+  "endpoint_a": "complete_fresh_worker_wall_ms",
+  "endpoint_b": "reconstructed_in_worker_stored_input_ms"
+}

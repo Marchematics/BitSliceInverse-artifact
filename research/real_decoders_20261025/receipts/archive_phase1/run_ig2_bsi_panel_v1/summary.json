@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "observations": 150,
+  "correctness_checks": 6,
+  "analysis_sha256": "079111397d9d6fb92fb8c44d58fe170185f500489bce83b22d67980e6c0b6e6e",
+  "prep": "results/ig2_prep_20261025/prepared/Observed",
+  "arrow": "results/arrow_ig2_v1/Observed_arrow/full18.arrow",
+  "duckdb": "results/run_ig2_panel_v12/Observed_duckdb/full18.duckdb",
+  "bsi_storage": "results/bsi_ig2_v1/Observed_bsi",
+  "binary_sha256": "35af22fdc9697ce8a544e6954a6efeebc4e7ebb4ed6d1f274bdd0bdc351f1920",
+  "arrow_python": "../../work/arrow25venv/bin/python",
+  "roaring_python": "../../work/roaringvenv/bin/python",
+  "preloaded_input_bytes": 13473733,
+  "host_load1_at_start": 2.23,
+  "host_load1_block_max": 2.28,
+  "pinned_core": 9,
+  "max_load": 15.0
+}

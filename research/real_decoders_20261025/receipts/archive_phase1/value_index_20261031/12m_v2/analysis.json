@@ -1,0 +1,29 @@
+{
+  "input": "NYC 12M encoded tree",
+  "index_bytes": 48525908,
+  "build_ms": 444.0,
+  "having_supported": true,
+  "results": {
+    "sum_pos": {
+      "query_median_ms": 0.5418,
+      "duckdb_ms": 82.8028,
+      "speedup_vs_duckdb": 152.82908822443707,
+      "exact": true,
+      "runs": 5
+    },
+    "count_range": {
+      "query_median_ms": 0.593,
+      "duckdb_ms": 90.3841,
+      "speedup_vs_duckdb": 152.41838111298483,
+      "exact": true,
+      "runs": 5
+    },
+    "min_pos": {
+      "query_median_ms": 0.4395,
+      "duckdb_ms": 86.8575,
+      "speedup_vs_duckdb": 197.62798634812287,
+      "exact": true,
+      "runs": 5
+    }
+  }
+}

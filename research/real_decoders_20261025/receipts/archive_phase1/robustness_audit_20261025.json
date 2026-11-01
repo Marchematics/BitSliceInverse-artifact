@@ -1,0 +1,413 @@
+{
+  "trim_factor": 1.5,
+  "rows": [
+    {
+      "panel": "run_ig2_panel_v12",
+      "contrast": "stream/generic",
+      "blocks": 30,
+      "full_ratio": 0.2231383588594961,
+      "trimmed_ratio": 0.2302251083231279,
+      "dropped": 1
+    },
+    {
+      "panel": "run_ig2_panel_v12",
+      "contrast": "stream/duckdb",
+      "blocks": 30,
+      "full_ratio": 0.006622932410307645,
+      "trimmed_ratio": 0.006622932410307645,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_panel_v12",
+      "contrast": "stream/arrow_full",
+      "blocks": 30,
+      "full_ratio": 0.017285209697666743,
+      "trimmed_ratio": 0.017285209697666743,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_panel_v12",
+      "contrast": "stream/vortex_full",
+      "blocks": 30,
+      "full_ratio": 0.018061687769679664,
+      "trimmed_ratio": 0.018061687769679664,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_panel_v12",
+      "contrast": "stream/vortex_proj",
+      "blocks": 30,
+      "full_ratio": 0.04878797140569022,
+      "trimmed_ratio": 0.04878797140569022,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred8_panel_v10",
+      "contrast": "stream/generic",
+      "blocks": 30,
+      "full_ratio": 0.1119916128247292,
+      "trimmed_ratio": 0.1119916128247292,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred8_panel_v10",
+      "contrast": "stream/duckdb",
+      "blocks": 30,
+      "full_ratio": 0.009221545439578276,
+      "trimmed_ratio": 0.009221545439578276,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred8_panel_v10",
+      "contrast": "stream/arrow_full",
+      "blocks": 30,
+      "full_ratio": 0.021252881223275084,
+      "trimmed_ratio": 0.021252881223275084,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred8_panel_v10",
+      "contrast": "stream/vortex_full",
+      "blocks": 30,
+      "full_ratio": 0.007337411657699045,
+      "trimmed_ratio": 0.007337411657699045,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred8_panel_v10",
+      "contrast": "stream/vortex_proj",
+      "blocks": 30,
+      "full_ratio": 0.04497577166675021,
+      "trimmed_ratio": 0.045596338069640294,
+      "dropped": 1
+    },
+    {
+      "panel": "run_citymax14_panel_v15",
+      "contrast": "stream/generic",
+      "blocks": 30,
+      "full_ratio": 0.15174234758933322,
+      "trimmed_ratio": 0.1485974848804577,
+      "dropped": 1
+    },
+    {
+      "panel": "run_citymax14_panel_v15",
+      "contrast": "stream/duckdb",
+      "blocks": 30,
+      "full_ratio": 0.02043804764119444,
+      "trimmed_ratio": 0.020051943714378753,
+      "dropped": 1
+    },
+    {
+      "panel": "run_citymax14_panel_v15",
+      "contrast": "stream/arrow_full",
+      "blocks": 30,
+      "full_ratio": 0.04941156017671873,
+      "trimmed_ratio": 0.04846076674675011,
+      "dropped": 1
+    },
+    {
+      "panel": "run_citymax14_panel_v15",
+      "contrast": "stream/vortex_full",
+      "blocks": 30,
+      "full_ratio": 0.01576592603275909,
+      "trimmed_ratio": 0.015461819435249748,
+      "dropped": 1
+    },
+    {
+      "panel": "run_citymax14_panel_v15",
+      "contrast": "stream/vortex_proj",
+      "blocks": 30,
+      "full_ratio": 0.07223226747779625,
+      "trimmed_ratio": 0.07078236995093097,
+      "dropped": 1
+    },
+    {
+      "panel": "run_hatred10_panel_v2",
+      "contrast": "stream/generic",
+      "blocks": 30,
+      "full_ratio": 0.11656484513495093,
+      "trimmed_ratio": 0.11656484513495093,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred10_panel_v2",
+      "contrast": "stream/duckdb",
+      "blocks": 30,
+      "full_ratio": 0.011291004747338513,
+      "trimmed_ratio": 0.011291004747338513,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred10_panel_v2",
+      "contrast": "stream/arrow_full",
+      "blocks": 30,
+      "full_ratio": 0.027335442334078783,
+      "trimmed_ratio": 0.027335442334078783,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred10_panel_v2",
+      "contrast": "stream/vortex_full",
+      "blocks": 30,
+      "full_ratio": 0.009077663405424466,
+      "trimmed_ratio": 0.009077663405424466,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred10_panel_v2",
+      "contrast": "stream/vortex_proj",
+      "blocks": 30,
+      "full_ratio": 0.05545982189630656,
+      "trimmed_ratio": 0.05545982189630656,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_scale15_panel_v6",
+      "contrast": "stream/generic",
+      "blocks": 30,
+      "full_ratio": 0.16181095371222065,
+      "trimmed_ratio": 0.16181095371222065,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_scale15_panel_v6",
+      "contrast": "stream/duckdb",
+      "blocks": 30,
+      "full_ratio": 0.05527495600522174,
+      "trimmed_ratio": 0.05527495600522174,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_scale15_panel_v6",
+      "contrast": "stream/arrow_full",
+      "blocks": 30,
+      "full_ratio": 0.04069452821130743,
+      "trimmed_ratio": 0.04069452821130743,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_scale15_panel_v6",
+      "contrast": "stream/vortex_full",
+      "blocks": 30,
+      "full_ratio": 0.01514041211616328,
+      "trimmed_ratio": 0.01514041211616328,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_scale15_panel_v6",
+      "contrast": "stream/vortex_proj",
+      "blocks": 30,
+      "full_ratio": 0.0690125878961605,
+      "trimmed_ratio": 0.0690125878961605,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_scale15shuf_panel_v3",
+      "contrast": "stream/generic",
+      "blocks": 30,
+      "full_ratio": 0.2975134786570277,
+      "trimmed_ratio": 0.2975134786570277,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_scale15shuf_panel_v3",
+      "contrast": "stream/duckdb",
+      "blocks": 30,
+      "full_ratio": 0.11798829449385861,
+      "trimmed_ratio": 0.11798829449385861,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_scale15shuf_panel_v3",
+      "contrast": "stream/arrow_full",
+      "blocks": 30,
+      "full_ratio": 0.07824443487056372,
+      "trimmed_ratio": 0.07824443487056372,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_scale15shuf_panel_v3",
+      "contrast": "stream/vortex_full",
+      "blocks": 30,
+      "full_ratio": 0.03135805651580409,
+      "trimmed_ratio": 0.03135805651580409,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_scale15shuf_panel_v3",
+      "contrast": "stream/vortex_proj",
+      "blocks": 30,
+      "full_ratio": 0.13677550210823944,
+      "trimmed_ratio": 0.13677550210823944,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_scale15blk_panel_v3",
+      "contrast": "stream/generic",
+      "blocks": 30,
+      "full_ratio": 0.1466478392380868,
+      "trimmed_ratio": 0.1466478392380868,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_scale15blk_panel_v3",
+      "contrast": "stream/duckdb",
+      "blocks": 30,
+      "full_ratio": 0.05882454788965214,
+      "trimmed_ratio": 0.05882454788965214,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_scale15blk_panel_v3",
+      "contrast": "stream/arrow_full",
+      "blocks": 30,
+      "full_ratio": 0.043759432552311316,
+      "trimmed_ratio": 0.043759432552311316,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_scale15blk_panel_v3",
+      "contrast": "stream/vortex_full",
+      "blocks": 30,
+      "full_ratio": 0.015852116235091643,
+      "trimmed_ratio": 0.015852116235091643,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_scale15blk_panel_v3",
+      "contrast": "stream/vortex_proj",
+      "blocks": 30,
+      "full_ratio": 0.07272977617744374,
+      "trimmed_ratio": 0.07272977617744374,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_bsi_panel_v1",
+      "contrast": "stream/generic",
+      "blocks": 30,
+      "full_ratio": 0.22703184679171792,
+      "trimmed_ratio": 0.22703184679171792,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_bsi_panel_v1",
+      "contrast": "stream/duckdb",
+      "blocks": 30,
+      "full_ratio": 0.00683546319807393,
+      "trimmed_ratio": 0.00683546319807393,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_bsi_panel_v1",
+      "contrast": "stream/arrow_full",
+      "blocks": 30,
+      "full_ratio": 0.019089847473461825,
+      "trimmed_ratio": 0.019089847473461825,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_bsi_panel_v1",
+      "contrast": "stream/bsi",
+      "blocks": 30,
+      "full_ratio": 0.11597535231291646,
+      "trimmed_ratio": 0.11597535231291646,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_bsi_scale15_panel_v1",
+      "contrast": "stream/generic",
+      "blocks": 30,
+      "full_ratio": 0.16162284517831627,
+      "trimmed_ratio": 0.16162284517831627,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_bsi_scale15_panel_v1",
+      "contrast": "stream/duckdb",
+      "blocks": 30,
+      "full_ratio": 0.05467264585821519,
+      "trimmed_ratio": 0.05467264585821519,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_bsi_scale15_panel_v1",
+      "contrast": "stream/arrow_full",
+      "blocks": 30,
+      "full_ratio": 0.03882678425294822,
+      "trimmed_ratio": 0.03882678425294822,
+      "dropped": 0
+    },
+    {
+      "panel": "run_ig2_bsi_scale15_panel_v1",
+      "contrast": "stream/bsi",
+      "blocks": 30,
+      "full_ratio": 0.2439313276134181,
+      "trimmed_ratio": 0.2439313276134181,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred8_roaring_panel_v1",
+      "contrast": "stream/generic",
+      "blocks": 30,
+      "full_ratio": 0.1102542515193723,
+      "trimmed_ratio": 0.1102542515193723,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred8_roaring_panel_v1",
+      "contrast": "stream/duckdb",
+      "blocks": 30,
+      "full_ratio": 0.009387270049420483,
+      "trimmed_ratio": 0.009387270049420483,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred8_roaring_panel_v1",
+      "contrast": "stream/arrow_full",
+      "blocks": 30,
+      "full_ratio": 0.02143290093883101,
+      "trimmed_ratio": 0.02143290093883101,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred8_roaring_panel_v1",
+      "contrast": "stream/bsi",
+      "blocks": 30,
+      "full_ratio": 0.3744476574410704,
+      "trimmed_ratio": 0.3744476574410704,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred10_roaring_panel_v1",
+      "contrast": "stream/generic",
+      "blocks": 30,
+      "full_ratio": 0.11377351179620175,
+      "trimmed_ratio": 0.11377351179620175,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred10_roaring_panel_v1",
+      "contrast": "stream/duckdb",
+      "blocks": 30,
+      "full_ratio": 0.011435003022287421,
+      "trimmed_ratio": 0.011435003022287421,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred10_roaring_panel_v1",
+      "contrast": "stream/arrow_full",
+      "blocks": 30,
+      "full_ratio": 0.027937371970345484,
+      "trimmed_ratio": 0.027937371970345484,
+      "dropped": 0
+    },
+    {
+      "panel": "run_hatred10_roaring_panel_v1",
+      "contrast": "stream/bsi",
+      "blocks": 30,
+      "full_ratio": 0.24254767443308684,
+      "trimmed_ratio": 0.24254767443308684,
+      "dropped": 0
+    }
+  ]
+}

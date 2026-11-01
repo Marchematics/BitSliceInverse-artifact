@@ -1,0 +1,94 @@
+{
+  "status": "passed",
+  "query": "citymax14",
+  "cases": 5,
+  "pyarrow_version": "25.0.1",
+  "python": "3.10.12",
+  "csv_sha256": "5563b0dc849b76899048aadf84b7bcec0d84bf0959987fe711e1d7009160ba01",
+  "ddl_sha256": "386d552da509c73c32e5008dcf362d107c0da542b466d8b80aed2fa32aeb180a",
+  "full_columns": 31,
+  "projected_columns": [
+    "City"
+  ],
+  "all_complete_results_equal_oracle": true,
+  "all_projected_values_verified": true,
+  "wall_s": 0.6180155277252197,
+  "scope": "external Arrow control files built from pinned CSV with declared DDL types; not a new measurement of the native method",
+  "records": [
+    {
+      "case": "AllNullCity",
+      "rows": 64,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_citymax14_v1/AllNullCity_arrow/full31.arrow",
+      "full_arrow_bytes": 17794,
+      "full_arrow_sha256": "9df68ac5baeb424ba1a8ef21cdd0a10ab913845c2cc31e69f9e5e74909b6a63d",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_citymax14_v1/AllNullCity_arrow/projected.arrow",
+      "projected_arrow_bytes": 730,
+      "projected_arrow_sha256": "1b991af7951a753467ef223897a9e49763190cc7ab3dae2a4f4720639c65b939",
+      "projected_columns": [
+        "City"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 64
+    },
+    {
+      "case": "Empty",
+      "rows": 0,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_citymax14_v1/Empty_arrow/full31.arrow",
+      "full_arrow_bytes": 3390,
+      "full_arrow_sha256": "4a8f3519e035108b05dac384428018a08bba2e82894e1e77dedbe90518264de7",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_citymax14_v1/Empty_arrow/projected.arrow",
+      "projected_arrow_bytes": 274,
+      "projected_arrow_sha256": "1d896a78a3a01174464b9ee1ce3c8247b4606c8a1f44ce5d9bf37c7ce1984a3a",
+      "projected_columns": [
+        "City"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 0
+    },
+    {
+      "case": "MixedNull",
+      "rows": 92,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_citymax14_v1/MixedNull_arrow/full31.arrow",
+      "full_arrow_bytes": 23786,
+      "full_arrow_sha256": "bc33d1000b2c2d88dd703927f3d60defb78e4f0c2deb16afad91c7ce234851c6",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_citymax14_v1/MixedNull_arrow/projected.arrow",
+      "projected_arrow_bytes": 1362,
+      "projected_arrow_sha256": "4f481fccbfc0d39c9f280adb1f893e08138dbe3c066f6ece7e8b87b28c629838",
+      "projected_columns": [
+        "City"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 92
+    },
+    {
+      "case": "Observed",
+      "rows": 65536,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_citymax14_v1/Observed_arrow/full31.arrow",
+      "full_arrow_bytes": 28005794,
+      "full_arrow_sha256": "0bbdf1496e28d5ce21b65b486a673a2aa823fbbb3b69eeb6ccf90edd08c845a7",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_citymax14_v1/Observed_arrow/projected.arrow",
+      "projected_arrow_bytes": 668730,
+      "projected_arrow_sha256": "26426e15298748487c93da24fb4696b39e4b7790a2fd63db6ab7236812300cde",
+      "projected_columns": [
+        "City"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 65536
+    },
+    {
+      "case": "Singleton",
+      "rows": 1,
+      "full_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_citymax14_v1/Singleton_arrow/full31.arrow",
+      "full_arrow_bytes": 5946,
+      "full_arrow_sha256": "acced258f05533db7fd73f7bf31b76a80161ee71f61ca1b5f0475cf6939d76e2",
+      "projected_arrow": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_citymax14_v1/Singleton_arrow/projected.arrow",
+      "projected_arrow_bytes": 474,
+      "projected_arrow_sha256": "a948cc8af189129df3fc96bb9ff74a4e039450ef0b08bc94dbd6dccf4fb1daad",
+      "projected_columns": [
+        "City"
+      ],
+      "complete_result_equals_oracle": true,
+      "projected_values_verified": 1
+    }
+  ]
+}

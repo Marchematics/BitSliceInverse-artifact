@@ -1,0 +1,66 @@
+{
+ "witness": "dense-addressing divergence between the two pinned build paths",
+ "dataset": {
+  "rows": 1000,
+  "groups": 3,
+  "values": 10,
+  "span_equals_V": true
+ },
+ "build_plain": {
+  "build_ms": 0.155,
+  "read_ms": 0.095,
+  "accum_ms": 0.013,
+  "prefix_ms": 0.014,
+  "write_ms": 0.032,
+  "groups": 3,
+  "values": 10,
+  "rows": 1000,
+  "bytes": 256,
+  "dense": 1,
+  "v2": 1
+ },
+ "build_dense0": {
+  "build_ms": 0.165,
+  "read_ms": 0.095,
+  "distinct_ms": 0.023,
+  "accum_ms": 0.013,
+  "prefix_ms": 0.0,
+  "write_ms": 0.034,
+  "format": 2,
+  "rows": 1000,
+  "groups": 3,
+  "values": 10,
+  "bytes": 336,
+  "has_null_group": 0,
+  "null_measure": 0
+ },
+ "sha256": {
+  "pinned_build_plain": "4cabbc328d90d88d575f89bb3ab5dd6ac5883cc8ea28bad900741d0d5c1eb796",
+  "dense0_build": "cddca9dd4348a5f22a2862e4cafc948d21e08c3f439b8b4f82dcbe579e470d98"
+ },
+ "sizes": {
+  "pinned_build_plain": 256,
+  "dense0_build": 336
+ },
+ "bytes_differ": true,
+ "query_answers": {
+  "<fixed>": {
+   "answers_identical": true,
+   "sha256": "323914ec5d12b18ffa329a9632046705aaf16bd7b2357a8955421a28d73db86e"
+  },
+  "hi=3": {
+   "answers_identical": true,
+   "sha256": "a786043ea623984738e067fbc74d1dcde57ee021a4f37372ca411a416ed86004"
+  },
+  "range=2,7": {
+   "answers_identical": true,
+   "sha256": "4d787c0a22c524e3c89a1174e4fee945fb3cbeef85b380f09ebdf6bdcbd90c00"
+  },
+  "where_in=1": {
+   "answers_identical": true,
+   "sha256": "2db3d76f9810299e5e5411ecf41add5de6a9d68486cb9a457903199a26d8d44e"
+  }
+ },
+ "all_answers_identical": true,
+ "conclusion": "the 'byte-identical from plain columns and from the encoded tree' receipt is conditional on span != V; on a contiguous observed value domain build_plain selects dense addressing while build_enc always writes dense=0, so the two pinned indexes differ in bytes (256 vs 336 here) while both remain exact. NYC-100M and TPC-H are unaffected (span != V)."
+}

@@ -1,0 +1,1155 @@
+{
+ "cube": "../../work/crossengine/data/nyc100_enc.ecube",
+ "dict": "../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict",
+ "duckdb_file": "../../research/real_decoders_20261024/results/nyc_taxi_100m_duckdb/nyc.duckdb",
+ "pinned_enc_cube": "../../research/real_decoders_20261024/src_eai_20261101/enc_cube",
+ "pin": "nice -n 5 taskset -c 112",
+ "specs": {
+  "fixed_all4": "",
+  "le_930": "hi=930",
+  "in_1_2": "where_in=1,2",
+  "having": "having=sum>=1e10",
+  "narrow": "range=80000000,90000000"
+ },
+ "engines": {
+  "cube_direct_load": {
+   "index_load_ms": 0.137156,
+   "format": 2,
+   "groups": 11,
+   "values": 21084,
+   "index_bytes": 1140124
+  },
+  "duckdb_table_function_load": {
+   "index_load_ms": 0.039606,
+   "format": 2,
+   "groups": 11,
+   "values": 21084,
+   "index_bytes": 1140124
+  },
+  "native_enc_cube": {
+   "protocol": "warm_in_process",
+   "cases": {
+    "fixed_all4": {
+     "setup_ms": 0.0585,
+     "query_median_ms": 0.001162,
+     "query_p95_ms": 0.001182,
+     "query_min_ms": 0.001151,
+     "serialize_median_ms": 0.001682,
+     "serialize_p95_ms": 0.001692,
+     "output_ms": 0.0921,
+     "reps": 500,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "checksum": 5268873891385537016
+    },
+    "le_930": {
+     "setup_ms": 0.0473,
+     "query_median_ms": 0.001132,
+     "query_p95_ms": 0.001142,
+     "query_min_ms": 0.001121,
+     "serialize_median_ms": 0.001612,
+     "serialize_p95_ms": 0.001613,
+     "output_ms": 0.1094,
+     "reps": 500,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "checksum": 17190302623614417712
+    },
+    "in_1_2": {
+     "setup_ms": 0.0397,
+     "query_median_ms": 0.00024,
+     "query_p95_ms": 0.000241,
+     "query_min_ms": 0.00023,
+     "serialize_median_ms": 0.000331,
+     "serialize_p95_ms": 0.000341,
+     "output_ms": 0.0639,
+     "reps": 500,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "checksum": 4563274984451552112
+    },
+    "having": {
+     "setup_ms": 0.0451,
+     "query_median_ms": 0.001152,
+     "query_p95_ms": 0.001162,
+     "query_min_ms": 0.001151,
+     "serialize_median_ms": 0.001932,
+     "serialize_p95_ms": 0.001933,
+     "output_ms": 0.0625,
+     "reps": 500,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "checksum": 5268873891385363516
+    },
+    "narrow": {
+     "setup_ms": 0.0458,
+     "query_median_ms": 0.00011,
+     "query_p95_ms": 0.000111,
+     "query_min_ms": 0.0001,
+     "serialize_median_ms": 0.000151,
+     "serialize_p95_ms": 0.000161,
+     "output_ms": 0.0581,
+     "reps": 500,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "checksum": 2736406654536731096
+    }
+   }
+  },
+  "duckdb_table_function_warm": {
+   "protocol": "bench",
+   "cases": {
+    "fixed_all4": {
+     "engine": "duckdb",
+     "protocol": "warm_engine_resident",
+     "format": 2,
+     "groups": 11,
+     "values": 21084,
+     "index_bytes": 1140124,
+     "index_load_ms": 0.067056,
+     "bind_ms": 0.003116,
+     "init_ms": 0.003047,
+     "sql_median_ms": 0.340999,
+     "sql_min_ms": 0.331996,
+     "sql_p95_ms": 0.36249,
+     "reps": 500,
+     "rows": 11
+    },
+    "le_930": {
+     "engine": "duckdb",
+     "protocol": "warm_engine_resident",
+     "format": 2,
+     "groups": 11,
+     "values": 21084,
+     "index_bytes": 1140124,
+     "index_load_ms": 0.078463,
+     "bind_ms": 0.00376,
+     "init_ms": 0.002815,
+     "sql_median_ms": 0.343493,
+     "sql_min_ms": 0.329843,
+     "sql_p95_ms": 0.362289,
+     "reps": 500,
+     "rows": 11
+    },
+    "in_1_2": {
+     "engine": "duckdb",
+     "protocol": "warm_engine_resident",
+     "format": 2,
+     "groups": 11,
+     "values": 21084,
+     "index_bytes": 1140124,
+     "index_load_ms": 0.079604,
+     "bind_ms": 0.003876,
+     "init_ms": 0.001262,
+     "sql_median_ms": 0.346927,
+     "sql_min_ms": 0.335511,
+     "sql_p95_ms": 0.365815,
+     "reps": 500,
+     "rows": 2
+    },
+    "having": {
+     "engine": "duckdb",
+     "protocol": "warm_engine_resident",
+     "format": 2,
+     "groups": 11,
+     "values": 21084,
+     "index_bytes": 1140124,
+     "index_load_ms": 0.073876,
+     "bind_ms": 0.004035,
+     "init_ms": 0.002948,
+     "sql_median_ms": 0.342892,
+     "sql_min_ms": 0.331465,
+     "sql_p95_ms": 0.360236,
+     "reps": 500,
+     "rows": 11
+    },
+    "narrow": {
+     "engine": "duckdb",
+     "protocol": "warm_engine_resident",
+     "format": 2,
+     "groups": 11,
+     "values": 21084,
+     "index_bytes": 1140124,
+     "index_load_ms": 0.074547,
+     "bind_ms": 0.003854,
+     "init_ms": 0.000892,
+     "sql_median_ms": 0.338906,
+     "sql_min_ms": 0.327569,
+     "sql_p95_ms": 0.356661,
+     "reps": 500,
+     "rows": 1
+    }
+   }
+  },
+  "duckdb_table_function_warm_prepared": {
+   "protocol": "benchp",
+   "cases": {
+    "fixed_all4": {
+     "engine": "duckdb",
+     "protocol": "warm_prepared",
+     "format": 2,
+     "groups": 11,
+     "values": 21084,
+     "index_bytes": 1140124,
+     "index_load_ms": 0.070902,
+     "bind_ms": 0.003108,
+     "init_ms": 0.002741,
+     "sql_median_ms": 0.2652,
+     "sql_min_ms": 0.25795,
+     "sql_p95_ms": 0.284117,
+     "reps": 500,
+     "rows": 0
+    },
+    "le_930": {
+     "engine": "duckdb",
+     "protocol": "warm_prepared",
+     "format": 2,
+     "groups": 11,
+     "values": 21084,
+     "index_bytes": 1140124,
+     "index_load_ms": 0.074556,
+     "bind_ms": 0.003555,
+     "init_ms": 0.002806,
+     "sql_median_ms": 0.266752,
+     "sql_min_ms": 0.261535,
+     "sql_p95_ms": 0.291047,
+     "reps": 500,
+     "rows": 0
+    },
+    "in_1_2": {
+     "engine": "duckdb",
+     "protocol": "warm_prepared",
+     "format": 2,
+     "groups": 11,
+     "values": 21084,
+     "index_bytes": 1140124,
+     "index_load_ms": 0.077692,
+     "bind_ms": 0.003798,
+     "init_ms": 0.001243,
+     "sql_median_ms": 0.268535,
+     "sql_min_ms": 0.264248,
+     "sql_p95_ms": 0.28589,
+     "reps": 500,
+     "rows": 0
+    },
+    "having": {
+     "engine": "duckdb",
+     "protocol": "warm_prepared",
+     "format": 2,
+     "groups": 11,
+     "values": 21084,
+     "index_bytes": 1140124,
+     "index_load_ms": 0.074978,
+     "bind_ms": 0.003872,
+     "init_ms": 0.002805,
+     "sql_median_ms": 0.26522,
+     "sql_min_ms": 0.260924,
+     "sql_p95_ms": 0.282054,
+     "reps": 500,
+     "rows": 0
+    },
+    "narrow": {
+     "engine": "duckdb",
+     "protocol": "warm_prepared",
+     "format": 2,
+     "groups": 11,
+     "values": 21084,
+     "index_bytes": 1140124,
+     "index_load_ms": 0.071392,
+     "bind_ms": 0.003722,
+     "init_ms": 0.00086,
+     "sql_median_ms": 0.25833,
+     "sql_min_ms": 0.254595,
+     "sql_p95_ms": 0.277779,
+     "reps": 500,
+     "rows": 0
+    }
+   }
+  },
+  "datafusion_warm": {
+   "protocol": "warm_engine_resident",
+   "cases": {
+    "fixed_all4": {
+     "engine": "datafusion",
+     "protocol": "warm_engine_resident",
+     "datafusion_version": "55.0.0",
+     "spec": "",
+     "sql": "SELECT name, sum, count, min, max FROM ecube('../../work/crossengine/data/nyc100_enc.ecube','../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict','') ORDER BY name",
+     "index_load_ms": 1.3552322052419186,
+     "floor_median_ms": 0.22988440468907356,
+     "format": 2,
+     "groups": 11,
+     "values": 21084,
+     "median_ms": 0.8730671834200621,
+     "min_ms": 0.8592219091951847,
+     "p95_ms": 0.8965861052274704,
+     "reps": 100,
+     "rows": 11,
+     "result": {
+      "name": [
+       "0",
+       "1",
+       "2",
+       "3",
+       "4",
+       "5",
+       "6",
+       "7",
+       "8",
+       "9",
+       "NULL"
+      ],
+      "sum": [
+       "1903976477",
+       "128292723154",
+       "28404813736",
+       "6756713396",
+       "4495283753",
+       "1695472138",
+       "1092259031",
+       "1043835",
+       "3883546",
+       "857711",
+       "17795107614"
+      ],
+      "count": [
+       "1105921",
+       "69403235",
+       "13276935",
+       "3186488",
+       "1936451",
+       "897123",
+       "586835",
+       "164",
+       "500",
+       "105",
+       "9606243"
+      ],
+      "min": [
+       "-38318",
+       "-226119",
+       "-128540",
+       "-99900",
+       "-99490",
+       "-15900",
+       "-7000",
+       "-7000",
+       "-9000",
+       "-9900",
+       "-43251"
+      ],
+      "max": [
+       "5055868",
+       "86337212",
+       "18750296",
+       "38698363",
+       "104040",
+       "82130",
+       "630090",
+       "12000",
+       "28222",
+       "13000",
+       "979200"
+      ]
+     }
+    },
+    "le_930": {
+     "engine": "datafusion",
+     "protocol": "warm_engine_resident",
+     "datafusion_version": "55.0.0",
+     "spec": "hi=930",
+     "sql": "SELECT name, sum, count, min, max FROM ecube('../../work/crossengine/data/nyc100_enc.ecube','../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict','hi=930') ORDER BY name",
+     "index_load_ms": 1.3505169190466404,
+     "floor_median_ms": 0.2327540423721075,
+     "format": 2,
+     "groups": 11,
+     "values": 21084,
+     "median_ms": 0.8885134011507034,
+     "min_ms": 0.8748453110456467,
+     "p95_ms": 0.9126388467848301,
+     "reps": 100,
+     "rows": 11,
+     "result": {
+      "name": [
+       "0",
+       "1",
+       "2",
+       "3",
+       "4",
+       "5",
+       "6",
+       "7",
+       "8",
+       "9",
+       "NULL"
+      ],
+      "sum": [
+       "256879308",
+       "12430699493",
+       "1844456347",
+       "421316110",
+       "154983131",
+       "183187443",
+       "121618062",
+       "911",
+       "-56611",
+       "-16818",
+       "295846909"
+      ],
+      "count": [
+       "365787",
+       "20931300",
+       "3566795",
+       "835702",
+       "466407",
+       "257253",
+       "169234",
+       "21",
+       "37",
+       "7",
+       "1837635"
+      ],
+      "min": [
+       "-38318",
+       "-226119",
+       "-128540",
+       "-99900",
+       "-99490",
+       "-15900",
+       "-7000",
+       "-7000",
+       "-9000",
+       "-9900",
+       "-43251"
+      ],
+      "max": [
+       "930",
+       "930",
+       "930",
+       "930",
+       "930",
+       "930",
+       "930",
+       "800",
+       "911",
+       "910",
+       "930"
+      ]
+     }
+    },
+    "in_1_2": {
+     "engine": "datafusion",
+     "protocol": "warm_engine_resident",
+     "datafusion_version": "55.0.0",
+     "spec": "where_in=1,2",
+     "sql": "SELECT name, sum, count, min, max FROM ecube('../../work/crossengine/data/nyc100_enc.ecube','../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict','where_in=1,2') ORDER BY name",
+     "index_load_ms": 1.3546422123908997,
+     "floor_median_ms": 0.22854749113321304,
+     "format": 2,
+     "groups": 11,
+     "values": 21084,
+     "median_ms": 0.8657209109514952,
+     "min_ms": 0.8493778295814991,
+     "p95_ms": 0.8934410288929939,
+     "reps": 100,
+     "rows": 2,
+     "result": {
+      "name": [
+       "1",
+       "2"
+      ],
+      "sum": [
+       "128292723154",
+       "28404813736"
+      ],
+      "count": [
+       "69403235",
+       "13276935"
+      ],
+      "min": [
+       "-226119",
+       "-128540"
+      ],
+      "max": [
+       "86337212",
+       "18750296"
+      ]
+     }
+    },
+    "having": {
+     "engine": "datafusion",
+     "protocol": "warm_engine_resident",
+     "datafusion_version": "55.0.0",
+     "spec": "having=sum>=1e10",
+     "sql": "SELECT name, sum, count, min, max FROM ecube('../../work/crossengine/data/nyc100_enc.ecube','../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict','having=sum>=1e10') ORDER BY name",
+     "index_load_ms": 1.3473713770508766,
+     "floor_median_ms": 0.22894307039678097,
+     "format": 2,
+     "groups": 11,
+     "values": 21084,
+     "median_ms": 0.8878123480826616,
+     "min_ms": 0.872892327606678,
+     "p95_ms": 0.9107356891036034,
+     "reps": 100,
+     "rows": 3,
+     "result": {
+      "name": [
+       "1",
+       "2",
+       "NULL"
+      ],
+      "sum": [
+       "128292723154",
+       "28404813736",
+       "17795107614"
+      ],
+      "count": [
+       "69403235",
+       "13276935",
+       "9606243"
+      ],
+      "min": [
+       "-226119",
+       "-128540",
+       "-43251"
+      ],
+      "max": [
+       "86337212",
+       "18750296",
+       "979200"
+      ]
+     }
+    },
+    "narrow": {
+     "engine": "datafusion",
+     "protocol": "warm_engine_resident",
+     "datafusion_version": "55.0.0",
+     "spec": "range=80000000,90000000",
+     "sql": "SELECT name, sum, count, min, max FROM ecube('../../work/crossengine/data/nyc100_enc.ecube','../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict','range=80000000,90000000') ORDER BY name",
+     "index_load_ms": 1.3450989499688148,
+     "floor_median_ms": 0.22865179926156998,
+     "format": 2,
+     "groups": 11,
+     "values": 21084,
+     "median_ms": 0.8154490496963263,
+     "min_ms": 0.7990356534719467,
+     "p95_ms": 0.8338745683431625,
+     "reps": 100,
+     "rows": 1,
+     "result": {
+      "name": [
+       "1"
+      ],
+      "sum": [
+       "86337212"
+      ],
+      "count": [
+       "1"
+      ],
+      "min": [
+       "86337212"
+      ],
+      "max": [
+       "86337212"
+      ]
+     }
+    }
+   }
+  },
+  "native_enc_cube_cold": {
+   "protocol": "cold_process",
+   "cases": {
+    "fixed_all4": {
+     "median_ms": 2.2796178236603737,
+     "min_ms": 2.2146948613226414,
+     "p95_ms": 3.247915767133236,
+     "reps": 20,
+     "internal": {
+      "setup_ms": 0.0663,
+      "query_median_ms": 0.002503,
+      "query_p95_ms": 0.002503,
+      "query_min_ms": 0.002503,
+      "serialize_median_ms": 0.0073,
+      "serialize_p95_ms": 0.0073,
+      "output_ms": 0.0838,
+      "reps": 1,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "checksum": 8274679092804650198
+     }
+    },
+    "le_930": {
+     "median_ms": 2.2610919550061226,
+     "min_ms": 2.2280141711235046,
+     "p95_ms": 3.098621964454651,
+     "reps": 20,
+     "internal": {
+      "setup_ms": 0.0547,
+      "query_median_ms": 0.002533,
+      "query_p95_ms": 0.002533,
+      "query_min_ms": 0.002533,
+      "serialize_median_ms": 0.00714,
+      "serialize_p95_ms": 0.00714,
+      "output_ms": 0.0836,
+      "reps": 1,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "checksum": 8077161021384593340
+     }
+    },
+    "in_1_2": {
+     "median_ms": 2.2024582140147686,
+     "min_ms": 2.165675163269043,
+     "p95_ms": 3.16073140129447,
+     "reps": 20,
+     "internal": {
+      "setup_ms": 0.0577,
+      "query_median_ms": 0.000931,
+      "query_p95_ms": 0.000931,
+      "query_min_ms": 0.000931,
+      "serialize_median_ms": 0.005538,
+      "serialize_p95_ms": 0.005538,
+      "output_ms": 0.0658,
+      "reps": 1,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "checksum": 2517883743993402124
+     }
+    },
+    "having": {
+     "median_ms": 2.2876588627696037,
+     "min_ms": 2.2156471386551857,
+     "p95_ms": 3.421435132622719,
+     "reps": 20,
+     "internal": {
+      "setup_ms": 0.0508,
+      "query_median_ms": 0.002474,
+      "query_p95_ms": 0.002474,
+      "query_min_ms": 0.002474,
+      "serialize_median_ms": 0.014952,
+      "serialize_p95_ms": 0.014952,
+      "output_ms": 0.0745,
+      "reps": 1,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "checksum": 8274679092804649851
+     }
+    },
+    "narrow": {
+     "median_ms": 2.226891927421093,
+     "min_ms": 2.201465889811516,
+     "p95_ms": 3.199587110430002,
+     "reps": 20,
+     "internal": {
+      "setup_ms": 0.0608,
+      "query_median_ms": 0.000391,
+      "query_p95_ms": 0.000391,
+      "query_min_ms": 0.000391,
+      "serialize_median_ms": 0.004507,
+      "serialize_p95_ms": 0.004507,
+      "output_ms": 0.0661,
+      "reps": 1,
+      "bytes": 1140124,
+      "groups": 11,
+      "values": 21084,
+      "checksum": 8085146717593857070
+     }
+    }
+   }
+  },
+  "cube_direct_cold": {
+   "protocol": "cold_process",
+   "cases": {
+    "fixed_all4": {
+     "median_ms": 2.184020821005106,
+     "min_ms": 2.1521751768887043,
+     "p95_ms": 3.460702020674944,
+     "reps": 20,
+     "internal": {
+      "engine": "direct",
+      "protocol": "cold_process",
+      "format": 2,
+      "index_load_ms": 0.086684,
+      "reduce_ms": 0.047218,
+      "json_ms": 0.007611,
+      "t_main_to_done_ms": 0.141513,
+      "json_bytes": 514,
+      "rows": 11,
+      "index_bytes": 1140124,
+      "checksum": 17399750870495781993
+     }
+    },
+    "le_930": {
+     "median_ms": 2.2432669065892696,
+     "min_ms": 2.1945969201624393,
+     "p95_ms": 2.677678596228361,
+     "reps": 20,
+     "internal": {
+      "engine": "direct",
+      "protocol": "cold_process",
+      "format": 2,
+      "index_load_ms": 0.096768,
+      "reduce_ms": 0.057623,
+      "json_ms": 0.0073,
+      "t_main_to_done_ms": 0.161691,
+      "json_bytes": 456,
+      "rows": 11,
+      "index_bytes": 1140124,
+      "checksum": 13206404691825255761
+     }
+    },
+    "in_1_2": {
+     "median_ms": 2.1225730888545513,
+     "min_ms": 2.0606238394975662,
+     "p95_ms": 3.0745472759008408,
+     "reps": 20,
+     "internal": {
+      "engine": "direct",
+      "protocol": "cold_process",
+      "format": 2,
+      "index_load_ms": 0.095537,
+      "reduce_ms": 0.020159,
+      "json_ms": 0.006649,
+      "t_main_to_done_ms": 0.122345,
+      "json_bytes": 116,
+      "rows": 2,
+      "index_bytes": 1140124,
+      "checksum": 2058107474639973246
+     }
+    },
+    "having": {
+     "median_ms": 2.184352371841669,
+     "min_ms": 2.1377447992563248,
+     "p95_ms": 2.482519019395113,
+     "reps": 20,
+     "internal": {
+      "engine": "direct",
+      "protocol": "cold_process",
+      "format": 2,
+      "index_load_ms": 0.089148,
+      "reduce_ms": 0.04894,
+      "json_ms": 0.013679,
+      "t_main_to_done_ms": 0.151767,
+      "json_bytes": 167,
+      "rows": 11,
+      "index_bytes": 1140124,
+      "checksum": 17399750870495781993
+     }
+    },
+    "narrow": {
+     "median_ms": 2.1742573007941246,
+     "min_ms": 2.1431720815598965,
+     "p95_ms": 2.7215220034122467,
+     "reps": 20,
+     "internal": {
+      "engine": "direct",
+      "protocol": "cold_process",
+      "format": 2,
+      "index_load_ms": 0.101625,
+      "reduce_ms": 0.042972,
+      "json_ms": 0.005998,
+      "t_main_to_done_ms": 0.150595,
+      "json_bytes": 54,
+      "rows": 1,
+      "index_bytes": 1140124,
+      "checksum": 259011638
+     }
+    }
+   }
+  },
+  "duckdb_table_function_cold": {
+   "protocol": "cold_process",
+   "cases": {
+    "fixed_all4": {
+     "median_ms": 61.460213270038366,
+     "min_ms": 60.616163071244955,
+     "p95_ms": 69.07422002404928,
+     "reps": 20,
+     "internal": {
+      "engine": "duckdb",
+      "protocol": "cold_process",
+      "format": 2,
+      "t_main_to_done_ms": 40.988304,
+      "engine_open_ms": 36.916345,
+      "index_load_ms": 0.069289,
+      "bind_ms": 0.084931,
+      "init_ms": 0.08335,
+      "sql_ms": 4.071959,
+      "rows": 11,
+      "engine_rows": [
+       [
+        "0",
+        1903976477,
+        1105921,
+        -38318,
+        5055868
+       ],
+       [
+        "1",
+        128292723154,
+        69403235,
+        -226119,
+        86337212
+       ],
+       [
+        "2",
+        28404813736,
+        13276935,
+        -128540,
+        18750296
+       ],
+       [
+        "3",
+        6756713396,
+        3186488,
+        -99900,
+        38698363
+       ],
+       [
+        "4",
+        4495283753,
+        1936451,
+        -99490,
+        104040
+       ],
+       [
+        "5",
+        1695472138,
+        897123,
+        -15900,
+        82130
+       ],
+       [
+        "6",
+        1092259031,
+        586835,
+        -7000,
+        630090
+       ],
+       [
+        "7",
+        1043835,
+        164,
+        -7000,
+        12000
+       ],
+       [
+        "8",
+        3883546,
+        500,
+        -9000,
+        28222
+       ],
+       [
+        "9",
+        857711,
+        105,
+        -9900,
+        13000
+       ],
+       [
+        "NULL",
+        17795107614,
+        9606243,
+        -43251,
+        979200
+       ]
+      ]
+     }
+    },
+    "le_930": {
+     "median_ms": 61.75503600388765,
+     "min_ms": 60.08683377876878,
+     "p95_ms": 65.47530880197883,
+     "reps": 20,
+     "internal": {
+      "engine": "duckdb",
+      "protocol": "cold_process",
+      "format": 2,
+      "t_main_to_done_ms": 35.745136,
+      "engine_open_ms": 31.746043,
+      "index_load_ms": 0.066485,
+      "bind_ms": 0.084891,
+      "init_ms": 0.080015,
+      "sql_ms": 3.999093,
+      "rows": 11,
+      "engine_rows": [
+       [
+        "0",
+        256879308,
+        365787,
+        -38318,
+        930
+       ],
+       [
+        "1",
+        12430699493,
+        20931300,
+        -226119,
+        930
+       ],
+       [
+        "2",
+        1844456347,
+        3566795,
+        -128540,
+        930
+       ],
+       [
+        "3",
+        421316110,
+        835702,
+        -99900,
+        930
+       ],
+       [
+        "4",
+        154983131,
+        466407,
+        -99490,
+        930
+       ],
+       [
+        "5",
+        183187443,
+        257253,
+        -15900,
+        930
+       ],
+       [
+        "6",
+        121618062,
+        169234,
+        -7000,
+        930
+       ],
+       [
+        "7",
+        911,
+        21,
+        -7000,
+        800
+       ],
+       [
+        "8",
+        -56611,
+        37,
+        -9000,
+        911
+       ],
+       [
+        "9",
+        -16818,
+        7,
+        -9900,
+        910
+       ],
+       [
+        "NULL",
+        295846909,
+        1837635,
+        -43251,
+        930
+       ]
+      ]
+     }
+    },
+    "in_1_2": {
+     "median_ms": 62.12013913318515,
+     "min_ms": 60.7972526922822,
+     "p95_ms": 69.37096314504743,
+     "reps": 20,
+     "internal": {
+      "engine": "duckdb",
+      "protocol": "cold_process",
+      "format": 2,
+      "t_main_to_done_ms": 35.937842,
+      "engine_open_ms": 32.052111,
+      "index_load_ms": 0.075638,
+      "bind_ms": 0.094145,
+      "init_ms": 0.028201,
+      "sql_ms": 3.885731,
+      "rows": 2,
+      "engine_rows": [
+       [
+        "1",
+        128292723154,
+        69403235,
+        -226119,
+        86337212
+       ],
+       [
+        "2",
+        28404813736,
+        13276935,
+        -128540,
+        18750296
+       ]
+      ]
+     }
+    },
+    "having": {
+     "median_ms": 61.507420148700476,
+     "min_ms": 60.66210800781846,
+     "p95_ms": 65.47468714416027,
+     "reps": 20,
+     "internal": {
+      "engine": "duckdb",
+      "protocol": "cold_process",
+      "format": 2,
+      "t_main_to_done_ms": 36.46663,
+      "engine_open_ms": 32.245278,
+      "index_load_ms": 0.06935,
+      "bind_ms": 0.092813,
+      "init_ms": 0.070901,
+      "sql_ms": 4.221352,
+      "rows": 11,
+      "engine_rows": [
+       [
+        "0",
+        1903976477,
+        1105921,
+        -38318,
+        5055868
+       ],
+       [
+        "1",
+        128292723154,
+        69403235,
+        -226119,
+        86337212
+       ],
+       [
+        "2",
+        28404813736,
+        13276935,
+        -128540,
+        18750296
+       ],
+       [
+        "3",
+        6756713396,
+        3186488,
+        -99900,
+        38698363
+       ],
+       [
+        "4",
+        4495283753,
+        1936451,
+        -99490,
+        104040
+       ],
+       [
+        "5",
+        1695472138,
+        897123,
+        -15900,
+        82130
+       ],
+       [
+        "6",
+        1092259031,
+        586835,
+        -7000,
+        630090
+       ],
+       [
+        "7",
+        1043835,
+        164,
+        -7000,
+        12000
+       ],
+       [
+        "8",
+        3883546,
+        500,
+        -9000,
+        28222
+       ],
+       [
+        "9",
+        857711,
+        105,
+        -9900,
+        13000
+       ],
+       [
+        "NULL",
+        17795107614,
+        9606243,
+        -43251,
+        979200
+       ]
+      ]
+     }
+    },
+    "narrow": {
+     "median_ms": 61.49028521031141,
+     "min_ms": 60.52484083920717,
+     "p95_ms": 63.482801895588636,
+     "reps": 20,
+     "internal": {
+      "engine": "duckdb",
+      "protocol": "cold_process",
+      "format": 2,
+      "t_main_to_done_ms": 36.169615,
+      "engine_open_ms": 32.002541,
+      "index_load_ms": 0.075047,
+      "bind_ms": 0.093764,
+      "init_ms": 0.058555,
+      "sql_ms": 4.167074,
+      "rows": 1,
+      "engine_rows": [
+       [
+        "1",
+        86337212,
+        1,
+        86337212,
+        86337212
+       ]
+      ]
+     }
+    }
+   }
+  },
+  "duckdb_floor_unprepared": {
+   "engine": "duckdb",
+   "mode": "floor",
+   "protocol": "warm_engine_resident",
+   "sql": "SELECT 42 AS x",
+   "median_ms": 0.130247,
+   "min_ms": 0.121014,
+   "p95_ms": 0.138388,
+   "reps": 300
+  },
+  "duckdb_floor_prepared": {
+   "engine": "duckdb",
+   "mode": "floor",
+   "protocol": "warm_prepared",
+   "sql": "SELECT 42 AS x",
+   "median_ms": 0.054157,
+   "min_ms": 0.053106,
+   "p95_ms": 0.061148,
+   "reps": 300
+  },
+  "datafusion_floor": {
+   "median_ms": 0.22854236885905266,
+   "note": "SELECT 42, same loop shape",
+   "index_load_ms": 1.3398807495832443
+  }
+ },
+ "process_floor": {
+  "trivial_load_only_ms": 2.9126848094165325
+ }
+}

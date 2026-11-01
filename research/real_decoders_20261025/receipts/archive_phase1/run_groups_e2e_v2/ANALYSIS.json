@@ -1,0 +1,663 @@
+{
+  "format": "groups-e2e-lifecycle-analysis-v1",
+  "blocks": 30,
+  "endpoint_a": "complete fresh worker wall (launch->exit), ms",
+  "endpoint_b": "reconstructed stored-input interval, ms (native=setup+query+output; duckdb=one receipt)",
+  "bootstrap": {
+    "resamples": 10000,
+    "seed": 20261025,
+    "interval": "10,000 paired-block percentile bootstrap of geomean ratio",
+    "warning": "conditional-process intervals on one fixed host/sample, not population"
+  },
+  "profiles": {
+    "food1": {
+      "rows": 120,
+      "groups": 181,
+      "endpoint_a_ms": {
+        "decoded_blocks": {
+          "n": 30,
+          "median": 5.272380076348782,
+          "p95": 5.374671891331673,
+          "min": 4.915352910757065,
+          "max": 5.400918889790773
+        },
+        "paid_cache": {
+          "n": 30,
+          "median": 5.15166693367064,
+          "p95": 5.459152860566974,
+          "min": 5.03208115696907,
+          "max": 5.491510033607483
+        },
+        "packed_source": {
+          "n": 30,
+          "median": 5.052299005910754,
+          "p95": 5.162938963621855,
+          "min": 4.987576045095921,
+          "max": 5.179311148822308
+        },
+        "duckdb": {
+          "n": 30,
+          "median": 218.64896861370653,
+          "p95": 223.7557170446962,
+          "min": 215.15782200731337,
+          "max": 230.56258307769895
+        }
+      },
+      "endpoint_b_ms": {
+        "decoded_blocks": {
+          "n": 30,
+          "median": 2.8477550000000003,
+          "p95": 2.893462,
+          "min": 2.81676,
+          "max": 2.9052350000000002
+        },
+        "paid_cache": {
+          "n": 30,
+          "median": 2.9746975,
+          "p95": 3.0038389999999997,
+          "min": 2.9256499999999996,
+          "max": 3.011146
+        },
+        "packed_source": {
+          "n": 30,
+          "median": 2.9037610000000003,
+          "p95": 2.928612,
+          "min": 2.869298,
+          "max": 2.931457
+        },
+        "duckdb": {
+          "n": 30,
+          "median": 47.933102934621274,
+          "p95": 52.48200404457748,
+          "min": 46.17204982787371,
+          "max": 55.63772516325116
+        }
+      },
+      "endpoint_a_max_rss_kib_median": {
+        "decoded_blocks": 8162.0,
+        "paid_cache": 8160.0,
+        "packed_source": 8156.0,
+        "duckdb": 87450.0
+      },
+      "contrasts": {
+        "decoded_blocks/duckdb": {
+          "endpoint_a": {
+            "geomean_ratio": 0.02384556558260023,
+            "interval_95": [
+              0.023580145567417825,
+              0.024094420697447487
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.0592274592893664,
+            "interval_95": [
+              0.05836445864176208,
+              0.05998516455566758
+            ],
+            "blocks": 30
+          }
+        },
+        "paid_cache/duckdb": {
+          "endpoint_a": {
+            "geomean_ratio": 0.02380402284587001,
+            "interval_95": [
+              0.023568392764397268,
+              0.024055226485580943
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.06170090285693629,
+            "interval_95": [
+              0.0608005846962695,
+              0.06248775294826091
+            ],
+            "blocks": 30
+          }
+        },
+        "packed_source/duckdb": {
+          "endpoint_a": {
+            "geomean_ratio": 0.023147920105355834,
+            "interval_95": [
+              0.022998777689171516,
+              0.023281965305843744
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.06033303718552812,
+            "interval_95": [
+              0.05945283855664817,
+              0.06108513304720747
+            ],
+            "blocks": 30
+          }
+        },
+        "decoded_blocks/paid_cache": {
+          "endpoint_a": {
+            "geomean_ratio": 1.0017451981540768,
+            "interval_95": [
+              0.9907657408913146,
+              1.0129320421325603
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.9599123602242097,
+            "interval_95": [
+              0.9567368734187262,
+              0.9631057879831293
+            ],
+            "blocks": 30
+          }
+        },
+        "decoded_blocks/packed_source": {
+          "endpoint_a": {
+            "geomean_ratio": 1.0301385815256452,
+            "interval_95": [
+              1.018745743850605,
+              1.0410080132555601
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.981675414536782,
+            "interval_95": [
+              0.978608419453775,
+              0.9847406917558877
+            ],
+            "blocks": 30
+          }
+        }
+      }
+    },
+    "ig1": {
+      "rows": 120,
+      "groups": 48,
+      "endpoint_a_ms": {
+        "decoded_blocks": {
+          "n": 30,
+          "median": 4.725816077552736,
+          "p95": 4.845442017540336,
+          "min": 4.389228066429496,
+          "max": 4.910334944725037
+        },
+        "paid_cache": {
+          "n": 30,
+          "median": 4.6224071411415935,
+          "p95": 4.987566964700818,
+          "min": 4.526104079559445,
+          "max": 5.06230304017663
+        },
+        "packed_source": {
+          "n": 30,
+          "median": 4.633793490938842,
+          "p95": 4.784273914992809,
+          "min": 4.5602330937981606,
+          "max": 4.847916075959802
+        },
+        "duckdb": {
+          "n": 30,
+          "median": 217.99164451658726,
+          "p95": 224.12119107320905,
+          "min": 215.65156406722963,
+          "max": 224.41498097032309
+        }
+      },
+      "endpoint_b_ms": {
+        "decoded_blocks": {
+          "n": 30,
+          "median": 2.3194074999999996,
+          "p95": 2.3697310000000003,
+          "min": 2.272831,
+          "max": 2.6162400000000003
+        },
+        "paid_cache": {
+          "n": 30,
+          "median": 2.4287665,
+          "p95": 2.549288,
+          "min": 2.398104,
+          "max": 2.552979
+        },
+        "packed_source": {
+          "n": 30,
+          "median": 2.485049,
+          "p95": 2.569266,
+          "min": 2.4442630000000003,
+          "max": 2.6051370000000005
+        },
+        "duckdb": {
+          "n": 30,
+          "median": 47.15581540949643,
+          "p95": 51.90779804252088,
+          "min": 46.03842808865011,
+          "max": 53.70323406532407
+        }
+      },
+      "endpoint_a_max_rss_kib_median": {
+        "decoded_blocks": 8156.0,
+        "paid_cache": 8160.0,
+        "packed_source": 8146.0,
+        "duckdb": 87556.0
+      },
+      "contrasts": {
+        "decoded_blocks/duckdb": {
+          "endpoint_a": {
+            "geomean_ratio": 0.02144771917480011,
+            "interval_95": [
+              0.021202134245650872,
+              0.021666202142980446
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.04893170972979491,
+            "interval_95": [
+              0.0481895382424899,
+              0.04966103598840148
+            ],
+            "blocks": 30
+          }
+        },
+        "paid_cache/duckdb": {
+          "endpoint_a": {
+            "geomean_ratio": 0.021471393247511256,
+            "interval_95": [
+              0.021195255519585083,
+              0.021768299829283386
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.05135893175483086,
+            "interval_95": [
+              0.050600803728169906,
+              0.052024858239561746
+            ],
+            "blocks": 30
+          }
+        },
+        "packed_source/duckdb": {
+          "endpoint_a": {
+            "geomean_ratio": 0.021294073957717572,
+            "interval_95": [
+              0.021158852912438342,
+              0.021439195056866645
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.05255833811076381,
+            "interval_95": [
+              0.051871427612150314,
+              0.05318907309224335
+            ],
+            "blocks": 30
+          }
+        },
+        "decoded_blocks/paid_cache": {
+          "endpoint_a": {
+            "geomean_ratio": 0.9988974132959957,
+            "interval_95": [
+              0.9844742441191437,
+              1.0134452131971237
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.9527400212172901,
+            "interval_95": [
+              0.9438782747308887,
+              0.9638925394200384
+            ],
+            "blocks": 30
+          }
+        },
+        "decoded_blocks/packed_source": {
+          "endpoint_a": {
+            "geomean_ratio": 1.0072153979265603,
+            "interval_95": [
+              0.9949959110243477,
+              1.0186303555301979
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.9309980392963344,
+            "interval_95": [
+              0.92256329151353,
+              0.9416203346794717
+            ],
+            "blocks": 30
+          }
+        }
+      }
+    },
+    "iub1": {
+      "rows": 120,
+      "groups": 1688,
+      "endpoint_a_ms": {
+        "decoded_blocks": {
+          "n": 30,
+          "median": 4.013688419945538,
+          "p95": 5.271393107250333,
+          "min": 3.6294572055339813,
+          "max": 5.394099047407508
+        },
+        "paid_cache": {
+          "n": 30,
+          "median": 3.9300734642893076,
+          "p95": 4.558681044727564,
+          "min": 3.5914729814976454,
+          "max": 4.648840054869652
+        },
+        "packed_source": {
+          "n": 30,
+          "median": 3.784730681218207,
+          "p95": 4.538992885500193,
+          "min": 3.6446289159357548,
+          "max": 4.542937036603689
+        },
+        "duckdb": {
+          "n": 30,
+          "median": 239.54007553402334,
+          "p95": 244.16843801736832,
+          "min": 237.04140400514007,
+          "max": 247.94734711758792
+        }
+      },
+      "endpoint_b_ms": {
+        "decoded_blocks": {
+          "n": 30,
+          "median": 1.511844,
+          "p95": 2.690747,
+          "min": 1.4566949999999999,
+          "max": 2.865944
+        },
+        "paid_cache": {
+          "n": 30,
+          "median": 1.4930465,
+          "p95": 2.371497,
+          "min": 1.4221679999999999,
+          "max": 2.404112
+        },
+        "packed_source": {
+          "n": 30,
+          "median": 1.513428,
+          "p95": 2.2646319999999998,
+          "min": 1.476647,
+          "max": 2.2857200000000004
+        },
+        "duckdb": {
+          "n": 30,
+          "median": 68.27154953498393,
+          "p95": 72.06607912667096,
+          "min": 67.33441888354719,
+          "max": 75.65633906051517
+        }
+      },
+      "endpoint_a_max_rss_kib_median": {
+        "decoded_blocks": 8166.0,
+        "paid_cache": 8158.0,
+        "packed_source": 8160.0,
+        "duckdb": 91388.0
+      },
+      "contrasts": {
+        "decoded_blocks/duckdb": {
+          "endpoint_a": {
+            "geomean_ratio": 0.01730378071467026,
+            "interval_95": [
+              0.016653431424318133,
+              0.018036088630462684
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.024872852575877034,
+            "interval_95": [
+              0.023212476590488834,
+              0.02689352768590303
+            ],
+            "blocks": 30
+          }
+        },
+        "paid_cache/duckdb": {
+          "endpoint_a": {
+            "geomean_ratio": 0.016438062284518842,
+            "interval_95": [
+              0.01606908766110276,
+              0.016854083346259232
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.023420516365654422,
+            "interval_95": [
+              0.022187285746253,
+              0.024899869061232847
+            ],
+            "blocks": 30
+          }
+        },
+        "packed_source/duckdb": {
+          "endpoint_a": {
+            "geomean_ratio": 0.016245434904295728,
+            "interval_95": [
+              0.015864052037585678,
+              0.016667187975309326
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.024094533754329423,
+            "interval_95": [
+              0.022849323780315577,
+              0.02551243865924989
+            ],
+            "blocks": 30
+          }
+        },
+        "decoded_blocks/paid_cache": {
+          "endpoint_a": {
+            "geomean_ratio": 1.052665479371419,
+            "interval_95": [
+              1.0060441818407835,
+              1.1071417133130224
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 1.0620112805178124,
+            "interval_95": [
+              0.95726345843331,
+              1.183479417482122
+            ],
+            "blocks": 30
+          }
+        },
+        "decoded_blocks/packed_source": {
+          "endpoint_a": {
+            "geomean_ratio": 1.0651472747026722,
+            "interval_95": [
+              1.0058894313610942,
+              1.1271469284876259
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 1.0323027135317677,
+            "interval_95": [
+              0.9304945701880046,
+              1.1474751350783292
+            ],
+            "blocks": 30
+          }
+        }
+      }
+    },
+    "iub4": {
+      "rows": 120,
+      "groups": 349,
+      "endpoint_a_ms": {
+        "decoded_blocks": {
+          "n": 30,
+          "median": 3.0641915509477258,
+          "p95": 3.1925810035318136,
+          "min": 2.736346097663045,
+          "max": 3.2179870177060366
+        },
+        "paid_cache": {
+          "n": 30,
+          "median": 2.8506654780358076,
+          "p95": 3.118894062936306,
+          "min": 2.7330408338457346,
+          "max": 3.149108961224556
+        },
+        "packed_source": {
+          "n": 30,
+          "median": 2.8467895463109016,
+          "p95": 2.980075078085065,
+          "min": 2.774700988084078,
+          "max": 3.6803800612688065
+        },
+        "duckdb": {
+          "n": 30,
+          "median": 218.08022446930408,
+          "p95": 223.01327087916434,
+          "min": 216.17149305529892,
+          "max": 224.9221100937575
+        }
+      },
+      "endpoint_b_ms": {
+        "decoded_blocks": {
+          "n": 30,
+          "median": 0.637964,
+          "p95": 0.6623300000000001,
+          "min": 0.59249,
+          "max": 0.6740269999999999
+        },
+        "paid_cache": {
+          "n": 30,
+          "median": 0.6425069999999999,
+          "p95": 0.6697,
+          "min": 0.60645,
+          "max": 0.6864150000000001
+        },
+        "packed_source": {
+          "n": 30,
+          "median": 0.6775525,
+          "p95": 0.721426,
+          "min": 0.652156,
+          "max": 1.479542
+        },
+        "duckdb": {
+          "n": 30,
+          "median": 47.31396248098463,
+          "p95": 49.53332687728107,
+          "min": 46.54765408486128,
+          "max": 50.38134288042784
+        }
+      },
+      "endpoint_a_max_rss_kib_median": {
+        "decoded_blocks": 8160.0,
+        "paid_cache": 8204.0,
+        "packed_source": 8180.0,
+        "duckdb": 87306.0
+      },
+      "contrasts": {
+        "decoded_blocks/duckdb": {
+          "endpoint_a": {
+            "geomean_ratio": 0.013848425094979536,
+            "interval_95": [
+              0.013601340527702592,
+              0.014078155775881234
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.013424772025127128,
+            "interval_95": [
+              0.013261642368706524,
+              0.013578606444570988
+            ],
+            "blocks": 30
+          }
+        },
+        "paid_cache/duckdb": {
+          "endpoint_a": {
+            "geomean_ratio": 0.013248458864280782,
+            "interval_95": [
+              0.013036174587620103,
+              0.01347081937053481
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.01352792708274146,
+            "interval_95": [
+              0.01335452295989379,
+              0.013704597932831667
+            ],
+            "blocks": 30
+          }
+        },
+        "packed_source/duckdb": {
+          "endpoint_a": {
+            "geomean_ratio": 0.013194268129817043,
+            "interval_95": [
+              0.012998032185347518,
+              0.013480003462310174
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.014621229240056365,
+            "interval_95": [
+              0.014137639894968131,
+              0.015489174090321486
+            ],
+            "blocks": 30
+          }
+        },
+        "decoded_blocks/paid_cache": {
+          "endpoint_a": {
+            "geomean_ratio": 1.045285737521994,
+            "interval_95": [
+              1.0240450403690515,
+              1.067086371048771
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.992374658956735,
+            "interval_95": [
+              0.977370576675521,
+              1.0079790118011878
+            ],
+            "blocks": 30
+          }
+        },
+        "decoded_blocks/packed_source": {
+          "endpoint_a": {
+            "geomean_ratio": 1.0495788746087549,
+            "interval_95": [
+              1.0252193312095177,
+              1.0715446748820217
+            ],
+            "blocks": 30
+          },
+          "endpoint_b": {
+            "geomean_ratio": 0.918169861419626,
+            "interval_95": [
+              0.8651774557651889,
+              0.9517914129387651
+            ],
+            "blocks": 30
+          }
+        }
+      }
+    }
+  },
+  "retained_observations": 480
+}

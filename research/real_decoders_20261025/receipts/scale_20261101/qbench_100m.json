@@ -1,0 +1,2420 @@
+{
+ "cube": "../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube",
+ "cube_sha256": "c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6",
+ "dict": "../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict",
+ "reps": 30,
+ "results": {
+  "1": {
+   "fixed": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/qbench_100m_fixed.json 30 1",
+    "exit": 0,
+    "core_mask": "80",
+    "threads": 1,
+    "wall_s": 0.0072,
+    "time": {
+     "wall": 0.0,
+     "rss": 5436.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 1,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.069,
+     "warmup_ms": 0.071,
+     "query_median_ms": 0.0009,
+     "query_p95_ms": 0.0013,
+     "query_min_ms": 0.0009,
+     "serialize1_median_ms": 0.0006,
+     "serialize1_p95_ms": 0.001,
+     "serializeT_median_ms": 0.0006,
+     "serializeT_p95_ms": 0.0006,
+     "output_ms": 0.811,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 21084,
+     "checksum": 4436698847792244919,
+     "names_synthesized": 0,
+     "total_cnt": 100000000,
+     "total_sum": 190442134391,
+     "min_mn": -226119,
+     "max_mx": 86337212,
+     "group_chk": "18620628283119"
+    },
+    "rows": [
+     [
+      "0",
+      "1903976477",
+      "1105921",
+      "-38318",
+      "5055868"
+     ],
+     [
+      "1",
+      "128292723154",
+      "69403235",
+      "-226119",
+      "86337212"
+     ],
+     [
+      "2",
+      "28404813736",
+      "13276935",
+      "-128540",
+      "18750296"
+     ],
+     [
+      "3",
+      "6756713396",
+      "3186488",
+      "-99900",
+      "38698363"
+     ],
+     [
+      "4",
+      "4495283753",
+      "1936451",
+      "-99490",
+      "104040"
+     ],
+     [
+      "5",
+      "1695472138",
+      "897123",
+      "-15900",
+      "82130"
+     ],
+     [
+      "6",
+      "1092259031",
+      "586835",
+      "-7000",
+      "630090"
+     ],
+     [
+      "7",
+      "1043835",
+      "164",
+      "-7000",
+      "12000"
+     ],
+     [
+      "8",
+      "3883546",
+      "500",
+      "-9000",
+      "28222"
+     ],
+     [
+      "9",
+      "857711",
+      "105",
+      "-9900",
+      "13000"
+     ],
+     [
+      "NULL",
+      "17795107614",
+      "9606243",
+      "-43251",
+      "979200"
+     ]
+    ]
+   },
+   "le_m7000": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/qbench_100m_le_m7000.json 30 1 hi=-7000",
+    "exit": 0,
+    "core_mask": "80",
+    "threads": 1,
+    "wall_s": 0.0038,
+    "time": {
+     "wall": 0.0,
+     "rss": 5120.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 1,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.054,
+     "warmup_ms": 0.055,
+     "query_median_ms": 0.0008,
+     "query_p95_ms": 0.0011,
+     "query_min_ms": 0.0008,
+     "serialize1_median_ms": 0.0005,
+     "serialize1_p95_ms": 0.0009,
+     "serializeT_median_ms": 0.0005,
+     "serializeT_p95_ms": 0.0005,
+     "output_ms": 0.193,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 1928,
+     "checksum": 9805345105344182840,
+     "names_synthesized": 0,
+     "total_cnt": 135137,
+     "total_sum": -1123312851,
+     "min_mn": -226119,
+     "max_mx": -7000,
+     "group_chk": "37029343406"
+    },
+    "rows": [
+     [
+      "0",
+      "-364419",
+      "38",
+      "-38318",
+      "-7000"
+     ],
+     [
+      "1",
+      "-655689086",
+      "76631",
+      "-226119",
+      "-7000"
+     ],
+     [
+      "2",
+      "-314807400",
+      "40686",
+      "-128540",
+      "-7000"
+     ],
+     [
+      "3",
+      "-71768544",
+      "8731",
+      "-99900",
+      "-7000"
+     ],
+     [
+      "4",
+      "-78222780",
+      "8770",
+      "-99490",
+      "-7000"
+     ],
+     [
+      "5",
+      "-1066500",
+      "149",
+      "-15900",
+      "-7000"
+     ],
+     [
+      "6",
+      "-497000",
+      "71",
+      "-7000",
+      "-7000"
+     ],
+     [
+      "7",
+      "-7000",
+      "1",
+      "-7000",
+      "-7000"
+     ],
+     [
+      "8",
+      "-69100",
+      "8",
+      "-9000",
+      "-8000"
+     ],
+     [
+      "9",
+      "-19796",
+      "2",
+      "-9900",
+      "-9896"
+     ],
+     [
+      "NULL",
+      "-801226",
+      "50",
+      "-43251",
+      "-7023"
+     ]
+    ]
+   },
+   "le_m720": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/qbench_100m_le_m720.json 30 1 hi=-720",
+    "exit": 0,
+    "core_mask": "80",
+    "threads": 1,
+    "wall_s": 0.0059,
+    "time": {
+     "wall": 0.0,
+     "rss": 5432.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 1,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.056,
+     "warmup_ms": 0.064,
+     "query_median_ms": 0.0008,
+     "query_p95_ms": 0.0011,
+     "query_min_ms": 0.0008,
+     "serialize1_median_ms": 0.0005,
+     "serialize1_p95_ms": 0.001,
+     "serializeT_median_ms": 0.0005,
+     "serializeT_p95_ms": 0.0005,
+     "output_ms": 0.263,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 5250,
+     "checksum": 15488708107749510301,
+     "names_synthesized": 0,
+     "total_cnt": 1039800,
+     "total_sum": -2848291705,
+     "min_mn": -226119,
+     "max_mx": -720,
+     "group_chk": "-130281653539"
+    },
+    "rows": [
+     [
+      "0",
+      "-608674",
+      "147",
+      "-38318",
+      "-720"
+     ],
+     [
+      "1",
+      "-1907654214",
+      "730003",
+      "-226119",
+      "-720"
+     ],
+     [
+      "2",
+      "-593576705",
+      "181325",
+      "-128540",
+      "-720"
+     ],
+     [
+      "3",
+      "-150612030",
+      "47854",
+      "-99900",
+      "-720"
+     ],
+     [
+      "4",
+      "-149790984",
+      "44356",
+      "-99490",
+      "-720"
+     ],
+     [
+      "5",
+      "-1736420",
+      "791",
+      "-15900",
+      "-720"
+     ],
+     [
+      "6",
+      "-767704",
+      "315",
+      "-7000",
+      "-720"
+     ],
+     [
+      "7",
+      "-7725",
+      "2",
+      "-7000",
+      "-725"
+     ],
+     [
+      "8",
+      "-72213",
+      "10",
+      "-9000",
+      "-780"
+     ],
+     [
+      "9",
+      "-19796",
+      "2",
+      "-9900",
+      "-9896"
+     ],
+     [
+      "NULL",
+      "-43445240",
+      "34995",
+      "-43251",
+      "-720"
+     ]
+    ]
+   },
+   "le_650": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/qbench_100m_le_650.json 30 1 hi=650",
+    "exit": 0,
+    "core_mask": "80",
+    "threads": 1,
+    "wall_s": 0.0049,
+    "time": {
+     "wall": 0.0,
+     "rss": 5496.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 1,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.057,
+     "warmup_ms": 0.066,
+     "query_median_ms": 0.0008,
+     "query_p95_ms": 0.0013,
+     "query_min_ms": 0.0008,
+     "serialize1_median_ms": 0.0005,
+     "serialize1_p95_ms": 0.001,
+     "serializeT_median_ms": 0.0005,
+     "serializeT_p95_ms": 0.0005,
+     "output_ms": 0.186,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 6554,
+     "checksum": 18240093894909427540,
+     "names_synthesized": 0,
+     "total_cnt": 11909232,
+     "total_sum": 2060250425,
+     "min_mn": -226119,
+     "max_mx": 650,
+     "group_chk": "345988307720"
+    },
+    "rows": [
+     [
+      "0",
+      "78981402",
+      "150341",
+      "-38318",
+      "650"
+     ],
+     [
+      "1",
+      "2137739228",
+      "8480700",
+      "-226119",
+      "650"
+     ],
+     [
+      "2",
+      "50661475",
+      "1400378",
+      "-128540",
+      "650"
+     ],
+     [
+      "3",
+      "-6457330",
+      "319651",
+      "-99900",
+      "650"
+     ],
+     [
+      "4",
+      "-77338054",
+      "186678",
+      "-99490",
+      "650"
+     ],
+     [
+      "5",
+      "49208493",
+      "95243",
+      "-15900",
+      "650"
+     ],
+     [
+      "6",
+      "33034997",
+      "62125",
+      "-7000",
+      "650"
+     ],
+     [
+      "7",
+      "-6223",
+      "11",
+      "-7000",
+      "500"
+     ],
+     [
+      "8",
+      "-69529",
+      "21",
+      "-9000",
+      "500"
+     ],
+     [
+      "9",
+      "-18638",
+      "5",
+      "-9900",
+      "650"
+     ],
+     [
+      "NULL",
+      "-205485396",
+      "1214079",
+      "-43251",
+      "650"
+     ]
+    ]
+   },
+   "le_99900": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/qbench_100m_le_99900.json 30 1 hi=99900",
+    "exit": 0,
+    "core_mask": "80",
+    "threads": 1,
+    "wall_s": 0.0054,
+    "time": {
+     "wall": 0.0,
+     "rss": 5532.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 1,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.062,
+     "warmup_ms": 0.06,
+     "query_median_ms": 0.0009,
+     "query_p95_ms": 0.0013,
+     "query_min_ms": 0.0009,
+     "serialize1_median_ms": 0.0006,
+     "serialize1_p95_ms": 0.0009,
+     "serializeT_median_ms": 0.0006,
+     "serializeT_p95_ms": 0.0006,
+     "output_ms": 0.209,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 21001,
+     "checksum": 8410048007501124913,
+     "names_synthesized": 0,
+     "total_cnt": 99999914,
+     "total_sum": 190174677711,
+     "min_mn": -226119,
+     "max_mx": 99900,
+     "group_chk": "18594235133921"
+    },
+    "rows": [
+     [
+      "0",
+      "1895051405",
+      "1105908",
+      "-38318",
+      "81010"
+     ],
+     [
+      "1",
+      "128097584041",
+      "69403182",
+      "-226119",
+      "99900"
+     ],
+     [
+      "2",
+      "28383116124",
+      "13276924",
+      "-128540",
+      "99900"
+     ],
+     [
+      "3",
+      "6717485843",
+      "3186484",
+      "-99900",
+      "99900"
+     ],
+     [
+      "4",
+      "4495179713",
+      "1936450",
+      "-99490",
+      "99490"
+     ],
+     [
+      "5",
+      "1695472138",
+      "897123",
+      "-15900",
+      "82130"
+     ],
+     [
+      "6",
+      "1091628941",
+      "586834",
+      "-7000",
+      "56229"
+     ],
+     [
+      "7",
+      "1043835",
+      "164",
+      "-7000",
+      "12000"
+     ],
+     [
+      "8",
+      "3883546",
+      "500",
+      "-9000",
+      "28222"
+     ],
+     [
+      "9",
+      "857711",
+      "105",
+      "-9900",
+      "13000"
+     ],
+     [
+      "NULL",
+      "17793374414",
+      "9606240",
+      "-43251",
+      "68600"
+     ]
+    ]
+   }
+  },
+  "4": {
+   "fixed": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-83 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/q100m_t4_fixed.json 30 4",
+    "exit": 0,
+    "core_mask": "80-83",
+    "threads": 4,
+    "wall_s": 0.0239,
+    "time": {
+     "wall": 0.02,
+     "rss": 5536.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 4,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.058,
+     "warmup_ms": 17.653,
+     "query_median_ms": 0.0006,
+     "query_p95_ms": 0.0007,
+     "query_min_ms": 0.0005,
+     "serialize1_median_ms": 0.0006,
+     "serialize1_p95_ms": 0.0012,
+     "serializeT_median_ms": 0.0631,
+     "serializeT_p95_ms": 0.0696,
+     "output_ms": 0.482,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 21084,
+     "checksum": 4436698847792244919,
+     "names_synthesized": 0,
+     "total_cnt": 100000000,
+     "total_sum": 190442134391,
+     "min_mn": -226119,
+     "max_mx": 86337212,
+     "group_chk": "18620628283119"
+    },
+    "rows": [
+     [
+      "0",
+      "1903976477",
+      "1105921",
+      "-38318",
+      "5055868"
+     ],
+     [
+      "1",
+      "128292723154",
+      "69403235",
+      "-226119",
+      "86337212"
+     ],
+     [
+      "2",
+      "28404813736",
+      "13276935",
+      "-128540",
+      "18750296"
+     ],
+     [
+      "3",
+      "6756713396",
+      "3186488",
+      "-99900",
+      "38698363"
+     ],
+     [
+      "4",
+      "4495283753",
+      "1936451",
+      "-99490",
+      "104040"
+     ],
+     [
+      "5",
+      "1695472138",
+      "897123",
+      "-15900",
+      "82130"
+     ],
+     [
+      "6",
+      "1092259031",
+      "586835",
+      "-7000",
+      "630090"
+     ],
+     [
+      "7",
+      "1043835",
+      "164",
+      "-7000",
+      "12000"
+     ],
+     [
+      "8",
+      "3883546",
+      "500",
+      "-9000",
+      "28222"
+     ],
+     [
+      "9",
+      "857711",
+      "105",
+      "-9900",
+      "13000"
+     ],
+     [
+      "NULL",
+      "17795107614",
+      "9606243",
+      "-43251",
+      "979200"
+     ]
+    ]
+   },
+   "le_m7000": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-83 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/q100m_t4_le_m7000.json 30 4 hi=-7000",
+    "exit": 0,
+    "core_mask": "80-83",
+    "threads": 4,
+    "wall_s": 0.0267,
+    "time": {
+     "wall": 0.02,
+     "rss": 5856.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 4,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.061,
+     "warmup_ms": 18.089,
+     "query_median_ms": 0.0005,
+     "query_p95_ms": 0.0006,
+     "query_min_ms": 0.0005,
+     "serialize1_median_ms": 0.0005,
+     "serialize1_p95_ms": 0.001,
+     "serializeT_median_ms": 0.0632,
+     "serializeT_p95_ms": 0.0716,
+     "output_ms": 0.462,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 1928,
+     "checksum": 9805345105344182840,
+     "names_synthesized": 0,
+     "total_cnt": 135137,
+     "total_sum": -1123312851,
+     "min_mn": -226119,
+     "max_mx": -7000,
+     "group_chk": "37029343406"
+    },
+    "rows": [
+     [
+      "0",
+      "-364419",
+      "38",
+      "-38318",
+      "-7000"
+     ],
+     [
+      "1",
+      "-655689086",
+      "76631",
+      "-226119",
+      "-7000"
+     ],
+     [
+      "2",
+      "-314807400",
+      "40686",
+      "-128540",
+      "-7000"
+     ],
+     [
+      "3",
+      "-71768544",
+      "8731",
+      "-99900",
+      "-7000"
+     ],
+     [
+      "4",
+      "-78222780",
+      "8770",
+      "-99490",
+      "-7000"
+     ],
+     [
+      "5",
+      "-1066500",
+      "149",
+      "-15900",
+      "-7000"
+     ],
+     [
+      "6",
+      "-497000",
+      "71",
+      "-7000",
+      "-7000"
+     ],
+     [
+      "7",
+      "-7000",
+      "1",
+      "-7000",
+      "-7000"
+     ],
+     [
+      "8",
+      "-69100",
+      "8",
+      "-9000",
+      "-8000"
+     ],
+     [
+      "9",
+      "-19796",
+      "2",
+      "-9900",
+      "-9896"
+     ],
+     [
+      "NULL",
+      "-801226",
+      "50",
+      "-43251",
+      "-7023"
+     ]
+    ]
+   },
+   "le_m720": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-83 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/q100m_t4_le_m720.json 30 4 hi=-720",
+    "exit": 0,
+    "core_mask": "80-83",
+    "threads": 4,
+    "wall_s": 0.027,
+    "time": {
+     "wall": 0.02,
+     "rss": 5712.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 4,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.06,
+     "warmup_ms": 19.365,
+     "query_median_ms": 0.0005,
+     "query_p95_ms": 0.001,
+     "query_min_ms": 0.0005,
+     "serialize1_median_ms": 0.0005,
+     "serialize1_p95_ms": 0.0011,
+     "serializeT_median_ms": 0.061,
+     "serializeT_p95_ms": 0.0719,
+     "output_ms": 1.064,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 5250,
+     "checksum": 15488708107749510301,
+     "names_synthesized": 0,
+     "total_cnt": 1039800,
+     "total_sum": -2848291705,
+     "min_mn": -226119,
+     "max_mx": -720,
+     "group_chk": "-130281653539"
+    },
+    "rows": [
+     [
+      "0",
+      "-608674",
+      "147",
+      "-38318",
+      "-720"
+     ],
+     [
+      "1",
+      "-1907654214",
+      "730003",
+      "-226119",
+      "-720"
+     ],
+     [
+      "2",
+      "-593576705",
+      "181325",
+      "-128540",
+      "-720"
+     ],
+     [
+      "3",
+      "-150612030",
+      "47854",
+      "-99900",
+      "-720"
+     ],
+     [
+      "4",
+      "-149790984",
+      "44356",
+      "-99490",
+      "-720"
+     ],
+     [
+      "5",
+      "-1736420",
+      "791",
+      "-15900",
+      "-720"
+     ],
+     [
+      "6",
+      "-767704",
+      "315",
+      "-7000",
+      "-720"
+     ],
+     [
+      "7",
+      "-7725",
+      "2",
+      "-7000",
+      "-725"
+     ],
+     [
+      "8",
+      "-72213",
+      "10",
+      "-9000",
+      "-780"
+     ],
+     [
+      "9",
+      "-19796",
+      "2",
+      "-9900",
+      "-9896"
+     ],
+     [
+      "NULL",
+      "-43445240",
+      "34995",
+      "-43251",
+      "-720"
+     ]
+    ]
+   },
+   "le_650": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-83 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/q100m_t4_le_650.json 30 4 hi=650",
+    "exit": 0,
+    "core_mask": "80-83",
+    "threads": 4,
+    "wall_s": 0.0217,
+    "time": {
+     "wall": 0.01,
+     "rss": 5544.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 4,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.063,
+     "warmup_ms": 14.344,
+     "query_median_ms": 0.0006,
+     "query_p95_ms": 0.0007,
+     "query_min_ms": 0.0005,
+     "serialize1_median_ms": 0.0005,
+     "serialize1_p95_ms": 0.0011,
+     "serializeT_median_ms": 0.062,
+     "serializeT_p95_ms": 0.075,
+     "output_ms": 0.396,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 6554,
+     "checksum": 18240093894909427540,
+     "names_synthesized": 0,
+     "total_cnt": 11909232,
+     "total_sum": 2060250425,
+     "min_mn": -226119,
+     "max_mx": 650,
+     "group_chk": "345988307720"
+    },
+    "rows": [
+     [
+      "0",
+      "78981402",
+      "150341",
+      "-38318",
+      "650"
+     ],
+     [
+      "1",
+      "2137739228",
+      "8480700",
+      "-226119",
+      "650"
+     ],
+     [
+      "2",
+      "50661475",
+      "1400378",
+      "-128540",
+      "650"
+     ],
+     [
+      "3",
+      "-6457330",
+      "319651",
+      "-99900",
+      "650"
+     ],
+     [
+      "4",
+      "-77338054",
+      "186678",
+      "-99490",
+      "650"
+     ],
+     [
+      "5",
+      "49208493",
+      "95243",
+      "-15900",
+      "650"
+     ],
+     [
+      "6",
+      "33034997",
+      "62125",
+      "-7000",
+      "650"
+     ],
+     [
+      "7",
+      "-6223",
+      "11",
+      "-7000",
+      "500"
+     ],
+     [
+      "8",
+      "-69529",
+      "21",
+      "-9000",
+      "500"
+     ],
+     [
+      "9",
+      "-18638",
+      "5",
+      "-9900",
+      "650"
+     ],
+     [
+      "NULL",
+      "-205485396",
+      "1214079",
+      "-43251",
+      "650"
+     ]
+    ]
+   },
+   "le_99900": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-83 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/q100m_t4_le_99900.json 30 4 hi=99900",
+    "exit": 0,
+    "core_mask": "80-83",
+    "threads": 4,
+    "wall_s": 0.0264,
+    "time": {
+     "wall": 0.02,
+     "rss": 5440.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 4,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.063,
+     "warmup_ms": 17.74,
+     "query_median_ms": 0.0006,
+     "query_p95_ms": 0.0012,
+     "query_min_ms": 0.0005,
+     "serialize1_median_ms": 0.0006,
+     "serialize1_p95_ms": 0.001,
+     "serializeT_median_ms": 0.062,
+     "serializeT_p95_ms": 0.0697,
+     "output_ms": 0.502,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 21001,
+     "checksum": 8410048007501124913,
+     "names_synthesized": 0,
+     "total_cnt": 99999914,
+     "total_sum": 190174677711,
+     "min_mn": -226119,
+     "max_mx": 99900,
+     "group_chk": "18594235133921"
+    },
+    "rows": [
+     [
+      "0",
+      "1895051405",
+      "1105908",
+      "-38318",
+      "81010"
+     ],
+     [
+      "1",
+      "128097584041",
+      "69403182",
+      "-226119",
+      "99900"
+     ],
+     [
+      "2",
+      "28383116124",
+      "13276924",
+      "-128540",
+      "99900"
+     ],
+     [
+      "3",
+      "6717485843",
+      "3186484",
+      "-99900",
+      "99900"
+     ],
+     [
+      "4",
+      "4495179713",
+      "1936450",
+      "-99490",
+      "99490"
+     ],
+     [
+      "5",
+      "1695472138",
+      "897123",
+      "-15900",
+      "82130"
+     ],
+     [
+      "6",
+      "1091628941",
+      "586834",
+      "-7000",
+      "56229"
+     ],
+     [
+      "7",
+      "1043835",
+      "164",
+      "-7000",
+      "12000"
+     ],
+     [
+      "8",
+      "3883546",
+      "500",
+      "-9000",
+      "28222"
+     ],
+     [
+      "9",
+      "857711",
+      "105",
+      "-9900",
+      "13000"
+     ],
+     [
+      "NULL",
+      "17793374414",
+      "9606240",
+      "-43251",
+      "68600"
+     ]
+    ]
+   }
+  },
+  "8": {
+   "fixed": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/q100m_t8_fixed.json 30 8",
+    "exit": 0,
+    "core_mask": "80-87",
+    "threads": 8,
+    "wall_s": 0.0307,
+    "time": {
+     "wall": 0.02,
+     "rss": 5728.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 8,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.063,
+     "warmup_ms": 17.838,
+     "query_median_ms": 0.0011,
+     "query_p95_ms": 0.0014,
+     "query_min_ms": 0.0009,
+     "serialize1_median_ms": 0.0006,
+     "serialize1_p95_ms": 0.0012,
+     "serializeT_median_ms": 0.1913,
+     "serializeT_p95_ms": 0.227,
+     "output_ms": 0.697,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 21084,
+     "checksum": 4436698847792244919,
+     "names_synthesized": 0,
+     "total_cnt": 100000000,
+     "total_sum": 190442134391,
+     "min_mn": -226119,
+     "max_mx": 86337212,
+     "group_chk": "18620628283119"
+    },
+    "rows": [
+     [
+      "0",
+      "1903976477",
+      "1105921",
+      "-38318",
+      "5055868"
+     ],
+     [
+      "1",
+      "128292723154",
+      "69403235",
+      "-226119",
+      "86337212"
+     ],
+     [
+      "2",
+      "28404813736",
+      "13276935",
+      "-128540",
+      "18750296"
+     ],
+     [
+      "3",
+      "6756713396",
+      "3186488",
+      "-99900",
+      "38698363"
+     ],
+     [
+      "4",
+      "4495283753",
+      "1936451",
+      "-99490",
+      "104040"
+     ],
+     [
+      "5",
+      "1695472138",
+      "897123",
+      "-15900",
+      "82130"
+     ],
+     [
+      "6",
+      "1092259031",
+      "586835",
+      "-7000",
+      "630090"
+     ],
+     [
+      "7",
+      "1043835",
+      "164",
+      "-7000",
+      "12000"
+     ],
+     [
+      "8",
+      "3883546",
+      "500",
+      "-9000",
+      "28222"
+     ],
+     [
+      "9",
+      "857711",
+      "105",
+      "-9900",
+      "13000"
+     ],
+     [
+      "NULL",
+      "17795107614",
+      "9606243",
+      "-43251",
+      "979200"
+     ]
+    ]
+   },
+   "le_m7000": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/q100m_t8_le_m7000.json 30 8 hi=-7000",
+    "exit": 0,
+    "core_mask": "80-87",
+    "threads": 8,
+    "wall_s": 0.031,
+    "time": {
+     "wall": 0.02,
+     "rss": 5816.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 8,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.071,
+     "warmup_ms": 19.752,
+     "query_median_ms": 0.0009,
+     "query_p95_ms": 0.0012,
+     "query_min_ms": 0.0008,
+     "serialize1_median_ms": 0.0005,
+     "serialize1_p95_ms": 0.0009,
+     "serializeT_median_ms": 0.1953,
+     "serializeT_p95_ms": 0.2076,
+     "output_ms": 0.649,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 1928,
+     "checksum": 9805345105344182840,
+     "names_synthesized": 0,
+     "total_cnt": 135137,
+     "total_sum": -1123312851,
+     "min_mn": -226119,
+     "max_mx": -7000,
+     "group_chk": "37029343406"
+    },
+    "rows": [
+     [
+      "0",
+      "-364419",
+      "38",
+      "-38318",
+      "-7000"
+     ],
+     [
+      "1",
+      "-655689086",
+      "76631",
+      "-226119",
+      "-7000"
+     ],
+     [
+      "2",
+      "-314807400",
+      "40686",
+      "-128540",
+      "-7000"
+     ],
+     [
+      "3",
+      "-71768544",
+      "8731",
+      "-99900",
+      "-7000"
+     ],
+     [
+      "4",
+      "-78222780",
+      "8770",
+      "-99490",
+      "-7000"
+     ],
+     [
+      "5",
+      "-1066500",
+      "149",
+      "-15900",
+      "-7000"
+     ],
+     [
+      "6",
+      "-497000",
+      "71",
+      "-7000",
+      "-7000"
+     ],
+     [
+      "7",
+      "-7000",
+      "1",
+      "-7000",
+      "-7000"
+     ],
+     [
+      "8",
+      "-69100",
+      "8",
+      "-9000",
+      "-8000"
+     ],
+     [
+      "9",
+      "-19796",
+      "2",
+      "-9900",
+      "-9896"
+     ],
+     [
+      "NULL",
+      "-801226",
+      "50",
+      "-43251",
+      "-7023"
+     ]
+    ]
+   },
+   "le_m720": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/q100m_t8_le_m720.json 30 8 hi=-720",
+    "exit": 0,
+    "core_mask": "80-87",
+    "threads": 8,
+    "wall_s": 0.0317,
+    "time": {
+     "wall": 0.02,
+     "rss": 5596.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 8,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.059,
+     "warmup_ms": 18.644,
+     "query_median_ms": 0.001,
+     "query_p95_ms": 0.0014,
+     "query_min_ms": 0.0009,
+     "serialize1_median_ms": 0.0005,
+     "serialize1_p95_ms": 0.001,
+     "serializeT_median_ms": 0.1947,
+     "serializeT_p95_ms": 0.222,
+     "output_ms": 1.065,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 5250,
+     "checksum": 15488708107749510301,
+     "names_synthesized": 0,
+     "total_cnt": 1039800,
+     "total_sum": -2848291705,
+     "min_mn": -226119,
+     "max_mx": -720,
+     "group_chk": "-130281653539"
+    },
+    "rows": [
+     [
+      "0",
+      "-608674",
+      "147",
+      "-38318",
+      "-720"
+     ],
+     [
+      "1",
+      "-1907654214",
+      "730003",
+      "-226119",
+      "-720"
+     ],
+     [
+      "2",
+      "-593576705",
+      "181325",
+      "-128540",
+      "-720"
+     ],
+     [
+      "3",
+      "-150612030",
+      "47854",
+      "-99900",
+      "-720"
+     ],
+     [
+      "4",
+      "-149790984",
+      "44356",
+      "-99490",
+      "-720"
+     ],
+     [
+      "5",
+      "-1736420",
+      "791",
+      "-15900",
+      "-720"
+     ],
+     [
+      "6",
+      "-767704",
+      "315",
+      "-7000",
+      "-720"
+     ],
+     [
+      "7",
+      "-7725",
+      "2",
+      "-7000",
+      "-725"
+     ],
+     [
+      "8",
+      "-72213",
+      "10",
+      "-9000",
+      "-780"
+     ],
+     [
+      "9",
+      "-19796",
+      "2",
+      "-9900",
+      "-9896"
+     ],
+     [
+      "NULL",
+      "-43445240",
+      "34995",
+      "-43251",
+      "-720"
+     ]
+    ]
+   },
+   "le_650": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/q100m_t8_le_650.json 30 8 hi=650",
+    "exit": 0,
+    "core_mask": "80-87",
+    "threads": 8,
+    "wall_s": 0.031,
+    "time": {
+     "wall": 0.02,
+     "rss": 5608.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 8,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.064,
+     "warmup_ms": 19.623,
+     "query_median_ms": 0.001,
+     "query_p95_ms": 0.0014,
+     "query_min_ms": 0.0009,
+     "serialize1_median_ms": 0.0005,
+     "serialize1_p95_ms": 0.0011,
+     "serializeT_median_ms": 0.2014,
+     "serializeT_p95_ms": 0.2178,
+     "output_ms": 0.737,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 6554,
+     "checksum": 18240093894909427540,
+     "names_synthesized": 0,
+     "total_cnt": 11909232,
+     "total_sum": 2060250425,
+     "min_mn": -226119,
+     "max_mx": 650,
+     "group_chk": "345988307720"
+    },
+    "rows": [
+     [
+      "0",
+      "78981402",
+      "150341",
+      "-38318",
+      "650"
+     ],
+     [
+      "1",
+      "2137739228",
+      "8480700",
+      "-226119",
+      "650"
+     ],
+     [
+      "2",
+      "50661475",
+      "1400378",
+      "-128540",
+      "650"
+     ],
+     [
+      "3",
+      "-6457330",
+      "319651",
+      "-99900",
+      "650"
+     ],
+     [
+      "4",
+      "-77338054",
+      "186678",
+      "-99490",
+      "650"
+     ],
+     [
+      "5",
+      "49208493",
+      "95243",
+      "-15900",
+      "650"
+     ],
+     [
+      "6",
+      "33034997",
+      "62125",
+      "-7000",
+      "650"
+     ],
+     [
+      "7",
+      "-6223",
+      "11",
+      "-7000",
+      "500"
+     ],
+     [
+      "8",
+      "-69529",
+      "21",
+      "-9000",
+      "500"
+     ],
+     [
+      "9",
+      "-18638",
+      "5",
+      "-9900",
+      "650"
+     ],
+     [
+      "NULL",
+      "-205485396",
+      "1214079",
+      "-43251",
+      "650"
+     ]
+    ]
+   },
+   "le_99900": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-87 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/q100m_t8_le_99900.json 30 8 hi=99900",
+    "exit": 0,
+    "core_mask": "80-87",
+    "threads": 8,
+    "wall_s": 0.0313,
+    "time": {
+     "wall": 0.03,
+     "rss": 5600.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 8,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.07,
+     "warmup_ms": 19.299,
+     "query_median_ms": 0.001,
+     "query_p95_ms": 0.0014,
+     "query_min_ms": 0.0009,
+     "serialize1_median_ms": 0.0006,
+     "serialize1_p95_ms": 0.001,
+     "serializeT_median_ms": 0.1947,
+     "serializeT_p95_ms": 0.2079,
+     "output_ms": 0.704,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 21001,
+     "checksum": 8410048007501124913,
+     "names_synthesized": 0,
+     "total_cnt": 99999914,
+     "total_sum": 190174677711,
+     "min_mn": -226119,
+     "max_mx": 99900,
+     "group_chk": "18594235133921"
+    },
+    "rows": [
+     [
+      "0",
+      "1895051405",
+      "1105908",
+      "-38318",
+      "81010"
+     ],
+     [
+      "1",
+      "128097584041",
+      "69403182",
+      "-226119",
+      "99900"
+     ],
+     [
+      "2",
+      "28383116124",
+      "13276924",
+      "-128540",
+      "99900"
+     ],
+     [
+      "3",
+      "6717485843",
+      "3186484",
+      "-99900",
+      "99900"
+     ],
+     [
+      "4",
+      "4495179713",
+      "1936450",
+      "-99490",
+      "99490"
+     ],
+     [
+      "5",
+      "1695472138",
+      "897123",
+      "-15900",
+      "82130"
+     ],
+     [
+      "6",
+      "1091628941",
+      "586834",
+      "-7000",
+      "56229"
+     ],
+     [
+      "7",
+      "1043835",
+      "164",
+      "-7000",
+      "12000"
+     ],
+     [
+      "8",
+      "3883546",
+      "500",
+      "-9000",
+      "28222"
+     ],
+     [
+      "9",
+      "857711",
+      "105",
+      "-9900",
+      "13000"
+     ],
+     [
+      "NULL",
+      "17793374414",
+      "9606240",
+      "-43251",
+      "68600"
+     ]
+    ]
+   }
+  },
+  "16": {
+   "fixed": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-95 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/q100m_t16_fixed.json 30 16",
+    "exit": 0,
+    "core_mask": "80-95",
+    "threads": 16,
+    "wall_s": 0.0415,
+    "time": {
+     "wall": 0.04,
+     "rss": 5720.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 16,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.139,
+     "warmup_ms": 19.103,
+     "query_median_ms": 0.0019,
+     "query_p95_ms": 0.0023,
+     "query_min_ms": 0.0015,
+     "serialize1_median_ms": 0.0006,
+     "serialize1_p95_ms": 0.0012,
+     "serializeT_median_ms": 0.5161,
+     "serializeT_p95_ms": 0.5386,
+     "output_ms": 1.159,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 21084,
+     "checksum": 4436698847792244919,
+     "names_synthesized": 0,
+     "total_cnt": 100000000,
+     "total_sum": 190442134391,
+     "min_mn": -226119,
+     "max_mx": 86337212,
+     "group_chk": "18620628283119"
+    },
+    "rows": [
+     [
+      "0",
+      "1903976477",
+      "1105921",
+      "-38318",
+      "5055868"
+     ],
+     [
+      "1",
+      "128292723154",
+      "69403235",
+      "-226119",
+      "86337212"
+     ],
+     [
+      "2",
+      "28404813736",
+      "13276935",
+      "-128540",
+      "18750296"
+     ],
+     [
+      "3",
+      "6756713396",
+      "3186488",
+      "-99900",
+      "38698363"
+     ],
+     [
+      "4",
+      "4495283753",
+      "1936451",
+      "-99490",
+      "104040"
+     ],
+     [
+      "5",
+      "1695472138",
+      "897123",
+      "-15900",
+      "82130"
+     ],
+     [
+      "6",
+      "1092259031",
+      "586835",
+      "-7000",
+      "630090"
+     ],
+     [
+      "7",
+      "1043835",
+      "164",
+      "-7000",
+      "12000"
+     ],
+     [
+      "8",
+      "3883546",
+      "500",
+      "-9000",
+      "28222"
+     ],
+     [
+      "9",
+      "857711",
+      "105",
+      "-9900",
+      "13000"
+     ],
+     [
+      "NULL",
+      "17795107614",
+      "9606243",
+      "-43251",
+      "979200"
+     ]
+    ]
+   },
+   "le_m7000": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-95 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/q100m_t16_le_m7000.json 30 16 hi=-7000",
+    "exit": 0,
+    "core_mask": "80-95",
+    "threads": 16,
+    "wall_s": 0.0388,
+    "time": {
+     "wall": 0.03,
+     "rss": 5716.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 16,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.061,
+     "warmup_ms": 16.874,
+     "query_median_ms": 0.0021,
+     "query_p95_ms": 0.0025,
+     "query_min_ms": 0.0016,
+     "serialize1_median_ms": 0.0005,
+     "serialize1_p95_ms": 0.0011,
+     "serializeT_median_ms": 0.5036,
+     "serializeT_p95_ms": 0.5573,
+     "output_ms": 1.064,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 1928,
+     "checksum": 9805345105344182840,
+     "names_synthesized": 0,
+     "total_cnt": 135137,
+     "total_sum": -1123312851,
+     "min_mn": -226119,
+     "max_mx": -7000,
+     "group_chk": "37029343406"
+    },
+    "rows": [
+     [
+      "0",
+      "-364419",
+      "38",
+      "-38318",
+      "-7000"
+     ],
+     [
+      "1",
+      "-655689086",
+      "76631",
+      "-226119",
+      "-7000"
+     ],
+     [
+      "2",
+      "-314807400",
+      "40686",
+      "-128540",
+      "-7000"
+     ],
+     [
+      "3",
+      "-71768544",
+      "8731",
+      "-99900",
+      "-7000"
+     ],
+     [
+      "4",
+      "-78222780",
+      "8770",
+      "-99490",
+      "-7000"
+     ],
+     [
+      "5",
+      "-1066500",
+      "149",
+      "-15900",
+      "-7000"
+     ],
+     [
+      "6",
+      "-497000",
+      "71",
+      "-7000",
+      "-7000"
+     ],
+     [
+      "7",
+      "-7000",
+      "1",
+      "-7000",
+      "-7000"
+     ],
+     [
+      "8",
+      "-69100",
+      "8",
+      "-9000",
+      "-8000"
+     ],
+     [
+      "9",
+      "-19796",
+      "2",
+      "-9900",
+      "-9896"
+     ],
+     [
+      "NULL",
+      "-801226",
+      "50",
+      "-43251",
+      "-7023"
+     ]
+    ]
+   },
+   "le_m720": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-95 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/q100m_t16_le_m720.json 30 16 hi=-720",
+    "exit": 0,
+    "core_mask": "80-95",
+    "threads": 16,
+    "wall_s": 0.0433,
+    "time": {
+     "wall": 0.04,
+     "rss": 5716.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 16,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.13,
+     "warmup_ms": 20.161,
+     "query_median_ms": 0.0018,
+     "query_p95_ms": 0.0022,
+     "query_min_ms": 0.0016,
+     "serialize1_median_ms": 0.0006,
+     "serialize1_p95_ms": 0.0012,
+     "serializeT_median_ms": 0.5024,
+     "serializeT_p95_ms": 0.5493,
+     "output_ms": 1.183,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 5250,
+     "checksum": 15488708107749510301,
+     "names_synthesized": 0,
+     "total_cnt": 1039800,
+     "total_sum": -2848291705,
+     "min_mn": -226119,
+     "max_mx": -720,
+     "group_chk": "-130281653539"
+    },
+    "rows": [
+     [
+      "0",
+      "-608674",
+      "147",
+      "-38318",
+      "-720"
+     ],
+     [
+      "1",
+      "-1907654214",
+      "730003",
+      "-226119",
+      "-720"
+     ],
+     [
+      "2",
+      "-593576705",
+      "181325",
+      "-128540",
+      "-720"
+     ],
+     [
+      "3",
+      "-150612030",
+      "47854",
+      "-99900",
+      "-720"
+     ],
+     [
+      "4",
+      "-149790984",
+      "44356",
+      "-99490",
+      "-720"
+     ],
+     [
+      "5",
+      "-1736420",
+      "791",
+      "-15900",
+      "-720"
+     ],
+     [
+      "6",
+      "-767704",
+      "315",
+      "-7000",
+      "-720"
+     ],
+     [
+      "7",
+      "-7725",
+      "2",
+      "-7000",
+      "-725"
+     ],
+     [
+      "8",
+      "-72213",
+      "10",
+      "-9000",
+      "-780"
+     ],
+     [
+      "9",
+      "-19796",
+      "2",
+      "-9900",
+      "-9896"
+     ],
+     [
+      "NULL",
+      "-43445240",
+      "34995",
+      "-43251",
+      "-720"
+     ]
+    ]
+   },
+   "le_650": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-95 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/q100m_t16_le_650.json 30 16 hi=650",
+    "exit": 0,
+    "core_mask": "80-95",
+    "threads": 16,
+    "wall_s": 0.039,
+    "time": {
+     "wall": 0.03,
+     "rss": 5884.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 16,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.066,
+     "warmup_ms": 17.541,
+     "query_median_ms": 0.0017,
+     "query_p95_ms": 0.002,
+     "query_min_ms": 0.0014,
+     "serialize1_median_ms": 0.0006,
+     "serialize1_p95_ms": 0.0012,
+     "serializeT_median_ms": 0.4987,
+     "serializeT_p95_ms": 0.5425,
+     "output_ms": 1.048,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 6554,
+     "checksum": 18240093894909427540,
+     "names_synthesized": 0,
+     "total_cnt": 11909232,
+     "total_sum": 2060250425,
+     "min_mn": -226119,
+     "max_mx": 650,
+     "group_chk": "345988307720"
+    },
+    "rows": [
+     [
+      "0",
+      "78981402",
+      "150341",
+      "-38318",
+      "650"
+     ],
+     [
+      "1",
+      "2137739228",
+      "8480700",
+      "-226119",
+      "650"
+     ],
+     [
+      "2",
+      "50661475",
+      "1400378",
+      "-128540",
+      "650"
+     ],
+     [
+      "3",
+      "-6457330",
+      "319651",
+      "-99900",
+      "650"
+     ],
+     [
+      "4",
+      "-77338054",
+      "186678",
+      "-99490",
+      "650"
+     ],
+     [
+      "5",
+      "49208493",
+      "95243",
+      "-15900",
+      "650"
+     ],
+     [
+      "6",
+      "33034997",
+      "62125",
+      "-7000",
+      "650"
+     ],
+     [
+      "7",
+      "-6223",
+      "11",
+      "-7000",
+      "500"
+     ],
+     [
+      "8",
+      "-69529",
+      "21",
+      "-9000",
+      "500"
+     ],
+     [
+      "9",
+      "-18638",
+      "5",
+      "-9900",
+      "650"
+     ],
+     [
+      "NULL",
+      "-205485396",
+      "1214079",
+      "-43251",
+      "650"
+     ]
+    ]
+   },
+   "le_99900": {
+    "cmd": "/usr/bin/time -f wall=%e rss=%M -o ../../work/scale/time_1998672.txt nice -n 5 taskset -c 80-95 ../../research/real_decoders_20261024/src_scale_20261101/cube_scale qbench ../../research/real_decoders_20261024/results/scale_20261101/nyc100.ecube ../../research/real_decoders_20261024/results/nyc_taxi_100m_prep/Observed/state.dict ../../work/scale/q100m_t16_le_99900.json 30 16 hi=99900",
+    "exit": 0,
+    "core_mask": "80-95",
+    "threads": 16,
+    "wall_s": 0.0392,
+    "time": {
+     "wall": 0.03,
+     "rss": 5668.0
+    },
+    "metrics": {
+     "mode": "qbench",
+     "threads": 16,
+     "reps": 30,
+     "fresh_alloc": 0,
+     "setup_ms": 0.064,
+     "warmup_ms": 17.697,
+     "query_median_ms": 0.0019,
+     "query_p95_ms": 0.0024,
+     "query_min_ms": 0.0016,
+     "serialize1_median_ms": 0.0006,
+     "serialize1_p95_ms": 0.0011,
+     "serializeT_median_ms": 0.5049,
+     "serializeT_p95_ms": 0.5412,
+     "output_ms": 1.123,
+     "rows": 11,
+     "bytes": 1140124,
+     "groups": 11,
+     "values": 21084,
+     "dense": 0,
+     "rank_lo": 0,
+     "rank_hi": 21001,
+     "checksum": 8410048007501124913,
+     "names_synthesized": 0,
+     "total_cnt": 99999914,
+     "total_sum": 190174677711,
+     "min_mn": -226119,
+     "max_mx": 99900,
+     "group_chk": "18594235133921"
+    },
+    "rows": [
+     [
+      "0",
+      "1895051405",
+      "1105908",
+      "-38318",
+      "81010"
+     ],
+     [
+      "1",
+      "128097584041",
+      "69403182",
+      "-226119",
+      "99900"
+     ],
+     [
+      "2",
+      "28383116124",
+      "13276924",
+      "-128540",
+      "99900"
+     ],
+     [
+      "3",
+      "6717485843",
+      "3186484",
+      "-99900",
+      "99900"
+     ],
+     [
+      "4",
+      "4495179713",
+      "1936450",
+      "-99490",
+      "99490"
+     ],
+     [
+      "5",
+      "1695472138",
+      "897123",
+      "-15900",
+      "82130"
+     ],
+     [
+      "6",
+      "1091628941",
+      "586834",
+      "-7000",
+      "56229"
+     ],
+     [
+      "7",
+      "1043835",
+      "164",
+      "-7000",
+      "12000"
+     ],
+     [
+      "8",
+      "3883546",
+      "500",
+      "-9000",
+      "28222"
+     ],
+     [
+      "9",
+      "857711",
+      "105",
+      "-9900",
+      "13000"
+     ],
+     [
+      "NULL",
+      "17793374414",
+      "9606240",
+      "-43251",
+      "68600"
+     ]
+    ]
+   }
+  }
+ },
+ "receipt": "qbench_100m",
+ "host": "localhost (AMD EPYC 9554, 2x64C, 256T, 503GB)",
+ "date": "2026-11-01T18:29:25.526652+08:00",
+ "git_branch": "research/groups-e2e-repro-20261025"
+}

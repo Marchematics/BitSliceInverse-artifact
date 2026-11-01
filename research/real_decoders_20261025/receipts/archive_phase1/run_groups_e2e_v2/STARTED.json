@@ -1,0 +1,21 @@
+{
+  "start_utc": "2026-10-24T17:40:44.070116+00:00",
+  "cap_seconds": 900,
+  "source_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_groups_repro_v2",
+  "blocks": 30,
+  "paths": [
+    "decoded_blocks",
+    "paid_cache",
+    "packed_source",
+    "duckdb"
+  ],
+  "profiles": [
+    "food1",
+    "ig1",
+    "iub1",
+    "iub4"
+  ],
+  "endpoint_primary": "complete_fresh_worker_wall_ms",
+  "endpoint_secondary": "reconstructed_stored_input_interval_ms",
+  "no_WHERE_pipeline_coverage_only": true
+}

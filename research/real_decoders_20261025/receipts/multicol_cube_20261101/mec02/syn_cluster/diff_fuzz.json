@@ -1,0 +1,62 @@
+{
+ "seed": 20261101,
+ "total": 210,
+ "fixed": 10,
+ "random": 200,
+ "mismatches": 0,
+ "index": "results/eai_multi_20261101/syn_cluster/index.mec",
+ "index_sha256": "caf6e139a6ed592d5692d7d4fd2a31d58d5f95f411b300717a217aaf8af32250",
+ "dataset": "syn_cluster",
+ "value_domain": [
+  90110,
+  10489950
+ ],
+ "c1_domain": [
+  0,
+  10
+ ],
+ "c2_domain": [
+  1,
+  50
+ ],
+ "mode": "value",
+ "block_width": 65536,
+ "BP": 159,
+ "groups": [
+  0,
+  1,
+  2
+ ],
+ "modes": [
+  "block_align",
+  "block_align+gin",
+  "block_align+gnotin",
+  "fixed:all_full",
+  "fixed:empty_cross",
+  "fixed:empty_domain",
+  "fixed:huge_run_window",
+  "fixed:mid_band",
+  "fixed:needle",
+  "fixed:null_group_scan",
+  "fixed:one_huge_run",
+  "fixed:point",
+  "fixed:spread_rows",
+  "full",
+  "full+gin",
+  "full+gnotin",
+  "narrow",
+  "narrow+gin",
+  "narrow+gnotin",
+  "outside",
+  "outside+gin",
+  "outside+gnotin",
+  "point",
+  "point+gin",
+  "point+gnotin",
+  "uniform",
+  "uniform+gin",
+  "uniform+gnotin"
+ ],
+ "group_filter_cases": 39,
+ "failures": []
+}

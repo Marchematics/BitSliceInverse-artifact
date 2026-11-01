@@ -1,0 +1,33 @@
+{
+  "configuration": "block summary with group-domain filters and HAVING; no row-level numeric filters",
+  "cases": {
+    "nyc100_in12": {
+      "runs": 5,
+      "query_median_ms": 7.15598,
+      "duckdb_ms": 554.413,
+      "speedup_vs_duckdb": 77.47548204438806,
+      "exact": true
+    },
+    "nyc100_having": {
+      "runs": 5,
+      "query_median_ms": 6.74232,
+      "duckdb_ms": 413.321,
+      "speedup_vs_duckdb": 61.30248935084659,
+      "exact": true
+    },
+    "nyc12_having": {
+      "runs": 5,
+      "query_median_ms": 1.06142,
+      "duckdb_ms": 54.792,
+      "speedup_vs_duckdb": 51.621412824329674,
+      "exact": true
+    },
+    "tpch_having": {
+      "runs": 5,
+      "query_median_ms": 0.988937,
+      "duckdb_ms": 79.356,
+      "speedup_vs_duckdb": 80.24373645641734,
+      "exact": true
+    }
+  }
+}

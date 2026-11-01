@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "error": null,
+  "start_utc": "2026-10-24T17:40:44.070116+00:00",
+  "end_utc": "2026-10-24T17:41:34.411781+00:00",
+  "wall_s": 50.34167359606363,
+  "cap_seconds": 900,
+  "commands": 480,
+  "observations": 480,
+  "blocks": 30,
+  "paths": [
+    "decoded_blocks",
+    "paid_cache",
+    "packed_source",
+    "duckdb"
+  ],
+  "profiles": [
+    "food1",
+    "ig1",
+    "iub1",
+    "iub4"
+  ],
+  "partial_evidence_retained": true,
+  "no_retry": true,
+  "no_warm_resident_claim": true,
+  "no_page_cache_flush": true,
+  "no_WHERE_pipeline_coverage_only": true
+}

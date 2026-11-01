@@ -1,0 +1,1280 @@
+{
+ "protocol": {
+  "host": "localhost (AMD EPYC 9554)",
+  "pin": "nice -n 5 taskset -c 96",
+  "cube": "pinned ECUBE02 binary built from eai_cube2.cpp sha256 99e4dcef...5f1543",
+  "cube_protocol": "one process, open + 1 warmup + reps timed executions, median/P95; serialization timed separately",
+  "duckdb": "2.0.0, threads=1, warm connection, 1 warmup + 30 execute()+fetchall()",
+  "duckdb_version": "2.0.0",
+  "core": "96"
+ },
+ "datasets": {
+  "ig2_65k": {
+   "name": "ig2_65k",
+   "rows": 65536,
+   "cases": {
+    "fixed": {
+     "spec": [
+      "where_not_in=District of Columbia"
+     ],
+     "cube_median_us": 3.525,
+     "cube_p95_us": 3.565,
+     "cube_serialize_us": 5.498,
+     "cube_output_ms": 0.0329,
+     "duckdb_median_ms": 2.5060679763555527,
+     "duckdb_p95_ms": 2.5745858438313007,
+     "duckdb_rows": 47,
+     "cube_rows": 47,
+     "selectivity": 0.9999847412109375,
+     "exact": true,
+     "ratio_median": 710941.2698881001,
+     "cube_bench_runs": [
+      {
+       "median_us": 3.4749999999999996,
+       "p95_us": 3.5149999999999997,
+       "serialize_us": 5.518000000000001
+      },
+      {
+       "median_us": 3.525,
+       "p95_us": 3.565,
+       "serialize_us": 5.498
+      },
+      {
+       "median_us": 3.555,
+       "p95_us": 3.5660000000000003,
+       "serialize_us": 5.538
+      }
+     ],
+     "cube_bench_spread": 1.023021582733813,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE g NOT IN ('District of Columbia') GROUP BY 1 ORDER BY 1"
+    },
+    "range_p10": {
+     "spec": [
+      "where_not_in=District of Columbia",
+      "hi=98"
+     ],
+     "cube_median_us": 3.746,
+     "cube_p95_us": 3.785,
+     "cube_serialize_us": 5.268,
+     "cube_output_ms": 0.0372,
+     "duckdb_median_ms": 1.6369286458939314,
+     "duckdb_p95_ms": 1.9450648687779903,
+     "duckdb_rows": 44,
+     "cube_rows": 44,
+     "selectivity": 0.100677490234375,
+     "exact": true,
+     "ratio_median": 436980.41801760043,
+     "cube_bench_runs": [
+      {
+       "median_us": 3.746,
+       "p95_us": 3.786,
+       "serialize_us": 5.237
+      },
+      {
+       "median_us": 3.746,
+       "p95_us": 3.785,
+       "serialize_us": 5.268
+      },
+      {
+       "median_us": 3.755,
+       "p95_us": 3.796,
+       "serialize_us": 5.268
+      }
+     ],
+     "cube_bench_spread": 1.0024025627335824,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE g NOT IN ('District of Columbia') AND v <= 98 GROUP BY 1 ORDER BY 1"
+    },
+    "range_p50": {
+     "spec": [
+      "where_not_in=District of Columbia",
+      "hi=1109"
+     ],
+     "cube_median_us": 3.595,
+     "cube_p95_us": 3.625,
+     "cube_serialize_us": 5.288,
+     "cube_output_ms": 0.0347,
+     "duckdb_median_ms": 2.1044632885605097,
+     "duckdb_p95_ms": 2.1999087184667587,
+     "duckdb_rows": 46,
+     "cube_rows": 46,
+     "selectivity": 0.5,
+     "exact": true,
+     "ratio_median": 585386.1720613379,
+     "cube_bench_runs": [
+      {
+       "median_us": 3.575,
+       "p95_us": 3.606,
+       "serialize_us": 5.338
+      },
+      {
+       "median_us": 3.595,
+       "p95_us": 3.625,
+       "serialize_us": 5.288
+      },
+      {
+       "median_us": 3.676,
+       "p95_us": 3.735,
+       "serialize_us": 5.318
+      }
+     ],
+     "cube_bench_spread": 1.0282517482517481,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE g NOT IN ('District of Columbia') AND v <= 1109 GROUP BY 1 ORDER BY 1"
+    },
+    "fixed_all": {
+     "spec": [],
+     "cube_median_us": 3.625,
+     "cube_p95_us": 3.665,
+     "cube_serialize_us": 5.638,
+     "cube_output_ms": 0.0392,
+     "duckdb_median_ms": 2.272288082167506,
+     "duckdb_p95_ms": 3.153363708406687,
+     "duckdb_rows": 48,
+     "cube_rows": 48,
+     "selectivity": 1.0,
+     "exact": true,
+     "ratio_median": 626838.0916324154,
+     "cube_bench_runs": [
+      {
+       "median_us": 3.615,
+       "p95_us": 3.636,
+       "serialize_us": 5.668
+      },
+      {
+       "median_us": 3.625,
+       "p95_us": 3.665,
+       "serialize_us": 5.638
+      },
+      {
+       "median_us": 3.625,
+       "p95_us": 3.656,
+       "serialize_us": 5.747999999999999
+      }
+     ],
+     "cube_bench_spread": 1.0027662517289073,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t GROUP BY 1 ORDER BY 1"
+    }
+   },
+   "encoded_tree_bytes": 176740,
+   "build": {
+    "wall_s": 0.018,
+    "build_ms": 10.386,
+    "phase_ms": {
+     "pass1_ms": 1.229,
+     "accum_ms": 4.738,
+     "prefix_ms": 0.617,
+     "write_ms": 3.802
+    },
+    "peak_rss_kb": 7988.0
+   },
+   "cube_bytes": 2785224,
+   "cube_sha256": "a14d3b43da0c500cad73714c0415995dca8dfd7870295f3ee148f10ee4af77ec",
+   "G": 48,
+   "V": 13321,
+   "encoded": 1,
+   "index_to_tree": 15.758877447097431
+  },
+  "ig2_983k": {
+   "name": "ig2_983k",
+   "rows": 983040,
+   "cases": {
+    "fixed": {
+     "spec": [
+      "where_not_in=District of Columbia"
+     ],
+     "cube_median_us": 3.4749999999999996,
+     "cube_p95_us": 3.4949999999999997,
+     "cube_serialize_us": 5.528,
+     "cube_output_ms": 0.029,
+     "duckdb_median_ms": 25.868175085633993,
+     "duckdb_p95_ms": 27.003950905054808,
+     "duckdb_rows": 47,
+     "cube_rows": 47,
+     "selectivity": 0.9999847412109375,
+     "exact": true,
+     "ratio_median": 7444079.161333524,
+     "cube_bench_runs": [
+      {
+       "median_us": 3.4650000000000003,
+       "p95_us": 3.4949999999999997,
+       "serialize_us": 5.518000000000001
+      },
+      {
+       "median_us": 3.4749999999999996,
+       "p95_us": 3.4949999999999997,
+       "serialize_us": 5.528
+      },
+      {
+       "median_us": 3.4949999999999997,
+       "p95_us": 3.5149999999999997,
+       "serialize_us": 5.538
+      }
+     ],
+     "cube_bench_spread": 1.0086580086580086,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE g NOT IN ('District of Columbia') GROUP BY 1 ORDER BY 1"
+    },
+    "range_p10": {
+     "spec": [
+      "where_not_in=District of Columbia",
+      "hi=98"
+     ],
+     "cube_median_us": 3.696,
+     "cube_p95_us": 3.725,
+     "cube_serialize_us": 5.318,
+     "cube_output_ms": 0.0302,
+     "duckdb_median_ms": 11.75607624463737,
+     "duckdb_p95_ms": 11.996163986623287,
+     "duckdb_rows": 44,
+     "cube_rows": 44,
+     "selectivity": 0.100677490234375,
+     "exact": true,
+     "ratio_median": 3180756.559696258,
+     "cube_bench_runs": [
+      {
+       "median_us": 3.695,
+       "p95_us": 3.725,
+       "serialize_us": 5.278
+      },
+      {
+       "median_us": 3.696,
+       "p95_us": 3.725,
+       "serialize_us": 5.318
+      },
+      {
+       "median_us": 3.735,
+       "p95_us": 3.776,
+       "serialize_us": 5.328
+      }
+     ],
+     "cube_bench_spread": 1.0108254397834913,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE g NOT IN ('District of Columbia') AND v <= 98 GROUP BY 1 ORDER BY 1"
+    },
+    "range_p50": {
+     "spec": [
+      "where_not_in=District of Columbia",
+      "hi=1109"
+     ],
+     "cube_median_us": 3.565,
+     "cube_p95_us": 3.605,
+     "cube_serialize_us": 5.388000000000001,
+     "cube_output_ms": 0.0433,
+     "duckdb_median_ms": 18.54215608909726,
+     "duckdb_p95_ms": 18.662618938833475,
+     "duckdb_rows": 46,
+     "cube_rows": 46,
+     "selectivity": 0.5,
+     "exact": true,
+     "ratio_median": 5201165.803393342,
+     "cube_bench_runs": [
+      {
+       "median_us": 3.565,
+       "p95_us": 3.605,
+       "serialize_us": 5.417
+      },
+      {
+       "median_us": 3.565,
+       "p95_us": 3.605,
+       "serialize_us": 5.388000000000001
+      },
+      {
+       "median_us": 3.575,
+       "p95_us": 3.615,
+       "serialize_us": 5.487
+      }
+     ],
+     "cube_bench_spread": 1.002805049088359,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE g NOT IN ('District of Columbia') AND v <= 1109 GROUP BY 1 ORDER BY 1"
+    },
+    "fixed_all": {
+     "spec": [],
+     "cube_median_us": 3.606,
+     "cube_p95_us": 3.636,
+     "cube_serialize_us": 5.738,
+     "cube_output_ms": 0.0402,
+     "duckdb_median_ms": 23.358050966635346,
+     "duckdb_p95_ms": 23.908920120447874,
+     "duckdb_rows": 48,
+     "cube_rows": 48,
+     "selectivity": 1.0,
+     "exact": true,
+     "ratio_median": 6477551.571446297,
+     "cube_bench_runs": [
+      {
+       "median_us": 3.575,
+       "p95_us": 3.595,
+       "serialize_us": 5.659
+      },
+      {
+       "median_us": 3.606,
+       "p95_us": 3.636,
+       "serialize_us": 5.738
+      },
+      {
+       "median_us": 3.615,
+       "p95_us": 3.645,
+       "serialize_us": 5.8389999999999995
+      }
+     ],
+     "cube_bench_spread": 1.0111888111888112,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t GROUP BY 1 ORDER BY 1"
+    }
+   },
+   "encoded_tree_bytes": 2648244,
+   "build": {
+    "wall_s": 0.065,
+    "build_ms": 59.755,
+    "phase_ms": {
+     "pass1_ms": 4.854,
+     "accum_ms": 49.895,
+     "prefix_ms": 0.643,
+     "write_ms": 4.363
+    },
+    "peak_rss_kb": 10892.0
+   },
+   "cube_bytes": 2785224,
+   "cube_sha256": "e7bf92ef751580f40b2577e32381bcce00ace453794e8cbfaf1ea5420c62f446",
+   "G": 48,
+   "V": 13321,
+   "encoded": 1,
+   "index_to_tree": 1.0517248410644942
+  },
+  "ig2_10m": {
+   "name": "ig2_10m",
+   "rows": 10027008,
+   "cases": {
+    "fixed": {
+     "spec": [
+      "where_not_in=District of Columbia"
+     ],
+     "cube_median_us": 3.4749999999999996,
+     "cube_p95_us": 3.4949999999999997,
+     "cube_serialize_us": 5.588,
+     "cube_output_ms": 0.0435,
+     "duckdb_median_ms": 256.97047845460474,
+     "duckdb_p95_ms": 285.6949530541897,
+     "duckdb_rows": 47,
+     "cube_rows": 47,
+     "selectivity": 0.9999847412109375,
+     "exact": true,
+     "ratio_median": 73948339.12362728,
+     "cube_bench_runs": [
+      {
+       "median_us": 3.4749999999999996,
+       "p95_us": 3.4949999999999997,
+       "serialize_us": 5.577999999999999
+      },
+      {
+       "median_us": 3.4749999999999996,
+       "p95_us": 3.4949999999999997,
+       "serialize_us": 5.588
+      },
+      {
+       "median_us": 3.5149999999999997,
+       "p95_us": 3.535,
+       "serialize_us": 5.617999999999999
+      }
+     ],
+     "cube_bench_spread": 1.0115107913669066,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE g NOT IN ('District of Columbia') GROUP BY 1 ORDER BY 1"
+    },
+    "range_p10": {
+     "spec": [
+      "where_not_in=District of Columbia",
+      "hi=98"
+     ],
+     "cube_median_us": 3.706,
+     "cube_p95_us": 3.745,
+     "cube_serialize_us": 5.357,
+     "cube_output_ms": 0.0316,
+     "duckdb_median_ms": 113.93046658486128,
+     "duckdb_p95_ms": 115.5113447457552,
+     "duckdb_rows": 44,
+     "cube_rows": 44,
+     "selectivity": 0.100677490234375,
+     "exact": true,
+     "ratio_median": 30742165.835094787,
+     "cube_bench_runs": [
+      {
+       "median_us": 3.695,
+       "p95_us": 3.745,
+       "serialize_us": 5.388000000000001
+      },
+      {
+       "median_us": 3.706,
+       "p95_us": 3.745,
+       "serialize_us": 5.357
+      },
+      {
+       "median_us": 3.715,
+       "p95_us": 3.735,
+       "serialize_us": 5.358
+      }
+     ],
+     "cube_bench_spread": 1.0054127198917455,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE g NOT IN ('District of Columbia') AND v <= 98 GROUP BY 1 ORDER BY 1"
+    },
+    "range_p50": {
+     "spec": [
+      "where_not_in=District of Columbia",
+      "hi=1109"
+     ],
+     "cube_median_us": 3.525,
+     "cube_p95_us": 3.575,
+     "cube_serialize_us": 5.437,
+     "cube_output_ms": 0.0322,
+     "duckdb_median_ms": 182.3056626599282,
+     "duckdb_p95_ms": 205.35187795758247,
+     "duckdb_rows": 46,
+     "cube_rows": 46,
+     "selectivity": 0.5,
+     "exact": true,
+     "ratio_median": 51717918.48508602,
+     "cube_bench_runs": [
+      {
+       "median_us": 3.5149999999999997,
+       "p95_us": 3.555,
+       "serialize_us": 5.458
+      },
+      {
+       "median_us": 3.525,
+       "p95_us": 3.575,
+       "serialize_us": 5.437
+      },
+      {
+       "median_us": 3.545,
+       "p95_us": 4.997,
+       "serialize_us": 5.487
+      }
+     ],
+     "cube_bench_spread": 1.0085348506401137,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE g NOT IN ('District of Columbia') AND v <= 1109 GROUP BY 1 ORDER BY 1"
+    },
+    "fixed_all": {
+     "spec": [],
+     "cube_median_us": 3.555,
+     "cube_p95_us": 3.585,
+     "cube_serialize_us": 5.738,
+     "cube_output_ms": 0.0411,
+     "duckdb_median_ms": 232.6962910592556,
+     "duckdb_p95_ms": 241.60825461149216,
+     "duckdb_rows": 48,
+     "cube_rows": 48,
+     "selectivity": 1.0,
+     "exact": true,
+     "ratio_median": 65456059.369692154,
+     "cube_bench_runs": [
+      {
+       "median_us": 3.555,
+       "p95_us": 3.585,
+       "serialize_us": 5.827999999999999
+      },
+      {
+       "median_us": 3.555,
+       "p95_us": 3.585,
+       "serialize_us": 5.738
+      },
+      {
+       "median_us": 3.575,
+       "p95_us": 3.605,
+       "serialize_us": 5.758
+      }
+     ],
+     "cube_bench_spread": 1.0056258790436006,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t GROUP BY 1 ORDER BY 1"
+    }
+   },
+   "encoded_tree_bytes": 27010212,
+   "build": {
+    "wall_s": 0.579,
+    "build_ms": 571.256,
+    "phase_ms": {
+     "pass1_ms": 69.364,
+     "accum_ms": 495.467,
+     "prefix_ms": 0.681,
+     "write_ms": 5.745
+    },
+    "peak_rss_kb": 37332.0
+   },
+   "cube_bytes": 2785224,
+   "cube_sha256": "7e01807556b50a5e3546834a3508d8d0641792ae64578f51c1215f83bf4778f5",
+   "G": 48,
+   "V": 13321,
+   "encoded": 1,
+   "index_to_tree": 0.1031174431359517
+  },
+  "nyc12": {
+   "name": "nyc12",
+   "rows": 12000000,
+   "cases": {
+    "fixed": {
+     "spec": [],
+     "cube_median_us": 1.142,
+     "cube_p95_us": 1.1520000000000001,
+     "cube_serialize_us": 1.633,
+     "cube_output_ms": 0.0252,
+     "duckdb_median_ms": 54.97101601213217,
+     "duckdb_p95_ms": 56.2811573036015,
+     "duckdb_rows": 11,
+     "cube_rows": 11,
+     "selectivity": 1.0,
+     "exact": true,
+     "ratio_median": 48135740.816227816,
+     "cube_bench_runs": [
+      {
+       "median_us": 1.141,
+       "p95_us": 1.142,
+       "serialize_us": 1.632
+      },
+      {
+       "median_us": 1.142,
+       "p95_us": 1.1520000000000001,
+       "serialize_us": 1.633
+      },
+      {
+       "median_us": 1.142,
+       "p95_us": 1.1520000000000001,
+       "serialize_us": 1.693
+      }
+     ],
+     "cube_bench_spread": 1.0008764241893076,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t GROUP BY 1 ORDER BY 1"
+    },
+    "range_p10": {
+     "spec": [
+      "hi=650"
+     ],
+     "cube_median_us": 1.062,
+     "cube_p95_us": 1.072,
+     "cube_serialize_us": 1.532,
+     "cube_output_ms": 0.0256,
+     "duckdb_median_ms": 35.35875235684216,
+     "duckdb_p95_ms": 36.27246990799904,
+     "duckdb_rows": 11,
+     "cube_rows": 11,
+     "selectivity": 0.11483158333333333,
+     "exact": true,
+     "ratio_median": 33294493.744672466,
+     "cube_bench_runs": [
+      {
+       "median_us": 1.0610000000000002,
+       "p95_us": 1.062,
+       "serialize_us": 1.492
+      },
+      {
+       "median_us": 1.062,
+       "p95_us": 1.072,
+       "serialize_us": 1.532
+      },
+      {
+       "median_us": 1.092,
+       "p95_us": 1.1019999999999999,
+       "serialize_us": 1.532
+      }
+     ],
+     "cube_bench_spread": 1.0292177191328935,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v <= 650 GROUP BY 1 ORDER BY 1"
+    },
+    "range_p50": {
+     "spec": [
+      "hi=1280"
+     ],
+     "cube_median_us": 1.121,
+     "cube_p95_us": 1.1219999999999999,
+     "cube_serialize_us": 1.572,
+     "cube_output_ms": 0.0246,
+     "duckdb_median_ms": 51.66542832739651,
+     "duckdb_p95_ms": 52.052031736820936,
+     "duckdb_rows": 11,
+     "cube_rows": 11,
+     "selectivity": 0.5061279166666667,
+     "exact": true,
+     "ratio_median": 46088696.09937245,
+     "cube_bench_runs": [
+      {
+       "median_us": 1.1119999999999999,
+       "p95_us": 1.1219999999999999,
+       "serialize_us": 1.562
+      },
+      {
+       "median_us": 1.121,
+       "p95_us": 1.1219999999999999,
+       "serialize_us": 1.572
+      },
+      {
+       "median_us": 1.121,
+       "p95_us": 1.1219999999999999,
+       "serialize_us": 1.582
+      }
+     ],
+     "cube_bench_spread": 1.0080935251798562,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v <= 1280 GROUP BY 1 ORDER BY 1"
+    }
+   },
+   "encoded_tree_bytes": 30344684,
+   "build": {
+    "wall_s": 0.402,
+    "build_ms": 393.12,
+    "phase_ms": {
+     "pass1_ms": 67.491,
+     "accum_ms": 323.722,
+     "prefix_ms": 0.12,
+     "write_ms": 1.788
+    },
+    "peak_rss_kb": 38592.0
+   },
+   "cube_bytes": 513552,
+   "cube_sha256": "3cf6fc67a0a2d69fa0dc7e73fb9b5efff94bfafa7d8253829ad5e44976925b06",
+   "G": 11,
+   "V": 9494,
+   "encoded": 1,
+   "index_to_tree": 0.016923952808340335
+  },
+  "tpch12": {
+   "name": "tpch12",
+   "rows": 11997996,
+   "cases": {
+    "fixed": {
+     "spec": [],
+     "cube_median_us": 0.251,
+     "cube_p95_us": 0.261,
+     "cube_serialize_us": 0.41100000000000003,
+     "cube_output_ms": 0.0228,
+     "duckdb_median_ms": 152.95140747912228,
+     "duckdb_p95_ms": 154.21493723988533,
+     "duckdb_rows": 3,
+     "cube_rows": 3,
+     "selectivity": 1.0,
+     "exact": true,
+     "ratio_median": 609368157.2873398,
+     "cube_bench_runs": [
+      {
+       "median_us": 0.25,
+       "p95_us": 0.251,
+       "serialize_us": 0.41100000000000003
+      },
+      {
+       "median_us": 0.251,
+       "p95_us": 0.261,
+       "serialize_us": 0.41100000000000003
+      },
+      {
+       "median_us": 0.251,
+       "p95_us": 0.261,
+       "serialize_us": 0.41100000000000003
+      }
+     ],
+     "cube_bench_spread": 1.0039999999999998,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t GROUP BY 1 ORDER BY 1"
+    },
+    "range_p10": {
+     "spec": [
+      "hi=789270"
+     ],
+     "cube_median_us": 0.321,
+     "cube_p95_us": 0.331,
+     "cube_serialize_us": 0.47100000000000003,
+     "cube_output_ms": 0.0225,
+     "duckdb_median_ms": 42.71407751366496,
+     "duckdb_p95_ms": 43.06262219324708,
+     "duckdb_rows": 3,
+     "cube_rows": 3,
+     "selectivity": 0.10000053342241488,
+     "exact": true,
+     "ratio_median": 133065662.03633945,
+     "cube_bench_runs": [
+      {
+       "median_us": 0.32,
+       "p95_us": 0.321,
+       "serialize_us": 0.46099999999999997
+      },
+      {
+       "median_us": 0.321,
+       "p95_us": 0.331,
+       "serialize_us": 0.47100000000000003
+      },
+      {
+       "median_us": 0.321,
+       "p95_us": 0.331,
+       "serialize_us": 0.47100000000000003
+      }
+     ],
+     "cube_bench_spread": 1.0031249999999998,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v <= 789270 GROUP BY 1 ORDER BY 1"
+    },
+    "range_p50": {
+     "spec": [
+      "hi=3672270"
+     ],
+     "cube_median_us": 0.201,
+     "cube_p95_us": 0.211,
+     "cube_serialize_us": 0.36000000000000004,
+     "cube_output_ms": 0.0229,
+     "duckdb_median_ms": 102.85444464534521,
+     "duckdb_p95_ms": 103.48102217540145,
+     "duckdb_rows": 3,
+     "cube_rows": 3,
+     "selectivity": 0.5000003333890093,
+     "exact": true,
+     "ratio_median": 511713654.9519662,
+     "cube_bench_runs": [
+      {
+       "median_us": 0.2,
+       "p95_us": 0.211,
+       "serialize_us": 0.36000000000000004
+      },
+      {
+       "median_us": 0.201,
+       "p95_us": 0.211,
+       "serialize_us": 0.36000000000000004
+      },
+      {
+       "median_us": 0.201,
+       "p95_us": 0.211,
+       "serialize_us": 0.36000000000000004
+      }
+     ],
+     "cube_bench_spread": 1.005,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v <= 3672270 GROUP BY 1 ORDER BY 1"
+    }
+   },
+   "encoded_tree_bytes": 44249316,
+   "build": {
+    "wall_s": 1.979,
+    "build_ms": 1929.436,
+    "phase_ms": {
+     "pass1_ms": 368.171,
+     "accum_ms": 1527.603,
+     "prefix_ms": 2.858,
+     "write_ms": 30.804
+    },
+    "peak_rss_kb": 114312.0
+   },
+   "cube_bytes": 20239720,
+   "cube_sha256": "6a64d7c1f0aecad39058fcf4f5c9527940d1f95539226ca07751850784cc0717",
+   "G": 3,
+   "V": 984297,
+   "encoded": 1,
+   "index_to_tree": 0.45740187260747717
+  },
+  "nyc100": {
+   "name": "nyc100",
+   "rows": 100000000,
+   "cases": {
+    "fixed": {
+     "spec": [],
+     "cube_median_us": 1.1520000000000001,
+     "cube_p95_us": 1.1620000000000001,
+     "cube_serialize_us": 1.673,
+     "cube_output_ms": 0.0238,
+     "duckdb_median_ms": 441.4951764047146,
+     "duckdb_p95_ms": 498.5683518461883,
+     "duckdb_rows": 11,
+     "cube_rows": 11,
+     "selectivity": 1.0,
+     "exact": true,
+     "ratio_median": 383242340.6290925,
+     "cube_bench_runs": [
+      {
+       "median_us": 1.1509999999999998,
+       "p95_us": 1.1520000000000001,
+       "serialize_us": 1.6620000000000001
+      },
+      {
+       "median_us": 1.1520000000000001,
+       "p95_us": 1.1620000000000001,
+       "serialize_us": 1.673
+      },
+      {
+       "median_us": 1.1620000000000001,
+       "p95_us": 1.1720000000000002,
+       "serialize_us": 1.683
+      }
+     ],
+     "cube_bench_spread": 1.009556907037359,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t GROUP BY 1 ORDER BY 1"
+    },
+    "range_p10": {
+     "spec": [
+      "hi=650"
+     ],
+     "cube_median_us": 1.111,
+     "cube_p95_us": 1.1219999999999999,
+     "cube_serialize_us": 1.583,
+     "cube_output_ms": 0.0307,
+     "duckdb_median_ms": 285.9669600147754,
+     "duckdb_p95_ms": 343.24618987739086,
+     "duckdb_rows": 11,
+     "cube_rows": 11,
+     "selectivity": 0.11909232,
+     "exact": true,
+     "ratio_median": 257396003.61365923,
+     "cube_bench_runs": [
+      {
+       "median_us": 1.1019999999999999,
+       "p95_us": 1.121,
+       "serialize_us": 1.582
+      },
+      {
+       "median_us": 1.111,
+       "p95_us": 1.1219999999999999,
+       "serialize_us": 1.583
+      },
+      {
+       "median_us": 1.111,
+       "p95_us": 1.1119999999999999,
+       "serialize_us": 1.582
+      }
+     ],
+     "cube_bench_spread": 1.0081669691470057,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v <= 650 GROUP BY 1 ORDER BY 1"
+    },
+    "range_p50": {
+     "spec": [
+      "hi=1350"
+     ],
+     "cube_median_us": 1.302,
+     "cube_p95_us": 1.312,
+     "cube_serialize_us": 1.802,
+     "cube_output_ms": 0.0249,
+     "duckdb_median_ms": 424.93791226297617,
+     "duckdb_p95_ms": 440.4674409888685,
+     "duckdb_rows": 11,
+     "cube_rows": 11,
+     "selectivity": 0.51039856,
+     "exact": true,
+     "ratio_median": 326373204.5030539,
+     "cube_bench_runs": [
+      {
+       "median_us": 1.2910000000000001,
+       "p95_us": 1.292,
+       "serialize_us": 1.782
+      },
+      {
+       "median_us": 1.302,
+       "p95_us": 1.312,
+       "serialize_us": 1.802
+      },
+      {
+       "median_us": 1.3110000000000002,
+       "p95_us": 1.322,
+       "serialize_us": 1.803
+      }
+     ],
+     "cube_bench_spread": 1.0154918667699457,
+     "duckdb_sql": "SELECT g, SUM(v), COUNT(*), MIN(v), MAX(v) FROM t WHERE v <= 1350 GROUP BY 1 ORDER BY 1"
+    }
+   },
+   "encoded_tree_bytes": 251814420,
+   "build": {
+    "wall_s": 3.247,
+    "build_ms": 3225.715,
+    "phase_ms": {
+     "pass1_ms": 341.31,
+     "accum_ms": 2880.668,
+     "prefix_ms": 0.26,
+     "write_ms": 3.476
+    },
+    "peak_rss_kb": 284564.0
+   },
+   "cube_bytes": 1140124,
+   "cube_sha256": "c878dba255c212241a8888448ef8fd570e5b50942d94958a33e24550939562d6",
+   "G": 11,
+   "V": 21084,
+   "encoded": 1,
+   "index_to_tree": 0.004527635867715598
+  }
+ },
+ "cold_request_65k": {
+  "launches": 25,
+  "pin": "nice -n 5 taskset -c 96",
+  "cube": [
+   {
+    "total_ms": 4.8237270675599575,
+    "setup_ms": 0.0641,
+    "query_us": 6.529,
+    "serialize_us": 14.02,
+    "output_ms": 1.2704
+   },
+   {
+    "total_ms": 5.718096159398556,
+    "setup_ms": 0.0619,
+    "query_us": 6.7,
+    "serialize_us": 14.511,
+    "output_ms": 1.7842
+   },
+   {
+    "total_ms": 5.706869997084141,
+    "setup_ms": 0.0688,
+    "query_us": 6.609,
+    "serialize_us": 13.93,
+    "output_ms": 1.1936
+   },
+   {
+    "total_ms": 5.988023243844509,
+    "setup_ms": 0.0746,
+    "query_us": 6.669,
+    "serialize_us": 14.231,
+    "output_ms": 1.5333
+   },
+   {
+    "total_ms": 5.258307792246342,
+    "setup_ms": 0.0771,
+    "query_us": 6.339,
+    "serialize_us": 14.4,
+    "output_ms": 1.2065
+   },
+   {
+    "total_ms": 5.456601735204458,
+    "setup_ms": 0.0581,
+    "query_us": 6.559,
+    "serialize_us": 14.1,
+    "output_ms": 1.5126
+   },
+   {
+    "total_ms": 6.3872747123241425,
+    "setup_ms": 0.0645,
+    "query_us": 6.8500000000000005,
+    "serialize_us": 14.141,
+    "output_ms": 1.9195
+   },
+   {
+    "total_ms": 5.6330738589167595,
+    "setup_ms": 0.0607,
+    "query_us": 6.590000000000001,
+    "serialize_us": 14.13,
+    "output_ms": 1.8146
+   },
+   {
+    "total_ms": 5.457452964037657,
+    "setup_ms": 0.0712,
+    "query_us": 6.489,
+    "serialize_us": 14.030000000000001,
+    "output_ms": 1.1554
+   },
+   {
+    "total_ms": 5.94715541228652,
+    "setup_ms": 0.0681,
+    "query_us": 6.319,
+    "serialize_us": 14.149999999999999,
+    "output_ms": 1.455
+   },
+   {
+    "total_ms": 5.5711958557367325,
+    "setup_ms": 0.07,
+    "query_us": 6.679,
+    "serialize_us": 14.520999999999999,
+    "output_ms": 1.0677
+   },
+   {
+    "total_ms": 6.609372328966856,
+    "setup_ms": 0.0658,
+    "query_us": 6.75,
+    "serialize_us": 14.411,
+    "output_ms": 1.6959
+   },
+   {
+    "total_ms": 5.177492275834084,
+    "setup_ms": 0.0721,
+    "query_us": 6.449,
+    "serialize_us": 14.151,
+    "output_ms": 1.1799
+   },
+   {
+    "total_ms": 6.064563058316708,
+    "setup_ms": 0.0609,
+    "query_us": 6.2490000000000006,
+    "serialize_us": 14.5,
+    "output_ms": 1.4248
+   },
+   {
+    "total_ms": 5.525059998035431,
+    "setup_ms": 0.0628,
+    "query_us": 6.499,
+    "serialize_us": 14.239999999999998,
+    "output_ms": 1.1146
+   },
+   {
+    "total_ms": 5.64358988776803,
+    "setup_ms": 0.0577,
+    "query_us": 6.569,
+    "serialize_us": 14.149999999999999,
+    "output_ms": 1.5595
+   },
+   {
+    "total_ms": 5.5796378292143345,
+    "setup_ms": 0.0695,
+    "query_us": 6.329000000000001,
+    "serialize_us": 14.1,
+    "output_ms": 1.0443
+   },
+   {
+    "total_ms": 6.062538828700781,
+    "setup_ms": 0.0698,
+    "query_us": 6.348999999999999,
+    "serialize_us": 14.3,
+    "output_ms": 1.6102
+   },
+   {
+    "total_ms": 5.590552929788828,
+    "setup_ms": 0.0656,
+    "query_us": 6.319,
+    "serialize_us": 14.18,
+    "output_ms": 1.1295
+   },
+   {
+    "total_ms": 5.7800160720944405,
+    "setup_ms": 0.0648,
+    "query_us": 6.579,
+    "serialize_us": 19.648,
+    "output_ms": 1.781
+   },
+   {
+    "total_ms": 5.048026796430349,
+    "setup_ms": 0.0661,
+    "query_us": 6.359,
+    "serialize_us": 14.200000000000001,
+    "output_ms": 1.0554
+   },
+   {
+    "total_ms": 5.968904588371515,
+    "setup_ms": 0.0633,
+    "query_us": 6.37,
+    "serialize_us": 14.491,
+    "output_ms": 1.5592
+   },
+   {
+    "total_ms": 5.773455835878849,
+    "setup_ms": 0.0659,
+    "query_us": 6.4799999999999995,
+    "serialize_us": 14.791,
+    "output_ms": 1.2626
+   },
+   {
+    "total_ms": 4.740976728498936,
+    "setup_ms": 0.0687,
+    "query_us": 6.2589999999999995,
+    "serialize_us": 14.591,
+    "output_ms": 1.0388
+   },
+   {
+    "total_ms": 5.699759814888239,
+    "setup_ms": 0.0709,
+    "query_us": 6.399,
+    "serialize_us": 13.96,
+    "output_ms": 1.2421
+   }
+  ],
+  "duckdb": [
+   {
+    "import_ms": 85.35705367103219,
+    "connect_ms": 42.00590029358864,
+    "table_ms": 6.654897704720497,
+    "query_ms": 5.868291016668081,
+    "write_ms": 0.9683659300208092,
+    "rows": 47,
+    "total_ms": 202.1562340669334
+   },
+   {
+    "import_ms": 85.04763199016452,
+    "connect_ms": 42.07399673759937,
+    "table_ms": 6.676428020000458,
+    "query_ms": 5.870244931429625,
+    "write_ms": 2.01877998188138,
+    "rows": 47,
+    "total_ms": 202.48930109664798
+   },
+   {
+    "import_ms": 85.87812120094895,
+    "connect_ms": 41.96864599362016,
+    "table_ms": 6.8504177033901215,
+    "query_ms": 5.7341489009559155,
+    "write_ms": 0.5021793767809868,
+    "rows": 47,
+    "total_ms": 201.65869174525142
+   },
+   {
+    "import_ms": 85.40561376139522,
+    "connect_ms": 44.55639095976949,
+    "table_ms": 6.717797834426165,
+    "query_ms": 5.565918050706387,
+    "write_ms": 1.2467661872506142,
+    "rows": 47,
+    "total_ms": 204.60160495713353
+   },
+   {
+    "import_ms": 85.732351988554,
+    "connect_ms": 42.81840194016695,
+    "table_ms": 6.755592301487923,
+    "query_ms": 6.2110028229653835,
+    "write_ms": 2.3761908523738384,
+    "rows": 47,
+    "total_ms": 205.3044023923576
+   },
+   {
+    "import_ms": 86.1854599788785,
+    "connect_ms": 46.80438991636038,
+    "table_ms": 7.046016864478588,
+    "query_ms": 5.683637224137783,
+    "write_ms": 1.6742469742894173,
+    "rows": 47,
+    "total_ms": 209.99695966020226
+   },
+   {
+    "import_ms": 88.11235893517733,
+    "connect_ms": 44.84029673039913,
+    "table_ms": 6.84823514893651,
+    "query_ms": 5.536997225135565,
+    "write_ms": 1.2106429785490036,
+    "rows": 47,
+    "total_ms": 210.11630073189735
+   },
+   {
+    "import_ms": 86.38483611866832,
+    "connect_ms": 46.53080692514777,
+    "table_ms": 6.999020930379629,
+    "query_ms": 5.622770171612501,
+    "write_ms": 1.4177588745951653,
+    "rows": 47,
+    "total_ms": 210.27327608317137
+   },
+   {
+    "import_ms": 85.76517924666405,
+    "connect_ms": 48.33264788612723,
+    "table_ms": 6.927537731826305,
+    "query_ms": 5.972881335765123,
+    "write_ms": 1.8022800795733929,
+    "rows": 47,
+    "total_ms": 212.7992920577526
+   },
+   {
+    "import_ms": 86.32855536416173,
+    "connect_ms": 43.14803471788764,
+    "table_ms": 7.4809701181948185,
+    "query_ms": 5.8445679023861885,
+    "write_ms": 1.4324812218546867,
+    "rows": 47,
+    "total_ms": 206.52403822168708
+   },
+   {
+    "import_ms": 86.07507310807705,
+    "connect_ms": 44.55882403999567,
+    "table_ms": 7.346437778323889,
+    "query_ms": 6.120253354310989,
+    "write_ms": 1.3609975576400757,
+    "rows": 47,
+    "total_ms": 213.27037597075105
+   },
+   {
+    "import_ms": 89.20799801126122,
+    "connect_ms": 45.36714218556881,
+    "table_ms": 6.9456337951123714,
+    "query_ms": 5.930469837039709,
+    "write_ms": 1.9675670191645622,
+    "rows": 47,
+    "total_ms": 213.66128604859114
+   },
+   {
+    "import_ms": 86.43634896725416,
+    "connect_ms": 45.96464801579714,
+    "table_ms": 7.065635174512863,
+    "query_ms": 5.599015858024359,
+    "write_ms": 1.4627142809331417,
+    "rows": 47,
+    "total_ms": 210.37526102736592
+   },
+   {
+    "import_ms": 86.32309781387448,
+    "connect_ms": 45.29658006504178,
+    "table_ms": 7.153060752898455,
+    "query_ms": 5.836947355419397,
+    "write_ms": 1.5154997818171978,
+    "rows": 47,
+    "total_ms": 209.8839390091598
+   },
+   {
+    "import_ms": 88.78076588734984,
+    "connect_ms": 45.801803935319185,
+    "table_ms": 7.468632888048887,
+    "query_ms": 5.9913271106779575,
+    "write_ms": 2.591209951788187,
+    "rows": 47,
+    "total_ms": 213.22620380669832
+   },
+   {
+    "import_ms": 86.45780105143785,
+    "connect_ms": 46.39537399634719,
+    "table_ms": 7.162264082580805,
+    "query_ms": 5.896701943129301,
+    "write_ms": 2.3841429501771927,
+    "rows": 47,
+    "total_ms": 211.31804212927818
+   },
+   {
+    "import_ms": 86.10002929344773,
+    "connect_ms": 45.1367418281734,
+    "table_ms": 7.65108410269022,
+    "query_ms": 5.747118033468723,
+    "write_ms": 2.2258968092501163,
+    "rows": 47,
+    "total_ms": 209.72083508968353
+   },
+   {
+    "import_ms": 87.95401267707348,
+    "connect_ms": 47.94419091194868,
+    "table_ms": 7.005670107901096,
+    "query_ms": 5.6293499656021595,
+    "write_ms": 1.9920519553124905,
+    "rows": 47,
+    "total_ms": 214.51624110341072
+   },
+   {
+    "import_ms": 85.77859913930297,
+    "connect_ms": 47.59704368188977,
+    "table_ms": 7.01803807169199,
+    "query_ms": 5.536205135285854,
+    "write_ms": 0.9849010966718197,
+    "rows": 47,
+    "total_ms": 209.51607218012214
+   },
+   {
+    "import_ms": 87.00178004801273,
+    "connect_ms": 45.36653123795986,
+    "table_ms": 6.8473429419100285,
+    "query_ms": 5.5936891585588455,
+    "write_ms": 0.9969067759811878,
+    "rows": 47,
+    "total_ms": 213.74835120514035
+   },
+   {
+    "import_ms": 86.71931456774473,
+    "connect_ms": 46.17073340341449,
+    "table_ms": 7.01358076184988,
+    "query_ms": 5.53910993039608,
+    "write_ms": 1.4600502327084541,
+    "rows": 47,
+    "total_ms": 211.19699906557798
+   }
+  ],
+  "protocol": "each launch is a fresh process; one 0.5 s pinned warmup before the launch sequence and between launches, so the number is not a P-state artifact (the core is otherwise quiet)",
+  "cube_median_ms": 5.64358988776803,
+  "cube_p95_ms": 6.3872747123241425,
+  "cube_min_ms": 4.740976728498936,
+  "duckdb_median_ms": 210.11630073189735,
+  "duckdb_p95_ms": 213.74835120514035,
+  "duckdb_min_ms": 201.65869174525142,
+  "exact": true,
+  "rows": 47,
+  "cube_median_sub": {
+   "setup_ms": 0.0659,
+   "query_us": 6.489,
+   "serialize_us": 14.200000000000001,
+   "output_ms": 1.2704
+  },
+  "duckdb_median_sub": {
+   "import_ms": 86.32309781387448,
+   "connect_ms": 45.36653123795986,
+   "table_ms": 7.005670107901096,
+   "query_ms": 5.747118033468723,
+   "write_ms": 1.4627142809331417
+  }
+ }
+}

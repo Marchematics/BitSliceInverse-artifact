@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "observations": 420,
+  "blocks": 30,
+  "paths": [
+    "generic",
+    "expert",
+    "group_then_filter",
+    "direct",
+    "direct_plain",
+    "direct_run",
+    "stream",
+    "stream_uniform",
+    "duckdb",
+    "duckdb_proj2",
+    "arrow_full",
+    "arrow_proj",
+    "vortex_full",
+    "vortex_proj"
+  ],
+  "commands": 539,
+  "correctness_checks": 105,
+  "complete_typed_results_equal": 420,
+  "analysis_sha256": "dd06889e341cf932d1e2a8b5b9f08a2ba5352b40d756a8b433e7e4894c225d97",
+  "duckdb_identity": {
+    "version": "2.0.0",
+    "native_module_sha256": "e7cda112749d860a36cb1524ff465cefecdb0acc5c4e2ff4510ecc1b6f6c061a"
+  },
+  "native_binary_sha256": "5bc3dcb5dbde2298647a4336b7380f72f390c601c32c89a08a4505543f755853",
+  "frozen_binary_sha256": "fb033823755f0b11fbff7f044ab2702453c41269930e333014d413f8f6af0e62",
+  "arrow_control_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/arrow_ig2_v1",
+  "vortex_control_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/vortex_ig2_v1",
+  "preloaded_input_bytes": 24404543,
+  "projection_control_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig2_proj2_v3",
+  "no_page_cache_flush": true,
+  "no_warm_resident_claim": true,
+  "projection_control": {
+    "run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/run_ig2_proj2_v3",
+    "projected_columns": [
+      "State",
+      "POPESTIMATE2014"
+    ],
+    "projected_database_bytes": 536576,
+    "full18_database_bytes": 2895872,
+    "complete_results_equal_oracle": true
+  },
+  "conditional_process_intervals": true,
+  "single_query_not_population": true
+}

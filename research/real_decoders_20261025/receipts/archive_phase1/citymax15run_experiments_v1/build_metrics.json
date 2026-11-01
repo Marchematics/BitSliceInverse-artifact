@@ -1,0 +1,31 @@
+{
+  "format": "citymax15run-build-v1",
+  "compiler": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+  "command": [
+    "g++",
+    "-std=c++20",
+    "-O3",
+    "-march=native",
+    "-DNDEBUG",
+    "-I../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/vendor/src/include",
+    "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/src_fullsql_citymax15run/adapter.cpp",
+    "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/vendor/src/alp/src/fastlanes_gen_ffor.cpp",
+    "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/vendor/src/alp/src/fastlanes_gen_unffor.cpp",
+    "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/vendor/src/primitives/fls_generated/fallback/scalar_aav_uf1/fallback_scalar_aav_1024_uf1_rsum_src.cpp",
+    "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/vendor/src/primitives/fls_generated/fallback/scalar_aav_uf1/fallback_scalar_aav_1024_uf1_transpose_src.cpp",
+    "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/vendor/src/primitives/fls_generated/fallback/scalar_aav_uf1/fallback_scalar_aav_1024_uf1_unrsum_src.cpp",
+    "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/vendor/src/primitives/fls_generated/fallback/scalar_aav_uf1/fallback_scalar_aav_1024_uf1_untranspose_src.cpp",
+    "-o",
+    "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/citymax15run_prep_v3/adapter_citymax15run"
+  ],
+  "source_sha256": "5c0b39438aaf5b274a6a54f46c59c8f4de115c500b455af849158cc429ec7e1f",
+  "binary_sha256": "4550272d6b41ed08a30001aa8c291712a58ca18650de12922bac99c6e39d7ca2",
+  "binary": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/citymax15run_prep_v3/adapter_citymax15run",
+  "prep_run": "../../work/bsi_e2e_20261025/repo/research/real_decoders_20261024/results/citymax15run_prep_v3",
+  "selftest_exit": 0,
+  "selftest_stdout": "{\"citymax14_helper_fixtures\":\"PASS\",\"observed_values_used\":false}",
+  "selftest_stderr": "",
+  "new_path": "stream_runs",
+  "hypothesis": "one counter update per run vs one per row for the ordered City code column should cut the query phase of the high-cardinality group-by and widen the weakest external margin",
+  "not_measured": true
+}
